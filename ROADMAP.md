@@ -109,7 +109,7 @@ Examples already investigated include:
 - Nakayama Pass — strong candidate around Kamazaka Pass, but not promoted to exact;
 - Sayo and Mikazuki — strong modern area identifications.
 
-Some locations remain intentionally unresolved, including candidates such as Tsujinohara, Aida River and Sanumo where evidence did not justify false precision. Mount Fuwa is now confirmed as a **narrative landmark** by the primary text, but its modern coordinate remains a separate question.
+Some locations remain intentionally unresolved, including candidates such as Tsujinohara, Aida River and Sanumo where evidence did not justify false precision. Mount Fuwa is confirmed as a **narrative landmark** by the primary text, but its modern coordinate remains a separate question.
 
 ### Bounded topographic research protocol
 
@@ -184,7 +184,7 @@ Every historical summary must retain its external source metadata and must never
 
 ### Micro-wiki source audit — pass 1
 
-The first source-completion pass has now populated authoritative external sources for the initial Book I set:
+The first source-completion pass populated authoritative external sources for the initial Book I set:
 
 - Kobayakawa Hideaki;
 - Ishida Mitsunari;
@@ -194,107 +194,48 @@ The first source-completion pass has now populated authoritative external source
 - Tokugawa Ieyasu;
 - Battle of Sekigahara;
 - Eastern Army;
-- Western Army.
+- Western Army;
+- Akamatsu clan;
+- Minamoto no Hiromasa.
 
-The same pass added two tertiary references discovered directly in the primary text:
+`data/context/micro-wiki.json` stores the external source metadata with each approved entry.
 
-- Akamatsu clan — Section 3;
-- Minamoto no Hiromasa — Section 5.
+### Primary-text audit — pass 4 CLOSED
 
-The Akamatsu source is the Hyogo Prefectural Museum of History. Hiromasa is supported by the National Theatre of Japan, with an additional cultural source from the Ota Memorial Museum of Art.
+The bounded tertiary-reference audit was completed. No further historical names were added merely for completeness. The remaining work is product integration, not an open-ended encyclopedia search.
 
-`data/context/micro-wiki.json` now stores the external source metadata with each approved entry.
+### Reader progress foundation
 
-### Primary-text audit — pass 3
+The Luni chapter mapping is intentionally postponed because the user's Luni index is not currently available.
 
-The dedicated `research/book1-primary-text-audit.md` now reflects the corrected micro-wiki scope.
+Instead, the project now has a canonical reader-progress layer:
 
-Important distinction established:
+- `data/reader-progress.json` defines the reader state and spoiler visibility contract;
+- `js/reader-progress.js` provides the section-scoped progress engine;
+- `js/data.js` loads reader-progress and micro-wiki data alongside the existing Book I datasets;
+- `js/app.js` now uses the progress engine for section navigation.
 
-- Takuan Soho has extensive in-novel characterization and therefore belongs primarily to the main narrative layer;
-- Ikeda Terumasa / House of Ikeda are historically useful contextual candidates but are not automatically promoted to the tertiary set;
-- lightly mentioned historical references such as Akamatsu and Minamoto no Hiromasa are exactly the type of entity the micro-wiki is designed to explain.
-
-The audit also confirms that the Akamatsu lineage reference occurs in the Flower Festival section and the Hiromasa flute reference occurs in The Art of War.
+The progress model explicitly controls visibility of characters, locations, events, movements, relationships and micro-wiki triggers without modifying the underlying research data.
 
 ## 4. Current work in progress
 
-### A. Complete Book I primary-text audit — IN PROGRESS
+### A. Canonical Book I data validation — IN PROGRESS
 
-Continue validating only high-value items:
+Validate the existing structured datasets together rather than reopening research unnecessarily:
 
-- complete character presence and absence;
-- every named location and meaningful spatial relation;
-- movement transitions and intended-vs-confirmed status;
-- historical people/families/factions/events that should trigger the micro-wiki;
-- aliases and identity transitions;
+- character states;
+- locations;
+- movement transitions;
+- events;
+- identity checkpoints;
+- historical micro-wiki triggers;
 - spoiler boundaries.
 
-Do not reopen already settled topographic research unless the primary text produces a contradiction.
+Focus on contradictions and broken references, not additional exhaustive research.
 
-### B. Complete historical micro-wiki extraction — IN PROGRESS
+### B. Reader-progress integration — IN PROGRESS
 
-Use the Book I primary-text audit to identify lightly mentioned historical people, families, clans, factions, institutions and events that a modern reader may not recognize.
-
-For each trigger:
-
-1. verify the name/reference in Archive.org;
-2. identify the historical entity;
-3. find an authoritative external historical source;
-4. write only 2–3 lines of salient context;
-5. attach the source metadata;
-6. enforce the reader's spoiler boundary.
-
-Do not perform exhaustive biographies unless ambiguity makes them necessary.
-
-### C. Archive.org → Luni edition mapping — NEXT
-
-The Archive.org section numbers are project-local source indices and must not be treated as the Italian Luni chapter numbers.
-
-Build an explicit mapping layer between:
-
-```text
-Archive.org section
-        ↓
-Luni chapter/title
-        ↓
-reader progress
-```
-
-This mapping must be evidence-based and should not alter the primary corpus structure.
-
-## 5. Next product milestones
-
-### Milestone 1 — Canonical Book I data
-
-Finish and validate the narrative, character, location, movement, event and historical-entity datasets.
-
-### Milestone 2 — Historical micro-wiki source completion
-
-Audit the remaining approved candidates, including Ikeda Terumasa / House of Ikeda if the final UI test shows that their historical context materially helps the reader. Do not expand the set simply for completeness.
-
-### Milestone 3 — Geographic layer
-
-Attach modern coordinates only after the narrative location registry is stable.
-
-Represent uncertainty honestly:
-
-```text
-exact
-strong
-probable
-possible
-unknown
-literary / anachronistic
-```
-
-Never imply that a modern coordinate is automatically the historical location of the 1600 setting.
-
-### Milestone 4 — Reader-progress engine
-
-The application needs a single reader-progress state controlling what is visible.
-
-Conceptually:
+The base engine is implemented. Next, connect every data layer to the same visibility contract:
 
 ```text
 reader_progress
@@ -307,39 +248,61 @@ visible relationships
 visible wiki triggers
 ```
 
-### Milestone 5 — Spoiler firewall
+The current UI navigation already uses the canonical section state. The remaining work is to make map and micro-wiki rendering consume the same state instead of independently deciding what is visible.
 
-No future route, relationship, identity, location or historical context may appear before the reader reaches the corresponding narrative point.
+### C. Luni mapping — BLOCKED / DEFERRED
 
-### Milestone 6 — Follow-along map
+Do not invent or infer the Luni chapter numbering from memory.
 
-The map should emphasize the current scene and active movement rather than displaying the entire novel's geography at once.
+When the user has the index available, create an evidence-based mapping:
 
-### Milestone 7 — Micro-wiki UI
+```text
+Archive.org section
+        ↓
+Luni chapter/title
+        ↓
+reader progress
+```
 
-Historical entities should be accessible from the reading/map interface with a compact card containing:
+Until then, the project-local Book I section numbers remain the canonical internal progress units.
 
-- why the reference appears here;
-- 2–3 lines of historical context;
+## 5. Next product milestones
+
+### Milestone 1 — Canonical Book I data
+
+Finish cross-dataset validation and resolve only genuine inconsistencies.
+
+### Milestone 2 — Unified spoiler firewall
+
+Make all renderers consume one reader-progress API. No component should independently expose future information.
+
+### Milestone 3 — Geographic layer integration
+
+Attach modern coordinates and uncertainty metadata to the validated location registry. Keep literary/anachronistic references distinct from historical coordinates.
+
+### Milestone 4 — Follow-along map
+
+Build the map around the **current reading state**, emphasizing current scene and active movement instead of showing the whole novel's geography simultaneously.
+
+### Milestone 5 — Micro-wiki UI
+
+Expose approved historical references from the map/reader interface with:
+
+- the name as encountered in the novel;
+- 2–3 lines of external historical context;
 - source attribution;
 - spoiler-safe visibility.
 
-### Milestone 8 — Reading test
+### Milestone 6 — Reading test
 
 Test the companion as an actual reader would use it:
 
-- read a section;
-- advance the companion;
-- inspect the map;
+- advance one section at a time;
 - inspect characters;
+- inspect the current location;
 - open a historical context card;
-- verify that no future information leaks.
-
-The key question is always:
-
-> Does this improve understanding of the current reading experience?
-
-If not, it should not automatically become another research task.
+- verify no future information appears;
+- rewind and verify later information disappears.
 
 ## 6. Explicit non-goals
 
@@ -369,6 +332,8 @@ Precision is valuable when it changes the reader's understanding. False precisio
 11. Never leak future information through the map or micro-wiki.
 12. Do not expand research merely because a more precise answer is theoretically possible.
 13. Optimize for the usefulness of the reading companion.
+14. Do not infer the Luni chapter mapping until the actual edition index is available.
+15. Use the canonical reader-progress engine as the sole source of section visibility decisions.
 
 ## 8. Current state at a glance
 
@@ -380,12 +345,13 @@ LOCATION NORMALIZATION          DONE / VALIDATING
 TOPOGRAPHIC METHODOLOGY         DONE
 TOPOGRAPHIC INITIAL AUDIT       DONE / SELECTIVE FOLLOW-UP ONLY
 HISTORICAL MICRO-WIKI MODEL     DONE
-MICRO-WIKI SOURCE AUDIT         IN PROGRESS — PASS 1
-BOOK I PRIMARY-TEXT AUDIT       IN PROGRESS — PASS 3
-ARCHIVE → LUNI MAPPING          NEXT
+MICRO-WIKI SOURCE AUDIT         DONE — BOUNDED PASS CLOSED
+BOOK I PRIMARY-TEXT AUDIT       DONE — BOUNDED PASS CLOSED
+READER PROGRESS MODEL           DONE
+READER PROGRESS ENGINE          DONE / INTEGRATING
+ARCHIVE → LUNI MAPPING          DEFERRED — INDEX NEEDED
 COORDINATE INTEGRATION          NEXT
-READER-PROGRESS ENGINE          NEXT
-SPOILER FIREWALL                NEXT
+UNIFIED SPOILER FIREWALL        NEXT
 FOLLOW-ALONG MAP                NEXT
 MICRO-WIKI UI                   NEXT
 FULL READING TEST               LATER
