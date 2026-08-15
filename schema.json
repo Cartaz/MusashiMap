@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "entities": {
+    "characters": {
+      "id": "string",
+      "name": "string",
+      "aliases": "string[]",
+      "importance": "main|secondary",
+      "notes": "string"
+    },
+    "locations": {
+      "id": "string",
+      "name": "string",
+      "name_it": "string|null",
+      "name_ja": "string|null",
+      "latitude": "number|null",
+      "longitude": "number|null",
+      "precision": "exact|site|settlement|area|region|route|unknown",
+      "notes": "string"
+    },
+    "chapters": {
+      "id": "string",
+      "book": "number|null",
+      "number": "number",
+      "title": "string|null",
+      "source": "string"
+    },
+    "events": {
+      "id": "string",
+      "chapter": "number",
+      "scene": "string|null",
+      "type": "arrival|departure|journey|meeting|fight|conversation|training|work|rest|search|separation|relationship_change|other",
+      "characters": "string[]",
+      "location": "string|null",
+      "origin": "string|null",
+      "destination": "string|null",
+      "activity": "string|null",
+      "description": "string",
+      "certainty": "explicit|strong_inference|weak_inference",
+      "source_ref": "string"
+    },
+    "character_states": {
+      "chapter": "number",
+      "character": "string",
+      "location": "string|null",
+      "status": "present|travelling|unknown|absent",
+      "activity": "string|null",
+      "origin": "string|null",
+      "destination": "string|null",
+      "companions": "string[]",
+      "certainty": "explicit|strong_inference|weak_inference",
+      "source_events": "string[]"
+    }
+  }
+}
