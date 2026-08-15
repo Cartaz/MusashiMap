@@ -2,71 +2,191 @@
 
 ## Purpose
 
-MusashiMap includes a small contextual wiki for real historical people, events and factions mentioned by Yoshikawa. It is a companion to the reading experience, not a general encyclopedia.
+The MusashiMap micro-wiki is a **reader aid for briefly explaining real historical people, families, clans, factions, institutions and events that are merely mentioned or lightly referenced in the novel**.
 
-## Source hierarchy
+It is **not** a second character encyclopedia and it is not intended to duplicate the information Yoshikawa already gives the reader about major characters such as Musashi or Takuan.
 
-### 1. Primary narrative source
+The novel supplies the **trigger/name and reading context**. An authoritative external historical source supplies the **2–3 lines of useful historical context**.
 
-All claims about the novel itself must come from the Internet Archive transcription:
+The goal is to answer the reader's likely question:
 
-`https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt`
+> "Who/what was that person, family or faction Yoshikawa just mentioned?"
 
-This includes:
+without interrupting the reading experience.
 
-- first appearance in the novel;
-- names and aliases as used by Yoshikawa;
-- what the narrative says about the entity;
-- relationships explicitly established by the novel;
-- events and chronology as presented by the novel;
-- spoiler visibility.
+## Core model
 
-### 2. External historical sources
+The data flow is:
 
-External sources may be used only to provide separate historical context or modern identification. They must never be used to infer what the novel says.
+```text
+NOVEL / ARCHIVE.ORG TRANSCRIPTION
+        │
+        │ detects or names entity
+        ▼
+  HISTORICAL ENTITY
+        │
+        │ external historical lookup
+        ▼
+AUTHORITATIVE HISTORICAL SOURCE
+        │
+        ▼
+2–3 LINE MICRO-WIKI SUMMARY
+```
 
-Keep `novel` and `context` as separate data layers.
+The two layers must never be silently merged.
 
-## Spoiler rule
+### Layer A — novel trigger
 
-Every entity must have a narrative visibility boundary. A reader at section N may see only information supported by section N or earlier.
+The Internet Archive transcription is the sole authority for:
 
-Historical context that would reveal a later narrative fact must also be gated. The existence of a historical person does not automatically authorize displaying all known biography.
+- whether the entity is mentioned in the novel;
+- the name/form used by Yoshikawa;
+- where it first becomes relevant;
+- the narrative context in which it is mentioned;
+- the spoiler boundary for showing the entry;
+- any relationship or claim that the novel itself makes about the entity.
 
-## Entity types
+### Layer B — historical context
 
-- `historical_person`
-- `historical_event`
-- `historical_faction`
+External authoritative sources are the authority for:
 
-The micro-wiki is separate from the main fictional cast and from geographic locations.
+- the person's historical identity;
+- dates and titles;
+- historical role;
+- clan/family/faction affiliation;
+- the one or two facts most useful for understanding the reference;
+- historical identification of a family, clan, faction or event.
 
-## Minimum record
+External sources must **never** be used to manufacture claims about what Yoshikawa wrote.
+
+## Source hierarchy for the micro-wiki
+
+Prefer, in order:
+
+1. museums, archives and official cultural institutions;
+2. universities and academic institutions;
+3. established scholarly/academic reference works;
+4. authoritative specialist historical institutions or publications;
+5. other reputable secondary sources only when stronger sources are unavailable.
+
+The source used for each wiki summary should be stored with the entry so that the claim is auditable.
+
+## What belongs in the micro-wiki
+
+Include historical entities that are:
+
+- named but only briefly explained in the novel;
+- likely to be unfamiliar to a modern reader;
+- relevant to understanding the historical situation;
+- useful as a quick contextual lookup.
+
+Typical categories:
+
+- historical people;
+- daimyo and military commanders;
+- monks and religious figures when they are only briefly referenced;
+- clans and families;
+- ruling houses;
+- political factions;
+- armies;
+- institutions;
+- historical battles and events;
+- other named historical groups that benefit from a short explanation.
+
+## What does NOT belong as a priority
+
+Do not build full wiki entries for major fictional/narrative characters merely because they are historically associated with the period.
+
+If Yoshikawa already gives the reader substantial information about a character in the current narrative, the micro-wiki should not duplicate that material. Historical context may still be added when the character is explicitly a real historical figure, but it should remain compact and clearly labeled as external historical context.
+
+In particular, the micro-wiki is **not a replacement for the novel's character data**.
+
+## Entry format
+
+Every entry should conceptually contain:
 
 ```json
 {
-  "id": "...",
+  "id": "kobayakawa_hideaki",
   "type": "historical_person",
-  "display_name": "...",
-  "novel": {
+  "display_name": "Kobayakawa Hideaki",
+  "novel_trigger": {
     "first_book1_section": 1,
-    "role": "...",
-    "spoiler_safe_until": 1,
-    "evidence": "..."
+    "name_in_text": "Kobayakawa",
+    "context": "Why the name is relevant at this point in the novel",
+    "spoiler_safe_until": 1
   },
-  "context": {
-    "summary": "..."
+  "wiki": {
+    "summary": "Two or three concise lines of salient historical context."
+  },
+  "source": {
+    "title": "Authoritative source title",
+    "publisher": "Institution / publisher",
+    "url": "..."
   }
 }
 ```
 
-## Important distinction
+The field names may evolve with implementation, but the semantic separation must remain.
 
-A historical person can be real while the novel's portrayal is fictionalized. The UI must not silently merge the two. Label contextual material as historical context and narrative material as novel context.
+## Length rule
+
+The default wiki summary is **2–3 lines / roughly 30–70 words**.
+
+It should answer only:
+
+1. Who/what was this?
+2. Why is it historically significant?
+3. If useful, what fact makes the reference in *Musashi* easier to understand?
+
+Do not turn a micro-wiki entry into a biography.
+
+## Spoiler rule
+
+The novel controls **when the wiki trigger becomes visible**.
+
+A reader at section N may only be offered an entity after its relevant name/reference has appeared in the novel.
+
+Historical context must also be checked for spoilers. Do not reveal future narrative information merely because the external historical source contains it.
+
+Example:
+
+```text
+novel mentions X at section 2
+        ↓
+wiki button becomes available at section 2
+        ↓
+historical summary is shown
+        ↓
+future novel revelations remain hidden
+```
+
+## Fictional portrayal vs. historical reality
+
+A real historical person may be fictionalized by Yoshikawa. The UI must therefore distinguish:
+
+**Nel romanzo** — only if the application needs to explain the immediate narrative reference.
+
+**Contesto storico** — the short external historical summary.
+
+Never present an external historical fact as though Yoshikawa stated it.
+
+## Research stopping rule
+
+The micro-wiki is intentionally shallow.
+
+Once a trustworthy source provides enough information for a concise 2–3 line explanation, stop researching unless:
+
+- the identity is ambiguous;
+- authoritative sources contradict each other;
+- the historical identification is uncertain;
+- the extra information materially improves understanding of the reference.
+
+The purpose is contextual clarity, not exhaustive historical scholarship.
 
 ## Initial Book I scope
 
-The first historical/contextual set includes:
+The initial historical/contextual set includes:
 
 - Kobayakawa Hideaki
 - Ishida Mitsunari
@@ -78,8 +198,18 @@ The first historical/contextual set includes:
 - Eastern Army
 - Western Army
 
-This list can expand when the Book I primary-text audit identifies additional historically significant entities.
+Further entities should be discovered from the primary text, especially lightly mentioned names, families and factions that a reader is unlikely to recognize.
 
-## Research stopping rule
+Takuan, Musashi and other major narrative figures should **not** be treated as priority micro-wiki targets simply because they are historically real. Their extensive narrative treatment already belongs to the main character/story layer.
 
-Do not turn the micro-wiki into an independent historical research project. Once the contextual information is sufficient for a reader to understand why the entity matters in the current scene, further historical detail belongs outside the core companion unless it materially improves comprehension.
+## Quality gate
+
+Before adding an entry, verify:
+
+1. The entity is actually named/referenced by the primary novel text.
+2. The modern/historical identity is unambiguous enough to research.
+3. The external source is authoritative.
+4. The summary is concise and salient.
+5. The summary does not pretend to be novel evidence.
+6. The entry does not leak future narrative information.
+7. The entry materially helps a reader understand the reference.

@@ -1,129 +1,182 @@
 {
-  "version": 2,
-  "description": "Reader-facing micro-wiki for historical people, events and factions referenced by Musashi. Novel evidence is spoiler-gated and originates only from the Internet Archive transcription; external sources may be attached separately for modern historical context.",
-  "primary_text_source": {
-    "type": "novel_transcription",
-    "url": "https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt",
-    "rule": "The novel itself is the only source for claims about what Yoshikawa's narrative says, when an entity appears, how the entity is described in the novel, and relationships revealed by the novel. External sources must never be used to manufacture novel evidence."
+  "version": 3,
+  "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions and events. The novel provides the trigger and reading context; an authoritative external historical source provides a concise 2–3 line historical explanation.",
+  "source_policy": {
+    "novel_trigger_source": "Internet Archive transcription",
+    "historical_context_source": "authoritative external historical source",
+    "rule": "Never merge external historical facts into novel evidence."
+  },
+  "schema_example": {
+    "id": "historical_entity",
+    "type": "historical_person",
+    "display_name": "Example",
+    "novel_trigger": {
+      "first_book1_section": 1,
+      "name_in_text": "Example",
+      "context": "Why the reference matters at this point",
+      "spoiler_safe_until": 1
+    },
+    "wiki": {
+      "summary": "Two or three concise lines of salient historical context."
+    },
+    "source": {
+      "title": "Authoritative source title",
+      "publisher": "Institution or publisher",
+      "url": "https://example.invalid"
+    }
   },
   "entities": [
     {
       "id": "kobayakawa_hideaki",
       "type": "historical_person",
       "display_name": "Kobayakawa Hideaki",
-      "novel": {"first_book1_section": 1, "role": "historical commander referenced in the Sekigahara context", "spoiler_safe_until": 1, "evidence": "Section 1 explicitly discusses Kobayakawa in connection with the battle and Takezo/Matahachi's aftermath."},
-      "context": {"period": "1582–1602", "summary": "Daimyō associated with the Western Army at Sekigahara who defected and attacked Ōtani Yoshitsugu's forces, contributing to the Eastern Army victory."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Kobayakawa",
+        "context": "Historical commander referenced in the Sekigahara aftermath.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "Daimyo who commanded a major contingent of the Western Army at Sekigahara. His defection during the battle and attack on Otani Yoshitsugu's forces helped secure Tokugawa victory."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "ishida_mitsunari",
       "type": "historical_person",
       "display_name": "Ishida Mitsunari",
-      "novel": {"first_book1_section": 1, "role": "historical commander referenced in the Sekigahara context", "spoiler_safe_until": 1, "evidence": "Section 1 identifies Ishida among the commanders and describes the post-battle military situation."},
-      "context": {"period": "1560–1600", "summary": "Toyotomi administrator and principal leader of the Western coalition at Sekigahara."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Ishida",
+        "context": "Principal Western Army commander referenced in the Sekigahara context.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "Toyotomi administrator and leading commander of the Western coalition at Sekigahara. He was one of the principal political and military opponents of Tokugawa Ieyasu."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "ukita_hideie",
       "type": "historical_person",
       "display_name": "Ukita Hideie",
-      "novel": {"first_book1_section": 1, "role": "historical commander associated with the Western Army at Sekigahara", "spoiler_safe_until": 1, "evidence": "Section 1 places the historical commanders of Sekigahara in the narrative's battlefield context."},
-      "context": {"period": "1572–1655", "summary": "Daimyō and major Toyotomi ally who commanded a large Western Army contingent at Sekigahara."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Ukita",
+        "context": "Major Western Army commander referenced in the Sekigahara aftermath.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "Daimyo and major Toyotomi ally who commanded a large Western Army contingent at Sekigahara. He was one of the most prominent commanders on the losing side."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "shimazu_yoshihiro",
       "type": "historical_person",
       "display_name": "Shimazu Yoshihiro",
-      "novel": {"first_book1_section": 1, "role": "historical commander associated with the Western Army at Sekigahara", "spoiler_safe_until": 1, "evidence": "Section 1 references the historical commanders involved in the battle."},
-      "context": {"period": "1535–1619", "summary": "Daimyō of Satsuma and commander of the Shimazu contingent at Sekigahara."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Shimazu",
+        "context": "Western Army commander referenced in the Sekigahara context.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "Daimyo of Satsuma and commander of the Shimazu contingent at Sekigahara. His troops were part of the Western Army during the decisive battle."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "konishi_yukinaga",
       "type": "historical_person",
       "display_name": "Konishi Yukinaga",
-      "novel": {"first_book1_section": 1, "role": "historical commander associated with the Western Army at Sekigahara", "spoiler_safe_until": 1, "evidence": "Section 1 references the historical commanders involved in the battle."},
-      "context": {"period": "1555–1600", "summary": "Christian daimyō and Toyotomi commander who fought for the Western Army at Sekigahara."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Konishi",
+        "context": "Western Army commander referenced in the Sekigahara context.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "Christian daimyo and Toyotomi commander who fought for the Western Army at Sekigahara. He was among the principal commanders defeated in the battle."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "tokugawa_ieyasu",
       "type": "historical_person",
       "display_name": "Tokugawa Ieyasu",
-      "novel": {"first_book1_section": 1, "role": "historical leader associated with the victorious Eastern Army", "spoiler_safe_until": 1, "evidence": "Section 1 establishes the Tokugawa side and the post-Sekigahara military order."},
-      "context": {"period": "1543–1616", "summary": "Leader of the Eastern coalition at Sekigahara and founder of the Tokugawa shogunate."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Tokugawa",
+        "context": "Leader of the victorious Eastern coalition at Sekigahara.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "Leader of the Eastern coalition at Sekigahara and the founder of the Tokugawa shogunate. His victory established the political order that dominated Japan for the following centuries."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "sekigahara",
       "type": "historical_event",
       "display_name": "Battle of Sekigahara",
-      "novel": {"first_book1_section": 1, "role": "opening historical event and narrative anchor", "spoiler_safe_until": 1, "evidence": "Book I opens in the immediate aftermath of Sekigahara, with Takezo and Matahachi among the defeated army."},
-      "context": {"date": "1600-10-21", "summary": "Decisive battle between the Eastern coalition led by Tokugawa Ieyasu and the Western coalition associated with the Toyotomi cause."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Sekigahara",
+        "context": "The battle whose immediate aftermath forms the opening setting of Book I.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "The decisive battle of 1600 between the Tokugawa-led Eastern coalition and the Western coalition associated with the Toyotomi cause. Tokugawa victory reshaped Japan's political order."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "eastern_army",
       "type": "historical_faction",
       "display_name": "Eastern Army",
-      "novel": {"first_book1_section": 1, "role": "victorious coalition at Sekigahara", "spoiler_safe_until": 1},
-      "context": {"summary": "Coalition led by Tokugawa Ieyasu during the Sekigahara campaign."}
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Eastern Army",
+        "context": "Victorious coalition at Sekigahara.",
+        "spoiler_safe_until": 1
+      },
+      "wiki": {
+        "summary": "Coalition led by Tokugawa Ieyasu during the Sekigahara campaign. Its victory over the Western coalition established Tokugawa political dominance."
+      },
+      "source": {
+        "status": "needs_authoritative_source_record"
+      }
     },
     {
       "id": "western_army",
       "type": "historical_faction",
       "display_name": "Western Army",
-      "novel": {"first_book1_section": 1, "role": "defeated coalition at Sekigahara", "spoiler_safe_until": 1},
-      "context": {"summary": "Coalition formed around the Toyotomi cause and opposed the Tokugawa-led Eastern Army at Sekigahara."}
-    },
-    {
-      "id": "takuan_soho",
-      "type": "historical_person",
-      "display_name": "Takuan Sōhō",
-      "novel": {
-        "first_book1_section": 3,
-        "role": "Zen monk, teacher and major agent in Takezo's transformation",
-        "spoiler_safe_until": 3,
-        "evidence": "Section 3 gives substantial narrative biography: birth in Tajima, early religious training, Rinzai affiliation, study with named teachers, residence at Nansōji, appointment as abbot of Daitokuji, and his decision to leave. Later sections establish his role in capturing, confronting and transforming Takezo."
+      "novel_trigger": {
+        "first_book1_section": 1,
+        "name_in_text": "Western Army",
+        "context": "Defeated coalition at Sekigahara.",
+        "spoiler_safe_until": 1
       },
-      "context": {
-        "summary": "Historical Zen monk whose real-life identity is used by Yoshikawa as a major character in the novel. Detailed historical context should remain a separate, spoiler-safe layer."
-      }
-    },
-    {
-      "id": "ikeda_terumasa",
-      "type": "historical_person",
-      "display_name": "Ikeda Terumasa",
-      "novel": {
-        "first_book1_section": 6,
-        "role": "lord of Himeji and authority involved in Takezo's punishment and later release",
-        "spoiler_safe_until": 8,
-        "evidence": "The Book I narrative identifies the House of Ikeda in the punishment arrangement and later has Takezo brought before Lord Ikeda Terumasa at Himeji Castle. Terumasa keeps Takezo confined for three years, later offers him service, gives him the name Miyamoto, and permits him to leave."
+      "wiki": {
+        "summary": "Coalition formed around the Toyotomi cause and opposed the Tokugawa-led Eastern Army at Sekigahara. Its defeat ended the immediate military challenge to Tokugawa power."
       },
-      "context": {
-        "summary": "Historical daimyō associated with Himeji. The companion should show historical context separately from Yoshikawa's characterization."
-      }
-    },
-    {
-      "id": "house_of_ikeda",
-      "type": "historical_faction",
-      "display_name": "House of Ikeda",
-      "novel": {
-        "first_book1_section": 6,
-        "role": "political authority governing the Himeji domain in the narrative",
-        "spoiler_safe_until": 6,
-        "evidence": "The narrative explicitly refers to the representative of the House of Ikeda in the arrangement surrounding Takezo's capture and punishment."
-      },
-      "context": {
-        "summary": "Historical ruling house associated with Himeji in the period relevant to the novel."
-      }
-    },
-    {
-      "id": "akamatsu_context",
-      "type": "historical_faction",
-      "display_name": "Akamatsu context",
-      "novel": {
-        "first_book1_section": 3,
-        "role": "historical/geographical context referenced around Miyamoto and Mimasaka",
-        "spoiler_safe_until": 3,
-        "evidence": "The primary-text audit identifies Akamatsu as a historical-context candidate in the Book I material; this entry remains deliberately minimal until the exact narrative references are audited against the transcription."
-      },
-      "context": {
-        "summary": "Placeholder for the historical Akamatsu context. Do not expand until the primary text provides a sufficiently specific narrative reference."
+      "source": {
+        "status": "needs_authoritative_source_record"
       }
     }
   ]
