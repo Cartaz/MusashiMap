@@ -1,0 +1,59 @@
+const clampSection = (section, min, max) => Math.min(max, Math.max(min, section));
+
+export function createReaderProgress(chapters, initialSection = 1) {
+  const sections = [...chapters.sections].sort((a, b) => a.number - b.number);
+  if (!sections.length) throw new Error("No reader sections available");
+
+  const min = sections[0].number;
+  const max = sections.at(-1).number;
+  let currentSection = clampSection(initialSection, min, max);
+
+  return {
+    get section() {
+      return currentSection;
+    },
+    get current() {
+      return sections.find(section => section.number === currentSection);
+    },
+    get min() {
+      return min;
+    },
+    get max() {
+      return max;
+    },
+    setSection(section) {
+      const next = Number.parseInt(section, 10);
+      if (!Number.isInteger(next) || next < min || next > max) return false;
+      currentSection = next;
+      return true;
+    },
+    next() {
+      return this.setSection(currentSection + 1);
+    },
+    previous() {
+      return this.setSection(currentSection - 1);
+    },
+    isVisible(firstSection) {
+      return Number.isInteger(firstSection) && firstSection <= currentSection;
+    },
+    visibleByFirstSection(items, firstSectionKey = "section") {
+      return items.filter(item => this.isVisible(item[firstSectionKey]));
+    },
+    visibleLatestStates(states, idKey = "character") {
+      const latest = new Map();
+      for (const state of states) {
+        if (!this.isVisible(state.section)) continue;
+        const previous = latest.get(state[idKey]);
+        if (!previous || state.section > previous.section) latest.set(state[idKey], state);
+      }
+      return [...latest.values()];
+    }
+  };
+}
+
+export function getVisibleHistoricalWiki(entries, currentSection) {
+  return entries.filter(entry => {
+    const first = entry.novel_trigger?.first_book1_section;
+    return Number.isInteger(first) && first <= currentSection;
+  });
+}
