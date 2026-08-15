@@ -1,4 +1,17 @@
 {
-  "version": 1,
-  "locations": []
+  "version": 2,
+  "locations": [
+    {"id":"sekigahara","name":"Sekigahara","type":"area","coordinates":null},
+    {"id":"mount_ibuki_area","name":"Monte Ibuki / area montana","type":"area","coordinates":null},
+    {"id":"tarui","name":"Tarui","type":"settlement","coordinates":null},
+    {"id":"oko_akemi_house","name":"Casa di Oko e Akemi","type":"exact_site","coordinates":null},
+    {"id":"shippoji","name":"Shippoji","type":"temple","coordinates":null},
+    {"id":"sanumo_mountains","name":"Montagne di Sanumo","type":"area","coordinates":null},
+    {"id":"itadori_pasture","name":"Itadori Pasture","type":"area","coordinates":null},
+    {"id":"old_cryptomeria_shippoji","name":"Vecchio cryptomeria di Shippoji","type":"exact_site","coordinates":null},
+    {"id":"nakayama_pass","name":"Nakayama Pass","type":"route","coordinates":null},
+    {"id":"hinagura","name":"Hinagura","type":"settlement","coordinates":null},
+    {"id":"hanada_bridge","name":"Hanada Bridge","type":"exact_site","coordinates":null},
+    {"id":"himeji_castle","name":"Castello di Himeji","type":"exact_site","coordinates":null}
+  ]
 }
