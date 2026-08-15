@@ -1,6 +1,6 @@
 import { loadData } from "./data.js";
 import { validateData } from "./validate.js";
-import { createReaderProgress } from "./reader-progress.js";
+import { createReaderProgress, getVisibleHistoricalWiki } from "./reader-progress.js";
 
 const chapterInput = document.querySelector("#chapter");
 const chapterApply = document.querySelector("#chapter-apply");
@@ -12,6 +12,7 @@ const title = document.querySelector("#section-title");
 const status = document.querySelector("#status");
 const characterList = document.querySelector("#character-list");
 const eventList = document.querySelector("#event-list");
+const wikiList = document.querySelector("#wiki-list");
 const validation = document.querySelector("#validation");
 const characterFilters = document.querySelector("#character-filters");
 const selectAll = document.querySelector("#select-all");
@@ -55,6 +56,46 @@ function renderCharacterFilters() {
     }));
 }
 
+function renderWiki(section) {
+  const entries = getVisibleHistoricalWiki(data.microWiki.entities, section);
+  if (!entries.length) {
+    wikiList.replaceChildren(Object.assign(document.createElement("p"), {
+      className: "wiki-empty",
+      textContent: "Nessun riferimento storico contestualizzabile incontrato finora."
+    }));
+    return;
+  }
+
+  wikiList.replaceChildren(...entries.map(entry => {
+    const card = document.createElement("article");
+    card.className = "wiki-card";
+
+    const heading = document.createElement("h3");
+    heading.textContent = entry.display_name;
+
+    const trigger = document.createElement("p");
+    trigger.className = "wiki-trigger";
+    trigger.textContent = entry.novel_trigger?.context ?? "Riferimento incontrato nel romanzo.";
+
+    const summary = document.createElement("p");
+    summary.textContent = entry.wiki?.summary ?? "Contesto storico non disponibile.";
+
+    card.append(heading, trigger, summary);
+
+    if (entry.source?.url && entry.source?.status !== "needs_authoritative_source_record") {
+      const source = document.createElement("a");
+      source.className = "wiki-source";
+      source.href = entry.source.url;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      source.textContent = `${entry.source.publisher ?? "Fonte"} · fonte storica`;
+      card.append(source);
+    }
+
+    return card;
+  }));
+}
+
 function render(section) {
   const sectionData = data.chapters.sections.find(s => s.number === section);
   if (!sectionData) return;
@@ -88,6 +129,8 @@ function render(section) {
     item.textContent = `${names}: ${e.type}${from && to ? ` · ${from} → ${to}` : place ? ` · ${place}` : ""}`;
     return item;
   }));
+
+  renderWiki(section);
 }
 
 try {
