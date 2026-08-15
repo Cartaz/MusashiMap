@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="MusashiMap — mappa interattiva e senza spoiler di Musashi di Eiji Yoshikawa">
   <title>MusashiMap</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3fL6c4s9X8qYJ3G3fR1s9xV4Qf2c=" crossorigin="">
   <link rel="stylesheet" href="css/style.css?v=20260816">
 </head>
 <body>
@@ -27,26 +28,26 @@
       </div>
     </header>
 
-    <section class="map-placeholder" aria-label="Area della mappa">
-      <div class="placeholder-card">
+    <section class="map-stage" aria-label="Mappa geografica">
+      <div id="map" class="map" aria-label="Mappa interattiva del viaggio narrativo"></div>
+      <div class="map-overlay">
         <p id="book-label" class="placeholder-kicker">LIBRO I · EARTH</p>
         <h2 id="section-title">The Little Bell</h2>
-        <p class="reader-note">La mappa geografica verrà collegata dopo la validazione delle località. Per ora questa vista mostra esclusivamente le informazioni disponibili fino alla sezione selezionata.</p>
-        <section class="character-panel">
-          <div class="panel-heading">
-            <div>
-              <h2>Personaggi visibili</h2>
-              <p>Seleziona da uno a tutti i nove protagonisti.</p>
-            </div>
-            <div class="filter-actions">
-              <button id="select-all" type="button">Tutti</button>
-              <button id="select-none" type="button">Nessuno</button>
-            </div>
-          </div>
-          <div id="character-filters" class="character-filters"></div>
-        </section>
-        <div id="character-list" class="character-grid"></div>
+        <p id="map-note">Le località mostrate sono quelle già incontrate nella lettura. Le coordinate moderne non implicano automaticamente equivalenza storica.</p>
       </div>
+      <section class="character-panel map-character-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Personaggi visibili</h2>
+            <p>Filtra il percorso sulla base dei personaggi selezionati.</p>
+          </div>
+          <div class="filter-actions">
+            <button id="select-all" type="button">Tutti</button>
+            <button id="select-none" type="button">Nessuno</button>
+          </div>
+        </div>
+        <div id="character-filters" class="character-filters"></div>
+      </section>
     </section>
 
     <aside class="info-panel">
@@ -68,6 +69,7 @@
       </section>
     </aside>
   </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="js/app.js?v=20260816"></script>
 </body>
 </html>
