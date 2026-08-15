@@ -61,6 +61,7 @@ Validated:
 - Otsu sees Takezo at the festival; he disappears immediately.
 - The text explicitly identifies Takuan Soho by name.
 - The narrative supplies substantial in-novel biographical material about Takuan: birth in Tajima, early religious training, Rinzai affiliation, study with named teachers, residence at Nansoji, appointment as abbot of Daitokuji, and his decision to leave.
+- The narrative states that the Hon'iden and Shimmen families are village gentry whose lineages trace back to the Akamatsu house several generations earlier.
 
 ### Section 4 — The Dowager's Wrath
 
@@ -84,6 +85,7 @@ Validated:
 - The search operation around the mountains is explicitly described as extensive and unsuccessful.
 - Takuan and Otsu establish a temporary camp/fire in the mountain area while waiting for Takezo.
 - Takezo is close enough to hear Otsu's flute; Takuan deliberately uses the situation to draw him out.
+- Takuan recalls the legend of **Prince Hiromasa** playing the flute at the Suzaku Gate in Kyoto. This is a historical/cultural reference suitable for a compact micro-wiki entry, distinct from the main character layer.
 
 ### Section 6 — The Old Cryptomeria Tree
 
@@ -129,29 +131,51 @@ Validated:
 
 ## Pass 3 — historical-entity and micro-wiki audit
 
-The third pass focuses only on historical entities that materially improve the reading companion. It does not attempt to add general biography beyond what is useful for the current narrative context.
+The third pass focuses on **tertiary historical references** that a modern reader may not recognize. The purpose is to identify micro-wiki triggers, not to duplicate the main character database.
 
-### Takuan Sōhō
+### Confirmed micro-wiki triggers
 
-- First relevant Book I appearance: Section 3.
-- The narrative provides unusually extensive biographical context directly inside the novel.
-- The narrative identifies his religious training, Rinzai affiliation, studies with named teachers, residence at Nansōji, appointment as abbot of Daitokuji, and later departure.
-- Later sections establish his practical role in the capture, punishment and transformation of Takezo.
-- This is therefore a **high-priority historical micro-wiki entity**.
-- Narrative facts must remain distinct from any external historical biography.
+#### Sekigahara historical commanders — Section 1
 
-### Ikeda Terumasa / House of Ikeda
+The opening explicitly names:
 
-- The House of Ikeda becomes relevant during the capture/punishment sequence.
-- Section 8 explicitly identifies Takezo as being brought before Lord Ikeda Terumasa at Himeji Castle.
-- Terumasa's actions are narratively significant: three-year confinement, offer of service, naming Takezo Miyamoto, and release.
-- `Ikeda Terumasa` is therefore a high-priority micro-wiki entity with a spoiler boundary at Section 8.
-- `House of Ikeda` can be represented separately as a historical faction/political authority.
+- Kobayakawa Hideaki
+- Ishida Mitsunari
+- Ukita Hideie
+- Shimazu Yoshihiro
+- Konishi Yukinaga
+- Tokugawa Ieyasu
 
-### Historical-context candidates requiring further exact-text verification
+These are high-confidence historical-person triggers because the novel directly names them in its account of the battle and its aftermath.
 
-- Akamatsu context is retained as a candidate but deliberately kept minimal until its exact narrative references are audited directly against the transcription.
-- No additional historical person should be promoted into the micro-wiki merely because they are historically associated with the setting. The novel must establish a meaningful narrative reference first.
+#### Eastern Army / Western Army — Section 1
+
+These are historical faction labels used by the English translation. The micro-wiki should explain them briefly while noting that modern historical terminology should not be mistaken for exact period terminology.
+
+#### Akamatsu clan — Section 3
+
+The novel explicitly states that the Hon'iden and Shimmen families trace their lineage to the Akamatsu house. This is a strong historical-family trigger because the reference explains the social status and background of the local families.
+
+#### Minamoto no Hiromasa — Section 5
+
+The novel explicitly recalls Prince Hiromasa and the flute legend at the Suzaku Gate. This is a short historical/cultural reference and is an appropriate micro-wiki entry.
+
+### Historical entities that remain separate from the tertiary micro-wiki
+
+#### Takuan Soho
+
+The novel gives Takuan unusually extensive biographical and narrative treatment. His information belongs primarily in the main character/story layer. He is **not** a priority micro-wiki target merely because he was a real historical person.
+
+External historical context may be attached later if the UI needs it, but it should not displace the compact tertiary-reference purpose of the micro-wiki.
+
+#### Ikeda Terumasa / House of Ikeda
+
+Terumasa and the House of Ikeda are historically real and become narratively important in Section 8. They remain valid historical-context candidates, but their primary application role is currently the main narrative/event layer. A compact historical card may still be useful when the reader reaches the Himeji sequence.
+
+### Candidate requiring further verification
+
+- Akamatsu references beyond the explicit family-lineage statement should not be inferred from external genealogies.
+- No additional historical person should be promoted merely because they are associated with the period. The primary text must establish a meaningful reference first.
 
 ## High-value conclusions from the audit
 
@@ -177,22 +201,33 @@ The change from Takezo to Miyamoto Musashi is not merely an alias table entry. I
 
 At the end of the three-year confinement, Takuan tells Musashi that Ogin is alive and living with a relative in a village in the Sayo district. This relation comes directly from the novel and must not be confused with the later external geographic identification of Sayo.
 
-### 5. Takuan deserves a dedicated micro-wiki entry
+### 5. Micro-wiki trigger vs. main character data
 
-Section 3 alone contains substantial in-novel biographical material. This can populate the narrative layer of the micro-wiki without importing external biography.
+The micro-wiki is activated by a named historical reference that is likely to be unfamiliar or insufficiently contextualized for a modern reader. It is not a duplicate biography layer for major narrative characters.
 
 ## Historical-entity extraction notes
 
-Current Book I candidates include:
+Current Book I micro-wiki set:
 
-- Ishida Mitsunari;
 - Kobayakawa Hideaki;
-- Tokugawa forces / Tokugawa Ieyasu context;
-- Takuan Soho;
-- Lord Ikeda Terumasa / House of Ikeda;
-- Akamatsu clan context;
-- the battle of Sekigahara;
-- the Eastern/Western Army context.
+- Ishida Mitsunari;
+- Ukita Hideie;
+- Shimazu Yoshihiro;
+- Konishi Yukinaga;
+- Tokugawa Ieyasu;
+- Eastern Army;
+- Western Army;
+- Akamatsu clan;
+- Minamoto no Hiromasa.
+
+Secondary historical-context candidates:
+
+- Ikeda Terumasa;
+- House of Ikeda.
+
+Main character/story layer rather than priority micro-wiki:
+
+- Takuan Soho.
 
 The micro-wiki must always distinguish:
 
@@ -209,7 +244,7 @@ Continue only where it materially improves the companion:
 - complete character presence and absence;
 - every named location and meaningful spatial relation;
 - movement transitions and intended-vs-confirmed status;
-- historical people/factions/events for the micro-wiki;
+- historical people/families/factions/events for the micro-wiki;
 - aliases and identity transitions;
 - spoiler boundaries.
 
