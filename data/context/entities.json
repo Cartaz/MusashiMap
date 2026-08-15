@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "description": "Historical and contextual entities referenced by the novel. These entities are separate from the nine main characters and from the secondary fictional cast.",
+  "entities": [
+    {
+      "id": "kobayakawa_hideaki",
+      "name": "Kobayakawa Hideaki",
+      "type": "historical_person",
+      "period": "1582–1602",
+      "summary": "Daimyō and adopted member of the Toyotomi family. At Sekigahara in 1600 he defected from the Western Army and attacked Ōtani Yoshitsugu's forces, helping secure Tokugawa Ieyasu's victory.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara", "Gifu Sekigahara Battlefield Memorial Museum"]
+    },
+    {
+      "id": "ishida_mitsunari",
+      "name": "Ishida Mitsunari",
+      "type": "historical_person",
+      "period": "1560–1600",
+      "summary": "Toyotomi administrator and one of the principal leaders of the Western coalition at Sekigahara. He commanded from Mount Sasao and was defeated by Tokugawa Ieyasu's coalition.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara", "Gifu Sekigahara Battlefield Memorial Museum"]
+    },
+    {
+      "id": "ukita_hideie",
+      "name": "Ukita Hideie",
+      "type": "historical_person",
+      "period": "1572–1655",
+      "summary": "Daimyō and major Toyotomi ally who commanded a large contingent of the Western Army at Sekigahara. His forces fought in the center before the Western Army collapsed.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara"]
+    },
+    {
+      "id": "shimazu_yoshihiro",
+      "name": "Shimazu Yoshihiro",
+      "type": "historical_person",
+      "period": "1535–1619",
+      "summary": "Daimyō of Satsuma and commander of the Shimazu contingent at Sekigahara. His forces initially remained inactive and later made a famous retreat through the Eastern Army.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara"]
+    },
+    {
+      "id": "konishi_yukinaga",
+      "name": "Konishi Yukinaga",
+      "type": "historical_person",
+      "period": "1555–1600",
+      "summary": "Christian daimyō and Toyotomi commander who fought for the Western Army at Sekigahara. After the defeat he was captured and executed rather than committing suicide.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara"]
+    },
+    {
+      "id": "tokugawa_ieyasu",
+      "name": "Tokugawa Ieyasu",
+      "type": "historical_person",
+      "period": "1543–1616",
+      "summary": "Founder of the Tokugawa shogunate and leader of the Eastern Army at Sekigahara. His victory in 1600 enabled him to consolidate political control over Japan.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara", "Gifu Sekigahara Battlefield Memorial Museum"]
+    },
+    {
+      "id": "sekigahara",
+      "name": "Battle of Sekigahara",
+      "type": "historical_event",
+      "date": "1600-10-21",
+      "summary": "Decisive battle between the Eastern coalition led by Tokugawa Ieyasu and the Western coalition associated with the Toyotomi cause. The Western Army's defeat transformed the balance of power in Japan.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara", "Gifu Sekigahara Battlefield Memorial Museum"]
+    },
+    {
+      "id": "eastern_army",
+      "name": "Eastern Army",
+      "type": "historical_faction",
+      "summary": "Coalition led by Tokugawa Ieyasu during the Sekigahara campaign of 1600.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara"]
+    },
+    {
+      "id": "western_army",
+      "name": "Western Army",
+      "type": "historical_faction",
+      "summary": "Coalition formed around the Toyotomi cause and led operationally at Sekigahara by Ishida Mitsunari and other allied commanders.",
+      "relevance": "contextual",
+      "sources": ["NPS Battle of Sekigahara"]
+    }
+  ]
+}
