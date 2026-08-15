@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MusashiMap — mappa interattiva e senza spoiler di Musashi di Eiji Yoshikawa">
+  <title>MusashiMap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">MUSASHI · YOSHIKAWA</p>
+        <h1>MusashiMap</h1>
+        <p class="subtitle">Mappa narrativa senza spoiler</p>
+      </div>
+      <div class="chapter-control">
+        <label for="chapter">Capitolo</label>
+        <input id="chapter" type="number" min="1" value="1">
+      </div>
+    </header>
+    <section class="map-placeholder" aria-label="Area della mappa">
+      <div class="placeholder-card">
+        <span class="placeholder-kicker">FASE 1</span>
+        <h2>Struttura iniziale pronta</h2>
+        <p>La mappa geografica verrà collegata dopo la validazione del database narrativo.</p>
+      </div>
+    </section>
+    <aside class="info-panel">
+      <h2>Stato della lettura</h2>
+      <p id="status">Capitolo 1 · nessun dato narrativo ancora validato.</p>
+    </aside>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
