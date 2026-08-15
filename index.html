@@ -47,7 +47,7 @@
           </div>
         </div>
         <button id="character-toggle" class="character-toggle" type="button" aria-expanded="false" aria-controls="character-filter-body">Mostra filtri</button>
-        <div id="character-filter-body" class="character-filter-body">
+        <div id="character-filter-body" class="character-filter-body" hidden>
           <div id="character-filters" class="character-filters"></div>
           <div id="character-list" class="character-grid" aria-hidden="true"></div>
         </div>
@@ -76,37 +76,102 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
     (() => {
-      const VERSION = "20260816-2";
+      const VERSION = "20260816-3";
       let map;
       let markers;
       let routes;
+      let characterMarkers;
       let locations = [];
       let events = [];
+      let characterStates = [];
+      let characters = [];
       const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", area: "#8fb3c9", route: "#b99ad6", temple: "#b8c7a4", literary_landmark: "#d9a0b7" };
-      const icon = location => L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${colors[location.type] ?? "#c9d1d9"}"></span>`, iconSize: [18,18], iconAnchor: [9,9] });
+      const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4"];
       const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
+      const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+      const locationLabel = location => {
+        if (!location) return "Località non determinata";
+        return location.modern_name_romaji ? `${location.name} · ${location.modern_name_romaji}` : location.name;
+      };
+      const icon = location => L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${colors[location.type] ?? "#c9d1d9"}"></span>`, iconSize: [18,18], iconAnchor: [9,9] });
+      const characterIcon = (character, color) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker" style="--marker-color:${color}"></span>`, iconSize: [22,22], iconAnchor: [11,11] });
+
       function draw(section) {
         if (!map) return;
-        markers.clearLayers(); routes.clearLayers();
+        markers.clearLayers();
+        routes.clearLayers();
+        characterMarkers.clearLayers();
         const byId = new Map(locations.map(l => [l.id,l]));
-        const visible = new Set(); const plotted = [];
-        events.filter(e => e.section <= section).forEach(e => { if(e.location) visible.add(e.location); if(e.from) visible.add(e.from); if(e.to) visible.add(e.to); (e.via ?? []).forEach(v => visible.add(v)); });
-        visible.forEach(id => { const l=byId.get(id); if(!hasCoords(l)) return; L.marker(l.coordinates,{icon:icon(l),title:l.name}).bindPopup(`<strong>${l.name}</strong><br><span>${l.map_note ?? "Localizzazione moderna"}</span>`).addTo(markers); plotted.push(l.coordinates); });
-        events.filter(e => e.section === section && e.from && e.to).forEach(e => { const a=byId.get(e.from), b=byId.get(e.to); if(!hasCoords(a)||!hasCoords(b)) return; L.polyline([a.coordinates,b.coordinates],{color:"#d97706",weight:3,opacity:.78,dashArray:e.certainty === "intended_destination" ? "6 8" : null,interactive:false}).addTo(routes); });
+        const currentStates = new Map();
+        characterStates.filter(s => s.section <= section).forEach(s => currentStates.set(s.character, s));
+        const plotted = [];
+
+        // The current character state is the primary map state: advancing the reader moves
+        // the character markers whenever the data contains a mappable modern coordinate.
+        currentStates.forEach((state, characterId) => {
+          const location = byId.get(state.location);
+          if (!hasCoords(location)) return;
+          const character = characters.find(c => c.id === characterId);
+          const index = characters.findIndex(c => c.id === characterId);
+          const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
+          const marker = L.marker(location.coordinates, {icon: characterIcon(character, color), title: `${character?.name ?? characterId} · ${locationLabel(location)}`});
+          marker.bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
+          plotted.push(location.coordinates);
+        });
+
+        // Show only geographic context belonging to the current section, not every
+        // location encountered earlier in the book.
+        const sectionEvents = events.filter(e => e.section === section);
+        const contextualIds = new Set();
+        sectionEvents.forEach(e => {
+          if (e.location) contextualIds.add(e.location);
+          if (e.from) contextualIds.add(e.from);
+          if (e.to) contextualIds.add(e.to);
+          (e.via ?? []).forEach(v => contextualIds.add(v));
+        });
+        contextualIds.forEach(id => {
+          const location = byId.get(id);
+          if (!hasCoords(location)) return;
+          if ([...currentStates.values()].some(s => s.location === id)) return;
+          L.marker(location.coordinates, {icon: icon(location), title: locationLabel(location)})
+            .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`)
+            .addTo(markers);
+          plotted.push(location.coordinates);
+        });
+
+        sectionEvents.filter(e => e.from && e.to).forEach(e => {
+          const a=byId.get(e.from), b=byId.get(e.to);
+          if(!hasCoords(a)||!hasCoords(b)) return;
+          L.polyline([a.coordinates,b.coordinates],{color:"#d97706",weight:3,opacity:.78,dashArray:e.certainty === "intended_destination" ? "6 8" : null,interactive:false}).addTo(routes);
+        });
+
         if(plotted.length) map.fitBounds(L.latLngBounds(plotted).pad(.18),{maxZoom:10,animate:false});
       }
+
       async function boot() {
         try {
           map = L.map("map",{zoomControl:true,preferCanvas:true}).setView([35.05,135.55],7);
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'}).addTo(map);
-          markers=L.layerGroup().addTo(map); routes=L.layerGroup().addTo(map);
-          const [locationData,eventData]=await Promise.all([fetch(`data/locations.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),fetch(`data/events.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json())]);
-          locations=locationData.locations; events=eventData.events; draw(Number(document.querySelector("#section-select").value)||1);
-          document.querySelector("#section-select").addEventListener("change",e=>draw(Number(e.target.value)));
-          document.querySelector("#prev-section").addEventListener("click",()=>setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0));
-          document.querySelector("#next-section").addEventListener("click",()=>setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0));
-          document.querySelector("#chapter-apply").addEventListener("click",()=>setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0));
-          document.querySelector("#chapter").addEventListener("keydown",e=>{if(e.key==="Enter")setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0);});
+          markers=L.layerGroup().addTo(map);
+          routes=L.layerGroup().addTo(map);
+          characterMarkers=L.layerGroup().addTo(map);
+          const [locationData,eventData,stateData,characterData]=await Promise.all([
+            fetch(`data/locations.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),
+            fetch(`data/events.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),
+            fetch(`data/character-states.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),
+            fetch(`data/characters.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json())
+          ]);
+          locations=locationData.locations;
+          events=eventData.events;
+          characterStates=stateData.character_states;
+          characters=characterData.characters;
+          const syncDraw=()=>draw(Number(document.querySelector("#section-select").value)||1);
+          if(document.querySelector("#section-select").value) syncDraw();
+          document.querySelector("#section-select").addEventListener("change",syncDraw);
+          document.querySelector("#prev-section").addEventListener("click",()=>setTimeout(syncDraw,0));
+          document.querySelector("#next-section").addEventListener("click",()=>setTimeout(syncDraw,0));
+          document.querySelector("#chapter-apply").addEventListener("click",()=>setTimeout(syncDraw,0));
+          document.querySelector("#chapter").addEventListener("keydown",e=>{if(e.key==="Enter")setTimeout(syncDraw,0);});
         } catch(error) { console.error("Map initialization failed",error); }
       }
       document.querySelector("#character-toggle").addEventListener("click", () => {
@@ -120,6 +185,6 @@
       boot();
     })();
   </script>
-  <script type="module" src="js/app.js?v=20260816-2"></script>
+  <script type="module" src="js/app.js?v=20260816-3"></script>
 </body>
 </html>
