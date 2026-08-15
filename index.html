@@ -53,8 +53,19 @@
       <h2>Stato della lettura</h2>
       <p id="status">Caricamento…</p>
       <p id="validation" class="validation">Validazione dati…</p>
-      <h2>Eventi della sezione</h2>
-      <ul id="event-list"></ul>
+      <section class="sidebar-section">
+        <h2>Eventi della sezione</h2>
+        <ul id="event-list"></ul>
+      </section>
+      <section class="sidebar-section" aria-labelledby="wiki-title">
+        <div class="sidebar-heading">
+          <div>
+            <h2 id="wiki-title">Micro-wiki storica</h2>
+            <p>Riferimenti storici già incontrati nella lettura.</p>
+          </div>
+        </div>
+        <div id="wiki-list" class="wiki-list"></div>
+      </section>
     </aside>
   </main>
   <script type="module" src="js/app.js"></script>
