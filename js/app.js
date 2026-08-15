@@ -115,7 +115,7 @@ function render(section) {
     const card = document.createElement("article");
     const character = characterById.get(s.character);
     const location = locationById.get(s.location);
-    card.innerHTML = `<h3>${character?.name ?? s.character}</h3><p><strong>${location?.name ?? "Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Presenza: ${s.presence}; confidenza luogo: ${s.location_confidence}</small>`;
+    card.innerHTML = `<h3>${character?.name ?? s.character}</h3><p><strong>${location?.name ?? "Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Presenza: ${s.presence ?? s.status}; confidenza luogo: ${s.location_confidence ?? s.certainty}</small>`;
     return card;
   }));
 
@@ -131,6 +131,15 @@ function render(section) {
   }));
 
   renderWiki(section);
+
+  // The map is a separate renderer. Tell it explicitly that the canonical reader
+  // state has changed instead of relying on timing between two independent scripts.
+  window.dispatchEvent(new CustomEvent("musashi:reader-state", {
+    detail: {
+      section,
+      selectedCharacters: [...selectedCharacters]
+    }
+  }));
 }
 
 try {
