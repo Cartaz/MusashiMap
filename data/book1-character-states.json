@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "source_rule": "Novel facts in this file are derived only from the Internet Archive transcription used for MusashiMap.",
+  "book": "I",
+  "title": "Earth",
+  "purpose": "Section-scoped, spoiler-safe character state layer. Unknown means the transcription has not yet been normalized to a precise map location; it does not mean the character is absent.",
+  "characters": {
+    "musashi": {
+      "canonical_id": "musashi",
+      "states": [
+        {"section":1,"display_name":"Shinmen Takezo","presence":"present","location":"mount_ibuki_area","activity":"travelling and foraging after Sekigahara","location_confidence":"confirmed"},
+        {"section":2,"display_name":"Shinmen Takezo","presence":"present","location":"oko_akemi_house / mount_ibuki_area","activity":"staying with Oko and Akemi; goes into the mountains with Akemi and returns","location_confidence":"confirmed"},
+        {"section":3,"display_name":"Shinmen Takezo","presence":"present","location":"shippoji_area","activity":"seen during the flower festival and avoids capture","location_confidence":"confirmed"},
+        {"section":4,"display_name":"Shinmen Takezo","presence":"present","location":"sanumo_mountains","activity":"hiding while search parties pursue him","location_confidence":"confirmed"},
+        {"section":5,"display_name":"Shinmen Takezo","presence":"present","location":"sanumo_mountains","activity":"approaches Takuan and Otsu and is captured","location_confidence":"confirmed"},
+        {"section":6,"display_name":"Shinmen Takezo","presence":"present","location":"shippoji","activity":"held under Takuan's custody and bound to the old cryptomeria","location_confidence":"confirmed"},
+        {"section":7,"display_name":"Shinmen Takezo","presence":"present","location":"nakayama_pass","activity":"escapes with Otsu, then separates from her and heads toward Hinagura","location_confidence":"confirmed"},
+        {"section":8,"display_name":"Miyamoto Musashi","presence":"present","location":"himeji_castle","activity":"brought before Ikeda Terumasa; receives the name Miyamoto Musashi","location_confidence":"confirmed"}
+      ]
+    },
+    "matahachi": {
+      "canonical_id":"matahachi",
+      "states":[
+        {"section":1,"display_name":"Hon'den Matahachi","presence":"present","location":"mount_ibuki_area / oko_akemi_house","activity":"travelling with Takezo after Sekigahara and recovering at Oko's refuge","location_confidence":"confirmed"},
+        {"section":2,"display_name":"Hon'den Matahachi","presence":"present","location":"oko_akemi_house","activity":"stays at the refuge while Takezo and Akemi go into the mountains","location_confidence":"confirmed"}
+      ]
+    },
+    "otsu": {
+      "canonical_id":"otsu",
+      "states":[
+        {"section":3,"display_name":"Otsu","presence":"present","location":"shippoji_area","activity":"searching for Takezo and encountering him at the flower festival","location_confidence":"confirmed"},
+        {"section":4,"display_name":"Otsu","presence":"present","location":"shippoji","activity":"in Takuan's orbit while Takezo remains at large","location_confidence":"confirmed"},
+        {"section":5,"display_name":"Otsu","presence":"present","location":"sanumo_mountains","activity":"travelling with Takuan while waiting for Takezo","location_confidence":"confirmed"},
+        {"section":6,"display_name":"Otsu","presence":"present","location":"shippoji","activity":"present during the custody of Takezo","location_confidence":"confirmed"},
+        {"section":7,"display_name":"Otsu","presence":"present","location":"hanada_bridge","activity":"travels with Takezo until Nakayama Pass, then continues toward Himeji","location_confidence":"confirmed"},
+        {"section":8,"display_name":"Otsu","presence":"present","location":"himeji_area","activity":"remains part of the Himeji-side narrative after the separation from Takezo","location_confidence":"needs_normalization"}
+      ]
+    },
+    "takuan": {
+      "canonical_id":"takuan",
+      "states":[
+        {"section":3,"display_name":"Takuan Soho","presence":"present","location":"shippoji","activity":"returns to the temple and becomes involved in Takezo's fate","location_confidence":"confirmed"},
+        {"section":4,"display_name":"Takuan Soho","presence":"present","location":"shippoji","activity":"deals with the authorities and assumes responsibility for Takezo","location_confidence":"confirmed"},
+        {"section":5,"display_name":"Takuan Soho","presence":"present","location":"sanumo_mountains","activity":"waits for and captures Takezo","location_confidence":"confirmed"},
+        {"section":6,"display_name":"Takuan Soho","presence":"present","location":"shippoji","activity":"holds Takezo under custody and oversees his punishment","location_confidence":"confirmed"},
+        {"section":7,"display_name":"Takuan Soho","presence":"present","location":"shippoji / himeji_route","activity":"controls the next stage of Takezo's fate","location_confidence":"needs_normalization"},
+        {"section":8,"display_name":"Takuan Soho","presence":"present","location":"himeji_castle","activity":"brings Takezo before Ikeda Terumasa","location_confidence":"confirmed"}
+      ]
+    },
+    "osugi": {
+      "canonical_id":"osugi",
+      "states":[
+        {"section":3,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto / shippoji_area","activity":"pursues Takezo and presses the authorities to capture him","location_confidence":"needs_normalization"},
+        {"section":4,"display_name":"Obaba Osugi","presence":"present","location":"shippoji / miyamoto_area","activity":"continues the pursuit and demands punishment","location_confidence":"needs_normalization"},
+        {"section":5,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto_area","activity":"continues to seek Takezo and Otsu","location_confidence":"needs_normalization"},
+        {"section":6,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto_area","activity":"remains involved in the aftermath of Takezo's capture","location_confidence":"needs_normalization"},
+        {"section":7,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto / himeji_route","activity":"continues the pursuit and family conflict","location_confidence":"needs_normalization"},
+        {"section":8,"display_name":"Obaba Osugi","presence":"present","location":"himeji_area","activity":"part of the family and Himeji-side events","location_confidence":"needs_normalization"}
+      ]
+    },
+    "akemi": {
+      "canonical_id":"akemi",
+      "states":[
+        {"section":1,"display_name":"Akemi","presence":"present","location":"oko_akemi_house","activity":"helps shelter Takezo and Matahachi","location_confidence":"confirmed"},
+        {"section":2,"display_name":"Akemi","presence":"present","location":"mount_ibuki_area / oko_akemi_house","activity":"travels into the mountains with Takezo and returns to the refuge","location_confidence":"confirmed"}
+      ]
+    },
+    "ogin": {
+      "canonical_id":"ogin",
+      "states":[
+        {"section":3,"display_name":"Ogin","presence":"present","location":"miyamoto_area","activity":"part of the Shinmen-family events surrounding Takezo","location_confidence":"needs_normalization"},
+        {"section":4,"display_name":"Ogin","presence":"present","location":"miyamoto_area","activity":"involved in the family's response to Takezo","location_confidence":"needs_normalization"},
+        {"section":6,"display_name":"Ogin","presence":"present","location":"hinagura","activity":"held at Hinagura and sought by Takezo","location_confidence":"confirmed"},
+        {"section":7,"display_name":"Ogin","presence":"present","location":"hinagura","activity":"remains connected to the Hinagura custody sequence","location_confidence":"confirmed"},
+        {"section":8,"display_name":"Ogin","presence":"present","location":"himeji_area","activity":"part of the events following the transfer from Hinagura","location_confidence":"needs_normalization"}
+      ]
+    },
+    "jotaro":{"canonical_id":"jotaro","states":[]},
+    "kojiro":{"canonical_id":"kojiro","states":[]}
+  },
+  "quality_flags": {
+    "confirmed": "Directly supported by a clear location or movement in the transcription.",
+    "needs_normalization": "The character is present in the section, but the exact map node or end-of-section state still needs a second textual pass.",
+    "unknown": "Not enough evidence yet to assign a safe state without inference."
+  }
+}
