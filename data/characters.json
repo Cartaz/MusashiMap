@@ -1,4 +1,15 @@
 {
-  "version": 1,
-  "characters": []
+  "version": 2,
+  "characters": [
+    {"id":"takezo","name":"Takezo","aliases":["Miyamoto Musashi","Miyamoto"]},
+    {"id":"matahachi","name":"Matahachi","aliases":["Hon'iden Matahachi"]},
+    {"id":"otsu","name":"Otsu","aliases":[]},
+    {"id":"takuan","name":"Takuan","aliases":["Takuan Soho"]},
+    {"id":"oko","name":"Oko","aliases":[]},
+    {"id":"akemi","name":"Akemi","aliases":[]},
+    {"id":"temma","name":"Tsujikaze Temma","aliases":["Temma"]},
+    {"id":"osugi","name":"Osugi","aliases":["Hon'iden Osugi"]},
+    {"id":"ogin","name":"Ogin","aliases":[]},
+    {"id":"lord_ikeda","name":"Lord Ikeda","aliases":["Ikeda"]}
+  ]
 }
