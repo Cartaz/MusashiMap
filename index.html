@@ -16,20 +16,24 @@
         <p class="subtitle">Mappa narrativa senza spoiler</p>
       </div>
       <div class="chapter-control">
-        <label for="chapter">Capitolo</label>
-        <input id="chapter" type="number" min="1" value="1">
+        <label for="chapter">Sezione</label>
+        <input id="chapter" type="number" min="1" max="8" value="1">
       </div>
     </header>
     <section class="map-placeholder" aria-label="Area della mappa">
       <div class="placeholder-card">
-        <span class="placeholder-kicker">FASE 1</span>
-        <h2>Struttura iniziale pronta</h2>
-        <p>La mappa geografica verrà collegata dopo la validazione del database narrativo.</p>
+        <span class="placeholder-kicker">BOOK I · EARTH</span>
+        <h2 id="section-title">001 · The Little Bell</h2>
+        <p>La geografia verrà collegata dopo la validazione delle località. Per ora questa vista mostra esclusivamente le informazioni disponibili fino alla sezione selezionata.</p>
+        <div id="character-list" class="character-grid"></div>
       </div>
     </section>
     <aside class="info-panel">
       <h2>Stato della lettura</h2>
-      <p id="status">Capitolo 1 · nessun dato narrativo ancora validato.</p>
+      <p id="status">Caricamento…</p>
+      <p id="validation" class="validation">Validazione dati…</p>
+      <h2>Eventi della sezione</h2>
+      <ul id="event-list"></ul>
     </aside>
   </main>
   <script type="module" src="js/app.js"></script>

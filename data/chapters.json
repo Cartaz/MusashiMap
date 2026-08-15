@@ -1,10 +1,14 @@
 {
-  "version": 1,
-  "source": {
-    "title": "Musashi",
-    "author": "Eiji Yoshikawa",
-    "translator": "Charles S. Terry",
-    "source_url": "https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt"
-  },
-  "chapters": []
+  "version": 2,
+  "source": {"title":"Musashi","author":"Eiji Yoshikawa","translator":"Charles S. Terry","source_url":"https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt"},
+  "sections": [
+    {"id":"s001","number":1,"book":"I","book_title":"Earth","title":"The Little Bell"},
+    {"id":"s002","number":2,"book":"I","book_title":"Earth","title":"The Comb"},
+    {"id":"s003","number":3,"book":"I","book_title":"Earth","title":"The Flower Festival"},
+    {"id":"s004","number":4,"book":"I","book_title":"Earth","title":"The Dowager's Wrath"},
+    {"id":"s005","number":5,"book":"I","book_title":"Earth","title":"The Art of War"},
+    {"id":"s006","number":6,"book":"I","book_title":"Earth","title":"The Old Cryptomeria Tree"},
+    {"id":"s007","number":7,"book":"I","book_title":"Earth","title":"The Rock and the Tree"},
+    {"id":"s008","number":8,"book":"I","book_title":"Earth","title":"The Birth of Musashi"}
+  ]
 }
