@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-5";
+  const VERSION = "20260816-6";
   let map;
   let markers;
   let routes;
@@ -15,8 +15,13 @@
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
   const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
   const locationLabel = location => location?.modern_name_romaji ? `${location.name} · ${location.modern_name_romaji}` : (location?.name ?? "Località non determinata");
-  const icon = location => L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${colors[location.type] ?? "#c9d1d9"}"></span>`, iconSize: [18,18], iconAnchor: [9,9] });
-  const characterIcon = (character, color) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13,13] });
+  const precisionLabel = location => {
+    if (!location?.coordinate_precision || location.coordinate_precision === "exact") return "Posizione moderna precisa";
+    if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno";
+    return "Posizione indicativa dell'area";
+  };
+  const icon = location => L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker ${location.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${colors[location.type] ?? "#c9d1d9"}"></span>`, iconSize: [18,18], iconAnchor: [9,9] });
+  const characterIcon = (character, color, location) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13,13] });
 
   function draw(section) {
     if (!map || !markers || !characterMarkers) return;
@@ -35,8 +40,8 @@
       if (!location || !hasCoords(location)) return;
       const index = characters.findIndex(c => c.id === characterId);
       const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
-      const marker = L.marker(location.coordinates, {icon: characterIcon(character, color), title: `${character?.name ?? characterId} · ${locationLabel(location)}`});
-      marker.bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
+      const marker = L.marker(location.coordinates, {icon: characterIcon(character, color, location), title: `${character?.name ?? characterId} · ${locationLabel(location)}`});
+      marker.bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><small>${esc(precisionLabel(location))}</small><br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
       plotted.push(location.coordinates);
     });
 
@@ -53,7 +58,7 @@
       if (!hasCoords(location)) return;
       if ([...currentStates.values()].some(s => selectedCharacters.has(s.character) && s.location === id)) return;
       L.marker(location.coordinates, {icon: icon(location), title: locationLabel(location)})
-        .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`)
+        .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`)
         .addTo(markers);
       plotted.push(location.coordinates);
     });
