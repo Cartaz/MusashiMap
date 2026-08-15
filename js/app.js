@@ -1,5 +1,6 @@
 import { loadData } from "./data.js";
 import { validateData } from "./validate.js";
+import { createReaderProgress } from "./reader-progress.js";
 
 const chapterInput = document.querySelector("#chapter");
 const chapterApply = document.querySelector("#chapter-apply");
@@ -17,7 +18,7 @@ const selectAll = document.querySelector("#select-all");
 const selectNone = document.querySelector("#select-none");
 
 let data;
-let currentSection = 1;
+let reader;
 let selectedCharacters = new Set();
 
 function stateFor(section) {
@@ -29,12 +30,9 @@ function stateFor(section) {
 }
 
 function applySection(value) {
-  const max = Number(chapterInput.max);
-  const parsed = Number.parseInt(value, 10);
-  if (!Number.isInteger(parsed) || parsed < 1 || parsed > max) return false;
-  currentSection = parsed;
-  chapterInput.value = String(parsed);
-  render(parsed);
+  if (!reader.setSection(value)) return false;
+  chapterInput.value = String(reader.section);
+  render(reader.section);
   return true;
 }
 
@@ -50,7 +48,7 @@ function renderCharacterFilters() {
       input.addEventListener("change", () => {
         if (input.checked) selectedCharacters.add(character.id);
         else selectedCharacters.delete(character.id);
-        render(currentSection);
+        render(reader.section);
       });
       label.append(input, document.createTextNode(character.name));
       return label;
@@ -62,10 +60,10 @@ function render(section) {
   if (!sectionData) return;
   bookLabel.textContent = `LIBRO ${sectionData.book} · ${sectionData.book_title}`;
   title.textContent = sectionData.title;
-  status.textContent = `Sezione ${section} · dati disponibili fino a questo punto della storia`;
+  status.textContent = `Sezione ${section} · informazioni visibili fino a questo punto della storia`;
   sectionSelect.value = String(section);
-  prevButton.disabled = section <= 1;
-  nextButton.disabled = section >= Number(chapterInput.max);
+  prevButton.disabled = section <= reader.min;
+  nextButton.disabled = section >= reader.max;
 
   const characterById = new Map(data.characters.characters.map(c => [c.id, c]));
   const locationById = new Map(data.locations.locations.map(l => [l.id, l]));
@@ -76,7 +74,7 @@ function render(section) {
     const card = document.createElement("article");
     const character = characterById.get(s.character);
     const location = locationById.get(s.location);
-    card.innerHTML = `<h3>${character?.name ?? s.character}</h3><p><strong>${location?.name ?? "Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Stato: ${s.status}</small>`;
+    card.innerHTML = `<h3>${character?.name ?? s.character}</h3><p><strong>${location?.name ?? "Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Presenza: ${s.presence}; confidenza luogo: ${s.location_confidence}</small>`;
     return card;
   }));
 
@@ -94,13 +92,15 @@ function render(section) {
 
 try {
   data = await loadData();
+  reader = createReaderProgress(data.chapters, data.readerProgress.state.current_section);
   const result = validateData(data);
   validation.textContent = result.valid ? "Database: validato" : `Database: ${result.errors.length} errori`;
   validation.dataset.state = result.valid ? "ok" : "error";
   if (result.errors.length) console.error("MusashiMap data validation errors", result.errors);
 
-  const maxSection = Math.max(...data.chapters.sections.map(s => s.number));
-  chapterInput.max = String(maxSection);
+  chapterInput.min = String(reader.min);
+  chapterInput.max = String(reader.max);
+  chapterInput.value = String(reader.section);
   sectionSelect.replaceChildren(...data.chapters.sections.map(s => {
     const option = document.createElement("option");
     option.value = String(s.number);
@@ -110,41 +110,43 @@ try {
 
   selectedCharacters = new Set(data.characters.characters.filter(c => c.importance === "main").map(c => c.id));
   renderCharacterFilters();
-  render(currentSection);
+  render(reader.section);
 } catch (error) {
   validation.textContent = "Errore nel caricamento dei dati";
   console.error(error);
 }
 
 chapterInput.addEventListener("input", () => {
-  // Do not replace an empty field while the user is typing.
   chapterInput.setCustomValidity("");
   if (chapterInput.value === "") return;
   const parsed = Number.parseInt(chapterInput.value, 10);
-  const max = Number(chapterInput.max);
-  if (!Number.isInteger(parsed) || parsed < 1 || parsed > max) chapterInput.setCustomValidity(`Inserisci una sezione da 1 a ${max}.`);
+  if (!Number.isInteger(parsed) || parsed < reader.min || parsed > reader.max) chapterInput.setCustomValidity(`Inserisci una sezione da ${reader.min} a ${reader.max}.`);
 });
 
 chapterInput.addEventListener("keydown", event => {
   if (event.key === "Enter") {
     if (!applySection(chapterInput.value)) chapterInput.reportValidity();
   } else if (event.key === "Escape") {
-    chapterInput.value = String(currentSection);
+    chapterInput.value = String(reader.section);
   }
 });
 chapterApply.addEventListener("click", () => {
   if (!applySection(chapterInput.value)) chapterInput.reportValidity();
 });
-prevButton.addEventListener("click", () => applySection(currentSection - 1));
-nextButton.addEventListener("click", () => applySection(currentSection + 1));
+prevButton.addEventListener("click", () => {
+  if (reader.previous()) render(reader.section);
+});
+nextButton.addEventListener("click", () => {
+  if (reader.next()) render(reader.section);
+});
 sectionSelect.addEventListener("change", () => applySection(sectionSelect.value));
 selectAll.addEventListener("click", () => {
   selectedCharacters = new Set(data.characters.characters.filter(c => c.importance === "main").map(c => c.id));
   renderCharacterFilters();
-  render(currentSection);
+  render(reader.section);
 });
 selectNone.addEventListener("click", () => {
   selectedCharacters.clear();
   renderCharacterFilters();
-  render(currentSection);
+  render(reader.section);
 });
