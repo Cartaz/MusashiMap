@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "relationships": [
+    {"from":"kobayakawa_hideaki","to":"tokugawa_ieyasu","type":"secret_alignment","section_start":1},
+    {"from":"kobayakawa_hideaki","to":"ishida_mitsunari","type":"opposed_at_sekigahara","section_start":1},
+    {"from":"ukita_hideie","to":"ishida_mitsunari","type":"western_army_ally","section_start":1},
+    {"from":"shimazu_yoshihiro","to":"ishida_mitsunari","type":"western_army_ally","section_start":1},
+    {"from":"konishi_yukinaga","to":"ishida_mitsunari","type":"western_army_ally","section_start":1},
+    {"from":"kobayakawa_hideaki","to":"western_army","type":"member_before_defection","section_start":1},
+    {"from":"kobayakawa_hideaki","to":"eastern_army","type":"defected_to","section_start":1},
+    {"from":"ishida_mitsunari","to":"western_army","type":"principal_commander","section_start":1},
+    {"from":"tokugawa_ieyasu","to":"eastern_army","type":"principal_commander","section_start":1},
+    {"from":"ukita_hideie","to":"western_army","type":"commander","section_start":1},
+    {"from":"shimazu_yoshihiro","to":"western_army","type":"commander","section_start":1},
+    {"from":"konishi_yukinaga","to":"western_army","type":"commander","section_start":1},
+    {"from":"eastern_army","to":"sekigahara","type":"participant","section_start":1},
+    {"from":"western_army","to":"sekigahara","type":"participant","section_start":1},
+    {"from":"kobayakawa_hideaki","to":"sekigahara","type":"participant","section_start":1},
+    {"from":"ishida_mitsunari","to":"sekigahara","type":"participant","section_start":1},
+    {"from":"ukita_hideie","to":"sekigahara","type":"participant","section_start":1},
+    {"from":"shimazu_yoshihiro","to":"sekigahara","type":"participant","section_start":1},
+    {"from":"konishi_yukinaga","to":"sekigahara","type":"participant","section_start":1},
+    {"from":"tokugawa_ieyasu","to":"sekigahara","type":"commander","section_start":1}
+  ]
+}
