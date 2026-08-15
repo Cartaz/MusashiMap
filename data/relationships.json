@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "relationship_types": [
+    "family",
+    "friend_ally",
+    "acquaintance",
+    "master",
+    "disciple",
+    "rival",
+    "enemy",
+    "authority",
+    "partner_family",
+    "servant_employer",
+    "faction"
+  ],
+  "relationships": [
+    {"from":"takezo","to":"ogin","type":"family","subtype":"sibling"},
+    {"from":"takezo","to":"matahachi","type":"friend_ally","subtype":"childhood_friend"},
+    {"from":"takezo","to":"takuan","type":"master","subtype":"guide"},
+    {"from":"otsu","to":"takuan","type":"acquaintance","subtype":"trusted_guide"},
+    {"from":"matahachi","to":"osugi","type":"family","subtype":"mother"},
+    {"from":"matahachi","to":"takezo","type":"friend_ally","subtype":"childhood_friend"},
+    {"from":"akemi","to":"oko","type":"family","subtype":"daughter"}
+  ]
+}

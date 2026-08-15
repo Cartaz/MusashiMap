@@ -2,32 +2,77 @@ import { loadData } from "./data.js";
 import { validateData } from "./validate.js";
 
 const chapterInput = document.querySelector("#chapter");
+const chapterApply = document.querySelector("#chapter-apply");
+const prevButton = document.querySelector("#prev-section");
+const nextButton = document.querySelector("#next-section");
+const sectionSelect = document.querySelector("#section-select");
+const bookLabel = document.querySelector("#book-label");
 const title = document.querySelector("#section-title");
 const status = document.querySelector("#status");
 const characterList = document.querySelector("#character-list");
 const eventList = document.querySelector("#event-list");
 const validation = document.querySelector("#validation");
+const characterFilters = document.querySelector("#character-filters");
+const selectAll = document.querySelector("#select-all");
+const selectNone = document.querySelector("#select-none");
 
 let data;
+let currentSection = 1;
+let selectedCharacters = new Set();
 
 function stateFor(section) {
   const states = new Map();
   for (const state of data.states.character_states) {
     if (state.section <= section) states.set(state.character, state);
   }
-  return [...states.values()];
+  return states;
+}
+
+function applySection(value) {
+  const max = Number(chapterInput.max);
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isInteger(parsed) || parsed < 1 || parsed > max) return false;
+  currentSection = parsed;
+  chapterInput.value = String(parsed);
+  render(parsed);
+  return true;
+}
+
+function renderCharacterFilters() {
+  characterFilters.replaceChildren(...data.characters.characters
+    .filter(c => c.importance === "main")
+    .map(character => {
+      const label = document.createElement("label");
+      label.className = "character-filter";
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = selectedCharacters.has(character.id);
+      input.addEventListener("change", () => {
+        if (input.checked) selectedCharacters.add(character.id);
+        else selectedCharacters.delete(character.id);
+        render(currentSection);
+      });
+      label.append(input, document.createTextNode(character.name));
+      return label;
+    }));
 }
 
 function render(section) {
   const sectionData = data.chapters.sections.find(s => s.number === section);
   if (!sectionData) return;
-  title.textContent = `${String(section).padStart(3, "0")} · ${sectionData.title}`;
-  status.textContent = `Book ${sectionData.book} · ${sectionData.book_title}`;
+  bookLabel.textContent = `LIBRO ${sectionData.book} · ${sectionData.book_title}`;
+  title.textContent = sectionData.title;
+  status.textContent = `Sezione ${section} · dati disponibili fino a questo punto della storia`;
+  sectionSelect.value = String(section);
+  prevButton.disabled = section <= 1;
+  nextButton.disabled = section >= Number(chapterInput.max);
 
   const characterById = new Map(data.characters.characters.map(c => [c.id, c]));
   const locationById = new Map(data.locations.locations.map(l => [l.id, l]));
   const states = stateFor(section);
-  characterList.replaceChildren(...states.map(s => {
+  const visibleStates = [...states.values()].filter(s => selectedCharacters.has(s.character));
+
+  characterList.replaceChildren(...visibleStates.map(s => {
     const card = document.createElement("article");
     const character = characterById.get(s.character);
     const location = locationById.get(s.location);
@@ -35,7 +80,7 @@ function render(section) {
     return card;
   }));
 
-  const events = data.events.events.filter(e => e.section === section);
+  const events = data.events.events.filter(e => e.section === section && e.characters.some(id => selectedCharacters.has(id)));
   eventList.replaceChildren(...events.map(e => {
     const item = document.createElement("li");
     const names = e.characters.map(id => characterById.get(id)?.name ?? id).join(", ");
@@ -53,15 +98,53 @@ try {
   validation.textContent = result.valid ? "Database: validato" : `Database: ${result.errors.length} errori`;
   validation.dataset.state = result.valid ? "ok" : "error";
   if (result.errors.length) console.error("MusashiMap data validation errors", result.errors);
-  chapterInput.max = Math.max(...data.chapters.sections.map(s => s.number));
-  render(1);
+
+  const maxSection = Math.max(...data.chapters.sections.map(s => s.number));
+  chapterInput.max = String(maxSection);
+  sectionSelect.replaceChildren(...data.chapters.sections.map(s => {
+    const option = document.createElement("option");
+    option.value = String(s.number);
+    option.textContent = `${s.book} — ${s.title}`;
+    return option;
+  }));
+
+  selectedCharacters = new Set(data.characters.characters.filter(c => c.importance === "main").map(c => c.id));
+  renderCharacterFilters();
+  render(currentSection);
 } catch (error) {
   validation.textContent = "Errore nel caricamento dei dati";
   console.error(error);
 }
 
 chapterInput.addEventListener("input", () => {
-  const chapter = Math.min(Math.max(1, Number.parseInt(chapterInput.value || "1", 10)), Number(chapterInput.max));
-  chapterInput.value = chapter;
-  render(chapter);
+  // Do not replace an empty field while the user is typing.
+  chapterInput.setCustomValidity("");
+  if (chapterInput.value === "") return;
+  const parsed = Number.parseInt(chapterInput.value, 10);
+  const max = Number(chapterInput.max);
+  if (!Number.isInteger(parsed) || parsed < 1 || parsed > max) chapterInput.setCustomValidity(`Inserisci una sezione da 1 a ${max}.`);
+});
+
+chapterInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    if (!applySection(chapterInput.value)) chapterInput.reportValidity();
+  } else if (event.key === "Escape") {
+    chapterInput.value = String(currentSection);
+  }
+});
+chapterApply.addEventListener("click", () => {
+  if (!applySection(chapterInput.value)) chapterInput.reportValidity();
+});
+prevButton.addEventListener("click", () => applySection(currentSection - 1));
+nextButton.addEventListener("click", () => applySection(currentSection + 1));
+sectionSelect.addEventListener("change", () => applySection(sectionSelect.value));
+selectAll.addEventListener("click", () => {
+  selectedCharacters = new Set(data.characters.characters.filter(c => c.importance === "main").map(c => c.id));
+  renderCharacterFilters();
+  render(currentSection);
+});
+selectNone.addEventListener("click", () => {
+  selectedCharacters.clear();
+  renderCharacterFilters();
+  render(currentSection);
 });
