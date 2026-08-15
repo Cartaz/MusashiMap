@@ -137,7 +137,7 @@ Do not continue researching merely to turn an unresolved area into a precise pin
 
 ### Historical micro-wiki
 
-The micro-wiki has now been explicitly defined as a **contextual lookup for tertiary historical references**, not a biography database for major characters.
+The micro-wiki is explicitly defined as a **contextual lookup for tertiary historical references**, not a biography database for major characters.
 
 The model is:
 
@@ -182,34 +182,40 @@ It should **not** duplicate the main narrative data for major characters such as
 
 Every historical summary must retain its external source metadata and must never be presented as though it were information supplied by Yoshikawa.
 
-Initial entities include:
+### Micro-wiki source audit — pass 1
 
-- Kobayakawa Hideaki
-- Ishida Mitsunari
-- Ukita Hideie
-- Shimazu Yoshihiro
-- Konishi Yukinaga
-- Tokugawa Ieyasu
-- Battle of Sekigahara
-- Eastern Army
-- Western Army
+The first source-completion pass has now populated authoritative external sources for the initial Book I set:
 
-The primary-text audit is used to discover further lightly mentioned historical names, families and factions.
+- Kobayakawa Hideaki;
+- Ishida Mitsunari;
+- Ukita Hideie;
+- Shimazu Yoshihiro;
+- Konishi Yukinaga;
+- Tokugawa Ieyasu;
+- Battle of Sekigahara;
+- Eastern Army;
+- Western Army.
 
-### Primary-text audit — pass 2
+The same pass added two tertiary references discovered directly in the primary text:
 
-The dedicated `research/book1-primary-text-audit.md` has now completed a second high-value pass over Book I.
+- Akamatsu clan — Section 3;
+- Minamoto no Hiromasa — Section 5.
 
-Newly recorded confirmations include:
+The Akamatsu source is the Hyogo Prefectural Museum of History. Hiromasa is supported by the National Theatre of Japan, with an additional cultural source from the Ota Memorial Museum of Art.
 
-- Mount Fuwa as an explicit narrative landmark in the opening geography;
-- the distinction between Tarui as a trade destination and Tarui as an actual destination of Takezo/Matahachi;
-- substantial in-novel biographical material for Takuan;
-- the three-year confinement at Himeji Castle;
-- the explicit Takezo → Miyamoto → Musashi naming event;
-- the post-confinement Himeji → Sayo relation through Ogin.
+`data/context/micro-wiki.json` now stores the external source metadata with each approved entry.
 
-The audit remains open only for remaining high-value narrative validation, not for endless rechecking.
+### Primary-text audit — pass 3
+
+The dedicated `research/book1-primary-text-audit.md` now reflects the corrected micro-wiki scope.
+
+Important distinction established:
+
+- Takuan Soho has extensive in-novel characterization and therefore belongs primarily to the main narrative layer;
+- Ikeda Terumasa / House of Ikeda are historically useful contextual candidates but are not automatically promoted to the tertiary set;
+- lightly mentioned historical references such as Akamatsu and Minamoto no Hiromasa are exactly the type of entity the micro-wiki is designed to explain.
+
+The audit also confirms that the Akamatsu lineage reference occurs in the Flower Festival section and the Hiromasa flute reference occurs in The Art of War.
 
 ## 4. Current work in progress
 
@@ -265,7 +271,7 @@ Finish and validate the narrative, character, location, movement, event and hist
 
 ### Milestone 2 — Historical micro-wiki source completion
 
-Replace any placeholder source records with authoritative sources and complete the compact summaries for the approved tertiary references.
+Audit the remaining approved candidates, including Ikeda Terumasa / House of Ikeda if the final UI test shows that their historical context materially helps the reader. Do not expand the set simply for completeness.
 
 ### Milestone 3 — Geographic layer
 
@@ -373,10 +379,10 @@ SPOILER-SAFE CHARACTER MODEL    DONE
 LOCATION NORMALIZATION          DONE / VALIDATING
 TOPOGRAPHIC METHODOLOGY         DONE
 TOPOGRAPHIC INITIAL AUDIT       DONE / SELECTIVE FOLLOW-UP ONLY
-HISTORICAL MICRO-WIKI MODEL     DONE / SOURCE COMPLETION IN PROGRESS
-BOOK I PRIMARY-TEXT AUDIT       IN PROGRESS — PASS 2
+HISTORICAL MICRO-WIKI MODEL     DONE
+MICRO-WIKI SOURCE AUDIT         IN PROGRESS — PASS 1
+BOOK I PRIMARY-TEXT AUDIT       IN PROGRESS — PASS 3
 ARCHIVE → LUNI MAPPING          NEXT
-MICRO-WIKI SOURCE COMPLETION    NEXT
 COORDINATE INTEGRATION          NEXT
 READER-PROGRESS ENGINE          NEXT
 SPOILER FIREWALL                NEXT
