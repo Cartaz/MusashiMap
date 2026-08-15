@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="MusashiMap — mappa interattiva e senza spoiler di Musashi di Eiji Yoshikawa">
   <title>MusashiMap</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3fL6c4s9X8qYJ3G3fR1s9xV4Qf2c=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link rel="stylesheet" href="css/style.css?v=20260816">
 </head>
 <body>
@@ -47,6 +47,7 @@
           </div>
         </div>
         <div id="character-filters" class="character-filters"></div>
+        <div id="character-list" class="character-grid" aria-hidden="true"></div>
       </section>
     </section>
 
@@ -69,7 +70,45 @@
       </section>
     </aside>
   </main>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script>
+    (() => {
+      const VERSION = "20260816";
+      let map;
+      let markers;
+      let routes;
+      let locations = [];
+      let events = [];
+      const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", area: "#8fb3c9", route: "#b99ad6", temple: "#b8c7a4", literary_landmark: "#d9a0b7" };
+      const icon = location => L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${colors[location.type] ?? "#c9d1d9"}"></span>`, iconSize: [18,18], iconAnchor: [9,9] });
+      const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
+      function draw(section) {
+        if (!map) return;
+        markers.clearLayers(); routes.clearLayers();
+        const byId = new Map(locations.map(l => [l.id,l]));
+        const visible = new Set(); const plotted = [];
+        events.filter(e => e.section <= section).forEach(e => { if(e.location) visible.add(e.location); if(e.from) visible.add(e.from); if(e.to) visible.add(e.to); (e.via ?? []).forEach(v => visible.add(v)); });
+        visible.forEach(id => { const l=byId.get(id); if(!hasCoords(l)) return; L.marker(l.coordinates,{icon:icon(l),title:l.name}).bindPopup(`<strong>${l.name}</strong><br><span>${l.map_note ?? "Localizzazione moderna"}</span>`).addTo(markers); plotted.push(l.coordinates); });
+        events.filter(e => e.section === section && e.from && e.to).forEach(e => { const a=byId.get(e.from), b=byId.get(e.to); if(!hasCoords(a)||!hasCoords(b)) return; L.polyline([a.coordinates,b.coordinates],{color:"#d97706",weight:3,opacity:.78,dashArray:e.certainty === "intended_destination" ? "6 8" : null,interactive:false}).addTo(routes); });
+        if(plotted.length) map.fitBounds(L.latLngBounds(plotted).pad(.18),{maxZoom:10,animate:false});
+      }
+      async function boot() {
+        try {
+          map = L.map("map",{zoomControl:true,preferCanvas:true}).setView([35.05,135.55],7);
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'}).addTo(map);
+          markers=L.layerGroup().addTo(map); routes=L.layerGroup().addTo(map);
+          const [locationData,eventData]=await Promise.all([fetch(`data/locations.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),fetch(`data/events.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json())]);
+          locations=locationData.locations; events=eventData.events; draw(Number(document.querySelector("#section-select").value)||1);
+          document.querySelector("#section-select").addEventListener("change",e=>draw(Number(e.target.value)));
+          document.querySelector("#prev-section").addEventListener("click",()=>setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0));
+          document.querySelector("#next-section").addEventListener("click",()=>setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0));
+          document.querySelector("#chapter-apply").addEventListener("click",()=>setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0));
+          document.querySelector("#chapter").addEventListener("keydown",e=>{if(e.key==="Enter")setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0);});
+        } catch(error) { console.error("Map initialization failed",error); }
+      }
+      boot();
+    })();
+  </script>
   <script type="module" src="js/app.js?v=20260816"></script>
 </body>
 </html>
