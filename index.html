@@ -15,19 +15,40 @@
         <h1>MusashiMap</h1>
         <p class="subtitle">Mappa narrativa senza spoiler</p>
       </div>
-      <div class="chapter-control">
-        <label for="chapter">Sezione</label>
-        <input id="chapter" type="number" min="1" max="8" value="1">
+      <div class="section-navigation" aria-label="Navigazione della storia">
+        <button id="prev-section" type="button" aria-label="Sezione precedente">‹</button>
+        <select id="section-select" aria-label="Seleziona sezione"></select>
+        <button id="next-section" type="button" aria-label="Sezione successiva">›</button>
+        <div class="chapter-jump">
+          <label for="chapter">Sezione</label>
+          <input id="chapter" type="number" min="1" max="8" value="1" inputmode="numeric">
+          <button id="chapter-apply" type="button">Vai</button>
+        </div>
       </div>
     </header>
+
     <section class="map-placeholder" aria-label="Area della mappa">
       <div class="placeholder-card">
-        <span class="placeholder-kicker">BOOK I · EARTH</span>
-        <h2 id="section-title">001 · The Little Bell</h2>
-        <p>La geografia verrà collegata dopo la validazione delle località. Per ora questa vista mostra esclusivamente le informazioni disponibili fino alla sezione selezionata.</p>
+        <p id="book-label" class="placeholder-kicker">LIBRO I · EARTH</p>
+        <h2 id="section-title">The Little Bell</h2>
+        <p class="reader-note">La mappa geografica verrà collegata dopo la validazione delle località. Per ora questa vista mostra esclusivamente le informazioni disponibili fino alla sezione selezionata.</p>
+        <section class="character-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Personaggi visibili</h2>
+              <p>Seleziona da uno a tutti i nove protagonisti.</p>
+            </div>
+            <div class="filter-actions">
+              <button id="select-all" type="button">Tutti</button>
+              <button id="select-none" type="button">Nessuno</button>
+            </div>
+          </div>
+          <div id="character-filters" class="character-filters"></div>
+        </section>
         <div id="character-list" class="character-grid"></div>
       </div>
     </section>
+
     <aside class="info-panel">
       <h2>Stato della lettura</h2>
       <p id="status">Caricamento…</p>
