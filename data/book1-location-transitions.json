@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "book": "I",
+  "source_rule": "Only the Internet Archive transcription is used to establish narrative movements.",
+  "transitions": [
+    {"section":1,"character_ids":["musashi","matahachi"],"from":"sekigahara","to":"mount_ibuki_area","certainty":"confirmed"},
+    {"section":1,"character_ids":["musashi","matahachi"],"from":"mount_ibuki_area","to":"tarui","certainty":"confirmed"},
+    {"section":1,"character_ids":["musashi","matahachi"],"from":"tarui","to":"oko_akemi_house","certainty":"confirmed"},
+    {"section":2,"character_ids":["musashi","akemi"],"from":"oko_akemi_house","to":"mount_ibuki_area","certainty":"confirmed"},
+    {"section":2,"character_ids":["musashi","akemi"],"from":"mount_ibuki_area","to":"oko_akemi_house","certainty":"confirmed"},
+    {"section":3,"character_ids":["musashi"],"to":"shippoji","certainty":"confirmed","note":"Takezo is seen at the flower festival."},
+    {"section":4,"character_ids":["musashi"],"to":"sanumo_mountains","certainty":"confirmed"},
+    {"section":5,"character_ids":["takuan","otsu"],"from":"shippoji","to":"sanumo_mountains","via":["itadori_pasture"],"certainty":"confirmed"},
+    {"section":5,"character_ids":["musashi","takuan","otsu"],"location":"sanumo_mountains","certainty":"confirmed","note":"Takezo is captured."},
+    {"section":6,"character_ids":["musashi"],"from":"sanumo_mountains","to":"shippoji","certainty":"confirmed"},
+    {"section":6,"character_ids":["musashi"],"from":"shippoji","to":"old_cryptomeria_shippoji","certainty":"confirmed"},
+    {"section":7,"character_ids":["musashi","otsu"],"from":"old_cryptomeria_shippoji","to":"nakayama_pass","certainty":"confirmed"},
+    {"section":7,"character_ids":["musashi"],"from":"nakayama_pass","to":"hinagura","certainty":"confirmed"},
+    {"section":7,"character_ids":["otsu"],"from":"nakayama_pass","to":"hanada_bridge","certainty":"confirmed"},
+    {"section":8,"character_ids":["musashi"],"from":"hinagura","to":"himeji_castle","certainty":"confirmed","note":"The exact intermediate route is not yet normalized."}
+  ],
+  "not_yet_mapped": [
+    "Exact positions for several secondary characters within each section.",
+    "Some end-of-section states where the text transitions between scenes without an explicit geographic marker.",
+    "Exact coordinates for narrative-only sites."
+  ]
+}
