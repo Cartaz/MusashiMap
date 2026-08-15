@@ -20,330 +20,111 @@ All claims about what the novel says must be derived from the Internet Archive t
 
 `https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt`
 
-This applies to:
-
-- narrative presence;
-- names and aliases;
-- locations as described by Yoshikawa;
-- movements and destinations;
-- relationships revealed by the text;
-- chronology;
-- spoiler boundaries;
-- identifying which historical people, families, clans, factions or events deserve a micro-wiki trigger.
-
 ### External sources
 
-External sources are allowed for:
-
-- modern geographic identification;
-- modern coordinates;
-- historical/topographic verification;
-- historical context used by the micro-wiki.
-
-They must never be used to manufacture or overwrite novel evidence.
+External sources are allowed for modern geographic identification, modern coordinates, historical/topographic verification, and historical context used by the micro-wiki. They must never be used to manufacture or overwrite novel evidence.
 
 ## 3. Completed work
 
-### Project foundation
-
-- Initial repository and project structure created.
-- Static GitHub Pages deployment configured.
-- Application/data/research directories organized.
-- Core analysis and validation protocols established.
-
 ### Book I narrative dataset
 
-Book I / _Earth_ has been structured into eight project-local sections:
-
-1. The Little Bell
-2. The Comb
-3. The Flower Festival
-4. The Dowager's Wrath
-5. The Art of War
-6. The Old Cryptomeria Tree
-7. The Rock and the Tree
-8. The Birth of Musashi
-
-Existing structured layers include:
-
-- narrative analysis;
-- character states;
-- location registry;
-- location states;
-- normalized movement transitions;
-- section events;
-- character identity checkpoints.
-
-The dataset explicitly distinguishes intended destinations from confirmed arrivals and does not guess unknown locations.
-
-### Spoiler-safe identity model
-
-The same internal character ID is retained while the reader-facing name changes when the narrative establishes a new identity. The Book I checkpoint currently includes Takezo → Miyamoto Musashi at the appropriate narrative point.
+Book I / _Earth_ is structured into eight project-local sections with narrative analysis, character states, location registry, normalized movements, events and identity checkpoints. Intended destinations are distinguished from confirmed arrivals.
 
 ### Geographic research
 
-A high-precision topographic methodology was established and applied to Book I locations.
-
-Important principle:
-
-> A modern location is not accepted merely because its name matches. It must be compatible with the narrative network and, where possible, historical geography.
-
-The following distinctions are now part of the data model:
-
-- narrative identity;
-- modern identification;
-- geographic confidence;
-- historical compatibility/status;
-- modern coordinates versus historical estimate.
-
-Examples already investigated include:
-
-- Sekigahara — exact modern anchor;
-- Tarui — exact modern anchor;
-- Mount Ibuki — exact modern anchor;
-- Miyamoto — strong modern identification;
-- Himeji — exact modern anchor;
-- Himeji Castle — exact modern anchor;
-- Hanada Bridge — strong modern literary identification, but explicitly anachronistic as a modern bridge reference;
-- Hinagura — strong/probable identification around the modern Musashi-related landmark;
-- Nakayama Pass — strong candidate around Kamazaka Pass, but not promoted to exact;
-- Sayo and Mikazuki — strong modern area identifications.
-
-Some locations remain intentionally unresolved, including candidates such as Tsujinohara, Aida River and Sanumo where evidence did not justify false precision. Mount Fuwa is confirmed as a **narrative landmark** by the primary text, but its modern coordinate remains a separate question.
-
-### Bounded topographic research protocol
-
-A reusable protocol was added for future geographic research. It requires:
-
-1. extracting the narrative description first;
-2. identifying anchor points;
-3. building geographic constraints and relationships;
-4. searching modern candidates;
-5. testing candidates against the network;
-6. recording contradictions;
-7. assigning confidence/status;
-8. preserving uncertainty explicitly.
-
-#### Research budget rule
-
-After **two substantive research rounds** without a meaningful improvement in confidence or map usefulness, stop.
-
-The result should then be recorded as:
-
-- `possible` area/candidate; or
-- `unknown`.
-
-Do not continue researching merely to turn an unresolved area into a precise pin when that precision does not materially improve the reading companion.
+A high-precision topographic methodology was established and applied to Book I. Modern identification, geographic confidence, historical compatibility and modern coordinates are separate concepts. The two-round research stopping rule prevents low-value topographic rabbit holes.
 
 ### Historical micro-wiki
 
-The micro-wiki is explicitly defined as a **contextual lookup for tertiary historical references**, not a biography database for major characters.
+The micro-wiki is a compact contextual lookup for tertiary historical references. The novel supplies the trigger, reading context and spoiler boundary; an authoritative external source supplies the 2–3 line historical explanation. The bounded Book I audit is closed.
 
-The model is:
+### Reader progress and spoiler firewall
 
-```text
-Archive.org novel
-      ↓
-name/reference appears
-      ↓
-identify historical entity
-      ↓
-authoritative external historical source
-      ↓
-2–3 line salient summary
-```
+`data/reader-progress.json` and `js/reader-progress.js` define the canonical section visibility contract. The micro-wiki already consumes it, so future information is not rendered before its narrative trigger.
 
-The novel provides:
+### Initial geographic map integration — DONE / VALIDATING
 
-- the trigger/name;
-- reading context;
-- first relevant appearance;
-- spoiler boundary.
+The placeholder central panel has been replaced by a live Leaflet/OpenStreetMap map layer.
 
-The external authoritative source provides:
+The first integrated modern anchors are:
 
-- historical identity;
-- dates/titles where useful;
-- historical role;
-- clan/family/faction affiliation;
-- the few facts necessary to understand the reference.
+- Sekigahara;
+- Mount Ibuki;
+- Tarui;
+- Himeji Castle.
 
-The micro-wiki should prioritize:
+Only locations with coordinates that have passed the project's current geographic-confidence threshold are plotted. Locations with unresolved coordinates remain in the data registry but are deliberately **not pinned**.
 
-- lightly mentioned historical people;
-- daimyo and commanders;
-- clans and families;
-- ruling houses;
-- factions and armies;
-- institutions;
-- historical events.
+The map also displays the current section's explicit `from → to` movement when both endpoints have coordinates. Intended destinations use a dashed line; confirmed movements use a solid line. This deliberately avoids the previous problem of drawing a large network of blue routes across the map.
 
-It should **not** duplicate the main narrative data for major characters such as Musashi or Takuan merely because they are historical figures. The default entry length is roughly **30–70 words / 2–3 lines**.
+The map popup exposes the modern-location note and preserves the distinction between modern coordinates and historical equivalence.
 
-Every historical summary must retain its external source metadata and must never be presented as though it were information supplied by Yoshikawa.
-
-### Micro-wiki source audit — pass 1
-
-The first source-completion pass populated authoritative external sources for the initial Book I set:
-
-- Kobayakawa Hideaki;
-- Ishida Mitsunari;
-- Ukita Hideie;
-- Shimazu Yoshihiro;
-- Konishi Yukinaga;
-- Tokugawa Ieyasu;
-- Battle of Sekigahara;
-- Eastern Army;
-- Western Army;
-- Akamatsu clan;
-- Minamoto no Hiromasa.
-
-`data/context/micro-wiki.json` stores the external source metadata with each approved entry.
-
-### Primary-text audit — pass 4 CLOSED
-
-The bounded tertiary-reference audit was completed. No further historical names were added merely for completeness. The remaining work is product integration, not an open-ended encyclopedia search.
-
-### Reader progress foundation
-
-The Luni chapter mapping is intentionally postponed because the user's Luni index is not currently available.
-
-The project now has a canonical reader-progress layer:
-
-- `data/reader-progress.json` defines the reader state and spoiler visibility contract;
-- `js/reader-progress.js` provides the section-scoped progress engine;
-- `js/data.js` loads reader-progress and micro-wiki data alongside the existing Book I datasets;
-- `js/app.js` uses the progress engine for section navigation and micro-wiki rendering.
-
-### Unified spoiler-safe micro-wiki integration — DONE
-
-The first UI integration now consumes the same reader section used by the rest of the application.
-
-At section N:
-
-```text
-micro-wiki entry
-      ↓
-novel_trigger.first_book1_section <= N
-      ↓
-visible
-```
-
-Future entries are not rendered. Each visible card separates:
-
-- the reason/reference from the novel;
-- the short external historical summary;
-- the external source link.
-
-This is the first concrete implementation of the unified spoiler firewall for the micro-wiki. The geographic map still needs to consume the same contract once its rendering layer is implemented.
+OpenStreetMap is used only as the visual basemap; narrative facts remain sourced from the Archive.org transcription and geographic coordinates are stored separately in the project data.
 
 ## 4. Current work in progress
 
 ### A. Canonical Book I data validation — IN PROGRESS
 
-Validate the existing structured datasets together rather than reopening research unnecessarily:
-
-- character states;
-- locations;
-- movement transitions;
-- events;
-- identity checkpoints;
-- historical micro-wiki triggers;
-- spoiler boundaries.
-
-Focus on contradictions and broken references, not additional exhaustive research.
+Validate the existing structured datasets together rather than reopening research unnecessarily. Focus on contradictions and broken references.
 
 ### B. Reader-progress integration — IN PROGRESS
 
-The base engine and micro-wiki consumer are implemented. Remaining work is to make every future renderer consume the same visibility contract:
+The base engine, micro-wiki consumer and initial map renderer now exist. The remaining work is to make all map visibility decisions consume the same canonical progress contract directly rather than relying on duplicated UI listeners.
 
-```text
-reader_progress
-      ↓
-visible characters
-visible locations
-visible events
-visible routes
-visible relationships
-visible wiki triggers
-```
+### C. Geographic layer — IN PROGRESS
 
-### C. Luni mapping — BLOCKED / DEFERRED
+The first four high-confidence anchors are integrated. Remaining validated locations should be added selectively, with no fabricated coordinates for unresolved areas.
 
-Do not invent or infer the Luni chapter numbering from memory.
+### D. Luni mapping — BLOCKED / DEFERRED
 
-When the user has the index available, create an evidence-based mapping:
-
-```text
-Archive.org section
-        ↓
-Luni chapter/title
-        ↓
-reader progress
-```
-
-Until then, the project-local Book I section numbers remain the canonical internal progress units.
+Do not invent or infer the Luni chapter numbering from memory. When the actual edition index is available, map Archive.org sections to Luni chapters explicitly.
 
 ## 5. Next product milestones
 
-### Milestone 1 — Canonical Book I data
+### Milestone 1 — Geographic layer completion
 
-Finish cross-dataset validation and resolve only genuine inconsistencies.
+Add the remaining **already-researched** modern coordinates where confidence is sufficient. Do not reopen closed topographic investigations unless the map exposes a concrete contradiction.
 
-### Milestone 2 — Geographic layer integration
+### Milestone 2 — Canonical map/progress integration
 
-Attach modern coordinates and uncertainty metadata to the validated location registry. Keep literary/anachronistic references distinct from historical coordinates.
+Move the temporary map wiring into the same reader-progress renderer used by the rest of the application so section changes have one authoritative state transition.
 
-### Milestone 3 — Follow-along map
+### Milestone 3 — Follow-along map UX
 
-Build the map around the **current reading state**, emphasizing current scene and active movement instead of showing the whole novel's geography simultaneously.
+Refine the map around the current reading state: current location, current movement, visible previous locations and useful uncertainty cues. Keep the map visually dominant and the context panel collapsible where appropriate.
 
 ### Milestone 4 — Micro-wiki polish
 
-The basic micro-wiki is now wired into reader progress. Later polish can improve presentation, but it should remain compact and source-transparent.
+The basic micro-wiki is functional and spoiler-safe. Later polish should improve presentation without turning it into an encyclopedia.
 
 ### Milestone 5 — Reading test
 
-Test the companion as an actual reader would use it:
-
-- advance one section at a time;
-- inspect characters;
-- inspect the current location;
-- open a historical context card;
-- verify no future information appears;
-- rewind and verify later information disappears.
+Advance one section at a time, inspect the map, characters, events and wiki, then rewind and verify that future information disappears.
 
 ## 6. Explicit non-goals
 
-MusashiMap is **not** currently trying to become:
+MusashiMap is not currently trying to become a complete historical atlas, a scholarly reconstruction of every 1600 road, a general biography database, a replacement for the novel, or a GIS requiring exact historical coordinates for every ambiguous toponym.
 
-- a complete historical atlas of Sengoku Japan;
-- a scholarly reconstruction of every 1600 road;
-- a general biography database;
-- a replacement for the novel;
-- a GIS project requiring exact historical coordinates for every ambiguous toponym;
-- an exhaustive historical encyclopedia.
-
-Precision is valuable when it changes the reader's understanding. False precision is worse than an explicitly uncertain area. Historical context is valuable when it answers a likely reader question quickly; additional detail belongs outside the core companion.
+Precision is valuable when it changes the reader's understanding. False precision is worse than an explicitly uncertain area.
 
 ## 7. Working rules for future agents
 
-1. Read this roadmap before beginning a new research task.
+1. Read this roadmap before beginning new research.
 2. Check existing datasets and research notes before repeating research.
 3. Treat Archive.org as the sole authority for claims about the novel.
 4. Use external sources only for explicitly separated modern/historical context.
 5. For the micro-wiki, use the novel only to identify the trigger and reading context; use an authoritative external source for the historical summary.
 6. Keep micro-wiki summaries to roughly 2–3 lines unless ambiguity requires more research.
-7. Do not build full biographies for major characters when the novel already supplies the needed context.
-8. Preserve uncertainty instead of inventing coordinates.
-9. Apply the two-round stopping rule to difficult topographic identifications.
-10. Prefer network consistency over name matching.
-11. Never leak future information through the map or micro-wiki.
-12. Do not expand research merely because a more precise answer is theoretically possible.
-13. Optimize for the usefulness of the reading companion.
-14. Do not infer the Luni chapter mapping until the actual edition index is available.
-15. Use the canonical reader-progress engine as the sole source of section visibility decisions.
-16. Keep novel-trigger data and external historical summaries semantically separate in the micro-wiki data model.
+7. Preserve uncertainty instead of inventing coordinates.
+8. Apply the two-round stopping rule to difficult topographic identifications.
+9. Prefer network consistency over name matching.
+10. Never leak future information through the map or micro-wiki.
+11. Do not expand research merely because a more precise answer is theoretically possible.
+12. Optimize for the usefulness of the reading companion.
+13. Do not infer the Luni chapter mapping until the actual edition index is available.
+14. Use the canonical reader-progress engine as the sole source of section visibility decisions.
+15. Keep novel-trigger data and external historical summaries semantically separate.
+16. Do not pin a location merely because a modern name matches; require the stored confidence/status to justify a coordinate.
 
 ## 8. Current state at a glance
 
@@ -359,10 +140,11 @@ MICRO-WIKI SOURCE AUDIT         DONE — BOUNDED PASS CLOSED
 BOOK I PRIMARY-TEXT AUDIT       DONE — BOUNDED PASS CLOSED
 READER PROGRESS MODEL           DONE
 READER PROGRESS ENGINE          DONE / INTEGRATING
-MICRO-WIKI UI                   DONE — FIRST INTEGRATION
+MICRO-WIKI UI                   DONE
+GEOGRAPHIC MAP                  DONE — FIRST ANCHORS / VALIDATING
 ARCHIVE → LUNI MAPPING          DEFERRED — INDEX NEEDED
-COORDINATE INTEGRATION          NEXT
-FOLLOW-ALONG MAP                NEXT
+GEOGRAPHIC LAYER COMPLETION     NEXT
+CANONICAL MAP/PROGRESS WIRING   NEXT
 FULL READING TEST               LATER
 ```
 
