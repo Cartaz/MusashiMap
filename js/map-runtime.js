@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-4";
+  const VERSION = "20260816-5";
   let map;
   let markers;
   let routes;
@@ -9,6 +9,7 @@
   let characterStates = [];
   let characters = [];
   let selectedCharacters = new Set();
+  let latestReaderState = null;
   const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", area: "#8fb3c9", route: "#b99ad6", temple: "#b8c7a4", literary_landmark: "#d9a0b7" };
   const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
@@ -18,7 +19,7 @@
   const characterIcon = (character, color) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13,13] });
 
   function draw(section) {
-    if (!map) return;
+    if (!map || !markers || !characterMarkers) return;
     markers.clearLayers();
     routes.clearLayers();
     characterMarkers.clearLayers();
@@ -31,8 +32,7 @@
       if (!selectedCharacters.has(characterId)) return;
       const location = byId.get(state.location);
       const character = characters.find(c => c.id === characterId);
-      if (!location) return;
-      if (!hasCoords(location)) return;
+      if (!location || !hasCoords(location)) return;
       const index = characters.findIndex(c => c.id === characterId);
       const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
       const marker = L.marker(location.coordinates, {icon: characterIcon(character, color), title: `${character?.name ?? characterId} · ${locationLabel(location)}`});
@@ -84,14 +84,19 @@
       events = eventData.events;
       characterStates = stateData.character_states;
       characters = characterData.characters;
+      if (latestReaderState) draw(latestReaderState.section);
     } catch(error) {
       console.error("Map initialization failed", error);
     }
   }
 
   window.addEventListener("musashi:reader-state", event => {
-    selectedCharacters = new Set(event.detail?.selectedCharacters ?? []);
-    draw(Number(event.detail?.section) || 1);
+    latestReaderState = {
+      section: Number(event.detail?.section) || 1,
+      selectedCharacters: event.detail?.selectedCharacters ?? []
+    };
+    selectedCharacters = new Set(latestReaderState.selectedCharacters);
+    draw(latestReaderState.section);
   });
   boot();
 })();
