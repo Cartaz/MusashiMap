@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "book": "I",
+  "title": "Earth",
+  "purpose": "Single reader-progress contract for spoiler-safe visibility across characters, locations, events, movements, relationships and historical micro-wiki triggers.",
+  "source_rule": "Narrative progression and spoiler boundaries are derived only from the Internet Archive transcription.",
+  "state": {
+    "current_section": 1,
+    "minimum_section": 1,
+    "maximum_section": 8
+  },
+  "visibility_rules": {
+    "character_state": "Visible when the character has a state at or before current_section.",
+    "location_state": "Visible when the location is referenced by a visible character, event or transition at or before current_section.",
+    "event": "Visible only when event.section <= current_section.",
+    "movement": "Visible only when the transition is introduced by current_section; intended destinations remain intentions until a confirmed arrival exists.",
+    "relationship": "Visible only when relationship.first_section <= current_section.",
+    "micro_wiki": "Visible only when novel_trigger.first_book1_section <= current_section and the entry is marked spoiler-safe.",
+    "future_information": "Never expose entities, routes, identities or relationships whose first narrative appearance is after current_section."
+  },
+  "identity_rule": "Canonical character IDs remain stable while reader-facing display names may change at an explicit identity checkpoint.",
+  "topology_rule": "Reader progress controls visibility; it does not alter the underlying geographic data or historical identification confidence.",
+  "section_policy": {
+    "advance": "Move forward only through existing project-local sections.",
+    "rewind": "Rewinding hides later information without deleting the stored reader position history in the application layer.",
+    "chapter_mapping": "Luni chapter mapping is intentionally absent until the user's edition index is available."
+  }
+}
