@@ -12,6 +12,7 @@
     {"id":"nakayama_pass","name":"Nakayama Pass","type":"route","coordinates":null},
     {"id":"hinagura","name":"Hinagura","type":"settlement","coordinates":null},
     {"id":"hanada_bridge","name":"Hanada Bridge","type":"exact_site","coordinates":null},
-    {"id":"himeji_castle","name":"Castello di Himeji","type":"exact_site","coordinates":null}
+    {"id":"himeji_castle","name":"Castello di Himeji","type":"exact_site","coordinates":null},
+    {"id":"harima_road_teahouse","name":"Teahouse sulla strada per Harima","type":"exact_site","coordinates":null}
   ]
 }

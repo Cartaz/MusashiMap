@@ -9,7 +9,6 @@
     {"id":"e002-03","section":2,"type":"return","characters":["takezo"],"to":"oko_akemi_house","certainty":"explicit"},
     {"id":"e003-01","section":3,"type":"appearance","characters":["takezo"],"location":"shippoji","certainty":"explicit"},
     {"id":"e004-01","section":4,"type":"hiding","characters":["takezo"],"location":"sanumo_mountains","certainty":"explicit"},
-    {"id":"e004-02","section":4,"type":"journey","characters":["osugi","otsu"],"from":"himeji_castle","to":"shippoji","certainty":"needs_source_validation"},
     {"id":"e005-01","section":5,"type":"journey","characters":["takuan","otsu"],"from":"shippoji","to":"itadori_pasture","via":["sanumo_mountains"],"certainty":"explicit"},
     {"id":"e006-01","section":6,"type":"capture","characters":["takuan","takezo"],"from":"sanumo_mountains","to":"shippoji","certainty":"explicit"},
     {"id":"e006-02","section":6,"type":"restraint","characters":["takezo"],"location":"old_cryptomeria_shippoji","certainty":"explicit"},
