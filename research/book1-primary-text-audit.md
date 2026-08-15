@@ -1,6 +1,6 @@
 # Book I — Primary-text audit
 
-Status: **in progress**  
+Status: **in progress — primary-text pass 2**  
 Primary source: Internet Archive transcription only
 
 Source:
@@ -22,7 +22,7 @@ The Archive.org text identifies Book I as **Earth** and gives the eight section 
 7. The Rock and the Tree
 8. The Birth of Musashi
 
-## Pass completed so far
+## Pass 2 — high-value primary-text validation
 
 ### Section 1 — The Little Bell
 
@@ -33,11 +33,11 @@ Validated:
 - They then move at night **in the direction of Tarui**.
 - They subsequently reach the house of Oko and Akemi and remain there.
 - The section explicitly identifies Ishida Mitsunari and Kobayakawa in the discussion of the war.
-- The text describes Takezo and Matahachi as foot soldiers under Lord Shimmen of Iga rather than newly made samurai.
+- The text describes Takezo and Matahachi as foot soldiers under Lord Shimmen of Iga.
+- The route is spatially anchored by the marsh stretching south from Mount Fuwa before they reach the farmhouse.
+- Akemi later explicitly states that her family gathers mugwort on Mount Ibuki, processes it into moxa and sells it in Tarui.
 
-Important correction:
-
-`mount_ibuki_area → tarui` must be represented as **intended/directional**, not as a confirmed arrival at Tarui. The text says they moved in what they thought was the direction of Tarui; it does not establish that they actually entered Tarui in this passage.
+**Movement correction:** `mount_ibuki_area → tarui` is `intended`, not confirmed arrival. The Tarui reference through Akemi's trade is a geographic relation, not evidence that Takezo and Matahachi entered Tarui.
 
 ### Section 2 — The Comb
 
@@ -45,7 +45,7 @@ Validated:
 
 - Takezo remains associated with the Oko/Akemi house at the beginning of the section.
 - He goes into the mountain area with Akemi and returns to the house.
-- The text explicitly connects Akemi's family trade to Mount Ibuki and Tarui: mugwort is gathered on Mount Ibuki and processed into moxa sold in Tarui.
+- The text explicitly connects Akemi's family trade to Mount Ibuki and Tarui.
 - Tsujikaze Temma and his men search Oko's house.
 - Takezo and Matahachi confront Temma's men.
 - Takezo's connection to Miyamoto and his desire to return there are explicitly stated.
@@ -59,7 +59,8 @@ Validated:
 - Takuan is present at Shippoji.
 - Ogin is established as Takezo's sister and is living at the house built by Munisai overlooking the river.
 - Otsu sees Takezo at the festival; he disappears immediately.
-- The text explicitly identifies Takuan Soho by name and gives narrative biographical information about him.
+- The text explicitly identifies Takuan Soho by name.
+- The narrative supplies substantial in-novel biographical material about Takuan: birth in Tajima, early religious training, Rinzai affiliation, study with named teachers, residence at Nansoji, appointment as abbot of Daitokuji, and his decision to leave.
 
 ### Section 4 — The Dowager's Wrath
 
@@ -74,13 +75,15 @@ Validated:
 
 ### Section 5 — The Art of War
 
-Validated at the current pass:
+Validated:
 
 - Takuan negotiates with the Himeji representative/captain over capturing Takezo.
 - Takuan explicitly invokes The Art of War / Sun-tzu.
 - Takuan agrees to capture Takezo and decide his fate.
 - Otsu is involved in Takuan's plan.
 - The search operation around the mountains is explicitly described as extensive and unsuccessful.
+- Takuan and Otsu establish a temporary camp/fire in the mountain area while waiting for Takezo.
+- Takezo is close enough to hear Otsu's flute; Takuan deliberately uses the situation to draw him out.
 
 ### Section 6 — The Old Cryptomeria Tree
 
@@ -104,13 +107,11 @@ Validated:
 - Takezo proceeds toward Hinagura/Ogin.
 - Otsu agrees to go toward Himeji and wait at **Hanada Bridge**.
 
-Important data distinction:
-
-The first statement about Otsu waiting at Hanada Bridge is a **declared/intended destination**. Later text is required to establish her actual arrival or subsequent position. Therefore the movement edge must not use the initial promise alone as proof of arrival.
+**Movement correction:** the first statement about Otsu waiting at Hanada Bridge is a declared/intended destination and must not alone be treated as proof of arrival.
 
 ### Section 8 — The Birth of Musashi
 
-Validated at the current pass:
+Validated:
 
 - Otsu reaches the Mikazuki Teahouse area and becomes ill there.
 - Osugi and Gonroku encounter the teahouse and pursue Otsu.
@@ -118,47 +119,56 @@ Validated at the current pass:
 - Takezo is positioned across the valley from the Hinagura stockade and is planning how to rescue Ogin.
 - Takezo's movements subsequently lead toward Himeji.
 - Takezo is brought before Lord Ikeda Terumasa at Himeji Castle.
-- The naming sequence establishes the reader-facing transition from Shinmen/Shimmen Takezo to **Miyamoto Musashi**.
+- Takezo is confined in the castle's dark room for three years.
+- The text explicitly states that he leaves the castle after the three-year confinement.
+- Terumasa offers Takezo service; Takezo declines and says he wants to wander independently.
+- Terumasa gives him the name **Miyamoto** so he will not forget his birthplace.
+- Takuan changes the reading of his first name to **Musashi**.
+- The resulting reader-facing identity is **Miyamoto Musashi**.
+- After leaving the castle, Takuan tells Musashi that Ogin is alive and living in the Sayo district, creating an explicit late-Book-I geographic relation from Himeji toward Sayo.
 
-## Data corrections from this pass
+## High-value conclusions from the audit
 
-### 1. Movement confidence
+### 1. Destination is not arrival
 
-The movement dataset previously called all movement points `confirmed`. This was too coarse.
-
-The dataset now distinguishes:
+The dataset must distinguish:
 
 - `confirmed` — completed movement or destination explicitly established;
 - `intended` — destination/direction stated without confirmed arrival;
 - `relative` — movement relation is known but the route is insufficiently specified.
 
-The clearest correction is:
+This distinction is essential for Tarui and Hanada Bridge and should be applied everywhere.
 
-`Mount Ibuki area → Tarui` = `intended`, not `confirmed`.
+### 2. Narrative locations can be fully valid without modern coordinates
 
-### 2. Destination versus arrival
+Mount Fuwa, for example, is explicitly named by the novel. Its narrative record should exist independently of whether a modern coordinate is known.
 
-The audit reinforces the existing project rule: a character saying they will go somewhere is not equivalent to the character being shown there.
+### 3. Identity transition is an event
 
-This distinction is especially important for:
+The change from Takezo to Miyamoto Musashi is not merely an alias table entry. It is an explicit Section 8 event and belongs in the timeline and spoiler system.
 
-- Hanada Bridge;
-- Himeji;
-- Hinagura;
-- other destinations introduced as plans before later scenes establish actual position.
+### 4. Himeji → Sayo is an explicit narrative relation
+
+At the end of the three-year confinement, Takuan tells Musashi that Ogin is alive and living with a relative in a village in the Sayo district. This relation comes directly from the novel and must not be confused with the later external geographic identification of Sayo.
+
+### 5. Takuan deserves a dedicated micro-wiki entry
+
+Section 3 alone contains substantial in-novel biographical material. This can populate the narrative layer of the micro-wiki without importing external biography.
 
 ## Historical-entity extraction notes
 
-The primary text itself contains substantial material suitable for the micro-wiki. At this stage the audit confirms narrative relevance for historical figures/events including:
+Current Book I candidates include:
 
 - Ishida Mitsunari;
 - Kobayakawa Hideaki;
 - Tokugawa forces / Tokugawa Ieyasu context;
 - Takuan Soho;
-- the House of Ikeda / Ikeda Terumasa;
-- the Akamatsu clan context.
+- Lord Ikeda Terumasa / House of Ikeda;
+- Akamatsu clan context;
+- the battle of Sekigahara;
+- the Eastern/Western Army context.
 
-The micro-wiki must distinguish between:
+The micro-wiki must always distinguish:
 
 ```text
 what the novel says
@@ -166,19 +176,18 @@ what the novel says
 historical context supplied separately
 ```
 
-No external historical biography is being used to validate these narrative claims.
-
 ## Remaining audit work
 
-Continue section-by-section verification for:
+Continue only where it materially improves the companion:
 
-- complete character presence;
-- every named location and spatial relation;
-- all movement transitions;
-- events;
-- historical people/factions/events;
+- complete character presence and absence;
+- every named location and meaningful spatial relation;
+- movement transitions and intended-vs-confirmed status;
+- historical people/factions/events for the micro-wiki;
 - aliases and identity transitions;
 - spoiler boundaries.
+
+Do not reopen already settled topographic research unless the primary text produces a contradiction.
 
 After the primary-text audit is stable, coordinate integration and external geographic identification can proceed without changing the narrative corpus.
 
