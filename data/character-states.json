@@ -1,23 +1,23 @@
 {
-  "version": 2,
+  "version": 3,
   "character_states": [
-    {"section":1,"character":"takezo","location":"oko_akemi_house","status":"hiding","activity":"riposo e recupero dalle ferite","certainty":"explicit"},
+    {"section":1,"character":"musashi","location":"oko_akemi_house","status":"hiding","activity":"riposo e recupero dalle ferite","certainty":"explicit"},
     {"section":1,"character":"matahachi","location":"oko_akemi_house","status":"present","activity":"riposo e recupero","certainty":"explicit"},
-    {"section":2,"character":"takezo","location":"oko_akemi_house","status":"present","activity":"si nasconde e si muove nelle montagne vicine","certainty":"explicit"},
+    {"section":2,"character":"musashi","location":"oko_akemi_house","status":"present","activity":"si nasconde e si muove nelle montagne vicine","certainty":"explicit"},
     {"section":2,"character":"matahachi","location":"oko_akemi_house","status":"present","activity":"rimane presso Oko e Akemi","certainty":"explicit"},
-    {"section":3,"character":"takezo","location":"shippoji","status":"travelling","activity":"compare brevemente durante il festival e fugge","certainty":"explicit"},
+    {"section":3,"character":"musashi","location":"shippoji","status":"travelling","activity":"compare brevemente durante il festival e fugge","certainty":"explicit"},
     {"section":3,"character":"otsu","location":"shippoji","status":"present","activity":"partecipa al festival","certainty":"explicit"},
-    {"section":4,"character":"takezo","location":"sanumo_mountains","status":"hiding","activity":"si nasconde e tenta di avvicinarsi a Shippoji e alla casa di Ogin","certainty":"explicit"},
-    {"section":5,"character":"takezo","location":"sanumo_mountains","status":"hiding","activity":"sfugge ai tentativi di cattura","certainty":"explicit"},
-    {"section":5,"character":"takuan","location":"itadori_pasture","status":"travelling","activity":"cerca Takezo insieme a Otsu","certainty":"explicit"},
-    {"section":5,"character":"otsu","location":"itadori_pasture","status":"present","activity":"accompagna Takuan nella ricerca di Takezo","certainty":"explicit"},
-    {"section":6,"character":"takezo","location":"old_cryptomeria_shippoji","status":"imprisoned","activity":"legato al vecchio albero di cryptomeria","certainty":"explicit"},
-    {"section":6,"character":"takuan","location":"shippoji","status":"present","activity":"sorveglia la situazione e tratta con Takezo","certainty":"explicit"},
-    {"section":6,"character":"otsu","location":"shippoji","status":"present","activity":"rimane presso il tempio e tenta di ottenere la liberazione di Takezo","certainty":"explicit"},
-    {"section":7,"character":"takezo","location":"nakayama_pass","status":"travelling","activity":"fugge insieme a Otsu, poi prende la strada per Hinagura","certainty":"explicit"},
+    {"section":4,"character":"musashi","location":"sanumo_mountains","status":"hiding","activity":"si nasconde e tenta di avvicinarsi a Shippoji e alla casa di Ogin","certainty":"explicit"},
+    {"section":5,"character":"musashi","location":"sanumo_mountains","status":"hiding","activity":"sfugge ai tentativi di cattura","certainty":"explicit"},
+    {"section":5,"character":"takuan","location":"itadori_pasture","status":"travelling","activity":"cerca Musashi insieme a Otsu","certainty":"explicit"},
+    {"section":5,"character":"otsu","location":"itadori_pasture","status":"present","activity":"accompagna Takuan nella ricerca di Musashi","certainty":"explicit"},
+    {"section":6,"character":"musashi","location":"old_cryptomeria_shippoji","status":"imprisoned","activity":"legato al vecchio albero di cryptomeria","certainty":"explicit"},
+    {"section":6,"character":"takuan","location":"shippoji","status":"present","activity":"sorveglia la situazione e tratta con Musashi","certainty":"explicit"},
+    {"section":6,"character":"otsu","location":"shippoji","status":"present","activity":"rimane presso il tempio e tenta di ottenere la liberazione di Musashi","certainty":"explicit"},
+    {"section":7,"character":"musashi","location":"nakayama_pass","status":"travelling","activity":"fugge insieme a Otsu, poi prende la strada per Hinagura","certainty":"explicit"},
     {"section":7,"character":"otsu","location":"hanada_bridge","status":"travelling","activity":"si dirige verso Himeji e Hanada Bridge","certainty":"explicit"},
-    {"section":8,"character":"takezo","location":"himeji_castle","status":"imprisoned","activity":"viene confinato e studia per circa tre anni","certainty":"explicit"},
+    {"section":8,"character":"musashi","location":"himeji_castle","status":"imprisoned","activity":"viene confinato e studia per circa tre anni","certainty":"explicit"},
     {"section":8,"character":"otsu","location":"harima_road_teahouse","status":"ill","activity":"rimane presso una teahouse sulla strada per Harima a causa della febbre","certainty":"explicit"},
-    {"section":8,"character":"takuan","location":"himeji_castle","status":"present","activity":"libera Takezo al termine del confinamento","certainty":"explicit"}
+    {"section":8,"character":"takuan","location":"himeji_castle","status":"present","activity":"libera Musashi al termine del confinamento","certainty":"explicit"}
   ]
 }
