@@ -13,6 +13,8 @@ Convert the novel into structured, chapter-scoped information about:
 - relationships;
 - uncertainty.
 
+This protocol is designed for a **follow-along reading companion**, not for replacing the novel with an independently reconstructed historical model.
+
 ## 2. Analysis windows
 
 Use overlapping windows:
@@ -56,6 +58,8 @@ Allowed precision values:
 - `unknown`
 
 A character travelling toward a destination is not considered to have arrived there until the text establishes arrival.
+
+For modern geographical identification, follow `research/topographic-research-protocol.md`. A modern coordinate is an identification aid, not proof that the historical/narrative location occupied exactly the same physical point.
 
 ## 6. Movement events
 
@@ -135,3 +139,9 @@ The application must never expose:
 - future events.
 
 The database may contain them for research, but the reader-facing query layer must enforce the chapter cutoff.
+
+## 14. Research-effort rule
+
+Research depth must serve the reading companion. High precision is desirable, but research must stop when additional investigation no longer produces a meaningful improvement in the map.
+
+For ambiguous topographical identifications, use the dedicated two-round protocol in `research/topographic-research-protocol.md`. After the allowed research rounds, preserve the uncertainty explicitly rather than continuing indefinitely or inventing a precise point.
