@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions and events. The novel provides the trigger and reading context; an authoritative external historical source provides a concise 2–3 line historical explanation.",
   "source_policy": {
     "novel_trigger_source": "Internet Archive transcription",
@@ -32,15 +32,17 @@
       "display_name": "Kobayakawa Hideaki",
       "novel_trigger": {
         "first_book1_section": 1,
-        "name_in_text": "Kobayakawa",
-        "context": "Historical commander referenced in the Sekigahara aftermath.",
+        "name_in_text": "Kobayakawa Hideaki",
+        "context": "Historical commander whose actions at Sekigahara are described in the opening scene.",
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Daimyo who commanded a major contingent of the Western Army at Sekigahara. His defection during the battle and attack on Otani Yoshitsugu's forces helped secure Tokugawa victory."
+        "summary": "Daimyo who commanded a major contingent at Sekigahara. His decision to switch allegiance to Tokugawa Ieyasu was a decisive factor in the Eastern Army's victory."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "Kobayakawa Hideaki Route",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/tour/kobayakawa-hideaki/"
       }
     },
     {
@@ -49,15 +51,17 @@
       "display_name": "Ishida Mitsunari",
       "novel_trigger": {
         "first_book1_section": 1,
-        "name_in_text": "Ishida",
-        "context": "Principal Western Army commander referenced in the Sekigahara context.",
+        "name_in_text": "Ishida Mitsunari",
+        "context": "Principal Western Army commander named in the opening description of Sekigahara.",
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Toyotomi administrator and leading commander of the Western coalition at Sekigahara. He was one of the principal political and military opponents of Tokugawa Ieyasu."
+        "summary": "Toyotomi administrator and leading commander of the Western Army at Sekigahara. He opposed Tokugawa Ieyasu and was defeated at the battle that established Tokugawa supremacy."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "Ishida Mitsunari Route",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/tour/ishida-mitsunari/"
       }
     },
     {
@@ -67,14 +71,16 @@
       "novel_trigger": {
         "first_book1_section": 1,
         "name_in_text": "Ukita",
-        "context": "Major Western Army commander referenced in the Sekigahara aftermath.",
+        "context": "Major Western Army commander named among the defeated commanders at Sekigahara.",
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Daimyo and major Toyotomi ally who commanded a large Western Army contingent at Sekigahara. He was one of the most prominent commanders on the losing side."
+        "summary": "Major Toyotomi ally who commanded the largest Western Army contingent at Sekigahara. His forces fought in the main battle against the Tokugawa-led coalition."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "Fukushima Masanori Route — Ukita Hideie’s Encampment",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/tour/fukushima-masanori/"
       }
     },
     {
@@ -84,14 +90,16 @@
       "novel_trigger": {
         "first_book1_section": 1,
         "name_in_text": "Shimazu",
-        "context": "Western Army commander referenced in the Sekigahara context.",
+        "context": "Western Army commander named among the forces defeated at Sekigahara.",
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Daimyo of Satsuma and commander of the Shimazu contingent at Sekigahara. His troops were part of the Western Army during the decisive battle."
+        "summary": "Daimyo of Satsuma who commanded the Shimazu contingent at Sekigahara. After the Western Army collapsed, he fought his way through the opposing ranks and returned to Satsuma."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "Ishida Mitsunari Route — Shimazu Yoshihiro’s Encampment",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/tour/ishida-mitsunari/"
       }
     },
     {
@@ -101,14 +109,16 @@
       "novel_trigger": {
         "first_book1_section": 1,
         "name_in_text": "Konishi",
-        "context": "Western Army commander referenced in the Sekigahara context.",
+        "context": "Western Army commander named among the defeated commanders at Sekigahara.",
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Christian daimyo and Toyotomi commander who fought for the Western Army at Sekigahara. He was among the principal commanders defeated in the battle."
+        "summary": "Commander of a Western Army contingent at Sekigahara. After the Western Army was routed, Konishi fled, surrendered, and was executed in Kyoto together with Ishida Mitsunari."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "Kuroda Nagamasa Route — Konishi Yukinaga’s Encampment",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/tour/kuroda-nagamasa/"
       }
     },
     {
@@ -117,15 +127,17 @@
       "display_name": "Tokugawa Ieyasu",
       "novel_trigger": {
         "first_book1_section": 1,
-        "name_in_text": "Tokugawa",
-        "context": "Leader of the victorious Eastern coalition at Sekigahara.",
+        "name_in_text": "Tokugawa Ieyasu",
+        "context": "Leader of the victorious Eastern coalition identified in the opening aftermath of Sekigahara.",
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Leader of the Eastern coalition at Sekigahara and the founder of the Tokugawa shogunate. His victory established the political order that dominated Japan for the following centuries."
+        "summary": "Leader of the Eastern coalition at Sekigahara and the central figure in the Tokugawa victory. His triumph over the Western coalition established Tokugawa political dominance in Japan."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "Tokugawa Ieyasu Route",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/tour/tokugawa-ieyasu/"
       }
     },
     {
@@ -139,10 +151,12 @@
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "The decisive battle of 1600 between the Tokugawa-led Eastern coalition and the Western coalition associated with the Toyotomi cause. Tokugawa victory reshaped Japan's political order."
+        "summary": "The decisive 1600 battle between the Tokugawa-led coalition and the forces aligned with the Toyotomi cause. The victory shifted the balance of power decisively toward Tokugawa Ieyasu."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "About the Gifu Sekigahara Battlefield Memorial Museum",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/about/"
       }
     },
     {
@@ -156,10 +170,12 @@
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Coalition led by Tokugawa Ieyasu during the Sekigahara campaign. Its victory over the Western coalition established Tokugawa political dominance."
+        "summary": "Modern shorthand for the coalition led by Tokugawa Ieyasu at Sekigahara. The Gifu museum notes that these 'Eastern' and 'Western' labels were not actually used at the time of the battle."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "About the Gifu Sekigahara Battlefield Memorial Museum",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/about/"
       }
     },
     {
@@ -173,10 +189,55 @@
         "spoiler_safe_until": 1
       },
       "wiki": {
-        "summary": "Coalition formed around the Toyotomi cause and opposed the Tokugawa-led Eastern Army at Sekigahara. Its defeat ended the immediate military challenge to Tokugawa power."
+        "summary": "Modern shorthand for the coalition opposing Tokugawa Ieyasu at Sekigahara and associated with the Toyotomi cause. The label is useful for readers, although it was not the period's own terminology."
       },
       "source": {
-        "status": "needs_authoritative_source_record"
+        "title": "About the Gifu Sekigahara Battlefield Memorial Museum",
+        "publisher": "Gifu Sekigahara Battlefield Memorial Museum / Gifu Prefecture",
+        "url": "https://sekigahara.pref.gifu.lg.jp/en/about/"
+      }
+    },
+    {
+      "id": "akamatsu_clan",
+      "type": "historical_faction",
+      "display_name": "Akamatsu clan",
+      "novel_trigger": {
+        "first_book1_section": 3,
+        "name_in_text": "Akamatsu",
+        "context": "The novel states that the Hon'iden and Shimmen families trace their lineage to the Akamatsu house.",
+        "spoiler_safe_until": 3
+      },
+      "wiki": {
+        "summary": "A major samurai house of Harima that rose to prominence as shugo-daimyo during the Muromachi period. The Hyogo Prefectural Museum of History documents the clan's long political and military presence in western Harima."
+      },
+      "source": {
+        "title": "Akamatsu Clan Timeline / Akamatsu History",
+        "publisher": "Hyogo Prefectural Museum of History",
+        "url": "https://rekihaku.pref.hyogo.lg.jp/digital_museum/akamatsu/timeline/"
+      }
+    },
+    {
+      "id": "minamoto_no_hiromasa",
+      "type": "historical_person",
+      "display_name": "Minamoto no Hiromasa",
+      "novel_trigger": {
+        "first_book1_section": 5,
+        "name_in_text": "Prince Hiromasa",
+        "context": "Takuan recalls the legend of Hiromasa playing the flute at the Suzaku Gate in Kyoto.",
+        "spoiler_safe_until": 5
+      },
+      "wiki": {
+        "summary": "A Heian-period court noble and celebrated gagaku musician (918–980), especially known as a master of wind instruments. The National Theatre of Japan records him as the compiler of the 966 flute notation collection known as Hakuga's flute score."
+      },
+      "source": {
+        "title": "The lives of gagaku musicians — Heian period",
+        "publisher": "National Theatre of Japan",
+        "url": "https://www2.ntj.jac.go.jp/dglib/contents/learn/edc22/en/history/ga1.html"
+      },
+      "context_source": {
+        "title": "The Story of Minamoto no Hiromasa and the Demon's Flute",
+        "publisher": "Ota Memorial Museum of Art",
+        "url": "https://otakinen-museum.note.jp/n/n6e63aa3fe315?hl=en"
       }
     }
   ]
