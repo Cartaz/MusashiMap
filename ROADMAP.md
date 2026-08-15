@@ -208,14 +208,34 @@ The bounded tertiary-reference audit was completed. No further historical names 
 
 The Luni chapter mapping is intentionally postponed because the user's Luni index is not currently available.
 
-Instead, the project now has a canonical reader-progress layer:
+The project now has a canonical reader-progress layer:
 
 - `data/reader-progress.json` defines the reader state and spoiler visibility contract;
 - `js/reader-progress.js` provides the section-scoped progress engine;
 - `js/data.js` loads reader-progress and micro-wiki data alongside the existing Book I datasets;
-- `js/app.js` now uses the progress engine for section navigation.
+- `js/app.js` uses the progress engine for section navigation and micro-wiki rendering.
 
-The progress model explicitly controls visibility of characters, locations, events, movements, relationships and micro-wiki triggers without modifying the underlying research data.
+### Unified spoiler-safe micro-wiki integration — DONE
+
+The first UI integration now consumes the same reader section used by the rest of the application.
+
+At section N:
+
+```text
+micro-wiki entry
+      ↓
+novel_trigger.first_book1_section <= N
+      ↓
+visible
+```
+
+Future entries are not rendered. Each visible card separates:
+
+- the reason/reference from the novel;
+- the short external historical summary;
+- the external source link.
+
+This is the first concrete implementation of the unified spoiler firewall for the micro-wiki. The geographic map still needs to consume the same contract once its rendering layer is implemented.
 
 ## 4. Current work in progress
 
@@ -235,7 +255,7 @@ Focus on contradictions and broken references, not additional exhaustive researc
 
 ### B. Reader-progress integration — IN PROGRESS
 
-The base engine is implemented. Next, connect every data layer to the same visibility contract:
+The base engine and micro-wiki consumer are implemented. Remaining work is to make every future renderer consume the same visibility contract:
 
 ```text
 reader_progress
@@ -247,8 +267,6 @@ visible routes
 visible relationships
 visible wiki triggers
 ```
-
-The current UI navigation already uses the canonical section state. The remaining work is to make map and micro-wiki rendering consume the same state instead of independently deciding what is visible.
 
 ### C. Luni mapping — BLOCKED / DEFERRED
 
@@ -272,28 +290,19 @@ Until then, the project-local Book I section numbers remain the canonical intern
 
 Finish cross-dataset validation and resolve only genuine inconsistencies.
 
-### Milestone 2 — Unified spoiler firewall
-
-Make all renderers consume one reader-progress API. No component should independently expose future information.
-
-### Milestone 3 — Geographic layer integration
+### Milestone 2 — Geographic layer integration
 
 Attach modern coordinates and uncertainty metadata to the validated location registry. Keep literary/anachronistic references distinct from historical coordinates.
 
-### Milestone 4 — Follow-along map
+### Milestone 3 — Follow-along map
 
 Build the map around the **current reading state**, emphasizing current scene and active movement instead of showing the whole novel's geography simultaneously.
 
-### Milestone 5 — Micro-wiki UI
+### Milestone 4 — Micro-wiki polish
 
-Expose approved historical references from the map/reader interface with:
+The basic micro-wiki is now wired into reader progress. Later polish can improve presentation, but it should remain compact and source-transparent.
 
-- the name as encountered in the novel;
-- 2–3 lines of external historical context;
-- source attribution;
-- spoiler-safe visibility.
-
-### Milestone 6 — Reading test
+### Milestone 5 — Reading test
 
 Test the companion as an actual reader would use it:
 
@@ -334,6 +343,7 @@ Precision is valuable when it changes the reader's understanding. False precisio
 13. Optimize for the usefulness of the reading companion.
 14. Do not infer the Luni chapter mapping until the actual edition index is available.
 15. Use the canonical reader-progress engine as the sole source of section visibility decisions.
+16. Keep novel-trigger data and external historical summaries semantically separate in the micro-wiki data model.
 
 ## 8. Current state at a glance
 
@@ -349,11 +359,10 @@ MICRO-WIKI SOURCE AUDIT         DONE — BOUNDED PASS CLOSED
 BOOK I PRIMARY-TEXT AUDIT       DONE — BOUNDED PASS CLOSED
 READER PROGRESS MODEL           DONE
 READER PROGRESS ENGINE          DONE / INTEGRATING
+MICRO-WIKI UI                   DONE — FIRST INTEGRATION
 ARCHIVE → LUNI MAPPING          DEFERRED — INDEX NEEDED
 COORDINATE INTEGRATION          NEXT
-UNIFIED SPOILER FIREWALL        NEXT
 FOLLOW-ALONG MAP                NEXT
-MICRO-WIKI UI                   NEXT
 FULL READING TEST               LATER
 ```
 
