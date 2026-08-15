@@ -12,8 +12,6 @@ Guiding principle:
 
 > The map represents the novel first. Historical reconstruction is supporting context, not a replacement for the novel.
 
----
-
 ## 2. Source policy
 
 ### Primary narrative source
@@ -42,8 +40,6 @@ External sources are allowed for:
 - separate historical context for the micro-wiki.
 
 They must never be used to manufacture or overwrite novel evidence.
-
----
 
 ## 3. Completed work
 
@@ -162,15 +158,25 @@ Initial entities include:
 
 The micro-wiki is intentionally compact. It exists to explain why a historical person/event matters to the current scene, not to become an independent encyclopedia.
 
----
-
 ## 4. Current work in progress
 
-### A. Complete Book I primary-text audit
+### A. Complete Book I primary-text audit — IN PROGRESS
 
-Validate the existing Book I structured records against the Archive.org transcription in detail.
+A dedicated `research/book1-primary-text-audit.md` now records the section-by-section validation against Archive.org.
 
-For each section, verify:
+The first audit pass has already produced a meaningful correction: the earlier `Mount Ibuki → Tarui` movement was too confidently classified. The text only says that Takezo and Matahachi travel **in the direction of Tarui**, so the dataset now records this as `intended`, not confirmed arrival.
+
+The audit also formalized the distinction between:
+
+```text
+confirmed movement
+intended destination
+relative movement
+```
+
+and applied the same principle to Hanada Bridge and other planned destinations.
+
+Continue validating:
 
 - characters present;
 - names/aliases;
@@ -205,8 +211,6 @@ reader progress
 ```
 
 This mapping must be evidence-based and should not alter the primary corpus structure.
-
----
 
 ## 5. Next product milestones
 
@@ -283,8 +287,6 @@ The key question is always:
 
 If not, it should not automatically become another research task.
 
----
-
 ## 6. Explicit non-goals
 
 MusashiMap is **not** currently trying to become:
@@ -296,8 +298,6 @@ MusashiMap is **not** currently trying to become:
 - a GIS project requiring exact historical coordinates for every ambiguous toponym.
 
 Precision is valuable when it changes the reader's understanding. False precision is worse than an explicitly uncertain area.
-
----
 
 ## 7. Working rules for future agents
 
@@ -311,8 +311,6 @@ Precision is valuable when it changes the reader's understanding. False precisio
 8. Never leak future information through the map or micro-wiki.
 9. Do not expand research merely because a more precise answer is theoretically possible.
 10. Optimize for the usefulness of the reading companion.
-
----
 
 ## 8. Current state at a glance
 
