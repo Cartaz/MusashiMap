@@ -2,11 +2,11 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="MusashiMap — mappa interattiva e senza spoiler di Musashi di Eiji Yoshikawa">
   <title>MusashiMap</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-  <link rel="stylesheet" href="css/style.css?v=20260816">
+  <link rel="stylesheet" href="css/style.css?v=20260816-2">
 </head>
 <body>
   <main class="app-shell">
@@ -35,7 +35,7 @@
         <h2 id="section-title">The Little Bell</h2>
         <p id="map-note">Le località mostrate sono quelle già incontrate nella lettura. Le coordinate moderne non implicano automaticamente equivalenza storica.</p>
       </div>
-      <section class="character-panel map-character-panel">
+      <section class="character-panel map-character-panel" aria-label="Filtro personaggi">
         <div class="panel-heading">
           <div>
             <h2>Personaggi visibili</h2>
@@ -46,8 +46,11 @@
             <button id="select-none" type="button">Nessuno</button>
           </div>
         </div>
-        <div id="character-filters" class="character-filters"></div>
-        <div id="character-list" class="character-grid" aria-hidden="true"></div>
+        <button id="character-toggle" class="character-toggle" type="button" aria-expanded="false" aria-controls="character-filter-body">Mostra filtri</button>
+        <div id="character-filter-body" class="character-filter-body">
+          <div id="character-filters" class="character-filters"></div>
+          <div id="character-list" class="character-grid" aria-hidden="true"></div>
+        </div>
       </section>
     </section>
 
@@ -73,7 +76,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
     (() => {
-      const VERSION = "20260816";
+      const VERSION = "20260816-2";
       let map;
       let markers;
       let routes;
@@ -106,9 +109,17 @@
           document.querySelector("#chapter").addEventListener("keydown",e=>{if(e.key==="Enter")setTimeout(()=>draw(Number(document.querySelector("#section-select").value)),0);});
         } catch(error) { console.error("Map initialization failed",error); }
       }
+      document.querySelector("#character-toggle").addEventListener("click", () => {
+        const button = document.querySelector("#character-toggle");
+        const panel = document.querySelector("#character-filter-body");
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.textContent = expanded ? "Mostra filtri" : "Nascondi filtri";
+        panel.hidden = expanded;
+      });
       boot();
     })();
   </script>
-  <script type="module" src="js/app.js?v=20260816"></script>
+  <script type="module" src="js/app.js?v=20260816-2"></script>
 </body>
 </html>
