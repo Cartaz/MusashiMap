@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "source": {
+    "type": "novel_transcription",
+    "url": "https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt",
+    "rule": "All narrative presence, names, aliases, locations and movements in this analysis are extracted only from the Internet Archive transcription. External sources are not used to establish novel facts."
+  },
+  "book": "I",
+  "title": "Earth",
+  "sections": [
+    {"id":1,"title":"The Little Bell"},
+    {"id":2,"title":"The Comb"},
+    {"id":3,"title":"The Flower Festival"},
+    {"id":4,"title":"The Dowager's Wrath"},
+    {"id":5,"title":"The Art of War"},
+    {"id":6,"title":"The Old Cryptomeria Tree"},
+    {"id":7,"title":"The Rock and the Tree"},
+    {"id":8,"title":"The Birth of Musashi"}
+  ],
+  "main_cast_presence": {
+    "musashi": [1,2,3,4,5,6,7,8],
+    "matahachi": [1,2],
+    "otsu": [3,4,5,6,7,8],
+    "takuan": [3,4,5,6,7,8],
+    "osugi": [3,4,5,6,7,8],
+    "akemi": [1,2],
+    "ogin": [3,4,6,7,8],
+    "jotaro": [],
+    "kojiro": []
+  },
+  "confirmed_movement_points": [
+    {"section":1,"characters":["musashi","matahachi"],"from":"sekigahara","to":"mount_ibuki_area","evidence":"The pair reaches the hills after leaving the battlefield and spends two days foraging there."},
+    {"section":1,"characters":["musashi","matahachi"],"from":"mount_ibuki_area","to":"tarui","evidence":"They move at night in the direction of Tarui and subsequently reach Oko and Akemi's refuge."},
+    {"section":1,"characters":["musashi","matahachi"],"to":"oko_akemi_house","evidence":"They are taken in and concealed at Oko and Akemi's house."},
+    {"section":2,"characters":["musashi"],"from":"oko_akemi_house","to":"mount_ibuki_area","evidence":"Takezo goes into the nearby mountains with Akemi to collect mushrooms/for supplies and encounters Temma."},
+    {"section":2,"characters":["musashi"],"from":"mount_ibuki_area","to":"oko_akemi_house","evidence":"Takezo returns to the house after the encounter."},
+    {"section":3,"characters":["musashi"],"to":"shippoji","evidence":"Otsu spots Takezo among the crowd outside the temple during the flower festival; he immediately disappears."},
+    {"section":4,"characters":["musashi"],"to":"sanumo_mountains","evidence":"Takezo is hiding in the Sanumo mountains while search parties pursue him."},
+    {"section":5,"characters":["takuan","otsu"],"from":"shippoji","to":"sanumo_mountains","via":["itadori_pasture"],"evidence":"Takuan takes Otsu into the mountains and waits for Takezo rather than conducting a conventional search."},
+    {"section":5,"characters":["musashi","takuan","otsu"],"location":"sanumo_mountains","evidence":"Takezo approaches their camp/fire and is captured by Takuan."},
+    {"section":6,"characters":["musashi"],"from":"sanumo_mountains","to":"shippoji","evidence":"Takuan brings the captured Takezo back to Shippoji."},
+    {"section":6,"characters":["musashi"],"to":"old_cryptomeria_shippoji","evidence":"Takezo is tied to the old cryptomeria tree in the temple grounds."},
+    {"section":7,"characters":["musashi","otsu"],"from":"old_cryptomeria_shippoji","to":"nakayama_pass","evidence":"Takezo is freed and escapes with Otsu; they reach Nakayama Pass before separating."},
+    {"section":7,"characters":["musashi"],"from":"nakayama_pass","to":"hinagura","evidence":"Takezo continues toward Hinagura to find Ogin."},
+    {"section":7,"characters":["otsu"],"from":"nakayama_pass","to":"hanada_bridge","evidence":"Otsu continues toward Himeji and waits at Hanada Bridge."},
+    {"section":8,"characters":["musashi"],"from":"hinagura","to":"himeji_area","evidence":"Takezo reaches the Himeji area after the failed attempt to find Ogin at Hinagura."},
+    {"section":8,"characters":["musashi"],"to":"himeji_castle","evidence":"Takuan brings Takezo before Lord Ikeda Terumasa at Himeji Castle."}
+  ],
+  "identity_checkpoint": {
+    "character":"musashi",
+    "before_section":8,
+    "old_display_name":"Shinmen Takezo",
+    "new_display_name":"Miyamoto Musashi",
+    "evidence":"At Himeji Castle, Ikeda asks for Shimmen Takezo's name and the later naming scene establishes Miyamoto Musashi.",
+    "spoiler_rule":"The canonical identity remains the same internal character ID; only the reader-facing identity changes at the narrative point where the new name is established."
+  },
+  "not_present_in_book1": ["jotaro","kojiro"],
+  "notes": [
+    "This file is an analysis layer, not yet the final map database.",
+    "Locations and movement edges will be normalized against the location registry before UI integration.",
+    "No future-book information is used to establish Book I presence."
+  ]
+}
