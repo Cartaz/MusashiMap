@@ -108,7 +108,7 @@ Examples already investigated include:
 - Nakayama Pass — strong candidate around Kamazaka Pass, but not promoted to exact;
 - Sayo and Mikazuki — strong modern area identifications.
 
-Some locations remain intentionally unresolved, including candidates such as Tsujinohara, Aida River, Sanumo and Mount Fuwa where evidence did not justify false precision.
+Some locations remain intentionally unresolved, including candidates such as Tsujinohara, Aida River and Sanumo where evidence did not justify false precision. Mount Fuwa is now confirmed as a **narrative landmark** by the primary text, but its modern coordinate remains a separate question.
 
 ### Bounded topographic research protocol
 
@@ -156,47 +156,47 @@ Initial entities include:
 - Eastern Army
 - Western Army
 
+The primary-text audit has additionally confirmed high-value narrative material for Takuan Soho, Ikeda Terumasa / the House of Ikeda, and the Akamatsu context. These are candidates for expansion of the micro-wiki's narrative layer.
+
 The micro-wiki is intentionally compact. It exists to explain why a historical person/event matters to the current scene, not to become an independent encyclopedia.
+
+### Primary-text audit — pass 2
+
+The dedicated `research/book1-primary-text-audit.md` has now completed a second high-value pass over Book I.
+
+Newly recorded confirmations include:
+
+- Mount Fuwa as an explicit narrative landmark in the opening geography;
+- the distinction between Tarui as a trade destination and Tarui as an actual destination of Takezo/Matahachi;
+- substantial in-novel biographical material for Takuan;
+- the three-year confinement at Himeji Castle;
+- the explicit Takezo → Miyamoto → Musashi naming event;
+- the post-confinement Himeji → Sayo relation through Ogin.
+
+The audit remains open only for remaining high-value narrative validation, not for endless rechecking.
 
 ## 4. Current work in progress
 
 ### A. Complete Book I primary-text audit — IN PROGRESS
 
-A dedicated `research/book1-primary-text-audit.md` now records the section-by-section validation against Archive.org.
+Continue validating only high-value items:
 
-The first audit pass has already produced a meaningful correction: the earlier `Mount Ibuki → Tarui` movement was too confidently classified. The text only says that Takezo and Matahachi travel **in the direction of Tarui**, so the dataset now records this as `intended`, not confirmed arrival.
+- complete character presence and absence;
+- every named location and meaningful spatial relation;
+- movement transitions and intended-vs-confirmed status;
+- historical people/factions/events for the micro-wiki;
+- aliases and identity transitions;
+- spoiler boundaries.
 
-The audit also formalized the distinction between:
+Do not reopen already settled topographic research unless the primary text produces a contradiction.
 
-```text
-confirmed movement
-intended destination
-relative movement
-```
-
-and applied the same principle to Hanada Bridge and other planned destinations.
-
-Continue validating:
-
-- characters present;
-- names/aliases;
-- current locations;
-- movements;
-- confirmed arrivals;
-- events;
-- relationships;
-- historical entities mentioned;
-- evidence boundaries.
-
-Do not introduce external historical facts into this layer.
-
-### B. Complete historical micro-wiki extraction
+### B. Complete historical micro-wiki extraction — IN PROGRESS
 
 Use the Book I primary-text audit to identify additional historical people/events/factions that materially help a reader understand the current scene.
 
 For each entity, maintain a spoiler boundary and keep narrative evidence separate from historical context.
 
-### C. Archive.org → Luni edition mapping
+### C. Archive.org → Luni edition mapping — NEXT
 
 The Archive.org section numbers are project-local source indices and must not be treated as the Italian Luni chapter numbers.
 
@@ -318,18 +318,18 @@ Precision is valuable when it changes the reader's understanding. False precisio
 PROJECT FOUNDATION              DONE
 BOOK I STRUCTURED DATA          DONE / VALIDATING
 SPOILER-SAFE CHARACTER MODEL    DONE
-LOCATION NORMALIZATION           DONE / VALIDATING
-TOPOGRAPHIC METHODOLOGY          DONE
-TOPOGRAPHIC INITIAL AUDIT        DONE / SELECTIVE FOLLOW-UP ONLY
-HISTORICAL MICRO-WIKI MODEL      DONE / EXPANDING
-BOOK I PRIMARY-TEXT AUDIT        IN PROGRESS
-ARCHIVE → LUNI MAPPING            NEXT
-COORDINATE INTEGRATION            NEXT
-READER-PROGRESS ENGINE            NEXT
-SPOILER FIREWALL                  NEXT
-FOLLOW-ALONG MAP                  NEXT
-MICRO-WIKI UI                     NEXT
-FULL READING TEST                 LATER
+LOCATION NORMALIZATION          DONE / VALIDATING
+TOPOGRAPHIC METHODOLOGY         DONE
+TOPOGRAPHIC INITIAL AUDIT       DONE / SELECTIVE FOLLOW-UP ONLY
+HISTORICAL MICRO-WIKI MODEL     DONE / EXPANDING
+BOOK I PRIMARY-TEXT AUDIT       IN PROGRESS — PASS 2
+ARCHIVE → LUNI MAPPING          NEXT
+COORDINATE INTEGRATION          NEXT
+READER-PROGRESS ENGINE          NEXT
+SPOILER FIREWALL                NEXT
+FOLLOW-ALONG MAP                NEXT
+MICRO-WIKI UI                   NEXT
+FULL READING TEST               LATER
 ```
 
 The roadmap is intentionally a living document. Update it at each meaningful milestone rather than creating a separate history document that can drift out of date.
