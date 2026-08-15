@@ -1,6 +1,6 @@
 # Book I — Primary-text audit
 
-Status: **in progress — primary-text pass 2**  
+Status: **in progress — primary-text pass 3**  
 Primary source: Internet Archive transcription only
 
 Source:
@@ -126,6 +126,32 @@ Validated:
 - Takuan changes the reading of his first name to **Musashi**.
 - The resulting reader-facing identity is **Miyamoto Musashi**.
 - After leaving the castle, Takuan tells Musashi that Ogin is alive and living in the Sayo district, creating an explicit late-Book-I geographic relation from Himeji toward Sayo.
+
+## Pass 3 — historical-entity and micro-wiki audit
+
+The third pass focuses only on historical entities that materially improve the reading companion. It does not attempt to add general biography beyond what is useful for the current narrative context.
+
+### Takuan Sōhō
+
+- First relevant Book I appearance: Section 3.
+- The narrative provides unusually extensive biographical context directly inside the novel.
+- The narrative identifies his religious training, Rinzai affiliation, studies with named teachers, residence at Nansōji, appointment as abbot of Daitokuji, and later departure.
+- Later sections establish his practical role in the capture, punishment and transformation of Takezo.
+- This is therefore a **high-priority historical micro-wiki entity**.
+- Narrative facts must remain distinct from any external historical biography.
+
+### Ikeda Terumasa / House of Ikeda
+
+- The House of Ikeda becomes relevant during the capture/punishment sequence.
+- Section 8 explicitly identifies Takezo as being brought before Lord Ikeda Terumasa at Himeji Castle.
+- Terumasa's actions are narratively significant: three-year confinement, offer of service, naming Takezo Miyamoto, and release.
+- `Ikeda Terumasa` is therefore a high-priority micro-wiki entity with a spoiler boundary at Section 8.
+- `House of Ikeda` can be represented separately as a historical faction/political authority.
+
+### Historical-context candidates requiring further exact-text verification
+
+- Akamatsu context is retained as a candidate but deliberately kept minimal until its exact narrative references are audited directly against the transcription.
+- No additional historical person should be promoted into the micro-wiki merely because they are historically associated with the setting. The novel must establish a meaningful narrative reference first.
 
 ## High-value conclusions from the audit
 
