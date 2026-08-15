@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-7";
+  const VERSION = "20260816-8";
   let map;
   let markers;
   let routes;
@@ -75,10 +75,9 @@
   async function boot() {
     try {
       map = L.map("map", {zoomControl:true, preferCanvas:true}).setView([35.05,135.55],7);
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png", {
+      L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png?lang=ja-Latn", {
         maxZoom:20,
-        subdomains:"abcd",
-        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener noreferrer">CARTO</a>'
+        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors &copy; <a href="https://wikimediafoundation.org/" target="_blank" rel="noopener noreferrer">Wikimedia</a>'
       }).addTo(map);
       markers = L.layerGroup().addTo(map);
       routes = L.layerGroup().addTo(map);
