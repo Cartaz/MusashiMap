@@ -2,88 +2,88 @@
 
 Date: 2026-08-16
 
-## Current live-product architecture
+## Current state
 
-```text
-index.html
-  ├─ Leaflet 1.9.4
-  ├─ MapLibre GL JS 4.7.1
-  ├─ MapLibre GL Leaflet 0.1.3
-  └─ js/map-runtime.js
-        ├─ vector basemap: OpenFreeMap / OpenMapTiles-derived
-        ├─ romanized-label override
-        ├─ narrative location markers
-        ├─ character-state markers
-        └─ section-scoped routes
+Book I (*Earth*) is the first fully scraped, normalized and audited narrative dataset. The live map and progressive wiki are functioning according to the current project design.
 
-js/app.js
-  └─ canonical reader state + UI
-       ├─ characters
-       ├─ events
-       ├─ micro-wiki
-       └─ musashi:reader-state event → map-runtime
-```
+## What has been completed
 
-## What is completed
+### Source corpus
 
-### Product / map layer
+- Book I was reconstructed from the canonical working corpus and split into eight chapter files under `data/source/musashi-book1/`.
+- `data/source/musashi-index.txt` records the source structure.
+- The temporary PDF/full-text extraction artifacts were removed from the repository after the chapter files were verified.
 
-- Confirmed the project URL used for the live site: `https://cartaz.github.io/MusashiMap/`.
-- Diagnosed and fixed the historical micro-wiki loading/cache issue; the wiki is confirmed functional by the user.
-- Audited the mobile UI against the iPhone 13 mini constraint and reduced the mobile UI footprint so the map remains the dominant element.
-- Fixed map reader-state synchronization so changing sections updates character markers instead of leaving stale positions.
-- Added romanized names (`modern_name_romaji`) to map popups.
-- Changed uncertain locations from "no pin" to explicitly encoded logical/area anchors when the available research justified an area-level position.
-- Added uncertainty presentation through `coordinate_precision`, including exact/area/approximate-area/modern-literary-reference semantics.
-- Implemented the vector-basemap solution: OpenFreeMap/OpenMapTiles-derived vector tiles through MapLibre GL Leaflet.
-- Implemented runtime label selection that prefers `name:ja-Latn`, then legacy `name:ja_rm`, then `name:latin`, `name_en`, and finally `name`.
-- Removed the obsolete `js/map.js` placeholder so `js/map-runtime.js` is the single map implementation.
+### Book I research/data
 
-### Book I source and data layer
-
-- All eight Book I chapter source files are present and non-empty under `data/source/musashi-book1/`.
-- The chapter-by-chapter Book I scrape was rebuilt from the canonical source corpus.
-- Character registry, character states, event ledger, movement transitions, location registry, entity index and contextual historical registry were rebuilt from that corpus.
-- The approved Book I audit corrections F-01 through F-09 are now applied.
-- Takuan chapter 7 has no physical companions; premature destinations in chapters 4–6 have been removed.
+- All eight Book I chapters were analyzed individually.
+- A second cross-chapter pass reconciled repeated names, identities, appearances and movements.
+- Character registry and chapter states were rebuilt.
+- Location registry, location states and movement transitions were rebuilt.
+- Event ledger was rebuilt.
+- Entity index, identities, relationships and contextual historical entities were rebuilt.
+- Progressive micro-wiki data was rebuilt.
+- Historical/context entities are separated where appropriate from narrative characters.
+- Explicit textual facts are distinguished from inference/uncertainty.
+- The approved Book I audit corrections F-01 through F-09 are applied.
+- Takuan chapter 7 has no physical companions; premature destinations in chapters 4–6 were removed.
 - The chapter 3 Takezo appearance is represented as an appearance rather than a confirmed movement edge.
 - Event `b1c5-01` distinguishes physical participants from referenced characters through `referenced_characters`.
-- Akamatsu Masanori is now a distinct historical-person context entity.
-- The Art of War is now a first-class `historical_work` context entity.
-- `data/schema.json` now describes the actual current Book I data model.
+- Akamatsu Masanori is a distinct historical-person context entity.
+- The Art of War is a first-class `historical_work` context entity.
+- `data/schema.json` describes the current Book I data model.
 - `research/book1-data-audit-final-2026-08-16.md` records the final PASS state.
 
-## Known technical debt / discrepancies
+### Map / UI
 
-### 1. Map/runtime state is not yet fully unified
+- Romanized map labels and popup names are implemented.
+- Unnecessary Japanese administrative suffixes are normalized for displayed place names.
+- Uncertain locations use explicit area/approximate semantics rather than fabricated precision.
+- The vector basemap solution uses MapLibre/OpenFreeMap/OpenMapTiles-derived data.
+- Map reader-state synchronization updates character markers when the selected section changes.
+- The micro-wiki is functional.
+- Mobile UI was adjusted for the iPhone 13 mini constraint.
+- The spoiler-safe reader model prevents future narrative information from being shown before its chapter.
 
-`js/app.js` remains responsible for emitting `musashi:reader-state`, while `js/map-runtime.js` listens for that event. This works, but it is still a transitional integration rather than a single canonical renderer. The roadmap tracks full reader-progress/map integration as a future milestone.
+## Canonical workflow for future books
 
-### 2. Live visual certification is pending
+The reusable procedure is documented in `docs/book-research-workflow.md`.
 
-The GitHub Pages deployment workflow can publish the site, but the available web renderer previously returned a cache miss for the live URL. Therefore the new OpenFreeMap/MapLibre basemap should not be declared visually certified until it has been checked in a real browser.
+The short version is:
 
-### 3. Basemap labels depend on tile metadata
+1. Prepare and verify the source corpus.
+2. Split the target book into individual chapter files.
+3. Pass A: scrape each chapter independently for characters, places, events, historical/context entities, aliases and movements.
+4. Pass B: compare all chapter results to reconcile repeated names, identities, appearances and cross-chapter movements.
+5. Update registries, chapter states, events, transitions, relationships, identities, context and progressive wiki data.
+6. Run narrative, spoiler and technical audits.
+7. Apply and document corrections.
+8. Repeat the relevant audits until the book reaches `PASS`.
+9. Freeze the completed book and only then begin the next one.
 
-Vector rendering gives MusashiMap control over the label field, but it cannot invent romanization where the tile does not contain a romanized field. The fallback chain is intentionally Latin/English before the raw `name` field. If a particular feature still appears in Kanji because no Latin field exists, that is a basemap-data limitation rather than a narrative-database defect.
+## Remaining work
 
-### 4. Luni mapping remains deferred
+### Immediate next milestone
 
-The project still does not have the user's Luni-edition index in the current working context. Do not infer Luni chapter numbers from memory. Archive.org sections remain the canonical internal narrative units until the actual Luni index is available.
+**Book II — Water**
 
-## Immediate next action
+- Add/verify the Book II source chapter files.
+- Confirm its chapter index and exact chapter boundaries.
+- Run the workflow in `docs/book-research-workflow.md` from step 1.
+- Preserve continuity with Book I identities and locations while treating Book II revelations according to spoiler rules.
 
-After deployment, open the live site in a real browser and verify:
+### Product / technical follow-up
 
-1. map is rendered;
-2. geographic density is comparable to the desired OSM/CARTO experience;
-3. Japanese geographic labels are predominantly romanized;
-4. no black/blank basemap appears;
-5. markers move with section changes;
-6. uncertain-area markers remain visually distinguishable;
-7. popups use Italian/romanized names;
-8. mobile map remains usable on iPhone 13 mini;
-9. micro-wiki still works;
-10. no future information is exposed when moving backwards through sections.
+- Perform a real-browser visual certification of the current live deployment, especially the MapLibre/OpenFreeMap basemap and romanized labels.
+- Continue improving the unification between canonical reader state and map runtime; `js/app.js` currently emits `musashi:reader-state` while `js/map-runtime.js` consumes it.
+- Keep the Luni-edition chapter mapping deferred until the actual Luni index is available; do not infer it from memory.
+- As the corpus grows, maintain the chapter-level source architecture so analysis never requires loading the entire novel unnecessarily.
 
-The Book I data audit itself is now complete and PASS.
+## Important constraints for the next session
+
+- Do not redo Book I scraping from scratch unless an audit identifies a concrete defect.
+- Treat the current Book I dataset and final audit as the baseline.
+- Use the source chapter files as the primary narrative evidence for future scraping.
+- Do not introduce future-book information into Book I-visible state.
+- Preserve uncertainty instead of inventing facts or geographic precision.
+- Keep the workflow document updated if the process changes materially.
