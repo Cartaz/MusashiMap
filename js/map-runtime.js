@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-13";
+  const VERSION = "20260816-14";
   let map;
   let glLayer;
   let markers;
@@ -67,20 +67,41 @@
     ];
   }
 
-  function localizeBasemapLabels() {
-    if (!glLayer) return;
-    const gl = glLayer.getMaplibreMap();
-    if (!gl || !gl.isStyleLoaded()) return;
-    const allowedSourceLayers = new Set([
-      "place", "water_name", "waterway", "transportation_name", "poi",
-      "mountain_peak", "park", "aerodrome_label", "housenumber"
-    ]);
-    const expression = romanizedLabelExpression();
-    for (const layer of gl.getStyle().layers ?? []) {
-      if (layer.type !== "symbol" || !layer.layout?.["text-field"]) continue;
-      if (layer.source !== "openmaptiles" || !allowedSourceLayers.has(layer["source-layer"])) continue;
-      gl.setLayoutProperty(layer.id, "text-field", expression);
-    }
+  // Normalize only a trailing administrative suffix. The source tile data is untouched.
+  // The length guard prevents short names from being altered accidentally.
+  function cleanAdministrativeSuffixExpression() {
+    const suffixes = [
+      "-machi", "-mura", "-chō", "-cho", "-ken", "-gun", "-shi", "-ku", "-son", "-to", "-fu"
+    ];
+    const name = ["var", "labelName"];
+    const cases = [];
+    suffixes.forEach(suffix => {
+      const length = suffix.length;
+      cases.push(
+        ["all",
+          [">=", ["length", name], length],
+          ["==", ["slice", name, ["-", ["length", name], length]], suffix]
+        ],
+        ["slice", name, 0, ["-", ["length", name], length]]
+      );
+    });
+    return ["let", "labelName", romanizedLabelExpression(), ["case", ...cases, name]];
+  }
+
+  // MapLibre supports transformStyle specifically for modifying a fetched style
+  // before it is committed to the map. This avoids runtime styledata/setLayoutProperty
+  // loops while keeping the upstream OpenFreeMap style and tiles as the source.
+  function transformBasemapStyle(_previousStyle, nextStyle) {
+    const style = {
+      ...nextStyle,
+      layers: nextStyle.layers.map(layer => ({
+        ...layer,
+        ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles"
+          ? {layout: {...layer.layout, "text-field": cleanAdministrativeSuffixExpression()}}
+          : {})
+      }))
+    };
+    return style;
   }
 
   async function boot() {
@@ -93,15 +114,13 @@
         maxBoundsViscosity:1
       }).setView([35.05,135.55],7);
 
-      // OpenFreeMap supplies an OSM/OpenMapTiles-derived vector basemap with full
-      // geographic context. Because labels are vector data, we can select the
-      // Japanese Latin fields instead of accepting raster-rendered Kanji.
+      // OpenFreeMap supplies the OSM/OpenMapTiles-derived vector basemap.
+      // transformStyle applies our reader-facing label cleanup before MapLibre
+      // commits the style, so there is no post-load style mutation loop.
       glLayer = L.maplibreGL({
-        style: "https://tiles.openfreemap.org/styles/liberty"
+        style: "https://tiles.openfreemap.org/styles/liberty",
+        transformStyle: transformBasemapStyle
       }).addTo(map);
-      const gl = glLayer.getMaplibreMap();
-      gl.once("load", localizeBasemapLabels);
-      gl.on("styledata", localizeBasemapLabels);
 
       markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
