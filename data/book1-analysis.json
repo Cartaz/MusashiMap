@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 6,
   "source": {
     "type": "repository_chapter_corpus",
     "path": "data/source/musashi-book1",
@@ -9,66 +9,54 @@
   "book": "I",
   "title": "Earth",
   "sections": [
-    {"id":1,"title":"The Little Bell"},
-    {"id":2,"title":"The Comb"},
-    {"id":3,"title":"The Flower Festival"},
-    {"id":4,"title":"The Dowager's Wrath"},
-    {"id":5,"title":"The Art of War"},
-    {"id":6,"title":"The Old Cryptomeria Tree"},
-    {"id":7,"title":"The Rock and the Tree"},
-    {"id":8,"title":"The Birth of Musashi"}
+    {"id":1,"title":"The Little Bell"},{"id":2,"title":"The Comb"},{"id":3,"title":"The Flower Festival"},{"id":4,"title":"The Dowager's Wrath"},{"id":5,"title":"The Art of War"},{"id":6,"title":"The Old Cryptomeria Tree"},{"id":7,"title":"The Rock and the Tree"},{"id":8,"title":"The Birth of Musashi"}
   ],
   "text_presence": {
-    "musashi":[1,2,3,4,5,6,7,8],
-    "kojiro":[],
-    "otsu":[2,3,4,5,6,7,8],
-    "matahachi":[1,2,3,4,5,6,7,8],
-    "takuan":[3,4,5,6,7,8],
-    "osugi":[4,5,6,7,8],
-    "jotaro":[],
-    "akemi":[1,2],
-    "ogin":[3,4,5,6,7,8]
+    "musashi":[1,2,3,4,5,6,7,8],"kojiro":[],"otsu":[2,3,4,5,6,7,8],"matahachi":[1,2,3,4,5,6,7,8],"takuan":[3,4,5,6,7,8],"osugi":[4,5,6,7,8],"jotaro":[],"akemi":[1,2],"ogin":[3,4,5,6,7,8],"oko":[1,2,5],"temma":[2],"kohei":[2],"heita":[4,7],"gonroku":[7,8],"aoki_tanzaemon":[8],"lord_ikeda":[5,8],"himeji_captain":[4,5,6]
   },
   "physical_presence": {
-    "musashi":[1,2,3,4,5,6,7,8],
-    "kojiro":[],
-    "otsu":[3,4,5,6,7,8],
-    "matahachi":[1,2],
-    "takuan":[3,4,5,6,7,8],
-    "osugi":[4,5,6,7,8],
-    "jotaro":[],
-    "akemi":[1,2],
-    "ogin":[3,4],
-    "oko":[1,2],
-    "temma":[2],
-    "heita":[4,7],
-    "gonroku":[7,8],
-    "lord_ikeda":[5,8],
-    "himeji_captain":[4,5,6]
+    "musashi":[1,2,3,4,5,6,7,8],"kojiro":[],"otsu":[3,4,5,6,7,8],"matahachi":[1,2],"takuan":[3,4,5,6,7,8],"osugi":[4,5,6,7],"jotaro":[],"akemi":[1,2],"ogin":[3,4],"oko":[1,2],"temma":[2],"heita":[4,7],"gonroku":[7],"lord_ikeda":[8],"himeji_captain":[4,5,6],"aoki_tanzaemon":[]
   },
   "secondary_presence": {
-    "oko":[1,2,5],
-    "temma":[2],
-    "kohei":[2],
-    "heita":[4,7],
-    "gonroku":[7,8],
-    "aoki_tanzaemon":[6,8],
-    "lord_ikeda":[5,8],
-    "himeji_captain":[4,5,6]
+    "oko":[1,2,5],"temma":[2],"kohei":[2],"heita":[4,7],"gonroku":[7,8],"aoki_tanzaemon":[8],"lord_ikeda":[5,8],"himeji_captain":[4,5,6]
   },
   "quality_rules": {
     "explicit":"Directly stated or unambiguously shown in the chapter text.",
     "strong_inference":"Strongly implied by the chapter text but not stated as a completed fact.",
     "weak_inference":"Plausible but not sufficiently certain for reader-facing map data.",
-    "spoiler_boundary":"No later-book information is used to resolve a Book I ambiguity."
+    "spoiler_boundary":"No later-book information is used to resolve a Book I ambiguity.",
+    "physical_presence":"A character is physically present only when the source places them on-page in the scene; a letter, report, signature or discussion does not count as physical presence.",
+    "reported_position":"A reported location may be stored for continuity but must not create a physical marker unless the narrative establishes presence."
+  },
+  "chapter_audit": {
+    "1":"Sekigahara → Mount Ibuki → intended direction of Tarui → Oko/Akemi house. Tarui is not an arrival.",
+    "2":"Takezo and Matahachi remain at the refuge until the final night. The source explicitly ends with Oko, Akemi and Matahachi gone and Takezo discovering the empty house.",
+    "3":"Otsu/Takuan move Shippoji → Aida River → Ogin House → festival at Shippoji. Matahachi, Akemi and Oko are discussed or absent but not physically present.",
+    "4":"Ogin is physically arrested at Ogin House and reported held at Hinagura. Otsu witnesses the arrest and escapes to Shippoji. Takezo remains in the Sanumo mountains.",
+    "5":"Otsu/Takuan travel to Itadori Pasture and capture Takezo. Matahachi/Oko are known only through letters; Ogin is discussed as imprisoned, not physically present. Lord Ikeda appears only through the signature on the search notices.",
+    "6":"Takezo is at the old cryptomeria at Shippoji; Takuan, Otsu and Osugi are physically present around the punishment scene. Aoki Tanzaemon is not present or named in this chapter.",
+    "7":"Takezo and Otsu escape together, separate at Nakayama Pass, Otsu reaches Mikazuki and later disappears into a ravine. Osugi and Gonroku pursue her. Takezo reaches Hinagura, learns Ogin was transferred, and heads for Himeji.",
+    "8":"Takezo reaches Himeji, enters Himeji Castle, spends about three years confined, is released and renamed Miyamoto Musashi. Otsu is subsequently revealed to have waited three years at Hanada Bridge. Osugi/Gonroku and Aoki are only reported, not physically present."
+  },
+  "adjacent_audit": {
+    "1-2":"Takezo/Matahachi remain together at Oko's refuge until the final night of chapter 2; the actual departing group is Oko + Akemi + Matahachi, while Takezo remains.",
+    "2-3":"Chapter 3 does not show the departing group again. Their last known location is the refuge, while their current position is unknown.",
+    "3-4":"Takezo flees the festival and is pursued in chapter 4; Otsu returns to Shippoji after Ogin's arrest; Ogin's state changes to prisoner at Hinagura.",
+    "4-5":"Takezo remains in the mountains until he follows Otsu/Takuan to Itadori. Ogin remains imprisoned; Matahachi remains absent and is later confirmed alive by letter.",
+    "5-6":"Takezo's capture at Itadori is followed immediately by his return to Shippoji and restraint at the cryptomeria.",
+    "6-7":"Takezo remains bound until Otsu frees him; they then travel together to Nakayama Pass and separate.",
+    "7-8":"Otsu's post-ravine recovery is intentionally unresolved in chapter 7 and established in chapter 8 as a three-year wait at Hanada Bridge. Takezo's Himeji destination becomes confirmed at the start of chapter 8."
   },
   "critical_corrections": [
-    "Chapter 1 direction toward Tarui is not treated as confirmed arrival.",
-    "Matahachi is physically present only in chapters 1–2; later chapters mention him but do not place him physically in the narrative.",
-    "Otsu is named in chapter 2, but her first physical appearance in Book I is chapter 3.",
-    "Chapter 4 establishes Ogin's arrest and reports Hinagura as her prison; chapter 7 explicitly reveals that she had already been transferred to Himeji.",
-    "Chapter 7 establishes Otsu's route toward Himeji but she becomes ill at Mikazuki Teahouse and is later reported to have recovered and reached Hanada Bridge.",
-    "Chapter 8 contains a three-year time jump inside the same source chapter; states before and after the gap must not be conflated."
+    "Chapter 2 departure is a group departure: Oko, Akemi and Matahachi leave the refuge together.",
+    "Chapter 3 contains no physical appearance of Akemi; she remains only a prior-state/absent character.",
+    "Chapter 4 Otsu is not captured; she witnesses Ogin's arrest and escapes to Shippoji.",
+    "Chapter 4 Ogin's final physical state is Hinagura, not Ogin House.",
+    "Chapter 5 Lord Ikeda is mentioned through his signature, not physically present.",
+    "Chapter 6 Aoki Tanzaemon is not present and should not receive a Chapter 6 location.",
+    "Chapter 7 Otsu does not reach Hanada Bridge within the chapter; that arrival/wait is established retrospectively in Chapter 8.",
+    "Chapter 8 Musashi's end state is departure from Himeji, not continued imprisonment; Takuan also departs after the release.",
+    "Chapter 8 Osugi, Gonroku and Aoki are reported rather than physically located at Himeji."
   ],
   "identity_checkpoint": {
     "character":"musashi",

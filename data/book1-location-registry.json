@@ -1,32 +1,42 @@
 {
-  "version": 1,
+  "version": 2,
   "source": {
     "type": "novel_transcription",
-    "url": "https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt",
-    "rule": "Names and narrative location references are established only from the Internet Archive transcription. Geographic coordinates are intentionally not assigned in this layer."
+    "path": "data/source/musashi-book1",
+    "rule": "Narrative location names and relationships are established only from the Book I source corpus. Coordinates belong to data/locations.json and are a separate geographic-identification layer."
   },
   "book": "I",
   "title": "Earth",
   "locations": [
-    {"id":"sekigahara","name":"Sekigahara","type":"historical_site","precision":"regional","coordinates":null,"status":"text_verified"},
-    {"id":"mount_ibuki_area","name":"Monte Ibuki / area montana","type":"mountain_area","precision":"regional","coordinates":null,"status":"text_verified"},
-    {"id":"tarui","name":"Tarui","type":"settlement","precision":"settlement","coordinates":null,"status":"text_verified"},
-    {"id":"oko_akemi_house","name":"Casa/rifugio di Oko e Akemi","type":"narrative_site","precision":"fictional_or_unresolved","coordinates":null,"status":"text_verified"},
-    {"id":"shippoji","name":"Shippoji","type":"temple","precision":"site","coordinates":null,"status":"text_verified"},
-    {"id":"sanumo_mountains","name":"Montagne di Sanumo","type":"mountain_area","precision":"regional","coordinates":null,"status":"text_verified"},
-    {"id":"itadori_pasture","name":"Itadori Pasture","type":"pasture_area","precision":"local_area","coordinates":null,"status":"text_verified"},
-    {"id":"old_cryptomeria_shippoji","name":"Vecchio cryptomeria di Shippoji","type":"narrative_site","precision":"exact_within_shippoji","coordinates":null,"status":"text_verified"},
-    {"id":"nakayama_pass","name":"Nakayama Pass","type":"mountain_pass","precision":"route_site","coordinates":null,"status":"text_verified"},
-    {"id":"hinagura","name":"Hinagura","type":"settlement_or_stockade_area","precision":"local_area","coordinates":null,"status":"text_verified"},
-    {"id":"hanada_bridge","name":"Hanada Bridge","type":"bridge","precision":"site","coordinates":null,"status":"text_verified"},
-    {"id":"himeji_area","name":"Himeji area","type":"urban_area","precision":"regional","coordinates":null,"status":"text_verified"},
-    {"id":"himeji_castle","name":"Himeji Castle","type":"castle","precision":"site","coordinates":null,"status":"text_verified"},
-    {"id":"harima_road_teahouse","name":"Teahouse on the road to Harima","type":"narrative_site","precision":"unresolved","coordinates":null,"status":"text_verified"}
+    {"id":"sekigahara","name":"Sekigahara","type":"historical_site","status":"text_verified"},
+    {"id":"mount_ibuki_area","name":"Mount Ibuki area","type":"mountain_area","status":"text_verified"},
+    {"id":"tarui","name":"Tarui","type":"settlement","status":"text_verified","note":"Direction of travel in chapter 1; arrival is not established."},
+    {"id":"oko_akemi_house","name":"Oko and Akemi's House","type":"narrative_site","status":"text_verified"},
+    {"id":"miyamoto","name":"Miyamoto","type":"settlement_area","status":"text_verified"},
+    {"id":"aida_river","name":"Aida River","type":"river","status":"text_verified"},
+    {"id":"mimasaka_highroad","name":"Mimasaka Highroad","type":"route","status":"text_verified"},
+    {"id":"shippoji","name":"Shippoji","type":"temple","status":"text_verified"},
+    {"id":"ogin_house","name":"Ogin's House","type":"narrative_site","status":"text_verified"},
+    {"id":"honiden_house","name":"Hon'den House","type":"narrative_site","status":"text_verified"},
+    {"id":"sanumo_mountains","name":"Sanumo Mountains","type":"mountain_area","status":"text_verified"},
+    {"id":"tsujinohara","name":"Tsujinohara","type":"area","status":"text_verified","note":"Route-area reference; modern identification remains unresolved."},
+    {"id":"itadori_pasture","name":"Itadori Pasture","type":"pasture_area","status":"text_verified"},
+    {"id":"old_cryptomeria_shippoji","name":"Old Cryptomeria at Shippoji","type":"narrative_site","status":"text_verified"},
+    {"id":"nakayama_pass","name":"Nakayama Pass","type":"mountain_pass","status":"text_verified"},
+    {"id":"mikazuki_teahouse","name":"Mikazuki Teahouse","type":"narrative_site","status":"text_verified"},
+    {"id":"shingu","name":"Shingu","type":"settlement","status":"text_verified","note":"Mentioned by Osugi as an intended overnight stop; arrival is not established in the source."},
+    {"id":"hinagura","name":"Hinagura","type":"area","status":"text_verified"},
+    {"id":"hinagura_stockade","name":"Hinagura Stockade","type":"fortified_site","status":"text_verified"},
+    {"id":"himeji_area","name":"Himeji","type":"urban_area","status":"text_verified"},
+    {"id":"hanada_bridge","name":"Hanada Bridge","type":"bridge","status":"text_verified"},
+    {"id":"himeji_castle","name":"Himeji Castle","type":"castle","status":"text_verified"},
+    {"id":"sayo_district","name":"Sayo District","type":"region","status":"text_verified"}
   ],
   "normalization_rules": [
-    "A narrative location is not assigned real-world coordinates until its geographic identification is independently verified.",
-    "Fictional, ambiguous, or unresolved sites remain map nodes without coordinates rather than receiving guessed coordinates.",
-    "A movement edge may connect a regional area to a precise site when the text establishes the relationship, but the UI should not imply false geographic precision.",
-    "The spelling and naming used by the transcription remain the canonical source labels; normalized modern names can be added later as separate metadata."
+    "Narrative names remain canonical in this layer.",
+    "A location mentioned as a destination is not treated as an arrival unless the source establishes the arrival.",
+    "Reported positions remain distinct from physical presence.",
+    "Geographic precision and coordinates are maintained separately in data/locations.json.",
+    "Unresolved sites remain text-verified nodes rather than receiving invented historical coordinates."
   ]
 }
