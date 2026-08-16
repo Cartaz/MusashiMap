@@ -42,24 +42,23 @@ The micro-wiki is a compact contextual lookup for tertiary historical references
 
 `data/reader-progress.json` and `js/reader-progress.js` define the canonical section visibility contract. The micro-wiki already consumes it, so future information is not rendered before its narrative trigger.
 
-### Initial geographic map integration — DONE / VALIDATING
+### Initial geographic map integration
 
-The placeholder central panel has been replaced by a live Leaflet/OpenStreetMap map layer.
+The placeholder central panel was replaced by a live Leaflet map with narrative markers, character-state markers, section-scoped movements and uncertainty-aware location markers. Approximate/area coordinates are allowed when they materially improve the follow-along experience, but their precision is explicitly encoded in the data.
 
-The first integrated modern anchors are:
+The map deliberately avoids drawing the entire novel's route network. Only the current section's contextual locations and explicit movements are rendered.
 
-- Sekigahara;
-- Mount Ibuki;
-- Tarui;
-- Himeji Castle.
+### Mobile map UX
 
-Only locations with coordinates that have passed the project's current geographic-confidence threshold are plotted. Locations with unresolved coordinates remain in the data registry but are deliberately **not pinned**.
+The mobile layout was tuned for narrow screens such as the iPhone 13 mini: the map is the dominant element, the character filter collapses, the long map note is suppressed, and the information panel moves below the map.
 
-The map also displays the current section's explicit `from → to` movement when both endpoints have coordinates. Intended destinations use a dashed line; confirmed movements use a solid line. This deliberately avoids the previous problem of drawing a large network of blue routes across the map.
+### Map label/basemap checkpoint
 
-The map popup exposes the modern-location note and preserves the distinction between modern coordinates and historical equivalence.
+The project tested several basemap approaches. Raster OSM gave the desired geographic density but rendered Japanese labels as Kanji; CARTO's no-label variant removed too much context; a Wikimedia raster endpoint produced a blank map and was abandoned.
 
-OpenStreetMap is used only as the visual basemap; narrative facts remain sourced from the Archive.org transcription and geographic coordinates are stored separately in the project data.
+The current solution is a **vector OpenFreeMap/OpenMapTiles-derived basemap rendered through MapLibre GL Leaflet**, so label fields can be selected at runtime. MapLibre's vector layer is retained inside the existing Leaflet map so the MusashiMap markers and movement overlays remain unchanged. The label expression prefers Japanese romanization fields (`name:ja-Latn`, then legacy `name:ja_rm`) and falls back to Latin/English names rather than deliberately requesting the Japanese Kanji field.
+
+OpenFreeMap documents its MapLibre integration and OpenMapTiles-derived data; OpenMapTiles documents the Japanese (Latin) localization and multilingual name fields. citeturn5search1turn0search0turn4search3
 
 ## 4. Current work in progress
 
@@ -69,33 +68,44 @@ Validate the existing structured datasets together rather than reopening researc
 
 ### B. Reader-progress integration — IN PROGRESS
 
-The base engine, micro-wiki consumer and initial map renderer now exist. The remaining work is to make all map visibility decisions consume the same canonical progress contract directly rather than relying on duplicated UI listeners.
+The base engine, micro-wiki consumer and map renderer exist. The remaining work is to make all map visibility decisions consume the same canonical progress contract directly rather than relying on duplicated UI listeners.
 
 ### C. Geographic layer — IN PROGRESS
 
-The first four high-confidence anchors are integrated. Remaining validated locations should be added selectively, with no fabricated coordinates for unresolved areas.
+The researched locations now include logical area anchors where exact coordinates were not justified. Future additions should be selective and should not reopen closed topographic investigations unless the map exposes a concrete contradiction.
 
-### D. Luni mapping — BLOCKED / DEFERRED
+### D. Basemap rendering verification — IN PROGRESS
+
+The new vector basemap and label-selection code are committed, but the live GitHub Pages URL is currently not fetchable through the available web renderer (cache miss). Therefore the vector-label migration has been **code-reviewed and source-verified but not visually certified from the live page in this session**. The first post-deploy check on a real browser, preferably the iPhone 13 mini, is required before calling this milestone closed.
+
+### E. Luni mapping — BLOCKED / DEFERRED
 
 Do not invent or infer the Luni chapter numbering from memory. When the actual edition index is available, map Archive.org sections to Luni chapters explicitly.
 
 ## 5. Next product milestones
 
-### Milestone 1 — Geographic layer completion
+### Milestone 1 — Verify the vector basemap on the live site
 
-Add the remaining **already-researched** modern coordinates where confidence is sufficient. Do not reopen closed topographic investigations unless the map exposes a concrete contradiction.
+Confirm that:
+
+- the map renders normally;
+- modern geographic context remains dense enough;
+- Japanese labels are rendered in Latin script where the tile data provides a romanized name;
+- there are no unexpected Kanji labels caused by fallback to `name`;
+- Leaflet markers, popups, routes and section changes remain functional;
+- the layout remains usable on the iPhone 13 mini.
 
 ### Milestone 2 — Canonical map/progress integration
 
 Move the temporary map wiring into the same reader-progress renderer used by the rest of the application so section changes have one authoritative state transition.
 
-### Milestone 3 — Follow-along map UX
+### Milestone 3 — Geographic layer completion
+
+Add only already-researched coordinates/area anchors where they improve the follow-along. Preserve `exact`, `area`, `approximate_area` and `modern_literary_reference` distinctions.
+
+### Milestone 4 — Follow-along map UX
 
 Refine the map around the current reading state: current location, current movement, visible previous locations and useful uncertainty cues. Keep the map visually dominant and the context panel collapsible where appropriate.
-
-### Milestone 4 — Micro-wiki polish
-
-The basic micro-wiki is functional and spoiler-safe. Later polish should improve presentation without turning it into an encyclopedia.
 
 ### Milestone 5 — Reading test
 
@@ -125,6 +135,8 @@ Precision is valuable when it changes the reader's understanding. False precisio
 14. Use the canonical reader-progress engine as the sole source of section visibility decisions.
 15. Keep novel-trigger data and external historical summaries semantically separate.
 16. Do not pin a location merely because a modern name matches; require the stored confidence/status to justify a coordinate.
+17. Treat the basemap as a presentation layer: never let it overwrite MusashiMap's narrative location data.
+18. Prefer vector basemaps when label language must be controlled; raster tiles cannot have their baked-in labels translated by CSS/JavaScript.
 
 ## 8. Current state at a glance
 
@@ -141,9 +153,11 @@ BOOK I PRIMARY-TEXT AUDIT       DONE — BOUNDED PASS CLOSED
 READER PROGRESS MODEL           DONE
 READER PROGRESS ENGINE          DONE / INTEGRATING
 MICRO-WIKI UI                   DONE
-GEOGRAPHIC MAP                  DONE — FIRST ANCHORS / VALIDATING
+MOBILE UI                       DONE / VALIDATING
+GEOGRAPHIC MAP                  DONE / VALIDATING
+VECTOR BASEMAP                  IMPLEMENTED / LIVE VISUAL CHECK PENDING
+ROMANIZED MAP LABELS            IMPLEMENTED / LIVE VISUAL CHECK PENDING
 ARCHIVE → LUNI MAPPING          DEFERRED — INDEX NEEDED
-GEOGRAPHIC LAYER COMPLETION     NEXT
 CANONICAL MAP/PROGRESS WIRING   NEXT
 FULL READING TEST               LATER
 ```
