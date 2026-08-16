@@ -16,10 +16,21 @@ export function validateData({ characters, locations, chapters, events, states }
     for (const id of event.via ?? []) if (!locationIds.has(id)) errors.push(`Event ${event.id}: luogo via inesistente ${id}`);
   }
 
+  const nonPhysicalLocationStatuses = new Set([
+    "reported_position",
+    "unknown",
+    "departed_with_group",
+    "departed_eastward",
+    "departed_westward"
+  ]);
+
   for (const state of states.character_states) {
     if (!sectionNumbers.has(state.section)) errors.push(`State ${state.character}/${state.section}: sezione inesistente`);
     if (!characterIds.has(state.character)) errors.push(`State ${state.character}/${state.section}: personaggio inesistente`);
     if (state.location && !locationIds.has(state.location)) errors.push(`State ${state.character}/${state.section}: luogo inesistente ${state.location}`);
+    if (nonPhysicalLocationStatuses.has(state.location_status) && state.location) {
+      errors.push(`State ${state.character}/${state.section}: ${state.location_status} non può avere una posizione fisica corrente (${state.location})`);
+    }
     const key = `${state.character}:${state.section}`;
     if (stateSections.has(key)) errors.push(`State ${state.character}/${state.section}: stato duplicato nella stessa sezione`);
     stateSections.set(key, state);
