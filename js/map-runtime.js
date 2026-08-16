@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-36";
+  const VERSION = "20260816-37";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -52,32 +52,40 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   // Narrative state and map visibility are deliberately separate.
   // current = physically present at the chapter's mapped location.
   // reported = a mapped location explicitly reported/referred to by the text, without physical presence being established.
-  // last_known = fallback to the character's most recent mapped position when the current state is not mappable.
+  // last_known = the most recent physically established location retained after departure or loss of a current position.
   // unmapped = genuinely no usable cartographic position.
   function resolveMapState(state, byId, allStates, sectionEvents){
-    // State semantics always take precedence over the mere presence of a location id.
-    // This prevents reported positions from being silently promoted to physical presence.
+    // Explicit semantic states always take precedence over event-derived locations and fallbacks.
     if(state?.location_status === "reported_position"){
-      const reported=state.location ? byId.get(state.location) : null;
+      // A reported position may be stored directly in location or, when the schema keeps
+      // only the reference target separately, in last_known_location. Either way it stays reported.
+      const reportedId=state.location || state.last_known_location;
+      const reported=reportedId ? byId.get(reportedId) : null;
       if(reported && hasCoords(reported)) return { location:reported, mode:"reported" };
     }
-    if(state?.location_status === "departed_with_group") return { location:null, mode:"unmapped" };
 
+    // Leaving with a group means we do not know the new position. Do not manufacture a
+    // current marker from an event, but retain the last physically known position below.
+    if(state?.location_status === "departed_with_group"){
+      const lastKnown=state?.last_known_location ? byId.get(state.last_known_location) : null;
+      if(lastKnown && hasCoords(lastKnown)) return { location:lastKnown, mode:"last_known" };
+    }
+
+    // An explicit current location is the strongest physical evidence.
     const current=state?.location ? byId.get(state.location) : null;
     if(current && hasCoords(current)) return { location:current, mode:"current" };
 
-    const sameChapterEvents=sectionEvents.filter(e=>(e.characters??[]).includes(state.character));
-    const eventLocationIds=[];
-    sameChapterEvents.forEach(e=>{
-      if(e.location) eventLocationIds.push(e.location);
-      if(e.destination && e.destination!=="unknown") eventLocationIds.push(e.destination);
-      if(e.origin) eventLocationIds.push(e.origin);
-    });
-    for(const id of eventLocationIds){const location=byId.get(id);if(hasCoords(location))return { location, mode:"reported" };}
+    // Do not infer "reported" merely because an event mentions a location. Event mentions
+    // are contextual map places; they are not a character-state assertion.
 
-    const candidates=allStates.filter(s=>s.character===state.character && s.section<=state.section && s.location).sort((a,b)=>b.section-a.section);
+    // Retain the most recent physically established mapped state when the current state
+    // has no usable coordinates. This is deliberately based on prior physical locations.
+    const candidates=allStates
+      .filter(s=>s.character===state.character && s.section<state.section && s.location && s.location_status !== "reported_position")
+      .sort((a,b)=>b.section-a.section);
     const fallback=candidates.map(s=>byId.get(s.location)).find(hasCoords);
     if(fallback) return { location:fallback, mode:"last_known" };
+
     const lastKnown=state?.last_known_location ? byId.get(state.last_known_location) : null;
     if(lastKnown && hasCoords(lastKnown)) return { location:lastKnown, mode:"last_known" };
     return { location:null, mode:"unmapped" };
@@ -141,7 +149,7 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     if(selectionChanged){
       const statesThroughChapter=characterStates.filter(s=>s.section<=state.section);
       const latest=new Map(); statesThroughChapter.forEach(s=>latest.set(s.character,s));
-      unmappedPopupOpen=[...nextSelected].some(id=>{const s=latest.get(id);return s?.location_status==="unknown"||s?.location_status==="departed_with_group";});
+      unmappedPopupOpen=[...nextSelected].some(id=>{const s=latest.get(id);return s?.location_status==="unknown";});
     }
     selectedCharacters=nextSelected; previousSection=state.section; previousSelectedCharacters=nextSelected; draw(state.section);
   });
