@@ -1,6 +1,6 @@
 import { loadData } from "./data.js";
 import { validateData } from "./validate.js";
-import { createReaderProgress, getVisibleHistoricalWiki } from "./reader-progress.js";
+import { createReaderProgress, getVisibleHistoricalWiki, setCanonicalReaderState } from "./reader-progress.js";
 
 const chapterInput = document.querySelector("#chapter");
 const chapterApply = document.querySelector("#chapter-apply");
@@ -131,15 +131,7 @@ function render(section) {
   }));
 
   renderWiki(section);
-
-  // The map is a separate renderer. Tell it explicitly that the canonical reader
-  // state has changed instead of relying on timing between two independent scripts.
-  window.dispatchEvent(new CustomEvent("musashi:reader-state", {
-    detail: {
-      section,
-      selectedCharacters: [...selectedCharacters]
-    }
-  }));
+  setCanonicalReaderState({section, selectedCharacters: [...selectedCharacters]});
 }
 
 try {
