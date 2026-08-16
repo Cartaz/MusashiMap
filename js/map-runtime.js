@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-35";
+  const VERSION = "20260816-36";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -18,7 +18,7 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   const precisionLabel = l => { if(!l?.coordinate_precision || l.coordinate_precision === "exact") return "Posizione moderna precisa"; if(l.coordinate_precision === "modern_match") return "Corrispondenza moderna ad alta confidence"; if(l.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno"; return "Posizione indicativa dell'area"; };
   const displayCharacterName = (c, section) => !c ? "Personaggio sconosciuto" : c.id === "musashi" && section < 8 ? "Shinmen Takezō" : c.name;
   const icon = (location, offset=[0,0]) => { const type=placeTypeAliases[location?.type]??"literary_landmark"; const color=colors[location?.type]??"#c9d1d9"; return L.divIcon({className:"musashi-map-marker-wrapper",html:`<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${placeIconPaths[type]}" alt="" aria-hidden="true"></span>`,iconSize:[32,32],iconAnchor:[16-offset[0],16-offset[1]],popupAnchor:[0,-17]}); };
-  const characterIcon = (color,location,offset=[0,0],contextual=false) => L.divIcon({className:"musashi-character-marker-wrapper",html:`<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""} ${contextual ? "is-contextual" : ""}" style="--marker-color:${color}"></span>`,iconSize:[26,26],iconAnchor:[13-offset[0],13-offset[1]]});
+  const characterIcon = (color,location,offset=[0,0],mode="current") => L.divIcon({className:"musashi-character-marker-wrapper",html:`<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""} ${mode === "reported" ? "is-reported" : mode === "last_known" ? "is-last-known" : ""}" style="--marker-color:${color}"></span>`,iconSize:[26,26],iconAnchor:[13-offset[0],13-offset[1]]});
   const coordinateKey = coordinates => coordinates.map(value=>Number(value).toFixed(5)).join(",");
   const collisionOffsets = total => { if(total<=1) return [[0,0]]; const radius=total<=3?24:30; return Array.from({length:total},(_,i)=>{const angle=-Math.PI/2+i*2*Math.PI/total;return [Math.round(Math.cos(angle)*radius),Math.round(Math.sin(angle)*radius)];}); };
   const routeMode = event => { const explicit=event?.movement_status; if(["arrival_confirmed","confirmed_route"].includes(explicit)) return "confirmed"; if(["intended_destination","direction_only","uncertain_route"].includes(explicit)) return "intended"; const certainty=String(event?.certainty??"").toLowerCase(); if(event?.type === "journey" && (event?.destination === "unknown" || certainty.includes("intended") || certainty.includes("uncertain") || certainty.includes("possible"))) return "intended"; if(event?.type === "departure" || event?.type === "direction") return "intended"; return "confirmed"; };
@@ -51,12 +51,20 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
 
   // Narrative state and map visibility are deliberately separate.
   // current = physically present at the chapter's mapped location.
-  // contextual = mapped location retained because the chapter only reports/refers to it.
+  // reported = a mapped location explicitly reported/referred to by the text, without physical presence being established.
+  // last_known = fallback to the character's most recent mapped position when the current state is not mappable.
   // unmapped = genuinely no usable cartographic position.
   function resolveMapState(state, byId, allStates, sectionEvents){
+    // State semantics always take precedence over the mere presence of a location id.
+    // This prevents reported positions from being silently promoted to physical presence.
+    if(state?.location_status === "reported_position"){
+      const reported=state.location ? byId.get(state.location) : null;
+      if(reported && hasCoords(reported)) return { location:reported, mode:"reported" };
+    }
+    if(state?.location_status === "departed_with_group") return { location:null, mode:"unmapped" };
+
     const current=state?.location ? byId.get(state.location) : null;
     if(current && hasCoords(current)) return { location:current, mode:"current" };
-    if(state?.location_status === "departed_with_group") return { location:null, mode:"unmapped" };
 
     const sameChapterEvents=sectionEvents.filter(e=>(e.characters??[]).includes(state.character));
     const eventLocationIds=[];
@@ -65,20 +73,21 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
       if(e.destination && e.destination!=="unknown") eventLocationIds.push(e.destination);
       if(e.origin) eventLocationIds.push(e.origin);
     });
-    for(const id of eventLocationIds){const location=byId.get(id);if(hasCoords(location))return { location, mode:"contextual" };}
+    for(const id of eventLocationIds){const location=byId.get(id);if(hasCoords(location))return { location, mode:"reported" };}
 
     const candidates=allStates.filter(s=>s.character===state.character && s.section<=state.section && s.location).sort((a,b)=>b.section-a.section);
     const fallback=candidates.map(s=>byId.get(s.location)).find(hasCoords);
-    if(fallback) return { location:fallback, mode:"contextual" };
+    if(fallback) return { location:fallback, mode:"last_known" };
     const lastKnown=state?.last_known_location ? byId.get(state.last_known_location) : null;
-    if(lastKnown && hasCoords(lastKnown)) return { location:lastKnown, mode:"contextual" };
+    if(lastKnown && hasCoords(lastKnown)) return { location:lastKnown, mode:"last_known" };
     return { location:null, mode:"unmapped" };
   }
 
   function characterStatusLabel(mode,state){
     if(mode === "current") return "Presenza fisica";
-    if(state?.location_status === "reported_position") return "Posizione riferita";
-    return "Ultima posizione significativa";
+    if(mode === "reported") return "Posizione riferita";
+    if(mode === "last_known") return "Ultima posizione nota";
+    return "Posizione non determinata";
   }
 
   function draw(section){
@@ -107,9 +116,9 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
       const offset=offsets.get(`character:${item.characterId}`)??[0,0];
       const name=displayCharacterName(item.character,section);
       const status=characterStatusLabel(item.mode,item.state);
-      const label=item.mode==="current"?locationLabel(item.location):locationLabel(item.location);
-      const detail=item.mode==="current"?"Il testo colloca fisicamente il personaggio qui.":item.state.location_status === "reported_position"?"Il testo riferisce questa posizione, ma non ne stabilisce la presenza fisica nel capitolo.":"Il luogo è mantenuto come ultima posizione significativa.";
-      L.marker(item.location.coordinates,{icon:characterIcon(item.color,item.location,offset,item.mode==="contextual"),title:`${name} · ${status} · ${label}`})
+      const label=locationLabel(item.location);
+      const detail=item.mode==="current"?"Il testo colloca fisicamente il personaggio qui.":item.mode === "reported"?"Il testo riferisce questo luogo, ma non stabilisce la presenza fisica del personaggio qui.":item.mode === "last_known"?"Questo è il luogo più recente che possiamo mantenere come posizione nota; non è una presenza fisica accertata nel capitolo corrente.":"La posizione attuale non è determinata.";
+      L.marker(item.location.coordinates,{icon:characterIcon(item.color,item.location,offset,item.mode),title:`${name} · ${status} · ${label}`})
         .bindPopup(`<strong>${esc(name)}</strong><br><b>${esc(status)}</b><br>${esc(label)}<br><small>${esc(precisionLabel(item.location))}</small><br><span>${esc(detail)}</span>${item.state.activity?`<br><small>${esc(item.state.activity)}</small>`:""}`)
         .addTo(characterMarkers);
     });
