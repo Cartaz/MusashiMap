@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions and events. The novel provides the trigger and reading context; an authoritative external historical source provides a concise 2–3 line historical explanation.",
+  "version": 5,
+  "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions, events and named historical works. The novel provides the trigger and reading context; an authoritative external historical source provides a concise historical explanation.",
   "source_policy": {
     "novel_trigger_source": "Internet Archive transcription",
     "historical_context_source": "authoritative external historical source",
@@ -238,6 +238,49 @@
         "title": "The Story of Minamoto no Hiromasa and the Demon's Flute",
         "publisher": "Ota Memorial Museum of Art",
         "url": "https://otakinen-museum.note.jp/n/n6e63aa3fe315?hl=en"
+      }
+    },
+    {
+      "id": "akamatsu_masanori",
+      "type": "historical_person",
+      "display_name": "Akamatsu Masanori",
+      "novel_trigger": {
+        "first_book1_section": 8,
+        "name_in_text": "Akamatsu Masanori",
+        "context": "Lord Ikeda explains the Shimmen family's historical connection to the Akamatsu lineage and names Masanori in that genealogy.",
+        "spoiler_safe_until": 8
+      },
+      "wiki": {
+        "summary": "Akamatsu Masanori (1455–1496) was a medieval military lord and shugo who restored the Akamatsu family's position in Harima, Bizen and Mimasaka. He died in 1496, after which the family passed to his adopted heir Yoshimura."
+      },
+      "source": {
+        "title": "Akamatsu Masanori — Furusato Collection",
+        "publisher": "Ishikawa Prefectural Library",
+        "url": "https://www.library.pref.ishikawa.lg.jp/shosho/furucolle/list/prsn00151"
+      },
+      "context_source": {
+        "title": "Akamatsu clan genealogy",
+        "publisher": "Hyogo Prefectural Museum of History",
+        "url": "https://rekihaku.pref.hyogo.lg.jp/digital_museum/akamatsu/genealogy/"
+      }
+    },
+    {
+      "id": "art_of_war",
+      "type": "historical_work",
+      "display_name": "The Art of War (Sunzi)",
+      "novel_trigger": {
+        "first_book1_section": 5,
+        "name_in_text": "The Art of War",
+        "context": "The chapter title and Takuan's discussion invoke Sunzi's Art of War as a framework for strategy and conduct.",
+        "spoiler_safe_until": 5
+      },
+      "wiki": {
+        "summary": "An ancient Chinese military treatise traditionally attributed to Sunzi (Sun Tzu). Its exact composition date is debated, but it is generally associated with the late Warring States / early classical military tradition."
+      },
+      "source": {
+        "title": "Sunzi — Chinese strategist",
+        "publisher": "Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/biography/Sunzi"
       }
     }
   ]
