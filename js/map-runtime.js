@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-17";
+  const VERSION = "20260816-18";
   let map;
   let glLayer;
   let markers;
@@ -16,7 +16,7 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
   const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-  const locationLabel = location => location?.modern_name_romaji ? `${location.name} · ${location.modern_name_romaji}` : (location?.name ?? "Località non determinata");
+  const locationLabel = location => location?.modern_name_romaji || location?.name || "Località non determinata";
   const precisionLabel = location => {
     if (!location?.coordinate_precision || location.coordinate_precision === "exact") return "Posizione moderna precisa";
     if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno";
@@ -31,9 +31,11 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     const byId = new Map(locations.map(l => [l.id, l]));
     const currentStates = new Map();
     characterStates.filter(s => s.section <= section).forEach(s => currentStates.set(s.character, s));
+    const selectedStateCharacters = new Set();
     const plotted = [];
     currentStates.forEach((state, characterId) => {
       if (!selectedCharacters.has(characterId)) return;
+      selectedStateCharacters.add(characterId);
       const location = byId.get(state.location); const character = characters.find(c => c.id === characterId);
       if (!location || !hasCoords(location)) return;
       const index = characters.findIndex(c => c.id === characterId); const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
@@ -41,8 +43,15 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
         .bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><small>${esc(precisionLabel(location))}</small><br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
       plotted.push(location.coordinates);
     });
-    const sectionEvents = events.filter(e => e.section === section); const contextualIds = new Set();
-    sectionEvents.forEach(e => { if (e.location) contextualIds.add(e.location); if (e.from) contextualIds.add(e.from); if (e.to) contextualIds.add(e.to); (e.via ?? []).forEach(v => contextualIds.add(v)); });
+
+    const sectionEvents = events.filter(e => e.section === section && (e.characters ?? []).some(id => selectedCharacters.has(id)));
+    const contextualIds = new Set();
+    sectionEvents.forEach(e => {
+      if (e.location) contextualIds.add(e.location);
+      if (e.origin) contextualIds.add(e.origin);
+      if (e.destination) contextualIds.add(e.destination);
+      (e.via ?? []).forEach(v => contextualIds.add(v));
+    });
     contextualIds.forEach(id => {
       const location = byId.get(id); if (!hasCoords(location)) return;
       if ([...currentStates.values()].some(s => selectedCharacters.has(s.character) && s.location === id)) return;
@@ -50,8 +59,9 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
         .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`).addTo(markers);
       plotted.push(location.coordinates);
     });
-    sectionEvents.filter(e => e.from && e.to).forEach(e => {
-      const a = byId.get(e.from), b = byId.get(e.to); if (!hasCoords(a) || !hasCoords(b)) return;
+
+    sectionEvents.filter(e => e.origin && e.destination).forEach(e => {
+      const a = byId.get(e.origin), b = byId.get(e.destination); if (!hasCoords(a) || !hasCoords(b)) return;
       L.polyline([a.coordinates, b.coordinates], {color:"#d97706", weight:3, opacity:.78, dashArray:e.certainty === "intended_destination" ? "6 8" : null, interactive:false}).addTo(routes);
     });
     if (plotted.length) map.fitBounds(L.latLngBounds(plotted).pad(.18), {maxZoom:10, animate:false});
