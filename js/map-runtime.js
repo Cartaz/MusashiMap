@@ -1,5 +1,7 @@
+import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
+
 (() => {
-  const VERSION = "20260816-16";
+  const VERSION = "20260816-17";
   let map;
   let glLayer;
   let markers;
@@ -10,7 +12,6 @@
   let characterStates = [];
   let characters = [];
   let selectedCharacters = new Set();
-  let latestReaderState = null;
   const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", area: "#8fb3c9", route: "#b99ad6", temple: "#b8c7a4", literary_landmark: "#d9a0b7" };
   const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
@@ -68,7 +69,6 @@
   }
 
   // Normalize only a trailing administrative suffix. The source tile data is untouched.
-  // The length guard prevents short names from being altered accidentally.
   function cleanAdministrativeSuffixExpression() {
     const suffixes = [
       "-machi", "-mura", "-chō", "-cho", "-ken", "-gun", "-shi", "-ku", "-son", "-to", "-fu"
@@ -117,9 +117,6 @@
         maxBoundsViscosity:1
       }).setView([35.05,135.55],7);
 
-      // OpenFreeMap's style is fetched once, customized in memory, and then
-      // handed to MapLibre as a complete style object. No styledata listener
-      // or setLayoutProperty loop is involved.
       const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", {cache:"no-store"});
       if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
       const libertyStyle = await styleResponse.json();
@@ -134,12 +131,18 @@
         fetch(`data/characters.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`characters.json: ${r.status}`); return r.json(); })
       ]);
       locations = locationData.locations; events = eventData.events; characterStates = stateData.character_states; characters = characterData.characters;
-      if (latestReaderState) draw(latestReaderState.section);
+      const readerState = getCanonicalReaderState();
+      if (readerState.section !== null) {
+        selectedCharacters = new Set(readerState.selectedCharacters);
+        draw(readerState.section);
+      }
     } catch(error) { console.error("Map initialization failed", error); }
   }
-  window.addEventListener("musashi:reader-state", event => {
-    latestReaderState = {section: Number(event.detail?.section) || 1, selectedCharacters: event.detail?.selectedCharacters ?? []};
-    selectedCharacters = new Set(latestReaderState.selectedCharacters); draw(latestReaderState.section);
+
+  subscribeCanonicalReaderState(readerState => {
+    selectedCharacters = new Set(readerState.selectedCharacters);
+    if (readerState.section !== null) draw(readerState.section);
   });
+
   boot();
 })();
