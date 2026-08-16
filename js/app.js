@@ -23,15 +23,105 @@ const characterFilterBody = document.querySelector("#character-filter-body");
 const placeTypes = [["exact_site","Sito preciso","literary_landmark"],["settlement","Insediamento","city"],["settlement_area","Villaggio / area abitata","village"],["urban_area","Area urbana","city"],["area","Area geografica","area"],["region","Regione","area"],["river","Fiume / corso d'acqua","river"],["route","Percorso","route"],["temple","Tempio / santuario","temple"],["castle","Castello","castle"],["fortified_site","Fortificazione","castle"],["bridge","Ponte","route"],["narrative_site","Luogo narrativo","literary_landmark"],["literary_landmark","Luogo letterario","literary_landmark"]];
 const iconPaths={temple:"assets/icons/places/temple.svg",castle:"assets/icons/places/castle.svg",city:"assets/icons/places/city.svg",village:"assets/icons/places/village.svg",area:"assets/icons/places/area.svg",river:"assets/icons/places/river.svg",route:"assets/icons/places/route.svg",literary_landmark:"assets/icons/places/landmark.svg"};
 const characterColors=["#e0a04b","#8fb3c9","#b99ad6","#b8c7a4","#d9a0b7","#c9d1d9"];
-let data; let reader;
-function characterDisplayName(character,section){if(character?.id==="musashi"&&section<=8)return "Shinmen Takezō";return character?.name??"Personaggio sconosciuto";}
-function applySection(value){if(!reader.setSection(value))return false;const state=getCanonicalReaderState();setCanonicalReaderState({section:reader.section,selectedCharacters:state.selectedCharacters});return true;}
-function renderPlaceLegend(){const usedTypes=new Set(data.locations.locations.map(location=>location.type));placeLegend.replaceChildren(...placeTypes.filter(([type])=>usedTypes.has(type)).map(([type,label,iconType])=>{const item=document.createElement("div");item.className="legend-item";const swatch=document.createElement("span");swatch.className=`legend-swatch legend-${type}`;swatch.setAttribute("aria-hidden","true");const image=document.createElement("img");image.src=iconPaths[iconType];image.alt="";image.draggable=false;swatch.append(image);const text=document.createElement("span");text.textContent=label;item.append(swatch,text);return item;}));}
-function renderCharacterFilters(selectedCharacters,section){const mainCharacters=data.characters.characters.filter(c=>c.importance==="main");characterFilters.replaceChildren(...mainCharacters.map((character,index)=>{const label=document.createElement("label");label.className="character-filter";const swatch=document.createElement("span");swatch.className="character-swatch";swatch.style.setProperty("--character-color",characterColors[index%characterColors.length]);swatch.setAttribute("aria-hidden","true");const input=document.createElement("input");input.type="checkbox";input.checked=selectedCharacters.has(character.id);const displayName=characterDisplayName(character,section);input.setAttribute("aria-label",`Segui ${displayName}`);input.addEventListener("change",()=>{const nextSelected=new Set(selectedCharacters);if(input.checked)nextSelected.add(character.id);else nextSelected.delete(character.id);const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters:[...nextSelected]});});const name=document.createElement("span");name.textContent=displayName;label.append(swatch,input,name);return label;}));}
-function renderWiki(section){const entries=getRelevantHistoricalWiki(data.microWiki.entities,section);const secondary=Object.values(data.characterWiki?.characters??{}).filter(entry=>Object.keys(entry.current_by_section??{}).some(key=>Number(key)<=section));const nodes=[];if(entries.length){const heading=document.createElement("h3");heading.className="wiki-subheading";heading.textContent="Contesto storico";nodes.push(heading,...entries.map(entry=>{const card=document.createElement("article");card.className="wiki-card";const heading=document.createElement("h3");heading.textContent=entry.display_name;const trigger=document.createElement("p");trigger.className="wiki-trigger";trigger.textContent=entry.novel_trigger?.context??"Riferimento incontrato nel romanzo.";const summary=document.createElement("p");summary.textContent=entry.wiki?.summary??"Contesto storico non disponibile.";card.append(heading,trigger,summary);if(entry.source?.url&&entry.source?.status!=="needs_authoritative_source_record"){const source=document.createElement("a");source.className="wiki-source";source.href=entry.source.url;source.target="_blank";source.rel="noopener noreferrer";source.textContent=`${entry.source.publisher??"Fonte"} · fonte storica`;card.append(source);}return card;}));}
-if(secondary.length){const heading=document.createElement("h3");heading.className="wiki-subheading character-wiki-heading";heading.textContent="Personaggi secondari";nodes.push(heading,...secondary.map(entry=>{const card=document.createElement("article");card.className="wiki-card character-wiki-card";const heading=document.createElement("h3");heading.textContent=entry.display_name;const role=document.createElement("p");role.className="wiki-trigger";role.textContent=entry.role;const summary=document.createElement("p");summary.textContent=entry.finora;const currentSection=Math.max(...Object.keys(entry.current_by_section).map(Number).filter(n=>n<=section));const current=document.createElement("p");current.className="wiki-current";current.innerHTML=`<strong>Adesso:</strong> ${entry.current_by_section[String(currentSection)]}`;card.append(heading,role,summary,current);return card;}));}
-if(!nodes.length){const empty=document.createElement("p");empty.className="wiki-empty";empty.textContent="Nessun riferimento storico o personaggio secondario rilevante nelle sezioni già lette.";nodes.push(empty);}wikiList.replaceChildren(...nodes);}
-function render(){if(!data||!reader)return;const readerState=getCanonicalReaderState();const section=readerState.section;const selectedCharacters=new Set(readerState.selectedCharacters);const sectionData=data.chapters.sections.find(s=>s.number===section);if(!sectionData)return;bookLabel.textContent=`LIBRO ${sectionData.book} · ${sectionData.book_title}`;title.textContent=sectionData.title;status.textContent=`Sezione ${section} · informazioni visibili fino a questo punto della storia`;sectionSelect.value=String(section);chapterInput.value=String(section);prevButton.disabled=section<=reader.min;nextButton.disabled=section>=reader.max;const characterById=new Map(data.characters.characters.map(c=>[c.id,c]));const locationById=new Map(data.locations.locations.map(l=>[l.id,l]));const states=reader.visibleLatestStates(data.states.character_states);const visibleStates=states.filter(s=>selectedCharacters.has(s.character));characterList.replaceChildren(...visibleStates.map(s=>{const card=document.createElement("article");const character=characterById.get(s.character);const location=locationById.get(s.location);card.innerHTML=`<h3>${characterDisplayName(character,section)}</h3><p><strong>${location?.name??"Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Presenza: ${s.presence??s.status}; confidenza luogo: ${s.location_confidence??s.certainty}</small>`;return card;}));const events=data.events.events.filter(e=>e.section===section&&e.characters.some(id=>selectedCharacters.has(id)));eventList.replaceChildren(...events.map(e=>{const item=document.createElement("li");const names=e.characters.map(id=>characterDisplayName(characterById.get(id),section)).join(", ");const from=e.origin?locationById.get(e.origin)?.name:null;const to=e.destination?locationById.get(e.destination)?.name:null;const place=e.location?locationById.get(e.location)?.name:null;item.textContent=`${names}: ${e.type}${from&&to?` · ${from} → ${to}`:place?` · ${place}`:""}`;return item;}));renderCharacterFilters(selectedCharacters,section);renderWiki(section);}
+let data;
+let reader;
+
+function characterDisplayName(character, section){
+  if(character?.id === "musashi" && section <= 8) return "Shinmen Takezō";
+  return character?.name ?? "Personaggio sconosciuto";
+}
+
+function applySection(value){
+  if(!reader.setSection(value)) return false;
+  const state=getCanonicalReaderState();
+  setCanonicalReaderState({section:reader.section,selectedCharacters:state.selectedCharacters});
+  return true;
+}
+
+function renderPlaceLegend(){
+  const usedTypes=new Set(data.locations.locations.map(location=>location.type));
+  placeLegend.replaceChildren(...placeTypes.filter(([type])=>usedTypes.has(type)).map(([type,label,iconType])=>{
+    const item=document.createElement("div"); item.className="legend-item";
+    const swatch=document.createElement("span"); swatch.className=`legend-swatch legend-${type}`; swatch.setAttribute("aria-hidden","true");
+    const image=document.createElement("img"); image.src=iconPaths[iconType]; image.alt=""; image.draggable=false; swatch.append(image);
+    const text=document.createElement("span"); text.textContent=label; item.append(swatch,text); return item;
+  }));
+}
+
+function renderCharacterFilters(selectedCharacters, section){
+  const mainCharacters=data.characters.characters.filter(c=>c.importance==="main");
+  characterFilters.replaceChildren(...mainCharacters.map((character,index)=>{
+    const label=document.createElement("label"); label.className="character-filter";
+    const swatch=document.createElement("span"); swatch.className="character-swatch"; swatch.style.setProperty("--character-color",characterColors[index%characterColors.length]); swatch.setAttribute("aria-hidden","true");
+    const input=document.createElement("input"); input.type="checkbox"; input.checked=selectedCharacters.has(character.id);
+    const displayName=characterDisplayName(character,section); input.setAttribute("aria-label",`Segui ${displayName}`);
+    input.addEventListener("change",()=>{const nextSelected=new Set(selectedCharacters);if(input.checked)nextSelected.add(character.id);else nextSelected.delete(character.id);const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters:[...nextSelected]});});
+    const name=document.createElement("span"); name.textContent=displayName; label.append(swatch,input,name); return label;
+  }));
+}
+
+function renderHistoricalWiki(entries, nodes){
+  if(!entries.length) return;
+  const heading=document.createElement("h3"); heading.className="wiki-subheading"; heading.textContent="Contesto storico"; nodes.push(heading);
+  entries.forEach(entry=>{
+    const card=document.createElement("article"); card.className="wiki-card";
+    const heading=document.createElement("h3"); heading.textContent=entry.display_name;
+    const trigger=document.createElement("p"); trigger.className="wiki-trigger"; trigger.textContent=entry.novel_trigger?.context??"Riferimento incontrato nel romanzo.";
+    const summary=document.createElement("p"); summary.textContent=entry.wiki?.summary??"Contesto storico non disponibile.";
+    card.append(heading,trigger,summary);
+    if(entry.source?.url&&entry.source?.status!=="needs_authoritative_source_record"){
+      const source=document.createElement("a"); source.className="wiki-source"; source.href=entry.source.url; source.target="_blank"; source.rel="noopener noreferrer"; source.textContent=`${entry.source.publisher??"Fonte"} · fonte storica`; card.append(source);
+    }
+    nodes.push(card);
+  });
+}
+
+function renderSecondaryCharacters(entries, section, nodes){
+  const visible=entries.filter(entry=>entry.category==="secondary"&&Object.keys(entry.current_by_section??{}).some(key=>Number(key)<=section));
+  if(!visible.length) return;
+  const heading=document.createElement("h3"); heading.className="wiki-subheading character-wiki-heading"; heading.textContent="Personaggi secondari"; nodes.push(heading);
+  visible.forEach(entry=>{
+    const card=document.createElement("article"); card.className="wiki-card character-wiki-card";
+    const heading=document.createElement("h3"); heading.textContent=entry.display_name;
+    const role=document.createElement("p"); role.className="wiki-trigger"; role.textContent=entry.role;
+    const summary=document.createElement("p"); summary.textContent=entry.finora;
+    const currentSections=Object.keys(entry.current_by_section).map(Number).filter(n=>n<=section);
+    const currentSection=Math.max(...currentSections);
+    const current=document.createElement("p");
+    const isPreviousSection=currentSection<section;
+    current.innerHTML=`<strong>${isPreviousSection?"Capitolo precedente":"Adesso"}:</strong> ${entry.current_by_section[String(currentSection)]}`;
+    card.append(heading,role,summary,current); nodes.push(card);
+  });
+}
+
+function renderWiki(section){
+  const historicalEntries=getRelevantHistoricalWiki(data.microWiki.entities,section);
+  const characterEntries=Object.values(data.characterWiki?.characters??{});
+  const nodes=[];
+  renderSecondaryCharacters(characterEntries,section,nodes);
+  renderHistoricalWiki(historicalEntries,nodes);
+  if(!nodes.length){const empty=document.createElement("p");empty.className="wiki-empty";empty.textContent="Nessun personaggio secondario o riferimento storico rilevante nelle sezioni già lette.";nodes.push(empty);}
+  wikiList.replaceChildren(...nodes);
+}
+
+function render(){
+  if(!data||!reader) return;
+  const readerState=getCanonicalReaderState(); const section=readerState.section; const selectedCharacters=new Set(readerState.selectedCharacters); const sectionData=data.chapters.sections.find(s=>s.number===section); if(!sectionData)return;
+  bookLabel.textContent=`LIBRO ${sectionData.book} · ${sectionData.book_title}`; title.textContent=sectionData.title; status.textContent=`Sezione ${section} · informazioni visibili fino a questo punto della storia`; sectionSelect.value=String(section); chapterInput.value=String(section); prevButton.disabled=section<=reader.min; nextButton.disabled=section>=reader.max;
+  const characterById=new Map(data.characters.characters.map(c=>[c.id,c])); const locationById=new Map(data.locations.locations.map(l=>[l.id,l])); const states=reader.visibleLatestStates(data.states.character_states); const visibleStates=states.filter(s=>selectedCharacters.has(s.character));
+  characterList.replaceChildren(...visibleStates.map(s=>{const card=document.createElement("article");const character=characterById.get(s.character);const location=locationById.get(s.location);card.innerHTML=`<h3>${characterDisplayName(character,section)}</h3><p><strong>${location?.name??"Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Presenza: ${s.presence??s.status}; confidenza luogo: ${s.location_confidence??s.certainty}</small>`;return card;}));
+  const events=data.events.events.filter(e=>e.section===section&&e.characters.some(id=>selectedCharacters.has(id))); eventList.replaceChildren(...events.map(e=>{const item=document.createElement("li");const names=e.characters.map(id=>characterDisplayName(characterById.get(id),section)).join(", ");const from=e.origin?locationById.get(e.origin)?.name:null;const to=e.destination?locationById.get(e.destination)?.name:null;const place=e.location?locationById.get(e.location)?.name:null;item.textContent=`${names}: ${e.type}${from&&to?` · ${from} → ${to}`:place?` · ${place}`:""}`;return item;}));
+  renderCharacterFilters(selectedCharacters,section); renderWiki(section);
+}
+
 subscribeCanonicalReaderState(()=>render());
-try{data=await loadData();reader=createReaderProgress(data.chapters,data.readerProgress.state.current_section);const result=validateData(data);validation.textContent=result.valid?"Database: validato":`Database: ${result.errors.length} errori`;validation.dataset.state=result.valid?"ok":"error";if(result.errors.length)console.error("MusashiMap data validation errors",result.errors);chapterInput.min=String(reader.min);chapterInput.max=String(reader.max);sectionSelect.replaceChildren(...data.chapters.sections.map(s=>{const option=document.createElement("option");option.value=String(s.number);option.textContent=`${s.book} — ${s.title}`;return option;}));renderPlaceLegend();const initialState=getCanonicalReaderState();const initialSection=initialState.section??reader.section;const initialSelected=initialState.selectedCharacters.length?initialState.selectedCharacters:data.characters.characters.filter(c=>c.importance==="main").map(c=>c.id);setCanonicalReaderState({section:initialSection,selectedCharacters:initialSelected});}catch(error){validation.textContent="Errore nel caricamento dei dati";console.error(error);}
-chapterInput.addEventListener("input",()=>{chapterInput.setCustomValidity("");if(chapterInput.value==="")return;const parsed=Number.parseInt(chapterInput.value,10);if(!Number.isInteger(parsed)||parsed<reader.min||parsed>reader.max)chapterInput.setCustomValidity(`Inserisci una sezione da ${reader.min} a ${reader.max}.`);});chapterInput.addEventListener("keydown",event=>{if(event.key==="Enter"){if(!applySection(chapterInput.value))chapterInput.reportValidity();}else if(event.key==="Escape")chapterInput.value=String(getCanonicalReaderState().section);});chapterApply.addEventListener("click",()=>{if(!applySection(chapterInput.value))chapterInput.reportValidity();});prevButton.addEventListener("click",()=>{if(reader.previous())applySection(reader.section);});nextButton.addEventListener("click",()=>{if(reader.next())applySection(reader.section);});sectionSelect.addEventListener("change",()=>applySection(sectionSelect.value));selectAll.addEventListener("click",()=>{const selectedCharacters=data.characters.characters.filter(c=>c.importance==="main").map(c=>c.id);const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters});});selectNone.addEventListener("click",()=>{const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters:[]});});characterToggle.addEventListener("click",()=>{const isOpen=characterToggle.getAttribute("aria-expanded")==="true";characterToggle.setAttribute("aria-expanded",String(!isOpen));characterToggle.textContent=isOpen?"Mostra filtri":"Nascondi filtri";characterFilterBody.hidden=isOpen});
+try{
+  data=await loadData(); reader=createReaderProgress(data.chapters,data.readerProgress.state.current_section); const result=validateData(data); validation.textContent=result.valid?"Database: validato":`Database: ${result.errors.length} errori`; validation.dataset.state=result.valid?"ok":"error"; if(result.errors.length)console.error("MusashiMap data validation errors",result.errors);
+  chapterInput.min=String(reader.min); chapterInput.max=String(reader.max); sectionSelect.replaceChildren(...data.chapters.sections.map(s=>{const option=document.createElement("option");option.value=String(s.number);option.textContent=`${s.book} — ${s.title}`;return option;})); renderPlaceLegend();
+  const initialState=getCanonicalReaderState(); const initialSection=initialState.section??reader.section; const initialSelected=initialState.selectedCharacters.length?initialState.selectedCharacters:data.characters.characters.filter(c=>c.importance==="main").map(c=>c.id); setCanonicalReaderState({section:initialSection,selectedCharacters:initialSelected});
+}catch(error){validation.textContent="Errore nel caricamento dei dati";console.error(error);}
+chapterInput.addEventListener("input",()=>{chapterInput.setCustomValidity("");if(chapterInput.value==="")return;const parsed=Number.parseInt(chapterInput.value,10);if(!Number.isInteger(parsed)||parsed<reader.min||parsed>reader.max)chapterInput.setCustomValidity(`Inserisci una sezione da ${reader.min} a ${reader.max}.`);});
+chapterInput.addEventListener("keydown",event=>{if(event.key==="Enter"){if(!applySection(chapterInput.value))chapterInput.reportValidity();}else if(event.key==="Escape")chapterInput.value=String(getCanonicalReaderState().section);});
+chapterApply.addEventListener("click",()=>{if(!applySection(chapterInput.value))chapterInput.reportValidity();}); prevButton.addEventListener("click",()=>{if(reader.previous())applySection(reader.section);}); nextButton.addEventListener("click",()=>{if(reader.next())applySection(reader.section);}); sectionSelect.addEventListener("change",()=>applySection(sectionSelect.value));
+selectAll.addEventListener("click",()=>{const selectedCharacters=data.characters.characters.filter(c=>c.importance==="main").map(c=>c.id);const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters});}); selectNone.addEventListener("click",()=>{const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters:[]});});
+characterToggle.addEventListener("click",()=>{const isOpen=characterToggle.getAttribute("aria-expanded")==="true";characterToggle.setAttribute("aria-expanded",String(!isOpen));characterToggle.textContent=isOpen?"Mostra filtri":"Nascondi filtri";characterFilterBody.hidden=isOpen;});

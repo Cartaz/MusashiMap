@@ -1,67 +1,84 @@
 {
-  "version": 1,
+  "version": 2,
   "book": "I",
-  "source_rule": "Narrative positions and movements are derived only from the Internet Archive transcription.",
+  "source_rule": "Narrative positions are derived only from data/source/musashi-book1. This file records physically established positions; reported or intended positions are kept separate from physical presence.",
   "characters": {
-    "musashi": [
-      {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"hiding with Matahachi"},
-      {"section":2,"location_id":"oko_akemi_house","status":"confirmed","activity":"returns from the mountain area after going out with Akemi"},
-      {"section":3,"location_id":"shippoji","status":"confirmed","activity":"appears at the flower festival and disappears when Otsu recognizes him"},
-      {"section":4,"location_id":"sanumo_mountains","status":"confirmed","activity":"hiding while search parties pursue him"},
-      {"section":5,"location_id":"sanumo_mountains","status":"confirmed","activity":"approaches Takuan and Otsu and is captured"},
-      {"section":6,"location_id":"old_cryptomeria_shippoji","status":"confirmed","activity":"held at Shippoji and tied to the old cryptomeria"},
-      {"section":7,"location_id":"nakayama_pass","status":"confirmed","activity":"escapes with Otsu, then separates from her"},
-      {"section":7,"location_id":"hinagura","status":"confirmed","activity":"travels toward Hinagura looking for Ogin"},
-      {"section":8,"location_id":"himeji_castle","status":"confirmed","activity":"brought before Ikeda Terumasa; receives the name Miyamoto Musashi"}
+    "musashi":[
+      {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"ends the chapter recovering at Oko and Akemi's house"},
+      {"section":2,"location_id":"oko_akemi_house","status":"confirmed","activity":"returns from the mountain and is still at the house when Oko, Akemi and Matahachi depart"},
+      {"section":3,"location_id":"shippoji","status":"last_observed","activity":"appears at the flower festival and flees when Otsu recognizes him"},
+      {"section":4,"location_id":"sanumo_mountains","status":"confirmed","activity":"hides in the mountains while the search continues"},
+      {"section":5,"location_id":"itadori_pasture","status":"confirmed","activity":"is captured at Takuan and Otsu's camp"},
+      {"section":6,"location_id":"old_cryptomeria_shippoji","status":"confirmed","activity":"is tied to the old cryptomeria at Shippoji"},
+      {"section":7,"location_id":"himeji_area","status":"confirmed","activity":"leaves Hinagura after learning Ogin was transferred and heads toward Himeji"},
+      {"section":8,"location_id":"eastward","status":"confirmed","activity":"leaves Himeji after release and the meeting with Otsu"}
     ],
-    "matahachi": [
-      {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"hiding with Takezo"},
-      {"section":2,"location_id":"oko_akemi_house","status":"confirmed","activity":"remains at Oko and Akemi's house"}
+    "matahachi":[
+      {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"recovers at the refuge"},
+      {"section":2,"location_id":"oko_akemi_house","status":"last_known","activity":"leaves the refuge with Oko and Akemi; no destination is established"},
+      {"section":3,"location_id":"oko_akemi_house","status":"last_known","activity":"only discussed; actual location unknown"},
+      {"section":4,"location_id":"oko_akemi_house","status":"last_known","activity":"only discussed; Takezo reports that he is alive in another province"},
+      {"section":5,"location_id":"oko_akemi_house","status":"last_known","activity":"only known through his letter from another province"},
+      {"section":6,"location_id":"oko_akemi_house","status":"last_known","activity":"only discussed as absent Hon'den heir"}
     ],
-    "otsu": [
-      {"section":3,"location_id":"shippoji","status":"confirmed","activity":"at the flower festival; recognizes Takezo"},
-      {"section":4,"location_id":"shippoji","status":"confirmed","activity":"remains under Takuan's protection"},
-      {"section":5,"location_id":"sanumo_mountains","status":"confirmed","activity":"travels with Takuan and waits for Takezo"},
-      {"section":6,"location_id":"shippoji","status":"confirmed","activity":"at Shippoji after Takezo's capture"},
-      {"section":7,"location_id":"nakayama_pass","status":"confirmed","activity":"travels with Takezo before separating"},
-      {"section":7,"location_id":"hanada_bridge","status":"confirmed","activity":"continues toward Himeji and waits at Hanada Bridge"},
-      {"section":8,"location_id":"hanada_bridge","status":"confirmed","activity":"remains associated with the Hanada Bridge/Himeji route in the section's immediate aftermath"}
+    "akemi":[
+      {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"lives at and operates the refuge"},
+      {"section":2,"location_id":"oko_akemi_house","status":"last_known","activity":"returns from the mountain and later departs with Oko and Matahachi"}
     ],
-    "takuan": [
-      {"section":3,"location_id":"shippoji","status":"confirmed","activity":"at Shippoji during the flower festival"},
-      {"section":4,"location_id":"shippoji","status":"confirmed","activity":"dealing with Takezo's capture and Otsu's protection"},
-      {"section":5,"location_id":"sanumo_mountains","status":"confirmed","activity":"waits in the mountains with Otsu and captures Takezo"},
-      {"section":6,"location_id":"shippoji","status":"confirmed","activity":"brings Takezo back to Shippoji"},
-      {"section":7,"location_id":"shippoji","status":"confirmed","activity":"manages Takezo's confinement and later release"},
-      {"section":8,"location_id":"himeji_castle","status":"confirmed","activity":"brings Takezo before Ikeda Terumasa"}
+    "oko":[
+      {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"runs the refuge"},
+      {"section":2,"location_id":"oko_akemi_house","status":"last_known","activity":"leaves the refuge with Akemi and Matahachi"}
     ],
-    "osugi": [
-      {"section":3,"location_id":"shippoji","status":"confirmed","activity":"connected to the search for Takezo"},
-      {"section":4,"location_id":"shippoji","status":"confirmed","activity":"pursues the matter of Takezo and Otsu"},
-      {"section":5,"location_id":"shippoji","status":"confirmed","activity":"involved in the continuing search and family conflict"},
-      {"section":6,"location_id":"shippoji","status":"confirmed","activity":"continues pursuing Takezo"},
-      {"section":7,"location_id":"shippoji","status":"confirmed","activity":"involved in the aftermath of Takezo's capture"},
-      {"section":8,"location_id":"himeji_castle","status":"needs_normalization","activity":"connected to the Himeji resolution; exact on-page location should be checked before final map integration"}
+    "otsu":[
+      {"section":3,"location_id":"shippoji","status":"last_observed","activity":"moves to Aida River and Ogin House during the festival preparations, then returns to Shippoji"},
+      {"section":4,"location_id":"shippoji","status":"confirmed","activity":"returns to Shippoji after escaping Ogin's arrest"},
+      {"section":5,"location_id":"itadori_pasture","status":"confirmed","activity":"travels with Takuan and participates in Takezo's capture"},
+      {"section":6,"location_id":"shippoji","status":"confirmed","activity":"remains associated with Shippoji during Takezo's punishment"},
+      {"section":7,"location_id":"mikazuki_teahouse","status":"last_known","activity":"reaches Mikazuki, becomes ill, then escapes into a ravine; later recovery is established only in chapter 8"},
+      {"section":8,"location_id":"hanada_bridge","status":"confirmed","activity":"has waited at Hanada Bridge for three years and meets Musashi"}
     ],
-    "akemi": [
-      {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"lives at the refuge and helps conceal Takezo and Matahachi"},
-      {"section":2,"location_id":"mount_ibuki_area","status":"confirmed","activity":"goes into the mountains with Takezo"},
-      {"section":2,"location_id":"oko_akemi_house","status":"confirmed","activity":"returns to the house"}
+    "takuan":[
+      {"section":3,"location_id":"shippoji","status":"confirmed","activity":"stays at Shippoji and accompanies Otsu"},
+      {"section":4,"location_id":"shippoji","status":"confirmed","activity":"receives Otsu after the raid"},
+      {"section":5,"location_id":"itadori_pasture","status":"confirmed","activity":"captures Takezo"},
+      {"section":6,"location_id":"shippoji","status":"confirmed","activity":"manages Takezo's punishment"},
+      {"section":7,"location_id":"shippoji","status":"confirmed","activity":"remains at the temple while Takezo and Otsu escape"},
+      {"section":8,"location_id":"himeji_castle","status":"confirmed","activity":"releases Takezo and then departs"}
     ],
-    "ogin": [
-      {"section":3,"location_id":"shippoji","status":"confirmed","activity":"associated with the Shinmen family and the events surrounding Takezo"},
-      {"section":4,"location_id":"shippoji","status":"confirmed","activity":"present in the family conflict"},
-      {"section":6,"location_id":"hinagura","status":"confirmed","activity":"held at the Hinagura stockade"},
-      {"section":7,"location_id":"hinagura","status":"confirmed","activity":"remains connected to the stockade while Takezo seeks her"},
-      {"section":8,"location_id":"himeji_area","status":"confirmed","activity":"part of the events surrounding the transfer to Himeji"}
+    "osugi":[
+      {"section":4,"location_id":"honiden_house","status":"confirmed","activity":"organizes the trap for Takezo"},
+      {"section":5,"location_id":"honiden_house","status":"confirmed","activity":"remains at the family residence"},
+      {"section":6,"location_id":"old_cryptomeria_shippoji","status":"last_observed","activity":"confronts Takezo at the punishment scene"},
+      {"section":7,"location_id":"mikazuki_teahouse","status":"last_known","activity":"reaches the teahouse with Gonroku and pursues Otsu"},
+      {"section":8,"location_id":null,"status":"reported_unknown","activity":"reported to have spent three years searching with Gonroku"}
     ],
-    "jotaro": [],
-    "kojiro": []
+    "ogin":[
+      {"section":3,"location_id":"ogin_house","status":"confirmed","activity":"meets Otsu and Takuan at her house"},
+      {"section":4,"location_id":"hinagura_stockade","status":"confirmed","activity":"arrested at Ogin House and held at Hinagura"},
+      {"section":5,"location_id":"hinagura_stockade","status":"reported","activity":"discussed as imprisoned at Hinagura"},
+      {"section":6,"location_id":"hinagura_stockade","status":"reported","activity":"remains the focus of Takezo's rescue concern"},
+      {"section":7,"location_id":"himeji_area","status":"reported","activity":"reported to have been transferred toward Himeji before Takezo's attack"},
+      {"section":8,"location_id":"sayo_district","status":"reported","activity":"reported to be living with a relative in Sayo"}
+    ],
+    "heita":[
+      {"section":4,"location_id":"honiden_house","status":"confirmed","activity":"brings Osugi news about Takezo"},
+      {"section":7,"location_id":"honiden_house","status":"confirmed","activity":"brings news that triggers Osugi's pursuit"}
+    ],
+    "gonroku":[
+      {"section":7,"location_id":"mikazuki_teahouse","status":"last_known","activity":"reaches the teahouse with Osugi and pursues Otsu"},
+      {"section":8,"location_id":null,"status":"reported_unknown","activity":"reported to have spent three years searching with Osugi"}
+    ],
+    "lord_ikeda":[{"section":8,"location_id":"himeji_castle","status":"confirmed","activity":"receives Takezo and participates in his release and renaming"}],
+    "himeji_captain":[
+      {"section":4,"location_id":"miyamoto","status":"confirmed","activity":"leads the search and participates in Ogin's arrest"},
+      {"section":5,"location_id":"miyamoto","status":"confirmed","activity":"continues the search for Takezo"},
+      {"section":6,"location_id":"shippoji","status":"confirmed","activity":"confronts Takuan over control of Takezo"}
+    ]
   },
   "normalization_notes": [
-    "This is an analysis layer, not yet the final route graph.",
-    "A character may have multiple locations within one section when the text explicitly shows movement.",
-    "Where an exact location is not sufficiently established, the state is marked needs_normalization instead of inventing a location.",
-    "No future-book information is used to establish Book I positions."
+    "A reported location is never treated as physical presence.",
+    "A last-known location is not a current location.",
+    "Intentions and destinations are represented in book1-location-transitions.json/events.json, not by inventing a character location.",
+    "No future-book information is used to resolve Book I positions."
   ]
 }

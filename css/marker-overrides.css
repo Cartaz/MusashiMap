@@ -50,3 +50,25 @@
   border: 0 !important;
   box-shadow: none !important;
 }
+
+/* Residual/contextual marker:
+   EXACTLY the normal character marker, except for the outer ring.
+   Normal: character color -> white -> indigo/black ring.
+   Residual: character color -> white -> light-gray ring. */
+.musashi-character-marker.is-contextual {
+  opacity: 1 !important;
+  width: 22px !important;
+  height: 22px !important;
+  background: var(--marker-color) !important;
+  border: 3px solid #f4ead8 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 2px #d1d5db, 0 3px 9px rgba(39,31,20,.4) !important;
+}
+
+.musashi-character-marker.is-contextual.is-approximate {
+  border-style: dashed !important;
+}
+
+.musashi-character-marker.is-contextual * {
+  opacity: 1 !important;
+}

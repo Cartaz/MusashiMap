@@ -1,165 +1,198 @@
-# MusashiMap — Project Roadmap
+# MusashiMap — Roadmap
 
-> Living project record. Update this file whenever a major research, data-model, or product milestone is completed. The goal is to preserve context so future work does not repeat completed research or drift from the project's original purpose.
+> Documento operativo principale. Aggiornare questo file a ogni milestone significativa.
 
-## 1. Product goal
+## 1. Obiettivo
 
-MusashiMap is a **follow-along reading companion for Eiji Yoshikawa's _Musashi_**, not a general historical GIS or encyclopedia.
+MusashiMap è un companion geografico per la lettura di *Musashi* di Eiji Yoshikawa. La mappa rappresenta prima di tutto il romanzo: deve aiutare il lettore a capire **dove sono i personaggi, quali luoghi attraversano e quali eventi stanno accadendo**, senza spoiler.
 
-The core experience should let a reader follow the current scene geographically, understand who is present and where they are, and consult a compact historical micro-wiki without exposing information that the reader has not reached yet.
+Non è un GIS storico, un atlante accademico o un'enciclopedia completa.
 
-Guiding principle:
+## 2. Fonte narrativa
 
-> The map represents the novel first. Historical reconstruction is supporting context, not a replacement for the novel.
-
-## 2. Source policy
-
-### Primary narrative source
-
-All claims about what the novel says must be derived from the Internet Archive transcription:
+Per ogni informazione narrativa la fonte primaria è esclusivamente la trascrizione Internet Archive usata dal progetto:
 
 `https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt`
 
-### External sources
+Fonti esterne sono ammesse soltanto per identificazione geografica moderna, coordinate, verifica topografica e contesto storico del micro-wiki.
 
-External sources are allowed for modern geographic identification, modern coordinates, historical/topographic verification, and historical context used by the micro-wiki. They must never be used to manufacture or overwrite novel evidence.
+L'indice Luni coincide con la struttura già adottata dal progetto: **non va rimappato né modificato**.
 
-## 3. Completed work
+## 3. Stato attuale
 
-### Book I narrative dataset
+### Book I — audit narrativo
+**COMPLETATO / FONDATO SULLA FONTE**
 
-Book I / _Earth_ is structured into eight project-local sections with narrative analysis, character states, location registry, normalized movements, events and identity checkpoints. Intended destinations are distinguished from confirmed arrivals.
+Gli otto capitoli del Libro I sono stati verificati direttamente contro `data/source/musashi-book1`, prima singolarmente e poi a coppie consecutive (`1-2`, `2-3`, … `7-8`).
 
-### Geographic research
+Sono stati corretti in particolare:
 
-A high-precision topographic methodology was established and applied to Book I. Modern identification, geographic confidence, historical compatibility and modern coordinates are separate concepts. The two-round research stopping rule prevents low-value topographic rabbit holes.
+- presenza fisica vs semplice menzione;
+- partenze e destinazioni intenzionali vs arrivi confermati;
+- continuità Matahachi/Akemi/Oko tra cap. 2 e 3;
+- stato di Temma come morto dal capitolo precedente;
+- posizione e trasferimento di Ogin;
+- distinzione tra posizione fisica e informazione riferita;
+- transizione Shinmen Takezō → Miyamoto Musashi nel cap. 8;
+- permanenza triennale di Musashi a Himeji Castle.
 
-### Historical micro-wiki
+### Modello dati narrativo
+**COMPLETATO**
 
-The micro-wiki is a compact contextual lookup for tertiary historical references. The novel supplies the trigger, reading context and spoiler boundary; an authoritative external source supplies the 2–3 line historical explanation. The bounded Book I audit is closed.
+Il modello distingue ora:
 
-### Reader progress and spoiler firewall
+- `current` — presenza fisica corrente;
+- `contextual` — posizione narrativa significativa da mantenere visibile anche dopo la partenza;
+- `last_known` — ultima posizione nota utile alla continuità;
+- `unmapped` — nessuna posizione cartografabile disponibile.
 
-`data/reader-progress.json` and `js/reader-progress.js` define the canonical section visibility contract. The micro-wiki already consumes it, so future information is not rendered before its narrative trigger.
+La presenza fisica **non determina più automaticamente la visibilità**.
 
-### Initial geographic map integration
+### Continuità cartografica
+**COMPLETATO / IN VALIDAZIONE**
 
-The placeholder central panel was replaced by a live Leaflet map with narrative markers, character-state markers, section-scoped movements and uncertainty-aware location markers. Approximate/area coordinates are allowed when they materially improve the follow-along experience, but their precision is explicitly encoded in the data.
+La mappa separa:
 
-The map deliberately avoids drawing the entire novel's route network. Only the current section's contextual locations and explicit movements are rendered.
+1. stato narrativo;
+2. visibilità cartografica;
+3. focus della mappa;
+4. storia geografica significativa del capitolo.
 
-### Mobile map UX
+I marker contestuali non spostano più automaticamente il focus: il focus viene determinato dagli eventi salienti del capitolo.
 
-The mobile layout was tuned for narrow screens such as the iPhone 13 mini: the map is the dominant element, the character filter collapses, the long map note is suppressed, and the information panel moves below the map.
+### Posizioni non cartografabili
+**COMPLETATO**
 
-### Map label/basemap checkpoint
+Matahachi e Akemi, dopo la partenza verso una destinazione non conosciuta, non vengono falsamente lasciati nella vecchia posizione. Il sistema mostra il popup solo quando necessario e mantiene il resto della UI pulito.
 
-The project tested several basemap approaches. Raster OSM gave the desired geographic density but rendered Japanese labels as Kanji; CARTO's no-label variant removed too much context; a Wikimedia raster endpoint produced a blank map and was abandoned.
+### Marker contestuali/residuali
+**COMPLETATO**
 
-The current solution is a **vector OpenFreeMap/OpenMapTiles-derived basemap rendered through MapLibre GL Leaflet**, so label fields can be selected at runtime. MapLibre's vector layer is retained inside the existing Leaflet map so the MusashiMap markers and movement overlays remain unchanged. The label expression prefers Japanese romanization fields (`name:ja-Latn`, then legacy `name:ja_rm`) and falls back to Latin/English names rather than deliberately requesting the Japanese Kanji field.
+I marker residuali hanno la stessa struttura visiva dei marker normali, con una sola differenza:
 
-OpenFreeMap documents its MapLibre integration and OpenMapTiles-derived data; OpenMapTiles documents the Japanese (Latin) localization and multilingual name fields. citeturn5search1turn0search0turn4search3
+- normale: `colore → bianco → nero`;
+- residuale: `colore → bianco → grigio chiaro`.
 
-## 4. Current work in progress
+Sono completamente opachi.
 
-### A. Canonical Book I data validation — IN PROGRESS
+### Audit geografico
+**COMPLETATO / SELETTIVO**
 
-Validate the existing structured datasets together rather than reopening research unnecessarily. Focus on contradictions and broken references.
+È stata adottata la procedura:
 
-### B. Reader-progress integration — IN PROGRESS
+- corrispondenza geografica ad alta confidence → coordinate moderne;
+- luogo esplicitamente coincidente con un paese/località → posizione del paese/località;
+- abitazione/casa non identificabile con precisione → area approssimativa controllata;
+- luoghi come Casa Honiden/Shimmen → punto casuale entro il raggio approvato dell'area di riferimento;
+- niente falsa precisione.
 
-The base engine, micro-wiki consumer and map renderer exist. The remaining work is to make all map visibility decisions consume the same canonical progress contract directly rather than relying on duplicated UI listeners.
+Le coordinate `approximate_area` devono conservare un raggio approvato, normalmente entro 1 km quando questa è la regola stabilita per quel luogo.
 
-### C. Geographic layer — IN PROGRESS
+### Micro-wiki
+**COMPLETATO / BOUNDED PASS CHIUSO**
 
-The researched locations now include logical area anchors where exact coordinates were not justified. Future additions should be selective and should not reopen closed topographic investigations unless the map exposes a concrete contradiction.
+Il micro-wiki usa il romanzo per trigger e contesto di lettura; le fonti esterne servono soltanto alla spiegazione storica sintetica. Le informazioni sono protette dal limite di lettura.
 
-### D. Basemap rendering verification — IN PROGRESS
+### Basemap
+**IMPLEMENTATO / VERIFICA VISIVA DA COMPLETARE**
 
-The new vector basemap and label-selection code are committed, but the live GitHub Pages URL is currently not fetchable through the available web renderer (cache miss). Therefore the vector-label migration has been **code-reviewed and source-verified but not visually certified from the live page in this session**. The first post-deploy check on a real browser, preferably the iPhone 13 mini, is required before calling this milestone closed.
+La soluzione corrente usa un basemap vettoriale MapLibre/OpenFreeMap/OpenMapTiles integrato nell'ambiente Leaflet, con preferenza per campi romanizzati giapponesi (`name:ja-Latn`, `name:ja_rm`) invece dei Kanji.
 
-### E. Luni mapping — BLOCKED / DEFERRED
+## 4. Lavoro in corso
 
-Do not invent or infer the Luni chapter numbering from memory. When the actual edition index is available, map Archive.org sections to Luni chapters explicitly.
+### A. Validazione canonica Book I
+**PROSSIMO PASSO**
 
-## 5. Next product milestones
+Eseguire un controllo integrato dei dataset dopo la separazione tra stato narrativo e stato cartografico:
 
-### Milestone 1 — Verify the vector basemap on the live site
+- character states;
+- location states;
+- events;
+- transitions;
+- entity index;
+- renderer.
 
-Confirm that:
+L'obiettivo è trovare contraddizioni residue, non ripetere lo scraping già chiuso.
 
-- the map renders normally;
-- modern geographic context remains dense enough;
-- Japanese labels are rendered in Latin script where the tile data provides a romanized name;
-- there are no unexpected Kanji labels caused by fallback to `name`;
-- Leaflet markers, popups, routes and section changes remain functional;
-- the layout remains usable on the iPhone 13 mini.
+### B. Integrazione reader-progress → map
+**IN PROGRESS**
 
-### Milestone 2 — Canonical map/progress integration
+Rendere il reader-progress l'unica fonte autorevole per tutte le decisioni di visibilità della mappa. Eliminare eventuali listener o condizioni duplicate.
 
-Move the temporary map wiring into the same reader-progress renderer used by the rest of the application so section changes have one authoritative state transition.
+### C. Verifica capitolo-per-capitolo
+**DA FARE**
 
-### Milestone 3 — Geographic layer completion
+Testare visivamente ogni capitolo del Libro I, verificando:
 
-Add only already-researched coordinates/area anchors where they improve the follow-along. Preserve `exact`, `area`, `approximate_area` and `modern_literary_reference` distinctions.
+- personaggi;
+- luoghi;
+- marker correnti e residuali;
+- focus;
+- eventi;
+- popup non cartografabili;
+- wiki;
+- transizioni tra capitoli.
 
-### Milestone 4 — Follow-along map UX
+### D. Basemap e label
+**DA CHIUDERE CON TEST REALE**
 
-Refine the map around the current reading state: current location, current movement, visible previous locations and useful uncertainty cues. Keep the map visually dominant and the context panel collapsible where appropriate.
+Verificare su browser reale, preferibilmente mobile:
 
-### Milestone 5 — Reading test
+- rendering del basemap;
+- densità geografica;
+- romanizzazione dei toponimi;
+- assenza di Kanji indesiderati;
+- marker e overlay;
+- performance e layout.
 
-Advance one section at a time, inspect the map, characters, events and wiki, then rewind and verify that future information disappears.
+## 5. Prossime milestone
 
-## 6. Explicit non-goals
+1. **Audit integrato Book I** — dati + renderer.
+2. **Test visuale completo capitoli 1–8.**
+3. **Chiusura reader-progress/map integration.**
+4. **Chiusura verifica basemap e label romanizzate.**
+5. **Polish UX/UI** senza alterare la semantica narrativa.
+6. **Preparazione Book II** soltanto dopo aver congelato il modello Book I.
 
-MusashiMap is not currently trying to become a complete historical atlas, a scholarly reconstruction of every 1600 road, a general biography database, a replacement for the novel, or a GIS requiring exact historical coordinates for every ambiguous toponym.
+## 6. Regole permanenti per i futuri libri
 
-Precision is valuable when it changes the reader's understanding. False precision is worse than an explicitly uncertain area.
+1. Partire sempre dal testo sorgente del libro.
+2. Analizzare capitolo per capitolo e poi a coppie consecutive.
+3. Non confondere presenza fisica, menzione e ultima posizione nota.
+4. Non cancellare una posizione dalla visualizzazione soltanto perché il personaggio ha lasciato fisicamente quel luogo.
+5. Non mostrare invece una posizione vecchia come se fosse quella corrente.
+6. Separare sempre `narrative_state` da `map_state`.
+7. Separare sempre `visibility` da `focus`.
+8. Distinguere arrivo confermato, destinazione intenzionale e direzione.
+9. Preservare l'incertezza geografica invece di inventare precisione.
+10. Usare fonti esterne soltanto per la parte geografica/storica consentita.
+11. Non usare informazioni future per risolvere uno stato passato.
+12. Il micro-wiki deve rispettare il firewall spoiler.
+13. I marker contestuali devono essere secondari visivamente ma non trasparenti.
+14. Il popup `unmapped` va usato solo quando non esiste alcuna posizione utile da mostrare.
+15. L'indice Luni è già corretto e non deve essere modificato.
 
-## 7. Working rules for future agents
-
-1. Read this roadmap before beginning new research.
-2. Check existing datasets and research notes before repeating research.
-3. Treat Archive.org as the sole authority for claims about the novel.
-4. Use external sources only for explicitly separated modern/historical context.
-5. For the micro-wiki, use the novel only to identify the trigger and reading context; use an authoritative external source for the historical summary.
-6. Keep micro-wiki summaries to roughly 2–3 lines unless ambiguity requires more research.
-7. Preserve uncertainty instead of inventing coordinates.
-8. Apply the two-round stopping rule to difficult topographic identifications.
-9. Prefer network consistency over name matching.
-10. Never leak future information through the map or micro-wiki.
-11. Do not expand research merely because a more precise answer is theoretically possible.
-12. Optimize for the usefulness of the reading companion.
-13. Do not infer the Luni chapter mapping until the actual edition index is available.
-14. Use the canonical reader-progress engine as the sole source of section visibility decisions.
-15. Keep novel-trigger data and external historical summaries semantically separate.
-16. Do not pin a location merely because a modern name matches; require the stored confidence/status to justify a coordinate.
-17. Treat the basemap as a presentation layer: never let it overwrite MusashiMap's narrative location data.
-18. Prefer vector basemaps when label language must be controlled; raster tiles cannot have their baked-in labels translated by CSS/JavaScript.
-
-## 8. Current state at a glance
+## 7. Stato sintetico
 
 ```text
-PROJECT FOUNDATION              DONE
-BOOK I STRUCTURED DATA          DONE / VALIDATING
-SPOILER-SAFE CHARACTER MODEL    DONE
-LOCATION NORMALIZATION          DONE / VALIDATING
-TOPOGRAPHIC METHODOLOGY         DONE
-TOPOGRAPHIC INITIAL AUDIT       DONE / SELECTIVE FOLLOW-UP ONLY
-HISTORICAL MICRO-WIKI MODEL     DONE
-MICRO-WIKI SOURCE AUDIT         DONE — BOUNDED PASS CLOSED
-BOOK I PRIMARY-TEXT AUDIT       DONE — BOUNDED PASS CLOSED
-READER PROGRESS MODEL           DONE
-READER PROGRESS ENGINE          DONE / INTEGRATING
-MICRO-WIKI UI                   DONE
-MOBILE UI                       DONE / VALIDATING
-GEOGRAPHIC MAP                  DONE / VALIDATING
-VECTOR BASEMAP                  IMPLEMENTED / LIVE VISUAL CHECK PENDING
-ROMANIZED MAP LABELS            IMPLEMENTED / LIVE VISUAL CHECK PENDING
-ARCHIVE → LUNI MAPPING          DEFERRED — INDEX NEEDED
-CANONICAL MAP/PROGRESS WIRING   NEXT
-FULL READING TEST               LATER
+PROGETTO / ARCHITETTURA                 DONE
+FONTE PRIMARIA BOOK I                  DONE
+SCRAPING BOOK I                        DONE
+AUDIT CAPITOLO-PER-CAPITOLO            DONE
+AUDIT A COPPIE                         DONE
+MODELLO NARRATIVO                      DONE
+MODELLO MAP STATE                      DONE
+CONTINUITÀ CARTOGRAFICA                DONE
+AUDIT GEOGRAFICO                       DONE / SELETTIVO
+MICRO-WIKI                             DONE
+POPUP NON CARTOGRAFABILI               DONE
+MARKER CORRENTI/RESIDUALI              DONE
+MAPPA LEAFLET                          DONE
+BASEMAP VETTORIALE                     IMPLEMENTED
+LABEL ROMANIZZATE                      IMPLEMENTED / VERIFY
+READER PROGRESS                        DONE / INTEGRATING
+AUDIT INTEGRATO RENDERER + DATI        NEXT
+TEST VISIVO CAPITOLI 1–8               NEXT
+POLISH UI                              NEXT
+BOOK II                                DOPO IL FREEZE DEL BOOK I
 ```
-
-The roadmap is intentionally a living document. Update it at each meaningful milestone rather than creating a separate history document that can drift out of date.
