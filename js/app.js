@@ -23,13 +23,13 @@ const characterFilterBody = document.querySelector("#character-filter-body");
 
 const placeTypes = [
   ["exact_site", "Sito preciso", "literary_landmark"],
-  ["settlement", "Città / insediamento", "city"],
-  ["settlement_area", "Insediamento / area", "village"],
+  ["settlement", "Insediamento", "city"],
+  ["settlement_area", "Villaggio / area abitata", "village"],
   ["urban_area", "Area urbana", "city"],
   ["area", "Area geografica", "area"],
   ["region", "Regione", "area"],
+  ["river", "Fiume / corso d'acqua", "river"],
   ["route", "Percorso", "route"],
-  ["river", "Fiume / corso d'acqua", "nature"],
   ["temple", "Tempio / santuario", "temple"],
   ["castle", "Castello", "castle"],
   ["fortified_site", "Fortificazione", "castle"],
@@ -37,12 +37,17 @@ const placeTypes = [
   ["narrative_site", "Luogo narrativo", "literary_landmark"],
   ["literary_landmark", "Luogo letterario", "literary_landmark"]
 ];
-const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
 const iconPaths = {
-  temple: "assets/icons/places/temple.svg", castle: "assets/icons/places/castle.svg", city: "assets/icons/places/city.svg",
-  village: "assets/icons/places/village.svg", nature: "assets/icons/places/nature.svg", area: "assets/icons/places/area.svg",
-  route: "assets/icons/places/route.svg", literary_landmark: "assets/icons/places/landmark.svg"
+  temple: "assets/icons/places/temple.svg",
+  castle: "assets/icons/places/castle.svg",
+  city: "assets/icons/places/city.svg",
+  village: "assets/icons/places/village.svg",
+  area: "assets/icons/places/area.svg",
+  river: "assets/icons/places/river.svg",
+  route: "assets/icons/places/route.svg",
+  literary_landmark: "assets/icons/places/landmark.svg"
 };
+const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
 let data;
 let reader;
 
@@ -56,10 +61,20 @@ function applySection(value) {
 function renderPlaceLegend() {
   const usedTypes = new Set(data.locations.locations.map(location => location.type));
   placeLegend.replaceChildren(...placeTypes.filter(([type]) => usedTypes.has(type)).map(([type, label, iconType]) => {
-    const item = document.createElement("div"); item.className = "legend-item";
-    const swatch = document.createElement("span"); swatch.className = "legend-swatch"; swatch.setAttribute("aria-hidden", "true");
-    const image = document.createElement("img"); image.src = iconPaths[iconType]; image.alt = ""; image.width = 30; image.height = 30; swatch.append(image);
-    const text = document.createElement("span"); text.textContent = label; item.append(swatch, text); return item;
+    const item = document.createElement("div");
+    item.className = "legend-item";
+    const swatch = document.createElement("span");
+    swatch.className = `legend-swatch legend-${type}`;
+    swatch.setAttribute("aria-hidden", "true");
+    const image = document.createElement("img");
+    image.src = iconPaths[iconType];
+    image.alt = "";
+    image.draggable = false;
+    swatch.append(image);
+    const text = document.createElement("span");
+    text.textContent = label;
+    item.append(swatch, text);
+    return item;
   }));
 }
 
@@ -77,24 +92,22 @@ function renderCharacterFilters(selectedCharacters) {
 function renderWiki(section) {
   const entries = getRelevantHistoricalWiki(data.microWiki.entities, section);
   if (!entries.length) { wikiList.replaceChildren(Object.assign(document.createElement("p"), {className:"wiki-empty", textContent:"Nessun riferimento storico rilevante nelle sezioni corrente e precedente."})); return; }
-  wikiList.replaceChildren(...entries.map(entry => { const card = document.createElement("article"); card.className = "wiki-card"; const heading = document.createElement("h3"); heading.textContent = entry.display_name; const trigger = document.createElement("p"); trigger.className = "wiki-trigger"; trigger.textContent = entry.novel_trigger?.context ?? "Riferimento incontrato nel romanzo."; const summary = document.createElement("p"); summary.textContent = entry.wiki?.summary ?? "Contesto storico non disponibile."; card.append(heading, trigger, summary); if (entry.source?.url && entry.source?.status !== "needs_authoritative_source_record") { const source = document.createElement("a"); source.className = "wiki-source"; source.href = entry.source.url; source.target = "_blank"; source.rel = "noopener noreferrer"; source.textContent = `${entry.source.publisher ?? "Fonte"} · fonte storica`; card.append(source); } return card; }));
+  wikiList.replaceChildren(...entries.map(entry => { const card=document.createElement("article"); card.className="wiki-card"; const heading=document.createElement("h3"); heading.textContent=entry.display_name; const trigger=document.createElement("p"); trigger.className="wiki-trigger"; trigger.textContent=entry.novel_trigger?.context ?? "Riferimento incontrato nel romanzo."; const summary=document.createElement("p"); summary.textContent=entry.wiki?.summary ?? "Contesto storico non disponibile."; card.append(heading,trigger,summary); if(entry.source?.url&&entry.source?.status!=="needs_authoritative_source_record"){const source=document.createElement("a");source.className="wiki-source";source.href=entry.source.url;source.target="_blank";source.rel="noopener noreferrer";source.textContent=`${entry.source.publisher??"Fonte"} · fonte storica`;card.append(source);} return card; }));
 }
 
 function render() {
-  if (!data || !reader) return; const readerState = getCanonicalReaderState(); const section = readerState.section; const selectedCharacters = new Set(readerState.selectedCharacters); const sectionData = data.chapters.sections.find(s => s.number === section); if (!sectionData) return;
-  bookLabel.textContent = `LIBRO ${sectionData.book} · ${sectionData.book_title}`; title.textContent = sectionData.title; status.textContent = `Sezione ${section} · informazioni visibili fino a questo punto della storia`; sectionSelect.value = String(section); chapterInput.value = String(section); prevButton.disabled = section <= reader.min; nextButton.disabled = section >= reader.max;
-  const characterById = new Map(data.characters.characters.map(c => [c.id, c])); const locationById = new Map(data.locations.locations.map(l => [l.id, l])); const states = reader.visibleLatestStates(data.states.character_states); const visibleStates = states.filter(s => selectedCharacters.has(s.character));
-  characterList.replaceChildren(...visibleStates.map(s => { const card = document.createElement("article"); const character = characterById.get(s.character); const location = locationById.get(s.location); card.innerHTML = `<h3>${character?.name ?? s.character}</h3><p><strong>${location?.name ?? "Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Presenza: ${s.presence ?? s.status}; confidenza luogo: ${s.location_confidence ?? s.certainty}</small>`; return card; }));
-  const events = data.events.events.filter(e => e.section === section && e.characters.some(id => selectedCharacters.has(id))); eventList.replaceChildren(...events.map(e => { const item = document.createElement("li"); const names = e.characters.map(id => characterById.get(id)?.name ?? id).join(", "); const from = e.origin ? locationById.get(e.origin)?.name : null; const to = e.destination ? locationById.get(e.destination)?.name : null; const place = e.location ? locationById.get(e.location)?.name : null; item.textContent = `${names}: ${e.type}${from && to ? ` · ${from} → ${to}` : place ? ` · ${place}` : ""}`; return item; }));
+  if (!data || !reader) return;
+  const readerState=getCanonicalReaderState(); const section=readerState.section; const selectedCharacters=new Set(readerState.selectedCharacters); const sectionData=data.chapters.sections.find(s=>s.number===section); if(!sectionData)return;
+  bookLabel.textContent=`LIBRO ${sectionData.book} · ${sectionData.book_title}`; title.textContent=sectionData.title; status.textContent=`Sezione ${section} · informazioni visibili fino a questo punto della storia`; sectionSelect.value=String(section); chapterInput.value=String(section); prevButton.disabled=section<=reader.min; nextButton.disabled=section>=reader.max;
+  const characterById=new Map(data.characters.characters.map(c=>[c.id,c])); const locationById=new Map(data.locations.locations.map(l=>[l.id,l])); const states=reader.visibleLatestStates(data.states.character_states); const visibleStates=states.filter(s=>selectedCharacters.has(s.character));
+  characterList.replaceChildren(...visibleStates.map(s=>{const card=document.createElement("article");const character=characterById.get(s.character);const location=locationById.get(s.location);card.innerHTML=`<h3>${character?.name??s.character}</h3><p><strong>${location?.name??"Posizione non determinata"}</strong></p><p>${s.activity}</p><small>Presenza: ${s.presence??s.status}; confidenza luogo: ${s.location_confidence??s.certainty}</small>`;return card;}));
+  const events=data.events.events.filter(e=>e.section===section&&e.characters.some(id=>selectedCharacters.has(id))); eventList.replaceChildren(...events.map(e=>{const item=document.createElement("li");const names=e.characters.map(id=>characterById.get(id)?.name??id).join(", ");const from=e.origin?locationById.get(e.origin)?.name:null;const to=e.destination?locationById.get(e.destination)?.name:null;const place=e.location?locationById.get(e.location)?.name:null;item.textContent=`${names}: ${e.type}${from&&to?` · ${from} → ${to}`:place?` · ${place}`:""}`;return item;}));
   renderCharacterFilters(selectedCharacters); renderWiki(section);
 }
 
-subscribeCanonicalReaderState(() => render());
-try {
-  data = await loadData(); reader = createReaderProgress(data.chapters, data.readerProgress.state.current_section); const result = validateData(data); validation.textContent = result.valid ? "Database: validato" : `Database: ${result.errors.length} errori`; validation.dataset.state = result.valid ? "ok" : "error"; if (result.errors.length) console.error("MusashiMap data validation errors", result.errors); chapterInput.min = String(reader.min); chapterInput.max = String(reader.max); sectionSelect.replaceChildren(...data.chapters.sections.map(s => { const option = document.createElement("option"); option.value = String(s.number); option.textContent = `${s.book} — ${s.title}`; return option; })); renderPlaceLegend(); const initialState = getCanonicalReaderState(); const initialSection = initialState.section ?? reader.section; const initialSelected = initialState.selectedCharacters.length ? initialState.selectedCharacters : data.characters.characters.filter(c => c.importance === "main").map(c => c.id); setCanonicalReaderState({section: initialSection, selectedCharacters: initialSelected});
-} catch (error) { validation.textContent = "Errore nel caricamento dei dati"; console.error(error); }
-chapterInput.addEventListener("input", () => { chapterInput.setCustomValidity(""); if (chapterInput.value === "") return; const parsed = Number.parseInt(chapterInput.value, 10); if (!Number.isInteger(parsed) || parsed < reader.min || parsed > reader.max) chapterInput.setCustomValidity(`Inserisci una sezione da ${reader.min} a ${reader.max}.`); });
-chapterInput.addEventListener("keydown", event => { if (event.key === "Enter") { if (!applySection(chapterInput.value)) chapterInput.reportValidity(); } else if (event.key === "Escape") chapterInput.value = String(getCanonicalReaderState().section); });
-chapterApply.addEventListener("click", () => { if (!applySection(chapterInput.value)) chapterInput.reportValidity(); }); prevButton.addEventListener("click", () => { if (reader.previous()) applySection(reader.section); }); nextButton.addEventListener("click", () => { if (reader.next()) applySection(reader.section); }); sectionSelect.addEventListener("change", () => applySection(sectionSelect.value));
-selectAll.addEventListener("click", () => { const selectedCharacters = data.characters.characters.filter(c => c.importance === "main").map(c => c.id); const state = getCanonicalReaderState(); setCanonicalReaderState({section: state.section, selectedCharacters}); }); selectNone.addEventListener("click", () => { const state = getCanonicalReaderState(); setCanonicalReaderState({section: state.section, selectedCharacters: []}); });
-characterToggle.addEventListener("click", () => { const isOpen = characterToggle.getAttribute("aria-expanded") === "true"; characterToggle.setAttribute("aria-expanded", String(!isOpen)); characterToggle.textContent = isOpen ? "Mostra filtri" : "Nascondi filtri"; characterFilterBody.hidden = isOpen; });
+subscribeCanonicalReaderState(()=>render());
+try { data=await loadData(); reader=createReaderProgress(data.chapters,data.readerProgress.state.current_section); const result=validateData(data); validation.textContent=result.valid?"Database: validato":`Database: ${result.errors.length} errori`; validation.dataset.state=result.valid?"ok":"error"; if(result.errors.length)console.error("MusashiMap data validation errors",result.errors); chapterInput.min=String(reader.min);chapterInput.max=String(reader.max);sectionSelect.replaceChildren(...data.chapters.sections.map(s=>{const option=document.createElement("option");option.value=String(s.number);option.textContent=`${s.book} — ${s.title}`;return option;})); renderPlaceLegend(); const initialState=getCanonicalReaderState();const initialSection=initialState.section??reader.section;const initialSelected=initialState.selectedCharacters.length?initialState.selectedCharacters:data.characters.characters.filter(c=>c.importance==="main").map(c=>c.id);setCanonicalReaderState({section:initialSection,selectedCharacters:initialSelected}); } catch(error){validation.textContent="Errore nel caricamento dei dati";console.error(error);}
+
+chapterInput.addEventListener("input",()=>{chapterInput.setCustomValidity("");if(chapterInput.value==="")return;const parsed=Number.parseInt(chapterInput.value,10);if(!Number.isInteger(parsed)||parsed<reader.min||parsed>reader.max)chapterInput.setCustomValidity(`Inserisci una sezione da ${reader.min} a ${reader.max}.`);});
+chapterInput.addEventListener("keydown",event=>{if(event.key==="Enter"){if(!applySection(chapterInput.value))chapterInput.reportValidity();}else if(event.key==="Escape")chapterInput.value=String(getCanonicalReaderState().section);});
+chapterApply.addEventListener("click",()=>{if(!applySection(chapterInput.value))chapterInput.reportValidity();}); prevButton.addEventListener("click",()=>{if(reader.previous())applySection(reader.section);}); nextButton.addEventListener("click",()=>{if(reader.next())applySection(reader.section);}); sectionSelect.addEventListener("change",()=>applySection(sectionSelect.value)); selectAll.addEventListener("click",()=>{const selectedCharacters=data.characters.characters.filter(c=>c.importance==="main").map(c=>c.id);const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters});}); selectNone.addEventListener("click",()=>{const state=getCanonicalReaderState();setCanonicalReaderState({section:state.section,selectedCharacters:[]});}); characterToggle.addEventListener("click",()=>{const isOpen=characterToggle.getAttribute("aria-expanded")==="true";characterToggle.setAttribute("aria-expanded",String(!isOpen));characterToggle.textContent=isOpen?"Mostra filtri":"Nascondi filtri";characterFilterBody.hidden=isOpen;});
