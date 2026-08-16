@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-11";
+  const VERSION = "20260816-12";
   let map;
   let glLayer;
   let markers;
@@ -71,18 +71,14 @@
   // These are administrative suffixes, not part of the reader-facing place name.
   function cleanAdministrativeSuffixExpression() {
     const suffixes = [
-      ["to", "to"], ["fu", "fu"], ["ken", "ken"], ["shi", "shi"],
-      ["ku", "ku"], ["gun", "gun"], ["machi", "machi"], ["cho", "cho"],
-      ["chō", "chō"], ["mura", "mura"], ["son", "son"]
+      "to", "fu", "ken", "shi", "ku", "gun", "machi", "cho", "chō", "mura", "son"
     ];
     let expression = romanizedLabelExpression();
-    for (const [suffix] of suffixes) {
+    for (const suffix of suffixes) {
       expression = [
         "case",
-        ["match", ["slice", expression, ["-", ["length", expression], suffix.length + 1]], `-${suffix}`,
-          ["slice", expression, 0, ["-", ["length", expression], suffix.length + 1]],
-          expression
-        ],
+        ["==", ["slice", expression, ["-", ["length", expression], suffix.length + 1]], `-${suffix}`],
+        ["slice", expression, 0, ["-", ["length", expression], suffix.length + 1]],
         expression
       ];
     }
@@ -123,7 +119,6 @@
       }).addTo(map);
       const gl = glLayer.getMaplibreMap();
       gl.once("load", localizeBasemapLabels);
-      gl.on("styledata", localizeBasemapLabels);
 
       markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
