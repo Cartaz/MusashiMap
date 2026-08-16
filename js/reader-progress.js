@@ -87,3 +87,15 @@ export function getVisibleHistoricalWiki(entries, currentSection) {
     return Number.isInteger(first) && first <= currentSection;
   });
 }
+
+// The micro-wiki is a reading aid, not a permanent encyclopedia index.
+// Show entries introduced in the current section and the immediately preceding one.
+export function getRelevantHistoricalWiki(entries, currentSection) {
+  const section = Number.parseInt(currentSection, 10);
+  if (!Number.isInteger(section)) return [];
+  const previousSection = section - 1;
+  return entries.filter(entry => {
+    const first = entry.novel_trigger?.first_book1_section;
+    return first === section || first === previousSection;
+  });
+}
