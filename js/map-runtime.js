@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-8";
+  const VERSION = "20260816-9";
   let map;
   let markers;
   let routes;
@@ -25,86 +25,60 @@
 
   function draw(section) {
     if (!map || !markers || !characterMarkers) return;
-    markers.clearLayers();
-    routes.clearLayers();
-    characterMarkers.clearLayers();
+    markers.clearLayers(); routes.clearLayers(); characterMarkers.clearLayers();
     const byId = new Map(locations.map(l => [l.id, l]));
     const currentStates = new Map();
     characterStates.filter(s => s.section <= section).forEach(s => currentStates.set(s.character, s));
     const plotted = [];
-
     currentStates.forEach((state, characterId) => {
       if (!selectedCharacters.has(characterId)) return;
-      const location = byId.get(state.location);
-      const character = characters.find(c => c.id === characterId);
+      const location = byId.get(state.location); const character = characters.find(c => c.id === characterId);
       if (!location || !hasCoords(location)) return;
-      const index = characters.findIndex(c => c.id === characterId);
-      const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
-      const marker = L.marker(location.coordinates, {icon: characterIcon(character, color, location), title: `${character?.name ?? characterId} · ${locationLabel(location)}`});
-      marker.bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><small>${esc(precisionLabel(location))}</small><br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
+      const index = characters.findIndex(c => c.id === characterId); const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
+      L.marker(location.coordinates, {icon: characterIcon(character, color, location), title: `${character?.name ?? characterId} · ${locationLabel(location)}`})
+        .bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><small>${esc(precisionLabel(location))}</small><br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
       plotted.push(location.coordinates);
     });
-
-    const sectionEvents = events.filter(e => e.section === section);
-    const contextualIds = new Set();
-    sectionEvents.forEach(e => {
-      if (e.location) contextualIds.add(e.location);
-      if (e.from) contextualIds.add(e.from);
-      if (e.to) contextualIds.add(e.to);
-      (e.via ?? []).forEach(v => contextualIds.add(v));
-    });
+    const sectionEvents = events.filter(e => e.section === section); const contextualIds = new Set();
+    sectionEvents.forEach(e => { if (e.location) contextualIds.add(e.location); if (e.from) contextualIds.add(e.from); if (e.to) contextualIds.add(e.to); (e.via ?? []).forEach(v => contextualIds.add(v)); });
     contextualIds.forEach(id => {
-      const location = byId.get(id);
-      if (!hasCoords(location)) return;
+      const location = byId.get(id); if (!hasCoords(location)) return;
       if ([...currentStates.values()].some(s => selectedCharacters.has(s.character) && s.location === id)) return;
       L.marker(location.coordinates, {icon: icon(location), title: locationLabel(location)})
-        .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`)
-        .addTo(markers);
+        .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`).addTo(markers);
       plotted.push(location.coordinates);
     });
-
     sectionEvents.filter(e => e.from && e.to).forEach(e => {
-      const a = byId.get(e.from), b = byId.get(e.to);
-      if (!hasCoords(a) || !hasCoords(b)) return;
+      const a = byId.get(e.from), b = byId.get(e.to); if (!hasCoords(a) || !hasCoords(b)) return;
       L.polyline([a.coordinates, b.coordinates], {color:"#d97706", weight:3, opacity:.78, dashArray:e.certainty === "intended_destination" ? "6 8" : null, interactive:false}).addTo(routes);
     });
-
     if (plotted.length) map.fitBounds(L.latLngBounds(plotted).pad(.18), {maxZoom:10, animate:false});
   }
 
   async function boot() {
     try {
       map = L.map("map", {zoomControl:true, preferCanvas:true}).setView([35.05,135.55],7);
-      L.tileLayer("https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png?lang=ja-Latn", {
-        maxZoom:20,
-        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors &copy; <a href="https://wikimediafoundation.org/" target="_blank" rel="noopener noreferrer">Wikimedia</a>'
+      // Rich OSM-derived basemap with labels. Wikimedia's osm-intl endpoint is currently unavailable,
+      // so do not leave the map blank: use the stable CARTO Voyager layer until a working multilingual
+      // OSM tile endpoint is selected and verified.
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+        maxZoom:20, subdomains:"abcd",
+        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener noreferrer">CARTO</a>'
       }).addTo(map);
-      markers = L.layerGroup().addTo(map);
-      routes = L.layerGroup().addTo(map);
-      characterMarkers = L.layerGroup().addTo(map);
+      markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
         fetch(`data/locations.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`locations.json: ${r.status}`); return r.json(); }),
         fetch(`data/events.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`events.json: ${r.status}`); return r.json(); }),
         fetch(`data/character-states.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`character-states.json: ${r.status}`); return r.json(); }),
         fetch(`data/characters.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`characters.json: ${r.status}`); return r.json(); })
       ]);
-      locations = locationData.locations;
-      events = eventData.events;
-      characterStates = stateData.character_states;
-      characters = characterData.characters;
+      locations = locationData.locations; events = eventData.events; characterStates = stateData.character_states; characters = characterData.characters;
       if (latestReaderState) draw(latestReaderState.section);
-    } catch(error) {
-      console.error("Map initialization failed", error);
-    }
+    } catch(error) { console.error("Map initialization failed", error); }
   }
-
   window.addEventListener("musashi:reader-state", event => {
-    latestReaderState = {
-      section: Number(event.detail?.section) || 1,
-      selectedCharacters: event.detail?.selectedCharacters ?? []
-    };
-    selectedCharacters = new Set(latestReaderState.selectedCharacters);
-    draw(latestReaderState.section);
+    latestReaderState = {section: Number(event.detail?.section) || 1, selectedCharacters: event.detail?.selectedCharacters ?? []};
+    selectedCharacters = new Set(latestReaderState.selectedCharacters); draw(latestReaderState.section);
   });
   boot();
 })();
