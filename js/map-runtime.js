@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-19";
+  const VERSION = "20260816-20";
   let map;
   let glLayer;
   let markers;
@@ -12,7 +12,7 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   let characterStates = [];
   let characters = [];
   let selectedCharacters = new Set();
-  const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", area: "#8fb3c9", route: "#b99ad6", temple: "#b8c7a4", literary_landmark: "#d9a0b7" };
+  const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", settlement_area: "#c9d1d9", urban_area: "#c9d1d9", area: "#8fb3c9", region: "#8fb3c9", route: "#b99ad6", river: "#8fb3c9", temple: "#b8c7a4", castle: "#b8c7a4", fortified_site: "#b8c7a4", bridge: "#b99ad6", narrative_site: "#d9a0b7", literary_landmark: "#d9a0b7" };
   const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
   const placeIconPaths = {
     temple: "assets/icons/places/temple.svg",
@@ -20,10 +20,11 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     city: "assets/icons/places/city.svg",
     village: "assets/icons/places/village.svg",
     nature: "assets/icons/places/nature.svg",
+    area: "assets/icons/places/area.svg",
     route: "assets/icons/places/route.svg",
     literary_landmark: "assets/icons/places/landmark.svg"
   };
-  const placeTypeAliases = { settlement: "city", exact_site: "landmark", area: "nature" };
+  const placeTypeAliases = { settlement: "city", settlement_area: "village", urban_area: "city", area: "area", region: "area", river: "nature", route: "route", temple: "temple", castle: "castle", fortified_site: "castle", bridge: "route", narrative_site: "literary_landmark", literary_landmark: "literary_landmark", exact_site: "literary_landmark" };
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
   const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
   const locationLabel = location => location?.modern_name_romaji || location?.name || "Località non determinata";
@@ -33,10 +34,10 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     return "Posizione indicativa dell'area";
   };
   const icon = location => {
-    const type = placeTypeAliases[location?.type] ?? location?.type ?? "landmark";
-    const path = placeIconPaths[type] ?? placeIconPaths.landmark;
+    const type = placeTypeAliases[location?.type] ?? "literary_landmark";
+    const path = placeIconPaths[type];
     const color = colors[location?.type] ?? "#c9d1d9";
-    return L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${path}" alt="" aria-hidden="true"></span>`, iconSize: [28,28], iconAnchor: [14,14] });
+    return L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${path}" alt="" aria-hidden="true"></span>`, iconSize: [32,32], iconAnchor: [16,16], popupAnchor: [0,-17] });
   };
   const characterIcon = (character, color, location) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13,13] });
 
