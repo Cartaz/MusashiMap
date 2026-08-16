@@ -38,7 +38,25 @@ function applySection(value){
   return true;
 }
 
+function ensureLegendToggle(){
+  const legend=document.querySelector(".map-legend");
+  if(!legend||legend.querySelector(".legend-toggle")) return;
+  const heading=legend.querySelector(".legend-heading");
+  if(!heading) return;
+  const button=document.createElement("button");
+  button.type="button"; button.className="legend-toggle"; button.setAttribute("aria-expanded","false"); button.setAttribute("aria-controls","place-legend");
+  button.innerHTML='<span class="legend-roll" aria-hidden="true"><span></span></span><span class="legend-toggle-label">Legenda</span><span class="legend-toggle-mark" aria-hidden="true">+</span>';
+  button.addEventListener("click",()=>{
+    const open=button.getAttribute("aria-expanded")==="true";
+    button.setAttribute("aria-expanded",String(!open));
+    legend.classList.toggle("is-open",!open);
+  });
+  heading.prepend(button);
+  legend.classList.add("is-collapsible");
+}
+
 function renderPlaceLegend(){
+  ensureLegendToggle();
   const usedTypes=new Set(data.locations.locations.map(location=>location.type));
   placeLegend.replaceChildren(...placeTypes.filter(([type])=>usedTypes.has(type)).map(([type,label,iconType])=>{
     const item=document.createElement("div"); item.className="legend-item";
@@ -60,38 +78,43 @@ function renderCharacterFilters(selectedCharacters, section){
   }));
 }
 
-function renderHistoricalWiki(entries, nodes){
+function createWikiCard(entry,{character=false}={}){
+  const card=document.createElement("article"); card.className=`wiki-card ${character?"character-wiki-card":""}`;
+  const button=document.createElement("button"); button.type="button"; button.className="wiki-card-toggle"; button.setAttribute("aria-expanded","false");
+  const title=document.createElement("span"); title.className="wiki-card-title"; title.textContent=entry.display_name;
+  const chevron=document.createElement("span"); chevron.className="wiki-card-chevron"; chevron.setAttribute("aria-hidden","true"); chevron.textContent="＋";
+  button.append(title,chevron);
+  const body=document.createElement("div"); body.className="wiki-card-body"; body.hidden=true;
+  const role=document.createElement("p"); role.className="wiki-trigger"; role.textContent=character?entry.role:(entry.novel_trigger?.context??"Riferimento incontrato nel romanzo."); body.append(role);
+  const summary=document.createElement("p"); summary.textContent=character?entry.finora:(entry.wiki?.summary??"Contesto storico non disponibile."); body.append(summary);
+  if(character){
+    const currentSections=Object.keys(entry.current_by_section??{}).map(Number).filter(n=>Number.isFinite(n));
+    if(currentSections.length){
+      const currentSection=Math.max(...currentSections);
+      const current=document.createElement("p"); current.innerHTML=`<strong>Stato attuale:</strong> ${entry.current_by_section[String(currentSection)]}`; body.append(current);
+    }
+  }
+  if(!character&&entry.source?.url&&entry.source?.status!=="needs_authoritative_source_record"){
+    const source=document.createElement("a"); source.className="wiki-source"; source.href=entry.source.url; source.target="_blank"; source.rel="noopener noreferrer"; source.textContent=`${entry.source.publisher??"Fonte"} · fonte storica`; body.append(source);
+  }
+  button.addEventListener("click",()=>{
+    const open=button.getAttribute("aria-expanded")==="true";
+    button.setAttribute("aria-expanded",String(!open)); body.hidden=open; card.classList.toggle("is-open",!open);
+  });
+  card.append(button,body); return card;
+}
+
+function renderHistoricalWiki(entries,nodes){
   if(!entries.length) return;
   const heading=document.createElement("h3"); heading.className="wiki-subheading"; heading.textContent="Contesto storico"; nodes.push(heading);
-  entries.forEach(entry=>{
-    const card=document.createElement("article"); card.className="wiki-card";
-    const heading=document.createElement("h3"); heading.textContent=entry.display_name;
-    const trigger=document.createElement("p"); trigger.className="wiki-trigger"; trigger.textContent=entry.novel_trigger?.context??"Riferimento incontrato nel romanzo.";
-    const summary=document.createElement("p"); summary.textContent=entry.wiki?.summary??"Contesto storico non disponibile.";
-    card.append(heading,trigger,summary);
-    if(entry.source?.url&&entry.source?.status!=="needs_authoritative_source_record"){
-      const source=document.createElement("a"); source.className="wiki-source"; source.href=entry.source.url; source.target="_blank"; source.rel="noopener noreferrer"; source.textContent=`${entry.source.publisher??"Fonte"} · fonte storica`; card.append(source);
-    }
-    nodes.push(card);
-  });
+  entries.forEach(entry=>nodes.push(createWikiCard(entry)));
 }
 
 function renderSecondaryCharacters(entries, section, nodes){
   const visible=entries.filter(entry=>entry.category==="secondary"&&Object.keys(entry.current_by_section??{}).some(key=>Number(key)<=section));
   if(!visible.length) return;
   const heading=document.createElement("h3"); heading.className="wiki-subheading character-wiki-heading"; heading.textContent="Personaggi secondari"; nodes.push(heading);
-  visible.forEach(entry=>{
-    const card=document.createElement("article"); card.className="wiki-card character-wiki-card";
-    const heading=document.createElement("h3"); heading.textContent=entry.display_name;
-    const role=document.createElement("p"); role.className="wiki-trigger"; role.textContent=entry.role;
-    const summary=document.createElement("p"); summary.textContent=entry.finora;
-    const currentSections=Object.keys(entry.current_by_section).map(Number).filter(n=>n<=section);
-    const currentSection=Math.max(...currentSections);
-    const current=document.createElement("p");
-    const isPreviousSection=currentSection<section;
-    current.innerHTML=`<strong>${isPreviousSection?"Capitolo precedente":"Adesso"}:</strong> ${entry.current_by_section[String(currentSection)]}`;
-    card.append(heading,role,summary,current); nodes.push(card);
-  });
+  visible.forEach(entry=>nodes.push(createWikiCard(entry,{character:true})));
 }
 
 function renderWiki(section){
