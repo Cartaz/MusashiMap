@@ -122,8 +122,8 @@ function render() {
   eventList.replaceChildren(...events.map(e => {
     const item = document.createElement("li");
     const names = e.characters.map(id => characterById.get(id)?.name ?? id).join(", ");
-    const from = e.from ? locationById.get(e.from)?.name : null;
-    const to = e.to ? locationById.get(e.to)?.name : null;
+    const from = e.origin ? locationById.get(e.origin)?.name : null;
+    const to = e.destination ? locationById.get(e.destination)?.name : null;
     const place = e.location ? locationById.get(e.location)?.name : null;
     item.textContent = `${names}: ${e.type}${from && to ? ` · ${from} → ${to}` : place ? ` · ${place}` : ""}`;
     return item;
