@@ -1,0 +1,52 @@
+/* Place markers are illustrated SVGs, never circular dots. Character dots remain intentionally circular. */
+.musashi-map-marker-wrapper,
+.musashi-map-marker-wrapper.leaflet-marker-icon {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+}
+
+.musashi-map-marker {
+  display: grid !important;
+  place-items: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--marker-color) !important;
+}
+
+.musashi-map-marker img {
+  display: block !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.musashi-map-marker.is-approximate {
+  outline: 1px dashed var(--marker-color);
+  outline-offset: 2px;
+  border-radius: 50% !important;
+  opacity: .72;
+}
+
+/* Character markers deliberately remain dots and can coexist with place markers. */
+.musashi-character-marker-wrapper,
+.musashi-character-marker-wrapper.leaflet-marker-icon {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
