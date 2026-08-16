@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "description": "Canonical schema for the current MusashiMap Book I data model. This is a structural schema/reference, not a JSON Schema validator.",
+  "version": 3,
+  "description": "Canonical structural reference for the current MusashiMap Book I data model. This is not a JSON Schema validator.",
   "entities": {
     "characters": {
       "id": "string",
@@ -12,59 +12,52 @@
     "locations": {
       "id": "string",
       "name": "string",
-      "name_it": "string|null",
-      "name_ja": "string|null",
       "type": "string",
-      "latitude": "number|null",
-      "longitude": "number|null",
-      "precision": "string",
-      "coordinate_precision": "exact|area|approximate-area|modern-literary-reference|null",
-      "notes": "string|null"
+      "coordinates": "[number,number]|null",
+      "coordinate_precision": "exact|area|approximate_area|modern_match|modern_literary_reference|representative_point|route|null",
+      "coordinate_radius_m": "number|null",
+      "geographic_confidence": "string|null",
+      "historical_match": "string|null",
+      "modern_name_jp": "string|null",
+      "modern_name_romaji": "string|null",
+      "map_note": "string|null"
     },
     "chapters": {
       "id": "string",
-      "book": "number|null",
       "number": "number",
-      "title": "string|null",
-      "source": "string"
+      "book": "string",
+      "book_title": "string",
+      "title": "string"
     },
     "events": {
       "id": "string",
       "section": "number",
-      "type": "battle_context|arrival|departure|journey|meeting|fight|conversation|training|work|rest|search|separation|relationship_change|battle|capture|escape|revelation|information|imprisonment|release|restraint|pursuit|appearance|trap|other",
+      "type": "string",
       "characters": "string[]",
       "referenced_characters": "string[]|optional",
+      "witnesses": "string[]|optional",
       "location": "string|null",
       "origin": "string|null",
       "destination": "string|null",
       "via": "string[]|optional",
+      "movement_status": "confirmed_route|arrival_confirmed|intended_destination|direction_only|uncertain_route|optional",
       "activity": "string|null",
       "description": "string",
       "certainty": "explicit|strong_inference|weak_inference",
       "source_ref": "string"
     },
     "character_states": {
-      "canonical_id": "string",
       "section": "number",
-      "display_name": "string",
+      "character": "string",
       "location": "string|null",
-      "status": "present|travelling|unknown|absent",
+      "last_known_location": "string|null|optional",
+      "status": "string",
       "activity": "string|null",
-      "origin": "string|null",
-      "destination": "string|null",
-      "companions": "string[]",
       "certainty": "explicit|strong_inference|weak_inference",
-      "source_events": "string[]"
-    },
-    "location_transitions": {
-      "section": "number",
-      "character_ids": "string[]",
-      "from": "string|null",
-      "to": "string|null",
-      "location": "string|null",
-      "via": "string[]|optional",
-      "certainty": "confirmed|intended|strong_inference|explicit",
-      "note": "string|null"
+      "location_status": "string|optional",
+      "departure_from": "string|optional",
+      "departure_section": "number|optional",
+      "group": "string|optional"
     },
     "context_entities": {
       "id": "string",
@@ -98,6 +91,8 @@
   },
   "integrity_rules": [
     "characters lists physical participants in an event; referenced_characters is used for named people involved only through letters, reports, memories or other non-present references.",
+    "character-state location is the physically established cartographic position at the end of the section; reported-only positions must use location:null and last_known_location when useful.",
+    "location_status values such as reported_position, unknown and departed_* must not be interpreted as physical presence.",
     "character-state destination must not expose a future movement that is first established in a later section.",
     "companions represent physical co-presence in the stated narrative state, not people merely mentioned in dialogue or reports.",
     "appearance/presence without an established origin must not be encoded as a confirmed movement edge.",
