@@ -2,11 +2,27 @@ Musashi — Source Index
 
 Book I — Earth
 
+Source corpus: data/source/musashi-book1/
+Provenance: Internet Archive transcription supplied for MusashiMap; chapter files are the repository's working source corpus for narrative scraping.
+
 1. The Little Bell
+   data/source/musashi-book1/chapter1-the-little-bell.txt
 2. The Comb
+   data/source/musashi-book1/chapter2-the-comb.txt
 3. The Flower Festival
+   data/source/musashi-book1/chapter3-the-flower-festival.txt
 4. The Dowager's Wrath
+   data/source/musashi-book1/chapter4-the-dowager-s-wrath.txt
 5. The Art of War
+   data/source/musashi-book1/chapter5-the-art-of-war.txt
 6. The Old Cryptomeria Tree
+   data/source/musashi-book1/chapter6-the-old-cryptomeria-tree.txt
 7. The Rock and the Tree
+   data/source/musashi-book1/chapter7-the-rock-and-the-tree.txt
 8. The Birth of Musashi
+   data/source/musashi-book1/chapter8-the-birth-of-musashi.txt
+
+Scrape rule:
+- Chapter-local facts come only from the corresponding chapter file.
+- Cross-chapter movement is recorded only when the source explicitly establishes it or the transition is clearly stated.
+- Unresolved geographic identities remain unresolved rather than receiving guessed coordinates.
