@@ -1,6 +1,6 @@
 import { loadData } from "./data.js";
 import { validateData } from "./validate.js";
-import { createReaderProgress, getVisibleHistoricalWiki, setCanonicalReaderState } from "./reader-progress.js";
+import { createReaderProgress, getCanonicalReaderState, getVisibleHistoricalWiki, setCanonicalReaderState } from "./reader-progress.js";
 
 const chapterInput = document.querySelector("#chapter");
 const chapterApply = document.querySelector("#chapter-apply");
@@ -20,24 +20,15 @@ const selectNone = document.querySelector("#select-none");
 
 let data;
 let reader;
-let selectedCharacters = new Set();
-
-function stateFor(section) {
-  const states = new Map();
-  for (const state of data.states.character_states) {
-    if (state.section <= section) states.set(state.character, state);
-  }
-  return states;
-}
 
 function applySection(value) {
   if (!reader.setSection(value)) return false;
   chapterInput.value = String(reader.section);
-  render(reader.section);
+  render();
   return true;
 }
 
-function renderCharacterFilters() {
+function renderCharacterFilters(selectedCharacters) {
   characterFilters.replaceChildren(...data.characters.characters
     .filter(c => c.importance === "main")
     .map(character => {
@@ -47,9 +38,11 @@ function renderCharacterFilters() {
       input.type = "checkbox";
       input.checked = selectedCharacters.has(character.id);
       input.addEventListener("change", () => {
-        if (input.checked) selectedCharacters.add(character.id);
-        else selectedCharacters.delete(character.id);
-        render(reader.section);
+        const nextSelected = new Set(selectedCharacters);
+        if (input.checked) nextSelected.add(character.id);
+        else nextSelected.delete(character.id);
+        setCanonicalReaderState({section: getCanonicalReaderState().section, selectedCharacters: [...nextSelected]});
+        render();
       });
       label.append(input, document.createTextNode(character.name));
       return label;
@@ -96,20 +89,25 @@ function renderWiki(section) {
   }));
 }
 
-function render(section) {
+function render() {
+  const readerState = getCanonicalReaderState();
+  const section = readerState.section;
+  const selectedCharacters = new Set(readerState.selectedCharacters);
   const sectionData = data.chapters.sections.find(s => s.number === section);
   if (!sectionData) return;
+
   bookLabel.textContent = `LIBRO ${sectionData.book} · ${sectionData.book_title}`;
   title.textContent = sectionData.title;
   status.textContent = `Sezione ${section} · informazioni visibili fino a questo punto della storia`;
   sectionSelect.value = String(section);
+  chapterInput.value = String(section);
   prevButton.disabled = section <= reader.min;
   nextButton.disabled = section >= reader.max;
 
   const characterById = new Map(data.characters.characters.map(c => [c.id, c]));
   const locationById = new Map(data.locations.locations.map(l => [l.id, l]));
-  const states = stateFor(section);
-  const visibleStates = [...states.values()].filter(s => selectedCharacters.has(s.character));
+  const states = reader.visibleLatestStates(data.states.character_states);
+  const visibleStates = states.filter(s => selectedCharacters.has(s.character));
 
   characterList.replaceChildren(...visibleStates.map(s => {
     const card = document.createElement("article");
@@ -130,8 +128,8 @@ function render(section) {
     return item;
   }));
 
+  renderCharacterFilters(selectedCharacters);
   renderWiki(section);
-  setCanonicalReaderState({section, selectedCharacters: [...selectedCharacters]});
 }
 
 try {
@@ -144,7 +142,6 @@ try {
 
   chapterInput.min = String(reader.min);
   chapterInput.max = String(reader.max);
-  chapterInput.value = String(reader.section);
   sectionSelect.replaceChildren(...data.chapters.sections.map(s => {
     const option = document.createElement("option");
     option.value = String(s.number);
@@ -152,9 +149,13 @@ try {
     return option;
   }));
 
-  selectedCharacters = new Set(data.characters.characters.filter(c => c.importance === "main").map(c => c.id));
-  renderCharacterFilters();
-  render(reader.section);
+  const initialState = getCanonicalReaderState();
+  const initialSection = initialState.section ?? reader.section;
+  const initialSelected = initialState.selectedCharacters.length
+    ? initialState.selectedCharacters
+    : data.characters.characters.filter(c => c.importance === "main").map(c => c.id);
+  setCanonicalReaderState({section: initialSection, selectedCharacters: initialSelected});
+  render();
 } catch (error) {
   validation.textContent = "Errore nel caricamento dei dati";
   console.error(error);
@@ -171,26 +172,35 @@ chapterInput.addEventListener("keydown", event => {
   if (event.key === "Enter") {
     if (!applySection(chapterInput.value)) chapterInput.reportValidity();
   } else if (event.key === "Escape") {
-    chapterInput.value = String(reader.section);
+    chapterInput.value = String(getCanonicalReaderState().section);
   }
 });
 chapterApply.addEventListener("click", () => {
   if (!applySection(chapterInput.value)) chapterInput.reportValidity();
 });
 prevButton.addEventListener("click", () => {
-  if (reader.previous()) render(reader.section);
+  if (reader.previous()) {
+    const state = getCanonicalReaderState();
+    setCanonicalReaderState({section: reader.section, selectedCharacters: state.selectedCharacters});
+    render();
+  }
 });
 nextButton.addEventListener("click", () => {
-  if (reader.next()) render(reader.section);
+  if (reader.next()) {
+    const state = getCanonicalReaderState();
+    setCanonicalReaderState({section: reader.section, selectedCharacters: state.selectedCharacters});
+    render();
+  }
 });
 sectionSelect.addEventListener("change", () => applySection(sectionSelect.value));
 selectAll.addEventListener("click", () => {
-  selectedCharacters = new Set(data.characters.characters.filter(c => c.importance === "main").map(c => c.id));
-  renderCharacterFilters();
-  render(reader.section);
+  const selectedCharacters = data.characters.characters.filter(c => c.importance === "main").map(c => c.id);
+  const state = getCanonicalReaderState();
+  setCanonicalReaderState({section: state.section, selectedCharacters});
+  render();
 });
 selectNone.addEventListener("click", () => {
-  selectedCharacters.clear();
-  renderCharacterFilters();
-  render(reader.section);
+  const state = getCanonicalReaderState();
+  setCanonicalReaderState({section: state.section, selectedCharacters: []});
+  render();
 });
