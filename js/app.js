@@ -17,6 +17,8 @@ const validation = document.querySelector("#validation");
 const characterFilters = document.querySelector("#character-filters");
 const selectAll = document.querySelector("#select-all");
 const selectNone = document.querySelector("#select-none");
+const characterToggle = document.querySelector("#character-toggle");
+const characterFilterBody = document.querySelector("#character-filter-body");
 
 let data;
 let reader;
@@ -195,4 +197,10 @@ selectAll.addEventListener("click", () => {
 selectNone.addEventListener("click", () => {
   const state = getCanonicalReaderState();
   setCanonicalReaderState({section: state.section, selectedCharacters: []});
+});
+characterToggle.addEventListener("click", () => {
+  const isOpen = characterToggle.getAttribute("aria-expanded") === "true";
+  characterToggle.setAttribute("aria-expanded", String(!isOpen));
+  characterToggle.textContent = isOpen ? "Mostra filtri" : "Nascondi filtri";
+  characterFilterBody.hidden = isOpen;
 });
