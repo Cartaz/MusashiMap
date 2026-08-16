@@ -45,13 +45,13 @@ function ensureLegendToggle(){
   if(!heading) return;
   const button=document.createElement("button");
   button.type="button"; button.className="legend-toggle"; button.setAttribute("aria-expanded","false"); button.setAttribute("aria-controls","place-legend");
-  button.innerHTML='<span class="legend-roll" aria-hidden="true"><span></span></span><span class="legend-toggle-label">Legenda</span><span class="legend-toggle-mark" aria-hidden="true">+</span>';
+  button.innerHTML='<span class="legend-toggle-label">Legenda</span><span class="legend-toggle-mark" aria-hidden="true">›</span>';
   button.addEventListener("click",()=>{
     const open=button.getAttribute("aria-expanded")==="true";
     button.setAttribute("aria-expanded",String(!open));
     legend.classList.toggle("is-open",!open);
   });
-  heading.prepend(button);
+  heading.replaceChildren(button);
   legend.classList.add("is-collapsible");
 }
 
