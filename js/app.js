@@ -1,6 +1,6 @@
 import { loadData } from "./data.js";
 import { validateData } from "./validate.js";
-import { createReaderProgress, getCanonicalReaderState, getVisibleHistoricalWiki, setCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
+import { createReaderProgress, getCanonicalReaderState, getRelevantHistoricalWiki, setCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 const chapterInput = document.querySelector("#chapter");
 const chapterApply = document.querySelector("#chapter-apply");
@@ -50,11 +50,11 @@ function renderCharacterFilters(selectedCharacters) {
 }
 
 function renderWiki(section) {
-  const entries = getVisibleHistoricalWiki(data.microWiki.entities, section);
+  const entries = getRelevantHistoricalWiki(data.microWiki.entities, section);
   if (!entries.length) {
     wikiList.replaceChildren(Object.assign(document.createElement("p"), {
       className: "wiki-empty",
-      textContent: "Nessun riferimento storico contestualizzabile incontrato finora."
+      textContent: "Nessun riferimento storico rilevante nelle sezioni corrente e precedente."
     }));
     return;
   }
