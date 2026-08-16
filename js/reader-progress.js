@@ -1,5 +1,35 @@
 const clampSection = (section, min, max) => Math.min(max, Math.max(min, section));
 
+const canonicalState = {
+  section: null,
+  selectedCharacters: []
+};
+
+const subscribers = new Set();
+
+export function setCanonicalReaderState({ section, selectedCharacters = [] }) {
+  const nextSection = Number.parseInt(section, 10);
+  if (!Number.isInteger(nextSection)) return false;
+  canonicalState.section = nextSection;
+  canonicalState.selectedCharacters = [...new Set(selectedCharacters)];
+  for (const subscriber of subscribers) subscriber(getCanonicalReaderState());
+  return true;
+}
+
+export function getCanonicalReaderState() {
+  return {
+    section: canonicalState.section,
+    selectedCharacters: [...canonicalState.selectedCharacters]
+  };
+}
+
+export function subscribeCanonicalReaderState(subscriber) {
+  if (typeof subscriber !== "function") return () => {};
+  subscribers.add(subscriber);
+  if (canonicalState.section !== null) subscriber(getCanonicalReaderState());
+  return () => subscribers.delete(subscriber);
+}
+
 export function createReaderProgress(chapters, initialSection = 1) {
   const sections = [...chapters.sections].sort((a, b) => a.number - b.number);
   if (!sections.length) throw new Error("No reader sections available");
