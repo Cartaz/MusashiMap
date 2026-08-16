@@ -1,22 +1,25 @@
 {
-  "version": 1,
+  "version": 2,
+  "description": "Canonical schema for the current MusashiMap Book I data model. This is a structural schema/reference, not a JSON Schema validator.",
   "entities": {
     "characters": {
       "id": "string",
       "name": "string",
       "aliases": "string[]",
       "importance": "main|secondary",
-      "notes": "string"
+      "present_in": "number[]"
     },
     "locations": {
       "id": "string",
       "name": "string",
       "name_it": "string|null",
       "name_ja": "string|null",
+      "type": "string",
       "latitude": "number|null",
       "longitude": "number|null",
-      "precision": "exact|site|settlement|area|region|route|unknown",
-      "notes": "string"
+      "precision": "string",
+      "coordinate_precision": "exact|area|approximate-area|modern-literary-reference|null",
+      "notes": "string|null"
     },
     "chapters": {
       "id": "string",
@@ -27,21 +30,23 @@
     },
     "events": {
       "id": "string",
-      "chapter": "number",
-      "scene": "string|null",
-      "type": "arrival|departure|journey|meeting|fight|conversation|training|work|rest|search|separation|relationship_change|other",
+      "section": "number",
+      "type": "battle_context|arrival|departure|journey|meeting|fight|conversation|training|work|rest|search|separation|relationship_change|battle|capture|escape|revelation|information|imprisonment|release|restraint|pursuit|appearance|trap|other",
       "characters": "string[]",
+      "referenced_characters": "string[]|optional",
       "location": "string|null",
       "origin": "string|null",
       "destination": "string|null",
+      "via": "string[]|optional",
       "activity": "string|null",
       "description": "string",
       "certainty": "explicit|strong_inference|weak_inference",
       "source_ref": "string"
     },
     "character_states": {
-      "chapter": "number",
-      "character": "string",
+      "canonical_id": "string",
+      "section": "number",
+      "display_name": "string",
       "location": "string|null",
       "status": "present|travelling|unknown|absent",
       "activity": "string|null",
@@ -50,6 +55,54 @@
       "companions": "string[]",
       "certainty": "explicit|strong_inference|weak_inference",
       "source_events": "string[]"
+    },
+    "location_transitions": {
+      "section": "number",
+      "character_ids": "string[]",
+      "from": "string|null",
+      "to": "string|null",
+      "location": "string|null",
+      "via": "string[]|optional",
+      "certainty": "confirmed|intended|strong_inference|explicit",
+      "note": "string|null"
+    },
+    "context_entities": {
+      "id": "string",
+      "name": "string",
+      "type": "historical_person|historical_clan|historical_faction|historical_event|historical_work|other",
+      "period": "string|null",
+      "date": "string|null",
+      "summary": "string",
+      "relevance": "contextual",
+      "sources": "string[]"
+    },
+    "micro_wiki_entities": {
+      "id": "string",
+      "type": "historical_person|historical_clan|historical_faction|historical_event|historical_work|other",
+      "display_name": "string",
+      "novel_trigger": {
+        "first_book1_section": "number",
+        "name_in_text": "string",
+        "context": "string",
+        "spoiler_safe_until": "number"
+      },
+      "wiki": {
+        "summary": "string"
+      },
+      "source": {
+        "title": "string",
+        "publisher": "string",
+        "url": "string"
+      }
     }
-  }
+  },
+  "integrity_rules": [
+    "characters lists physical participants in an event; referenced_characters is used for named people involved only through letters, reports, memories or other non-present references.",
+    "character-state destination must not expose a future movement that is first established in a later section.",
+    "companions represent physical co-presence in the stated narrative state, not people merely mentioned in dialogue or reports.",
+    "appearance/presence without an established origin must not be encoded as a confirmed movement edge.",
+    "historical context is separate from novel evidence; external sources may explain a named historical entity but must not be used to invent narrative facts.",
+    "historical works are first-class contextual entities and are not modeled as characters or factions.",
+    "hinagura and hinagura_stockade are distinct identifiers: the former denotes the broader area and the latter the specific fortified site."
+  ]
 }
