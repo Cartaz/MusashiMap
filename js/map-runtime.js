@@ -1,6 +1,7 @@
 (() => {
-  const VERSION = "20260816-9";
+  const VERSION = "20260816-10";
   let map;
+  let glLayer;
   let markers;
   let routes;
   let characterMarkers;
@@ -55,16 +56,53 @@
     if (plotted.length) map.fitBounds(L.latLngBounds(plotted).pad(.18), {maxZoom:10, animate:false});
   }
 
+  function romanizedLabelExpression() {
+    return [
+      "coalesce",
+      ["get", "name:ja-Latn"],
+      ["get", "name:ja_rm"],
+      ["get", "name:latin"],
+      ["get", "name_en"],
+      ["get", "name"]
+    ];
+  }
+
+  function localizeBasemapLabels() {
+    if (!glLayer) return;
+    const gl = glLayer.getMaplibreMap();
+    if (!gl || !gl.isStyleLoaded()) return;
+    const allowedSourceLayers = new Set([
+      "place", "water_name", "waterway", "transportation_name", "poi",
+      "mountain_peak", "park", "aerodrome_label", "housenumber"
+    ]);
+    const expression = romanizedLabelExpression();
+    for (const layer of gl.getStyle().layers ?? []) {
+      if (layer.type !== "symbol" || !layer.layout?.["text-field"]) continue;
+      if (layer.source !== "openmaptiles" || !allowedSourceLayers.has(layer["source-layer"])) continue;
+      gl.setLayoutProperty(layer.id, "text-field", expression);
+    }
+  }
+
   async function boot() {
     try {
-      map = L.map("map", {zoomControl:true, preferCanvas:true}).setView([35.05,135.55],7);
-      // Rich OSM-derived basemap with labels. Wikimedia's osm-intl endpoint is currently unavailable,
-      // so do not leave the map blank: use the stable CARTO Voyager layer until a working multilingual
-      // OSM tile endpoint is selected and verified.
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        maxZoom:20, subdomains:"abcd",
-        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener noreferrer">CARTO</a>'
+      map = L.map("map", {
+        zoomControl:true,
+        preferCanvas:true,
+        minZoom:1,
+        maxBounds: [[180, -Infinity], [-180, Infinity]],
+        maxBoundsViscosity:1
+      }).setView([35.05,135.55],7);
+
+      // OpenFreeMap supplies an OSM/OpenMapTiles-derived vector basemap with full
+      // geographic context. Because labels are vector data, we can select the
+      // Japanese Latin fields instead of accepting raster-rendered Kanji.
+      glLayer = L.maplibreGL({
+        style: "https://tiles.openfreemap.org/styles/liberty"
       }).addTo(map);
+      const gl = glLayer.getMaplibreMap();
+      gl.once("load", localizeBasemapLabels);
+      gl.on("styledata", localizeBasemapLabels);
+
       markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
         fetch(`data/locations.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`locations.json: ${r.status}`); return r.json(); }),
