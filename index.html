@@ -7,17 +7,21 @@
   <title>MusashiMap</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" crossorigin="">
-  <link rel="stylesheet" href="css/style.css?v=20260816-5">
+  <link rel="stylesheet" href="css/style.css?v=20260816-6">
 </head>
 <body>
   <main class="app-shell">
     <header class="app-header">
-      <div>
-        <p class="eyebrow">MUSASHI · YOSHIKAWA</p>
-        <h1>MusashiMap</h1>
-        <p class="subtitle">Mappa narrativa senza spoiler</p>
+      <div class="brand-lockup">
+        <div class="brand-seal" aria-hidden="true">武</div>
+        <div>
+          <p class="eyebrow">MUSASHI · YOSHIKAWA</p>
+          <h1>MusashiMap</h1>
+          <p class="subtitle">Atlante narrativo senza spoiler</p>
+        </div>
       </div>
       <div class="section-navigation" aria-label="Navigazione della storia">
+        <span class="nav-caption">LETTURA</span>
         <button id="prev-section" type="button" aria-label="Sezione precedente">‹</button>
         <select id="section-select" aria-label="Seleziona sezione"></select>
         <button id="next-section" type="button" aria-label="Sezione successiva">›</button>
@@ -32,6 +36,7 @@
     <section class="map-stage" aria-label="Mappa geografica">
       <div id="map" class="map" aria-label="Mappa interattiva del viaggio narrativo"></div>
       <div class="map-overlay">
+        <span class="map-ornament" aria-hidden="true"></span>
         <p id="book-label" class="placeholder-kicker">LIBRO I · EARTH</p>
         <h2 id="section-title">The Little Bell</h2>
         <p id="map-note">Le località mostrate sono quelle già incontrate nella lettura. Le coordinate moderne non implicano automaticamente equivalenza storica.</p>
@@ -39,8 +44,9 @@
       <section class="character-panel map-character-panel" aria-label="Filtro personaggi">
         <div class="panel-heading">
           <div>
+            <p class="panel-kicker">TRACCE NARRATIVE</p>
             <h2>Personaggi visibili</h2>
-            <p>Filtra il percorso sulla base dei personaggi selezionati.</p>
+            <p>Seleziona chi seguire sulla mappa.</p>
           </div>
           <div class="filter-actions">
             <button id="select-all" type="button">Tutti</button>
@@ -56,6 +62,10 @@
     </section>
 
     <aside class="info-panel">
+      <div class="sidebar-masthead">
+        <span class="sidebar-rule"></span>
+        <span>IL DIARIO DEL VIAGGIO</span>
+      </div>
       <h2>Stato della lettura</h2>
       <p id="status">Caricamento…</p>
       <p id="validation" class="validation">Validazione dati…</p>
@@ -66,6 +76,7 @@
       <section class="sidebar-section" aria-labelledby="wiki-title">
         <div class="sidebar-heading">
           <div>
+            <p class="panel-kicker">CONTESTO</p>
             <h2 id="wiki-title">Micro-wiki storica</h2>
             <p>Riferimenti storici già incontrati nella lettura.</p>
           </div>
