@@ -23,8 +23,8 @@ let reader;
 
 function applySection(value) {
   if (!reader.setSection(value)) return false;
-  chapterInput.value = String(reader.section);
-  render();
+  const state = getCanonicalReaderState();
+  setCanonicalReaderState({section: reader.section, selectedCharacters: state.selectedCharacters});
   return true;
 }
 
@@ -41,8 +41,8 @@ function renderCharacterFilters(selectedCharacters) {
         const nextSelected = new Set(selectedCharacters);
         if (input.checked) nextSelected.add(character.id);
         else nextSelected.delete(character.id);
-        setCanonicalReaderState({section: getCanonicalReaderState().section, selectedCharacters: [...nextSelected]});
-        render();
+        const state = getCanonicalReaderState();
+        setCanonicalReaderState({section: state.section, selectedCharacters: [...nextSelected]});
       });
       label.append(input, document.createTextNode(character.name));
       return label;
@@ -179,28 +179,18 @@ chapterApply.addEventListener("click", () => {
   if (!applySection(chapterInput.value)) chapterInput.reportValidity();
 });
 prevButton.addEventListener("click", () => {
-  if (reader.previous()) {
-    const state = getCanonicalReaderState();
-    setCanonicalReaderState({section: reader.section, selectedCharacters: state.selectedCharacters});
-    render();
-  }
+  if (reader.previous()) applySection(reader.section);
 });
 nextButton.addEventListener("click", () => {
-  if (reader.next()) {
-    const state = getCanonicalReaderState();
-    setCanonicalReaderState({section: reader.section, selectedCharacters: state.selectedCharacters});
-    render();
-  }
+  if (reader.next()) applySection(reader.section);
 });
 sectionSelect.addEventListener("change", () => applySection(sectionSelect.value));
 selectAll.addEventListener("click", () => {
   const selectedCharacters = data.characters.characters.filter(c => c.importance === "main").map(c => c.id);
   const state = getCanonicalReaderState();
   setCanonicalReaderState({section: state.section, selectedCharacters});
-  render();
 });
 selectNone.addEventListener("click", () => {
   const state = getCanonicalReaderState();
   setCanonicalReaderState({section: state.section, selectedCharacters: []});
-  render();
 });
