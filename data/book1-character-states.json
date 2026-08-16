@@ -1,86 +1,92 @@
 {
-  "version": 1,
-  "source_rule": "Novel facts in this file are derived only from the Internet Archive transcription used for MusashiMap.",
+  "version": 2,
+  "source_rule": "States are derived only from the eight Book I chapter source files in data/source/musashi-book1. A state describes narrative position at or within a chapter, not every transient movement.",
   "book": "I",
   "title": "Earth",
-  "purpose": "Section-scoped, spoiler-safe character state layer. Unknown means the transcription has not yet been normalized to a precise map location; it does not mean the character is absent.",
   "characters": {
-    "musashi": {
-      "canonical_id": "musashi",
-      "states": [
-        {"section":1,"display_name":"Shinmen Takezo","presence":"present","location":"mount_ibuki_area","activity":"travelling and foraging after Sekigahara","location_confidence":"confirmed"},
-        {"section":2,"display_name":"Shinmen Takezo","presence":"present","location":"oko_akemi_house / mount_ibuki_area","activity":"staying with Oko and Akemi; goes into the mountains with Akemi and returns","location_confidence":"confirmed"},
-        {"section":3,"display_name":"Shinmen Takezo","presence":"present","location":"shippoji_area","activity":"seen during the flower festival and avoids capture","location_confidence":"confirmed"},
-        {"section":4,"display_name":"Shinmen Takezo","presence":"present","location":"sanumo_mountains","activity":"hiding while search parties pursue him","location_confidence":"confirmed"},
-        {"section":5,"display_name":"Shinmen Takezo","presence":"present","location":"sanumo_mountains","activity":"approaches Takuan and Otsu and is captured","location_confidence":"confirmed"},
-        {"section":6,"display_name":"Shinmen Takezo","presence":"present","location":"shippoji","activity":"held under Takuan's custody and bound to the old cryptomeria","location_confidence":"confirmed"},
-        {"section":7,"display_name":"Shinmen Takezo","presence":"present","location":"nakayama_pass","activity":"escapes with Otsu, then separates from her and heads toward Hinagura","location_confidence":"confirmed"},
-        {"section":8,"display_name":"Miyamoto Musashi","presence":"present","location":"himeji_castle","activity":"brought before Ikeda Terumasa; receives the name Miyamoto Musashi","location_confidence":"confirmed"}
-      ]
-    },
-    "matahachi": {
-      "canonical_id":"matahachi",
-      "states":[
-        {"section":1,"display_name":"Hon'den Matahachi","presence":"present","location":"mount_ibuki_area / oko_akemi_house","activity":"travelling with Takezo after Sekigahara and recovering at Oko's refuge","location_confidence":"confirmed"},
-        {"section":2,"display_name":"Hon'den Matahachi","presence":"present","location":"oko_akemi_house","activity":"stays at the refuge while Takezo and Akemi go into the mountains","location_confidence":"confirmed"}
-      ]
-    },
-    "otsu": {
-      "canonical_id":"otsu",
-      "states":[
-        {"section":3,"display_name":"Otsu","presence":"present","location":"shippoji_area","activity":"searching for Takezo and encountering him at the flower festival","location_confidence":"confirmed"},
-        {"section":4,"display_name":"Otsu","presence":"present","location":"shippoji","activity":"in Takuan's orbit while Takezo remains at large","location_confidence":"confirmed"},
-        {"section":5,"display_name":"Otsu","presence":"present","location":"sanumo_mountains","activity":"travelling with Takuan while waiting for Takezo","location_confidence":"confirmed"},
-        {"section":6,"display_name":"Otsu","presence":"present","location":"shippoji","activity":"present during the custody of Takezo","location_confidence":"confirmed"},
-        {"section":7,"display_name":"Otsu","presence":"present","location":"hanada_bridge","activity":"travels with Takezo until Nakayama Pass, then continues toward Himeji","location_confidence":"confirmed"},
-        {"section":8,"display_name":"Otsu","presence":"present","location":"himeji_area","activity":"remains part of the Himeji-side narrative after the separation from Takezo","location_confidence":"needs_normalization"}
-      ]
-    },
-    "takuan": {
-      "canonical_id":"takuan",
-      "states":[
-        {"section":3,"display_name":"Takuan Soho","presence":"present","location":"shippoji","activity":"returns to the temple and becomes involved in Takezo's fate","location_confidence":"confirmed"},
-        {"section":4,"display_name":"Takuan Soho","presence":"present","location":"shippoji","activity":"deals with the authorities and assumes responsibility for Takezo","location_confidence":"confirmed"},
-        {"section":5,"display_name":"Takuan Soho","presence":"present","location":"sanumo_mountains","activity":"waits for and captures Takezo","location_confidence":"confirmed"},
-        {"section":6,"display_name":"Takuan Soho","presence":"present","location":"shippoji","activity":"holds Takezo under custody and oversees his punishment","location_confidence":"confirmed"},
-        {"section":7,"display_name":"Takuan Soho","presence":"present","location":"shippoji / himeji_route","activity":"controls the next stage of Takezo's fate","location_confidence":"needs_normalization"},
-        {"section":8,"display_name":"Takuan Soho","presence":"present","location":"himeji_castle","activity":"brings Takezo before Ikeda Terumasa","location_confidence":"confirmed"}
-      ]
-    },
-    "osugi": {
-      "canonical_id":"osugi",
-      "states":[
-        {"section":3,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto / shippoji_area","activity":"pursues Takezo and presses the authorities to capture him","location_confidence":"needs_normalization"},
-        {"section":4,"display_name":"Obaba Osugi","presence":"present","location":"shippoji / miyamoto_area","activity":"continues the pursuit and demands punishment","location_confidence":"needs_normalization"},
-        {"section":5,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto_area","activity":"continues to seek Takezo and Otsu","location_confidence":"needs_normalization"},
-        {"section":6,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto_area","activity":"remains involved in the aftermath of Takezo's capture","location_confidence":"needs_normalization"},
-        {"section":7,"display_name":"Obaba Osugi","presence":"present","location":"miyamoto / himeji_route","activity":"continues the pursuit and family conflict","location_confidence":"needs_normalization"},
-        {"section":8,"display_name":"Obaba Osugi","presence":"present","location":"himeji_area","activity":"part of the family and Himeji-side events","location_confidence":"needs_normalization"}
-      ]
-    },
-    "akemi": {
-      "canonical_id":"akemi",
-      "states":[
-        {"section":1,"display_name":"Akemi","presence":"present","location":"oko_akemi_house","activity":"helps shelter Takezo and Matahachi","location_confidence":"confirmed"},
-        {"section":2,"display_name":"Akemi","presence":"present","location":"mount_ibuki_area / oko_akemi_house","activity":"travels into the mountains with Takezo and returns to the refuge","location_confidence":"confirmed"}
-      ]
-    },
-    "ogin": {
-      "canonical_id":"ogin",
-      "states":[
-        {"section":3,"display_name":"Ogin","presence":"present","location":"miyamoto_area","activity":"part of the Shinmen-family events surrounding Takezo","location_confidence":"needs_normalization"},
-        {"section":4,"display_name":"Ogin","presence":"present","location":"miyamoto_area","activity":"involved in the family's response to Takezo","location_confidence":"needs_normalization"},
-        {"section":6,"display_name":"Ogin","presence":"present","location":"hinagura","activity":"held at Hinagura and sought by Takezo","location_confidence":"confirmed"},
-        {"section":7,"display_name":"Ogin","presence":"present","location":"hinagura","activity":"remains connected to the Hinagura custody sequence","location_confidence":"confirmed"},
-        {"section":8,"display_name":"Ogin","presence":"present","location":"himeji_area","activity":"part of the events following the transfer from Hinagura","location_confidence":"needs_normalization"}
-      ]
-    },
+    "musashi": {"canonical_id":"musashi","states":[
+      {"section":1,"display_name":"Shinmen Takezo","status":"travelling","location":"mount_ibuki_area","activity":"recovering and travelling after Sekigahara","origin":"sekigahara","destination":"oko_akemi_house","companions":["matahachi"],"certainty":"explicit","source_events":["b1c1-02","b1c1-03","b1c1-05"]},
+      {"section":2,"display_name":"Shinmen Takezo","status":"travelling","location":"mount_ibuki_area","activity":"mushroom gathering, confronting Temma and defending Oko and Akemi","origin":"oko_akemi_house","destination":"unknown","companions":["akemi","matahachi"],"certainty":"explicit","source_events":["b1c2-01","b1c2-02","b1c2-04","b1c2-05","b1c2-06"]},
+      {"section":3,"display_name":"Shinmen Takezo","status":"travelling","location":"shippoji","activity":"briefly appears at the flower festival and flees when Otsu recognizes him","origin":"unknown","destination":"sanumo_mountains","companions":[],"certainty":"explicit","source_events":["b1c3-05"]},
+      {"section":4,"display_name":"Shinmen Takezo","status":"travelling","location":"sanumo_mountains","activity":"hiding, gathering food and trying to reach Ogin and Osugi without being captured","origin":"shippoji","destination":"honiden_house","companions":[],"certainty":"explicit","source_events":["b1c4-02","b1c4-04","b1c4-05"]},
+      {"section":5,"display_name":"Shinmen Takezo","status":"present","location":"itadori_pasture","activity":"approaches Takuan and Otsu and is captured","origin":"sanumo_mountains","destination":"shippoji","companions":["takuan","otsu"],"certainty":"explicit","source_events":["b1c5-03","b1c5-04"]},
+      {"section":6,"display_name":"Shinmen Takezo","status":"present","location":"old_cryptomeria_shippoji","activity":"bound to the old cryptomeria while Takuan determines his punishment","origin":"itadori_pasture","destination":"old_cryptomeria_shippoji","companions":["takuan","otsu","osugi"],"certainty":"explicit","source_events":["b1c6-01","b1c6-02"]},
+      {"section":7,"display_name":"Shinmen Takezo","status":"travelling","location":"nakayama_pass","activity":"freed by Otsu, then travels toward Hinagura to rescue Ogin","origin":"old_cryptomeria_shippoji","destination":"hinagura","companions":["otsu"],"certainty":"explicit","source_events":["b1c7-01","b1c7-02","b1c7-05","b1c7-07"]},
+      {"section":8,"display_name":"Miyamoto Musashi","status":"travelling","location":"himeji_area","activity":"meets Takuan, is confined in Himeji Castle for about three years, is released and begins a new life","origin":"hinagura","destination":"eastward","companions":["takuan"],"certainty":"explicit","source_events":["b1c8-01","b1c8-02","b1c8-04","b1c8-05","b1c8-06"]}
+    ]},
+    "kojiro":{"canonical_id":"kojiro","states":[]},
+    "otsu":{"canonical_id":"otsu","states":[
+      {"section":3,"display_name":"Otsu","status":"present","location":"shippoji","activity":"preparing the flower festival and visiting Ogin","origin":null,"destination":"shippoji","companions":["takuan","ogin"],"certainty":"explicit","source_events":["b1c3-01","b1c3-02","b1c3-03","b1c3-04","b1c3-05"]},
+      {"section":4,"display_name":"Otsu","status":"present","location":"shippoji","activity":"receives news about Matahachi and remains involved in Takezo's pursuit","origin":"shippoji","destination":"shippoji","companions":["takuan","osugi"],"certainty":"explicit","source_events":["b1c4-01","b1c4-03"]},
+      {"section":5,"display_name":"Otsu","status":"travelling","location":"itadori_pasture","activity":"travels with Takuan and helps capture Takezo","origin":"shippoji","destination":"itadori_pasture","companions":["takuan","musashi"],"certainty":"explicit","source_events":["b1c5-02","b1c5-03","b1c5-04"]},
+      {"section":6,"display_name":"Otsu","status":"present","location":"old_cryptomeria_shippoji","activity":"watches Takezo's punishment and argues for his life","origin":"itadori_pasture","destination":"unknown","companions":["takuan","musashi"],"certainty":"explicit","source_events":["b1c6-02","b1c6-03"]},
+      {"section":7,"display_name":"Otsu","status":"travelling","location":"nakayama_pass","activity":"frees Takezo, travels with him, then separates and continues toward Himeji","origin":"old_cryptomeria_shippoji","destination":"mikazuki_teahouse","companions":["musashi"],"certainty":"explicit","source_events":["b1c7-01","b1c7-02","b1c7-03"]},
+      {"section":8,"display_name":"Otsu","status":"present","location":"hanada_bridge","activity":"waits at Himeji for Musashi after recovering from illness; meets him after three years","origin":"unknown","destination":"unknown","companions":["musashi"],"certainty":"explicit","source_events":["b1c8-08","b1c8-09"]}
+    ]},
+    "matahachi":{"canonical_id":"matahachi","states":[
+      {"section":1,"display_name":"Hon'den Matahachi","status":"travelling","location":"oko_akemi_house","activity":"recovering from illness after Sekigahara","origin":"sekigahara","destination":"oko_akemi_house","companions":["musashi","akemi","oko"],"certainty":"explicit","source_events":["b1c1-02","b1c1-05"]},
+      {"section":2,"display_name":"Hon'den Matahachi","status":"present","location":"oko_akemi_house","activity":"stays with Oko and Akemi and ultimately leaves with them","origin":"oko_akemi_house","destination":"unknown","companions":["oko","akemi"],"certainty":"explicit","source_events":["b1c2-04","b1c2-06"]},
+      {"section":3,"display_name":"Hon'den Matahachi","status":"absent","location":null,"activity":"only discussed; Otsu and Ogin believe he died at Sekigahara","origin":null,"destination":null,"companions":[],"certainty":"explicit","source_events":["b1c3-04"]},
+      {"section":4,"display_name":"Hon'den Matahachi","status":"absent","location":null,"activity":"only discussed; Takezo reports that he is alive in another province","origin":null,"destination":null,"companions":[],"certainty":"explicit","source_events":["b1c4-04"]},
+      {"section":5,"display_name":"Hon'den Matahachi","status":"absent","location":null,"activity":"only discussed; his letter states that he is alive and intends to marry Oko","origin":null,"destination":null,"companions":["oko"],"certainty":"explicit","source_events":["b1c5-01"]},
+      {"section":6,"display_name":"Hon'den Matahachi","status":"absent","location":null,"activity":"only discussed as Osugi's son and the lost heir of the Hon'den family","origin":null,"destination":null,"companions":[],"certainty":"explicit","source_events":["b1c6-02"]}
+    ]},
+    "takuan":{"canonical_id":"takuan","states":[
+      {"section":3,"display_name":"Takuan Soho","status":"present","location":"shippoji","activity":"stays at the temple and accompanies Otsu during the festival preparations","origin":null,"destination":"aida_river","companions":["otsu"],"certainty":"explicit","source_events":["b1c3-01","b1c3-02"]},
+      {"section":4,"display_name":"Takuan Soho","status":"present","location":"shippoji","activity":"protects Otsu and begins taking responsibility for Takezo's fate","origin":"shippoji","destination":"itadori_pasture","companions":["otsu"],"certainty":"explicit","source_events":["b1c4-03","b1c4-05"]},
+      {"section":5,"display_name":"Takuan Soho","status":"travelling","location":"itadori_pasture","activity":"uses a three-day strategy to capture Takezo","origin":"shippoji","destination":"shippoji","companions":["otsu","musashi"],"certainty":"explicit","source_events":["b1c5-02","b1c5-04"]},
+      {"section":6,"display_name":"Takuan Soho","status":"present","location":"shippoji","activity":"controls Takezo's punishment and later decides to release him after the transformation has begun","origin":"itadori_pasture","destination":"shippoji","companions":["musashi","otsu"],"certainty":"explicit","source_events":["b1c6-01","b1c6-02"]},
+      {"section":7,"display_name":"Takuan Soho","status":"present","location":"shippoji","activity":"remains at the temple while Takezo and Otsu escape; later reports their absence","origin":"shippoji","destination":"himeji_area","companions":["otsu","musashi"],"certainty":"explicit","source_events":["b1c7-01","b1c7-02"]},
+      {"section":8,"display_name":"Takuan Soho","status":"travelling","location":"himeji_castle","activity":"reunites with Takezo, secures his release, gives him the new name and then departs westward","origin":"unknown","destination":"westward","companions":["musashi"],"certainty":"explicit","source_events":["b1c8-02","b1c8-05","b1c8-06"]}
+    ]},
+    "osugi":{"canonical_id":"osugi","states":[
+      {"section":4,"display_name":"Obaba Osugi","status":"present","location":"honiden_house","activity":"pursues Takezo and cooperates with the Himeji soldiers to trap him","origin":null,"destination":"shippoji","companions":["heita","otsu","himeji_captain"],"certainty":"explicit","source_events":["b1c4-01","b1c4-05"]},
+      {"section":5,"display_name":"Obaba Osugi","status":"present","location":"honiden_house","activity":"fears Takezo's revenge and continues the family conflict","origin":"honiden_house","destination":"shippoji","companions":[],"certainty":"explicit","source_events":["b1c5-01"]},
+      {"section":6,"display_name":"Obaba Osugi","status":"present","location":"shippoji","activity":"demands harsh punishment for Takezo","origin":"honiden_house","destination":"miyamoto","companions":["takuan","musashi"],"certainty":"explicit","source_events":["b1c6-02"]},
+      {"section":7,"display_name":"Obaba Osugi","status":"travelling","location":"miyamoto","activity":"organizes a pursuit of Otsu and Takezo and then begins a longer search with Gonroku","origin":"miyamoto","destination":"unknown","companions":["gonroku"],"certainty":"explicit","source_events":["b1c7-04"]},
+      {"section":8,"display_name":"Obaba Osugi","status":"travelling","location":null,"activity":"reported to have spent the previous three years searching for Musashi and Otsu with Gonroku","origin":"miyamoto","destination":"unknown","companions":["gonroku"],"certainty":"explicit","source_events":["b1c8-07"]}
+    ]},
+    "akemi":{"canonical_id":"akemi","states":[
+      {"section":1,"display_name":"Akemi","status":"present","location":"oko_akemi_house","activity":"shelters Takezo and Matahachi and tends to them","origin":null,"destination":"oko_akemi_house","companions":["oko","musashi","matahachi"],"certainty":"explicit","source_events":["b1c1-05","b1c1-06"]},
+      {"section":2,"display_name":"Akemi","status":"travelling","location":"mount_ibuki_area","activity":"collects mushrooms with Takezo and reveals her family's scavenging activities","origin":"oko_akemi_house","destination":"oko_akemi_house","companions":["musashi"],"certainty":"explicit","source_events":["b1c2-01","b1c2-03"]}
+    ]},
+    "ogin":{"canonical_id":"ogin","states":[
+      {"section":3,"display_name":"Ogin","status":"present","location":"ogin_house","activity":"sews Otsu's festival obi and believes Takezo and Matahachi died","origin":null,"destination":"ogin_house","companions":["otsu","takuan"],"certainty":"explicit","source_events":["b1c3-03","b1c3-04"]},
+      {"section":4,"display_name":"Ogin","status":"travelling","location":"hinagura_stockade","activity":"is arrested by the Himeji soldiers and held as a prisoner","origin":"ogin_house","destination":"hinagura_stockade","companions":[],"certainty":"explicit","source_events":["b1c4-03"]},
+      {"section":5,"display_name":"Ogin","status":"present","location":"hinagura_stockade","activity":"remains imprisoned while Takezo is hunted","origin":"ogin_house","destination":"unknown","companions":[],"certainty":"explicit","source_events":["b1c5-04"]},
+      {"section":6,"display_name":"Ogin","status":"present","location":"hinagura_stockade","activity":"remains the focus of Takezo's rescue plan","origin":"hinagura_stockade","destination":"himeji_area","companions":[],"certainty":"explicit","source_events":["b1c6-02"]},
+      {"section":7,"display_name":"Ogin","status":"absent","location":"himeji_area","activity":"reported to have been transferred from Hinagura before Takezo's assault","origin":"hinagura_stockade","destination":"himeji_area","companions":[],"certainty":"explicit","source_events":["b1c7-06"]},
+      {"section":8,"display_name":"Ogin","status":"present","location":"sayo_district","activity":"reported to be living with a relative after leaving Hinagura","origin":"hinagura_stockade","destination":"sayo_district","companions":[],"certainty":"explicit","source_events":["b1c8-07"]}
+    ]},
     "jotaro":{"canonical_id":"jotaro","states":[]},
-    "kojiro":{"canonical_id":"kojiro","states":[]}
-  },
-  "quality_flags": {
-    "confirmed": "Directly supported by a clear location or movement in the transcription.",
-    "needs_normalization": "The character is present in the section, but the exact map node or end-of-section state still needs a second textual pass.",
-    "unknown": "Not enough evidence yet to assign a safe state without inference."
+    "kojiro":{"canonical_id":"kojiro","states":[]},
+    "oko":{"canonical_id":"oko","states":[
+      {"section":1,"display_name":"Oko","status":"present","location":"oko_akemi_house","activity":"shelters the two stragglers and manages the household","origin":null,"destination":"oko_akemi_house","companions":["akemi","musashi","matahachi"],"certainty":"explicit","source_events":["b1c1-05"]},
+      {"section":2,"display_name":"Oko","status":"present","location":"oko_akemi_house","activity":"hides scavenged goods and leaves with Akemi and Matahachi after the conflict with Temma","origin":"oko_akemi_house","destination":"unknown","companions":["akemi","matahachi"],"certainty":"explicit","source_events":["b1c2-04","b1c2-06"]},
+      {"section":5,"display_name":"Oko","status":"absent","location":null,"activity":"only discussed through her letter to Otsu and Matahachi's new marriage plan","origin":null,"destination":null,"companions":["matahachi"],"certainty":"explicit","source_events":["b1c5-01"]}
+    ]},
+    "temma":{"canonical_id":"temma","states":[{"section":2,"display_name":"Tsujikaze Temma","status":"travelling","location":"mount_ibuki_area","activity":"confronts Oko's household, raids the house and is killed by Takezo","origin":null,"destination":null,"companions":[],"certainty":"explicit","source_events":["b1c2-02","b1c2-04","b1c2-05"]}]},
+    "kohei":{"canonical_id":"kohei","states":[{"section":2,"display_name":"Tsujikaze Kohei","status":"absent","location":null,"activity":"mentioned as Temma's younger brother and a dangerous freebooter in Kiso","origin":null,"destination":null,"companions":[],"certainty":"explicit","source_events":["b1c2-06"]}]},
+    "heita":{"canonical_id":"heita","states":[
+      {"section":4,"display_name":"Heita","status":"present","location":"honiden_house","activity":"brings Osugi news that Otsu saw Takezo","origin":null,"destination":"honiden_house","companions":["osugi"],"certainty":"explicit","source_events":["b1c4-01"]},
+      {"section":7,"display_name":"Heita","status":"present","location":"honiden_house","activity":"brings news of Takezo and Otsu's escape and helps trigger Osugi's pursuit","origin":null,"destination":"nakayama_pass","companions":["osugi","gonroku"],"certainty":"explicit","source_events":["b1c7-04"]}
+    ]},
+    "gonroku":{"canonical_id":"gonroku","states":[
+      {"section":7,"display_name":"Fuchikawa Gonroku","status":"travelling","location":"nakayama_pass","activity":"joins Osugi's pursuit of Otsu and Takezo","origin":"miyamoto","destination":"unknown","companions":["osugi"],"certainty":"explicit","source_events":["b1c7-04"]},
+      {"section":8,"display_name":"Fuchikawa Gonroku","status":"travelling","location":null,"activity":"reported to have spent the previous three years searching with Osugi","origin":"miyamoto","destination":"unknown","companions":["osugi"],"certainty":"explicit","source_events":["b1c8-07"]}
+    ]},
+    "aoki_tanzaemon":{"canonical_id":"aoki_tanzaemon","states":[
+      {"section":6,"display_name":"Aoki Tanzaemon","status":"absent","location":"himeji_area","activity":"mentioned through his letter to Otsu and his role in the Himeji command structure","origin":null,"destination":null,"companions":[],"certainty":"explicit","source_events":["b1c6-02"]},
+      {"section":8,"display_name":"Aoki Tanzaemon","status":"travelling","location":null,"activity":"reported dismissed from Ikeda's service and wandering","origin":"himeji_area","destination":"unknown","companions":[],"certainty":"explicit","source_events":["b1c8-07"]}
+    ]},
+    "lord_ikeda":{"canonical_id":"lord_ikeda","states":[
+      {"section":5,"display_name":"Ikeda Terumasa","status":"present","location":"himeji_castle","activity":"authority behind the search for Takezo; his representative is challenged by Takuan","origin":null,"destination":"himeji_castle","companions":["himeji_captain","takuan"],"certainty":"explicit","source_events":["b1c5-01","b1c5-04"]},
+      {"section":8,"display_name":"Ikeda Terumasa","status":"present","location":"himeji_castle","activity":"receives Takezo and accepts Takuan's confinement plan and later release","origin":"himeji_castle","destination":"himeji_castle","companions":["takuan","musashi"],"certainty":"explicit","source_events":["b1c8-03","b1c8-05","b1c8-06"]}
+    ]},
+    "himeji_captain":{"canonical_id":"himeji_captain","states":[
+      {"section":4,"display_name":"Himeji garrison captain","status":"present","location":"miyamoto","activity":"leads the search for Takezo and arrests Ogin","origin":"himeji_castle","destination":"miyamoto","companions":["osugi","ogin"],"certainty":"explicit","source_events":["b1c4-01","b1c4-03"]},
+      {"section":5,"display_name":"Himeji garrison captain","status":"present","location":"shippoji","activity":"commands the prolonged search and agrees to Takuan's three-day challenge","origin":"miyamoto","destination":"shippoji","companions":["takuan","otsu"],"certainty":"explicit","source_events":["b1c5-02","b1c5-04"]},
+      {"section":6,"display_name":"Himeji garrison captain","status":"present","location":"shippoji","activity":"tries to take control of Takezo and demands his execution or transfer","origin":"shippoji","destination":"himeji_area","companions":["musashi","takuan"],"certainty":"explicit","source_events":["b1c6-02"]}
+    ]}
   }
 }
