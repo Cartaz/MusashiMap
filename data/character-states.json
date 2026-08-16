@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "source_rule": "End-of-chapter states are derived only from the eight Book I chapter source files in data/source/musashi-book1. Transient movements are represented in events.json; a null location means the text does not establish a current cartographic position.",
   "character_states": [
     {"section":1,"character":"musashi","location":"oko_akemi_house","status":"hiding","activity":"arrived wounded with Matahachi and is recovering","certainty":"explicit"},
@@ -10,7 +10,7 @@
     {"section":2,"character":"matahachi","location":null,"last_known_location":"oko_akemi_house","status":"away","activity":"leaves the refuge with Oko and Akemi during the night","certainty":"explicit","location_status":"departed_with_group","departure_from":"oko_akemi_house","departure_section":2,"group":"oko_akemi_matahachi"},
     {"section":2,"character":"akemi","location":null,"last_known_location":"oko_akemi_house","status":"away","activity":"leaves the refuge with Oko and Matahachi during the night","certainty":"explicit","location_status":"departed_with_group","departure_from":"oko_akemi_house","departure_section":2,"group":"oko_akemi_matahachi"},
     {"section":2,"character":"oko","location":null,"last_known_location":"oko_akemi_house","status":"away","activity":"leaves the refuge with Matahachi and Akemi during the night","certainty":"explicit","location_status":"departed_with_group","departure_from":"oko_akemi_house","departure_section":2,"group":"oko_akemi_matahachi"},
-    {"section":2,"character":"temma","location":null,"last_known_location":"mount_ibuki_area","status":"dead","activity":"is killed by Takezo","certainty":"explicit"},
+    {"section":2,"character":"temma","location":"mount_ibuki_area","status":"dead","activity":"is killed by Takezo on Mount Ibuki","certainty":"explicit"},
     {"section":3,"character":"musashi","location":"shippoji","status":"fled","activity":"appears at the flower festival and flees when Otsu recognizes him","certainty":"explicit","last_known_location":"shippoji"},
     {"section":3,"character":"otsu","location":"shippoji","status":"present","activity":"participates in the flower festival","certainty":"explicit"},
     {"section":3,"character":"takuan","location":"shippoji","status":"present","activity":"stays at the temple during the festival","certainty":"explicit"},
