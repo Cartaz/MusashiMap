@@ -1,42 +1,41 @@
 # MusashiMap
 
-Interactive, spoiler-safe map for following the movements and relationships of the principal characters in Eiji Yoshikawa's *Musashi*.
+Interactive, spoiler-safe map for following the movements, relationships and narrative context of Eiji Yoshikawa's *Musashi*.
 
 ## Project goals
 
 - Represent character locations chapter by chapter.
 - Track arrivals, departures, journeys, meetings and other relevant events.
-- Never expose information from chapters beyond the reader's selected chapter.
-- Distinguish explicit textual facts from deductions.
+- Provide a progressive micro-wiki that does not reveal future information.
+- Distinguish explicit textual facts from deductions and uncertainty.
 - Preserve uncertainty instead of inventing geographic precision.
 - Keep the application static and deployable through GitHub Pages.
 
 ## Source corpus
 
-The research corpus is the Internet Archive text:
+The project uses a canonical working text corpus for research. The repository stores the chapter-level research sources needed for the current workflow rather than a redundant full reproduction of the novel.
 
-https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt
+Book I is currently split under `data/source/musashi-book1/`, with `data/source/musashi-index.txt` providing the source index.
 
-This corpus is used for research and analysis only. The repository should not contain a reproduction of the copyrighted novel.
+## Research workflow
 
-## Architecture
+The reusable book-by-book scraping, normalization and audit procedure is documented in:
 
-The project separates:
+`docs/book-research-workflow.md`
 
-1. source/chapter research;
-2. normalized narrative events;
-3. character state by chapter;
-4. locations;
-5. the static web application.
+The workflow is deliberately chapter-oriented:
 
-Analysis is performed using overlapping chapter windows (1–2, 2–3, 3–4, ...), while the resulting data is stored at chapter/event level.
+1. verify and split the source;
+2. scrape each chapter independently;
+3. perform a cross-chapter reconciliation pass;
+4. update normalized entities, states, events and transitions;
+5. audit narrative correctness, spoiler safety and technical integrity;
+6. apply corrections and reach `PASS` before moving to the next book.
 
-## Spoiler rule
+## Current status
 
-The UI may only query data whose `chapter` is less than or equal to the currently selected reader chapter.
+**Book I — Earth: complete and audited (`PASS`).**
 
-No future location, relationship, event, or destination may be revealed.
+The current Book I dataset includes characters, chapter states, locations, location transitions, events, relationships, identities/aliases, historical/context entities and progressive micro-wiki data.
 
-## Status
-
-Initial project scaffold. No narrative data has been validated yet.
+The current project checkpoint and next steps are maintained in `CHECKPOINT.md`.
