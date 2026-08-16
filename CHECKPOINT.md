@@ -44,6 +44,9 @@ Book I (*Earth*) is the first fully scraped, normalized and audited narrative da
 - The micro-wiki is functional.
 - Mobile UI was adjusted for the iPhone 13 mini constraint.
 - The spoiler-safe reader model prevents future narrative information from being shown before its chapter.
+- Map and sidebar event rendering now use the canonical event field names `origin`/`destination`.
+- Map movement routes and contextual locations are filtered by the selected characters, matching the filter's stated behavior.
+- Runtime cache version was bumped after the map fixes.
 
 ## Canonical workflow for future books
 
@@ -74,8 +77,8 @@ The short version is:
 
 ### Product / technical follow-up
 
-- Perform a real-browser visual certification of the current live deployment, especially the MapLibre/OpenFreeMap basemap and romanized labels.
-- Continue improving the unification between canonical reader state and map runtime; `js/app.js` currently emits `musashi:reader-state` while `js/map-runtime.js` consumes it.
+- Perform a real-browser visual certification of the current live deployment, especially the MapLibre/OpenFreeMap basemap, romanized labels, movement routes and mobile layout.
+- Continue unifying map visibility logic with the canonical reader-progress helpers; map section and character selection already come from canonical reader state, but latest-state reconstruction remains duplicated in `map-runtime.js`.
 - Keep the Luni-edition chapter mapping deferred until the actual Luni index is available; do not infer it from memory.
 - As the corpus grows, maintain the chapter-level source architecture so analysis never requires loading the entire novel unnecessarily.
 
