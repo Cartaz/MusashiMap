@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-14";
+  const VERSION = "20260816-15";
   let map;
   let glLayer;
   let markers;
@@ -88,11 +88,11 @@
     return ["let", "labelName", romanizedLabelExpression(), ["case", ...cases, name]];
   }
 
-  // MapLibre supports transformStyle specifically for modifying a fetched style
-  // before it is committed to the map. This avoids runtime styledata/setLayoutProperty
-  // loops while keeping the upstream OpenFreeMap style and tiles as the source.
-  function transformBasemapStyle(_previousStyle, nextStyle) {
-    const style = {
+  // Build a reader-facing copy of the upstream OpenFreeMap style before MapLibre
+  // receives it. This avoids post-load style mutation and keeps the upstream
+  // vector tiles and all other Liberty styling unchanged.
+  function customizeBasemapStyle(nextStyle) {
+    return {
       ...nextStyle,
       layers: nextStyle.layers.map(layer => ({
         ...layer,
@@ -101,7 +101,6 @@
           : {})
       }))
     };
-    return style;
   }
 
   async function boot() {
@@ -114,13 +113,14 @@
         maxBoundsViscosity:1
       }).setView([35.05,135.55],7);
 
-      // OpenFreeMap supplies the OSM/OpenMapTiles-derived vector basemap.
-      // transformStyle applies our reader-facing label cleanup before MapLibre
-      // commits the style, so there is no post-load style mutation loop.
-      glLayer = L.maplibreGL({
-        style: "https://tiles.openfreemap.org/styles/liberty",
-        transformStyle: transformBasemapStyle
-      }).addTo(map);
+      // OpenFreeMap's style is fetched once, customized in memory, and then
+      // handed to MapLibre as a complete style object. No styledata listener
+      // or setLayoutProperty loop is involved.
+      const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", {cache:"no-store"});
+      if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
+      const libertyStyle = await styleResponse.json();
+      const musashiStyle = customizeBasemapStyle(libertyStyle);
+      glLayer = L.maplibreGL({style: musashiStyle}).addTo(map);
 
       markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
