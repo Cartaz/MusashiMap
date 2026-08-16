@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-23";
+  const VERSION = "20260816-24";
   let map;
   let glLayer;
   let markers;
@@ -20,12 +20,17 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
   const locationLabel = location => location?.modern_name_romaji || location?.name || "Località non determinata";
   const precisionLabel = location => { if (!location?.coordinate_precision || location.coordinate_precision === "exact") return "Posizione moderna precisa"; if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno"; return "Posizione indicativa dell'area"; };
+  const displayCharacterName = (character, section) => {
+    if (!character) return "Personaggio sconosciuto";
+    if (character.id === "musashi" && section <= 8) return "Shinmen Takezō";
+    return character.name;
+  };
   const icon = (location, anchorOffset = [0, 0]) => { const type = placeTypeAliases[location?.type] ?? "literary_landmark"; const path = placeIconPaths[type]; const color = colors[location?.type] ?? "#c9d1d9"; return L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${path}" alt="" aria-hidden="true"></span>`, iconSize: [32,32], iconAnchor: [16 - anchorOffset[0],16 - anchorOffset[1]], popupAnchor: [0,-17] }); };
-  const characterIcon = (character, color, location, anchorOffset = [0, 0]) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13 - anchorOffset[0],13 - anchorOffset[1]] });
+  const characterIcon = (color, location, anchorOffset = [0, 0]) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13 - anchorOffset[0],13 - anchorOffset[1]] });
   const coordinateKey = coordinates => coordinates.map(value => Number(value).toFixed(5)).join(",");
   const collisionOffsets = total => {
     if (total <= 1) return [[0, 0]];
-    const radius = total <= 4 ? 20 : 24;
+    const radius = total <= 4 ? 22 : 28;
     return Array.from({ length: total }, (_, index) => {
       const angle = (-Math.PI / 2) + (index * (2 * Math.PI / total));
       return [Math.round(Math.cos(angle) * radius), Math.round(Math.sin(angle) * radius)];
@@ -59,32 +64,28 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     });
     const visiblePlaces = [...contextualIds].map(id => byId.get(id)).filter(hasCoords);
 
-    // Co-located entities are intentionally kept at the same geographical anchor,
-    // but their glyphs are fanned out by a few pixels so none hides another.
-    // The offset is purely visual; popups and data retain the real coordinates.
+    // Every visible entity keeps its real geographic coordinates. When several
+    // entities share a coordinate, only their visual glyphs are fanned apart.
     const collisionGroups = new Map();
-    [...visiblePlaces.map(location => ({ kind: "place", location })), ...visibleCharacters.map(item => ({ kind: "character", ...item }))].forEach(item => {
+    [...visiblePlaces.map(location => ({ kind: "place", id: location.id, location })), ...visibleCharacters.map(item => ({ kind: "character", id: item.characterId, ...item }))].forEach(item => {
       const key = coordinateKey(item.location.coordinates);
       if (!collisionGroups.has(key)) collisionGroups.set(key, []);
       collisionGroups.get(key).push(item);
     });
-
     const offsetsByItem = new Map();
-    collisionGroups.forEach(group => {
-      const offsets = collisionOffsets(group.length);
-      group.forEach((item, index) => offsetsByItem.set(item, offsets[index]));
-    });
+    collisionGroups.forEach(group => collisionOffsets(group.length).forEach((offset, index) => offsetsByItem.set(group[index], offset)));
 
     visibleCharacters.forEach(item => {
       const offset = offsetsByItem.get(item) ?? [0, 0];
-      L.marker(item.location.coordinates, {icon: characterIcon(item.character, item.color, item.location, offset), title: `${item.character?.name ?? item.characterId} · ${locationLabel(item.location)}`})
-        .bindPopup(`<strong>${esc(item.character?.name ?? item.characterId)}</strong><br>${esc(locationLabel(item.location))}<br><small>${esc(precisionLabel(item.location))}</small><br><span>${esc(item.state.activity)}</span>`)
+      const name = displayCharacterName(item.character, section);
+      L.marker(item.location.coordinates, {icon: characterIcon(item.color, item.location, offset), title: `${name} · ${locationLabel(item.location)}`})
+        .bindPopup(`<strong>${esc(name)}</strong><br>${esc(locationLabel(item.location))}<br><small>${esc(precisionLabel(item.location))}</small><br><span>${esc(item.state.activity)}</span>`)
         .addTo(characterMarkers);
       plotted.push(item.location.coordinates);
     });
 
     visiblePlaces.forEach(location => {
-      const item = collisionGroups.get(coordinateKey(location.coordinates)).find(candidate => candidate.kind === "place" && candidate.location.id === location.id);
+      const item = collisionGroups.get(coordinateKey(location.coordinates)).find(candidate => candidate.kind === "place" && candidate.id === location.id);
       const offset = offsetsByItem.get(item) ?? [0, 0];
       L.marker(location.coordinates, {icon: icon(location, offset), title: locationLabel(location)})
         .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`)
