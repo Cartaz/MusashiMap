@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "character_states": [
     {"section":1,"character":"musashi","location":"oko_akemi_house","status":"hiding","activity":"riposo e recupero dalle ferite","certainty":"explicit"},
     {"section":1,"character":"matahachi","location":"oko_akemi_house","status":"present","activity":"riposo e recupero","certainty":"explicit"},
@@ -32,13 +32,12 @@
     {"section":7,"character":"otsu","location":"mikazuki_teahouse","status":"ill","activity":"si ammala durante il viaggio verso Himeji; dopo la fuga da Osugi la sua posizione successiva non è stabilita nel capitolo","certainty":"explicit"},
     {"section":7,"character":"osugi","location":"honiden_house","status":"present","activity":"rimane nel territorio di Miyamoto durante la ricerca di Takezo","certainty":"explicit"},
     {"section":7,"character":"ogin","location":"himeji_area","status":"moved","activity":"Takezo scopre che Ogin è stata trasferita verso Himeji prima del suo arrivo allo stockade","certainty":"explicit"},
+    {"section":7,"character":"gonroku","location":"mikazuki_teahouse","status":"pursuing","activity":"raggiunge la teahouse insieme a Osugi durante l'inseguimento di Otsu","certainty":"explicit"},
     {"section":8,"character":"musashi","location":"himeji_castle","status":"imprisoned","activity":"viene confinato e studia per circa tre anni","certainty":"explicit"},
     {"section":8,"character":"otsu","location":"hanada_bridge","status":"waiting","activity":"attende Musashi a Hanada Bridge dopo la separazione del capitolo precedente","certainty":"explicit"},
     {"section":8,"character":"takuan","location":"himeji_castle","status":"present","activity":"libera Takezo al termine del confinamento","certainty":"explicit"},
     {"section":8,"character":"osugi","location":"miyamoto","status":"present","activity":"continua a cercare Takezo e riceve notizie sulla sua sorte","certainty":"explicit"},
     {"section":8,"character":"ogin","location":"sayo_district","status":"away","activity":"la sua successiva residenza viene riferita da Takuan come situata nel distretto di Sayo","certainty":"explicit"},
-    {"section":8,"character":"lord_ikeda","location":"himeji_castle","status":"present","activity":"presiede alla liberazione di Takezo e alla sua nuova partenza","certainty":"explicit"},
-    {"section":8,"character":"gonroku","location":"miyamoto","status":"searching","activity":"continua la ricerca di Takezo insieme a Osugi","certainty":"explicit"},
-    {"section":8,"character":"aoki_tanzaemon","location":"himeji_castle","status":"mentioned","activity":"la sua posizione e il suo destino vengono riferiti durante il congedo di Takezo","certainty":"explicit"}
+    {"section":8,"character":"lord_ikeda","location":"himeji_castle","status":"present","activity":"presiede alla liberazione di Takezo e alla sua nuova partenza","certainty":"explicit"}
   ]
 }
