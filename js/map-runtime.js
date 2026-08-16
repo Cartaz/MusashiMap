@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-15";
+  const VERSION = "20260816-16";
   let map;
   let glLayer;
   let markers;
@@ -92,11 +92,15 @@
   // receives it. This avoids post-load style mutation and keeps the upstream
   // vector tiles and all other Liberty styling unchanged.
   function customizeBasemapStyle(nextStyle) {
+    const labelSourceLayers = new Set([
+      "place", "water_name", "waterway", "transportation_name", "poi",
+      "mountain_peak", "park", "aerodrome_label"
+    ]);
     return {
       ...nextStyle,
       layers: nextStyle.layers.map(layer => ({
         ...layer,
-        ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles"
+        ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles" && labelSourceLayers.has(layer["source-layer"])
           ? {layout: {...layer.layout, "text-field": cleanAdministrativeSuffixExpression()}}
           : {})
       }))
