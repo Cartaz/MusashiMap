@@ -1,6 +1,6 @@
 import { loadData } from "./data.js";
 import { validateData } from "./validate.js";
-import { createReaderProgress, getCanonicalReaderState, getVisibleHistoricalWiki, setCanonicalReaderState } from "./reader-progress.js";
+import { createReaderProgress, getCanonicalReaderState, getVisibleHistoricalWiki, setCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 const chapterInput = document.querySelector("#chapter");
 const chapterApply = document.querySelector("#chapter-apply");
@@ -90,6 +90,7 @@ function renderWiki(section) {
 }
 
 function render() {
+  if (!data || !reader) return;
   const readerState = getCanonicalReaderState();
   const section = readerState.section;
   const selectedCharacters = new Set(readerState.selectedCharacters);
@@ -132,6 +133,8 @@ function render() {
   renderWiki(section);
 }
 
+subscribeCanonicalReaderState(() => render());
+
 try {
   data = await loadData();
   reader = createReaderProgress(data.chapters, data.readerProgress.state.current_section);
@@ -155,7 +158,6 @@ try {
     ? initialState.selectedCharacters
     : data.characters.characters.filter(c => c.importance === "main").map(c => c.id);
   setCanonicalReaderState({section: initialSection, selectedCharacters: initialSelected});
-  render();
 } catch (error) {
   validation.textContent = "Errore nel caricamento dei dati";
   console.error(error);
