@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-20";
+  const VERSION = "20260816-22";
   let map;
   let glLayer;
   let markers;
@@ -14,31 +14,13 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   let selectedCharacters = new Set();
   const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", settlement_area: "#c9d1d9", urban_area: "#c9d1d9", area: "#8fb3c9", region: "#8fb3c9", route: "#b99ad6", river: "#8fb3c9", temple: "#b8c7a4", castle: "#b8c7a4", fortified_site: "#b8c7a4", bridge: "#b99ad6", narrative_site: "#d9a0b7", literary_landmark: "#d9a0b7" };
   const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
-  const placeIconPaths = {
-    temple: "assets/icons/places/temple.svg",
-    castle: "assets/icons/places/castle.svg",
-    city: "assets/icons/places/city.svg",
-    village: "assets/icons/places/village.svg",
-    nature: "assets/icons/places/nature.svg",
-    area: "assets/icons/places/area.svg",
-    route: "assets/icons/places/route.svg",
-    literary_landmark: "assets/icons/places/landmark.svg"
-  };
+  const placeIconPaths = { temple: "assets/icons/places/temple.svg", castle: "assets/icons/places/castle.svg", city: "assets/icons/places/city.svg", village: "assets/icons/places/village.svg", nature: "assets/icons/places/nature.svg", area: "assets/icons/places/area.svg", route: "assets/icons/places/route.svg", literary_landmark: "assets/icons/places/landmark.svg" };
   const placeTypeAliases = { settlement: "city", settlement_area: "village", urban_area: "city", area: "area", region: "area", river: "nature", route: "route", temple: "temple", castle: "castle", fortified_site: "castle", bridge: "route", narrative_site: "literary_landmark", literary_landmark: "literary_landmark", exact_site: "literary_landmark" };
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
   const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
   const locationLabel = location => location?.modern_name_romaji || location?.name || "Località non determinata";
-  const precisionLabel = location => {
-    if (!location?.coordinate_precision || location.coordinate_precision === "exact") return "Posizione moderna precisa";
-    if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno";
-    return "Posizione indicativa dell'area";
-  };
-  const icon = location => {
-    const type = placeTypeAliases[location?.type] ?? "literary_landmark";
-    const path = placeIconPaths[type];
-    const color = colors[location?.type] ?? "#c9d1d9";
-    return L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${path}" alt="" aria-hidden="true"></span>`, iconSize: [32,32], iconAnchor: [16,16], popupAnchor: [0,-17] });
-  };
+  const precisionLabel = location => { if (!location?.coordinate_precision || location.coordinate_precision === "exact") return "Posizione moderna precisa"; if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno"; return "Posizione indicativa dell'area"; };
+  const icon = location => { const type = placeTypeAliases[location?.type] ?? "literary_landmark"; const path = placeIconPaths[type]; const color = colors[location?.type] ?? "#c9d1d9"; return L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${path}" alt="" aria-hidden="true"></span>`, iconSize: [32,32], iconAnchor: [16,16], popupAnchor: [0,-17] }); };
   const characterIcon = (character, color, location) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13,13] });
 
   function draw(section) {
@@ -48,13 +30,13 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     const currentStates = new Map();
     characterStates.filter(s => s.section <= section).forEach(s => currentStates.set(s.character, s));
     const plotted = [];
+
     currentStates.forEach((state, characterId) => {
       if (!selectedCharacters.has(characterId)) return;
       const location = byId.get(state.location); const character = characters.find(c => c.id === characterId);
       if (!location || !hasCoords(location)) return;
       const index = characters.findIndex(c => c.id === characterId); const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
-      L.marker(location.coordinates, {icon: characterIcon(character, color, location), title: `${character?.name ?? characterId} · ${locationLabel(location)}`})
-        .bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><small>${esc(precisionLabel(location))}</small><br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
+      L.marker(location.coordinates, {icon: characterIcon(character, color, location), title: `${character?.name ?? characterId} · ${locationLabel(location)}`}).bindPopup(`<strong>${esc(character?.name ?? characterId)}</strong><br>${esc(locationLabel(location))}<br><small>${esc(precisionLabel(location))}</small><br><span>${esc(state.activity)}</span>`).addTo(characterMarkers);
       plotted.push(location.coordinates);
     });
 
@@ -66,11 +48,14 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
       if (e.destination) contextualIds.add(e.destination);
       (e.via ?? []).forEach(v => contextualIds.add(v));
     });
+
+    // Place markers are independent of character markers. A place and one or more
+    // characters may legitimately occupy the same coordinates; neither layer
+    // suppresses the other.
     contextualIds.forEach(id => {
-      const location = byId.get(id); if (!hasCoords(location)) return;
-      if ([...currentStates.values()].some(s => selectedCharacters.has(s.character) && s.location === id)) return;
-      L.marker(location.coordinates, {icon: icon(location), title: locationLabel(location)})
-        .bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`).addTo(markers);
+      const location = byId.get(id);
+      if (!hasCoords(location)) return;
+      L.marker(location.coordinates, {icon: icon(location), title: locationLabel(location)}).bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note ?? "Localizzazione moderna")}</span>`).addTo(markers);
       plotted.push(location.coordinates);
     });
 
@@ -82,23 +67,13 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   }
 
   function romanizedLabelExpression() { return ["coalesce", ["get", "name:ja-Latn"], ["get", "name:ja_rm"], ["get", "name:latin"], ["get", "name_en"], ["get", "name"]]; }
-  function cleanAdministrativeSuffixExpression() {
-    const suffixes = ["-machi", "-mura", "-chō", "-cho", "-ken", "-gun", "-shi", "-ku", "-son", "-to", "-fu"];
-    const name = ["var", "labelName"]; const cases = [];
-    suffixes.forEach(suffix => { const length = suffix.length; cases.push(["all", [">=", ["length", name], length], ["==", ["slice", name, ["-", ["length", name], length]], suffix]], ["slice", name, 0, ["-", ["length", name], length]]); });
-    return ["let", "labelName", romanizedLabelExpression(), ["case", ...cases, name]];
-  }
-  function customizeBasemapStyle(nextStyle) {
-    const labelSourceLayers = new Set(["place", "water_name", "waterway", "transportation_name", "poi", "mountain_peak", "park", "aerodrome_label"]);
-    return {...nextStyle, layers: nextStyle.layers.map(layer => ({...layer, ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles" && labelSourceLayers.has(layer["source-layer"]) ? {layout: {...layer.layout, "text-field": cleanAdministrativeSuffixExpression()}} : {})}))};
-  }
+  function cleanAdministrativeSuffixExpression() { const suffixes = ["-machi", "-mura", "-chō", "-cho", "-ken", "-gun", "-shi", "-ku", "-son", "-to", "-fu"]; const name = ["var", "labelName"]; const cases = []; suffixes.forEach(suffix => { const length = suffix.length; cases.push(["all", [">=", ["length", name], length], ["==", ["slice", name, ["-", ["length", name], length]], suffix]], ["slice", name, 0, ["-", ["length", name], length]]); }); return ["let", "labelName", romanizedLabelExpression(), ["case", ...cases, name]]; }
+  function customizeBasemapStyle(nextStyle) { const labelSourceLayers = new Set(["place", "water_name", "waterway", "transportation_name", "poi", "mountain_peak", "park", "aerodrome_label"]); return {...nextStyle, layers: nextStyle.layers.map(layer => ({...layer, ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles" && labelSourceLayers.has(layer["source-layer"]) ? {layout: {...layer.layout, "text-field": cleanAdministrativeSuffixExpression()}} : {})}))}; }
   async function boot() {
     try {
       map = L.map("map", {zoomControl:true, preferCanvas:true, minZoom:1, maxBounds: [[180, -Infinity], [-180, Infinity]], maxBoundsViscosity:1}).setView([35.05,135.55],7);
-      const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", {cache:"no-store"});
-      if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
-      const libertyStyle = await styleResponse.json();
-      glLayer = L.maplibreGL({style: customizeBasemapStyle(libertyStyle)}).addTo(map);
+      const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", {cache:"no-store"}); if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
+      const libertyStyle = await styleResponse.json(); glLayer = L.maplibreGL({style: customizeBasemapStyle(libertyStyle)}).addTo(map);
       markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
         fetch(`data/locations.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`locations.json: ${r.status}`); return r.json(); }),
@@ -107,8 +82,7 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
         fetch(`data/characters.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`characters.json: ${r.status}`); return r.json(); })
       ]);
       locations = locationData.locations; events = eventData.events; characterStates = stateData.character_states; characters = characterData.characters;
-      const readerState = getCanonicalReaderState();
-      if (readerState.section !== null) { selectedCharacters = new Set(readerState.selectedCharacters); draw(readerState.section); }
+      const readerState = getCanonicalReaderState(); if (readerState.section !== null) { selectedCharacters = new Set(readerState.selectedCharacters); draw(readerState.section); }
     } catch(error) { console.error("Map initialization failed", error); }
   }
   subscribeCanonicalReaderState(readerState => { selectedCharacters = new Set(readerState.selectedCharacters); if (readerState.section !== null) draw(readerState.section); });
