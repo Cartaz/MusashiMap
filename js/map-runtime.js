@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-12";
+  const VERSION = "20260816-13";
   let map;
   let glLayer;
   let markers;
@@ -67,24 +67,6 @@
     ];
   }
 
-  // Keep the map clean without changing the underlying OpenMapTiles data.
-  // These are administrative suffixes, not part of the reader-facing place name.
-  function cleanAdministrativeSuffixExpression() {
-    const suffixes = [
-      "to", "fu", "ken", "shi", "ku", "gun", "machi", "cho", "chō", "mura", "son"
-    ];
-    let expression = romanizedLabelExpression();
-    for (const suffix of suffixes) {
-      expression = [
-        "case",
-        ["==", ["slice", expression, ["-", ["length", expression], suffix.length + 1]], `-${suffix}`],
-        ["slice", expression, 0, ["-", ["length", expression], suffix.length + 1]],
-        expression
-      ];
-    }
-    return expression;
-  }
-
   function localizeBasemapLabels() {
     if (!glLayer) return;
     const gl = glLayer.getMaplibreMap();
@@ -93,7 +75,7 @@
       "place", "water_name", "waterway", "transportation_name", "poi",
       "mountain_peak", "park", "aerodrome_label", "housenumber"
     ]);
-    const expression = cleanAdministrativeSuffixExpression();
+    const expression = romanizedLabelExpression();
     for (const layer of gl.getStyle().layers ?? []) {
       if (layer.type !== "symbol" || !layer.layout?.["text-field"]) continue;
       if (layer.source !== "openmaptiles" || !allowedSourceLayers.has(layer["source-layer"])) continue;
@@ -119,6 +101,7 @@
       }).addTo(map);
       const gl = glLayer.getMaplibreMap();
       gl.once("load", localizeBasemapLabels);
+      gl.on("styledata", localizeBasemapLabels);
 
       markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
