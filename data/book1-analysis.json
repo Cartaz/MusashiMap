@@ -1,9 +1,10 @@
 {
-  "version": 2,
+  "version": 3,
   "source": {
-    "type": "novel_transcription",
-    "url": "https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt",
-    "rule": "All narrative presence, names, aliases, locations and movements in this analysis are extracted only from the Internet Archive transcription. External sources are not used to establish novel facts."
+    "type": "repository_chapter_corpus",
+    "path": "data/source/musashi-book1",
+    "upstream_corpus": "Internet Archive transcription of Musashi",
+    "rule": "Narrative facts, names, aliases, locations and movements are extracted only from the eight Book I chapter files. External sources are used only for contextual micro-wiki summaries and modern geographic identification."
   },
   "book": "I",
   "title": "Earth",
@@ -17,54 +18,57 @@
     {"id":7,"title":"The Rock and the Tree"},
     {"id":8,"title":"The Birth of Musashi"}
   ],
-  "main_cast_presence": {
-    "musashi": [1,2,3,4,5,6,7,8],
-    "matahachi": [1,2],
-    "otsu": [3,4,5,6,7,8],
-    "takuan": [3,4,5,6,7,8],
-    "osugi": [3,4,5,6,7,8],
-    "akemi": [1,2],
-    "ogin": [3,4,6,7,8],
-    "jotaro": [],
-    "kojiro": []
+  "text_presence": {
+    "musashi":[1,2,3,4,5,6,7,8],
+    "kojiro":[],
+    "otsu":[1,3,4,5,6,7,8],
+    "matahachi":[1,2,3,4,5,6,7,8],
+    "takuan":[3,4,5,6,7,8],
+    "osugi":[4,5,6,7,8],
+    "jotaro":[],
+    "akemi":[1,2],
+    "ogin":[3,4,5,6,7,8]
   },
-  "movement_status_legend": {
-    "confirmed": "The text explicitly establishes the character at the destination or explicitly describes the completed movement.",
-    "intended": "The text describes a destination or direction of travel, but does not yet establish arrival.",
-    "relative": "The text establishes a relative movement/location relation without enough information for a precise route."
+  "physical_presence": {
+    "musashi":[1,2,3,4,5,6,7,8],
+    "kojiro":[],
+    "otsu":[3,4,5,6,7,8],
+    "matahachi":[1,2],
+    "takuan":[3,4,5,6,7,8],
+    "osugi":[4,5,6,7,8],
+    "jotaro":[],
+    "akemi":[1,2],
+    "ogin":[3,4]
   },
-  "confirmed_movement_points": [
-    {"section":1,"characters":["musashi","matahachi"],"from":"sekigahara","to":"mount_ibuki_area","status":"confirmed","evidence":"The pair reaches the wooded hills and spends two days foraging in the hollows of Mount Ibuki."},
-    {"section":1,"characters":["musashi","matahachi"],"from":"mount_ibuki_area","to":"tarui","status":"intended","evidence":"They move at night in what they think is the direction of the small town of Tarui; this passage does not by itself establish an arrival at Tarui."},
-    {"section":1,"characters":["musashi","matahachi"],"to":"oko_akemi_house","status":"confirmed","evidence":"They are taken in and concealed at Oko and Akemi's house after reaching it as sick stragglers from Sekigahara."},
-    {"section":2,"characters":["musashi"],"from":"oko_akemi_house","to":"mount_ibuki_area","status":"confirmed","evidence":"Takezo goes into the nearby mountains with Akemi to collect supplies and encounters Temma."},
-    {"section":2,"characters":["musashi"],"from":"mount_ibuki_area","to":"oko_akemi_house","status":"confirmed","evidence":"Takezo returns to the house after the mountain encounter."},
-    {"section":3,"characters":["musashi"],"to":"shippoji","status":"confirmed","evidence":"Otsu spots Takezo among the crowd outside Shippoji during the flower festival; he immediately disappears."},
-    {"section":4,"characters":["musashi"],"to":"sanumo_mountains","status":"confirmed","evidence":"Takezo is hiding in the Sanumo mountains while search parties pursue him."},
-    {"section":5,"characters":["takuan","otsu"],"from":"shippoji","to":"sanumo_mountains","via":["itadori_pasture"],"status":"confirmed","evidence":"Takuan takes Otsu into the mountains and uses the surrounding terrain while waiting for Takezo rather than conducting a conventional search."},
-    {"section":5,"characters":["musashi","takuan","otsu"],"location":"sanumo_mountains","status":"confirmed","evidence":"Takezo approaches their camp/fire and is captured by Takuan."},
-    {"section":6,"characters":["musashi"],"from":"sanumo_mountains","to":"shippoji","status":"confirmed","evidence":"Takuan brings the captured Takezo back to Shippoji."},
-    {"section":6,"characters":["musashi"],"to":"old_cryptomeria_shippoji","status":"confirmed","evidence":"Takezo is tied to the old cryptomeria tree in the temple grounds."},
-    {"section":7,"characters":["musashi","otsu"],"from":"old_cryptomeria_shippoji","to":"nakayama_pass","status":"confirmed","evidence":"Takezo is freed and escapes with Otsu; the text explicitly has them reach Nakayama Pass before separating."},
-    {"section":7,"characters":["musashi"],"from":"nakayama_pass","to":"hinagura","status":"confirmed","evidence":"Takezo continues toward Hinagura to find Ogin; the narrative subsequently places him at the Hinagura stockade area."},
-    {"section":7,"characters":["otsu"],"from":"nakayama_pass","to":"hanada_bridge","status":"intended","evidence":"Otsu agrees to go to Himeji and wait at Hanada Bridge; this is an intended destination and later sections establish her route through the Hanada/Mikazuki area rather than treating the initial promise as immediate arrival."},
-    {"section":8,"characters":["musashi"],"from":"hinagura","to":"himeji_area","status":"confirmed","evidence":"The narrative brings Takezo into the Himeji area after the Hinagura sequence."},
-    {"section":8,"characters":["musashi"],"to":"himeji_castle","status":"confirmed","evidence":"Takuan brings Takezo before Lord Ikeda Terumasa at Himeji Castle."
-    }
+  "secondary_presence": {
+    "oko":[1,2,5],
+    "temma":[2],
+    "kohei":[2],
+    "heita":[4,7],
+    "gonroku":[7,8],
+    "aoki_tanzaemon":[6,8],
+    "lord_ikeda":[5,8],
+    "himeji_captain":[4,5,6]
+  },
+  "quality_rules": {
+    "explicit":"Directly stated or unambiguously shown in the chapter text.",
+    "strong_inference":"Strongly implied by the chapter text but not stated as a completed fact.",
+    "weak_inference":"Plausible but not sufficiently certain for reader-facing map data.",
+    "spoiler_boundary":"No later-book information is used to resolve a Book I ambiguity."
+  },
+  "critical_corrections": [
+    "Chapter 1 direction toward Tarui is not treated as confirmed arrival.",
+    "Matahachi is physically present only in chapters 1–2; later chapters mention him but do not place him physically in the narrative.",
+    "Chapter 4 establishes Ogin's arrest and reports Hinagura as her prison; chapter 7 explicitly reveals that she had already been transferred to Himeji.",
+    "Chapter 7 establishes Otsu's route toward Himeji but she becomes ill at Mikazuki Teahouse and is later reported to have recovered and reached Hanada Bridge.",
+    "Chapter 8 contains a three-year time jump inside the same source chapter; states before and after the gap must not be conflated."
   ],
   "identity_checkpoint": {
     "character":"musashi",
     "before_section":8,
     "old_display_name":"Shinmen Takezo",
     "new_display_name":"Miyamoto Musashi",
-    "evidence":"At Himeji Castle, Ikeda asks for Shimmen Takezo's name and the later naming scene establishes Miyamoto Musashi.",
-    "spoiler_rule":"The canonical identity remains the same internal character ID; only the reader-facing identity changes at the narrative point where the new name is established."
-  },
-  "not_present_in_book1": ["jotaro","kojiro"],
-  "notes": [
-    "This file is an analysis layer, not yet the final map database.",
-    "Movement status was refined during the primary-text audit: direction/intention is no longer treated as confirmed arrival.",
-    "Locations and movement edges will be normalized against the location registry before UI integration.",
-    "No future-book information is used to establish Book I presence."
-  ]
+    "evidence":"Ikeda Terumasa and Takuan explicitly establish the new name during Takezo's release from confinement.",
+    "spoiler_rule":"The internal character ID remains musashi; only the reader-facing display name changes at the narrative point where the new name is established."
+  }
 }
