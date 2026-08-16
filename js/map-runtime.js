@@ -1,5 +1,5 @@
 (() => {
-  const VERSION = "20260816-10";
+  const VERSION = "20260816-11";
   let map;
   let glLayer;
   let markers;
@@ -67,6 +67,28 @@
     ];
   }
 
+  // Keep the map clean without changing the underlying OpenMapTiles data.
+  // These are administrative suffixes, not part of the reader-facing place name.
+  function cleanAdministrativeSuffixExpression() {
+    const suffixes = [
+      ["to", "to"], ["fu", "fu"], ["ken", "ken"], ["shi", "shi"],
+      ["ku", "ku"], ["gun", "gun"], ["machi", "machi"], ["cho", "cho"],
+      ["chō", "chō"], ["mura", "mura"], ["son", "son"]
+    ];
+    let expression = romanizedLabelExpression();
+    for (const [suffix] of suffixes) {
+      expression = [
+        "case",
+        ["match", ["slice", expression, ["-", ["length", expression], suffix.length + 1]], `-${suffix}`,
+          ["slice", expression, 0, ["-", ["length", expression], suffix.length + 1]],
+          expression
+        ],
+        expression
+      ];
+    }
+    return expression;
+  }
+
   function localizeBasemapLabels() {
     if (!glLayer) return;
     const gl = glLayer.getMaplibreMap();
@@ -75,7 +97,7 @@
       "place", "water_name", "waterway", "transportation_name", "poi",
       "mountain_peak", "park", "aerodrome_label", "housenumber"
     ]);
-    const expression = romanizedLabelExpression();
+    const expression = cleanAdministrativeSuffixExpression();
     for (const layer of gl.getStyle().layers ?? []) {
       if (layer.type !== "symbol" || !layer.layout?.["text-field"]) continue;
       if (layer.source !== "openmaptiles" || !allowedSourceLayers.has(layer["source-layer"])) continue;
