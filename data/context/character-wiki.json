@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "scope": "Book I",
+  "policy": "Secondary characters are Wiki-only. Reveal only information supported by the reader's current section.",
+  "characters": {
+    "akemi":{"display_name":"Akemi","role":"Figlia di Oko","finora":"È cresciuta con la madre nella zona di Ibuki ed è coinvolta nelle vicende di Takezō e Matahachi.","current_by_section":{"1":"Si trova con Oko nella loro casa nella zona di Ibuki.","2":"Rimane legata alla casa di Oko mentre gli eventi si spostano verso Ibuki."}},
+    "osugi":{"display_name":"Osugi","role":"Madre di Matahachi","finora":"Cerca di proteggere l'onore della propria famiglia e di recuperare il figlio, assumendo un ruolo sempre più attivo nella ricerca di Takezō e Matahachi.","current_by_section":{"4":"È coinvolta nella ricerca di Takezō e negli eventi successivi al suo arresto.","6":"Continua la ricerca e le conseguenze della fuga di Takezō.","7":"È coinvolta nelle vicende nell'area di Himeji.","8":"Rimane coinvolta nelle vicende successive alla trasformazione di Takezō in Musashi."}},
+    "ogin":{"display_name":"Ogin","role":"Donna del villaggio di Miyamoto","finora":"Vive nella propria casa presso il fiume ed è coinvolta nelle vicende di Takezō e Otsū.","current_by_section":{"3":"È nella sua casa presso il fiume nella zona di Miyamoto.","4":"La sua casa è coinvolta nelle vicende di Otsū e Takuan.","6":"La sua posizione è legata alle conseguenze della fuga di Takezō.","7":"Si apprende che è stata trasferita verso Himeji.","8":"Takuan riferisce che si trova nel distretto di Sayo."}},
+    "temma":{"display_name":"Temma","role":"Bandito e avversario di Takezō","finora":"È coinvolto nell'inseguimento e nello scontro con Takezō nella zona di Ibuki.","current_by_section":{"2":"Muore durante lo scontro con Takezō."}},
+    "kohei":{"display_name":"Tsujikaze Kohei","role":"Bandito temuto nella regione di Kiso","finora":"Viene presentato come un combattente pericoloso e come una minaccia per Matahachi e Takezō.","current_by_section":{"1":"È una minaccia raccontata a Matahachi; non viene stabilita una sua presenza fisica nella scena."}},
+    "gonroku":{"display_name":"Gonroku","role":"Uomo al servizio di Osugi","finora":"Partecipa alle ricerche e agli inseguimenti legati alle vicende di Takezō e Otsū.","current_by_section":{"7":"È coinvolto nell'inseguimento di Otsū dopo la partenza dal Mikazuki Teahouse."}},
+    "munisai":{"display_name":"Munisai","role":"Padre di Takezō","finora":"La sua eredità familiare e la sua casa costituiscono parte del contesto di Miyamoto.","current_by_section":{"3":"Il suo passato e la sua casa fanno parte del contesto delle vicende di Miyamoto."}}
+  }
+}
