@@ -6,11 +6,13 @@ export function validateData({ characters, locations, chapters, events, states }
   const sectionNumbers = new Set(chapters.sections.map(s => s.number));
   const errors = [];
   const warnings = [];
+  const stateSections = new Map();
 
   for (const event of events.events) {
     if (!sectionNumbers.has(event.section)) errors.push(`Event ${event.id}: sezione inesistente ${event.section}`);
     for (const id of event.characters ?? []) if (!characterIds.has(id)) errors.push(`Event ${event.id}: personaggio inesistente ${id}`);
-    for (const key of ["from", "to", "location"]) if (event[key] && !locationIds.has(event[key])) errors.push(`Event ${event.id}: luogo inesistente ${event[key]}`);
+    for (const id of event.referenced_characters ?? []) if (!characterIds.has(id)) errors.push(`Event ${event.id}: personaggio referenziato inesistente ${id}`);
+    for (const key of ["origin", "destination", "location"]) if (event[key] && !locationIds.has(event[key])) errors.push(`Event ${event.id}: luogo inesistente ${event[key]}`);
     for (const id of event.via ?? []) if (!locationIds.has(id)) errors.push(`Event ${event.id}: luogo via inesistente ${id}`);
   }
 
@@ -18,6 +20,22 @@ export function validateData({ characters, locations, chapters, events, states }
     if (!sectionNumbers.has(state.section)) errors.push(`State ${state.character}/${state.section}: sezione inesistente`);
     if (!characterIds.has(state.character)) errors.push(`State ${state.character}/${state.section}: personaggio inesistente`);
     if (state.location && !locationIds.has(state.location)) errors.push(`State ${state.character}/${state.section}: luogo inesistente ${state.location}`);
+    const key = `${state.character}:${state.section}`;
+    if (stateSections.has(key)) errors.push(`State ${state.character}/${state.section}: stato duplicato nella stessa sezione`);
+    stateSections.set(key, state);
+  }
+
+  for (const character of characters.characters) {
+    const actual = [...stateSections.values()]
+      .filter(state => state.character === character.id && state.location)
+      .map(state => state.section)
+      .sort((a, b) => a - b);
+    const declared = [...new Set(character.present_in ?? [])].sort((a, b) => a - b);
+    const actualSet = new Set(actual);
+    const declaredSet = new Set(declared);
+    for (const section of declared) if (!actualSet.has(section)) warnings.push(`Character ${character.id}: present_in include ${section} ma manca uno stato di posizione`);
+    for (const section of actual) if (!declaredSet.has(section)) warnings.push(`Character ${character.id}: esiste uno stato di posizione in ${section} ma present_in non lo dichiara`);
+    if (character.importance === "main" && character.present_in?.length && !actual.length) warnings.push(`Character ${character.id}: personaggio principale senza alcuna posizione verificabile`);
   }
 
   const explicitFutureDestinations = events.events.filter(e => e.certainty === "intended_destination");
