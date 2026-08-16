@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-34";
+  const VERSION = "20260816-35";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -51,14 +51,13 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
 
   // Narrative state and map visibility are deliberately separate.
   // current = physically present at the chapter's mapped location.
-  // contextual = no longer physically there, but a significant mapped location is retained.
-  // unmapped = genuinely no usable cartographic position; this alone opens the popup.
+  // contextual = mapped location retained because the chapter only reports/refers to it.
+  // unmapped = genuinely no usable cartographic position.
   function resolveMapState(state, byId, allStates, sectionEvents){
     const current=state?.location ? byId.get(state.location) : null;
     if(current && hasCoords(current)) return { location:current, mode:"current" };
     if(state?.location_status === "departed_with_group") return { location:null, mode:"unmapped" };
 
-    // Prefer a significant location from the same chapter when the character's events establish one.
     const sameChapterEvents=sectionEvents.filter(e=>(e.characters??[]).includes(state.character));
     const eventLocationIds=[];
     sameChapterEvents.forEach(e=>{
@@ -74,6 +73,12 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     const lastKnown=state?.last_known_location ? byId.get(state.last_known_location) : null;
     if(lastKnown && hasCoords(lastKnown)) return { location:lastKnown, mode:"contextual" };
     return { location:null, mode:"unmapped" };
+  }
+
+  function characterStatusLabel(mode,state){
+    if(mode === "current") return "Presenza fisica";
+    if(state?.location_status === "reported_position") return "Posizione riferita";
+    return "Ultima posizione significativa";
   }
 
   function draw(section){
@@ -98,10 +103,18 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     const groups=new Map(); const register=(kind,id,location)=>{const position=coordinateKey(location.coordinates);if(!groups.has(position))groups.set(position,[]);const key=`${kind}:${id}`;groups.get(position).push({kind,id,location,key});};
     visiblePlaces.forEach(l=>register("place",l.id,l)); visibleCharacters.forEach(i=>register("character",i.characterId,i.location));
     const offsets=new Map(); groups.forEach(group=>collisionOffsets(group.length).forEach((offset,i)=>offsets.set(group[i].key,offset)));
-    visibleCharacters.forEach(item=>{const offset=offsets.get(`character:${item.characterId}`)??[0,0];const name=displayCharacterName(item.character,section);const label=item.mode==="current"?locationLabel(item.location):`Ultima posizione significativa: ${locationLabel(item.location)}`;L.marker(item.location.coordinates,{icon:characterIcon(item.color,item.location,offset,item.mode==="contextual"),title:`${name} · ${label}`}).bindPopup(`<strong>${esc(name)}</strong><br>${esc(label)}<br><small>${esc(precisionLabel(item.location))}</small><br><span>${esc(item.state.activity)}</span>`).addTo(characterMarkers);});
+    visibleCharacters.forEach(item=>{
+      const offset=offsets.get(`character:${item.characterId}`)??[0,0];
+      const name=displayCharacterName(item.character,section);
+      const status=characterStatusLabel(item.mode,item.state);
+      const label=item.mode==="current"?locationLabel(item.location):locationLabel(item.location);
+      const detail=item.mode==="current"?"Il testo colloca fisicamente il personaggio qui.":item.state.location_status === "reported_position"?"Il testo riferisce questa posizione, ma non ne stabilisce la presenza fisica nel capitolo.":"Il luogo è mantenuto come ultima posizione significativa.";
+      L.marker(item.location.coordinates,{icon:characterIcon(item.color,item.location,offset,item.mode==="contextual"),title:`${name} · ${status} · ${label}`})
+        .bindPopup(`<strong>${esc(name)}</strong><br><b>${esc(status)}</b><br>${esc(label)}<br><small>${esc(precisionLabel(item.location))}</small><br><span>${esc(detail)}</span>${item.state.activity?`<br><small>${esc(item.state.activity)}</small>`:""}`)
+        .addTo(characterMarkers);
+    });
     visiblePlaces.forEach(location=>{const offset=offsets.get(`place:${location.id}`)??[0,0];L.marker(location.coordinates,{icon:icon(location,offset),title:locationLabel(location)}).bindPopup(`<strong>${esc(locationLabel(location))}</strong><br><small>${esc(precisionLabel(location))}</small><br><span>${esc(location.map_note??"Localizzazione moderna")}</span>`).addTo(markers);});
     sectionEvents.filter(e=>e.origin&&e.destination&&e.destination!=="unknown").forEach(e=>{const a=byId.get(e.origin),b=byId.get(e.destination);if(!hasCoords(a)||!hasCoords(b))return;const mode=routeMode(e);const label=mode==="confirmed"?"Spostamento confermato":"Direzione / destinazione intenzionale";L.polyline([a.coordinates,b.coordinates],routeStyle(mode)).bindPopup(`<strong>${label}</strong><br>${esc(locationLabel(a))} → ${esc(locationLabel(b))}<br><small>${esc(e.description??"")}</small>`).addTo(routes);});
-    // Focus is event-driven. Contextual character markers never expand the viewport by themselves.
     const focusCoordinates=[]; sectionEvents.forEach(e=>{[e.location,e.origin,e.destination,...(e.via??[])].filter(Boolean).forEach(id=>{const location=byId.get(id);if(hasCoords(location))focusCoordinates.push(location.coordinates);});});
     const plotted=focusCoordinates.length?focusCoordinates:[...visibleCharacters.filter(item=>item.mode==="current").map(item=>item.location.coordinates),...visiblePlaces.map(location=>location.coordinates)];
     if(plotted.length)map.fitBounds(L.latLngBounds(plotted).pad(.18),{maxZoom:10,animate:false});
@@ -109,7 +122,7 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
 
   function romanizedLabelExpression(){return ["coalesce",["get","name:ja-Latn"],["get","name:ja_rm"],["get","name:latin"],["get","name_en"],["get","name"]];}
   function cleanAdministrativeSuffixExpression(){const suffixes=["-machi","-mura","-chō","-cho","-ken","-gun","-shi","-ku","-son","-to","-fu"],name=["var","labelName"],cases=[];suffixes.forEach(suffix=>{const length=suffix.length;cases.push(["all",[">=",["length",name],length],["==",["slice",name,["-",["length",name],length]],suffix]],["slice",name,0,["-",["length",name],length]]);});return ["let","labelName",romanizedLabelExpression(),["case",...cases,name]];}
-  function customizeBasemapStyle(nextStyle){const labelSourceLayers=new Set(["place","water_name","waterway","transportation_name","poi","mountain_peak","park","aerodrome_label"]);return {...nextStyle,layers:nextStyle.layers.map(layer=>({...layer,...(layer.type==="symbol"&&layer.layout?.["text-field"]&&layer.source==="openmaptiles"&&labelSourceLayers.has(layer["source-layer"])?{layout:{...layer.layout,"text-field":cleanAdministrativeSuffixExpression()}}:{})}))};}
+  function customizeBasemapStyle(nextStyle){const labelSourceLayers=new Set(["place","water_name","waterway_name","transportation_name","poi","mountain_peak","park","aerodrome_label"]);return {...nextStyle,layers:nextStyle.layers.map(layer=>({...layer,...(layer.type==="symbol"&&layer.layout?.["text-field"]&&layer.source==="openmaptiles"&&labelSourceLayers.has(layer["source-layer"])?{layout:{...layer.layout,"text-field":cleanAdministrativeSuffixExpression()}}:{})}))};}
   async function boot(){try{map=L.map("map",{zoomControl:true,preferCanvas:true,minZoom:1,maxZoom:18,maxBounds:[[180,-Infinity],[-180,Infinity]],maxBoundsViscosity:1}).setView([35.05,135.55],7);const styleResponse=await fetch("https://tiles.openfreemap.org/styles/liberty",{cache:"no-store"});if(!styleResponse.ok)throw new Error(`OpenFreeMap style: ${styleResponse.status}`);glLayer=L.maplibreGL({style:customizeBasemapStyle(await styleResponse.json())}).addTo(map);markers=L.layerGroup().addTo(map);routes=L.layerGroup().addTo(map);characterMarkers=L.layerGroup().addTo(map);const [locationData,eventData,stateData,characterData]=await Promise.all([fetch(`data/locations.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),fetch(`data/events.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),fetch(`data/character-states.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json()),fetch(`data/characters.json?v=${VERSION}`,{cache:"no-store"}).then(r=>r.json())]);locations=locationData.locations;events=eventData.events;characterStates=stateData.character_states;characters=characterData.characters;const state=getCanonicalReaderState();if(state.section!==null){selectedCharacters=new Set(state.selectedCharacters);previousSection=state.section;previousSelectedCharacters=new Set(state.selectedCharacters);draw(state.section);}}catch(error){console.error("Map initialization failed",error);}}
   subscribeCanonicalReaderState(state=>{
     const nextSelected=new Set(state.selectedCharacters);
@@ -119,15 +132,9 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     if(selectionChanged){
       const statesThroughChapter=characterStates.filter(s=>s.section<=state.section);
       const latest=new Map(); statesThroughChapter.forEach(s=>latest.set(s.character,s));
-      const byId=new Map(locations.map(l=>[l.id,l]));
-      const sectionEvents=events.filter(e=>e.section===state.section);
-      const selectedUnmapped=[...nextSelected].some(id=>{const s=latest.get(id);if(!s)return false;const resolved=resolveMapState(s,byId,statesThroughChapter,sectionEvents);return resolved.mode==="unmapped";});
-      if(selectedUnmapped) unmappedPopupOpen=true;
+      unmappedPopupOpen=[...nextSelected].some(id=>{const s=latest.get(id);return s?.location_status==="unknown"||s?.location_status==="departed_with_group";});
     }
-    selectedCharacters=nextSelected;
-    previousSection=state.section;
-    previousSelectedCharacters=nextSelected;
-    if(state.section!==null)draw(state.section);
+    selectedCharacters=nextSelected; previousSection=state.section; previousSelectedCharacters=nextSelected; draw(state.section);
   });
   boot();
 })();
