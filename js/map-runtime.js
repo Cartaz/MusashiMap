@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-18";
+  const VERSION = "20260816-19";
   let map;
   let glLayer;
   let markers;
@@ -14,6 +14,16 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   let selectedCharacters = new Set();
   const colors = { exact_site: "#e0a04b", settlement: "#c9d1d9", area: "#8fb3c9", route: "#b99ad6", temple: "#b8c7a4", literary_landmark: "#d9a0b7" };
   const characterColors = ["#e0a04b", "#8fb3c9", "#b99ad6", "#b8c7a4", "#d9a0b7", "#c9d1d9"];
+  const placeIconPaths = {
+    temple: "assets/icons/places/temple.svg",
+    castle: "assets/icons/places/castle.svg",
+    city: "assets/icons/places/city.svg",
+    village: "assets/icons/places/village.svg",
+    nature: "assets/icons/places/nature.svg",
+    route: "assets/icons/places/route.svg",
+    literary_landmark: "assets/icons/places/landmark.svg"
+  };
+  const placeTypeAliases = { settlement: "city", exact_site: "landmark", area: "nature" };
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
   const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
   const locationLabel = location => location?.modern_name_romaji || location?.name || "Località non determinata";
@@ -22,7 +32,12 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno";
     return "Posizione indicativa dell'area";
   };
-  const icon = location => L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker ${location.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${colors[location.type] ?? "#c9d1d9"}"></span>`, iconSize: [18,18], iconAnchor: [9,9] });
+  const icon = location => {
+    const type = placeTypeAliases[location?.type] ?? location?.type ?? "landmark";
+    const path = placeIconPaths[type] ?? placeIconPaths.landmark;
+    const color = colors[location?.type] ?? "#c9d1d9";
+    return L.divIcon({ className: "musashi-map-marker-wrapper", html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${path}" alt="" aria-hidden="true"></span>`, iconSize: [28,28], iconAnchor: [14,14] });
+  };
   const characterIcon = (character, color, location) => L.divIcon({ className: "musashi-character-marker-wrapper", html: `<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""}" style="--marker-color:${color}"></span>`, iconSize: [26,26], iconAnchor: [13,13] });
 
   function draw(section) {
@@ -31,11 +46,9 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     const byId = new Map(locations.map(l => [l.id, l]));
     const currentStates = new Map();
     characterStates.filter(s => s.section <= section).forEach(s => currentStates.set(s.character, s));
-    const selectedStateCharacters = new Set();
     const plotted = [];
     currentStates.forEach((state, characterId) => {
       if (!selectedCharacters.has(characterId)) return;
-      selectedStateCharacters.add(characterId);
       const location = byId.get(state.location); const character = characters.find(c => c.id === characterId);
       if (!location || !hasCoords(location)) return;
       const index = characters.findIndex(c => c.id === characterId); const color = characterColors[(index < 0 ? 0 : index) % characterColors.length];
@@ -67,72 +80,24 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
     if (plotted.length) map.fitBounds(L.latLngBounds(plotted).pad(.18), {maxZoom:10, animate:false});
   }
 
-  function romanizedLabelExpression() {
-    return [
-      "coalesce",
-      ["get", "name:ja-Latn"],
-      ["get", "name:ja_rm"],
-      ["get", "name:latin"],
-      ["get", "name_en"],
-      ["get", "name"]
-    ];
-  }
-
-  // Normalize only a trailing administrative suffix. The source tile data is untouched.
+  function romanizedLabelExpression() { return ["coalesce", ["get", "name:ja-Latn"], ["get", "name:ja_rm"], ["get", "name:latin"], ["get", "name_en"], ["get", "name"]]; }
   function cleanAdministrativeSuffixExpression() {
-    const suffixes = [
-      "-machi", "-mura", "-chō", "-cho", "-ken", "-gun", "-shi", "-ku", "-son", "-to", "-fu"
-    ];
-    const name = ["var", "labelName"];
-    const cases = [];
-    suffixes.forEach(suffix => {
-      const length = suffix.length;
-      cases.push(
-        ["all",
-          [">=", ["length", name], length],
-          ["==", ["slice", name, ["-", ["length", name], length]], suffix]
-        ],
-        ["slice", name, 0, ["-", ["length", name], length]]
-      );
-    });
+    const suffixes = ["-machi", "-mura", "-chō", "-cho", "-ken", "-gun", "-shi", "-ku", "-son", "-to", "-fu"];
+    const name = ["var", "labelName"]; const cases = [];
+    suffixes.forEach(suffix => { const length = suffix.length; cases.push(["all", [">=", ["length", name], length], ["==", ["slice", name, ["-", ["length", name], length]], suffix]], ["slice", name, 0, ["-", ["length", name], length]]); });
     return ["let", "labelName", romanizedLabelExpression(), ["case", ...cases, name]];
   }
-
-  // Build a reader-facing copy of the upstream OpenFreeMap style before MapLibre
-  // receives it. This avoids post-load style mutation and keeps the upstream
-  // vector tiles and all other Liberty styling unchanged.
   function customizeBasemapStyle(nextStyle) {
-    const labelSourceLayers = new Set([
-      "place", "water_name", "waterway", "transportation_name", "poi",
-      "mountain_peak", "park", "aerodrome_label"
-    ]);
-    return {
-      ...nextStyle,
-      layers: nextStyle.layers.map(layer => ({
-        ...layer,
-        ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles" && labelSourceLayers.has(layer["source-layer"])
-          ? {layout: {...layer.layout, "text-field": cleanAdministrativeSuffixExpression()}}
-          : {})
-      }))
-    };
+    const labelSourceLayers = new Set(["place", "water_name", "waterway", "transportation_name", "poi", "mountain_peak", "park", "aerodrome_label"]);
+    return {...nextStyle, layers: nextStyle.layers.map(layer => ({...layer, ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles" && labelSourceLayers.has(layer["source-layer"]) ? {layout: {...layer.layout, "text-field": cleanAdministrativeSuffixExpression()}} : {})}))};
   }
-
   async function boot() {
     try {
-      map = L.map("map", {
-        zoomControl:true,
-        preferCanvas:true,
-        minZoom:1,
-        maxBounds: [[180, -Infinity], [-180, Infinity]],
-        maxBoundsViscosity:1
-      }).setView([35.05,135.55],7);
-
+      map = L.map("map", {zoomControl:true, preferCanvas:true, minZoom:1, maxBounds: [[180, -Infinity], [-180, Infinity]], maxBoundsViscosity:1}).setView([35.05,135.55],7);
       const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", {cache:"no-store"});
       if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
       const libertyStyle = await styleResponse.json();
-      const musashiStyle = customizeBasemapStyle(libertyStyle);
-      glLayer = L.maplibreGL({style: musashiStyle}).addTo(map);
-
+      glLayer = L.maplibreGL({style: customizeBasemapStyle(libertyStyle)}).addTo(map);
       markers = L.layerGroup().addTo(map); routes = L.layerGroup().addTo(map); characterMarkers = L.layerGroup().addTo(map);
       const [locationData,eventData,stateData,characterData] = await Promise.all([
         fetch(`data/locations.json?v=${VERSION}`, {cache:"no-store"}).then(r => { if(!r.ok) throw new Error(`locations.json: ${r.status}`); return r.json(); }),
@@ -142,17 +107,9 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
       ]);
       locations = locationData.locations; events = eventData.events; characterStates = stateData.character_states; characters = characterData.characters;
       const readerState = getCanonicalReaderState();
-      if (readerState.section !== null) {
-        selectedCharacters = new Set(readerState.selectedCharacters);
-        draw(readerState.section);
-      }
+      if (readerState.section !== null) { selectedCharacters = new Set(readerState.selectedCharacters); draw(readerState.section); }
     } catch(error) { console.error("Map initialization failed", error); }
   }
-
-  subscribeCanonicalReaderState(readerState => {
-    selectedCharacters = new Set(readerState.selectedCharacters);
-    if (readerState.section !== null) draw(readerState.section);
-  });
-
+  subscribeCanonicalReaderState(readerState => { selectedCharacters = new Set(readerState.selectedCharacters); if (readerState.section !== null) draw(readerState.section); });
   boot();
 })();
