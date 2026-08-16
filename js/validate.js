@@ -7,12 +7,17 @@ export function validateData({ characters, locations, chapters, events, states }
   const errors = [];
   const warnings = [];
   const stateSections = new Map();
+  const specialUnknownLocation = "unknown";
 
   for (const event of events.events) {
     if (!sectionNumbers.has(event.section)) errors.push(`Event ${event.id}: sezione inesistente ${event.section}`);
     for (const id of event.characters ?? []) if (!characterIds.has(id)) errors.push(`Event ${event.id}: personaggio inesistente ${id}`);
     for (const id of event.referenced_characters ?? []) if (!characterIds.has(id)) errors.push(`Event ${event.id}: personaggio referenziato inesistente ${id}`);
-    for (const key of ["origin", "destination", "location"]) if (event[key] && !locationIds.has(event[key])) errors.push(`Event ${event.id}: luogo inesistente ${event[key]}`);
+    for (const key of ["origin", "destination", "location"]) {
+      if (event[key] && event[key] !== specialUnknownLocation && !locationIds.has(event[key])) {
+        errors.push(`Event ${event.id}: luogo inesistente ${event[key]}`);
+      }
+    }
     for (const id of event.via ?? []) if (!locationIds.has(id)) errors.push(`Event ${event.id}: luogo via inesistente ${id}`);
   }
 
