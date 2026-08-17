@@ -52,3 +52,6 @@
 .panel-parchment .panel-kicker,.panel-parchment .diary-collapsed-label,.map-character-panel .panel-kicker,.info-panel .diary-collapsed-label,.pergamena-chiusa.is-collapsed .panel-kicker,.pergamena-chiusa.is-collapsed .diary-collapsed-label{font-family:"Cinzel",Georgia,"Times New Roman",serif!important;font-size:11px!important;font-weight:800!important;line-height:1!important;letter-spacing:.15em!important;text-transform:uppercase!important}
 /* Earth: same typography and panel heading color. */
 .map-overlay .placeholder-kicker{font-family:"Cinzel",Georgia,"Times New Roman",serif!important;font-size:11px!important;font-weight:800!important;line-height:1!important;letter-spacing:.15em!important;text-transform:uppercase!important;color:var(--panel-kicker,var(--vermilion))!important}
+
+/* EXPERIMENT: use Cinzel for every rendered text element in the application. */
+html,body,body *,body *::before,body *::after{font-family:"Cinzel",Georgia,"Times New Roman",serif!important}
