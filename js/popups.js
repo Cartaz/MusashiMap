@@ -46,17 +46,23 @@ const renderPopup = (kind, data) => {
   return "";
 };
 
-export const characterPopup = (data, options) => ({
-  content: renderPopup("character", data),
-  options: popupOptions(options, "musashi-popup musashi-character-popup")
-});
-
-export const placePopup = (data, options) => ({
-  content: renderPopup("place", data),
-  options: popupOptions(options, "musashi-popup musashi-place-popup")
-});
-
-export const movementPopup = (data, options) => ({
-  content: renderPopup("movement", data),
-  options: popupOptions(options, "musashi-popup musashi-movement-popup")
+window.MusashiMapPopups = Object.freeze({
+  character(data, options) {
+    return {
+      content: renderPopup("character", data),
+      options: popupOptions(options, "musashi-popup musashi-character-popup")
+    };
+  },
+  place(data, options) {
+    return {
+      content: renderPopup("place", data),
+      options: popupOptions(options, "musashi-popup musashi-place-popup")
+    };
+  },
+  movement(data, options) {
+    return {
+      content: renderPopup("movement", data),
+      options: popupOptions(options, "musashi-popup musashi-movement-popup")
+    };
+  }
 });
