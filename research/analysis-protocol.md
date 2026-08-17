@@ -110,13 +110,33 @@ Every event must identify:
 
 The exact prose of the novel must not be copied into the public application.
 
-## 11. Luni correspondence
+## 11. Canonical repository corpus
 
-The Internet Archive corpus is the working English corpus. Do not assume its chapter numbering automatically matches the Italian Luni edition.
+The repository is now the canonical working corpus for narrative scraping.
+
+Primary source files are stored under:
+
+```text
+data/source/musashi-index.txt
+data/source/book1/
+data/source/book2/
+...
+data/source/book7/
+```
+
+Each book is separated into chapter text files before analytical scraping. These repository chapter files supersede the previously used Internet Archive working copy for narrative extraction.
+
+External copies of the novel, including the Internet Archive transcription, must not be consulted to establish whether a character, place, event, movement, faction, or narrative detail occurs in the novel when the corresponding repository corpus is available.
+
+External sources remain permitted for the later modern-geography, historical, and micro-Wiki research phases, after the narrative entity has been established from the repository corpus.
+
+## 12. Luni correspondence
+
+The repository corpus uses the project's canonical English chapter structure. Do not assume its chapter numbering automatically matches the Italian Luni edition.
 
 A separate mapping table must be validated before the reader-facing chapter selector is finalized.
 
-## 12. Quality checks
+## 13. Quality checks
 
 Before accepting a batch:
 
@@ -127,8 +147,9 @@ Before accepting a batch:
 5. Check origin/destination consistency.
 6. Check that no event leaks information from a later chapter.
 7. Flag contradictions for manual review.
+8. Confirm that the extracted material came from the corresponding repository source chapter.
 
-## 13. Public UI rule
+## 14. Public UI rule
 
 The application must never expose:
 
@@ -140,7 +161,7 @@ The application must never expose:
 
 The database may contain them for research, but the reader-facing query layer must enforce the chapter cutoff.
 
-## 14. Research-effort rule
+## 15. Research-effort rule
 
 Research depth must serve the reading companion. High precision is desirable, but research must stop when additional investigation no longer produces a meaningful improvement in the map.
 
