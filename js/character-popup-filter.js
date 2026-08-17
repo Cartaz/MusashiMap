@@ -7,7 +7,13 @@
   const popupOptions = (options,className) => ({...(options ?? {}),className:`${options?.className ?? ""} ${className}`.trim()});
   const characterPanel=document.querySelector(".map-character-panel");
   const characterToggle=document.querySelector("#character-toggle");
-  if(characterPanel&&characterToggle){characterToggle.hidden=false;characterToggle.setAttribute("aria-expanded","false");characterToggle.textContent="Mostra filtri";characterPanel.classList.add("is-collapsed");}
+  if(characterPanel&&characterToggle){
+    characterToggle.hidden=false;
+    characterToggle.setAttribute("aria-expanded","false");
+    characterToggle.textContent="Mostra filtri";
+    characterPanel.classList.add("is-collapsed");
+    characterToggle.addEventListener("click",()=>setTimeout(()=>characterPanel.classList.toggle("is-collapsed",characterToggle.getAttribute("aria-expanded")!=="true"),0));
+  }
 
   // Single presentation engine for every map popup. The content model changes by kind,
   // but the visual grammar stays consistent: title, secondary line, separated description.
