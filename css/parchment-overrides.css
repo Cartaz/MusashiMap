@@ -28,9 +28,9 @@
 .map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter{display:flex!important;visibility:visible!important}
 .map-legend.pergamena-chiusa{height:172px!important}
 .map-legend.pergamena-chiusa:not(.is-collapsed){width:290px!important;padding:12px 13px!important}
-.map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:172px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.map-legend.pergamena-chiusa--verticale.is-collapsed{height:172px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
 .map-legend.pergamena-chiusa--verticale.is-collapsed .legend-heading{height:100%!important}
-.map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:540px!important;height:var(--pergamena-chiusa-size)!important;padding:0!important}
+.map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:540px!important;padding:0!important}
 .info-panel.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}
 .app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:minmax(0,1fr) var(--pergamena-chiusa-size)!important}
 .info-panel.pergamena-chiusa--verticale.is-collapsed .diary-toggle{width:100%!important;height:100%!important;min-height:0!important}
