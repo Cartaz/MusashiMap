@@ -46,9 +46,8 @@
 .map-character-panel.pergamena-chiusa{position:absolute!important;left:10px!important;right:auto!important;bottom:10px!important;top:auto!important;margin:0!important}
 .info-panel.pergamena-chiusa{position:relative!important}
 .pergamena-chiusa.is-collapsed::before{content:none!important}
-.pergamena-chiusa.is-collapsed::after{content:"";position:absolute;pointer-events:none;z-index:50}
-.pergamena-chiusa--verticale.is-collapsed::after{top:-1px;bottom:-1px;right:-1px;width:var(--pergamena-chiusa-roll-width);background:linear-gradient(90deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 45%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.48));box-shadow:-3px 0 4px rgba(58,43,25,.16),2px 0 5px rgba(58,43,25,.20)}
-.pergamena-chiusa--orizzontale.is-collapsed::after{left:-1px;right:-1px;bottom:-1px;height:var(--pergamena-chiusa-roll-width);background:linear-gradient(180deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 46%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.54));box-shadow:0 -3px 4px rgba(58,43,25,.16),0 2px 5px rgba(58,43,25,.20)}
+/* Tracce narrative uses the same closed-panel treatment as the gold-standard Legend. */
+.pergamena-chiusa.is-collapsed::after{content:none!important}
 .pergamena-chiusa.is-collapsed .panel-kicker,.pergamena-chiusa.is-collapsed .diary-collapsed-label{display:block!important;margin:0!important;padding:0!important;color:var(--panel-kicker,var(--vermilion))!important;font:600 11px/1 Georgia,"Times New Roman",serif!important;letter-spacing:.04em!important;text-transform:uppercase!important;white-space:nowrap!important}
 .pergamena-chiusa--verticale.is-collapsed .legend-heading,.pergamena-chiusa--verticale.is-collapsed .panel-heading,.pergamena-chiusa--verticale.is-collapsed .diary-toggle,.pergamena-chiusa--orizzontale.is-collapsed .panel-heading{width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;box-shadow:none!important}
 .pergamena-chiusa--verticale.is-collapsed .panel-heading>div:first-child{width:100%!important;display:flex!important;align-items:center!important;justify-content:center!important}
@@ -65,7 +64,6 @@
 .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:540px!important;padding:0!important}
 .info-panel.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}
 .app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:minmax(0,1fr) var(--pergamena-chiusa-size)!important}
-.info-panel.pergamena-chiusa--verticale.is-collapsed .diary-toggle{width:100%!important;height:100%!important;min-height:0!important}
 .info-panel .diary-toggle{cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important}
 .info-panel .diary-toggle .sidebar-rule{display:none!important}
 .info-panel .diary-toggle .diary-collapsed-label{cursor:pointer!important}
