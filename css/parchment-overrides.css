@@ -8,12 +8,10 @@
   --pergamena-chiusa-roll-width:16px;
 }
 
-/* Canonical closed parchment: visual treatment only. Each component keeps its own positioning context. */
 .pergamena-chiusa.is-collapsed{box-sizing:border-box!important;overflow:hidden!important;background:var(--pergamena-chiusa-surface)!important;border:var(--pergamena-chiusa-border)!important;border-radius:0!important;box-shadow:var(--pergamena-chiusa-shadow)!important;color:var(--pergamena-chiusa-text)!important}
 .pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important}
 .pergamena-chiusa--orizzontale.is-collapsed{height:var(--pergamena-chiusa-size)!important}
 
-/* Preserve the original positioning model of each panel. Closed/open states use the same coordinates. */
 .map-legend.pergamena-chiusa{position:absolute!important;top:10px!important;right:10px!important;left:auto!important;bottom:auto!important;margin:0!important}
 .map-character-panel.pergamena-chiusa{position:absolute!important;left:10px!important;right:auto!important;bottom:10px!important;top:auto!important;margin:0!important}
 .info-panel.pergamena-chiusa{position:relative!important}
@@ -29,13 +27,18 @@
 .pergamena-chiusa--verticale.is-collapsed .panel-kicker,.pergamena-chiusa--verticale.is-collapsed .diary-collapsed-label{writing-mode:vertical-rl!important;transform:rotate(180deg)!important}
 .pergamena-chiusa.is-collapsed .character-filter-body,.pergamena-chiusa.is-collapsed .filter-actions,.pergamena-chiusa.is-collapsed .panel-heading h2,.pergamena-chiusa.is-collapsed .panel-heading>div:first-child>p:not(.panel-kicker),.pergamena-chiusa.is-collapsed .legend-items,.pergamena-chiusa.is-collapsed .diary-content,.pergamena-chiusa.is-collapsed .sidebar-section,.pergamena-chiusa.is-collapsed>h2,.pergamena-chiusa.is-collapsed>#status,.pergamena-chiusa.is-collapsed>#validation{display:none!important}
 
-.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter-body{display:block!important;visibility:visible!important}
+/* Open panels retain their native content layout and only share positioning. */
+.map-character-panel.pergamena-chiusa:not(.is-collapsed){max-height:none!important;height:auto!important;min-height:0!important}
+.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter-body{display:block!important;visibility:visible!important;opacity:1!important;transform:none!important}
 .map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filters{display:grid!important;visibility:visible!important}
 .map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter{display:flex!important;visibility:visible!important}
 
-.map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:96px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+/* The legend's canonical open geometry must not be overridden by the closed component. */
+.map-legend.pergamena-chiusa:not(.is-collapsed){width:290px!important;height:172px!important;padding:12px 13px!important}
+.map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:var(--pergamena-chiusa-size)!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
 .map-legend.pergamena-chiusa--verticale.is-collapsed .legend-heading{height:100%!important}
 .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:540px!important;height:var(--pergamena-chiusa-size)!important;padding:0!important}
+
 .info-panel.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}
 .app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:minmax(0,1fr) var(--pergamena-chiusa-size)!important}
 .info-panel.pergamena-chiusa--verticale.is-collapsed .diary-toggle{width:100%!important;height:100%!important;min-height:0!important}
@@ -43,7 +46,8 @@
 @media(max-width:760px){
  .map-legend.pergamena-chiusa{top:10px!important;right:10px!important}
  .map-character-panel.pergamena-chiusa{left:10px!important;right:auto!important;bottom:max(10px,env(safe-area-inset-bottom))!important}
- .map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:96px!important}
+ .map-legend.pergamena-chiusa:not(.is-collapsed){width:260px!important;height:176px!important;padding:9px 10px!important}
+ .map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:var(--pergamena-chiusa-size)!important}
  .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:calc(100% - 20px)!important;height:var(--pergamena-chiusa-size)!important}
  .info-panel.pergamena-chiusa--verticale.is-collapsed{width:100%!important;height:96px!important}
  .app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:1fr!important}
