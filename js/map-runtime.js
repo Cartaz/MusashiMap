@@ -1,7 +1,7 @@
 import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260816-37";
+  const VERSION = "20260817-38";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -9,7 +9,6 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   let previousSection = null;
   let previousSelectedCharacters = null;
   const colors = { exact_site:"#e0a04b", settlement:"#c9d1d9", settlement_area:"#c9d1d9", urban_area:"#c9d1d9", area:"#8fb3c9", region:"#8fb3c9", route:"#b99ad6", river:"#8fb3c9", temple:"#b8c7a4", castle:"#b8c7a4", fortified_site:"#b8c7a4", bridge:"#b99ad6", narrative_site:"#d9a0b7", literary_landmark:"#d9a0b7" };
-  const characterColors = ["#e0a04b","#8fb3c9","#b99ad6","#b8c7a4","#d9a0b7","#c9d1d9"];
   const placeIconPaths = { temple:"assets/icons/places/temple.svg", castle:"assets/icons/places/castle.svg", city:"assets/icons/places/city.svg", village:"assets/icons/places/village.svg", nature:"assets/icons/places/nature.svg", area:"assets/icons/places/area.svg", river:"assets/icons/places/river.svg", route:"assets/icons/places/route.svg", literary_landmark:"assets/icons/places/landmark.svg" };
   const placeTypeAliases = { settlement:"city", settlement_area:"village", urban_area:"city", area:"area", region:"area", river:"river", route:"route", temple:"temple", castle:"castle", fortified_site:"castle", bridge:"route", narrative_site:"literary_landmark", literary_landmark:"literary_landmark", exact_site:"literary_landmark" };
   const hasCoords = l => Array.isArray(l?.coordinates) && l.coordinates.length === 2;
@@ -55,37 +54,22 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
   // last_known = the most recent physically established location retained after departure or loss of a current position.
   // unmapped = genuinely no usable cartographic position.
   function resolveMapState(state, byId, allStates, sectionEvents){
-    // Explicit semantic states always take precedence over event-derived locations and fallbacks.
     if(state?.location_status === "reported_position"){
-      // A reported position may be stored directly in location or, when the schema keeps
-      // only the reference target separately, in last_known_location. Either way it stays reported.
       const reportedId=state.location || state.last_known_location;
       const reported=reportedId ? byId.get(reportedId) : null;
       if(reported && hasCoords(reported)) return { location:reported, mode:"reported" };
     }
-
-    // Leaving with a group means we do not know the new position. Do not manufacture a
-    // current marker from an event, but retain the last physically known position below.
     if(state?.location_status === "departed_with_group"){
       const lastKnown=state?.last_known_location ? byId.get(state.last_known_location) : null;
       if(lastKnown && hasCoords(lastKnown)) return { location:lastKnown, mode:"last_known" };
     }
-
-    // An explicit current location is the strongest physical evidence.
     const current=state?.location ? byId.get(state.location) : null;
     if(current && hasCoords(current)) return { location:current, mode:"current" };
-
-    // Do not infer "reported" merely because an event mentions a location. Event mentions
-    // are contextual map places; they are not a character-state assertion.
-
-    // Retain the most recent physically established mapped state when the current state
-    // has no usable coordinates. This is deliberately based on prior physical locations.
     const candidates=allStates
       .filter(s=>s.character===state.character && s.section<state.section && s.location && s.location_status !== "reported_position")
       .sort((a,b)=>b.section-a.section);
     const fallback=candidates.map(s=>byId.get(s.location)).find(hasCoords);
     if(fallback) return { location:fallback, mode:"last_known" };
-
     const lastKnown=state?.last_known_location ? byId.get(state.last_known_location) : null;
     if(lastKnown && hasCoords(lastKnown)) return { location:lastKnown, mode:"last_known" };
     return { location:null, mode:"unmapped" };
@@ -111,8 +95,7 @@ import { getCanonicalReaderState, subscribeCanonicalReaderState } from "./reader
       const character=characters.find(c=>c.id===characterId);
       const resolved=resolveMapState(state,byId,statesThroughChapter,sectionEvents);
       if(!resolved.location){unmapped.push({character,state,location:state.last_known_location ? byId.get(state.last_known_location) : null});return;}
-      const index=characters.findIndex(c=>c.id===characterId), color=characterColors[(index<0?0:index)%characterColors.length];
-      visibleCharacters.push({state,characterId,character,location:resolved.location,color,mode:resolved.mode});
+      visibleCharacters.push({state,characterId,character,location:resolved.location,color:character?.color,mode:resolved.mode});
     });
     renderUnmapped(unmapped);
     const contextualIds=new Set(); sectionEvents.forEach(e=>{if(e.location)contextualIds.add(e.location);if(e.origin)contextualIds.add(e.origin);if(e.destination&&e.destination!=="unknown")contextualIds.add(e.destination);(e.via??[]).forEach(v=>contextualIds.add(v));});
