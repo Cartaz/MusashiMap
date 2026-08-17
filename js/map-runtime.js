@@ -1,8 +1,8 @@
 import { loadMapData } from "./data.js";
-import { getCanonicalReaderState, getLatestStates, subscribeCanonicalReaderState } from "./reader-progress.js";
+import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260817-39";
+  const VERSION = "20260817-40";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -22,7 +22,6 @@ import { getCanonicalReaderState, getLatestStates, subscribeCanonicalReaderState
     if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno";
     return "Posizione indicativa dell'area";
   };
-  const displayCharacterName = (character, section) => !character ? "Personaggio sconosciuto" : character.id === "musashi" && section < 8 ? "Shinmen Takezō" : character.name;
 
   const popups = window.MusashiMapPopups;
   if (!popups) throw new Error("MusashiMap popup renderer is unavailable");
@@ -110,7 +109,7 @@ import { getCanonicalReaderState, getLatestStates, subscribeCanonicalReaderState
       const item = document.createElement("li");
       const name = document.createElement("span");
       name.className = "map-unmapped-name";
-      name.textContent = displayCharacterName(character, state.section);
+      name.textContent = getDisplayCharacterName(character, state.section);
       const meta = document.createElement("span");
       meta.className = "map-unmapped-meta";
       if (state.location_status === "departed_with_group" && state.group) {
@@ -125,11 +124,6 @@ import { getCanonicalReaderState, getLatestStates, subscribeCanonicalReaderState
     node.hidden = false;
   }
 
-  // Narrative state and map visibility are deliberately separate.
-  // current = physically present at the chapter's mapped location.
-  // reported = a mapped location explicitly reported/referred to by the text, without physical presence being established.
-  // last_known = the most recent physically established location retained after departure or loss of a current position.
-  // unmapped = genuinely no usable cartographic position.
   function resolveMapState(state, byId, allStates) {
     if (state?.location_status === "reported_position") {
       const reportedId = state.location || state.last_known_location;
@@ -212,7 +206,7 @@ import { getCanonicalReaderState, getLatestStates, subscribeCanonicalReaderState
 
     visibleCharacters.forEach(item => {
       const offset = offsets.get(`character:${item.characterId}`) ?? [0, 0];
-      const name = displayCharacterName(item.character, section);
+      const name = getDisplayCharacterName(item.character, section);
       const status = characterStatusLabel(item.mode);
       const label = locationLabel(item.location);
       const detail = item.mode === "current"
