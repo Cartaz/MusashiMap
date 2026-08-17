@@ -20,17 +20,6 @@
   const characterPanel = document.querySelector(".map-character-panel");
   const characterHeading = characterPanel?.querySelector(".panel-heading");
   const characterToggle = document.querySelector("#character-toggle");
-  const mapStage = characterPanel?.closest(".map-stage");
-
-  if (mapStage && characterPanel) {
-    mapStage.style.position = "relative";
-    characterPanel.style.position = "absolute";
-    characterPanel.style.top = "auto";
-    characterPanel.style.left = "10px";
-    characterPanel.style.right = "auto";
-    characterPanel.style.bottom = "10px";
-    characterPanel.style.zIndex = "500";
-  }
 
   if (characterPanel && characterHeading && characterToggle) {
     characterToggle.hidden = true;
