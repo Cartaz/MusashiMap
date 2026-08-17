@@ -5,15 +5,21 @@
 
 /* GOLD STANDARD: edit this class to propagate the panel visual language everywhere. */
 .panel-parchment{
-  --panel-surface:#e8ddc9;
+  --panel-surface:rgba(232,221,201,.97);
   --panel-border:1px solid rgba(75,60,39,.45);
   --panel-shadow-open:0 8px 22px rgba(43,34,22,.14);
   --panel-shadow-closed:0 8px 20px rgba(43,34,22,.22);
   --panel-text:var(--ink);
   --panel-font:var(--serif);
   --panel-kicker:var(--vermilion);
+  --panel-surface-image:radial-gradient(ellipse at 15% 10%,rgba(255,250,235,.34),transparent 42%),radial-gradient(ellipse at 86% 88%,rgba(92,67,35,.08),transparent 46%),var(--paper-noise);
+  --panel-surface-size:auto,auto,512px 512px;
+  --panel-surface-blend:normal,normal,multiply;
   box-sizing:border-box!important;
-  background:var(--panel-surface)!important;
+  background-color:var(--panel-surface)!important;
+  background-image:var(--panel-surface-image)!important;
+  background-size:var(--panel-surface-size)!important;
+  background-blend-mode:var(--panel-surface-blend)!important;
   border:var(--panel-border)!important;
   border-radius:0!important;
   box-shadow:var(--panel-shadow-open)!important;
@@ -33,7 +39,7 @@
 .panel-parchment #event-list,
 .panel-parchment .wiki-card p{font-family:var(--panel-font)!important}
 
-.pergamena-chiusa.is-collapsed{box-sizing:border-box!important;overflow:hidden!important;background:var(--panel-surface,var(--paper))!important;border:var(--panel-border,1px solid rgba(75,60,39,.45))!important;border-radius:0!important;box-shadow:var(--panel-shadow-closed,0 1px 4px rgba(45,34,20,.18))!important;color:var(--panel-text,var(--vermilion))!important}
+.pergamena-chiusa.is-collapsed{box-sizing:border-box!important;overflow:hidden!important;background-color:var(--panel-surface,var(--paper))!important;background-image:var(--panel-surface-image,none)!important;background-size:var(--panel-surface-size,auto)!important;background-blend-mode:var(--panel-surface-blend,normal)!important;border:var(--panel-border,1px solid rgba(75,60,39,.45))!important;border-radius:0!important;box-shadow:var(--panel-shadow-closed,0 1px 4px rgba(45,34,20,.18))!important;color:var(--panel-text,var(--vermilion))!important}
 .pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important}
 .pergamena-chiusa--orizzontale.is-collapsed{height:var(--pergamena-chiusa-size)!important}
 .map-legend.pergamena-chiusa{position:absolute!important;top:10px!important;right:10px!important;left:auto!important;bottom:auto!important;margin:0!important}
