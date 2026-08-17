@@ -30,6 +30,19 @@ export function subscribeCanonicalReaderState(subscriber) {
   return () => subscribers.delete(subscriber);
 }
 
+export function getLatestStates(states, currentSection, idKey = "character") {
+  const section = Number.parseInt(currentSection, 10);
+  if (!Number.isInteger(section)) return [];
+
+  const latest = new Map();
+  for (const state of states) {
+    if (!Number.isInteger(state.section) || state.section > section) continue;
+    const previous = latest.get(state[idKey]);
+    if (!previous || state.section > previous.section) latest.set(state[idKey], state);
+  }
+  return [...latest.values()];
+}
+
 export function createReaderProgress(chapters, initialSection = 1) {
   const sections = [...chapters.sections].sort((a, b) => a.number - b.number);
   if (!sections.length) throw new Error("No reader sections available");
@@ -70,22 +83,9 @@ export function createReaderProgress(chapters, initialSection = 1) {
       return items.filter(item => this.isVisible(item[firstSectionKey]));
     },
     visibleLatestStates(states, idKey = "character") {
-      const latest = new Map();
-      for (const state of states) {
-        if (!this.isVisible(state.section)) continue;
-        const previous = latest.get(state[idKey]);
-        if (!previous || state.section > previous.section) latest.set(state[idKey], state);
-      }
-      return [...latest.values()];
+      return getLatestStates(states, currentSection, idKey);
     }
   };
-}
-
-export function getVisibleHistoricalWiki(entries, currentSection) {
-  return entries.filter(entry => {
-    const first = entry.novel_trigger?.first_book1_section;
-    return Number.isInteger(first) && first <= currentSection;
-  });
 }
 
 // The micro-wiki is a reading aid, not a permanent encyclopedia index.
