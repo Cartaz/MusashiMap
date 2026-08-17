@@ -15,16 +15,7 @@
   --panel-surface-image:radial-gradient(ellipse at 15% 10%,rgba(255,250,235,.34),transparent 42%),radial-gradient(ellipse at 86% 88%,rgba(92,67,35,.08),transparent 46%),var(--paper-noise);
   --panel-surface-size:auto,auto,512px 512px;
   --panel-surface-blend:normal,normal,multiply;
-  box-sizing:border-box!important;
-  background-color:var(--panel-surface)!important;
-  background-image:var(--panel-surface-image)!important;
-  background-size:var(--panel-surface-size)!important;
-  background-blend-mode:var(--panel-surface-blend)!important;
-  border:var(--panel-border)!important;
-  border-radius:0!important;
-  box-shadow:var(--panel-shadow-open)!important;
-  color:var(--panel-text)!important;
-  font-family:var(--panel-font)!important;
+  box-sizing:border-box!important;background-color:var(--panel-surface)!important;background-image:var(--panel-surface-image)!important;background-size:var(--panel-surface-size)!important;background-blend-mode:var(--panel-surface-blend)!important;border:var(--panel-border)!important;border-radius:0!important;box-shadow:var(--panel-shadow-open)!important;color:var(--panel-text)!important;font-family:var(--panel-font)!important;
 }
 .panel-parchment:not(.is-collapsed)::before,.panel-parchment:not(.is-collapsed)::after{content:none!important}
 .panel-parchment .panel-heading h2,.panel-parchment .sidebar-heading h2,.panel-parchment>h2,.panel-parchment .sidebar-section h2{font-family:var(--panel-font)!important;color:var(--panel-text)!important}
@@ -33,7 +24,7 @@
 .pergamena-chiusa.is-collapsed{box-sizing:border-box!important;overflow:hidden!important;background-color:var(--panel-surface,var(--paper))!important;background-image:var(--panel-surface-image,none)!important;background-size:var(--panel-surface-size,auto)!important;background-blend-mode:var(--panel-surface-blend,normal)!important;border:var(--panel-border,1px solid rgba(75,60,39,.45))!important;border-radius:0!important;box-shadow:var(--panel-shadow-closed,0 1px 4px rgba(45,34,20,.18))!important;color:var(--panel-text,var(--vermilion))!important}
 .pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important}.pergamena-chiusa--orizzontale.is-collapsed{height:var(--pergamena-chiusa-size)!important}
 .map-legend.pergamena-chiusa{position:absolute!important;top:10px!important;right:10px!important;left:auto!important;bottom:auto!important;margin:0!important}.map-character-panel.pergamena-chiusa{position:absolute!important;left:10px!important;right:auto!important;bottom:10px!important;top:auto!important;margin:0!important}.info-panel.pergamena-chiusa{position:relative!important}
-.pergamena-chiusa.is-collapsed::before{content:none!important}.pergamena-chiusa.is-collapsed::after{content:none!important}
+.pergamena-chiusa.is-collapsed::before,.pergamena-chiusa.is-collapsed::after{content:none!important}
 .pergamena-chiusa.is-collapsed .panel-kicker,.pergamena-chiusa.is-collapsed .diary-collapsed-label{display:block!important;margin:0!important;padding:0!important;color:var(--panel-kicker,var(--vermilion))!important;font-family:"Cinzel",Georgia,"Times New Roman",serif!important;font-size:11px!important;font-weight:800!important;line-height:1!important;letter-spacing:.15em!important;text-transform:uppercase!important;white-space:nowrap!important}
 .pergamena-chiusa--verticale.is-collapsed .legend-heading,.pergamena-chiusa--verticale.is-collapsed .panel-heading,.pergamena-chiusa--verticale.is-collapsed .diary-toggle,.pergamena-chiusa--orizzontale.is-collapsed .panel-heading{width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;box-shadow:none!important}
 .pergamena-chiusa--verticale.is-collapsed .panel-heading>div:first-child{width:100%!important;display:flex!important;align-items:center!important;justify-content:center!important}
@@ -50,10 +41,13 @@
 
 /* Shared panel heading typography: MusashiMap title font, 11px everywhere, open and closed. */
 .panel-parchment .panel-kicker,.panel-parchment .diary-collapsed-label,.map-character-panel .panel-kicker,.info-panel .diary-collapsed-label,.pergamena-chiusa.is-collapsed .panel-kicker,.pergamena-chiusa.is-collapsed .diary-collapsed-label{font-family:"Cinzel",Georgia,"Times New Roman",serif!important;font-size:11px!important;font-weight:800!important;line-height:1!important;letter-spacing:.15em!important;text-transform:uppercase!important}
-/* Earth: same typography and panel heading color. */
 .map-overlay .placeholder-kicker{font-family:"Cinzel",Georgia,"Times New Roman",serif!important;font-size:11px!important;font-weight:800!important;line-height:1!important;letter-spacing:.15em!important;text-transform:uppercase!important;color:var(--panel-kicker,var(--vermilion))!important}
 
 /* EXPERIMENT: use Cinzel for every rendered text element in the application. */
 html,body,body *,body *::before,body *::after{font-family:"Cinzel",Georgia,"Times New Roman",serif!important}
-/* The diary has higher-specificity rules, so explicitly cover its entire subtree. */
-.info-panel,.info-panel *,.info-panel *::before,.info-panel *::after{font-family:"Cinzel",Georgia,"Times New Roman",serif!important}
+
+/* Travel diary: ui-redesign contains more-specific font shorthands. Match those selectors explicitly. */
+.info-panel .diary-toggle,.info-panel .diary-collapsed-label,.info-panel .diary-content,.info-panel .diary-content h2,.info-panel .diary-content>#status,.info-panel .diary-content>#validation,.info-panel .sidebar-section,.info-panel .sidebar-section h2,.info-panel .sidebar-heading,.info-panel .sidebar-heading .panel-kicker,.info-panel .sidebar-heading h2,.info-panel .sidebar-heading p,.info-panel #event-list,.info-panel #event-list li,.info-panel .wiki-card,.info-panel .wiki-card *,.info-panel .wiki-card-toggle,.info-panel .wiki-card-title,.info-panel .wiki-card-body,.info-panel .wiki-card-body p,.info-panel .wiki-subheading{font-family:"Cinzel",Georgia,"Times New Roman",serif!important}
+
+/* Highest-specificity diary descendants: override every font shorthand in ui-redesign. */
+.info-panel .diary-content>#status,.info-panel .diary-content>#validation,.info-panel #event-list li,.info-panel .wiki-card-toggle,.info-panel .wiki-card-body,.info-panel .wiki-subheading{font-family:"Cinzel",Georgia,"Times New Roman",serif!important}
