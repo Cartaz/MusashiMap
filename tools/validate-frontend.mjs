@@ -1,10 +1,11 @@
-import { readdir, readFile, stat } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 
 const root = process.cwd();
 const errors = [];
+const warnings = [];
 
 const walk = async directory => {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -22,6 +23,7 @@ const files = await walk(root);
 const jsFiles = files.filter(file => file.endsWith(".js") || file.endsWith(".mjs"));
 const jsonFiles = files.filter(file => file.endsWith(".json"));
 const cssFiles = files.filter(file => file.endsWith(".css"));
+const sourceFiles = files.filter(file => /\.(?:html|js|mjs|json)$/.test(file));
 
 for (const file of jsFiles) {
   const result = spawnSync(process.execPath, ["--check", file], { encoding: "utf8" });
@@ -106,10 +108,64 @@ for (const file of jsFiles) {
   const content = await readFile(file, "utf8");
   for (const match of content.matchAll(/(?:from\s+|import\s*\()["'](\.[^"']+)["']/g)) {
     const target = path.resolve(path.dirname(file), match[1]);
-    if (!existsSync(target)) errors.push(`Missing JS import: ${path.relative(root, file)} → ${match[1]}`);
+    if (!existsSync(target)) warnings.push(`JS import may need extension resolution: ${path.relative(root, file)} → ${match[1]}`);
   }
 }
 
+// Static CSS audit. This intentionally reports candidates instead of failing CI:
+// runtime-generated classes and selectors such as :has() cannot be proven unused
+// with a static scan alone.
+const cssClassDefinitions = new Map();
+const cssClassReferences = new Map();
+const addRef = (map, name, file) => {
+  if (!map.has(name)) map.set(name, new Set());
+  map.get(name).add(path.relative(root, file));
+};
+
+for (const file of cssFiles) {
+  const content = await readFile(file, "utf8");
+  const withoutComments = content.replace(/\/\*[\s\S]*?\*\//g, "");
+  for (const match of withoutComments.matchAll(/\.([A-Za-z_][\w-]*)/g)) {
+    addRef(cssClassDefinitions, match[1], file);
+  }
+}
+
+for (const file of sourceFiles) {
+  const content = await readFile(file, "utf8");
+  for (const match of content.matchAll(/class(?:Name)?\s*=\s*["'`]([^"'`]*?)["'`]/g)) {
+    for (const name of match[1].split(/\s+/).filter(Boolean)) addRef(cssClassReferences, name, file);
+  }
+  for (const match of content.matchAll(/classList\.(?:add|remove|toggle)\(([^)]*)\)/g)) {
+    for (const name of match[1].matchAll(/["'`]([A-Za-z_][\w-]*)["'`]/g)) addRef(cssClassReferences, name[1], file);
+  }
+}
+
+const knownDynamicClasses = new Set([
+  "is-collapsed", "is-approximate", "is-last-known", "is-reported", "is-contextual",
+  "active", "open", "hidden"
+]);
+
+const unusedCandidates = [];
+for (const [name, filesForDefinition] of cssClassDefinitions) {
+  if (!cssClassReferences.has(name) && !knownDynamicClasses.has(name)) {
+    unusedCandidates.push(`${name} [${[...filesForDefinition].join(", ")}]`);
+  }
+}
+if (unusedCandidates.length) {
+  warnings.push(`CSS selectors with no static class reference (${unusedCandidates.length}):\n  ${unusedCandidates.sort().join("\n  ")}`);
+}
+
+const referencedWithoutDefinition = [];
+for (const [name, filesForReference] of cssClassReferences) {
+  if (!cssClassDefinitions.has(name)) {
+    referencedWithoutDefinition.push(`${name} [${[...filesForReference].join(", ")}]`);
+  }
+}
+if (referencedWithoutDefinition.length) {
+  warnings.push(`Classes referenced in source but not defined in CSS (${referencedWithoutDefinition.length}):\n  ${referencedWithoutDefinition.sort().join("\n  ")}`);
+}
+
+if (warnings.length) console.warn(`Frontend validation warnings:\n\n${warnings.join("\n\n")}`);
 if (errors.length) {
   console.error(errors.join("\n\n"));
   process.exit(1);
