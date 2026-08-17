@@ -8,6 +8,7 @@ if(legend&&heading&&label){
   heading.setAttribute("aria-controls","place-legend");
   const setOpen=(open)=>{
     legend.classList.toggle("is-collapsed",!open);
+    legend.classList.toggle("is-open",open);
     heading.setAttribute("aria-expanded",String(open));
     heading.setAttribute("aria-label",open?"Chiudi legenda":"Apri legenda");
   };
@@ -17,8 +18,8 @@ if(legend&&heading&&label){
   setOpen(false);
 }
 
-/* The existing masthead is the single diary toggle. Do not create a second
-   button: the closed-parchment component owns its visual styling. */
+/* The existing masthead is the single diary toggle. The closed-parchment
+   component owns its visual styling; this script only owns state and wrapping. */
 const diary=document.querySelector(".info-panel");
 const diaryToggle=diary?.querySelector(".diary-toggle");
 if(diary&&diaryToggle){
@@ -27,8 +28,7 @@ if(diary&&diaryToggle){
     content=document.createElement("div");
     content.id="diary-content";
     content.className="diary-content";
-    const children=[...diary.children].filter(child=>child!==diaryToggle);
-    children.forEach(child=>content.appendChild(child));
+    [...diary.children].filter(child=>child!==diaryToggle).forEach(child=>content.appendChild(child));
     diary.appendChild(content);
   }
 
