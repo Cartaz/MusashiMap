@@ -20,5 +20,8 @@ if(legend&&heading&&label){
   heading.addEventListener("keydown",event=>{
     if(event.key==="Enter"||event.key===" "){event.preventDefault();toggle();}
   });
-  setOpen(true);
+
+  // Start collapsed on every page load. The user can open it by clicking
+  // the heading; no preference is persisted between loads.
+  setOpen(false);
 }
