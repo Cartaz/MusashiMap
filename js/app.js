@@ -5,14 +5,15 @@ import { createReaderProgress, getCanonicalReaderState, getRelevantHistoricalWik
 const chapterInput=document.querySelector("#chapter"),chapterApply=document.querySelector("#chapter-apply"),prevButton=document.querySelector("#prev-section"),nextButton=document.querySelector("#next-section"),sectionSelect=document.querySelector("#section-select"),bookLabel=document.querySelector("#book-label"),title=document.querySelector("#section-title"),status=document.querySelector("#status"),characterList=document.querySelector("#character-list"),eventList=document.querySelector("#event-list"),wikiList=document.querySelector("#wiki-list"),validation=document.querySelector("#validation"),characterFilters=document.querySelector("#character-filters"),placeLegend=document.querySelector("#place-legend"),selectAll=document.querySelector("#select-all"),selectNone=document.querySelector("#select-none"),characterToggle=document.querySelector("#character-toggle"),characterFilterBody=document.querySelector("#character-filter-body");
 const placeLegendGroups=[
   {types:["exact_site"],label:"Sito preciso",iconType:"literary_landmark"},
-  {types:["settlement","urban_area"],label:"Insediamento",iconType:"city"},
-  {types:["settlement_area"],label:"Villaggio / area abitata",iconType:"village"},
-  {types:["area","region"],label:"Area geografica / regione",iconType:"area"},
-  {types:["river"],label:"Fiume / corso d'acqua",iconType:"river"},
+  {types:["urban_area"],label:"Città",iconType:"city"},
+  {types:["settlement"],label:"Insediamento",iconType:"city"},
+  {types:["settlement_area"],label:"Villaggio",iconType:"village"},
+  {types:["area","region"],label:"Area / regione",iconType:"area"},
+  {types:["river"],label:"Fiume",iconType:"river"},
   {types:["route","bridge"],label:"Percorso / ponte",iconType:"route"},
-  {types:["temple"],label:"Tempio / santuario",iconType:"temple"},
+  {types:["temple"],label:"Tempio",iconType:"temple"},
   {types:["castle","fortified_site"],label:"Castello / fortificazione",iconType:"castle"},
-  {types:["narrative_site","literary_landmark"],label:"Luogo narrativo / letterario",iconType:"literary_landmark"}
+  {types:["narrative_site","literary_landmark"],label:"Luogo narrativo",iconType:"literary_landmark"}
 ];
 const iconPaths={temple:"assets/icons/places/temple.svg",castle:"assets/icons/places/castle.svg",city:"assets/icons/places/city.svg",village:"assets/icons/places/village.svg",area:"assets/icons/places/area.svg",river:"assets/icons/places/river.svg",route:"assets/icons/places/route.svg",literary_landmark:"assets/icons/places/landmark.svg"};const characterColors=["#e0a04b","#8fb3c9","#b99ad6","#b8c7a4","#d9a0b7","#c9d1d9"];let data,reader;
 function characterDisplayName(character,section){if(character?.id==="musashi"&&section<=8)return "Shinmen Takezō";return character?.name??"Personaggio sconosciuto";}
