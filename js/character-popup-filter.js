@@ -9,8 +9,6 @@
   const characterHeading=characterPanel?.querySelector(".panel-heading");
   const characterToggle=document.querySelector("#character-toggle");
 
-  // The parchment belongs to the map viewport. Make that containing block explicit
-  // so its bottom anchor can never resolve against the page/header.
   const mapStage=characterPanel?.closest(".map-stage");
   if(mapStage&&characterPanel){
     mapStage.style.position="relative";
@@ -38,6 +36,43 @@
     const toggle=()=>setOpen(characterPanel.classList.contains("is-collapsed"));
     characterHeading.addEventListener("click",toggle);
     characterHeading.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();toggle();}});
+  }
+
+  // The diary reuses the same rolled-parchment primitive as the map panels.
+  const diary=document.querySelector(".info-panel");
+  const diaryMasthead=diary?.querySelector(".sidebar-masthead");
+  if(diary&&diaryMasthead){
+    diary.classList.add("pergamena-arrotolata","pergamena-arrotolata--vertical","is-collapsed");
+    diary.setAttribute("aria-expanded","false");
+    diaryMasthead.classList.add("diary-toggle");
+    diaryMasthead.setAttribute("role","button");
+    diaryMasthead.setAttribute("tabindex","0");
+    diaryMasthead.setAttribute("aria-controls","diary-content");
+    diaryMasthead.setAttribute("aria-expanded","false");
+
+    const label=diaryMasthead.querySelector("span:last-child");
+    if(label){
+      label.classList.add("diary-collapsed-label");
+      const openLabel=label.cloneNode(true);
+      openLabel.className="diary-open-label";
+      diaryMasthead.append(openLabel);
+    }
+
+    const content=document.createElement("div");
+    content.id="diary-content";
+    content.className="diary-content";
+    [...diary.children].filter(child=>child!==diaryMasthead).forEach(child=>content.append(child));
+    diary.append(content);
+
+    const setDiaryOpen=open=>{
+      diary.classList.toggle("is-collapsed",!open);
+      diary.setAttribute("aria-expanded",String(open));
+      diaryMasthead.setAttribute("aria-expanded",String(open));
+    };
+    const toggleDiary=()=>setDiaryOpen(diary.classList.contains("is-collapsed"));
+    diaryMasthead.addEventListener("click",toggleDiary);
+    diaryMasthead.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();toggleDiary();}});
+    setDiaryOpen(false);
   }
 
   function renderPopup(kind, data){
