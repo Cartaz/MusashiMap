@@ -8,7 +8,6 @@
   --pergamena-chiusa-roll-width:16px;
 }
 
-/* CANONICAL CLOSED PARCHMENT — all three UI components inherit their visual identity here. */
 .pergamena-chiusa.is-collapsed{
   box-sizing:border-box!important;position:relative!important;overflow:hidden!important;
   background:var(--pergamena-chiusa-surface)!important;border:var(--pergamena-chiusa-border)!important;
@@ -50,8 +49,9 @@
 .pergamena-chiusa.is-collapsed .legend-items,.pergamena-chiusa.is-collapsed .diary-content,.pergamena-chiusa.is-collapsed .sidebar-section,
 .pergamena-chiusa.is-collapsed>h2,.pergamena-chiusa.is-collapsed>#status,.pergamena-chiusa.is-collapsed>#validation{display:none!important}
 
-/* Position/geometry only; open-state styles remain owned by the original components. */
-.map-legend.pergamena-chiusa--vertical.is-collapsed{top:18px!important;right:18px!important;left:auto!important;bottom:auto!important;width:var(--pergamena-chiusa-size)!important;height:96px!important;padding:0!important;margin:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+/* The map-stage already ends exactly at the diary column. Keeping the legend
+   10px from that edge makes it move automatically when the diary opens. */
+.map-legend.pergamena-chiusa--vertical.is-collapsed{top:10px!important;right:10px!important;left:auto!important;bottom:auto!important;width:var(--pergamena-chiusa-size)!important;height:96px!important;padding:0!important;margin:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
 .map-legend.pergamena-chiusa--vertical.is-collapsed .legend-heading{height:100%!important}
 .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{left:10px!important;right:auto!important;bottom:10px!important;width:540px!important;height:var(--pergamena-chiusa-size)!important;padding:0!important}
 .info-panel.pergamena-chiusa--vertical.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}
@@ -59,7 +59,7 @@
 .info-panel.pergamena-chiusa--vertical.is-collapsed .diary-toggle{width:100%!important;height:100%!important;min-height:0!important}
 
 @media(max-width:760px){
- .map-legend.pergamena-chiusa--vertical.is-collapsed{top:auto!important;right:8px!important;bottom:calc(119px + env(safe-area-inset-bottom))!important;width:var(--pergamena-chiusa-size)!important;height:96px!important}
+ .map-legend.pergamena-chiusa--vertical.is-collapsed{top:10px!important;right:10px!important;bottom:auto!important;width:var(--pergamena-chiusa-size)!important;height:96px!important}
  .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{left:10px!important;right:auto!important;bottom:max(10px,env(safe-area-inset-bottom))!important;width:calc(100% - 20px)!important;height:var(--pergamena-chiusa-size)!important}
  .info-panel.pergamena-chiusa--vertical.is-collapsed{width:100%!important;height:96px!important}
  .app-shell:has(> .info-panel.pergamena-chiusa--vertical.is-collapsed){grid-template-columns:1fr!important}
