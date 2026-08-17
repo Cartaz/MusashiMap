@@ -21,18 +21,20 @@
   text-transform:uppercase;
 }
 
-/* Horizontal parchment: its closed height remains the canonical 96px used by the character traces panel. */
 .pergamena-arrotolata--orizzontale.is-collapsed{
   height:var(--parchment-horizontal-closed-size);
 }
 
-/* Vertical parchment: deliberately narrower, matching the compact visual weight of the other closed controls. */
+/* A vertical parchment is also a real grid column: when collapsed, the map expands
+   into the space formerly occupied by the open diary, leaving exactly 54px for it. */
 .pergamena-arrotolata--vertical.is-collapsed{
-  width:var(--parchment-vertical-closed-size);
+  width:100%;
   height:100%;
   padding:0;
 }
-
+.app-shell:has(> .info-panel.pergamena-arrotolata--vertical.is-collapsed){
+  grid-template-columns:minmax(0,1fr) var(--parchment-vertical-closed-size);
+}
 .pergamena-arrotolata--vertical.is-collapsed .diary-toggle{
   width:100%;
   height:100%;
@@ -43,7 +45,6 @@
   align-items:center;
   justify-content:center;
 }
-
 .pergamena-arrotolata--vertical.is-collapsed .diary-collapsed-label{
   color:var(--gold);
   font-size:9px;
@@ -60,7 +61,18 @@
 
 /* Keep the diary open state visually identical to the existing paper sidebar. */
 .pergamena-arrotolata--vertical:not(.is-collapsed){
+  width:100%;
   background:#e8ddc9;
   border-left:1px solid var(--line);
   box-shadow:-6px 0 20px rgba(57,44,27,.05);
+}
+
+@media(max-width:760px){
+  .app-shell:has(> .info-panel.pergamena-arrotolata--vertical.is-collapsed){
+    grid-template-columns:1fr;
+  }
+  .pergamena-arrotolata--vertical.is-collapsed{
+    width:100%;
+    height:54px;
+  }
 }
