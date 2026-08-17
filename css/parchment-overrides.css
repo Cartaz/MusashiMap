@@ -8,38 +8,44 @@
   --pergamena-chiusa-roll-width:16px;
 }
 
+/* Canonical closed parchment. Open state keeps its original component layout. */
 .pergamena-chiusa.is-collapsed{box-sizing:border-box!important;position:relative!important;overflow:hidden!important;background:var(--pergamena-chiusa-surface)!important;border:var(--pergamena-chiusa-border)!important;border-radius:0!important;box-shadow:var(--pergamena-chiusa-shadow)!important;color:var(--pergamena-chiusa-text)!important}
-.pergamena-chiusa--vertical.is-collapsed{width:var(--pergamena-chiusa-size)!important}
+.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important}
 .pergamena-chiusa--orizzontale.is-collapsed{height:var(--pergamena-chiusa-size)!important}
 
 .pergamena-chiusa.is-collapsed::before{content:none!important}
 .pergamena-chiusa.is-collapsed::after{content:"";position:absolute;pointer-events:none;z-index:50}
-.pergamena-chiusa--vertical.is-collapsed::after{top:-1px;bottom:-1px;right:-1px;width:var(--pergamena-chiusa-roll-width);background:linear-gradient(90deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 45%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.48));box-shadow:-3px 0 4px rgba(58,43,25,.16),2px 0 5px rgba(58,43,25,.20)}
+.pergamena-chiusa--verticale.is-collapsed::after{top:-1px;bottom:-1px;right:-1px;width:var(--pergamena-chiusa-roll-width);background:linear-gradient(90deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 45%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.48));box-shadow:-3px 0 4px rgba(58,43,25,.16),2px 0 5px rgba(58,43,25,.20)}
 .pergamena-chiusa--orizzontale.is-collapsed::after{left:-1px;right:-1px;bottom:-1px;height:var(--pergamena-chiusa-roll-width);background:linear-gradient(180deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 46%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.48));box-shadow:0 -3px 4px rgba(58,43,25,.16),0 2px 5px rgba(58,43,25,.20)}
 
 .pergamena-chiusa.is-collapsed .panel-kicker,.pergamena-chiusa.is-collapsed .diary-collapsed-label{display:block!important;margin:0!important;padding:0!important;color:var(--pergamena-chiusa-text)!important;font:var(--pergamena-chiusa-font)!important;letter-spacing:.04em!important;text-transform:uppercase!important;white-space:nowrap!important}
-.pergamena-chiusa--vertical.is-collapsed .legend-heading,.pergamena-chiusa--vertical.is-collapsed .panel-heading,.pergamena-chiusa--vertical.is-collapsed .diary-toggle,.pergamena-chiusa--orizzontale.is-collapsed .panel-heading{width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;box-shadow:none!important}
-.pergamena-chiusa--vertical.is-collapsed .panel-heading>div:first-child{width:100%!important;display:flex!important;align-items:center!important;justify-content:center!important}
-.pergamena-chiusa--vertical.is-collapsed .panel-kicker,.pergamena-chiusa--vertical.is-collapsed .diary-collapsed-label{writing-mode:vertical-rl!important;transform:rotate(180deg)!important}
+.pergamena-chiusa--verticale.is-collapsed .legend-heading,.pergamena-chiusa--verticale.is-collapsed .panel-heading,.pergamena-chiusa--verticale.is-collapsed .diary-toggle,.pergamena-chiusa--orizzontale.is-collapsed .panel-heading{width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;box-shadow:none!important}
+.pergamena-chiusa--verticale.is-collapsed .panel-heading>div:first-child{width:100%!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.pergamena-chiusa--verticale.is-collapsed .panel-kicker,.pergamena-chiusa--verticale.is-collapsed .diary-collapsed-label{writing-mode:vertical-rl!important;transform:rotate(180deg)!important}
 .pergamena-chiusa.is-collapsed .character-filter-body,.pergamena-chiusa.is-collapsed .filter-actions,.pergamena-chiusa.is-collapsed .panel-heading h2,.pergamena-chiusa.is-collapsed .panel-heading>div:first-child>p:not(.panel-kicker),.pergamena-chiusa.is-collapsed .legend-items,.pergamena-chiusa.is-collapsed .diary-content,.pergamena-chiusa.is-collapsed .sidebar-section,.pergamena-chiusa.is-collapsed>h2,.pergamena-chiusa.is-collapsed>#status,.pergamena-chiusa.is-collapsed>#validation{display:none!important}
 
-/* Position is shared by both states: only size changes when the parchment rolls. */
+/* Open character selector: canonical parchment does not suppress its filter content. */
+.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter-body{display:block!important;visibility:visible!important}
+.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filters{display:grid!important;visibility:visible!important}
+.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter{display:flex!important;visibility:visible!important}
+
+/* Position is shared by both states. State changes only dimensions/visibility. */
 .map-legend.pergamena-chiusa{top:10px!important;right:10px!important;left:auto!important;bottom:auto!important;margin:0!important}
 .map-character-panel.pergamena-chiusa{left:10px!important;right:auto!important;bottom:10px!important;top:auto!important;margin:0!important}
 
-.map-legend.pergamena-chiusa--vertical.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:96px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
-.map-legend.pergamena-chiusa--vertical.is-collapsed .legend-heading{height:100%!important}
+.map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:96px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.map-legend.pergamena-chiusa--verticale.is-collapsed .legend-heading{height:100%!important}
 .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:540px!important;height:var(--pergamena-chiusa-size)!important;padding:0!important}
-.info-panel.pergamena-chiusa--vertical.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}
-.app-shell:has(> .info-panel.pergamena-chiusa--vertical.is-collapsed){grid-template-columns:minmax(0,1fr) var(--pergamena-chiusa-size)!important}
-.info-panel.pergamena-chiusa--vertical.is-collapsed .diary-toggle{width:100%!important;height:100%!important;min-height:0!important}
+.info-panel.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}
+.app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:minmax(0,1fr) var(--pergamena-chiusa-size)!important}
+.info-panel.pergamena-chiusa--verticale.is-collapsed .diary-toggle{width:100%!important;height:100%!important;min-height:0!important}
 
 @media(max-width:760px){
  .map-legend.pergamena-chiusa{top:10px!important;right:10px!important}
  .map-character-panel.pergamena-chiusa{left:10px!important;right:auto!important;bottom:max(10px,env(safe-area-inset-bottom))!important}
- .map-legend.pergamena-chiusa--vertical.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:96px!important}
+ .map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:96px!important}
  .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:calc(100% - 20px)!important;height:var(--pergamena-chiusa-size)!important}
- .info-panel.pergamena-chiusa--vertical.is-collapsed{width:100%!important;height:96px!important}
- .app-shell:has(> .info-panel.pergamena-chiusa--vertical.is-collapsed){grid-template-columns:1fr!important}
+ .info-panel.pergamena-chiusa--verticale.is-collapsed{width:100%!important;height:96px!important}
+ .app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:1fr!important}
 }
 @media(prefers-reduced-motion:reduce){.pergamena-chiusa{transition:none!important}}
