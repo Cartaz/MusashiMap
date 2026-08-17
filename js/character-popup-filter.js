@@ -2,21 +2,43 @@
   const originalBindPopup = L.Marker.prototype.bindPopup;
   const characterStatuses = ["Presenza fisica", "Posizione riferita", "Ultima posizione nota", "Posizione non determinata"];
 
-  const extract = (html, pattern) => {
-    const match = html.match(pattern);
-    return match ? match[1] : "";
+  const escapeHtml = value => String(value ?? "").replace(/[&<>\"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;"
+  }[char]));
+
+  const capitalizeFirst = value => {
+    const text = String(value ?? "").trim();
+    return text ? text.charAt(0).toLocaleUpperCase("it-IT") + text.slice(1) : "";
   };
 
   L.Marker.prototype.bindPopup = function (content, options) {
     if (typeof content === "string" && characterStatuses.some(status => content.includes(`<b>${status}</b>`))) {
-      const name = extract(content, /^<strong>(.*?)<\/strong>/);
-      const location = extract(content, /<\/b><br>(.*?)<br><small>/);
-      const activity = extract(content, /<\/span>(?:<br><small>(.*?)<\/small>)?/);
+      // map-runtime builds character popups in this fixed reader-facing order:
+      // name → technical status → location → precision → technical note → activity.
+      const match = content.match(
+        /^<strong>(.*?)<\/strong><br><b>.*?<\/b><br>(.*?)<br><small>.*?<\/small><br><span>.*?<\/span>(?:<br><small>(.*?)<\/small>)?$/
+      );
 
-      // Character popups expose only reader-facing information.
-      // The marker itself communicates the technical position semantics.
-      const readerContent = `<strong>${name}</strong><br>${location}${activity ? `<br><span>${activity}</span>` : ""}`;
-      return originalBindPopup.call(this, readerContent, options);
+      if (match) {
+        const [, name, location, rawActivity = ""] = match;
+        const activity = capitalizeFirst(rawActivity);
+        const readerContent = [
+          `<strong>${name}</strong>`,
+          `<br><em class="character-popup-location">${location}</em>`,
+          activity ? `<div class="character-popup-activity">${escapeHtml(activity)}</div>` : ""
+        ].join("");
+
+        const popupOptions = {
+          ...(options ?? {}),
+          className: `${options?.className ?? ""} musashi-character-popup`.trim()
+        };
+
+        return originalBindPopup.call(this, readerContent, popupOptions);
+      }
     }
 
     return originalBindPopup.call(this, content, options);
