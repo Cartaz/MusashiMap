@@ -85,18 +85,3 @@
 .musashi-character-marker.is-last-known.is-approximate {
   border-style: solid !important;
 }
-
-/* Legacy contextual class retained for compatibility with older cached markup. */
-.musashi-character-marker.is-contextual {
-  opacity: 1 !important;
-  width: 22px !important;
-  height: 22px !important;
-  background: var(--marker-color) !important;
-  border: 3px solid #f4ead8 !important;
-  border-radius: 50% !important;
-  box-shadow: 0 0 0 2px #9ca3af, 0 3px 9px rgba(39,31,20,.32) !important;
-}
-
-.musashi-character-marker.is-contextual.is-approximate {
-  border-style: dashed !important;
-}
