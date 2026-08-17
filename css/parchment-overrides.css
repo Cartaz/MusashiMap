@@ -76,3 +76,24 @@
 .info-panel #event-list li{border-bottom:0!important}
 .info-panel .wiki-card{border:0!important}
 .info-panel .wiki-card:last-child{border-bottom:0!important}
+
+/* Shared panel heading typography: Legenda open is the visual reference. */
+.panel-parchment .panel-kicker,
+.panel-parchment .diary-collapsed-label{
+  font-family:var(--panel-font,Georgia,"Times New Roman",serif)!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+}
+
+/* The upper-left book label (Earth) follows the same panel typography. */
+.map-overlay .placeholder-kicker{
+  font-family:var(--panel-font,Georgia,"Times New Roman",serif)!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+}
