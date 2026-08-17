@@ -5,6 +5,9 @@
   const escapeHtml = value => String(value ?? "").replace(/[&<>\"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
   const capitalizeFirst = value => { const text=String(value ?? "").trim(); return text ? text.charAt(0).toLocaleUpperCase("it-IT")+text.slice(1) : ""; };
   const popupOptions = (options,className) => ({...(options ?? {}),className:`${options?.className ?? ""} ${className}`.trim()});
+  const characterPanel=document.querySelector(".map-character-panel");
+  const characterToggle=document.querySelector("#character-toggle");
+  if(characterPanel&&characterToggle){characterToggle.hidden=false;characterToggle.setAttribute("aria-expanded","false");characterToggle.textContent="Mostra filtri";characterPanel.classList.add("is-collapsed");}
 
   // Single presentation engine for every map popup. The content model changes by kind,
   // but the visual grammar stays consistent: title, secondary line, separated description.
