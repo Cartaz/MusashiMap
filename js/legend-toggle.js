@@ -24,35 +24,6 @@ if (legend && heading) {
   setOpen(false);
 }
 
-const characterPanel = document.querySelector(".map-character-panel");
-const characterHeading = characterPanel?.querySelector(".panel-heading");
-const characterToggle = document.querySelector("#character-toggle");
-
-if (characterPanel && characterHeading && characterToggle) {
-  characterToggle.hidden = true;
-  characterToggle.setAttribute("aria-expanded", "false");
-  characterPanel.classList.add("is-collapsed");
-  characterHeading.setAttribute("role", "button");
-  characterHeading.setAttribute("tabindex", "0");
-  characterHeading.setAttribute("aria-controls", "character-filter-body");
-  characterHeading.setAttribute("aria-expanded", "false");
-
-  const setOpen = open => {
-    characterPanel.classList.toggle("is-collapsed", !open);
-    characterHeading.setAttribute("aria-expanded", String(open));
-    characterToggle.setAttribute("aria-expanded", String(open));
-  };
-
-  const toggle = () => setOpen(characterPanel.classList.contains("is-collapsed"));
-  characterHeading.addEventListener("click", toggle);
-  characterHeading.addEventListener("keydown", event => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      toggle();
-    }
-  });
-}
-
 /* The existing masthead is the single diary toggle. The closed-parchment
    component owns its visual styling; this script only owns state and wrapping. */
 const diary = document.querySelector(".info-panel");
