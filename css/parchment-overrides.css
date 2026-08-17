@@ -55,3 +55,5 @@
 
 /* EXPERIMENT: use Cinzel for every rendered text element in the application. */
 html,body,body *,body *::before,body *::after{font-family:"Cinzel",Georgia,"Times New Roman",serif!important}
+/* The diary has higher-specificity rules, so explicitly cover its entire subtree. */
+.info-panel,.info-panel *,.info-panel *::before,.info-panel *::after{font-family:"Cinzel",Georgia,"Times New Roman",serif!important}
