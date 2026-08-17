@@ -1,0 +1,26 @@
+/* Diary narrative presentation: prose, not database rows. */
+.info-panel #event-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.info-panel #event-list li {
+  margin: 0;
+  padding: 0;
+  color: var(--panel-text, var(--ink));
+  font: 500 13px/1.65 var(--panel-font, Georgia, "Times New Roman", serif);
+}
+
+@media (max-width: 760px) {
+  .info-panel #event-list {
+    gap: 12px;
+  }
+
+  .info-panel #event-list li {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
