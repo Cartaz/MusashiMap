@@ -1,4 +1,4 @@
-const ASSET_VERSION = "20260816-25";
+const ASSET_VERSION = "20260817-39";
 
 async function loadJson(path) {
   const response = await fetch(`${path}?v=${ASSET_VERSION}`, { cache: "no-store" });
@@ -18,4 +18,14 @@ export async function loadData() {
     loadJson("data/context/character-wiki.json")
   ]);
   return { characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki };
+}
+
+export async function loadMapData() {
+  const [locations, events, states, characters] = await Promise.all([
+    loadJson("data/locations.json"),
+    loadJson("data/events.json"),
+    loadJson("data/character-states.json"),
+    loadJson("data/characters.json")
+  ]);
+  return { locations, events, states, characters };
 }
