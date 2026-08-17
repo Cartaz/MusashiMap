@@ -5,8 +5,7 @@ import { createReaderProgress, getCanonicalReaderState, getRelevantHistoricalWik
 const chapterInput=document.querySelector("#chapter"),chapterApply=document.querySelector("#chapter-apply"),prevButton=document.querySelector("#prev-section"),nextButton=document.querySelector("#next-section"),sectionSelect=document.querySelector("#section-select"),bookLabel=document.querySelector("#book-label"),title=document.querySelector("#section-title"),status=document.querySelector("#status"),characterList=document.querySelector("#character-list"),eventList=document.querySelector("#event-list"),wikiList=document.querySelector("#wiki-list"),validation=document.querySelector("#validation"),characterFilters=document.querySelector("#character-filters"),placeLegend=document.querySelector("#place-legend"),selectAll=document.querySelector("#select-all"),selectNone=document.querySelector("#select-none"),characterToggle=document.querySelector("#character-toggle"),characterFilterBody=document.querySelector("#character-filter-body");
 const placeLegendGroups=[
   {types:["exact_site"],label:"Sito preciso",iconType:"literary_landmark"},
-  {types:["urban_area"],label:"Città",iconType:"city"},
-  {types:["settlement"],label:"Insediamento",iconType:"city"},
+  {types:["urban_area","settlement"],label:"Città / insediamento",iconType:"city"},
   {types:["settlement_area"],label:"Villaggio",iconType:"village"},
   {types:["area","region"],label:"Area / regione",iconType:"area"},
   {types:["river"],label:"Fiume",iconType:"river"},
@@ -15,7 +14,7 @@ const placeLegendGroups=[
   {types:["castle","fortified_site"],label:"Castello / fortificazione",iconType:"castle"},
   {types:["narrative_site","literary_landmark"],label:"Luogo narrativo",iconType:"literary_landmark"}
 ];
-const iconPaths={temple:"assets/icons/places/temple.svg",castle:"assets/icons/places/castle.svg",city:"assets/icons/places/city.svg",village:"assets/icons/places/village.svg",area:"assets/icons/places/area.svg",river:"assets/icons/places/river.svg",route:"assets/icons/places/route.svg",literary_landmark:"assets/icons/places/landmark.svg"};const characterColors=["#e0a04b","#8fb3c9","#b99ad6","#b8c7a4","#d9a0b7","#c9d1d9"];let data,reader;
+const iconPaths={temple:"assets/icons/places/temple.svg",castle:"assets/icons/places/castle.svg",city:"assets/icons/places/city.svg",village:"assets/icons/places/village.svg",area:"assets/icons/places/area.svg",river:"assets/icons/places/river.svg",route:"assets/icons/places/route.svg",literary_landmark:"assets/icons/places/landmark.svg"};let data,reader;
 function characterDisplayName(character,section){if(character?.id==="musashi"&&section<=8)return "Shinmen Takezō";return character?.name??"Personaggio sconosciuto";}
 function applySection(value){if(!reader.setSection(value))return false;const state=getCanonicalReaderState();setCanonicalReaderState({section:reader.section,selectedCharacters:state.selectedCharacters});return true;}
 function renderPlaceLegend(){const usedTypes=new Set(data.locations.locations.map(location=>location.type));placeLegend.replaceChildren(...placeLegendGroups.filter(group=>group.types.some(type=>usedTypes.has(type))).map(group=>{const item=document.createElement("div");item.className="legend-item";const swatch=document.createElement("span");swatch.className=`legend-swatch legend-${group.iconType}`;swatch.setAttribute("aria-hidden","true");const image=document.createElement("img");image.src=iconPaths[group.iconType];image.alt="";image.draggable=false;swatch.append(image);const text=document.createElement("span");text.textContent=group.label;item.append(swatch,text);return item;}));}
