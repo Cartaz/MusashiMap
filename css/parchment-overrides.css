@@ -3,11 +3,13 @@
   --parchment-vertical-closed-size:54px;
   --parchment-closed-border:1px solid rgba(75,60,39,.45);
   --parchment-closed-shadow:0 1px 4px rgba(45,34,20,.18);
+  --parchment-closed-surface:rgb(244,235,218);
+  --parchment-closed-title:var(--gold);
 }
 
-/* Shared closed parchment: the visual shell belongs to the component, not to the panel using it. */
+/* Closed parchment uses exactly the same visual shell as the map legend. */
 .pergamena-arrotolata.is-collapsed{
-  background:rgb(244,235,218);
+  background:var(--parchment-closed-surface);
   border:var(--parchment-closed-border);
   box-shadow:var(--parchment-closed-shadow);
   color:var(--ink);
@@ -15,7 +17,7 @@
 
 .pergamena-arrotolata.is-collapsed .panel-kicker,
 .pergamena-arrotolata.is-collapsed .diary-collapsed-label{
-  color:var(--gold);
+  color:var(--parchment-closed-title);
   font:700 10px/1 Inter,ui-sans-serif,system-ui,sans-serif;
   letter-spacing:.16em;
   text-transform:uppercase;
@@ -25,8 +27,8 @@
   height:var(--parchment-horizontal-closed-size);
 }
 
-/* A vertical parchment is also a real grid column: when collapsed, the map expands
-   into the space formerly occupied by the open diary, leaving exactly 54px for it. */
+/* The vertical parchment is the same closed parchment rotated 90 degrees:
+   same surface, border, shadow, typography and roll depth; only its axis changes. */
 .pergamena-arrotolata--vertical.is-collapsed{
   width:100%;
   height:100%;
@@ -46,17 +48,15 @@
   justify-content:center;
 }
 .pergamena-arrotolata--vertical.is-collapsed .diary-collapsed-label{
-  color:var(--gold);
-  font-size:9px;
-  letter-spacing:.14em;
+  color:var(--parchment-closed-title);
+  font:700 10px/1 Inter,ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.16em;
 }
 
-/* The same rolled edge treatment is used by every vertical parchment. */
-.pergamena-arrotolata--vertical.is-collapsed::before{
-  width:9px;
-}
+/* Same roll treatment as the legend, rotated onto the two vertical edges. */
+.pergamena-arrotolata--vertical.is-collapsed::before,
 .pergamena-arrotolata--vertical.is-collapsed::after{
-  width:12px;
+  width:16px;
 }
 
 /* Keep the diary open state visually identical to the existing paper sidebar. */
