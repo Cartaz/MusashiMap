@@ -43,6 +43,11 @@ export function getLatestStates(states, currentSection, idKey = "character") {
   return [...latest.values()];
 }
 
+export function getDisplayCharacterName(character, section) {
+  if (character?.id === "musashi" && Number(section) <= 7) return "Shinmen Takezō";
+  return character?.name ?? "Personaggio sconosciuto";
+}
+
 export function createReaderProgress(chapters, initialSection = 1) {
   const sections = [...chapters.sections].sort((a, b) => a.number - b.number);
   if (!sections.length) throw new Error("No reader sections available");
