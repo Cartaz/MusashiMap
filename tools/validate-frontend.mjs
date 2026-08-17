@@ -141,7 +141,7 @@ for (const file of sourceFiles) {
 }
 
 const knownDynamicClasses = new Set([
-  "is-collapsed", "is-approximate", "is-last-known", "is-reported", "is-contextual",
+  "is-collapsed", "is-approximate", "is-last-known", "is-reported",
   "active", "open", "hidden"
 ]);
 
