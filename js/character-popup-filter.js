@@ -6,17 +6,26 @@
   const capitalizeFirst = value => { const text=String(value ?? "").trim(); return text ? text.charAt(0).toLocaleUpperCase("it-IT")+text.slice(1) : ""; };
   const popupOptions = (options,className) => ({...(options ?? {}),className:`${options?.className ?? ""} ${className}`.trim()});
   const characterPanel=document.querySelector(".map-character-panel");
+  const characterHeading=characterPanel?.querySelector(".panel-heading");
   const characterToggle=document.querySelector("#character-toggle");
-  if(characterPanel&&characterToggle){
-    characterToggle.hidden=false;
+  if(characterPanel&&characterHeading&&characterToggle){
+    characterToggle.hidden=true;
     characterToggle.setAttribute("aria-expanded","false");
-    characterToggle.textContent="Mostra filtri";
     characterPanel.classList.add("is-collapsed");
-    characterToggle.addEventListener("click",()=>setTimeout(()=>characterPanel.classList.toggle("is-collapsed",characterToggle.getAttribute("aria-expanded")!=="true"),0));
+    characterHeading.setAttribute("role","button");
+    characterHeading.setAttribute("tabindex","0");
+    characterHeading.setAttribute("aria-controls","character-filter-body");
+    characterHeading.setAttribute("aria-expanded","false");
+    const setOpen=open=>{
+      characterPanel.classList.toggle("is-collapsed",!open);
+      characterHeading.setAttribute("aria-expanded",String(open));
+      characterToggle.setAttribute("aria-expanded",String(open));
+    };
+    const toggle=()=>setOpen(characterPanel.classList.contains("is-collapsed"));
+    characterHeading.addEventListener("click",toggle);
+    characterHeading.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();toggle();}});
   }
 
-  // Single presentation engine for every map popup. The content model changes by kind,
-  // but the visual grammar stays consistent: title, secondary line, separated description.
   function renderPopup(kind, data){
     if(kind === "character") return [`<strong>${data.name}</strong>`,`<br><em class="popup-secondary">${data.location}</em>`,data.description?`<div class="popup-description">${escapeHtml(capitalizeFirst(data.description))}</div>`:""].join("");
     if(kind === "place") return [`<strong>${data.name}</strong>`,`<br><em class="popup-secondary">${data.secondary}</em>`,data.description?`<div class="popup-description">${escapeHtml(data.description)}</div>`:""].join("");
