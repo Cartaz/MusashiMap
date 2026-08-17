@@ -17,27 +17,33 @@ if(legend&&heading&&label){
   setOpen(false);
 }
 
+/* The existing masthead is the single diary toggle. Do not create a second
+   button: the closed-parchment component owns its visual styling. */
 const diary=document.querySelector(".info-panel");
-if(diary){
-  const toggle=document.createElement("button");
-  toggle.type="button";
-  toggle.className="diary-toggle";
-  toggle.setAttribute("aria-controls","diary-content");
-  const masthead=diary.querySelector(".sidebar-masthead");
-  const content=document.createElement("div");
-  content.id="diary-content";
-  content.className="diary-content";
-  while(diary.firstChild) content.append(diary.firstChild);
-  diary.append(toggle,content);
-  toggle.innerHTML='<span class="diary-collapsed-label">IL DIARIO DEL VIAGGIO</span><span class="diary-open-label"><span class="sidebar-rule"></span>IL DIARIO DEL VIAGGIO</span>';
-  if(masthead) masthead.remove();
+const diaryToggle=diary?.querySelector(".diary-toggle");
+if(diary&&diaryToggle){
+  let content=diary.querySelector(".diary-content");
+  if(!content){
+    content=document.createElement("div");
+    content.id="diary-content";
+    content.className="diary-content";
+    const children=[...diary.children].filter(child=>child!==diaryToggle);
+    children.forEach(child=>content.appendChild(child));
+    diary.appendChild(content);
+  }
+
+  diaryToggle.setAttribute("role","button");
+  diaryToggle.setAttribute("tabindex","0");
+  diaryToggle.setAttribute("aria-controls","diary-content");
+
   const setDiaryOpen=(open)=>{
     diary.classList.toggle("is-collapsed",!open);
-    toggle.setAttribute("aria-expanded",String(open));
-    toggle.setAttribute("aria-label",open?"Chiudi il diario del viaggio":"Apri il diario del viaggio");
+    diary.setAttribute("aria-expanded",String(open));
+    diaryToggle.setAttribute("aria-expanded",String(open));
+    diaryToggle.setAttribute("aria-label",open?"Chiudi il diario del viaggio":"Apri il diario del viaggio");
   };
   const toggleDiary=()=>setDiaryOpen(diary.classList.contains("is-collapsed"));
-  toggle.addEventListener("click",toggleDiary);
-  toggle.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();toggleDiary();}});
+  diaryToggle.addEventListener("click",toggleDiary);
+  diaryToggle.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();toggleDiary();}});
   setDiaryOpen(false);
 }
