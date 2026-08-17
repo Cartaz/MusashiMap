@@ -6,7 +6,7 @@ This document is an intermediate research/audit layer. It must be completed and 
 
 Rules carried forward from the project research specification:
 
-1. The Internet Archive English transcription is the only source for deciding whether a character, place, event, movement, faction, or narrative detail occurs in the novel.
+1. The repository chapter files under `data/source/book2/` are the only source for deciding whether a character, place, event, movement, faction, or narrative detail occurs in the novel.
 2. External sources must not be used to establish presence in the novel.
 3. Do not use knowledge from later parts of the novel to fill earlier gaps.
 4. No future-spoiler information is allowed in the reader-facing dataset.
@@ -17,13 +17,28 @@ Rules carried forward from the project research specification:
 9. Keep characters, places, events, factions, historical people, and cultural references distinct.
 10. External historical/geographical sources may be used only after the novel-derived entity has been established, for the later micro-Wiki/geographical verification phase.
 11. Production files (`characters.json`, `locations.json`, `events.json`, `relationships.json`) are not updated until the audit is sufficiently verified.
+12. The chapter files in `data/source/book2/` are the canonical corpus for this scrape; Internet Archive is no longer the narrative source of record for Book II.
 
 ## Source
 
-Primary text:
-Internet Archive — Eiji Yoshikawa, *Musashi*, Charles S. Terry translation.
+Primary text corpus:
+`data/source/book2/`
 
-https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt
+Chapter files:
+
+1. `chapter1-the-yoshioka-school.txt`
+2. `chapter2-the-wheel-of-fortune.txt`
+3. `chapter3-encounter-and-retreat.txt`
+4. `chapter4-the-water-sprite.txt`
+5. `chapter5-a-spring-breeze.txt`
+6. `chapter6-the-hozoin.txt`
+7. `chapter7-hannya-plain.txt`
+8. `chapter8-the-koyagyu-fief.txt`
+9. `chapter9-the-peony.txt`
+10. `chapter10-jotaros-revenge.txt`
+11. `chapter11-the-nightingales.txt`
+
+The source table of contents establishes this sequence.
 
 ## Book II chapter map
 
@@ -41,13 +56,11 @@ Book II — WATER contains 11 chapters in this edition:
 10. Jotaro's Revenge
 11. The Nightingales
 
-The source table of contents establishes this sequence. The text itself begins Book II with `The Yoshioka School` and begins `The Wheel of Fortune` immediately after the first chapter, followed by `Encounter and Retreat`.
-
 ## Chapter 1 — The Yoshioka School
 
-### Source range
+### Source
 
-Approximate transcription range: lines 6930–8313 of the Internet Archive text. `The Yoshioka School` begins at line 6934; `The Wheel of Fortune` begins at line 7861. `Encounter and Retreat` begins at line 8314.
+`data/source/book2/chapter1-the-yoshioka-school.txt`
 
 ### Temporal / narrative frame
 
@@ -128,7 +141,6 @@ Only locations explicitly occurring in this chapter are listed here. Geographic 
 - Kuyado
 - Honnoji / burned ruins of Honnoji
 - Hachiman Shrine
-- Toribe Mountain
 
 Important distinction: some of these are narrative locations, some are broad historical/geographical references, and some are merely mentioned in dialogue or exposition. They must not automatically become map markers.
 
@@ -167,7 +179,7 @@ Any state that is not explicitly anchored to a scene must remain unresolved rath
 
 ### Place-introduction implications
 
-Book II must use the project's persistent-place model: once a place is introduced, it remains available for later chapters/books, subject to the overall reader-progression rules. The exact cross-book section identifier scheme still needs to be finalized before these locations are assigned production `introduced_section` values.
+Book II uses the project's persistent-place model: once a place is introduced, it remains available for later chapters/books. Production `introduced_section` values must use the final cross-book section identifier scheme rather than a Book-II-local number.
 
 ### Verification queue
 
