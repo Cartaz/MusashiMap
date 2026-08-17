@@ -3,7 +3,7 @@ import { validateData } from "./validate.js";
 import { createReaderProgress, getCanonicalReaderState, getRelevantHistoricalWiki, setCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 const chapterInput=document.querySelector("#chapter"),chapterApply=document.querySelector("#chapter-apply"),prevButton=document.querySelector("#prev-section"),nextButton=document.querySelector("#next-section"),sectionSelect=document.querySelector("#section-select"),bookLabel=document.querySelector("#book-label"),title=document.querySelector("#section-title"),status=document.querySelector("#status"),characterList=document.querySelector("#character-list"),eventList=document.querySelector("#event-list"),wikiList=document.querySelector("#wiki-list"),validation=document.querySelector("#validation"),characterFilters=document.querySelector("#character-filters"),placeLegend=document.querySelector("#place-legend"),selectAll=document.querySelector("#select-all"),selectNone=document.querySelector("#select-none"),characterToggle=document.querySelector("#character-toggle"),characterFilterBody=document.querySelector("#character-filter-body");
-const characterColors=["#9b3429","#263d5b","#a77c39","#5d6b4f","#765a8a","#8b5e3c","#3f6f72","#9a5b5b","#5b6470"];
+const characterColors=["#e0a04b","#8fb3c9","#b99ad6","#b8c7a4","#d9a0b7","#c9d1d9"];
 const placeLegendGroups=[
   {types:["exact_site"],label:"Sito preciso",iconType:"literary_landmark"},
   {types:["urban_area","settlement"],label:"Città / insediamento",iconType:"city"},
