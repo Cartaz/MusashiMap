@@ -4,30 +4,31 @@ Questo documento è il workflow operativo di riferimento per estendere MusashiMa
 
 ## 0. Principi vincolanti
 
-- La fonte narrativa di lavoro è il corpus canonico già adottato dal progetto.
+- La fonte narrativa di lavoro è il **corpus canonico presente nella repository**.
 - Si lavora un libro alla volta.
 - Il testo viene separato in file per capitolo prima dello scraping analitico.
 - Nessuna informazione proveniente da capitoli futuri deve entrare nello stato visibile a un lettore che non li ha ancora raggiunti.
 - Distinguere sempre tra: fatto esplicito nel testo, inferenza ragionevole e informazione incerta.
 - Non confondere precisione cartografica con certezza storica: una coordinata può essere utile alla mappa senza significare che il punto sia l'ubicazione storica esatta.
 - Mantenere i nomi visualizzati in romaji/forma leggibile; eventuali suffissi amministrativi dei luoghi (`-to`, `-shi`, ecc.) vanno normalizzati quando non fanno parte del nome utile alla mappa.
+- **Non usare più Internet Archive come fonte narrativa primaria quando il corrispondente testo è presente nella repository.**
 
 ## 1. Preparazione della fonte
 
-1. Procurarsi il corpus con testo completo affidabile.
+1. Usare il corpus presente in `data/source/` come fonte narrativa canonica.
 2. Verificare che l'estrazione abbia testo sensato e non pagine vuote.
 3. Individuare l'indice del romanzo e i confini dei libri.
-4. Separare il libro in file:
+4. Verificare che il libro da analizzare sia separato in file per capitolo:
 
 ```text
 data/source/musashi-index.txt
-data/source/musashi-bookN/chapter1-name.txt
-data/source/musashi-bookN/chapter2-name.txt
+data/source/bookN/chapter1-name.txt
+data/source/bookN/chapter2-name.txt
 ...
 ```
 
 5. Verificare che ogni capitolo sia presente, non vuoto e inizi/termini nel punto corretto.
-6. Non conservare nel repository PDF o duplicati del romanzo quando non sono necessari al progetto.
+6. I file sorgente presenti nella repository sono la copia di lavoro da cui deve essere tracciata ogni estrazione narrativa.
 
 ## 2. Passata A — scraping capitolo per capitolo
 
@@ -248,7 +249,7 @@ Solo dopo il `PASS` del libro corrente:
 ## Struttura concettuale del processo
 
 ```text
-CORPUS
+CORPUS REPOSITORY
   ↓
 INDICE + SEPARAZIONE LIBRO/CAPITOLI
   ↓
