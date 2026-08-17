@@ -2,7 +2,7 @@ import { loadMapData } from "./data.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260817-41";
+  const VERSION = "20260817-42";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -33,7 +33,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
       className: "musashi-map-marker-wrapper",
       html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${placeIconPaths[type]}" alt="" aria-hidden="true"></span>`,
       iconSize: [32, 32],
-      iconAnchor: [16 - offset[0], 16 - offset[1],],
+      iconAnchor: [16 - offset[0], 16 - offset[1]],
       popupAnchor: [0, -17]
     });
   };
@@ -182,9 +182,9 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
 
     renderUnmapped(unmapped);
 
-    // Places are persistent narrative landmarks: once a place is introduced in
-    // the novel it remains on the map for every subsequent chapter. This is
-    // deliberately independent from character presence and chapter events.
+    // Places are persistent narrative landmarks. Once a place is introduced,
+    // it remains visible for every subsequent chapter, independently of
+    // character presence and event activity.
     const visiblePlaces = locations
       .filter(location => Number.isInteger(location?.introduced_section) && location.introduced_section <= section)
       .filter(hasCoords);
@@ -292,40 +292,74 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     return ["let", "labelName", romanizedLabelExpression(), ["case", ...cases, name]];
   }
 
-  async function init() {
-    const data = await loadMapData();
-    locations = data.locations.locations ?? data.locations;
-    events = data.events.events ?? data.events;
-    characterStates = data.states.characters ?? data.states;
-    characters = data.characters.characters ?? data.characters;
-
-    map = L.map("map", { zoomControl: true, attributionControl: true });
-    map.setView([35.2, 135.5], 7);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors" }).addTo(map);
-    markers = L.layerGroup().addTo(map);
-    routes = L.layerGroup().addTo(map);
-    characterMarkers = L.layerGroup().addTo(map);
-
-    const readerState = getCanonicalReaderState();
-    const initialSection = Number(readerState.section) || 1;
-    selectedCharacters = new Set(readerState.selectedCharacters ?? []);
-    draw(initialSection);
-    previousSection = initialSection;
-    previousSelectedCharacters = new Set(selectedCharacters);
-
-    subscribeCanonicalReaderState(state => {
-      const section = Number(state.section) || 1;
-      const nextSelected = new Set(state.selectedCharacters ?? []);
-      const selectionChanged = previousSelectedCharacters.size !== nextSelected.size || [...previousSelectedCharacters].some(id => !nextSelected.has(id));
-      if (section !== previousSection || selectionChanged) {
-        selectedCharacters = nextSelected;
-        draw(section);
-        previousSection = section;
-        previousSelectedCharacters = nextSelected;
-      }
-    });
+  function customizeBasemapStyle(nextStyle) {
+    const labelSourceLayers = new Set(["place", "water_name", "waterway_name", "transportation_name", "poi", "mountain_peak", "park", "aerodrome_label"]);
+    return {
+      ...nextStyle,
+      layers: nextStyle.layers.map(layer => ({
+        ...layer,
+        ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles" && labelSourceLayers.has(layer["source-layer"])
+          ? { layout: { ...layer.layout, "text-field": cleanAdministrativeSuffixExpression() } }
+          : {})
+      }))
+    };
   }
 
-  window.MusashiMapRuntime = { init };
-  window.addEventListener("DOMContentLoaded", () => init().catch(error => console.error("MusashiMap init failed:", error)));
+  async function boot() {
+    try {
+      map = L.map("map", {
+        zoomControl: true,
+        preferCanvas: true,
+        minZoom: 1,
+        maxZoom: 18,
+        maxBounds: [[180, -Infinity], [-180, Infinity]],
+        maxBoundsViscosity: 1
+      }).setView([35.05, 135.55], 7);
+
+      const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", { cache: "no-store" });
+      if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
+      glLayer = L.maplibreGL({ style: customizeBasemapStyle(await styleResponse.json()) }).addTo(map);
+      markers = L.layerGroup().addTo(map);
+      routes = L.layerGroup().addTo(map);
+      characterMarkers = L.layerGroup().addTo(map);
+
+      const mapData = await loadMapData();
+      locations = mapData.locations.locations;
+      events = mapData.events.events;
+      characterStates = mapData.states.character_states;
+      characters = mapData.characters.characters;
+
+      const state = getCanonicalReaderState();
+      if (state.section !== null) {
+        selectedCharacters = new Set(state.selectedCharacters);
+        previousSection = state.section;
+        previousSelectedCharacters = new Set(state.selectedCharacters);
+        draw(state.section);
+      }
+    } catch (error) {
+      console.error("Map initialization failed", error);
+    }
+  }
+
+  subscribeCanonicalReaderState(state => {
+    const nextSelected = new Set(state.selectedCharacters);
+    const sectionChanged = previousSection !== null && state.section !== previousSection;
+    const selectionChanged = previousSelectedCharacters !== null && (
+      nextSelected.size !== previousSelectedCharacters.size ||
+      [...nextSelected].some(id => !previousSelectedCharacters.has(id))
+    );
+
+    if (sectionChanged) unmappedPopupOpen = false;
+    if (selectionChanged) {
+      const latestStates = getLatestStates(characterStates, state.section);
+      unmappedPopupOpen = [...nextSelected].some(id => latestStates.find(item => item.character === id)?.location_status === "unknown");
+    }
+
+    selectedCharacters = nextSelected;
+    previousSection = state.section;
+    previousSelectedCharacters = nextSelected;
+    draw(state.section);
+  });
+
+  boot();
 })();
