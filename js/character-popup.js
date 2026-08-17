@@ -6,6 +6,31 @@
     return text ? text.charAt(0).toLocaleUpperCase("it-IT") + text.slice(1) : "";
   };
 
+  const style = document.createElement("style");
+  style.textContent = `
+    .musashi-character-popup .character-popup-location {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--serif, Georgia, serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--ink, #28231d);
+    }
+    .musashi-character-popup .character-popup-activity {
+      display: block;
+      margin-top: 10px;
+      padding: 9px 11px;
+      background: rgba(231, 219, 196, .55);
+      border: 1px solid rgba(88, 70, 42, .22);
+      border-left: 3px solid var(--vermilion, #9f3f2d);
+      font-family: var(--serif, Georgia, serif);
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--ink, #28231d);
+    }
+  `;
+  document.head.appendChild(style);
+
   L.Marker.prototype.bindPopup = function(content, options) {
     const iconHtml = this.options?.icon?.options?.html ?? "";
     const isCharacterMarker = iconHtml.includes("musashi-character-marker-wrapper");
