@@ -7,6 +7,37 @@
   --pergamena-chiusa-font:600 11px/1 Georgia,"Times New Roman",serif;
   --pergamena-chiusa-roll-width:16px;
 }
+
+/* Gold-standard panel surface: change this class to restyle every expandable panel. */
+.panel-parchment{
+  --panel-surface:#e8ddc9;
+  --panel-border:1px solid rgba(75,60,39,.45);
+  --panel-shadow:0 8px 22px rgba(43,34,22,.14);
+  --panel-text:var(--ink);
+  --panel-font:var(--serif);
+  box-sizing:border-box!important;
+  background:var(--panel-surface)!important;
+  border:var(--panel-border)!important;
+  border-radius:0!important;
+  box-shadow:var(--panel-shadow)!important;
+  color:var(--panel-text)!important;
+  font-family:var(--panel-font)!important;
+}
+
+.panel-parchment:not(.is-collapsed)::before,
+.panel-parchment:not(.is-collapsed)::after{content:none!important}
+
+.panel-parchment .panel-heading h2,
+.panel-parchment .sidebar-heading h2,
+.panel-parchment>h2,
+.panel-parchment .sidebar-section h2{font-family:var(--panel-font)!important;color:var(--panel-text)!important}
+
+.panel-parchment .panel-heading p:not(.panel-kicker),
+.panel-parchment .sidebar-heading p:not(.panel-kicker),
+.panel-parchment>p,
+.panel-parchment #event-list,
+.panel-parchment .wiki-card p{font-family:var(--panel-font)!important}
+
 .pergamena-chiusa.is-collapsed{box-sizing:border-box!important;overflow:hidden!important;background:var(--pergamena-chiusa-surface)!important;border:var(--pergamena-chiusa-border)!important;border-radius:0!important;box-shadow:var(--pergamena-chiusa-shadow)!important;color:var(--pergamena-chiusa-text)!important}
 .pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important}
 .pergamena-chiusa--orizzontale.is-collapsed{height:var(--pergamena-chiusa-size)!important}
@@ -16,7 +47,7 @@
 .pergamena-chiusa.is-collapsed::before{content:none!important}
 .pergamena-chiusa.is-collapsed::after{content:"";position:absolute;pointer-events:none;z-index:50}
 .pergamena-chiusa--verticale.is-collapsed::after{top:-1px;bottom:-1px;right:-1px;width:var(--pergamena-chiusa-roll-width);background:linear-gradient(90deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 45%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.48));box-shadow:-3px 0 4px rgba(58,43,25,.16),2px 0 5px rgba(58,43,25,.20)}
-.pergamena-chiusa--orizzontale.is-collapsed::after{left:-1px;right:-1px;bottom:-1px;height:var(--pergamena-chiusa-roll-width);background:linear-gradient(180deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 46%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.48));box-shadow:0 -3px 4px rgba(58,43,25,.16),0 2px 5px rgba(58,43,25,.20)}
+.pergamena-chiusa--orizzontale.is-collapsed::after{left:-1px;right:-1px;bottom:-1px;height:var(--pergamena-chiusa-roll-width);background:linear-gradient(180deg,rgba(96,73,43,.03),rgba(72,51,29,.28) 32%,rgba(245,231,203,.9) 46%,rgba(164,128,76,.34) 58%,rgba(67,48,28,.18) 82%,rgba(245,231,203,.54));box-shadow:0 -3px 4px rgba(58,43,25,.16),0 2px 5px rgba(58,43,25,.20)}
 .pergamena-chiusa.is-collapsed .panel-kicker,.pergamena-chiusa.is-collapsed .diary-collapsed-label{display:block!important;margin:0!important;padding:0!important;color:var(--pergamena-chiusa-text)!important;font:var(--pergamena-chiusa-font)!important;letter-spacing:.04em!important;text-transform:uppercase!important;white-space:nowrap!important}
 .pergamena-chiusa--verticale.is-collapsed .legend-heading,.pergamena-chiusa--verticale.is-collapsed .panel-heading,.pergamena-chiusa--verticale.is-collapsed .diary-toggle,.pergamena-chiusa--orizzontale.is-collapsed .panel-heading{width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;box-shadow:none!important}
 .pergamena-chiusa--verticale.is-collapsed .panel-heading>div:first-child{width:100%!important;display:flex!important;align-items:center!important;justify-content:center!important}
@@ -34,7 +65,6 @@
 .info-panel.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}
 .app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:minmax(0,1fr) var(--pergamena-chiusa-size)!important}
 .info-panel.pergamena-chiusa--verticale.is-collapsed .diary-toggle{width:100%!important;height:100%!important;min-height:0!important}
-/* Diario: only the title is interactive; the decorative horizontal rule is removed. */
 .info-panel .diary-toggle{cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important}
 .info-panel .diary-toggle .sidebar-rule{display:none!important}
 .info-panel .diary-toggle .diary-collapsed-label{cursor:pointer!important}
