@@ -69,3 +69,10 @@
 .info-panel .diary-toggle .diary-collapsed-label{cursor:pointer!important}
 @media(max-width:760px){.map-legend.pergamena-chiusa{top:10px!important;right:10px!important;height:176px!important}.map-legend.pergamena-chiusa:not(.is-collapsed){width:260px!important;padding:9px 10px!important}.map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:176px!important}.map-character-panel.pergamena-chiusa{left:10px!important;right:auto!important;bottom:max(10px,env(safe-area-inset-bottom))!important}.map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:calc(100% - 20px)!important;height:var(--pergamena-chiusa-size)!important}.info-panel.pergamena-chiusa--verticale.is-collapsed{width:100%!important;height:96px!important}.app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:1fr!important}}
 @media(prefers-reduced-motion:reduce){.pergamena-chiusa{transition:none!important}}
+
+/* Diary trial refinement: remove horizontal rules while preserving the approved parchment treatment. */
+.info-panel .diary-toggle{border-bottom:0!important}
+.info-panel .sidebar-section{border-top:0!important;padding-top:0!important}
+.info-panel #event-list li{border-bottom:0!important}
+.info-panel .wiki-card{border:0!important}
+.info-panel .wiki-card:last-child{border-bottom:0!important}
