@@ -2,7 +2,7 @@ import { loadMapData } from "./data.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260817-42";
+  const VERSION = "20260818-02";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -124,29 +124,28 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     node.hidden = false;
   }
 
-  function resolveMapState(state, byId, allStates) {
+  function resolveMapState(state, byId) {
     if (state?.location_status === "reported_position") {
       const reportedId = state.location || state.last_known_location;
       const reported = reportedId ? byId.get(reportedId) : null;
       if (reported && hasCoords(reported)) return { location: reported, mode: "reported" };
+      return { location: null, mode: "unmapped" };
     }
 
-    if (state?.location_status === "departed_with_group") {
+    if (["departed_with_group", "departed_eastward", "departed_westward"].includes(state?.location_status)) {
       const lastKnown = state?.last_known_location ? byId.get(state.last_known_location) : null;
       if (lastKnown && hasCoords(lastKnown)) return { location: lastKnown, mode: "last_known" };
+      return { location: null, mode: "unmapped" };
+    }
+
+    if (state?.location_status === "unknown") {
+      const lastKnown = state?.last_known_location ? byId.get(state.last_known_location) : null;
+      if (lastKnown && hasCoords(lastKnown)) return { location: lastKnown, mode: "last_known" };
+      return { location: null, mode: "unmapped" };
     }
 
     const current = state?.location ? byId.get(state.location) : null;
     if (current && hasCoords(current)) return { location: current, mode: "current" };
-
-    const candidates = allStates
-      .filter(item => item.character === state.character && item.section < state.section && item.location && item.location_status !== "reported_position")
-      .sort((a, b) => b.section - a.section);
-    const fallback = candidates.map(item => byId.get(item.location)).find(hasCoords);
-    if (fallback) return { location: fallback, mode: "last_known" };
-
-    const lastKnown = state?.last_known_location ? byId.get(state.last_known_location) : null;
-    if (lastKnown && hasCoords(lastKnown)) return { location: lastKnown, mode: "last_known" };
     return { location: null, mode: "unmapped" };
   }
 
@@ -172,7 +171,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     latestStates.forEach(state => {
       if (!selectedCharacters.has(state.character)) return;
       const character = characters.find(item => item.id === state.character);
-      const resolved = resolveMapState(state, byId, characterStates);
+      const resolved = resolveMapState(state, byId);
       if (!resolved.location) {
         unmapped.push({ character, state, location: state.last_known_location ? byId.get(state.last_known_location) : null });
         return;
@@ -219,7 +218,6 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
         location: `${status} · ${label}`,
         description: item.state.activity ? `${detail} ${item.state.activity}` : detail
       });
-
       L.marker(item.location.coordinates, {
         icon: characterIcon(item.color, item.location, offset, item.mode),
         title: `${name} · ${status} · ${label}`
