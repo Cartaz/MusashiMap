@@ -1,4 +1,4 @@
-const ASSET_VERSION = "20260817-39";
+const ASSET_VERSION = "20260818-01";
 
 async function loadJson(path) {
   const response = await fetch(`${path}?v=${ASSET_VERSION}`, { cache: "no-store" });
