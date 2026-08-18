@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "book1_frozen_event_count": 44,
+  "book2_expected_event_count": 113,
+  "book2": {
+    "b2c1": 9,
+    "b2c2": 11,
+    "b2c3": 7,
+    "b2c4": 10,
+    "b2c5": 9,
+    "b2c6": 12,
+    "b2c7": 9,
+    "b2c8": 7,
+    "b2c9": 9,
+    "b2c10": 25,
+    "b2c11": 5
+  },
+  "id_ranges": {
+    "b2c1": [1,9],
+    "b2c2": [1,11],
+    "b2c3": [1,7],
+    "b2c4": [1,10],
+    "b2c5": [1,9],
+    "b2c6": [1,12],
+    "b2c7": [1,9],
+    "b2c8": [1,7],
+    "b2c9": [1,9],
+    "b2c10": [1,25],
+    "b2c11": [1,5]
+  },
+  "source_rules": {
+    "b2c10": "research/book2-event-production-final-audit.md supersedes the earlier aggregate ledger",
+    "narrative_source": "data/source/book2/",
+    "reported_is_not_physical": true,
+    "shared_chapter_is_not_interaction": true,
+    "shared_location_is_not_interaction": true
+  }
+}
