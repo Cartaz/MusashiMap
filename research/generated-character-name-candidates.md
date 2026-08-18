@@ -1,8 +1,8 @@
 # Exhaustive candidate character-name audit — Books I–II
 
-Generated mechanically from every source chapter. Candidates are deliberately over-inclusive; classification requires source-context review.
+Generated mechanically from every source chapter. Candidates are deliberately over-inclusive; classification requires source-context review. Two-word names and single-token names in dialogue attribution are scanned separately.
 
-Total unique candidate strings after non-person filtering: 158
+Total unique candidate strings after non-person filtering: 197
 
 ## Uncle Gon
 - Books: I, II
@@ -15,6 +15,17 @@ Total unique candidate strings after non-person filtering: 158
 - Context: and Uncle Gon, can't go through?"
 - Context: Uncle Gon was nearly fifty, Osugi ten years older. The crowd seemed
 
+## Musashi
+- Books: I, II
+- Chapters: chapter10-jotaros-revenge, chapter11-the-nightingales, chapter2-the-wheel-of-fortune, chapter3-encounter-and-retreat, chapter4-the-water-sprite, chapter6-the-hozoin, chapter7-hannya-plain, chapter8-the-birth-of-musashi, chapter8-the-koyagyu-fief
+- Occurrences: 29
+- Context: "I'll do my best." Musashi smiled.
+- Context: "Keep well," Musashi called after him. He stood at the crossroads
+- Context: Musashi thought of ignoring everything and running too, in the opposite
+- Context: some pain, but since he offered no explanation, Musashi asked no questions.
+- Context: The rest of that day, Musashi said very little to anyone. He sat with his
+- Context: After a time, Musashi asked, "Aren't we there yet?"
+
 ## Lord Kōizumi
 - Books: II
 - Chapters: chapter10-jotaros-revenge, chapter11-the-nightingales, chapter6-the-hozoin, chapter7-hannya-plain, chapter9-the-peony
@@ -26,6 +37,28 @@ Total unique candidate strings after non-person filtering: 158
 - Context: to you on the subject. You should study the way that Yagyū Sekishūsai and Lord
 Kōizumi of Ise have lived. Sekishūsai was my teacher, Lord Kōizumi was his. If
 - Context: Kōizumi of Ise have lived. Sekishūsai was my teacher, Lord Kōizumi was his. If
+
+## Takuan
+- Books: I, II
+- Chapters: chapter11-the-nightingales, chapter3-the-flower-festival, chapter5-the-art-of-war, chapter6-the-old-cryptomeria-tree, chapter7-the-rock-and-the-tree, chapter8-the-birth-of-musashi
+- Occurrences: 24
+- Context: Standing up near the veranda, Takuan called, "I can hear everything you're
+- Context: "You mean me?" Takuan said, pointing to his nose.
+- Context: Takuan sighed. "Otsū, I personally think you shouldn't have to serve the
+- Context: Takuan continued reading until Otsū gave him a nudge. He raised his eyes
+- Context: "Oh, I don't mind staying," Takuan replied innocently.
+- Context: "No, not at all," Takuan said, returning to his book.
+
+## Otsū
+- Books: I, II
+- Chapters: chapter11-the-nightingales, chapter3-the-flower-festival, chapter4-the-dowagers-wrath, chapter5-a-spring-breeze, chapter5-the-art-of-war, chapter7-the-rock-and-the-tree, chapter8-the-birth-of-musashi, chapter9-the-peony
+- Occurrences: 17
+- Context: "But, Takuan," Otsū asked impatiently, "what is 'the truth'?"
+- Context: "Ogin," Otsū said with alarm. "Have you gotten word they were killed?"
+- Context: Otsū laughed until fresh tears, tears of mirth, came. "I'm sorry, Takuan. I
+- Context: Otsū continued her story. "He was made a resident priest at the Nansōji
+- Context: "Well, it's not as though we're saying anything bad," Otsū replied
+- Context: "Granny . . ." Otsū said soothingly.
 
 ## Young Master
 - Books: II
@@ -50,6 +83,39 @@ Musashi, is it?—but you'll always be Takezō to me! Ha, ha, ha!" Her wrinkled
 - Context: "He was asking about Miyamoto Musashi."
 - Context: "His name is Miyamoto Musashi."
 
+## She
+- Books: I, II
+- Chapters: chapter1-the-yoshioka-school, chapter11-the-nightingales, chapter2-the-comb, chapter4-the-dowagers-wrath, chapter5-a-spring-breeze, chapter5-the-art-of-war, chapter6-the-old-cryptomeria-tree, chapter7-the-rock-and-the-tree, chapter8-the-birth-of-musashi, chapter9-the-peony
+- Occurrences: 13
+- Context: deep part of her throat. She said each syllable with a vengeance. "How can you
+- Context: go somewhere far away. She asked Matahachi what he and Takezō would do.
+- Context: "Otsū told me not to worry about them. She said I should run right home
+- Context: "Takezō, from across the river. She said she saw him. At the festival."
+- Context: way they will." She laughed. "Or maybe I'm just going crazy, like you."
+- Context: a strange and intense melancholy whenever she was alone in her room. She
+
+## Kizaemon
+- Books: II
+- Chapters: chapter10-jotaros-revenge, chapter5-a-spring-breeze, chapter9-the-peony
+- Occurrences: 11
+- Context: "Welcome to Koyagyū," Kizaemon said warmly.
+- Context: Kizaemon announced it was time for the barley mixed with rice, the
+- Context: Faced with her silence, Kizaemon asked, "Don't you want to come?"
+- Context: Kizaemon asked him what he had been up to, and he answered that a lot of men
+- Context: Kizaemon laughed and said, "So that's why you spoke up in their defense.
+- Context: Kizaemon laughed. "Now, Jōtarō, don't get mad, or you'll lose your
+
+## Takezō
+- Books: I
+- Chapters: chapter1-the-little-bell, chapter2-the-comb, chapter4-the-dowagers-wrath, chapter7-the-rock-and-the-tree, chapter8-the-birth-of-musashi
+- Occurrences: 11
+- Context: "Can you make it?" Takezō asked repeatedly. He held his friend's arm
+- Context: For a time they both simply stared back at her. Then Takezō said, "Who are
+- Context: must have a trade of some kind," Takezō remarked.
+- Context: "It's getting late," Takezō muttered. "Let's go home."
+- Context: Neither Matahachi nor Takezō said a word, making it clear that they
+- Context: "I have something important to tell you," Takezō said hurriedly.
+
 ## Lord Shimmen
 - Books: I, II
 - Chapters: chapter1-the-little-bell, chapter3-the-flower-festival, chapter4-the-water-sprite
@@ -59,6 +125,28 @@ Musashi, is it?—but you'll always be Takezō to me! Ha, ha, ha!" Her wrinkled
 - Context: Until about a year before, Lord Shimmen of Iga had maintained a castle
 - Context: a single member of Lord Shimmen's family had come back from Sekigahara, but
 - Context: unchanged from the days when he served under Lord Shimmen of Iga. Toyotomi
+
+## Jōtarō
+- Books: II
+- Chapters: chapter11-the-nightingales, chapter4-the-water-sprite, chapter5-a-spring-breeze, chapter8-the-koyagyu-fief
+- Occurrences: 8
+- Context: Jōtarō cried, stamping the ground.
+- Context: "You lied to me!" Jōtarō shouted. "Why did you do that!" Breathless from
+- Context: His mission fulfilled, Jōtarō said, "Well, I'd better be going now. If you
+- Context: Finally Jōtarō asked, "What's amazing?" For him, the most amazing thing
+- Context: Jōtarō laughed. "Trees? There are trees everywhere. Well, aren't there?"
+- Context: "That's a funny name." Jōtarō laughed.
+
+## Osugi
+- Books: I, II
+- Chapters: chapter3-encounter-and-retreat, chapter4-the-dowagers-wrath, chapter7-the-rock-and-the-tree
+- Occurrences: 8
+- Context: Recognizing the silhouette as Otsū's, Osugi called out and the girl ran forward,
+- Context: "How is it?" Osugi called jovially. "Hot enough?"
+- Context: "Uncle Gon, hurry up!" Osugi cried impatiently.
+- Context: As he knelt staring into the ravine, Osugi cried, "What are you waiting for,
+- Context: Musashi had all the while been standing by in silence. Even when Osugi
+- Context: Osugi cried, "What's the matter, Takezō! Are you scared?"
 
 ## Shōda Kizaemon
 - Books: II
@@ -72,6 +160,17 @@ Kizaemon and adding a few words about his meeting with the samurai, but
 - Context: "I think he said it was Shōda Kizaemon."
 - Context: love of seclusion, he was happy to have the company of the girl Shōda
 Kizaemon had brought to play the flute for him, for she was thoughtful, polite
+
+## Tōji
+- Books: II
+- Chapters: chapter1-the-yoshioka-school, chapter2-the-wheel-of-fortune
+- Occurrences: 8
+- Context: "You don't need one here, do you?" Gion Tōji replied.
+- Context: Tōji laughed. "But it just attracts attention. All the women around here
+- Context: Seijūrō alone remained relatively sober. Noticing this, Tōji said, "You're not
+- Context: Sensing something strange in his voice, Tōji asked, "Are you all right? Sure
+- Context: Tōji said, "Oh, I'm sorry. I didn't know there was a guest in here."
+- Context: "Calm down," Tōji pleaded, but Sequa continued to protest. Drowning him
 
 ## Aoki Tanzaemon
 - Books: I, II
@@ -125,6 +224,16 @@ Ikeda's service. He's no doubt wandering about too." Takuan grew grave.
 - Context: Yagyū Muneyoshi Sekishūsai, now that he'd retired, had taken up
 - Context: With the passage of time, Koyagyū had produced Yagyū Muneyoshi, a
 
+## Akemi
+- Books: I, II
+- Chapters: chapter1-the-little-bell, chapter1-the-yoshioka-school, chapter2-the-comb, chapter5-a-spring-breeze
+- Occurrences: 5
+- Context: Akemi smiled, turned to go and said, "Good night. I'll see you in the
+- Context: Akemi said nothing.
+- Context: From the hallway now, Akemi cried out in alarm, "Mother! Are you in
+- Context: comes here without me sometimes. Does he?" Akemi laughed but did not
+- Context: "Yes, I swear." Biting her lips to avoid smiling, Akemi asked, "What was
+
 ## Hon'iden Matahachi
 - Books: I, II
 - Chapters: chapter3-the-flower-festival, chapter4-the-dowagers-wrath, chapter4-the-water-sprite, chapter5-a-spring-breeze, chapter6-the-hozoin
@@ -166,6 +275,15 @@ Ikeda's service. He's no doubt wandering about too." Takuan grew grave.
 - Occurrences: 4
 - Context: much loved by Lord Yorinori of Kishū. Lord Yorinori had personally given the
 
+## Matahachi
+- Books: I, II
+- Chapters: chapter2-the-comb, chapter2-the-wheel-of-fortune, chapter5-the-art-of-war
+- Occurrences: 4
+- Context: "He doesn't have a care in the world," Matahachi said to himself, gruffly
+- Context: Matahachi said, "Then you think we should head home?"
+- Context: another husband. Matahachi added that since it was "difficult" for him to write
+- Context: Going toward him, Matahachi asked, "How old was this man called
+
 ## Nakayama Pass
 - Books: I
 - Chapters: chapter3-the-flower-festival, chapter7-the-rock-and-the-tree, chapter8-the-birth-of-musashi
@@ -175,6 +293,24 @@ Ikeda's service. He's no doubt wandering about too." Takuan grew grave.
 - Context: walked, they marched directly to Nakayama Pass, not even pausing to rest on the
 - Context: been waiting here since about twenty days after we said good-bye at Nakayama
 Pass."
+
+## Okō
+- Books: I, II
+- Chapters: chapter1-the-yoshioka-school, chapter2-the-comb
+- Occurrences: 4
+- Context: Nothing happened. Okō continued to stare the men down, and they
+- Context: Okō smiled wanly, envying the young, who know not the ways of the
+- Context: With a menacing look, Okō said, "Chatterbox! Stop boring us with your
+- Context: "You may as well give up now," Okō said to Seijūrō. "For some reason the
+
+## Seijūrō
+- Books: II
+- Chapters: chapter1-the-yoshioka-school, chapter2-the-wheel-of-fortune
+- Occurrences: 4
+- Context: "How does that woman know who I am?" Seijūrō growled at Tōji,
+- Context: Seijūrō called out, "You dance, Ryōhei! Dance, and show us how young
+- Context: Somewhat surprised, Seijūrō said, "You know how to drink, don't you."
+- Context: "Call him!" Seijūrō commanded. His mouth was dry from tension. He sat
 
 ## Shimmen Takezō
 - Books: I
@@ -194,6 +330,15 @@ Pass."
 Style, the manual contained illustrative pictures, all by the hand of Lord Kōizumi
 - Context: used a staff devised specifically for the Shinkage Style. A long, thin leather bag
 - Context: having mastered the Shinkage Style at an early age and, under the tutelage of
+
+## They
+- Books: I, II
+- Chapters: chapter11-the-nightingales, chapter4-the-water-sprite, chapter6-the-hozoin, chapter7-the-rock-and-the-tree
+- Occurrences: 4
+- Context: her again. They called their good-byes and watched as the old couple started
+- Context: "They called me a coward, said I couldn't fight like a man! Well, I haven't
+- Context: and saw Musashi standing where he had been, watching him. They smiled a
+- Context: the townspeople told me it wasn't only the priests. They said a whole lot of the
 
 ## Tsujikaze Temma
 - Books: I
@@ -222,6 +367,14 @@ Temma, the leader of the freebooters! This was the kind of adversary he had
 - Context: regulations are law, and the Buddha's Law is law, but of the two, the bonds of the
 - Context: temple was, after all, a holy sanctuary for the light of the Buddha's Law, as its
 
+## I'd
+- Books: I, II
+- Chapters: chapter11-the-nightingales, chapter6-the-hozoin, chapter7-the-rock-and-the-tree
+- Occurrences: 3
+- Context: about it, go! But if I'd thought you were going to desert me, I wouldn't have left
+- Context: "If I'd had any doubts, if I'd thought I'd give up," she said, "I'd never have
+- Context: front entrance and quickly assessed the situation. His face turned sour. "If I'd
+
 ## Ikeda Terumasa
 - Books: I
 - Chapters: chapter5-the-art-of-war, chapter8-the-birth-of-musashi
@@ -246,6 +399,14 @@ Takezō! Takezō from Miyamoto!"
 - Context: "Does he have to stay out all night to see the Kabuki? Master Kempō must
 - Context: "When Master Kempō was alive, a day never passed when he wasn't in the
 
+## Nikkan
+- Books: II
+- Chapters: chapter6-the-hozoin, chapter7-hannya-plain
+- Occurrences: 3
+- Context: After he had finished a bowl of rice mixed with tea and two pickles, Nikkan
+- Context: It was true that the daredevil in him had been tamed. Yet Nikkan said he
+- Context: The first thing Nikkan said was, "Did you take care of everything?"
+
 ## Okuni Kabuki
 - Books: II
 - Chapters: chapter1-the-yoshioka-school, chapter5-a-spring-breeze
@@ -253,6 +414,14 @@ Takezō! Takezō from Miyamoto!"
 - Context: They were talking about the Okuni Kabuki, which was being performed on
 - Context: "To see the Okuni Kabuki."
 - Context: singing a song she had learned at the Okuni Kabuki. Each time she pulled at the
+
+## You
+- Books: II
+- Chapters: chapter4-the-water-sprite, chapter5-a-spring-breeze, chapter6-the-hozoin
+- Occurrences: 3
+- Context: You said you'd let me be your follower—then went off and left me. Are
+- Context: Shōda, seeing the perplexity on her face, said, "You said your name is
+- Context: "You said it's behind here. Is it better to go around to the left or to the
 
 ## Young Master's
 - Books: II
@@ -269,6 +438,13 @@ Master's back, it's time to stop squabbling. It's up to him to retrieve the hono
 - Occurrences: 2
 - Context: Abbot Inshun gave the command to charge, and in an instant, with a
 
+## Debuchi
+- Books: II
+- Chapters: chapter10-jotaros-revenge, chapter9-the-peony
+- Occurrences: 2
+- Context: Debuchi said, "I think I'd better have a look. Forgive me, Musashi, for
+- Context: Debuchi said, "Mm. I'd like to meet him.... We could check on this and
+
 ## Debuchi Magobei
 - Books: II
 - Chapters: chapter10-jotaros-revenge, chapter9-the-peony
@@ -282,6 +458,13 @@ Master's back, it's time to stop squabbling. It's up to him to retrieve the hono
 - Occurrences: 2
 - Context: "You don't need one here, do you?" Gion Tōji replied.
 - Context: The seniors, Gion Tōji and Ueda Ryōhei, intervened. "Stop it, you two!"
+
+## Ikeda
+- Books: I
+- Chapters: chapter8-the-birth-of-musashi
+- Occurrences: 2
+- Context: "Your name is Shimmen Takezō, isn't it?" Lord Ikeda asked.
+- Context: "Takuan!" Ikeda laughed. "This is the first time you've ever thanked me twice for
 
 ## Ishida Mitsunari
 - Books: I
@@ -303,6 +486,13 @@ Master's back, it's time to stop squabbling. It's up to him to retrieve the hono
 - Occurrences: 2
 - Context: understand the techniques of the Kyōhachi Style? If there is—hic—I want to
 - Context: Kiichi Hōgen, master the essence of the Kyōhachi Style, and emulate the great
+
+## Kōizumi
+- Books: II
+- Chapters: chapter9-the-peony
+- Occurrences: 2
+- Context: bout, Kōizumi announced where he would attack, then proceeded to take the
+- Context: of a neophyte. When they finally parted, Lord Kōizumi said, "My way of
 
 ## Lord Gamō
 - Books: II
@@ -332,6 +522,13 @@ Ikeda's service. He's no doubt wandering about too." Takuan grew grave.
 - Occurrences: 2
 - Context: "So there is! Yes, I remember. It's called the Mikazuki Teahouse, isn't it?
 - Context: "I guess so. I fainted at the bottom of a ravine near the Mikazuki Teahouse.
+
+## Mother
+- Books: I
+- Chapters: chapter1-the-little-bell
+- Occurrences: 2
+- Context: "Mother said that even if you feel better, you shouldn't talk too loud or go
+- Context: "So even though you're only foot soldiers, Mother said that if we're caught
 
 ## Murata Yozō
 - Books: II
@@ -368,12 +565,26 @@ Ikeda's service. He's no doubt wandering about too." Takuan grew grave.
 - Context: Presently Jōtarō came running back with the mask over his face. Takuan
 - Context: Presently Jōtarō climbed slowly back up the stairs. Musashi, ready to scold
 
+## Sekishūsai
+- Books: II
+- Chapters: chapter9-the-peony
+- Occurrences: 2
+- Context: "I am unable to do things like that," Sekishūsai said simply. And he was
+- Context: Iga vase, Sekishūsai asked Otsū, "What do you think? Is my flower arrangement
+
 ## Seven Pillars
 - Books: II
 - Chapters: chapter6-the-hozoin
 - Occurrences: 2
 - Context: who were known as the "Seven Pillars of the Hōzōin." Inshun himself, they said,
 - Context: and, just like that, downs one of the Seven Pillars. And not just anyone—the
+
+## Sun-tzu
+- Books: I
+- Chapters: chapter8-the-birth-of-musashi
+- Occurrences: 2
+- Context: Sun-tzu said:
+- Context: Therefore Sun-tzu said, "He who knows himself and knows his enemy wins
 
 ## Suzuki Ihaku
 - Books: II
@@ -418,6 +629,13 @@ Hideyoshi's unification of Japan, summed up this view in a short poem:
 - Occurrences: 2
 - Context: haven't lost my wits. I can still outsmart an enemy or two. Uncle Gon's not senile
 - Context: walking back to Uncle Gon's side, where she again took a challenging stance.
+
+## Who
+- Books: I, II
+- Chapters: chapter1-the-yoshioka-school, chapter5-the-art-of-war
+- Occurrences: 2
+- Context: "Who said anything about taking Otsū with you, you ugly moron!"
+- Context: "Who said anything was going on?"
 
 ## Yagyū Sekishūsai
 - Books: II
@@ -538,6 +756,18 @@ Style, and I have a lot of plans for the future."
 - Occurrences: 1
 - Context: The Old Cryptomeria Tree
 
+## Dampachi
+- Books: II
+- Chapters: chapter7-hannya-plain
+- Occurrences: 1
+- Context: Dampachi said, "Glad I ran into you. I want you to know how sorry I am
+
+## Denshichirō
+- Books: II
+- Chapters: chapter9-the-peony
+- Occurrences: 1
+- Context: In obvious disgust, Denshichirō replied, "Well, he hasn't left us any choice
+
 ## Despite Musashi's
 - Books: II
 - Chapters: chapter7-hannya-plain
@@ -611,6 +841,12 @@ Osugi tricked me into taking a bath, and now, again with no clothes on, I run in
 - Occurrences: 1
 - Context: they're still looking for General Ukita—came snooping around. I got rid of the
 
+## Gon
+- Books: I
+- Chapters: chapter7-the-rock-and-the-tree
+- Occurrences: 1
+- Context: "Wait a minute," Gon replied, heading toward the hearth room, where he
+
 ## Gripping Jōtarō's
 - Books: II
 - Chapters: chapter10-jotaros-revenge
@@ -671,6 +907,18 @@ Osugi tricked me into taking a bath, and now, again with no clothes on, I run in
 - Occurrences: 1
 - Context: let's not forget Hō Ittōsai in Shirakawa, even though he doesn't take students."
 
+## I've
+- Books: I
+- Chapters: chapter5-the-art-of-war
+- Occurrences: 1
+- Context: Takuan folded his arms. "I've observed over the years that not many priests
+
+## Inshun
+- Books: II
+- Chapters: chapter7-hannya-plain
+- Occurrences: 1
+- Context: Inshun laughed. "Well, we don't necessarily regard you as an ally, but our
+
 ## Is Jōtarō
 - Books: II
 - Chapters: chapter10-jotaros-revenge
@@ -682,6 +930,12 @@ Osugi tricked me into taking a bath, and now, again with no clothes on, I run in
 - Chapters: chapter1-the-little-bell
 - Occurrences: 1
 - Context: on Ishida Mitsunari's troops at twilight, the tide of battle turned too. He then
+
+## It's
+- Books: I
+- Chapters: chapter7-the-rock-and-the-tree
+- Occurrences: 1
+- Context: "So there is! Yes, I remember. It's called the Mikazuki Teahouse, isn't it?
 
 ## It's Kocha
 - Books: II
@@ -751,6 +1005,12 @@ Kiyomasa of Higo. In fame and prestige, the House of Yagyū did not rank with
 - Occurrences: 1
 - Context: His side had lost. He knew that much. Kobayakawa Hideaki, supposedly
 
+## Kocha
+- Books: II
+- Chapters: chapter9-the-peony
+- Occurrences: 1
+- Context: "Do you like flowers?" Kocha asked as she entered.
+
 ## Lin Ho-ching
 - Books: II
 - Chapters: chapter6-the-hozoin
@@ -800,6 +1060,12 @@ Instructor to the Ashikaga Shōguns."
 - Occurrences: 1
 - Context: call the Miyamoto Style. Despite his many flaws, this was the goal toward which
 
+## Murata
+- Books: II
+- Chapters: chapter9-the-peony
+- Occurrences: 1
+- Context: "It'll be a party for us too," Murata added. "Let's send him an answer right
+
 ## Musashi Masana
 - Books: II
 - Chapters: chapter4-the-water-sprite
@@ -839,14 +1105,11 @@ Instructor to the Ashikaga Shōguns."
 - Occurrences: 1
 - Context: of Toda Seigen in Kurotani, and there's Ogasawara Genshinsai in Kitano. And
 
-## Okō The
+## Ogin
 - Books: I
-- Chapters: chapter5-the-art-of-war
+- Chapters: chapter4-the-dowagers-wrath
 - Occurrences: 1
-- Context: Respectfully, Okō
-
-
-        The other letter was in Matahachi's scrawl and explained at tiresome
+- Context: "But I tell you I don't!" Ogin protested. Her voice quivered and her eyes
 
 ## Old Master
 - Books: II
@@ -905,6 +1168,12 @@ Instructor to the Ashikaga Shōguns."
 - Occurrences: 1
 - Context: when he was ten. Then he entered a temple of the Rinzai Zen sect about four
 
+## Ryōhei
+- Books: II
+- Chapters: chapter1-the-yoshioka-school
+- Occurrences: 1
+- Context: "I don't like being called old," Ryōhei said, scowling. "It's true I've been at
+
 ## Same Age
 - Books: I
 - Chapters: chapter3-the-flower-festival
@@ -934,6 +1203,12 @@ Instructor to the Ashikaga Shōguns."
 - Chapters: chapter5-a-spring-breeze
 - Occurrences: 1
 - Context: Mount Kudo, and Sengoku Sōya is said to be in the vicinity of the Hōryūji, and
+
+## Sequa
+- Books: II
+- Chapters: chapter2-the-wheel-of-fortune
+- Occurrences: 1
+- Context: "Calm down," Tōji pleaded, but Sequa continued to protest. Drowning him
 
 ## Shimmen Miyamoto
 - Books: II
@@ -972,6 +1247,12 @@ Musashi,"' he said. "Do you suppose this Musashi is the Miyamoto Musashi who
 - Occurrences: 1
 - Context: So Musashi had been right in thinking, even before they first exchanged
 
+## Somebody
+- Books: II
+- Chapters: chapter4-the-water-sprite
+- Occurrences: 1
+- Context: "Yes, and you're from Mimasaka, aren't you? Somebody said you were."
+
 ## Spring Breeze
 - Books: II
 - Chapters: chapter5-a-spring-breeze
@@ -1004,6 +1285,18 @@ Musashi,"' he said. "Do you suppose this Musashi is the Miyamoto Musashi who
 - Chapters: chapter5-the-art-of-war
 - Occurrences: 1
 - Context: "Very well," said Takuan quietly, bowing. Taking Otsū's hand, he
+
+## Temma
+- Books: I
+- Chapters: chapter2-the-comb
+- Occurrences: 1
+- Context: Temma laughed until his shoulders, his whole body, shook like a cake of
+
+## Terumasa
+- Books: I
+- Chapters: chapter8-the-birth-of-musashi
+- Occurrences: 1
+- Context: teahouse?" Terumasa asked the monk as he rose to leave.
 
 ## Therefore Sun-tzu
 - Books: I
@@ -1057,20 +1350,17 @@ Musashi,"' he said. "Do you suppose this Musashi is the Miyamoto Musashi who
 - Context: and got big allowances. A customer at the shop told me once that Tsukahara
 Bokuden always used to go around with seventy or eighty retainers, a change of
 
-## War The
-- Books: I
-- Chapters: chapter5-the-art-of-war
-- Occurrences: 1
-- Context: The Art of War
-
-
-       The daily search in the mountains continued, and farm work languished;
-
 ## Was Otsū
 - Books: I
 - Chapters: chapter4-the-dowagers-wrath
 - Occurrences: 1
 - Context: "Was Otsū there?"
+
+## Well
+- Books: I
+- Chapters: chapter4-the-dowagers-wrath
+- Occurrences: 1
+- Context: "Well thought of? That's a laugh. You never saw such a hoodlum! You can't
 
 ## Where's Okō
 - Books: II
@@ -1083,6 +1373,12 @@ Bokuden always used to go around with seventy or eighty retainers, a change of
 - Chapters: chapter8-the-birth-of-musashi
 - Occurrences: 1
 - Context: the "White Crane Castle": the stately edifice stood upon huge stone ramparts,
+
+## Whoever
+- Books: II
+- Chapters: chapter1-the-yoshioka-school
+- Occurrences: 1
+- Context: "Whoever said that come forward and drink a cup as punishment!" "Too
 
 ## Wrath Matahachi's
 - Books: I
@@ -1098,6 +1394,12 @@ Bokuden always used to go around with seventy or eighty retainers, a change of
 - Chapters: chapter11-the-nightingales
 - Occurrences: 1
 - Context: of Lord Kōizumi of Ise; Yagyū Gorōzaemon, the heir of the House of Yagyū;
+
+## Yasubei
+- Books: II
+- Chapters: chapter6-the-hozoin
+- Occurrences: 1
+- Context: Yasubei said, "As a matter of fact, we do have some business with you. You see,
 
 ## Yomogi Teahouse
 - Books: II
