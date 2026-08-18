@@ -10,6 +10,7 @@ export function validateData({ characters, locations, chapters, events, states }
   const warnings = [];
   const stateSections = new Map();
   const specialUnknownLocation = "unknown";
+  const nonPhysicalLocationStatuses = new Set(["reported_position", "unknown", "departed_with_group", "departed_eastward", "departed_westward"]);
 
   for (const event of events.events) {
     if (!sectionNumbers.has(event.section)) errors.push(`Event ${event.id}: sezione inesistente ${event.section}`);
@@ -31,8 +32,6 @@ export function validateData({ characters, locations, chapters, events, states }
     if (event.movement_status === "uncertain_route" && event.destination !== specialUnknownLocation) warnings.push(`Event ${event.id}: uncertain_route ha una destination cartografica esplicita`);
   }
 
-  const nonPhysicalLocationStatuses = new Set(["reported_position", "unknown", "departed_with_group", "departed_eastward", "departed_westward"]);
-
   for (const state of states.character_states) {
     if (!sectionNumbers.has(state.section)) errors.push(`State ${state.character}/${state.section}: sezione inesistente`);
     if (!state.chapter) errors.push(`State ${state.character}/${state.section}: chapter mancante`);
@@ -50,39 +49,55 @@ export function validateData({ characters, locations, chapters, events, states }
     stateSections.set(key, state);
   }
 
-  const eventLocationByCharacterSection = new Map();
-  const stateLocationByCharacterSection = new Map();
-  for (const state of states.character_states) stateLocationByCharacterSection.set(`${state.character}:${state.section}`, state);
+  // present_in means that the character is physically present somewhere in
+  // the chapter. It does not require a resolved end-of-chapter map point.
+  // This distinction matters for scenes where a character disappears or is
+  // left at an unknown location before the chapter closes.
+  for (const character of characters.characters) {
+    const declared = [...new Set(character.present_in ?? [])].sort((a, b) => a - b);
+    const declaredSet = new Set(declared);
+    const stateSectionsForCharacter = [...stateSections.values()]
+      .filter(state => state.character === character.id)
+      .map(state => state.section)
+      .sort((a, b) => a - b);
+    const physicalSections = [...stateSections.values()]
+      .filter(state => state.character === character.id && state.location)
+      .map(state => state.section)
+      .sort((a, b) => a - b);
+    const stateSet = new Set(stateSectionsForCharacter);
 
-  const stateCheckEventTypes = new Set(["arrival", "meeting", "battle_context", "capture", "imprisonment", "release", "restraint", "search", "trap", "conversation", "relationship_change", "appearance"]);
-  for (const event of events.events) {
-    const eventLocation = event.location ?? (event.movement_status === "arrival_confirmed" ? event.destination : null);
-    if (!eventLocation || eventLocation === specialUnknownLocation || !stateCheckEventTypes.has(event.type)) continue;
-    for (const characterId of event.characters ?? []) {
-      const state = stateLocationByCharacterSection.get(`${characterId}:${event.section}`);
-      if (!state) continue;
-      if (state.location === eventLocation) continue;
-      if (["reported_position", "unknown", "departed_with_group", "departed_eastward", "departed_westward"].includes(state.location_status)) continue;
-      const key = `${characterId}:${event.section}`;
-      const previous = eventLocationByCharacterSection.get(key);
-      if (!previous) eventLocationByCharacterSection.set(key, { location: eventLocation, eventId: event.id });
-      else if (previous.location !== eventLocation) {
-        warnings.push(`Cross-check ${characterId}/${event.section}: eventi indicano ${previous.location} e ${eventLocation}; verificare quale sia la posizione narrativa finale.`);
-      }
-      if (event.type === "arrival" || event.type === "capture" || event.type === "imprisonment" || event.type === "release") {
-        warnings.push(`Cross-check ${event.id}: ${characterId} è associato a ${eventLocation}, ma lo stato di fine sezione indica ${state.location}. Verificare se l'evento è transitorio o se lo stato finale è errato.`);
-      }
+    for (const section of declared) {
+      if (!stateSet.has(section)) warnings.push(`Character ${character.id}: present_in include ${section} ma manca uno stato narrativo di sezione`);
+    }
+    for (const section of physicalSections) {
+      if (!declaredSet.has(section)) warnings.push(`Character ${character.id}: esiste una posizione fisica in ${section} ma present_in non lo dichiara`);
+    }
+    if (character.importance === "main" && character.present_in?.length && !stateSectionsForCharacter.length) {
+      warnings.push(`Character ${character.id}: personaggio principale senza stato narrativo verificabile`);
     }
   }
 
-  for (const character of characters.characters) {
-    const actual = [...stateSections.values()].filter(state => state.character === character.id && state.location).map(state => state.section).sort((a, b) => a - b);
-    const declared = [...new Set(character.present_in ?? [])].sort((a, b) => a - b);
-    const actualSet = new Set(actual);
-    const declaredSet = new Set(declared);
-    for (const section of declared) if (!actualSet.has(section)) warnings.push(`Character ${character.id}: present_in include ${section} ma manca uno stato di posizione`);
-    for (const section of actual) if (!declaredSet.has(section)) warnings.push(`Character ${character.id}: esiste uno stato di posizione in ${section} ma present_in non lo dichiara`);
-    if (character.importance === "main" && character.present_in?.length && !actual.length) warnings.push(`Character ${character.id}: personaggio principale senza alcuna posizione verificabile`);
+  // Compare only the terminal location-bearing event for each character in
+  // each section with a physically resolved end-of-section state. Earlier
+  // events are intentionally not compared one-to-one because a chapter can
+  // contain several legitimate movements before its final state.
+  const terminalEventLocations = new Map();
+  events.events.forEach(event => {
+    let location = null;
+    if (event.location && event.location !== specialUnknownLocation) location = event.location;
+    else if (["arrival_confirmed", "confirmed_route"].includes(event.movement_status) && event.destination && event.destination !== specialUnknownLocation) location = event.destination;
+    if (!location) return;
+    for (const characterId of event.characters ?? []) {
+      terminalEventLocations.set(`${characterId}:${event.section}`, { location, eventId: event.id });
+    }
+  });
+
+  for (const [key, terminal] of terminalEventLocations) {
+    const state = stateSections.get(key);
+    if (!state?.location) continue;
+    if (state.location !== terminal.location) {
+      warnings.push(`State/event mismatch ${key}: stato finale ${state.location} ma ultimo evento localizzante ${terminal.eventId} indica ${terminal.location}`);
+    }
   }
 
   const explicitFutureDestinations = events.events.filter(e => e.certainty === "intended_destination");
