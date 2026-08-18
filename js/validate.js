@@ -4,6 +4,8 @@ export function validateData({ characters, locations, chapters, events, states }
   const characterIds = new Set(characters.characters.map(c => c.id));
   const locationIds = new Set(locations.locations.map(l => l.id));
   const sectionNumbers = new Set(chapters.sections.map(s => s.number));
+  const chapterIds = new Set(chapters.sections.map(s => s.chapter_id));
+  const chapterBySection = new Map(chapters.sections.map(s => [s.number, s.chapter_id]));
   const errors = [];
   const warnings = [];
   const stateSections = new Map();
@@ -11,6 +13,9 @@ export function validateData({ characters, locations, chapters, events, states }
 
   for (const event of events.events) {
     if (!sectionNumbers.has(event.section)) errors.push(`Event ${event.id}: sezione inesistente ${event.section}`);
+    if (!event.chapter) errors.push(`Event ${event.id}: chapter mancante`);
+    else if (!chapterIds.has(event.chapter)) errors.push(`Event ${event.id}: chapter inesistente ${event.chapter}`);
+    else if (chapterBySection.get(event.section) !== event.chapter) errors.push(`Event ${event.id}: chapter ${event.chapter} non corrisponde alla sezione ${event.section}`);
     for (const id of event.characters ?? []) if (!characterIds.has(id)) errors.push(`Event ${event.id}: personaggio inesistente ${id}`);
     for (const id of event.referenced_characters ?? []) if (!characterIds.has(id)) errors.push(`Event ${event.id}: personaggio referenziato inesistente ${id}`);
     for (const key of ["origin", "destination", "location"]) {
@@ -31,6 +36,9 @@ export function validateData({ characters, locations, chapters, events, states }
 
   for (const state of states.character_states) {
     if (!sectionNumbers.has(state.section)) errors.push(`State ${state.character}/${state.section}: sezione inesistente`);
+    if (!state.chapter) errors.push(`State ${state.character}/${state.section}: chapter mancante`);
+    else if (!chapterIds.has(state.chapter)) errors.push(`State ${state.character}/${state.section}: chapter inesistente ${state.chapter}`);
+    else if (chapterBySection.get(state.section) !== state.chapter) errors.push(`State ${state.character}/${state.section}: chapter ${state.chapter} non corrisponde alla sezione ${state.section}`);
     if (!characterIds.has(state.character)) errors.push(`State ${state.character}/${state.section}: personaggio inesistente`);
     if (state.location && !locationIds.has(state.location)) errors.push(`State ${state.character}/${state.section}: luogo inesistente ${state.location}`);
     if (nonPhysicalLocationStatuses.has(state.location_status) && state.location) {
