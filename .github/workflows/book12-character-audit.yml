@@ -1,0 +1,49 @@
+name: Books I-II character audit
+
+on:
+  push:
+    paths:
+      - 'data/source/musashi-book1/**'
+      - 'data/source/book2/**'
+      - 'tools/book12_character_audit.py'
+      - '.github/workflows/book12-character-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install NLP model
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install spacy
+          python -m spacy download en_core_web_sm
+      - name: Generate candidate index
+        run: python tools/book12_character_audit.py
+      - name: Validate candidate index
+        run: python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('research/generated-books1-2-character-audit.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert d['records'], 'empty candidate index'
+          books={r['book'] for r in d['records']}
+          assert {'I','II'} <= books, f'missing book coverage: {books}'
+          print('records:', len(d['records']))
+          print('books:', sorted(books))
+          print('chapters:', len({r['chapter_file'] for r in d['records']}))
+          PY
+      - name: Commit generated audit index
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/generated-books1-2-character-audit.json
+          git diff --cached --quiet || git commit -m 'research: generate Books I-II character audit index'
+          git push
