@@ -23,8 +23,8 @@
     {"id":"kohei","name":"Tsujikaze Kohei","aliases":["Kohei"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"contextual","present_in":[]},
     {"id":"heita","name":"Heita","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","present_in":[4,7]},
     {"id":"gonroku","name":"Fuchikawa Gonroku","aliases":["Uncle Gon","Gon"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","present_in":[7]},
-    {"id":"aoki_tanzaemon","name":"Aoki Tanzaemon","aliases":["Tanzaemon"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"contextual","color":"#8f8f8f","present_in":[]},
-    {"id":"lord_ikeda","name":"Ikeda Terumasa","aliases":["Lord Ikeda","Lord Terumasa"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#8f8f8f","present_in":[8]},
-    {"id":"himeji_captain","name":"Himeji garrison captain","aliases":["the captain","Scraggly Beard"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#8f8f8f","present_in":[4,5,6]}
+    {"id":"aoki_tanzaemon","name":"Aoki Tanzaemon","aliases":["Tanzaemon"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"contextual","present_in":[]},
+    {"id":"lord_ikeda","name":"Ikeda Terumasa","aliases":["Lord Ikeda","Lord Terumasa"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","present_in":[8]},
+    {"id":"himeji_captain","name":"Himeji garrison captain","aliases":["the captain","Scraggly Beard"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","present_in":[4,5,6]}
   ]
 }
