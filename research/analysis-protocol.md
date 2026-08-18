@@ -157,7 +157,54 @@ The same taxonomy applies to every book and must be used consistently when audit
 
 Keep a canonical character ID separate from display names and aliases. This is essential for characters whose names, titles or forms of address vary.
 
-## 11. Source traceability
+## 11. Mandatory cross-book character completeness audit
+
+Before a book is considered ready for production migration, perform a **source-complete character-name pass** over every chapter file in that book.
+
+For the first two books, this means all 19 repository chapter files (`Book I: 8`, `Book II: 11`). For later books the same rule applies to the full chapter corpus available at that time.
+
+The audit must:
+
+1. read every source chapter from beginning to end;
+2. build a temporary candidate name index from the entire corpus;
+3. include both multi-token personal names and single-token names;
+4. include names appearing only in dialogue, letters, lists, headings, inscriptions, epitaphs and historical digressions;
+5. distinguish people from places, schools, clans, factions, titles, occupations and generic groups;
+6. reconcile aliases, nicknames, titles and alternate romanizations against existing canonical IDs;
+7. compare the resulting list against all previous book audits before declaring the book complete;
+8. explicitly record every newly discovered name and why it was previously absent;
+9. run a historical-status pass only **after** the narrative name list is frozen;
+10. retain unresolved historical identities as `unknown` rather than guessing.
+
+### Completeness gate
+
+A book may not pass the character gate merely because the current production roster looks plausible.
+
+The gate is:
+
+```text
+ALL SOURCE CHAPTERS READ
+        ↓
+CANDIDATE NAME INDEX
+        ↓
+PERSON / NON-PERSON CLASSIFICATION
+        ↓
+ALIAS + ID RECONCILIATION
+        ↓
+CROSS-CHECK AGAINST PREVIOUS BOOKS
+        ↓
+HISTORICAL-STATUS RESEARCH
+        ↓
+FINAL NORMALIZED PERSON LIST
+```
+
+The normalized list is authoritative for the subsequent staging and production migration.
+
+For Books I–II, the completed audit is recorded in:
+
+`research/books1-2-character-completeness-and-historical-audit.md`
+
+## 12. Source traceability
 
 Every event must identify:
 
@@ -168,7 +215,7 @@ Every event must identify:
 
 The exact prose of the novel must not be copied into the public application.
 
-## 12. Canonical repository corpus
+## 13. Canonical repository corpus
 
 The repository is now the canonical working corpus for narrative scraping.
 
@@ -188,13 +235,13 @@ External copies of the novel, including the Internet Archive transcription, must
 
 External sources remain permitted for the later modern-geography, historical-status, and micro-Wiki research phases, after the narrative entity has been established from the repository corpus.
 
-## 13. Luni correspondence
+## 14. Luni correspondence
 
 The repository corpus uses the project's canonical English chapter structure. Do not assume its chapter numbering automatically matches the Italian Luni edition.
 
 A separate mapping table must be validated before the reader-facing chapter selector is finalized.
 
-## 14. Quality checks
+## 15. Quality checks
 
 Before accepting a batch:
 
@@ -209,8 +256,10 @@ Before accepting a batch:
 9. Confirm that every person-like entity has the five taxonomy fields from §9 in research/staging data.
 10. Confirm that `present_in` contains only physical narrative presence.
 11. Confirm that historical status has not been used to decide narrative presence.
+12. Confirm that the source-complete character-name audit from §11 has passed for every book being migrated.
+13. Confirm that no previous-book audit was silently invalidated by the new global character list.
 
-## 15. Public UI rule
+## 16. Public UI rule
 
 The application must never expose:
 
@@ -222,7 +271,7 @@ The application must never expose:
 
 The database may contain them for research, but the reader-facing query layer must enforce the chapter cutoff.
 
-## 16. Research-effort rule
+## 17. Research-effort rule
 
 Research depth must serve the reading companion. High precision is desirable, but research must stop when additional investigation no longer produces a meaningful improvement in the map.
 
