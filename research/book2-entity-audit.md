@@ -26,7 +26,7 @@ Conversely, a historically real person who is merely mentioned is a `historical_
 
 Do not infer `fictional` merely because no reliable historical identification has yet been found. Use `unknown` until the historical-status question has actually been researched.
 
-This reflects the nature of Yoshikawa's novel: publisher descriptions explicitly note that Yoshikawa selects real historical figures and reshapes them within partly historical and partly revised events. citeturn0search0turn0search8
+This reflects the nature of Yoshikawa's novel: reliable publisher descriptions characterize it as using real historical figures while reshaping them within partly historical and partly revised events.
 
 ## Existing identities — reuse, no duplicates
 
@@ -63,8 +63,6 @@ All entities below are **narrative characters first**. Their historical status r
 | `kimura_sukekuro` | Kimura Sukekurō | tertiary | active | mapped | unknown |
 | `debuchi` | Debuchi Magobei | tertiary | active | mapped | unknown |
 | `murata_yozo` | Murata Yozō | tertiary | active | mapped | unknown |
-
-Yagyū Muneyoshi/Sekishūsai is explicitly a prominent character in Yoshikawa's *Musashi* despite being a historical figure; this is the model case for keeping `historical_status=historical` alongside `entity_type=character` and `narrative_presence=active`. citeturn0search12
 
 ## Historical/contextual figures — do not add to map character presence
 
