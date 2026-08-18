@@ -4,13 +4,35 @@ Status: **completed — research only**
 
 Canonical narrative source: `data/source/book2/`.
 
-This audit freezes the Book II character/entity normalization before production-data insertion. It does not modify production JSON.
+This audit freezes Book II character/entity normalization before production-data insertion. It does not modify production JSON.
+
+## Character taxonomy — mandatory separation
+
+Character classification is now **orthogonal**. `historical_status` must never replace `narrative_role`.
+
+| Field | Allowed values | Meaning |
+|---|---|---|
+| `entity_type` | `character`, `historical_figure`, `group`, `other` | What kind of entity it is in the research model. |
+| `narrative_presence` | `active`, `mentioned`, `historical_context` | Whether the entity actually participates in the novel's current narrative scene. |
+| `narrative_role` | `primary`, `secondary`, `tertiary`, `none` | Narrative importance, independent of historical status. |
+| `historical_status` | `historical`, `fictional`, `fictionalized`, `unknown` | Historical status of the identity, only when defensible. |
+| `map_relevance` | `mapped`, `contextual`, `none` | Whether the entity should affect the reader-facing map. |
+
+### Core rule
+
+A historical person who actively participates in Yoshikawa's narrative is still a **character**. Being historical is an attribute, not a mutually exclusive category.
+
+Conversely, a historically real person who is merely mentioned is a `historical_figure` / `historical_context` entity and must not automatically become a character marker.
+
+Do not infer `fictional` merely because no reliable historical identification has yet been found. Use `unknown` until the historical-status question has actually been researched.
+
+This reflects the nature of Yoshikawa's novel: publisher descriptions explicitly note that Yoshikawa selects real historical figures and reshapes them within partly historical and partly revised events. citeturn0search0turn0search8
 
 ## Existing identities — reuse, no duplicates
 
 | Canonical ID | Book II forms verified | Decision |
 |---|---|---|
-| `musashi` | Miyamoto Musashi, Musashi, Takezō, Miyamoto | Reuse `musashi`. The Book II text explicitly connects the names. |
+| `musashi` | Miyamoto Musashi, Musashi, Takezō, Miyamoto | Reuse `musashi`. Active narrative character. Historical status: `historical`; narrative role: `primary`. |
 | `matahachi` | Hon'den Matahachi, Matahachi | Reuse `matahachi`. |
 | `otsu` | Otsū | Reuse `otsu`. |
 | `akemi` | Akemi | Reuse `akemi`. |
@@ -19,36 +41,34 @@ This audit freezes the Book II character/entity normalization before production-
 | `jotaro` | Jōtarō, Aoki Jōtarō | Reuse `jotaro`. |
 | `oko` | Oko, Okō | Reuse `oko`. |
 
-The current production registry already contains these identities, so Book II must not create parallel records. The current Book I character schema uses stable IDs and chapter presence arrays; Book II integration must extend that model rather than replace it.
-
 ## New narrative characters — production candidates
 
-| Proposed ID | Canonical display name | Role | Book II status | Notes |
-|---|---|---|---|---|
-| `seijuro` | Yoshioka Seijūrō | Yoshioka young master | recurring | New narrative entity. |
-| `gion_toji` | Gion Tōji | Yoshioka senior disciple | recurring | New narrative entity. |
-| `ueda_ryohei` | Ueda Ryōhei | Yoshioka senior disciple | recurring | New narrative entity. |
-| `denshichiro` | Yoshioka Denshichirō | Yoshioka younger brother | recurring/referenced | Physically associated with the Yoshioka party later in Yagyū. |
-| `shoda_kizaemon` | Shōda Kizaemon | Yagyū retainer | recurring | Important connector between Yagyū and Yoshioka party. |
-| `yagyu_sekishusai` | Yagyū Muneyoshi / Sekishūsai | retired Yagyū head | recurring | Internal identity must be stable across both personal and title/name forms. |
-| `yagyu_munenori` | Yagyū Munenori | Yagyū son | contextual/referenced | No scene presence established in Book II. |
-| `yagyu_hyogo` | Yagyū Hyōgo Toshitoshi | Yagyū grandson | contextual/referenced | No scene presence established in Book II. |
-| `nikkan` | Nikkan | Hōzōin elder/abbot | recurring | Narrative character, not merely historical context. |
-| `inshun` | Inshun | Hōzōin abbot/successor | recurring | Narrative character. |
-| `agon` | Agon | Hōzōin fighter | chapter 6 | Dies in the Book II confrontation. |
-| `yamazoe_dampachi` | Yamazoe Dampachi | rōnin | chapter 7 | Dies on Hannya Plain. |
-| `otomo_banryu` | Otomo Banryū | rōnin | chapters 6–7 context | Keep separate from Dampachi. |
-| `yasukawa_yasubei` | Yasukawa Yasubei | rōnin | chapters 6–7 context | Keep separate from Dampachi. |
-| `kocha` | Kocha | inn worker at Yagyū | recurring | Narrative character at the Wataya/local inn. |
-| `kimura_sukekuro` | Kimura Sukekurō | Yagyū retainer | chapters 9–10 | New narrative entity. |
-| `debuchi` | Debuchi Magobei | Yagyū retainer | chapters 9–10 | New narrative entity. |
-| `murata_yozo` | Murata Yozō | Yagyū retainer | chapters 9–10 | New narrative entity. |
+All entities below are **narrative characters first**. Their historical status remains a separate field and is not assumed without evidence.
 
-These IDs are frozen as **proposed production IDs**, not yet written into `data/characters.json`.
+| Proposed ID | Canonical display name | Narrative role | Presence | Map relevance | Historical status |
+|---|---|---|---|---|---|
+| `seijuro` | Yoshioka Seijūrō | secondary | active | mapped | unknown |
+| `gion_toji` | Gion Tōji | secondary | active | mapped | unknown |
+| `ueda_ryohei` | Ueda Ryōhei | secondary | active | mapped | unknown |
+| `denshichiro` | Yoshioka Denshichirō | secondary | active/mentioned | mapped | unknown |
+| `shoda_kizaemon` | Shōda Kizaemon | secondary | active | mapped | unknown |
+| `yagyu_sekishusai` | Yagyū Muneyoshi / Sekishūsai | secondary | active | mapped | historical |
+| `nikkan` | Nikkan | secondary | active | mapped | unknown |
+| `inshun` | Inshun | secondary | active | mapped | historical/verify identity before production |
+| `agon` | Agon | tertiary | active | mapped | unknown |
+| `yamazoe_dampachi` | Yamazoe Dampachi | secondary | active | mapped | unknown |
+| `otomo_banryu` | Otomo Banryū | tertiary | active/mentioned | contextual until scene-level extraction is finalized | unknown |
+| `yasukawa_yasubei` | Yasukawa Yasubei | tertiary | active/mentioned | contextual until scene-level extraction is finalized | unknown |
+| `kocha` | Kocha | tertiary | active | mapped | unknown |
+| `kimura_sukekuro` | Kimura Sukekurō | tertiary | active | mapped | unknown |
+| `debuchi` | Debuchi Magobei | tertiary | active | mapped | unknown |
+| `murata_yozo` | Murata Yozō | tertiary | active | mapped | unknown |
+
+Yagyū Muneyoshi/Sekishūsai is explicitly a prominent character in Yoshikawa's *Musashi* despite being a historical figure; this is the model case for keeping `historical_status=historical` alongside `entity_type=character` and `narrative_presence=active`. citeturn0search12
 
 ## Historical/contextual figures — do not add to map character presence
 
-The Book II source names historical or cultural figures including:
+These Book II references remain contextual unless a scene-level audit establishes active narrative presence:
 
 - Yoshioka Kempō
 - Oda Nobunaga
@@ -64,11 +84,20 @@ The Book II source names historical or cultural figures including:
 - Sengoku Sōya
 - Ban Dan'emon
 
-These remain **contextual/history entities** unless a later audit establishes an actual narrative scene presence. They must not be added to `present_in` merely because they are mentioned.
+For these entities the default is:
+
+```text
+entity_type = historical_figure
+narrative_presence = historical_context
+narrative_role = none
+map_relevance = none
+```
+
+unless later text establishes an actual scene presence.
 
 ## Group/faction candidates
 
-These should remain distinct from individual characters:
+These remain distinct from individuals:
 
 - Yoshioka School / House of Yoshioka
 - Yoshioka disciples/retainers as an unnamed group
@@ -78,49 +107,47 @@ These should remain distinct from individual characters:
 
 No individual identity should be invented for unnamed members.
 
-## Identity conflicts / schema findings
+## Existing identity and schema findings
 
-1. `characters.json` currently describes `present_in` using Book I-local section numbers. It must not be extended with Book II-local `1–11` values once the global chronology is introduced; otherwise section 1 would ambiguously mean Book I chapter 1 or Book II chapter 1.
-2. `identities.json` is currently also Book I-local: Musashi's `valid_from_section`/`valid_until_section` are 1–7 and the canonical-name switch is section 8. These values need a global book-aware chronology before Book II identity states are inserted.
-3. `relationships.json` currently contains Book I relationships only. Book II relationships should not be appended until their narrative timing/spoiler visibility has been audited.
-4. `events.json` explicitly identifies itself as Book I-only and uses `b1cN-*` IDs. Book II events must use a separate `b2cN-*` namespace during staging, then be integrated through the global chapter model.
+1. `characters.json` currently describes `present_in` using Book I-local section numbers. It must not be extended with Book II-local `1–11` values once the global chronology is introduced.
+2. `identities.json` is currently Book I-local and needs a global book-aware chronology before Book II identity states are inserted.
+3. `relationships.json` currently contains Book I relationships only. Book II relationships should not be appended until timing/spoiler visibility has been audited.
+4. `events.json` is Book I-only and uses `b1cN-*` IDs. Book II events must use a separate `b2cN-*` namespace during staging.
 
 ## Presence candidates for Book II
 
-The following are safe candidates for physical chapter presence based on the completed Pass A/B/C research:
+These are staging conclusions, not final production arrays:
 
 - Musashi: chapters 1–11, with scene-specific state changes.
-- Matahachi: chapters 1–2; later chapters primarily use references/correspondence rather than physical presence.
+- Matahachi: chapters 1–2; later material primarily references/correspondence.
 - Otsū: chapter 5 onward in the Book II sequence, with Yagyū-area presence in chapters 8–11.
-- Akemi: chapter 1 and chapter 5 context; do not mark physical presence in later chapters without direct scene evidence.
-- Osugi: chapter 3 physical presence; later pursuit may be referenced rather than physically present in Book II scenes.
-- Jōtarō: chapter 4 onward, with the Nara/Hannya/Yagyū sequence continuing through chapter 11.
-- Seijūrō/Tōji/Ueda: chapters 1–2; later references must remain references unless the chapter text establishes physical presence.
-- Denshichirō: later Yagyū sequence, especially chapter 9 context; earlier absence in Ise is explicitly reported.
-- Shōda Kizaemon: chapters 5 and 8–10, with the Yagyū/Yoshioka correspondence.
+- Akemi: chapter 1 and chapter 5 context; do not mark later physical presence without direct scene evidence.
+- Osugi: chapter 3 physical presence; later pursuit may be referenced rather than physically present.
+- Jōtarō: chapter 4 onward through the Nara/Hannya/Yagyū sequence.
+- Seijūrō/Tōji/Ueda: chapters 1–2; later references remain references unless the text establishes physical presence.
+- Denshichirō: later Yagyū sequence; earlier absence in Ise is explicitly reported.
+- Shōda Kizaemon: chapters 5 and 8–10.
 - Sekishūsai: chapters 8–11.
 - Nikkan: chapters 6–7.
 - Inshun: chapters 6–7.
 - Agon: chapter 6.
 - Dampachi: chapters 6–7; death in chapter 7.
-- Banryū/Yasubei: chapters 6–7 context; exact physical-presence arrays require the final production extraction rather than inference from group references.
-- Kocha: chapters 8–10/9–10 depending on exact scene segmentation; do not broaden presence beyond source-confirmed scenes.
+- Banryū/Yasubei: chapters 6–7 context; exact presence requires final event/state extraction.
+- Kocha: chapters 8–10, subject to exact scene segmentation.
 - Kimura/Debuchi/Murata: chapters 9–10.
-
-These are staging conclusions; the production arrays should be generated from chapter-level event/state records, not manually copied from this summary.
 
 ## Alias/reader-knowledge rules
 
-- Musashi/Takezō is the only Book II identity transition inherited directly from Book I and must preserve the reader-facing temporal semantics already established.
-- `Yagyū Muneyoshi` and `Sekishūsai` refer to the same narrative person and must not become two map characters.
-- `Aoki Jōtarō` and `Jōtarō` refer to the same character and must not become two records.
+- Musashi/Takezō remains one canonical identity and must preserve the reader-facing temporal semantics established in Book I.
+- `Yagyū Muneyoshi` and `Sekishūsai` are one narrative person.
+- `Aoki Jōtarō` and `Jōtarō` are one narrative person.
 - Titles such as "Young Master", "the old man", "the abbot", or "the captain" are not separate identities when the surrounding text identifies the person.
 
 ## Production gate
 
 **Entity audit: PASS for research normalization.**
 
-Production insertion remains blocked only by:
+Production insertion remains blocked by:
 
 1. Book II location registry/classification;
 2. geographic verification of retained locations;
@@ -128,4 +155,4 @@ Production insertion remains blocked only by:
 4. generation of chapter/state/event staging data from the frozen entity registry;
 5. spoiler/technical audit after integration.
 
-No production JSON was modified by this commit.
+No production JSON was modified by this audit.
