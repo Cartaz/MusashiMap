@@ -43,6 +43,7 @@ Per ogni capitolo, senza caricare inutilmente l'intero libro nel contesto:
 7. Registrare l'incertezza quando il testo non permette una conclusione certa.
 8. Non trasformare una semplice menzione in presenza fisica o movimento.
 9. Per ogni luogo registrare anche il livello di identificabilità geografica: identificazione esatta, corrispondenza moderna forte, area/insediamento, sito narrativo non identificato, oppure nessun ancoraggio difendibile.
+10. Per ogni persona-like entity creare una classificazione provvisoria con i cinque campi di §3A. Se il valore storico non è verificato, usare `unknown`.
 
 L'output di questa passata deve essere tracciabile al capitolo sorgente.
 
@@ -57,8 +58,54 @@ Dopo aver completato tutti i capitoli del libro:
 5. Ricostruire gli spostamenti usando il capitolo precedente come contesto, senza creare salti non supportati.
 6. Controllare le transizioni di stato dei personaggi e dei luoghi.
 7. Individuare contraddizioni, buchi e dati prematuri.
+8. Verificare che la classificazione storica non abbia alterato la classificazione narrativa.
 
 Questa passata è fondamentale: il database finale non deve essere la semplice somma degli scraping indipendenti.
+
+## 3A. Regola obbligatoria per personaggi e figure storiche
+
+La classificazione è **ortogonale**: essere storici non significa essere automaticamente "personaggi di contesto".
+
+Per ogni persona-like entity usare:
+
+| Campo | Valori |
+|---|---|
+| `entity_type` | `character`, `historical_figure`, `group`, `other` |
+| `narrative_presence` | `active`, `mentioned`, `historical_context` |
+| `narrative_role` | `primary`, `secondary`, `tertiary`, `none` |
+| `historical_status` | `historical`, `fictional`, `fictionalized`, `unknown` |
+| `map_relevance` | `mapped`, `contextual`, `none` |
+
+### Regole
+
+1. Un personaggio storico che agisce nella scena è un **character** attivo, non un semplice `historical_figure`.
+2. Una figura storica solo menzionata resta contestuale e non entra automaticamente in `present_in`.
+3. Non dedurre `fictional` dall'assenza di una fonte storica: usare `unknown`.
+4. `narrative_role` e `historical_status` sono indipendenti.
+5. `present_in` indica esclusivamente presenza fisica nella scena/capitolo secondo le semantiche del dataset.
+6. Titoli e soprannomi non diventano nuovi ID se il testo identifica la stessa persona.
+7. La verifica dell'esistenza storica è una fase separata e può usare fonti esterne autorevoli **solo dopo** che la presenza narrativa è stata stabilita dal corpus della repository.
+8. La ricerca storica non può retroattivamente trasformare una semplice menzione in una presenza narrativa.
+
+Esempio di personaggio storico attivo:
+
+```text
+entity_type = character
+narrative_presence = active
+narrative_role = secondary
+historical_status = historical
+map_relevance = mapped
+```
+
+Esempio di figura storica contestuale:
+
+```text
+entity_type = historical_figure
+narrative_presence = historical_context
+narrative_role = none
+historical_status = historical
+map_relevance = none
+```
 
 ## 4. Audit geografico e identificazione dei luoghi
 
@@ -191,7 +238,8 @@ Prima di considerare il libro completato:
 
 - [ ] Ogni capitolo è stato analizzato.
 - [ ] Tutti i personaggi principali e secondari rilevanti sono presenti.
-- [ ] I personaggi di contesto storico sono separati dai personaggi della narrazione quando necessario.
+- [ ] Personaggi storici attivi e figure storiche meramente contestuali sono distinti secondo §3A.
+- [ ] Nessun `historical_status` è stato usato come scorciatoia per determinare la presenza narrativa.
 - [ ] I luoghi sono normalizzati e privi di suffissi amministrativi inutili nella visualizzazione.
 - [ ] Gli eventi principali sono presenti.
 - [ ] Gli spostamenti sono coerenti capitolo per capitolo.
@@ -258,6 +306,8 @@ PASSATA A: SCRAPING CAPITOLO PER CAPITOLO
 PASSATA B: CONFRONTO CROSS-CHAPTER
   ↓
 NORMALIZZAZIONE IDENTITÀ / LUOGHI / EVENTI
+  ↓
+CLASSIFICAZIONE PERSONAGGI: PRESENZA / RUOLO / STORICITÀ / MAPPA
   ↓
 AUDIT GEOGRAFICO + CLASSIFICAZIONE DELLA PRECISIONE
   ↓
