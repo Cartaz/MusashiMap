@@ -1,0 +1,28 @@
+name: Audit character names (temporary)
+
+on:
+  push:
+    paths:
+      - 'data/source/book1/**'
+      - 'data/source/book2/**'
+      - 'research/tools/audit-character-names.py'
+      - '.github/workflows/audit-character-names.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate exhaustive candidate index
+        run: python3 research/tools/audit-character-names.py > /tmp/character-name-candidates.md
+      - name: Print candidate index to log
+        run: cat /tmp/character-name-candidates.md
+      - name: Upload candidate index
+        uses: actions/upload-artifact@v4
+        with:
+          name: character-name-candidates
+          path: /tmp/character-name-candidates.md
