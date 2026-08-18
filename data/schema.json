@@ -1,37 +1,51 @@
 {
-  "version": 3,
-  "description": "Canonical structural reference for the current MusashiMap Book I data model. This is not a JSON Schema validator.",
+  "version": 4,
+  "description": "Canonical structural reference for the unified MusashiMap data model. This is not a JSON Schema validator.",
   "entities": {
     "characters": {
       "id": "string",
       "name": "string",
       "aliases": "string[]",
       "importance": "main|secondary",
-      "present_in": "number[]"
+      "present_in": "number[]|legacy compatibility",
+      "entity_type": "character",
+      "historical_status": "historical|fictional|fictionalized|unknown",
+      "chapter_states": "object keyed by bNcN"
+    },
+    "character_chapter_state": {
+      "narrative_presence": "active|mentioned|reported|historical_context",
+      "narrative_role": "primary|secondary|tertiary|contextual",
+      "map_relevance": "mapped|contextual|none"
     },
     "locations": {
       "id": "string",
       "name": "string",
       "type": "string",
+      "introduced_chapter": "bNcN|null",
       "coordinates": "[number,number]|null",
       "coordinate_precision": "exact|area|approximate_area|modern_match|modern_literary_reference|representative_point|route|null",
       "coordinate_radius_m": "number|null",
-      "geographic_confidence": "string|null",
+      "geographic_confidence": "A|B|C|D|null",
       "historical_match": "string|null",
       "modern_name_jp": "string|null",
       "modern_name_romaji": "string|null",
+      "mapping_type": "point|area|route|parent|child|unmapped|null",
+      "parent_location": "string|null",
       "map_note": "string|null"
     },
     "chapters": {
       "id": "string",
+      "chapter_id": "bNcN",
       "number": "number",
       "book": "string",
+      "book_number": "number",
       "book_title": "string",
       "title": "string"
     },
     "events": {
       "id": "string",
-      "section": "number",
+      "chapter": "bNcN",
+      "section": "number|legacy compatibility",
       "type": "string",
       "characters": "string[]",
       "referenced_characters": "string[]|optional",
@@ -47,7 +61,8 @@
       "source_ref": "string"
     },
     "character_states": {
-      "section": "number",
+      "chapter": "bNcN",
+      "section": "number|legacy compatibility",
       "character": "string",
       "location": "string|null",
       "last_known_location": "string|null|optional",
@@ -56,8 +71,15 @@
       "certainty": "explicit|strong_inference|weak_inference",
       "location_status": "string|optional",
       "departure_from": "string|optional",
-      "departure_section": "number|optional",
+      "departure_chapter": "bNcN|optional",
+      "departure_section": "number|legacy compatibility",
       "group": "string|optional"
+    },
+    "identities": {
+      "character_id": "string",
+      "display_name": "string",
+      "valid_from_chapter": "bNcN",
+      "valid_until_chapter": "bNcN|null"
     },
     "context_entities": {
       "id": "string",
@@ -74,10 +96,10 @@
       "type": "historical_person|historical_clan|historical_faction|historical_event|historical_work|other",
       "display_name": "string",
       "novel_trigger": {
-        "first_book1_section": "number",
+        "first_chapter": "bNcN",
         "name_in_text": "string",
         "context": "string",
-        "spoiler_safe_until": "number"
+        "spoiler_safe_until": "bNcN"
       },
       "wiki": {
         "summary": "string"
@@ -90,14 +112,19 @@
     }
   },
   "integrity_rules": [
+    "Every cross-book chapter reference uses bNcN; legacy numeric fields may exist only during migration.",
     "characters lists physical participants in an event; referenced_characters is used for named people involved only through letters, reports, memories or other non-present references.",
-    "character-state location is the physically established cartographic position at the end of the section; reported-only positions must use location:null and last_known_location when useful.",
+    "character-state location is the physically established cartographic position at the end of the chapter; reported-only positions must use location:null and last_known_location when useful.",
     "location_status values such as reported_position, unknown and departed_* must not be interpreted as physical presence.",
-    "character-state destination must not expose a future movement that is first established in a later section.",
+    "character-state destination must not expose a future movement that is first established in a later chapter.",
     "companions represent physical co-presence in the stated narrative state, not people merely mentioned in dialogue or reports.",
     "appearance/presence without an established origin must not be encoded as a confirmed movement edge.",
     "historical context is separate from novel evidence; external sources may explain a named historical entity but must not be used to invent narrative facts.",
     "historical works are first-class contextual entities and are not modeled as characters or factions.",
-    "hinagura and hinagura_stockade are distinct identifiers: the former denotes the broader area and the latter the specific fortified site."
+    "historical_status never implies narrative presence or map presence.",
+    "main-cast membership never implies physical presence.",
+    "unresolved locations do not receive invented coordinates.",
+    "hinagura and hinagura_stockade are distinct identifiers: the former denotes the broader area and the latter the specific fortified site.",
+    "locations persist from their first narrative appearance through the end of Book VII unless explicitly retired by future research rules."
   ]
 }
