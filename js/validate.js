@@ -50,6 +50,31 @@ export function validateData({ characters, locations, chapters, events, states }
     stateSections.set(key, state);
   }
 
+  const eventLocationByCharacterSection = new Map();
+  const stateLocationByCharacterSection = new Map();
+  for (const state of states.character_states) stateLocationByCharacterSection.set(`${state.character}:${state.section}`, state);
+
+  const stateCheckEventTypes = new Set(["arrival", "meeting", "battle_context", "capture", "imprisonment", "release", "restraint", "search", "trap", "conversation", "relationship_change", "appearance"]);
+  for (const event of events.events) {
+    const eventLocation = event.location ?? (event.movement_status === "arrival_confirmed" ? event.destination : null);
+    if (!eventLocation || eventLocation === specialUnknownLocation || !stateCheckEventTypes.has(event.type)) continue;
+    for (const characterId of event.characters ?? []) {
+      const state = stateLocationByCharacterSection.get(`${characterId}:${event.section}`);
+      if (!state) continue;
+      if (state.location === eventLocation) continue;
+      if (["reported_position", "unknown", "departed_with_group", "departed_eastward", "departed_westward"].includes(state.location_status)) continue;
+      const key = `${characterId}:${event.section}`;
+      const previous = eventLocationByCharacterSection.get(key);
+      if (!previous) eventLocationByCharacterSection.set(key, { location: eventLocation, eventId: event.id });
+      else if (previous.location !== eventLocation) {
+        warnings.push(`Cross-check ${characterId}/${event.section}: eventi indicano ${previous.location} e ${eventLocation}; verificare quale sia la posizione narrativa finale.`);
+      }
+      if (event.type === "arrival" || event.type === "capture" || event.type === "imprisonment" || event.type === "release") {
+        warnings.push(`Cross-check ${event.id}: ${characterId} è associato a ${eventLocation}, ma lo stato di fine sezione indica ${state.location}. Verificare se l'evento è transitorio o se lo stato finale è errato.`);
+      }
+    }
+  }
+
   for (const character of characters.characters) {
     const actual = [...stateSections.values()].filter(state => state.character === character.id && state.location).map(state => state.section).sort((a, b) => a - b);
     const declared = [...new Set(character.present_in ?? [])].sort((a, b) => a - b);
