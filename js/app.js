@@ -1,5 +1,5 @@
 import { loadData } from "./data.js";
-import { validateData } from "./validate.js?v=20260818-03";
+import { validateData } from "./validate.js?v=20260818-04";
 import { createReaderProgress, getCanonicalReaderState, getDisplayCharacterName, getRelevantHistoricalWiki, setCanonicalReaderState, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 const chapterInput=document.querySelector("#chapter"),chapterApply=document.querySelector("#chapter-apply"),prevButton=document.querySelector("#prev-section"),nextButton=document.querySelector("#next-section"),sectionSelect=document.querySelector("#section-select"),bookLabel=document.querySelector("#book-label"),title=document.querySelector("#section-title"),status=document.querySelector("#status"),characterList=document.querySelector("#character-list"),eventList=document.querySelector("#event-list"),wikiList=document.querySelector("#wiki-list"),validation=document.querySelector("#validation"),characterFilters=document.querySelector("#character-filters"),placeLegend=document.querySelector("#place-legend"),selectAll=document.querySelector("#select-all"),selectNone=document.querySelector("#select-none"),characterToggle=document.querySelector("#character-toggle"),characterFilterBody=document.querySelector("#character-filter-body");
