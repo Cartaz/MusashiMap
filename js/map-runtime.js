@@ -2,7 +2,7 @@ import { loadMapData } from "./data.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260818-02";
+  const VERSION = "20260818-05";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -309,9 +309,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
         zoomControl: true,
         preferCanvas: true,
         minZoom: 1,
-        maxZoom: 18,
-        maxBounds: [[180, -Infinity], [-180, Infinity]],
-        maxBoundsViscosity: 1
+        maxZoom: 18
       }).setView([35.05, 135.55], 7);
 
       const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", { cache: "no-store" });
@@ -350,7 +348,11 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     if (sectionChanged) unmappedPopupOpen = false;
     if (selectionChanged) {
       const latestStates = getLatestStates(characterStates, state.section);
-      unmappedPopupOpen = [...nextSelected].some(id => latestStates.find(item => item.character === id)?.location_status === "unknown");
+      const nonPhysicalWithoutLastKnown = new Set(["unknown", "reported_position", "departed_with_group", "departed_eastward", "departed_westward"]);
+      unmappedPopupOpen = [...nextSelected].some(id => {
+        const latest = latestStates.find(item => item.character === id);
+        return Boolean(latest && nonPhysicalWithoutLastKnown.has(latest.location_status) && !latest.last_known_location);
+      });
     }
 
     selectedCharacters = nextSelected;
