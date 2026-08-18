@@ -36,9 +36,9 @@
       "pointer-events:none",
       "display:none",
       "background:rgba(52,52,52,.5)",
-      "z-index:-1"
+      "z-index:0"
     ].join(";");
-    node.append(line);
+    node.prepend(line);
     return line;
   };
 
