@@ -1,11 +1,11 @@
 {
-  "version": 3,
+  "version": 4,
   "source": {
     "title": "Musashi",
     "author": "Eiji Yoshikawa",
     "translator": "Charles S. Terry",
     "corpus": "repository",
-    "source_path": "data/source/musashi-book1",
+    "source_path": "data/source",
     "source_url": null
   },
   "sections": [
@@ -16,6 +16,17 @@
     {"id":"s005","chapter_id":"b1c5","number":5,"book":"I","book_number":1,"book_title":"Earth","title":"The Art of War"},
     {"id":"s006","chapter_id":"b1c6","number":6,"book":"I","book_number":1,"book_title":"Earth","title":"The Old Cryptomeria Tree"},
     {"id":"s007","chapter_id":"b1c7","number":7,"book":"I","book_number":1,"book_title":"Earth","title":"The Rock and the Tree"},
-    {"id":"s008","chapter_id":"b1c8","number":8,"book":"I","book_number":1,"book_title":"Earth","title":"The Birth of Musashi"}
+    {"id":"s008","chapter_id":"b1c8","number":8,"book":"I","book_number":1,"book_title":"Earth","title":"The Birth of Musashi"},
+    {"id":"s009","chapter_id":"b2c1","number":9,"book":"II","book_number":2,"book_title":"Water","title":"The Yoshioka School"},
+    {"id":"s010","chapter_id":"b2c2","number":10,"book":"II","book_number":2,"book_title":"Water","title":"The Wheel of Fortune"},
+    {"id":"s011","chapter_id":"b2c3","number":11,"book":"II","book_number":2,"book_title":"Water","title":"Encounter and Retreat"},
+    {"id":"s012","chapter_id":"b2c4","number":12,"book":"II","book_number":2,"book_title":"Water","title":"The Water Sprite"},
+    {"id":"s013","chapter_id":"b2c5","number":13,"book":"II","book_number":2,"book_title":"Water","title":"A Spring Breeze"},
+    {"id":"s014","chapter_id":"b2c6","number":14,"book":"II","book_number":2,"book_title":"Water","title":"The Hōzōin"},
+    {"id":"s015","chapter_id":"b2c7","number":15,"book":"II","book_number":2,"book_title":"Water","title":"Hannya Plain"},
+    {"id":"s016","chapter_id":"b2c8","number":16,"book":"II","book_number":2,"book_title":"Water","title":"The Koyagyū Fief"},
+    {"id":"s017","chapter_id":"b2c9","number":17,"book":"II","book_number":2,"book_title":"Water","title":"The Peony"},
+    {"id":"s018","chapter_id":"b2c10","number":18,"book":"II","book_number":2,"book_title":"Water","title":"Jōtarō's Revenge"},
+    {"id":"s019","chapter_id":"b2c11","number":19,"book":"II","book_number":2,"book_title":"Water","title":"The Nightingales"}
   ]
 }
