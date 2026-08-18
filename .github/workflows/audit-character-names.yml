@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   audit:
@@ -18,11 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Generate exhaustive candidate index
-        run: python3 research/tools/audit-character-names.py > /tmp/character-name-candidates.md
-      - name: Print candidate index to log
-        run: cat /tmp/character-name-candidates.md
-      - name: Upload candidate index
-        uses: actions/upload-artifact@v4
-        with:
-          name: character-name-candidates
-          path: /tmp/character-name-candidates.md
+        run: python3 research/tools/audit-character-names.py > research/generated-character-name-candidates.md
+      - name: Commit generated index
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/generated-character-name-candidates.md
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: generate exhaustive character-name candidate index'
+          git push
