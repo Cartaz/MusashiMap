@@ -24,6 +24,23 @@ export function validateData({ characters, locations, chapters, events, states }
       }
     }
     for (const id of event.via ?? []) if (!locationIds.has(id)) errors.push(`Event ${event.id}: luogo via inesistente ${id}`);
+
+    const hasRouteEndpoints = Boolean(event.origin || event.destination);
+    if (hasRouteEndpoints && !event.movement_status) {
+      warnings.push(`Event ${event.id}: spostamento con origin/destination ma movement_status mancante`);
+    }
+    if (event.movement_status === "arrival_confirmed" && !event.destination) {
+      errors.push(`Event ${event.id}: arrival_confirmed richiede una destination`);
+    }
+    if (event.movement_status === "confirmed_route" && (!event.origin || !event.destination)) {
+      errors.push(`Event ${event.id}: confirmed_route richiede origin e destination`);
+    }
+    if (["intended_destination", "direction_only"].includes(event.movement_status) && !event.destination) {
+      warnings.push(`Event ${event.id}: ${event.movement_status} senza destination esplicita`);
+    }
+    if (event.movement_status === "uncertain_route" && event.destination !== specialUnknownLocation) {
+      warnings.push(`Event ${event.id}: uncertain_route ha una destination cartografica esplicita`);
+    }
   }
 
   const nonPhysicalLocationStatuses = new Set([
@@ -41,8 +58,18 @@ export function validateData({ characters, locations, chapters, events, states }
     else if (chapterBySection.get(state.section) !== state.chapter) errors.push(`State ${state.character}/${state.section}: chapter ${state.chapter} non corrisponde alla sezione ${state.section}`);
     if (!characterIds.has(state.character)) errors.push(`State ${state.character}/${state.section}: personaggio inesistente`);
     if (state.location && !locationIds.has(state.location)) errors.push(`State ${state.character}/${state.section}: luogo inesistente ${state.location}`);
+    if (state.last_known_location && !locationIds.has(state.last_known_location)) errors.push(`State ${state.character}/${state.section}: last_known_location inesistente ${state.last_known_location}`);
     if (nonPhysicalLocationStatuses.has(state.location_status) && state.location) {
       errors.push(`State ${state.character}/${state.section}: ${state.location_status} non può avere una posizione fisica corrente (${state.location})`);
+    }
+    if (nonPhysicalLocationStatuses.has(state.location_status) && !state.last_known_location && state.location_status !== "unknown") {
+      warnings.push(`State ${state.character}/${state.section}: ${state.location_status} senza last_known_location`);
+    }
+    if (state.location_status === "reported_position" && !state.location && !state.last_known_location) {
+      errors.push(`State ${state.character}/${state.section}: reported_position senza luogo riferito`);
+    }
+    if (state.location_status === "departed_with_group" && !state.departure_from) {
+      warnings.push(`State ${state.character}/${state.section}: departed_with_group senza departure_from`);
     }
     const key = `${state.character}:${state.section}`;
     if (stateSections.has(key)) errors.push(`State ${state.character}/${state.section}: stato duplicato nella stessa sezione`);
