@@ -4,11 +4,13 @@
  * Character positions are narrative coordinates and must remain unchanged in
  * the data model. When two or more character markers are visually too close
  * on screen, only their DOM icons are separated by a small pixel offset.
- * The offsets are recalculated after pan/zoom/resize so they are screen-space
+ * A subtle leader line keeps the real geographic anchor visually explicit.
+ * Offsets are recalculated after pan/zoom/resize, so they are screen-space
  * aware rather than tied to geographic distance.
  */
 (() => {
   const MARKER_SELECTOR = ".musashi-character-marker-wrapper";
+  const LINE_CLASS = "musashi-character-collision-line";
   const COLLISION_DISTANCE = 34;
   const RADII = { 2: 24, 3: 26 };
   const DEFAULT_RADIUS = 30;
@@ -19,22 +21,55 @@
     frame = requestAnimationFrame(() => resolve(map));
   };
 
+  const getLine = node => {
+    let line = node.querySelector(`.${LINE_CLASS}`);
+    if (line) return line;
+    line = document.createElement("span");
+    line.className = LINE_CLASS;
+    line.setAttribute("aria-hidden", "true");
+    line.style.cssText = [
+      "position:absolute",
+      "left:50%",
+      "top:50%",
+      "height:1.5px",
+      "transform-origin:0 50%",
+      "pointer-events:none",
+      "display:none",
+      "background:rgba(52,52,52,.5)",
+      "z-index:-1"
+    ].join(";");
+    node.append(line);
+    return line;
+  };
+
+  const clearOffset = node => {
+    node.style.marginLeft = "0px";
+    node.style.marginTop = "0px";
+    const line = node.querySelector(`.${LINE_CLASS}`);
+    if (line) line.style.display = "none";
+  };
+
+  const applyOffset = (node, dx, dy) => {
+    node.style.marginLeft = `${dx}px`;
+    node.style.marginTop = `${dy}px`;
+    const line = getLine(node);
+    const length = Math.hypot(dx, dy);
+    const angle = Math.atan2(-dy, -dx) * 180 / Math.PI;
+    line.style.width = `${length}px`;
+    line.style.transform = `rotate(${angle}deg)`;
+    line.style.display = "block";
+  };
+
   const resolve = map => {
     frame = 0;
     const nodes = [...map.getContainer().querySelectorAll(MARKER_SELECTOR)]
       .filter(node => node.isConnected);
     if (nodes.length < 2) {
-      nodes.forEach(node => {
-        node.style.marginLeft = "0px";
-        node.style.marginTop = "0px";
-      });
+      nodes.forEach(clearOffset);
       return;
     }
 
-    nodes.forEach(node => {
-      node.style.marginLeft = "0px";
-      node.style.marginTop = "0px";
-    });
+    nodes.forEach(clearOffset);
 
     const points = nodes.map(node => {
       const rect = node.getBoundingClientRect();
@@ -70,8 +105,7 @@
         const angle = -Math.PI / 2 + index * (Math.PI * 2 / group.length);
         const dx = Math.round(Math.cos(angle) * radius);
         const dy = Math.round(Math.sin(angle) * radius);
-        points[pointIndex].node.style.marginLeft = `${dx}px`;
-        points[pointIndex].node.style.marginTop = `${dy}px`;
+        applyOffset(points[pointIndex].node, dx, dy);
       });
     });
   };
