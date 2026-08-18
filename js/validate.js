@@ -51,8 +51,6 @@ export function validateData({ characters, locations, chapters, events, states }
 
   // present_in means that the character is physically present somewhere in
   // the chapter. It does not require a resolved end-of-chapter map point.
-  // This distinction matters for scenes where a character disappears or is
-  // left at an unknown location before the chapter closes.
   for (const character of characters.characters) {
     const declared = [...new Set(character.present_in ?? [])].sort((a, b) => a - b);
     const declaredSet = new Set(declared);
@@ -77,16 +75,21 @@ export function validateData({ characters, locations, chapters, events, states }
     }
   }
 
-  // Compare only the terminal location-bearing event for each character in
-  // each section with a physically resolved end-of-section state. Earlier
-  // events are intentionally not compared one-to-one because a chapter can
-  // contain several legitimate movements before its final state.
+  // Only strong terminal anchors are compared with an end-of-section
+  // physical state. Ordinary meetings, conversations and searches are not
+  // terminal evidence because a character may move later in the same section.
+  const terminalAnchorTypes = new Set(["arrival", "capture", "imprisonment", "restraint"]);
   const terminalEventLocations = new Map();
   events.events.forEach(event => {
+    const isStrongMovementAnchor = ["arrival_confirmed", "confirmed_route"].includes(event.movement_status);
+    const isStrongEventAnchor = terminalAnchorTypes.has(event.type);
+    if (!isStrongMovementAnchor && !isStrongEventAnchor) return;
+
     let location = null;
     if (event.location && event.location !== specialUnknownLocation) location = event.location;
-    else if (["arrival_confirmed", "confirmed_route"].includes(event.movement_status) && event.destination && event.destination !== specialUnknownLocation) location = event.destination;
+    else if (event.destination && event.destination !== specialUnknownLocation) location = event.destination;
     if (!location) return;
+
     for (const characterId of event.characters ?? []) {
       terminalEventLocations.set(`${characterId}:${event.section}`, { location, eventId: event.id });
     }
@@ -94,9 +97,9 @@ export function validateData({ characters, locations, chapters, events, states }
 
   for (const [key, terminal] of terminalEventLocations) {
     const state = stateSections.get(key);
-    if (!state?.location) continue;
+    if (!state?.location || nonPhysicalLocationStatuses.has(state.location_status)) continue;
     if (state.location !== terminal.location) {
-      warnings.push(`State/event mismatch ${key}: stato finale ${state.location} ma ultimo evento localizzante ${terminal.eventId} indica ${terminal.location}`);
+      warnings.push(`State/event mismatch ${key}: stato finale ${state.location} ma ultimo anchor ${terminal.eventId} indica ${terminal.location}`);
     }
   }
 
