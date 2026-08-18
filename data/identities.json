@@ -1,11 +1,13 @@
 {
-  "version": 1,
-  "description": "Temporal character identities and aliases. The character_id identifies the person; display_name identifies the name the reader should see at a given narrative section.",
+  "version": 2,
+  "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
       "character_id": "musashi",
       "display_name": "Shinmen Takezo",
       "alias": null,
+      "valid_from_chapter": "b1c1",
+      "valid_until_chapter": "b1c7",
       "valid_from_section": 1,
       "valid_until_section": 7,
       "reader_knows_canonical_identity": false,
@@ -16,6 +18,8 @@
       "character_id": "musashi",
       "display_name": "Miyamoto Musashi",
       "alias": null,
+      "valid_from_chapter": "b1c8",
+      "valid_until_chapter": null,
       "valid_from_section": 8,
       "valid_until_section": null,
       "reader_knows_canonical_identity": true,
@@ -26,6 +30,8 @@
       "character_id": "matahachi",
       "display_name": "Hon'den Matahachi",
       "alias": null,
+      "valid_from_chapter": "b1c1",
+      "valid_until_chapter": null,
       "valid_from_section": 1,
       "valid_until_section": null,
       "reader_knows_canonical_identity": true,
