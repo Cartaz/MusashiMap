@@ -1,23 +1,27 @@
 from pathlib import Path
 import re
-from collections import Counter
 
 ROOT = Path('data/source')
 BOOKS = {'I': ROOT / 'book1', 'II': ROOT / 'book2'}
 
-# Strong signals for Japanese romanized personal names in this corpus.
 NAME_PATTERNS = [
-    re.compile(r'\b[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+(?:[-\'’][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+)?\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+(?:[-\'’][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+)?\b'),
-    re.compile(r'\b(?:Lord|Master|Young Master|Uncle|Father|Mother|Captain|Abbot|Priest|Doctor)\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+(?:\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+){0,2}\b'),
+    re.compile(r"\b[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+(?:[-'’][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+)?\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+(?:[-'’][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+)?\b"),
+    re.compile(r"\b(?:Lord|Master|Young Master|Uncle|Father|Mother|Captain|Abbot|Priest|Doctor|Brother|Sister)\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+(?:\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿōūīāē]+){0,2}\b"),
 ]
 
-# Common non-person proper-name heads. These remain candidates for manual review,
-# rather than being silently discarded.
-NON_PERSON_HEADS = {
-    'Mount','Mt','River','Lake','Hill','Hills','Temple','Shrine','School','Castle',
-    'Bridge','Road','Avenue','Street','Mountain','Province','City','Village','Valley',
-    'District','Plain','Gate','House','Hall','Garden','Station','Pond','River','Fief',
-    'Army','Western','Eastern','Tokugawa','Yoshioka','Hōzōin','Kōfukuji','Kiyomizudera',
+NON_PERSON_WORDS = {
+    'Mount','Mt','River','Lake','Hill','Hills','Temple','Shrine','School','Castle','Bridge',
+    'Road','Avenue','Street','Mountain','Province','City','Village','Valley','District','Plain',
+    'Gate','House','Hall','Garden','Station','Pond','Fief','Army','Western','Eastern','Tokugawa',
+    'Yoshioka','Hōzōin','Kōfukuji','Kiyomizudera','Kyoto','Nara','Ise','Yamato','Mino','Himeji',
+    'Mimasaka','Tajima','Kishū','Koyagyū','Kamo','Kizu','Uji','Takase','Hannya','Hōzōin',
+}
+
+SENTENCE_STARTERS = {
+    'As','When','While','Where','After','Before','Since','Though','Although','But','And','Or','If',
+    'This','That','These','Those','The','A','An','His','Her','Their','Our','Your','My','One','Some',
+    'Many','Several','Each','Both','Then','Now','Just','Even','Only','Still','Yet','From','Into','At',
+    'On','In','To','For','With','Without','Through','Around','Near','Beside','During','Under','Over',
 }
 
 seen = {}
@@ -27,22 +31,28 @@ for book, d in BOOKS.items():
         for pat in NAME_PATTERNS:
             for m in pat.finditer(text):
                 cand = re.sub(r'\s+', ' ', m.group(0)).strip(' ,.;:!?\"“”')
-                # retain all candidates, but count and collect contexts for manual audit
+                words = cand.split()
+                if not words or words[0] in SENTENCE_STARTERS:
+                    continue
+                if any(w in NON_PERSON_WORDS for w in words):
+                    continue
+                # A capitalized two-token phrase is still only a candidate: context decides.
                 line_start = text.rfind('\n', 0, m.start()) + 1
                 line_end = text.find('\n', m.end())
-                if line_end < 0: line_end = len(text)
+                if line_end < 0:
+                    line_end = len(text)
                 ctx = text[line_start:line_end].strip()
                 key = cand.lower()
                 rec = seen.setdefault(key, {'display': cand, 'books': set(), 'chapters': set(), 'count': 0, 'contexts': []})
                 rec['books'].add(book)
                 rec['chapters'].add(p.stem)
                 rec['count'] += 1
-                if len(rec['contexts']) < 4 and ctx not in rec['contexts']:
+                if len(rec['contexts']) < 6 and ctx not in rec['contexts']:
                     rec['contexts'].append(ctx)
 
 print('# Exhaustive candidate character-name audit — Books I–II\n')
-print('Generated mechanically from every source chapter. This is a candidate index, not a classification. Every candidate must be manually checked against the source context.\n')
-print(f'Total unique candidate strings: {len(seen)}\n')
+print('Generated mechanically from every source chapter. Candidates are deliberately over-inclusive; classification requires source-context review.\n')
+print(f'Total unique candidate strings after non-person filtering: {len(seen)}\n')
 for key, rec in sorted(seen.items(), key=lambda kv: (-kv[1]['count'], kv[0])):
     print(f"## {rec['display']}")
     print(f"- Books: {', '.join(sorted(rec['books']))}")
