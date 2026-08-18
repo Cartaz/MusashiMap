@@ -117,16 +117,40 @@ for (const file of jsFiles) {
 // with a static scan alone.
 const cssClassDefinitions = new Map();
 const cssClassReferences = new Map();
+const cssSelectorOccurrences = new Map();
 const addRef = (map, name, file) => {
   if (!map.has(name)) map.set(name, new Set());
   map.get(name).add(path.relative(root, file));
 };
+
+const normalizeSelector = selector => selector
+  .replace(/\/\*[\s\S]*?\*\//g, "")
+  .replace(/\s+/g, " ")
+  .trim();
 
 for (const file of cssFiles) {
   const content = await readFile(file, "utf8");
   const withoutComments = content.replace(/\/\*[\s\S]*?\*\//g, "");
   for (const match of withoutComments.matchAll(/\.([A-Za-z_][\w-]*)/g)) {
     addRef(cssClassDefinitions, match[1], file);
+  }
+
+  // Candidate duplicate-selector audit. It deliberately ignores at-rules and
+  // declarations, and reports repeated selectors across the same stylesheet.
+  // Repetition across media queries is allowed to remain a warning because it
+  // can be intentional responsive behavior.
+  for (const match of withoutComments.matchAll(/([^{}]+)\{/g)) {
+    const selector = normalizeSelector(match[1]);
+    if (!selector || selector.startsWith("@") || !selector.includes(".")) continue;
+    const key = selector;
+    if (!cssSelectorOccurrences.has(key)) cssSelectorOccurrences.set(key, []);
+    cssSelectorOccurrences.get(key).push(path.relative(root, file));
+  }
+}
+
+for (const [selector, occurrences] of cssSelectorOccurrences) {
+  if (occurrences.length > 1) {
+    warnings.push(`Repeated CSS selector (${occurrences.length} definitions): ${selector} [${occurrences[0]}]`);
   }
 }
 
