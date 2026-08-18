@@ -14,9 +14,7 @@ The goal is to improve the map as a **follow-along reading companion**. The goal
 
 ### Narrative source
 
-The Internet Archive transcription of the English corpus is the authoritative source for what the novel says.
-
-Use it to establish:
+The **canonical repository corpus** is authoritative for what the novel says. Use the corresponding files under `data/source/bookN/` to establish:
 
 - place names;
 - descriptions;
@@ -27,7 +25,7 @@ Use it to establish:
 - distances or travel times when explicitly given;
 - narrative uncertainty.
 
-Do not use external sources to alter or "correct" the novel's narrative geography.
+When the corresponding repository text exists, do **not** consult Internet Archive or another external copy to establish or correct narrative content.
 
 ### Modern identification sources
 
@@ -165,7 +163,7 @@ Ambiguous places receive **at most two substantive research rounds** before bein
 
 ### Round 1 — direct identification
 
-1. Establish the exact narrative name and all textual clues from the Internet Archive corpus.
+1. Establish the exact narrative name and all textual clues from the canonical repository corpus.
 2. Search authoritative modern sources for matching names and known literary/historical associations.
 3. Generate plausible candidates.
 4. Test obvious textual and geographic constraints.
@@ -196,8 +194,6 @@ unknown
 ```
 
 and preserve the reason for uncertainty in `notes` or `contradictions`.
-
-This is intentional. A correct uncertain area is better than a falsely precise point.
 
 ## 11. What counts as meaningful improvement
 
@@ -276,9 +272,21 @@ For every completed investigation retain:
 - coordinates, if justified;
 - sources used for modern identification.
 
-This makes later audits reproducible without repeating the entire investigation.
+## 16. Production-data safety rule
 
-## 16. Final principle
+When geographic research is later promoted into the production JSON files, perform a **character-label audit at the same time**.
+
+For every existing Book I character record, verify that the new person taxonomy is represented consistently:
+
+- `entity_type`;
+- `narrative_presence`;
+- `narrative_role`;
+- `historical_status`;
+- `map_relevance`.
+
+Do not migrate only Book II characters to the new schema. The production migration must normalize Book I and Book II together, preserving canonical IDs, aliases, and existing narrative semantics. Any character whose classification is uncertain must be marked `unknown` rather than guessed.
+
+## 17. Final principle
 
 **Be as precise as the evidence allows, but no more precise than the evidence allows.**
 
