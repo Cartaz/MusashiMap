@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
@@ -31,12 +31,84 @@
       "display_name": "Hon'den Matahachi",
       "alias": null,
       "valid_from_chapter": "b1c1",
-      "valid_until_chapter": null,
+      "valid_until_chapter": "b3c1",
       "valid_from_section": 1,
-      "valid_until_section": null,
+      "valid_until_section": 20,
       "reader_knows_canonical_identity": true,
       "status": "canonical_name",
       "change_reason": null
+    },
+    {
+      "character_id": "matahachi",
+      "display_name": "Sasaki Kojirō",
+      "alias": "false Sasaki Kojirō",
+      "valid_from_chapter": "b3c2",
+      "valid_until_chapter": null,
+      "valid_from_section": 21,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "impersonated_name",
+      "change_reason": "identity_fraud"
+    },
+    {
+      "character_id": "kojiro",
+      "display_name": "Sasaki Kojirō",
+      "alias": null,
+      "valid_from_chapter": "b3c1",
+      "valid_until_chapter": "b3c2",
+      "valid_from_section": 20,
+      "valid_until_section": 21,
+      "reader_knows_canonical_identity": false,
+      "status": "referenced_name",
+      "change_reason": "name_seen_on_certificate_without_identified_bearer"
+    },
+    {
+      "character_id": "kojiro",
+      "display_name": "Handsome young man",
+      "alias": null,
+      "valid_from_chapter": "b3c3",
+      "valid_until_chapter": "b3c5",
+      "valid_from_section": 22,
+      "valid_until_section": 24,
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "physical_person_not_yet_linked_to_certificate_name"
+    },
+    {
+      "character_id": "kojiro",
+      "display_name": "Sasaki Kojirō",
+      "alias": "Ganryū",
+      "valid_from_chapter": "b3c6",
+      "valid_until_chapter": null,
+      "valid_from_section": 25,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "canonical_name",
+      "change_reason": "explicit_identification_by_seijuro"
+    },
+    {
+      "character_id": "kohei",
+      "display_name": "Shishido Baiken",
+      "alias": null,
+      "valid_from_chapter": "b3c7",
+      "valid_until_chapter": "b3c8",
+      "valid_from_section": 26,
+      "valid_until_section": 27,
+      "reader_knows_canonical_identity": false,
+      "status": "assumed_name",
+      "change_reason": "identity_not_yet_revealed"
+    },
+    {
+      "character_id": "kohei",
+      "display_name": "Tsujikaze Kōhei",
+      "alias": "Shishido Baiken",
+      "valid_from_chapter": "b3c9",
+      "valid_until_chapter": null,
+      "valid_from_section": 28,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "revealed_alias",
+      "change_reason": "explicit_narrative_reveal"
     }
   ]
 }

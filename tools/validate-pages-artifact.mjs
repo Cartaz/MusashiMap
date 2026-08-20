@@ -43,9 +43,11 @@ const events = readJson("data/events.json").events ?? [];
 const states = readJson("data/character-states.json").character_states ?? [];
 const charactersDocument = readJson("data/characters.json");
 const characters = charactersDocument.characters ?? [];
+const groups = readJson("data/groups.json").groups ?? [];
 const locations = readJson("data/locations.json").locations ?? [];
 const microWiki = readJson("data/context/micro-wiki.json").entities ?? [];
 const characterWiki = readJson("data/context/character-wiki.json").characters ?? {};
+const identities = readJson("data/identities.json").identities ?? [];
 
 const expectedSections = Number.isInteger(minimum) && Number.isInteger(maximum)
   ? Array.from({ length: maximum - minimum + 1 }, (_, index) => minimum + index)
@@ -57,6 +59,7 @@ if (JSON.stringify(actualSections) !== JSON.stringify(expectedSections)) {
 
 const chapterIds = new Set(chapters.map(chapter => chapter.chapter_id));
 const characterIds = new Set(characters.map(character => character.id));
+const groupIds = new Set(groups.map(group => group.id));
 const locationIds = new Set(locations.map(location => location.id));
 for (const id of charactersDocument.main_cast ?? []) {
   if (!characterIds.has(id)) errors.push(`Artifact main_cast leaks unavailable character ${id}.`);
@@ -72,9 +75,16 @@ for (const character of characters) {
 for (const location of locations) {
   if (!inRange(location.introduced_section, minimum, maximum)) errors.push(`Location ${location.id} leaks introduced_section ${location.introduced_section}.`);
 }
+for (const group of groups) {
+  if (!inRange(group.introduced_section, minimum, maximum)) errors.push(`Group ${group.id} leaks introduced_section ${group.introduced_section}.`);
+  for (const section of [...(group.present_in ?? []), ...(group.mentioned_in ?? [])]) {
+    if (!inRange(section, minimum, maximum)) errors.push(`Group ${group.id} leaks section ${section}.`);
+  }
+}
 for (const event of events) {
   if (!inRange(event.section, minimum, maximum) || !chapterIds.has(event.chapter)) errors.push(`Event ${event.id} is outside the published chapters.`);
   assertReferences([...(event.characters ?? []), ...(event.referenced_characters ?? []), ...(event.witnesses ?? [])], characterIds, `Event ${event.id}`);
+  assertReferences([...(event.groups ?? []), ...(event.referenced_groups ?? [])], groupIds, `Event ${event.id}`);
   assertReferences([event.location, event.origin, event.destination, ...(event.via ?? [])].filter(id => id !== "unknown"), locationIds, `Event ${event.id}`);
 }
 for (const state of states) {
@@ -91,6 +101,19 @@ for (const [id, entry] of Object.entries(characterWiki)) {
   for (const section of Object.keys(entry.current_by_section ?? {}).map(Number)) {
     if (!inRange(section, minimum, maximum)) errors.push(`Character wiki ${id} leaks section ${section}.`);
   }
+}
+const identityRanges = new Map();
+for (const identity of identities) {
+  if (!characterIds.has(identity.character_id)) errors.push(`Identity references unavailable character ${identity.character_id}.`);
+  if (!inRange(identity.valid_from_section, minimum, maximum) || !inRange(identity.valid_until_section, minimum, maximum) || identity.valid_from_section > identity.valid_until_section) {
+    errors.push(`Identity ${identity.character_id}/${identity.display_name} crosses the publication boundary.`);
+  }
+  const ranges = identityRanges.get(identity.character_id) ?? [];
+  if (ranges.some(range => identity.valid_from_section <= range.until && identity.valid_until_section >= range.from)) {
+    errors.push(`Identity ranges overlap for ${identity.character_id}.`);
+  }
+  ranges.push({ from: identity.valid_from_section, until: identity.valid_until_section });
+  identityRanges.set(identity.character_id, ranges);
 }
 
 if (errors.length) {

@@ -1,13 +1,13 @@
 {
-  "version": 2,
-  "book": "I-II",
-  "title": "Earth / Water",
+  "version": 3,
+  "book": "I-III",
+  "title": "Earth / Water / Fire",
   "purpose": "Single reader-progress contract for spoiler-safe visibility across characters, locations, events, movements, relationships and historical micro-wiki triggers.",
   "source_rule": "Narrative progression and spoiler boundaries are derived only from the repository's verified chapter-level source corpus.",
   "state": {
     "current_section": 1,
     "minimum_section": 1,
-    "maximum_section": 19
+    "maximum_section": 32
   },
   "visibility_rules": {
     "character_state": "Visible when the character has a state at or before current_section.",

@@ -35,7 +35,7 @@
       {"id":"otsu","name":"Otsū","aliases":[],"kind":"narrative","physical_presence":["b3c8","b3c10","b3c13"],"mentioned_in":["b3c1","b3c2","b3c5","b3c11"]},
       {"id":"jotaro","name":"Jōtarō","aliases":[],"kind":"narrative","physical_presence":["b3c8","b3c10","b3c13"],"mentioned_in":["b3c1","b3c11"]},
       {"id":"osugi","name":"Osugi","aliases":["Granny Hon'iden"],"kind":"narrative","physical_presence":["b3c2","b3c5","b3c12","b3c13"],"mentioned_in":[]},
-      {"id":"gonroku","name":"Hon'iden Gonroku","aliases":["Uncle Gon"],"kind":"narrative","physical_presence":["b3c2","b3c5"],"mentioned_in":["b3c12"]},
+      {"id":"gonroku","name":"Fuchikawa Gonroku","aliases":["Uncle Gon"],"kind":"narrative","physical_presence":["b3c2","b3c5"],"mentioned_in":["b3c12"],"identity_note":"Book I explicitly gives his surname as Fuchikawa; he is the same Uncle Gon who travels with Osugi."},
       {"id":"oko","name":"Oko","aliases":[],"kind":"narrative","physical_presence":["b3c4"],"mentioned_in":["b3c1","b3c2","b3c3","b3c9","b3c11","b3c12"]},
       {"id":"akemi","name":"Akemi","aliases":[],"kind":"narrative","physical_presence":["b3c4","b3c5","b3c11","b3c13"],"mentioned_in":[]},
       {"id":"aoki_tanzaemon","name":"Aoki Tanzaemon","aliases":["Tanzaemon","mendicant priest"],"kind":"narrative","physical_presence":["b3c1","b3c2","b3c11"],"mentioned_in":[]},
@@ -71,7 +71,7 @@
       {"id":"karasumaru_mitsuhiro","name":"Karasumaru Mitsuhiro","aliases":["Lord Karasumaru"],"kind":"narrative_historical","physical_presence":[],"mentioned_in":["b3c8","b3c10","b3c13"]},
       {"id":"arakida_ujitsune","name":"Arakida Ujitsune","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c8"]},
       {"id":"tsukahara_bokuden","name":"Tsukahara Bokuden","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c7"]},
-      {"id":"yagyu_muneyoshi","name":"Yagyū Muneyoshi","aliases":["Sekishūsai"],"kind":"narrative_historical","physical_presence":[],"mentioned_in":["b3c7"]},
+      {"id":"sekishusai","name":"Yagyū Sekishūsai","aliases":["Yagyū Muneyoshi","Yagyū Munetoshi","Sekishūsai"],"kind":"narrative_historical","physical_presence":[],"mentioned_in":["b3c7"],"identity_note":"Reuses the Books I–II canonical ID for the same historical/narrative person."},
       {"id":"lord_ikeda","name":"Lord Ikeda","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c1"]}
     ],
     "groups": [
@@ -227,7 +227,7 @@
     {
       "chapter_id":"b3c7","global_section":26,"source_file":"data/source/book3/chapter7-eagle-mountain.txt",
       "physically_present":["musashi","baiken_wife","iwa","baiken_infant","unnamed_groom"],
-      "mentioned_only":["kohei","takuan","mikogami_tenzen","tsukahara_bokuden","yagyu_muneyoshi","yoshioka_kempo"],
+      "mentioned_only":["kohei","takuan","mikogami_tenzen","tsukahara_bokuden","sekishusai","yoshioka_kempo"],
       "locations":["yokkaichi","baiken_smithy","yamada_ise","ise_naiku","house_of_virgins","eagle_mountain"],
       "events":[
         {"id":"b3c7_e01","type":"movement","actors":["musashi"],"location":"yokkaichi","origin":"Kuwana","destination":"baiken_smithy","description":"Musashi travels through Yokkaichi toward Kameyama/Ujii while a foot injury worsens.","source_ref":"chapter7-eagle-mountain.txt:L94-L245","certainty":"explicit","movement_status":"route_confirmed"},

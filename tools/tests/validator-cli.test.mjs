@@ -32,12 +32,17 @@ const makeDataFixture = () => {
   writeJson(root, "data/characters.json", {
     characters: [{ id: "hero", name: "Hero", aliases: [], importance: "main", entity_type: "character", historical_status: "fictional", present_in: [1, 2] }]
   });
+  writeJson(root, "data/groups.json", { groups: [] });
   writeJson(root, "data/locations.json", {
     locations: [{ id: "place", name: "Place", type: "city", introduced_section: 1, coordinates: null }]
   });
   writeJson(root, "data/events.json", { events: sections.map(event) });
   writeJson(root, "data/character-states.json", { character_states: sections.map(state) });
   writeJson(root, "data/relationships.json", { relationships: [] });
+  writeJson(root, "data/identities.json", { identities: [] });
+  writeJson(root, "data/context/character-wiki.json", { characters: {} });
+  writeJson(root, "data/context/entities.json", { entities: [] });
+  writeJson(root, "data/context/micro-wiki.json", { entities: [] });
   for (const section of sections) {
     const directory = path.join(root, `data/source/book${section.book_number}`);
     fs.mkdirSync(directory, { recursive: true });
@@ -93,4 +98,55 @@ test("semantic CLI rejects a source path or title that disagrees with the corpus
   assert.equal(result.status, 1);
   assert.match(result.output, /source_file must be data\/source\/book1\/chapter1-test\.txt/);
   assert.match(result.output, /title must match its first source header/);
+});
+
+test("semantic CLI rejects cross-ID aliases and overlapping reveal windows", t => {
+  const root = makeDataFixture();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const charactersPath = path.join(root, "data/characters.json");
+  const characters = JSON.parse(fs.readFileSync(charactersPath));
+  characters.characters.push({
+    id: "other", name: "Other", aliases: ["Héro"], importance: "secondary",
+    entity_type: "character", historical_status: "fictional", present_in: []
+  });
+  writeJson(root, "data/characters.json", characters);
+  writeJson(root, "data/identities.json", { identities: [
+    {
+      character_id: "hero", display_name: "Hero", valid_from_chapter: "b1c1",
+      valid_until_chapter: "b2c1", valid_from_section: 1, valid_until_section: 2,
+      reader_knows_canonical_identity: true, status: "canonical_name"
+    },
+    {
+      character_id: "hero", display_name: "Alias", valid_from_chapter: "b2c1",
+      valid_until_chapter: null, valid_from_section: 2, valid_until_section: null,
+      reader_knows_canonical_identity: false, status: "assumed_name"
+    }
+  ] });
+
+  const result = run(root);
+  assert.equal(result.status, 1);
+  assert.match(result.output, /collides between hero and other/);
+  assert.match(result.output, /Identity ranges overlap for hero/);
+});
+
+test("semantic CLI rejects unknown groups and false physical end positions", t => {
+  const root = makeDataFixture();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const eventsPath = path.join(root, "data/events.json");
+  const events = JSON.parse(fs.readFileSync(eventsPath));
+  events.events[0].groups = ["missing_group"];
+  writeJson(root, "data/events.json", events);
+
+  const statesPath = path.join(root, "data/character-states.json");
+  const states = JSON.parse(fs.readFileSync(statesPath));
+  states.character_states[0].status = "departed";
+  states.character_states[0].location_status = "unknown";
+  writeJson(root, "data/character-states.json", states);
+
+  const result = run(root);
+  assert.equal(result.status, 1);
+  assert.match(result.output, /unknown group missing_group/);
+  assert.match(result.output, /Non-present state hero@1 cannot retain a physical location/);
+  assert.match(result.output, /non-physical location_status unknown cannot retain a physical location/);
 });

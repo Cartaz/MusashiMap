@@ -4,12 +4,12 @@ Date: 2026-08-20
 
 ## Current state
 
-Books I (*Earth*) and II (*Water*) are normalized production data. The app
-publishes sections 1–19 and derives every navigation and spoiler decision from
+Books I (*Earth*), II (*Water*) and III (*Fire*) are normalized production data.
+The app publishes sections 1–32 and derives every navigation and spoiler decision from
 `data/reader-progress.json`.
 
-Books III–VII have been read in full, extracted chapter by chapter, reconciled
-across chapters and checked against the local sources. Their 93 chapters remain
+Books IV–VII have been read in full, extracted chapter by chapter, reconciled
+across chapters and checked against the local sources. Their 80 chapters remain
 in canonical research staging: they are deliberately not exposed by the app.
 
 ## Completed in this milestone
@@ -26,6 +26,12 @@ in canonical research staging: they are deliberately not exposed by the app.
   mentions, reports, memories and future revelations.
 - Added an online validation ledger using external sources only for geography
   and historical context, never as a substitute for the novel's narrative.
+- Migrated Book III atomically into production: 57 events, 41 chapter states,
+  22 new characters, 33 new locations and a six-group narrative registry.
+- Added temporal identity windows for the Kojirō and Baiken/Kōhei reveals,
+  including runtime tests against premature names in event prose.
+- Audited Book III movement semantics so intentions, routes, uncertain
+  departures and confirmed arrivals remain distinct.
 
 ### Runtime and spoiler safety
 
@@ -55,18 +61,18 @@ in canonical research staging: they are deliberately not exposed by the app.
 
 ```text
 source registry     1 ----------------------------------------------- 112
-production data     1 ---------------- 19
-research staging                         20 ------------------------- 112
-reader-visible      1 ---------------- 19
+production data     1 -------------------------- 32
+research staging                                      33 ----------- 112
+reader-visible      1 -------------------------- 32
 ```
 
 Registering or scraping a chapter does not publish it. A book can move beyond
-section 19 only after its events, states, context and spoiler timing have been
+section 32 only after its events, states, context and spoiler timing have been
 migrated to production and the semantic gate passes at the new boundary.
 
 ## Remaining work
 
-1. Migrate Books III–VII from their canonical manifests into production, one
+1. Migrate Books IV–VII from their canonical manifests into production, one
    complete book at a time.
 2. Extend identities, relationships and progressive context only after their
    reveal timing has been audited for the target book.

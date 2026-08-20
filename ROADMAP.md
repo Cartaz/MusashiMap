@@ -25,8 +25,8 @@ testo lascia indeterminato.
 | Ambito | Stato |
 |---|---|
 | Registro sorgenti, 112 capitoli | PASS |
-| Books I–II, sezioni 1–19 | Produzione / PASS |
-| Books III–VII, sezioni 20–112 | Scraping e audit staging / PASS |
+| Books I–III, sezioni 1–32 | Produzione / PASS |
+| Books IV–VII, sezioni 33–112 | Scraping e audit staging / PASS |
 | Reader progress e firewall spoiler | PASS |
 | Validazione semantica produzione | PASS |
 | Contratto e validazione staging | PASS |
@@ -40,12 +40,12 @@ richiede per ogni sezione pubblicata eventi e stati coerenti.
 
 ## 4. Prossime milestone
 
-### A. Migrazione Book III — Fire
+### A. Migrazione Book III — Fire — completata
 
-- Importare dal manifest canonico eventi, stati, personaggi e luoghi.
-- Auditare il timing di identità e relazioni prima di estendere wiki/context.
-- Risolvere soltanto le località sostenute da evidenza autorevole.
-- Portare il confine atomico da 19 a 32 solo quando tutti i gate passano.
+- Importati dal manifest canonico eventi, stati, personaggi, gruppi e luoghi.
+- Auditato il timing di identità, relazioni, wiki e contesto.
+- Mantenute senza coordinate tutte le località non sostenute da evidenza precisa.
+- Portato il confine atomico da 19 a 32 dopo il superamento dei gate.
 
 ### B. Migrazioni Books IV–VII
 

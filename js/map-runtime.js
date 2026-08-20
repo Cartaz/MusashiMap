@@ -3,7 +3,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabe
 
 (() => {
   let map, glLayer, markers, routes, characterMarkers;
-  let locations = [], events = [], characterStates = [], characters = [];
+  let locations = [], events = [], characterStates = [], characters = [], identities = [];
   let selectedCharacters = new Set();
   let unmappedPopupOpen = false;
   let previousSection = null;
@@ -119,7 +119,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabe
       const item = document.createElement("li");
       const name = document.createElement("span");
       name.className = "map-unmapped-name";
-      name.textContent = getDisplayCharacterName(character, state.section);
+      name.textContent = getDisplayCharacterName(character, state.section, identities);
       const meta = document.createElement("span");
       meta.className = "map-unmapped-meta";
       if (state.location_status === "departed_with_group" && state.group) {
@@ -181,7 +181,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabe
 
     visibleCharacters.forEach(item => {
       const offset = offsets.get(`character:${item.characterId}`) ?? [0, 0];
-      const name = getDisplayCharacterName(item.character, section);
+      const name = getDisplayCharacterName(item.character, section, identities);
       const status = getPositionStatusLabel(item.mode);
       const label = locationLabel(item.location);
       const detail = item.mode === "current"
@@ -341,6 +341,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabe
       events = mapData.events.events;
       characterStates = mapData.states.character_states;
       characters = mapData.characters.characters;
+      identities = mapData.identities.identities;
 
       const state = getCanonicalReaderState();
       if (state.section !== null) {

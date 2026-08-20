@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import {
@@ -74,6 +75,31 @@ test("character names remain hidden until project-local narrative evidence", () 
   assert.equal(getCharacterIntroductionSection(characters[2]), null);
   assert.deepEqual(getVisibleCharacters(characters, 8).map(character => character.id), ["early"]);
   assert.deepEqual(getVisibleCharacters(characters, 12).map(character => character.id), ["early", "future"]);
+});
+
+test("temporal identities do not reveal canonical names before the source does", async () => {
+  const { getDisplayCharacterName } = await import("./reader-progress.js");
+  const identities = [
+    { character_id: "kohei", display_name: "Shishido Baiken", valid_from_section: 26, valid_until_section: 27, reader_knows_canonical_identity: false, status: "assumed_name" },
+    { character_id: "kohei", display_name: "Tsujikaze Kōhei", valid_from_section: 28, valid_until_section: null, reader_knows_canonical_identity: true, status: "revealed_alias" },
+    { character_id: "matahachi", display_name: "Sasaki Kojirō", valid_from_section: 21, valid_until_section: null, reader_knows_canonical_identity: true, status: "impersonated_name" }
+  ];
+
+  assert.equal(getDisplayCharacterName({ id: "kohei", name: "Tsujikaze Kōhei" }, 26, identities), "Shishido Baiken");
+  assert.equal(getDisplayCharacterName({ id: "kohei", name: "Tsujikaze Kōhei" }, 28, identities), "Tsujikaze Kōhei");
+  assert.equal(getDisplayCharacterName({ id: "matahachi", name: "Hon'iden Matahachi" }, 21, identities), "Hon'iden Matahachi (come Sasaki Kojirō)");
+});
+
+test("Book III reader-facing prose respects identity reveal sections", () => {
+  const events = JSON.parse(readFileSync(new URL("../data/events.json", import.meta.url))).events;
+  const states = JSON.parse(readFileSync(new URL("../data/character-states.json", import.meta.url))).character_states;
+  const prose = (minimum, maximum) => [
+    ...events.filter(entry => entry.section >= minimum && entry.section <= maximum).map(entry => entry.description),
+    ...states.filter(entry => entry.section >= minimum && entry.section <= maximum).map(entry => entry.activity)
+  ].join("\n");
+
+  assert.doesNotMatch(prose(22, 24), /Sasaki|Kojirō|Ganryū/i);
+  assert.doesNotMatch(prose(26, 27), /Tsujikaze|Kōhei|Kohei/i);
 });
 
 test("event, state and wiki evidence can safely establish an introduction", () => {
