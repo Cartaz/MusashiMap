@@ -1,7 +1,7 @@
 {
   "version": 2,
   "book": "I",
-  "source_rule": "Narrative positions are derived only from data/source/musashi-book1. This file records physically established positions; reported or intended positions are kept separate from physical presence.",
+  "source_rule": "Narrative positions are derived only from data/source/book1. This file records physically established positions; reported or intended positions are kept separate from physical presence.",
   "characters": {
     "musashi":[
       {"section":1,"location_id":"oko_akemi_house","status":"confirmed","activity":"ends the chapter recovering at Oko and Akemi's house"},

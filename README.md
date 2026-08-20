@@ -1,41 +1,68 @@
 # MusashiMap
 
-Interactive, spoiler-safe map for following the movements, relationships and narrative context of Eiji Yoshikawa's *Musashi*.
+Interactive, spoiler-safe map for following movements, relationships and narrative context in Eiji Yoshikawa's *Musashi*.
 
 ## Project goals
 
 - Represent character locations chapter by chapter.
-- Track arrivals, departures, journeys, meetings and other relevant events.
-- Provide a progressive micro-wiki that does not reveal future information.
-- Distinguish explicit textual facts from deductions and uncertainty.
-- Preserve uncertainty instead of inventing geographic precision.
-- Keep the application static and deployable through GitHub Pages.
+- Track arrivals, departures, journeys, meetings and relevant events.
+- Provide a progressive micro-wiki without future-book spoilers.
+- Keep explicit facts, deductions and uncertainty distinguishable.
+- Preserve unresolved geography instead of inventing coordinates.
+- Remain a static application deployable through GitHub Pages.
 
-## Source corpus
+## Source corpus and publication boundary
 
-The project uses a canonical working text corpus for research. The repository stores the chapter-level research sources needed for the current workflow rather than a redundant full reproduction of the novel.
+The repository contains 112 chapter-level research sources under
+`data/source/book1/` through `data/source/book7/`. The complete registry is
+`data/source/musashi-index.txt`.
 
-Book I is currently split under `data/source/musashi-book1/`, with `data/source/musashi-index.txt` providing the source index.
+The registry is deliberately separate from publication. Books I–II (sections
+1–19) are normalized production data and are visible in the application.
+Books III–VII (sections 20–112) are fully scraped and audited research staging,
+but remain hidden until each book is migrated to the production datasets.
+`data/reader-progress.json` is the sole authority for that boundary.
+
+## Validation
+
+Run the same gates used by deployment from the repository root:
+
+```bash
+node tools/validate-frontend.mjs
+node tools/validate-data.mjs
+node tools/validate-staging.mjs
+node js/runtime-safety.test.mjs
+node --test tools/tests/*.test.mjs
+node tools/build-pages.mjs
+node tools/validate-frontend.mjs --root _site
+node tools/validate-pages-artifact.mjs
+```
+
+The semantic validator requires events and character states for every published
+section. Later chapter records and canonical staging manifests may coexist with
+production without leaking into the reader.
 
 ## Research workflow
 
-The reusable book-by-book scraping, normalization and audit procedure is documented in:
+The reusable chapter-by-chapter workflow is documented in
+`docs/book-research-workflow.md`; the normalized Books III–VII hand-off format
+is defined in `docs/book-staging-contract.md`.
 
-`docs/book-research-workflow.md`
+Its core sequence is:
 
-The workflow is deliberately chapter-oriented:
-
-1. verify and split the source;
-2. scrape each chapter independently;
-3. perform a cross-chapter reconciliation pass;
-4. update normalized entities, states, events and transitions;
-5. audit narrative correctness, spoiler safety and technical integrity;
-6. apply corrections and reach `PASS` before moving to the next book.
+1. verify every local source file;
+2. extract each chapter independently;
+3. reconcile names, identities, presences and movements across chapters;
+4. validate only geography and historical context against authoritative web sources;
+5. preserve uncertain claims and unmapped places explicitly;
+6. pass narrative, spoiler, referential and technical audits before publication.
 
 ## Current status
 
-**Book I — Earth: complete and audited (`PASS`).**
+- Books I–II: production data complete and validated (`PASS`), 19 published sections.
+- Books III–VII: 93/93 chapters scraped, reconciled and validated in canonical staging.
+- Global source registry: 112/112 chapters.
+- Runtime: publication-aware navigation, spoiler firewall and graceful basemap degradation.
+- Frontend/CI: semantic/staging gates, runtime tests and a spoiler-filtered Pages artifact with zero frontend validator warnings.
 
-The current Book I dataset includes characters, chapter states, locations, location transitions, events, relationships, identities/aliases, historical/context entities and progressive micro-wiki data.
-
-The current project checkpoint and next steps are maintained in `CHECKPOINT.md`.
+See `CHECKPOINT.md` for the hand-off state and `ROADMAP.md` for the next migration steps.

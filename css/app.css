@@ -1,0 +1,11 @@
+/*
+ * Frontend stylesheet entrypoint.
+ * Keep this import order: each module intentionally refines the preceding one.
+ */
+@import url("./style-v2.css?v=20260820-1");
+@import url("./legend.css?v=20260820-1");
+@import url("./marker-overrides.css?v=20260820-1");
+@import url("./ui-redesign.css?v=20260820-1");
+@import url("./parchment-overrides.css?v=20260820-1");
+@import url("./paper-texture.css?v=20260820-1");
+@import url("./map-unmapped.css?v=20260820-1");

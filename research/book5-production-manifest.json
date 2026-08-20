@@ -1,0 +1,5907 @@
+{
+  "schema_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "contract": "docs/book-staging-contract.md",
+  "dataset": "Musashi Book V — Sky complete narrative scrape",
+  "status": "research_staging_only_not_for_production",
+  "generated_on": "2026-08-20",
+  "book": {
+    "number": 5,
+    "title": "Sky",
+    "chapter_count": 26,
+    "global_sections": {
+      "minimum": 54,
+      "maximum": 79
+    }
+  },
+  "evidence_policy": {
+    "narrative_authority": "All 26 local files under data/source/book5, read in full before web validation",
+    "source_ref_format": "book5/chapterN",
+    "presence_rule": "physically_present means on-page presence; letters, memories, reports, plans, distant names and possessions are mentioned_only",
+    "certainty_values": [
+      "explicit",
+      "strong_inference",
+      "weak_inference"
+    ],
+    "movement_status_values": [
+      "none",
+      "departure_confirmed",
+      "route_confirmed",
+      "arrival_confirmed",
+      "intended_destination",
+      "direction_only",
+      "uncertain"
+    ],
+    "coordinate_rule": "No coordinates are emitted. Named real-world correspondence does not establish a narrative point.",
+    "web_scope": "Geography and historicity only after local corpus freeze; web sources cannot add narrative facts."
+  },
+  "source_files": [
+    {
+      "chapter_id": "b5c1",
+      "global_section": 54,
+      "title": "The Abduction",
+      "file": "data/source/book5/chapter1-the-abduction.txt",
+      "line_count": 182,
+      "sha256": "845bd2662619a0737906fe78ac41f929ace0f061399ee2bbed698ca32c760414"
+    },
+    {
+      "chapter_id": "b5c2",
+      "global_section": 55,
+      "title": "The Warrior of Kiso",
+      "file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
+      "line_count": 300,
+      "sha256": "49b012294c4730ea4927df8f158e107e9e370ec4470467ca9212dfa032c0b0a1"
+    },
+    {
+      "chapter_id": "b5c3",
+      "global_section": 56,
+      "title": "Poisonous Fangs",
+      "file": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "line_count": 147,
+      "sha256": "c6b5de7790d8fa970278c7e21ec9b5a2cc58329b131969a6f3ae8d14c79505ce"
+    },
+    {
+      "chapter_id": "b5c4",
+      "global_section": 57,
+      "title": "A Maternal Warning",
+      "file": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "line_count": 473,
+      "sha256": "11f9e615177b9f8efda61a2d6fc92bea7772d140da217c7a0d6517e3f3d098cc"
+    },
+    {
+      "chapter_id": "b5c5",
+      "global_section": 58,
+      "title": "A One-Night Love Affair",
+      "file": "data/source/book5/chapter5-a-one-night-love-affair.txt",
+      "line_count": 268,
+      "sha256": "4de4795b26930e9544c334a5bf722cdd45ef8be7754305e9f35a1b8d8e627e79"
+    },
+    {
+      "chapter_id": "b5c6",
+      "global_section": 59,
+      "title": "A Gift of Money",
+      "file": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "line_count": 335,
+      "sha256": "5931455b0c617034fc49f8ef5293cd3d53c8a729c18a1e007e54c9365127776c"
+    },
+    {
+      "chapter_id": "b5c7",
+      "global_section": 60,
+      "title": "A Cleansing Fire",
+      "file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "line_count": 238,
+      "sha256": "77805e94ed0aef5356bacdc8dda39be0c54ceda0ebd83380725cc2b7412ba86c"
+    },
+    {
+      "chapter_id": "b5c8",
+      "global_section": 61,
+      "title": "Playing with Fire",
+      "file": "data/source/book5/chapter8-playing-with-fire.txt",
+      "line_count": 467,
+      "sha256": "507de3ecaa3b1d5e07b5d3201b990c991ba6b6ee8ac5097fb7522e8df6592b57"
+    },
+    {
+      "chapter_id": "b5c9",
+      "global_section": 62,
+      "title": "A Cricket in the Grass",
+      "file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "line_count": 218,
+      "sha256": "cd81442980d4b821ba065b8b83dd74d7cf79fd158cd3fd0f074a15ecb4b9cb51"
+    },
+    {
+      "chapter_id": "b5c10",
+      "global_section": 63,
+      "title": "The Pioneers",
+      "file": "data/source/book5/chapter10-the-pioneers.txt",
+      "line_count": 237,
+      "sha256": "46ad15fa47f061eee50af876fd176e73cb118bc26c6d3bd97e2131180c911987"
+    },
+    {
+      "chapter_id": "b5c11",
+      "global_section": 64,
+      "title": "Slaughter by the Riverside",
+      "file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
+      "line_count": 313,
+      "sha256": "720d188f6f12a05cc05f999b7e3c3c09ac0b4cc299fc71cb0d09009d54d4fc24"
+    },
+    {
+      "chapter_id": "b5c12",
+      "global_section": 65,
+      "title": "Shavings",
+      "file": "data/source/book5/chapter12-shavings.txt",
+      "line_count": 283,
+      "sha256": "81110ce398d4c2f60bb594b28406175758912dbf82c16009abd623f864b704eb"
+    },
+    {
+      "chapter_id": "b5c13",
+      "global_section": 66,
+      "title": "The Owl",
+      "file": "data/source/book5/chapter13-the-owl.txt",
+      "line_count": 319,
+      "sha256": "489dbec83809a07b2b7ac6dff3f66a6d6cb7408c5a3b4a96578a163c1b831418"
+    },
+    {
+      "chapter_id": "b5c14",
+      "global_section": 67,
+      "title": "A Plate of Loaches",
+      "file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "line_count": 289,
+      "sha256": "214301e1ddf5b6416c2658e12ccf190159ac107d71bb872948d576511fa129e1"
+    },
+    {
+      "chapter_id": "b5c15",
+      "global_section": 68,
+      "title": "Like Teacher, Like Pupil",
+      "file": "data/source/book5/chapter15-like-teacher-like-pupil.txt",
+      "line_count": 421,
+      "sha256": "715fa3bf814d8fc013d0e9a63f04cf6f799cafacc78edcb56f1410849fe23915"
+    },
+    {
+      "chapter_id": "b5c16",
+      "global_section": 69,
+      "title": "Mountain Devils",
+      "file": "data/source/book5/chapter16-mountain-devils.txt",
+      "line_count": 500,
+      "sha256": "5209257fbc2682532ec8a83212f9a16ba9f131e85b9000b141ed7c1d30778f21"
+    },
+    {
+      "chapter_id": "b5c17",
+      "global_section": 70,
+      "title": "First Planting",
+      "file": "data/source/book5/chapter17-first-planting.txt",
+      "line_count": 181,
+      "sha256": "6289565075f44d5e7006c744c1f3b99c55b20ea5ddf0f96cafd3c2ea5d403bb4"
+    },
+    {
+      "chapter_id": "b5c18",
+      "global_section": 71,
+      "title": "The Flies",
+      "file": "data/source/book5/chapter18-the-flies.txt",
+      "line_count": 389,
+      "sha256": "7097bee99a03cdd73f95a8f4e2d0fe1e81e8142d6d75d63676cd3cb29f466d3b"
+    },
+    {
+      "chapter_id": "b5c19",
+      "global_section": 72,
+      "title": "The Soul Polisher",
+      "file": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "line_count": 282,
+      "sha256": "f731138c4eeba412cea6f7657ee3e9cd0fa77dcf6c5a851f9f82553751972577"
+    },
+    {
+      "chapter_id": "b5c20",
+      "global_section": 73,
+      "title": "The Fox",
+      "file": "data/source/book5/chapter20-the-fox.txt",
+      "line_count": 327,
+      "sha256": "b3052f59da611047bdd024aedc1c576c69a89c1b1c80df645c1638225c0111d4"
+    },
+    {
+      "chapter_id": "b5c21",
+      "global_section": 74,
+      "title": "An Urgent Letter",
+      "file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "line_count": 246,
+      "sha256": "3398c10a342f57c0f135c509d5f3dbe07744cb32c461ee4d03e69a2788664216"
+    },
+    {
+      "chapter_id": "b5c22",
+      "global_section": 75,
+      "title": "Filial Piety",
+      "file": "data/source/book5/chapter22-filial-piety.txt",
+      "line_count": 355,
+      "sha256": "0dfaa168a6da3272a12ee763744d2a24ef53e5ef8e471534e938fafd1a2004a1"
+    },
+    {
+      "chapter_id": "b5c23",
+      "global_section": 76,
+      "title": "Spring Shower in Red",
+      "file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "line_count": 277,
+      "sha256": "50feb74c5acd6b0aad7864a12fcc76efb5d96c7f3f1866366e3c1001a3cd8c3c"
+    },
+    {
+      "chapter_id": "b5c24",
+      "global_section": 77,
+      "title": "A Block of Wood",
+      "file": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "line_count": 233,
+      "sha256": "8a16e586b59210c5a0f3daea724f3dfd8cdc2cc179a7c48b5c18ac09e0362f23"
+    },
+    {
+      "chapter_id": "b5c25",
+      "global_section": 78,
+      "title": "The Deserted Prophet",
+      "file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "line_count": 175,
+      "sha256": "d489e00e34743c15bc3e3166c3a037898d734379aa5224f9b66bc129fb7143c7"
+    },
+    {
+      "chapter_id": "b5c26",
+      "global_section": 79,
+      "title": "The Talk of the Town",
+      "file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "line_count": 208,
+      "sha256": "35484f8dbb44d41d0d0d1657df79be67d497b894076f5ef9404c00c09f8583cd"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "b5c1",
+      "global_section": 54,
+      "title": "The Abduction",
+      "source_ref": "book5/chapter1",
+      "source_file": "data/source/book5/chapter1-the-abduction.txt",
+      "characters": [
+        "musashi",
+        "otsu",
+        "jotaro",
+        "matahachi"
+      ],
+      "referenced_characters": [
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "suhara_nezame",
+        "fukushima_checkpoint",
+        "kozenji_turn",
+        "kiso_highroad"
+      ],
+      "event_ids": [
+        "b5c1-e01",
+        "b5c1-e02",
+        "b5c1-e03",
+        "b5c1-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Matahachi is moving with captive Otsū; Jōtarō is injured beside the road; Musashi is running back without yet knowing what happened."
+    },
+    {
+      "id": "b5c2",
+      "global_section": 55,
+      "title": "The Warrior of Kiso",
+      "source_ref": "book5/chapter2",
+      "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
+      "characters": [
+        "musashi",
+        "gonnosuke",
+        "gonnosuke_mother"
+      ],
+      "referenced_characters": [
+        "otsu",
+        "jotaro",
+        "matahachi",
+        "daizo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "nobu_pond",
+        "gonnosuke_farmhouse",
+        "kiso_highroad"
+      ],
+      "event_ids": [
+        "b5c2-e01",
+        "b5c2-e02",
+        "b5c2-e03",
+        "b5c2-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Musashi and Gonnosuke are cooperating near Nobu Pond; Otsū remains missing and Jōtarō is reported heading toward Narai."
+    },
+    {
+      "id": "b5c3",
+      "global_section": 56,
+      "title": "Poisonous Fangs",
+      "source_ref": "book5/chapter3",
+      "source_file": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "characters": [
+        "matahachi",
+        "otsu"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "gonnosuke",
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "nobu_shrine",
+        "nobu_pond",
+        "ina_koshu_backroad"
+      ],
+      "event_ids": [
+        "b5c3-e01",
+        "b5c3-e02",
+        "b5c3-e03",
+        "b5c3-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-matahachi"
+      ],
+      "end_summary": "Otsū remains under Matahachi's control on a back road toward Edo; the exact next stop is not established."
+    },
+    {
+      "id": "b5c4",
+      "global_section": 57,
+      "title": "A Maternal Warning",
+      "source_ref": "book5/chapter4",
+      "source_file": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "characters": [
+        "musashi",
+        "gonnosuke",
+        "gonnosuke_mother"
+      ],
+      "referenced_characters": [
+        "jotaro",
+        "daizo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "gonnosuke_farmhouse",
+        "narai",
+        "shiojiri_pass",
+        "inojigahara"
+      ],
+      "event_ids": [
+        "b5c4-e01",
+        "b5c4-e02",
+        "b5c4-e03",
+        "b5c4-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-gonnosuke"
+      ],
+      "end_summary": "Musashi heads toward Kamisuwa without a confirmed lead; Gonnosuke and his mother remain together after the rematch."
+    },
+    {
+      "id": "b5c5",
+      "global_section": 58,
+      "title": "A One-Night Love Affair",
+      "source_ref": "book5/chapter5",
+      "source_file": "data/source/book5/chapter5-a-one-night-love-affair.txt",
+      "characters": [
+        "musashi",
+        "geki"
+      ],
+      "referenced_characters": [
+        "date_masamune"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "shimosuwa"
+      ],
+      "event_ids": [
+        "b5c5-e01",
+        "b5c5-e02",
+        "b5c5-e03",
+        "b5c5-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Musashi remains at Shimosuwa overnight; no service commitment is made."
+    },
+    {
+      "id": "b5c6",
+      "global_section": 59,
+      "title": "A Gift of Money",
+      "source_ref": "book5/chapter6",
+      "source_file": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "characters": [
+        "musashi",
+        "geki",
+        "gion_toji"
+      ],
+      "referenced_characters": [
+        "jotaro",
+        "daizo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "shimosuwa",
+        "suwa_myojin",
+        "wada_daimon_corridor",
+        "buna_valley"
+      ],
+      "event_ids": [
+        "b5c6-e01",
+        "b5c6-e02",
+        "b5c6-e03",
+        "b5c6-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-geki"
+      ],
+      "end_summary": "Musashi is alive at the ravine under attack; Geki is already on the Wada route; Jōtarō's lead remains only reported."
+    },
+    {
+      "id": "b5c7",
+      "global_section": 60,
+      "title": "A Cleansing Fire",
+      "source_ref": "book5/chapter7",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "characters": [
+        "musashi",
+        "gion_toji",
+        "oko"
+      ],
+      "referenced_characters": [
+        "akemi",
+        "kojiro"
+      ],
+      "groups": [
+        "toji_band"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "buna_valley"
+      ],
+      "event_ids": [
+        "b5c7-e01",
+        "b5c7-e02",
+        "b5c7-e03",
+        "b5c7-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-gion_toji",
+        "b5-final-state-oko"
+      ],
+      "end_summary": "Musashi has escaped Buna Valley; Okō is tied near the burning cabin with Tōji and his band still in the area."
+    },
+    {
+      "id": "b5c8",
+      "global_section": 61,
+      "title": "Playing with Fire",
+      "source_ref": "book5/chapter8",
+      "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
+      "characters": [
+        "shoji_jinnai",
+        "onao",
+        "akemi",
+        "kojiro",
+        "daizo",
+        "sukeichi",
+        "jotaro",
+        "scarred_ronin"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "otsu"
+      ],
+      "groups": [
+        "jinnai_troupe"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "kobotoke_pass",
+        "yakuoin_takao",
+        "hachioji"
+      ],
+      "event_ids": [
+        "b5c8-e01",
+        "b5c8-e02",
+        "b5c8-e03",
+        "b5c8-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Akemi is recovered disheveled near the inn; Jōtarō returns after being knocked out; the scarred rōnin is unidentified."
+    },
+    {
+      "id": "b5c9",
+      "global_section": 62,
+      "title": "A Cricket in the Grass",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "characters": [
+        "jotaro",
+        "daizo",
+        "sukeichi",
+        "shoji_jinnai",
+        "akemi"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "jinnai_troupe"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "hachioji",
+        "hachioji_mound",
+        "takanawa_highroad"
+      ],
+      "event_ids": [
+        "b5c9-e01",
+        "b5c9-e02",
+        "b5c9-e03",
+        "b5c9-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-jotaro",
+        "b5-final-state-daizo",
+        "b5-final-state-sukeichi"
+      ],
+      "end_summary": "Jōtarō travels toward Edo under Daizō's coercive protection; Sukeichi accompanies them; Akemi is ahead with Jinnai's troupe."
+    },
+    {
+      "id": "b5c10",
+      "global_section": 63,
+      "title": "The Pioneers",
+      "source_ref": "book5/chapter10",
+      "source_file": "data/source/book5/chapter10-the-pioneers.txt",
+      "characters": [
+        "osugi",
+        "yajibei",
+        "ushi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "takanawa_highroad",
+        "nihombashi",
+        "bakurocho_yajibei"
+      ],
+      "event_ids": [
+        "b5c10-e01",
+        "b5c10-e02",
+        "b5c10-e03",
+        "b5c10-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Osugi is sheltered at Yajibei's house; Yajibei and Ushi have taken responsibility for her immediate safety."
+    },
+    {
+      "id": "b5c11",
+      "global_section": 64,
+      "title": "Slaughter by the Riverside",
+      "source_ref": "book5/chapter11",
+      "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
+      "characters": [
+        "osugi",
+        "yajibei",
+        "juro",
+        "koroku",
+        "kojiro"
+      ],
+      "referenced_characters": [
+        "daizo",
+        "obata_kagenori"
+      ],
+      "groups": [
+        "obata_students"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "bakurocho_yajibei",
+        "sumida_river",
+        "sensoji",
+        "sensoji_riverside"
+      ],
+      "event_ids": [
+        "b5c11-e01",
+        "b5c11-e02",
+        "b5c11-e03",
+        "b5c11-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Kojirō returns downstream with Yajibei's party; surviving Obata students carry the conflict back to their school."
+    },
+    {
+      "id": "b5c12",
+      "global_section": 65,
+      "title": "Shavings",
+      "source_ref": "book5/chapter12",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "characters": [
+        "kojiro",
+        "osugi",
+        "yajibei",
+        "juro",
+        "koroku",
+        "akemi",
+        "shoji_jinnai",
+        "onao"
+      ],
+      "referenced_characters": [
+        "obata_kagenori"
+      ],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "bakurocho_yajibei",
+        "sumiya_yoshiwara"
+      ],
+      "event_ids": [
+        "b5c12-e01",
+        "b5c12-e02",
+        "b5c12-e03",
+        "b5c12-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-akemi"
+      ],
+      "end_summary": "Akemi has fled Sumiya into the night; Kojirō is associated with Yajibei's group as its sword instructor."
+    },
+    {
+      "id": "b5c13",
+      "global_section": 66,
+      "title": "The Owl",
+      "source_ref": "book5/chapter13",
+      "source_file": "data/source/book5/chapter13-the-owl.txt",
+      "characters": [
+        "kojiro",
+        "juro",
+        "koroku",
+        "hojo_shinzo",
+        "obata_kagenori"
+      ],
+      "referenced_characters": [
+        "obata_yogoro"
+      ],
+      "groups": [
+        "obata_students"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "obata_school"
+      ],
+      "event_ids": [
+        "b5c13-e01",
+        "b5c13-e02",
+        "b5c13-e03",
+        "b5c13-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Shinzō has left on a revenge mission; Kagenori is gravely ill at the depleted Obata School; Kojirō remains in Edo."
+    },
+    {
+      "id": "b5c14",
+      "global_section": 67,
+      "title": "A Plate of Loaches",
+      "source_ref": "book5/chapter14",
+      "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "characters": [
+        "musashi",
+        "iori",
+        "sanemon"
+      ],
+      "referenced_characters": [
+        "geki"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "hotengahara",
+        "hotengahara_shack",
+        "hotengahara_burial"
+      ],
+      "event_ids": [
+        "b5c14-e01",
+        "b5c14-e02",
+        "b5c14-e03",
+        "b5c14-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-sanemon"
+      ],
+      "end_summary": "Musashi and Sannosuke remain together at Hōtengahara after San'emon's burial; the boy's older sister is absent and her location unknown."
+    },
+    {
+      "id": "b5c15",
+      "global_section": 68,
+      "title": "Like Teacher, Like Pupil",
+      "source_ref": "book5/chapter15",
+      "source_file": "data/source/book5/chapter15-like-teacher-like-pupil.txt",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [
+        "takuan"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "hotengahara_shack",
+        "hotengahara",
+        "tone_floodplain",
+        "tokuganji"
+      ],
+      "event_ids": [
+        "b5c15-e01",
+        "b5c15-e02",
+        "b5c15-e03",
+        "b5c15-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Musashi and Iori live and work at the Hōtengahara cabin; their teacher-pupil bond and joint agricultural project are established."
+    },
+    {
+      "id": "b5c16",
+      "global_section": 69,
+      "title": "Mountain Devils",
+      "source_ref": "book5/chapter16",
+      "source_file": "data/source/book5/chapter16-mountain-devils.txt",
+      "characters": [
+        "nagaoka_sado",
+        "iori",
+        "musashi"
+      ],
+      "referenced_characters": [
+        "hosokawa_tadaoki"
+      ],
+      "groups": [
+        "mountain_bandits",
+        "hotengahara_villagers"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "tokuganji",
+        "hotengahara",
+        "raid_village"
+      ],
+      "event_ids": [
+        "b5c16-e01",
+        "b5c16-e02",
+        "b5c16-e03",
+        "b5c16-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "The village has repelled the brigands under Musashi's leadership; Sado returns toward his duties intending a later meeting."
+    },
+    {
+      "id": "b5c17",
+      "global_section": 70,
+      "title": "First Planting",
+      "source_ref": "book5/chapter17",
+      "source_file": "data/source/book5/chapter17-first-planting.txt",
+      "characters": [
+        "nagaoka_sado",
+        "hosokawa_tadatoshi",
+        "iwama_kakubei",
+        "sato_genzo"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "iori",
+        "kojiro",
+        "hosokawa_tadaoki"
+      ],
+      "groups": [
+        "hosokawa_retainers",
+        "hotengahara_villagers"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "hosokawa_edo",
+        "tokuganji",
+        "hotengahara"
+      ],
+      "event_ids": [
+        "b5c17-e01",
+        "b5c17-e02",
+        "b5c17-e03",
+        "b5c17-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-nagaoka_sado"
+      ],
+      "end_summary": "Sado returns to Edo without Musashi; the cultivated fields continue under village solidarity; Musashi and Iori's destination is not disclosed here."
+    },
+    {
+      "id": "b5c18",
+      "global_section": 71,
+      "title": "The Flies",
+      "source_ref": "book5/chapter18",
+      "source_file": "data/source/book5/chapter18-the-flies.txt",
+      "characters": [
+        "musashi",
+        "iori",
+        "juro",
+        "kimura_sukekuro",
+        "kumagoro"
+      ],
+      "referenced_characters": [
+        "yagyu_munenori",
+        "takuan"
+      ],
+      "groups": [
+        "edo_horse_traders"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "edo_east_barrier",
+        "sumida_river",
+        "bakurocho_inn"
+      ],
+      "event_ids": [
+        "b5c18-e01",
+        "b5c18-e02",
+        "b5c18-e03",
+        "b5c18-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Musashi remains in Bakurōchō; Iori has departed alone with the letter and directions to Kobikichō."
+    },
+    {
+      "id": "b5c19",
+      "global_section": 72,
+      "title": "The Soul Polisher",
+      "source_ref": "book5/chapter19",
+      "source_file": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "characters": [
+        "musashi",
+        "zushino_kosuke",
+        "kosuke_wife"
+      ],
+      "referenced_characters": [
+        "kojiro",
+        "iwama_kakubei",
+        "honami_koetsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "kosuke_shop",
+        "bakurocho_inn"
+      ],
+      "event_ids": [
+        "b5c19-e01",
+        "b5c19-e02",
+        "b5c19-e03",
+        "b5c19-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Musashi returns to the inn and waits uneasily because Iori has not returned; he plans to move into Kōsuke's house."
+    },
+    {
+      "id": "b5c20",
+      "global_section": 73,
+      "title": "The Fox",
+      "source_ref": "book5/chapter20",
+      "source_file": "data/source/book5/chapter20-the-fox.txt",
+      "characters": [
+        "iori",
+        "otsu",
+        "yagyu_hyogo"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "matahachi",
+        "kimura_sukekuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "kobikicho",
+        "edo_castle_hibiya",
+        "azabu_hill",
+        "higakubo_yagyu"
+      ],
+      "event_ids": [
+        "b5c20-e01",
+        "b5c20-e02",
+        "b5c20-e03",
+        "b5c20-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Otsū and Hyōgo are near the Yagyū residence; Iori remains disoriented nearby and has not recognized Otsū."
+    },
+    {
+      "id": "b5c21",
+      "global_section": 74,
+      "title": "An Urgent Letter",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "characters": [
+        "yagyu_munenori",
+        "yagyu_hyogo",
+        "otsu",
+        "kimura_sukekuro",
+        "iori"
+      ],
+      "referenced_characters": [
+        "sekishusai",
+        "shoda_kizaemon"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "higakubo_yagyu",
+        "dogen_slope",
+        "sangenya_route"
+      ],
+      "event_ids": [
+        "b5c21-e01",
+        "b5c21-e02",
+        "b5c21-e03",
+        "b5c21-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-otsu",
+        "b5-final-state-yagyu_hyogo",
+        "b5-final-state-yagyu_munenori"
+      ],
+      "end_summary": "Hyōgo and Otsū travel toward Koyagyū; Iori runs toward the Yagyū residence still carrying Musashi's letter."
+    },
+    {
+      "id": "b5c22",
+      "global_section": 75,
+      "title": "Filial Piety",
+      "source_ref": "book5/chapter22",
+      "source_file": "data/source/book5/chapter22-filial-piety.txt",
+      "characters": [
+        "osugi",
+        "juro",
+        "koroku",
+        "kojiro"
+      ],
+      "referenced_characters": [
+        "yajibei",
+        "musashi",
+        "iwama_kakubei"
+      ],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "bakurocho_yajibei",
+        "isarago_hill"
+      ],
+      "event_ids": [
+        "b5c22-e01",
+        "b5c22-e02",
+        "b5c22-e03",
+        "b5c22-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Kojirō is at Yajibei's house; Osugi's return is supplied by the immediately following chapter's council, not assumed from this chapter alone."
+    },
+    {
+      "id": "b5c23",
+      "global_section": 76,
+      "title": "Spring Shower in Red",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "characters": [
+        "kojiro",
+        "osugi",
+        "juro",
+        "koroku",
+        "zushino_kosuke",
+        "hojo_shinzo"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "yajibei",
+        "iwama_kakubei"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "bakurocho_yajibei",
+        "kosuke_shop",
+        "yanagihara"
+      ],
+      "event_ids": [
+        "b5c23-e01",
+        "b5c23-e02",
+        "b5c23-e03",
+        "b5c23-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-osugi",
+        "b5-final-state-kojiro",
+        "b5-final-state-juro",
+        "b5-final-state-koroku"
+      ],
+      "end_summary": "Jūrō and Koroku are dead; Shinzō is critically wounded in Kōsuke's arms; Kojirō has fled into the dark; Osugi survives the ditch fall."
+    },
+    {
+      "id": "b5c24",
+      "global_section": 77,
+      "title": "A Block of Wood",
+      "source_ref": "book5/chapter24",
+      "source_file": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "characters": [
+        "musashi",
+        "zushino_kosuke",
+        "kosuke_wife",
+        "hojo_shinzo",
+        "iori"
+      ],
+      "referenced_characters": [
+        "kojiro",
+        "kimura_sukekuro",
+        "yagyu_munenori",
+        "yagyu_hyogo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "kosuke_shop",
+        "bakurocho_inn",
+        "obata_school"
+      ],
+      "event_ids": [
+        "b5c24-e01",
+        "b5c24-e02",
+        "b5c24-e03",
+        "b5c24-e04"
+      ],
+      "character_state_ids": [],
+      "end_summary": "Musashi is heading to the Obata School; Iori stays at Kōsuke's; Shinzō is alive and recovering under care."
+    },
+    {
+      "id": "b5c25",
+      "global_section": 78,
+      "title": "The Deserted Prophet",
+      "source_ref": "book5/chapter25",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "characters": [
+        "musashi",
+        "obata_yogoro",
+        "obata_kagenori",
+        "nakatogawa_handayu"
+      ],
+      "referenced_characters": [
+        "hojo_shinzo",
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "locations": [
+        "obata_school"
+      ],
+      "event_ids": [
+        "b5c25-e01",
+        "b5c25-e02",
+        "b5c25-e03",
+        "b5c25-e04"
+      ],
+      "character_state_ids": [
+        "b5-final-state-obata_kagenori",
+        "b5-final-state-obata_yogoro"
+      ],
+      "end_summary": "Kagenori remains gravely ill; Yogorō has made a decision that the chapter does not reveal; Musashi's next location is unspecified."
+    },
+    {
+      "id": "b5c26",
+      "global_section": 79,
+      "title": "The Talk of the Town",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "characters": [
+        "musashi",
+        "iori",
+        "zushino_kosuke",
+        "kosuke_wife",
+        "hojo_shinzo",
+        "nembutsu_tazaemon"
+      ],
+      "referenced_characters": [
+        "kojiro",
+        "yajibei",
+        "osugi"
+      ],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "locations": [
+        "kosuke_shop",
+        "ushigafuchi_kudan",
+        "akagi_myojin",
+        "hojo_ushigome",
+        "nihombashi"
+      ],
+      "event_ids": [
+        "b5c26-e01",
+        "b5c26-e02",
+        "b5c26-e03",
+        "b5c26-e04",
+        "b5c26-e05"
+      ],
+      "character_state_ids": [
+        "b5-final-state-musashi",
+        "b5-final-state-iori",
+        "b5-final-state-hojo_shinzo",
+        "b5-final-state-zushino_kosuke"
+      ],
+      "end_summary": "Shinzō reaches the vicinity of his father's Ushigome home; Musashi departs alone; Iori remains in Kōsuke's household; the smear campaign is active across Edo."
+    }
+  ],
+  "characters": [
+    {
+      "id": "musashi",
+      "name": "Miyamoto Musashi",
+      "aliases": [
+        "Takezō",
+        "Masana"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c1",
+        "b5c2",
+        "b5c4",
+        "b5c5",
+        "b5c6",
+        "b5c7",
+        "b5c14",
+        "b5c15",
+        "b5c16",
+        "b5c18",
+        "b5c19",
+        "b5c24",
+        "b5c25",
+        "b5c26"
+      ],
+      "mentioned_in": [
+        "b5c3",
+        "b5c8",
+        "b5c17",
+        "b5c20",
+        "b5c22",
+        "b5c23"
+      ]
+    },
+    {
+      "id": "otsu",
+      "name": "Otsū",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c1",
+        "b5c3",
+        "b5c20",
+        "b5c21"
+      ],
+      "mentioned_in": [
+        "b5c2",
+        "b5c8"
+      ]
+    },
+    {
+      "id": "jotaro",
+      "name": "Jōtarō",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c1",
+        "b5c8",
+        "b5c9"
+      ],
+      "mentioned_in": [
+        "b5c2",
+        "b5c4",
+        "b5c6"
+      ]
+    },
+    {
+      "id": "matahachi",
+      "name": "Hon'iden Matahachi",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c1",
+        "b5c3"
+      ],
+      "mentioned_in": [
+        "b5c2",
+        "b5c20"
+      ]
+    },
+    {
+      "id": "gonnosuke",
+      "name": "Musō Gonnosuke",
+      "aliases": [
+        "Warrior of Kiso"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c2",
+        "b5c4"
+      ],
+      "mentioned_in": [
+        "b5c3"
+      ]
+    },
+    {
+      "id": "gonnosuke_mother",
+      "name": "Gonnosuke's unnamed mother",
+      "aliases": [],
+      "kind": "narrative_unidentified",
+      "physical_presence": [
+        "b5c2",
+        "b5c4"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "geki",
+      "name": "Ishimoda Geki",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c5",
+        "b5c6"
+      ],
+      "mentioned_in": [
+        "b5c14"
+      ]
+    },
+    {
+      "id": "gion_toji",
+      "name": "Gion Tōji",
+      "aliases": [
+        "Tōji"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c6",
+        "b5c7"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "oko",
+      "name": "Okō",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c7"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "akemi",
+      "name": "Akemi",
+      "aliases": [
+        "Hanagiri"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c8",
+        "b5c9",
+        "b5c12"
+      ],
+      "mentioned_in": [
+        "b5c7"
+      ]
+    },
+    {
+      "id": "shoji_jinnai",
+      "name": "Shōji Jinnai",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c8",
+        "b5c9",
+        "b5c12"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "onao",
+      "name": "Onao",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c8",
+        "b5c12"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "daizo",
+      "name": "Daizō of Narai",
+      "aliases": [
+        "herb merchant of Narai"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c8",
+        "b5c9"
+      ],
+      "mentioned_in": [
+        "b5c2",
+        "b5c4",
+        "b5c6",
+        "b5c11"
+      ]
+    },
+    {
+      "id": "sukeichi",
+      "name": "Sukeichi",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c8",
+        "b5c9"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "scarred_ronin",
+      "name": "Unidentified scarred rōnin",
+      "aliases": [],
+      "kind": "narrative_unidentified",
+      "physical_presence": [
+        "b5c8"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "osugi",
+      "name": "Osugi",
+      "aliases": [
+        "Sugi",
+        "Hon'iden dowager",
+        "Granny Hon'iden"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c10",
+        "b5c11",
+        "b5c12",
+        "b5c22",
+        "b5c23"
+      ],
+      "mentioned_in": [
+        "b5c26"
+      ]
+    },
+    {
+      "id": "yajibei",
+      "name": "Hangawara Yajibei",
+      "aliases": [
+        "boss"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c10",
+        "b5c11",
+        "b5c12"
+      ],
+      "mentioned_in": [
+        "b5c22",
+        "b5c23",
+        "b5c26"
+      ]
+    },
+    {
+      "id": "ushi",
+      "name": "Ushi",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c10"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "juro",
+      "name": "Jūrō",
+      "aliases": [
+        "Reed Mat"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c11",
+        "b5c12",
+        "b5c13",
+        "b5c18",
+        "b5c22",
+        "b5c23"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "koroku",
+      "name": "Koroku",
+      "aliases": [
+        "Acolyte"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c11",
+        "b5c12",
+        "b5c13",
+        "b5c22",
+        "b5c23"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "kojiro",
+      "name": "Sasaki Kojirō",
+      "aliases": [
+        "Ganryū"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c8",
+        "b5c11",
+        "b5c12",
+        "b5c13",
+        "b5c22",
+        "b5c23"
+      ],
+      "mentioned_in": [
+        "b5c1",
+        "b5c3",
+        "b5c7",
+        "b5c17",
+        "b5c19",
+        "b5c24",
+        "b5c25",
+        "b5c26"
+      ]
+    },
+    {
+      "id": "obata_kagenori",
+      "name": "Obata Kagenori",
+      "aliases": [
+        "Old Man Owl"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c13",
+        "b5c25"
+      ],
+      "mentioned_in": [
+        "b5c11",
+        "b5c12"
+      ]
+    },
+    {
+      "id": "hojo_shinzo",
+      "name": "Hōjō Shinzō",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c13",
+        "b5c23",
+        "b5c24",
+        "b5c26"
+      ],
+      "mentioned_in": [
+        "b5c25"
+      ]
+    },
+    {
+      "id": "sanemon",
+      "name": "San'emon",
+      "aliases": [],
+      "kind": "narrative_deceased",
+      "physical_presence": [
+        "b5c14"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "iori",
+      "name": "Misawa Iori",
+      "aliases": [
+        "Sannosuke"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c14",
+        "b5c15",
+        "b5c16",
+        "b5c18",
+        "b5c20",
+        "b5c21",
+        "b5c24",
+        "b5c26"
+      ],
+      "mentioned_in": [
+        "b5c17"
+      ]
+    },
+    {
+      "id": "nagaoka_sado",
+      "name": "Nagaoka Sado",
+      "aliases": [
+        "Sado"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c16",
+        "b5c17"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "hosokawa_tadatoshi",
+      "name": "Hosokawa Tadatoshi",
+      "aliases": [
+        "Young Lord"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c17"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "iwama_kakubei",
+      "name": "Iwama Kakubei",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c17"
+      ],
+      "mentioned_in": [
+        "b5c19",
+        "b5c22",
+        "b5c23"
+      ]
+    },
+    {
+      "id": "sato_genzo",
+      "name": "Satō Genzō",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c17"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "kimura_sukekuro",
+      "name": "Kimura Sukekurō",
+      "aliases": [
+        "Suke"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c18",
+        "b5c21"
+      ],
+      "mentioned_in": [
+        "b5c20",
+        "b5c24"
+      ]
+    },
+    {
+      "id": "kumagoro",
+      "name": "Kumagorō of Chichibu",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c18"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "zushino_kosuke",
+      "name": "Zushino Kōsuke",
+      "aliases": [
+        "soul polisher"
+      ],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c19",
+        "b5c23",
+        "b5c24",
+        "b5c26"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "kosuke_wife",
+      "name": "Kōsuke's unnamed wife",
+      "aliases": [],
+      "kind": "narrative_unidentified",
+      "physical_presence": [
+        "b5c19",
+        "b5c24",
+        "b5c26"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "yagyu_hyogo",
+      "name": "Yagyū Hyōgo",
+      "aliases": [],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c20",
+        "b5c21"
+      ],
+      "mentioned_in": [
+        "b5c24"
+      ]
+    },
+    {
+      "id": "yagyu_munenori",
+      "name": "Yagyū Munenori",
+      "aliases": [
+        "Lord Tajima"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [
+        "b5c21"
+      ],
+      "mentioned_in": [
+        "b5c18",
+        "b5c24"
+      ]
+    },
+    {
+      "id": "shoda_kizaemon",
+      "name": "Shōda Kizaemon",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b5c21"
+      ]
+    },
+    {
+      "id": "obata_yogoro",
+      "name": "Obata Yogorō",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c25"
+      ],
+      "mentioned_in": [
+        "b5c13"
+      ]
+    },
+    {
+      "id": "nakatogawa_handayu",
+      "name": "Nakatogawa Handayū",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c25"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "nembutsu_tazaemon",
+      "name": "Nembutsu Tazaemon",
+      "aliases": [],
+      "kind": "narrative",
+      "physical_presence": [
+        "b5c26"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "sekishusai",
+      "name": "Yagyū Sekishūsai",
+      "aliases": [
+        "Yagyū Muneyoshi",
+        "Old Lord"
+      ],
+      "kind": "narrative_historical",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b5c21"
+      ]
+    },
+    {
+      "id": "takuan",
+      "name": "Takuan Sōhō",
+      "aliases": [
+        "Takuan"
+      ],
+      "kind": "historical_context",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b5c15",
+        "b5c18"
+      ]
+    },
+    {
+      "id": "honami_koetsu",
+      "name": "Hon'ami Kōetsu",
+      "aliases": [
+        "Kōetsu"
+      ],
+      "kind": "historical_context",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b5c19"
+      ]
+    },
+    {
+      "id": "date_masamune",
+      "name": "Date Masamune",
+      "aliases": [
+        "Lord Date"
+      ],
+      "kind": "historical_context",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b5c5"
+      ]
+    },
+    {
+      "id": "hosokawa_tadaoki",
+      "name": "Hosokawa Tadaoki",
+      "aliases": [],
+      "kind": "historical_context",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b5c16",
+        "b5c17"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "toji_band",
+      "name": "Tōji's bandits",
+      "aliases": [],
+      "physical_presence": [
+        "b5c7"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "jinnai_troupe",
+      "name": "Jinnai's troupe and staff",
+      "aliases": [],
+      "physical_presence": [
+        "b5c8",
+        "b5c9"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "obata_students",
+      "name": "Obata School students",
+      "aliases": [],
+      "physical_presence": [
+        "b5c11",
+        "b5c13"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "hangawara_group",
+      "name": "Hangawara Association men",
+      "aliases": [],
+      "physical_presence": [
+        "b5c12",
+        "b5c22",
+        "b5c26"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "mountain_bandits",
+      "name": "Hitachi mountain brigands",
+      "aliases": [],
+      "physical_presence": [
+        "b5c16"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "hotengahara_villagers",
+      "name": "Hōtengahara-area villagers",
+      "aliases": [],
+      "physical_presence": [
+        "b5c16",
+        "b5c17"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "hosokawa_retainers",
+      "name": "Hosokawa retainers",
+      "aliases": [],
+      "physical_presence": [
+        "b5c17"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "edo_horse_traders",
+      "name": "Edo horse traders",
+      "aliases": [],
+      "physical_presence": [
+        "b5c18"
+      ],
+      "mentioned_in": []
+    }
+  ],
+  "locations": [
+    {
+      "id": "suhara_nezame",
+      "name": "Suhara–Nezame corridor",
+      "type": "route",
+      "mapping_status": "named_corridor_not_reconstructed",
+      "coordinates": null
+    },
+    {
+      "id": "fukushima_checkpoint",
+      "name": "Fukushima checkpoint, Shinano",
+      "type": "checkpoint",
+      "mapping_status": "official_historical_site_correspondence",
+      "coordinates": null
+    },
+    {
+      "id": "kozenji_turn",
+      "name": "Kōzenji turn/checkpoint road",
+      "type": "road_feature",
+      "mapping_status": "toponym_or_exact_point_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "kiso_highroad",
+      "name": "Kiso/Nakasendō highroad",
+      "type": "route",
+      "mapping_status": "route_not_reconstructed",
+      "coordinates": null
+    },
+    {
+      "id": "nobu_pond",
+      "name": "Nobu Pond",
+      "type": "waterbody",
+      "mapping_status": "narrative_toponym_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "gonnosuke_farmhouse",
+      "name": "Gonnosuke farmhouse near Mount Koma",
+      "type": "private_residence",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "nobu_shrine",
+      "name": "Tiny shrine at Nobu Pond",
+      "type": "narrative_site",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "ina_koshu_backroad",
+      "name": "Back road through Ina toward Kōshū",
+      "type": "route",
+      "mapping_status": "route_not_reconstructed",
+      "coordinates": null
+    },
+    {
+      "id": "narai",
+      "name": "Narai / Narai-juku",
+      "type": "post_town",
+      "mapping_status": "official_historical_locality",
+      "coordinates": null
+    },
+    {
+      "id": "shiojiri_pass",
+      "name": "Shiojiri Pass",
+      "type": "pass",
+      "mapping_status": "named_area_not_point",
+      "coordinates": null
+    },
+    {
+      "id": "inojigahara",
+      "name": "Inojigahara / Sengen Shrine area",
+      "type": "area",
+      "mapping_status": "exact_historical_extent_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "shimosuwa",
+      "name": "Shimosuwa hot-spring post town / Lake Suwa",
+      "type": "post_town",
+      "mapping_status": "official_historical_locality",
+      "coordinates": null
+    },
+    {
+      "id": "suwa_myojin",
+      "name": "Suwa Myōjin Shrine",
+      "type": "shrine",
+      "mapping_status": "named_complex_not_point",
+      "coordinates": null
+    },
+    {
+      "id": "wada_daimon_corridor",
+      "name": "Wada–Daimon pass corridor",
+      "type": "route",
+      "mapping_status": "official_historical_corridor_not_reconstructed",
+      "coordinates": null
+    },
+    {
+      "id": "buna_valley",
+      "name": "Buna Valley ravine and bandit cabin",
+      "type": "narrative_area",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "kobotoke_pass",
+      "name": "Kobotoke Pass",
+      "type": "pass",
+      "mapping_status": "named_area_not_point",
+      "coordinates": null
+    },
+    {
+      "id": "yakuoin_takao",
+      "name": "Yakuōin at Mount Takao",
+      "type": "temple",
+      "mapping_status": "official_name_and_locality",
+      "coordinates": null
+    },
+    {
+      "id": "hachioji",
+      "name": "Hachiōji inn town and old fortress",
+      "type": "town_area",
+      "mapping_status": "city_area_only",
+      "coordinates": null
+    },
+    {
+      "id": "hachioji_mound",
+      "name": "Head-burying mound near Hachiōji",
+      "type": "narrative_site",
+      "mapping_status": "exact_site_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "takanawa_highroad",
+      "name": "Takanawa highroad",
+      "type": "route",
+      "mapping_status": "historical_corridor_not_reconstructed",
+      "coordinates": null
+    },
+    {
+      "id": "nihombashi",
+      "name": "Nihombashi",
+      "type": "district_bridge",
+      "mapping_status": "official_historical_correspondence",
+      "coordinates": null
+    },
+    {
+      "id": "bakurocho_yajibei",
+      "name": "Yajibei house in Bakurōchō",
+      "type": "private_residence",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "sumida_river",
+      "name": "Sumida River and ferry",
+      "type": "river_route",
+      "mapping_status": "official_historical_corridor_not_point",
+      "coordinates": null
+    },
+    {
+      "id": "sensoji",
+      "name": "Sensōji, Asakusa",
+      "type": "temple",
+      "mapping_status": "official_name_and_locality",
+      "coordinates": null
+    },
+    {
+      "id": "sensoji_riverside",
+      "name": "Riverside by Sensōji",
+      "type": "narrative_site",
+      "mapping_status": "exact_site_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "sumiya_yoshiwara",
+      "name": "Sumiya in early Yoshiwara",
+      "type": "narrative_venue",
+      "mapping_status": "exact_site_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "obata_school",
+      "name": "Obata School by Hirakawa Tenjin Shrine",
+      "type": "academy",
+      "mapping_status": "exact_site_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "hotengahara",
+      "name": "Hōtengahara, Shimōsa",
+      "type": "plain",
+      "mapping_status": "narrative_toponym_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "hotengahara_shack",
+      "name": "San'emon's shack / Musashi and Iori's cabin",
+      "type": "narrative_site",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "hotengahara_burial",
+      "name": "Family burial ground near Hōtengahara",
+      "type": "narrative_site",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "tone_floodplain",
+      "name": "Tone River floodplain and fields",
+      "type": "landscape",
+      "mapping_status": "official_historical_context_region_only",
+      "coordinates": null
+    },
+    {
+      "id": "tokuganji",
+      "name": "Tokuganji",
+      "type": "temple",
+      "mapping_status": "narrative_correspondence_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "raid_village",
+      "name": "Village and bridge near Hōtengahara",
+      "type": "narrative_area",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "hosokawa_edo",
+      "name": "Hosokawa residence in Edo",
+      "type": "private_residence",
+      "mapping_status": "exact_site_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "edo_east_barrier",
+      "name": "East-bank Sumida barrier",
+      "type": "checkpoint",
+      "mapping_status": "exact_site_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "bakurocho_inn",
+      "name": "Horse-traders' inn in Bakurōchō",
+      "type": "narrative_venue",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "kosuke_shop",
+      "name": "Zushino Kōsuke's shop and house",
+      "type": "narrative_venue",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    },
+    {
+      "id": "kobikicho",
+      "name": "Kobikichō and Yagyū storehouses",
+      "type": "district",
+      "mapping_status": "historical_extent_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "edo_castle_hibiya",
+      "name": "Edo Castle works and Hibiya",
+      "type": "urban_area",
+      "mapping_status": "official_historical_area_not_point",
+      "coordinates": null
+    },
+    {
+      "id": "azabu_hill",
+      "name": "Azabu Hill / Iigura shrine area",
+      "type": "area",
+      "mapping_status": "official_historical_toponym_area_only",
+      "coordinates": null
+    },
+    {
+      "id": "higakubo_yagyu",
+      "name": "Yagyū residence at Higakubo",
+      "type": "private_residence",
+      "mapping_status": "exact_site_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "dogen_slope",
+      "name": "Dōgen Slope and Shibuya valley road",
+      "type": "route",
+      "mapping_status": "historical_correspondence_unverified",
+      "coordinates": null
+    },
+    {
+      "id": "sangenya_route",
+      "name": "Route toward Sangen'ya / Oyama highroad",
+      "type": "route",
+      "mapping_status": "route_not_reconstructed",
+      "coordinates": null
+    },
+    {
+      "id": "isarago_hill",
+      "name": "Isarago Hill / Tsukinomisaki",
+      "type": "area",
+      "mapping_status": "historical_extent_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "yanagihara",
+      "name": "Yanagihara dike, horse market and firebreak",
+      "type": "urban_area",
+      "mapping_status": "exact_scene_unresolved",
+      "coordinates": null
+    },
+    {
+      "id": "ushigafuchi_kudan",
+      "name": "Ushigafuchi and wooded Kudan Hill",
+      "type": "area",
+      "mapping_status": "historical_landscape_not_point",
+      "coordinates": null
+    },
+    {
+      "id": "akagi_myojin",
+      "name": "Akagi Myōjin Shrine area, Ushigome",
+      "type": "shrine_area",
+      "mapping_status": "official_historical_correspondence_area_only",
+      "coordinates": null
+    },
+    {
+      "id": "hojo_ushigome",
+      "name": "Hōjō family house in Ushigome",
+      "type": "private_residence",
+      "mapping_status": "unmappable",
+      "coordinates": null
+    }
+  ],
+  "events": [
+    {
+      "id": "b5c1-e01",
+      "chapter": "b5c1",
+      "type": "travel",
+      "description": "Musashi walks ahead while Otsū rides the cow and Jōtarō accompanies her toward Fukushima.",
+      "characters": [
+        "musashi",
+        "otsu",
+        "jotaro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "suhara_nezame",
+      "source_ref": "book5/chapter1",
+      "source_file": "data/source/book5/chapter1-the-abduction.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c1-e02",
+      "chapter": "b5c1",
+      "type": "checkpoint_passage",
+      "description": "Karasumaru's letter enables the party to pass the Fukushima barrier.",
+      "characters": [
+        "musashi",
+        "otsu",
+        "jotaro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "fukushima_checkpoint",
+      "source_ref": "book5/chapter1",
+      "source_file": "data/source/book5/chapter1-the-abduction.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c1-e03",
+      "chapter": "b5c1",
+      "type": "abduction",
+      "description": "Matahachi attacks Jōtarō, takes the cow rope and carries Otsū away against her will.",
+      "characters": [
+        "matahachi",
+        "otsu",
+        "jotaro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kozenji_turn",
+      "source_ref": "book5/chapter1",
+      "source_file": "data/source/book5/chapter1-the-abduction.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c1-e04",
+      "chapter": "b5c1",
+      "type": "search",
+      "description": "Noticing the delay, Musashi runs back along the road to search.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kiso_highroad",
+      "source_ref": "book5/chapter1",
+      "source_file": "data/source/book5/chapter1-the-abduction.txt",
+      "certainty": "explicit",
+      "movement_status": "direction_only"
+    },
+    {
+      "id": "b5c2-e01",
+      "chapter": "b5c2",
+      "type": "search",
+      "description": "Musashi follows reports and finds the abandoned cow associated with Gonnosuke's farmhouse.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "nobu_pond",
+      "source_ref": "book5/chapter2",
+      "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c2-e02",
+      "chapter": "b5c2",
+      "type": "fight",
+      "description": "A false accusation leads to a staff contest; Musashi pins Gonnosuke and his mother intervenes with a lance.",
+      "characters": [
+        "musashi",
+        "gonnosuke",
+        "gonnosuke_mother"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "gonnosuke_farmhouse",
+      "source_ref": "book5/chapter2",
+      "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c2-e03",
+      "chapter": "b5c2",
+      "type": "reconciliation",
+      "description": "They establish that Gonnosuke found, rather than stole, the cow and reconcile.",
+      "characters": [
+        "musashi",
+        "gonnosuke",
+        "gonnosuke_mother"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "gonnosuke_farmhouse",
+      "source_ref": "book5/chapter2",
+      "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c2-e04",
+      "chapter": "b5c2",
+      "type": "reported_lead",
+      "description": "A farmer's household reports Jōtarō ran toward Yabuhara and was directed to Daizō in Narai; Musashi and Gonnosuke cross the pond while continuing the search.",
+      "characters": [
+        "musashi",
+        "gonnosuke"
+      ],
+      "referenced_characters": [
+        "jotaro",
+        "daizo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "nobu_pond",
+      "source_ref": "book5/chapter2",
+      "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c3-e01",
+      "chapter": "b5c3",
+      "type": "confinement",
+      "description": "Matahachi binds Otsū in the tiny shrine and renews his coercion, biting her arm.",
+      "characters": [
+        "matahachi",
+        "otsu"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "nobu_shrine",
+      "source_ref": "book5/chapter3",
+      "source_file": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c3-e02",
+      "chapter": "b5c3",
+      "type": "distant_sighting",
+      "description": "A distant torch on the pond is seen, but no contact or identification on the spot occurs.",
+      "characters": [
+        "matahachi",
+        "otsu"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "gonnosuke"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "nobu_pond",
+      "source_ref": "book5/chapter3",
+      "source_file": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "certainty": "strong_inference",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c3-e03",
+      "chapter": "b5c3",
+      "type": "horse_seizure",
+      "description": "Matahachi seizes a farmer and horse; Otsū later secures the farmer's release.",
+      "characters": [
+        "matahachi",
+        "otsu"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "ina_koshu_backroad",
+      "source_ref": "book5/chapter3",
+      "source_file": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c3-e04",
+      "chapter": "b5c3",
+      "type": "abducted_travel",
+      "description": "They continue by the back route through Ina toward Kōshū and Edo.",
+      "characters": [
+        "matahachi",
+        "otsu"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "ina_koshu_backroad",
+      "source_ref": "book5/chapter3",
+      "source_file": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c4-e01",
+      "chapter": "b5c4",
+      "type": "departure",
+      "description": "Musashi overhears the mother's demand for a rematch and slips away.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "gonnosuke_farmhouse",
+      "source_ref": "book5/chapter4",
+      "source_file": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c4-e02",
+      "chapter": "b5c4",
+      "type": "investigation",
+      "description": "At Daizō's business Musashi learns that Daizō and Jōtarō have already departed, but their branch beyond Shiojiri is uncertain.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [
+        "daizo",
+        "jotaro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "narai",
+      "source_ref": "book5/chapter4",
+      "source_file": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "certainty": "explicit",
+      "movement_status": "uncertain_route",
+      "extensions": {
+        "legacy_movement_status": "uncertain"
+      }
+    },
+    {
+      "id": "b5c4-e03",
+      "chapter": "b5c4",
+      "type": "rematch",
+      "description": "Gonnosuke catches Musashi and they conduct a formal second contest near the larches.",
+      "characters": [
+        "musashi",
+        "gonnosuke",
+        "gonnosuke_mother"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "inojigahara",
+      "source_ref": "book5/chapter4",
+      "source_file": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c4-e04",
+      "chapter": "b5c4",
+      "type": "separation",
+      "description": "After mutual recognition, Musashi proceeds toward Kamisuwa while Gonnosuke and his mother separate from him.",
+      "characters": [
+        "musashi",
+        "gonnosuke",
+        "gonnosuke_mother"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "inojigahara",
+      "source_ref": "book5/chapter4",
+      "source_file": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "certainty": "explicit",
+      "movement_status": "direction_only"
+    },
+    {
+      "id": "b5c5-e01",
+      "chapter": "b5c5",
+      "type": "arrival",
+      "description": "Musashi stops at the hot springs on Lake Suwa to bathe and tend his injury.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "shimosuwa",
+      "source_ref": "book5/chapter5",
+      "source_file": "data/source/book5/chapter5-a-one-night-love-affair.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c5-e02",
+      "chapter": "b5c5",
+      "type": "meeting",
+      "description": "Ishimoda Geki identifies Musashi and hosts him overnight at the daimyō inn.",
+      "characters": [
+        "musashi",
+        "geki"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "shimosuwa",
+      "source_ref": "book5/chapter5",
+      "source_file": "data/source/book5/chapter5-a-one-night-love-affair.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c5-e03",
+      "chapter": "b5c5",
+      "type": "recruitment",
+      "description": "Geki urges Musashi to consider service under Date Masamune and discusses governance and the warrior's role.",
+      "characters": [
+        "musashi",
+        "geki"
+      ],
+      "referenced_characters": [
+        "date_masamune"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "shimosuwa",
+      "source_ref": "book5/chapter5",
+      "source_file": "data/source/book5/chapter5-a-one-night-love-affair.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c5-e04",
+      "chapter": "b5c5",
+      "type": "decision_deferred",
+      "description": "Musashi does not accept the offer and continues considering his Way.",
+      "characters": [
+        "musashi",
+        "geki"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "shimosuwa",
+      "source_ref": "book5/chapter5",
+      "source_file": "data/source/book5/chapter5-a-one-night-love-affair.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c6-e01",
+      "chapter": "b5c6",
+      "type": "separation",
+      "description": "Geki leaves toward Wada Pass while Musashi resumes the search.",
+      "characters": [
+        "musashi",
+        "geki"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "shimosuwa",
+      "source_ref": "book5/chapter6",
+      "source_file": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c6-e02",
+      "chapter": "b5c6",
+      "type": "reported_lead",
+      "description": "One hired laborer honestly reports that Daizō and Jōtarō went toward Wada.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [
+        "jotaro",
+        "daizo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "suwa_myojin",
+      "source_ref": "book5/chapter6",
+      "source_file": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "certainty": "explicit",
+      "movement_status": "direction_only"
+    },
+    {
+      "id": "b5c6-e03",
+      "chapter": "b5c6",
+      "type": "gift_discovered",
+      "description": "At a roadside teahouse Musashi discovers Geki's money and letter hidden in his bag.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [
+        "geki"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "wada_daimon_corridor",
+      "source_ref": "book5/chapter6",
+      "source_file": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c6-e04",
+      "chapter": "b5c6",
+      "type": "ambush",
+      "description": "Bandits lure Musashi onto a ravine log; he kills the first attacker and comes under gunfire from the opposite bank.",
+      "characters": [
+        "musashi",
+        "gion_toji"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "buna_valley",
+      "source_ref": "book5/chapter6",
+      "source_file": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c7-e01",
+      "chapter": "b5c7",
+      "type": "fight",
+      "description": "Musashi defeats the gunmen, wounds their leader and recognizes Gion Tōji.",
+      "characters": [
+        "musashi",
+        "gion_toji"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "toji_band"
+      ],
+      "referenced_groups": [],
+      "location": "buna_valley",
+      "source_ref": "book5/chapter7",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c7-e02",
+      "chapter": "b5c7",
+      "type": "reunion",
+      "description": "Musashi recognizes Okō; the three exchange information about Akemi's reported movements.",
+      "characters": [
+        "musashi",
+        "oko",
+        "gion_toji"
+      ],
+      "referenced_characters": [
+        "akemi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "buna_valley",
+      "source_ref": "book5/chapter7",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c7-e03",
+      "chapter": "b5c7",
+      "type": "trap_escape",
+      "description": "Tōji and Okō trigger a collapsing guest-room trap, but Musashi escapes the fall.",
+      "characters": [
+        "musashi",
+        "oko",
+        "gion_toji"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "toji_band"
+      ],
+      "referenced_groups": [],
+      "location": "buna_valley",
+      "source_ref": "book5/chapter7",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c7-e04",
+      "chapter": "b5c7",
+      "type": "escape_and_fire",
+      "description": "Musashi ties Okō to a tree, burns the cabin and disappears before the band can find him.",
+      "characters": [
+        "musashi",
+        "oko",
+        "gion_toji"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "toji_band"
+      ],
+      "referenced_groups": [],
+      "location": "buna_valley",
+      "source_ref": "book5/chapter7",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c8-e01",
+      "chapter": "b5c8",
+      "type": "passing_encounter",
+      "description": "Kojirō meets Jinnai's moving troupe at Kobotoke and continues toward Edo; Akemi hides briefly and rejoins.",
+      "characters": [
+        "kojiro",
+        "shoji_jinnai",
+        "onao",
+        "akemi"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "jinnai_troupe"
+      ],
+      "referenced_groups": [],
+      "location": "kobotoke_pass",
+      "source_ref": "book5/chapter8",
+      "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c8-e02",
+      "chapter": "b5c8",
+      "type": "pilgrimage",
+      "description": "Daizō, Sukeichi and Jōtarō visit Yakuōin and then proceed to Hachiōji.",
+      "characters": [
+        "daizo",
+        "sukeichi",
+        "jotaro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "yakuoin_takao",
+      "source_ref": "book5/chapter8",
+      "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c8-e03",
+      "chapter": "b5c8",
+      "type": "reunion",
+      "description": "Jōtarō recognizes Akemi; they exchange news and Akemi reacts with jealousy and distress.",
+      "characters": [
+        "jotaro",
+        "akemi"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hachioji",
+      "source_ref": "book5/chapter8",
+      "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c8-e04",
+      "chapter": "b5c8",
+      "type": "assault",
+      "description": "After Akemi's moat-side crisis, the scarred rōnin knocks Jōtarō unconscious and sexually assaults Akemi; the chapter presents the assault through explicit aftermath and implication.",
+      "characters": [
+        "jotaro",
+        "akemi",
+        "scarred_ronin"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hachioji",
+      "source_ref": "book5/chapter8",
+      "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
+      "certainty": "strong_inference",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c9-e01",
+      "chapter": "b5c9",
+      "type": "departure",
+      "description": "Jinnai's troupe, with Akemi restored to it, leaves Hachiōji before sunrise.",
+      "characters": [
+        "shoji_jinnai",
+        "akemi"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "jinnai_troupe"
+      ],
+      "referenced_groups": [],
+      "location": "hachioji",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c9-e02",
+      "chapter": "b5c9",
+      "type": "secret_observation",
+      "description": "Jōtarō follows Daizō and witnesses him bury a large quantity of gold beneath a pine by the mound.",
+      "characters": [
+        "jotaro",
+        "daizo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hachioji_mound",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c9-e03",
+      "chapter": "b5c9",
+      "type": "coercive_guardianship",
+      "description": "Daizō discovers the spying, binds Jōtarō to secrecy and declares that he is taking the boy under his protection.",
+      "characters": [
+        "jotaro",
+        "daizo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hachioji_mound",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c9-e04",
+      "chapter": "b5c9",
+      "type": "travel",
+      "description": "Daizō, Sukeichi and Jōtarō continue toward Edo.",
+      "characters": [
+        "jotaro",
+        "daizo",
+        "sukeichi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "takanawa_highroad",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c10-e01",
+      "chapter": "b5c10",
+      "type": "arrival",
+      "description": "After two months of travel Osugi enters rapidly expanding Edo by the Takanawa route.",
+      "characters": [
+        "osugi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "takanawa_highroad",
+      "source_ref": "book5/chapter10",
+      "source_file": "data/source/book5/chapter10-the-pioneers.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c10-e02",
+      "chapter": "b5c10",
+      "type": "urban_travel",
+      "description": "Osugi walks through the construction zones and reaches Nihombashi.",
+      "characters": [
+        "osugi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "nihombashi",
+      "source_ref": "book5/chapter10",
+      "source_file": "data/source/book5/chapter10-the-pioneers.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c10-e03",
+      "chapter": "b5c10",
+      "type": "intervention",
+      "description": "Yajibei catches a thief who attacked Osugi, recovers her property and orders Ushi to help her.",
+      "characters": [
+        "osugi",
+        "yajibei",
+        "ushi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "nihombashi",
+      "source_ref": "book5/chapter10",
+      "source_file": "data/source/book5/chapter10-the-pioneers.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c10-e04",
+      "chapter": "b5c10",
+      "type": "shelter",
+      "description": "The injured Osugi is carried to Yajibei's Bakurōchō house.",
+      "characters": [
+        "osugi",
+        "yajibei",
+        "ushi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter10",
+      "source_file": "data/source/book5/chapter10-the-pioneers.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c11-e01",
+      "chapter": "b5c11",
+      "type": "time_jump",
+      "description": "The narrative establishes that Osugi has remained with Yajibei for roughly a year and a half.",
+      "characters": [
+        "osugi",
+        "yajibei"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter11",
+      "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c11-e02",
+      "chapter": "b5c11",
+      "type": "pilgrimage",
+      "description": "Yajibei's party travels by boat to Sensōji; a donation plaque mentions Daizō but does not place him there.",
+      "characters": [
+        "osugi",
+        "yajibei",
+        "juro",
+        "koroku"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "sensoji",
+      "source_ref": "book5/chapter11",
+      "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c11-e03",
+      "chapter": "b5c11",
+      "type": "fight",
+      "description": "Kojirō kills or disables the Obata swordsmen who confront him beside the river.",
+      "characters": [
+        "kojiro"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "obata_students"
+      ],
+      "referenced_groups": [],
+      "location": "sensoji_riverside",
+      "source_ref": "book5/chapter11",
+      "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c11-e04",
+      "chapter": "b5c11",
+      "type": "meeting_and_return",
+      "description": "Kojirō meets Osugi and Yajibei and accepts an invitation onto their return boat.",
+      "characters": [
+        "kojiro",
+        "osugi",
+        "yajibei",
+        "juro",
+        "koroku"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "sumida_river",
+      "source_ref": "book5/chapter11",
+      "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c12-e01",
+      "chapter": "b5c12",
+      "type": "employment",
+      "description": "Yajibei hires Kojirō to train his men three times a month.",
+      "characters": [
+        "kojiro",
+        "yajibei"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter12",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c12-e02",
+      "chapter": "b5c12",
+      "type": "fatal_training",
+      "description": "Kojirō's first training session maims men and kills one trainee.",
+      "characters": [
+        "kojiro"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter12",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c12-e03",
+      "chapter": "b5c12",
+      "type": "visit",
+      "description": "Kojirō, Jūrō and Koroku visit Sumiya and ask for Hanagiri.",
+      "characters": [
+        "kojiro",
+        "juro",
+        "koroku",
+        "onao",
+        "shoji_jinnai"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "sumiya_yoshiwara",
+      "source_ref": "book5/chapter12",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c12-e04",
+      "chapter": "b5c12",
+      "type": "avoidance_escape",
+      "description": "Akemi, now called Hanagiri, avoids Kojirō and escapes into the darkness along the moat.",
+      "characters": [
+        "akemi"
+      ],
+      "referenced_characters": [
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "sumiya_yoshiwara",
+      "source_ref": "book5/chapter12",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c13-e01",
+      "chapter": "b5c13",
+      "type": "ambush",
+      "description": "Ten Obata students ambush Kojirō near the school; five are killed.",
+      "characters": [
+        "kojiro"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "obata_students"
+      ],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter13",
+      "source_file": "data/source/book5/chapter13-the-owl.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c13-e02",
+      "chapter": "b5c13",
+      "type": "rebuke",
+      "description": "Shinzō tends Kagenori and condemns the students' unauthorized revenge.",
+      "characters": [
+        "hojo_shinzo",
+        "obata_kagenori"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "obata_students"
+      ],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter13",
+      "source_file": "data/source/book5/chapter13-the-owl.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c13-e03",
+      "chapter": "b5c13",
+      "type": "humiliation",
+      "description": "Kojirō follows survivors home and openly humiliates the Obata group in the shrine grove.",
+      "characters": [
+        "kojiro",
+        "juro",
+        "koroku"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "obata_students"
+      ],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter13",
+      "source_file": "data/source/book5/chapter13-the-owl.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c13-e04",
+      "chapter": "b5c13",
+      "type": "revenge_departure",
+      "description": "Before Yogorō's expected return, Shinzō leaves a farewell letter and departs to kill Kojirō.",
+      "characters": [
+        "hojo_shinzo"
+      ],
+      "referenced_characters": [
+        "kojiro",
+        "obata_kagenori",
+        "obata_yogoro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter13",
+      "source_file": "data/source/book5/chapter13-the-owl.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c14-e01",
+      "chapter": "b5c14",
+      "type": "reported_journey",
+      "description": "The chapter reports that Musashi briefly passed through Edo, traveled to Sendai to return Geki's money, then came back south to Shimōsa.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [
+        "geki"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hotengahara",
+      "source_ref": "book5/chapter14",
+      "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c14-e02",
+      "chapter": "b5c14",
+      "type": "meeting",
+      "description": "Musashi meets twelve-year-old Sannosuke catching loaches and follows him to the isolated shack.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hotengahara",
+      "source_ref": "book5/chapter14",
+      "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c14-e03",
+      "chapter": "b5c14",
+      "type": "burial",
+      "description": "Musashi helps the boy carry and bury his father San'emon, who died that morning.",
+      "characters": [
+        "musashi",
+        "iori",
+        "sanemon"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hotengahara_burial",
+      "source_ref": "book5/chapter14",
+      "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c14-e04",
+      "chapter": "b5c14",
+      "type": "discipleship",
+      "description": "After testing the orphan's resolve, Musashi accepts Sannosuke as his pupil.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hotengahara_shack",
+      "source_ref": "book5/chapter14",
+      "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c15-e01",
+      "chapter": "b5c15",
+      "type": "renaming_and_settlement",
+      "description": "Musashi renames Sannosuke Iori, burns the old shack and builds a new cabin on a knoll.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hotengahara_shack",
+      "source_ref": "book5/chapter15",
+      "source_file": "data/source/book5/chapter15-like-teacher-like-pupil.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c15-e02",
+      "chapter": "b5c15",
+      "type": "cultivation",
+      "description": "They clear land and repeatedly attempt to create fields in the flood-prone plain.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "tone_floodplain",
+      "source_ref": "book5/chapter15",
+      "source_file": "data/source/book5/chapter15-like-teacher-like-pupil.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c15-e03",
+      "chapter": "b5c15",
+      "type": "supply_run",
+      "description": "During a storm Iori reaches Tokuganji and returns with supplies; the trip is explicitly narrated through his return account.",
+      "characters": [
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "tokuganji",
+      "source_ref": "book5/chapter15",
+      "source_file": "data/source/book5/chapter15-like-teacher-like-pupil.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c15-e04",
+      "chapter": "b5c15",
+      "type": "adaptation",
+      "description": "Musashi changes the water-and-field strategy; after winter and thaw the cultivation becomes stable enough to continue.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "tone_floodplain",
+      "source_ref": "book5/chapter15",
+      "source_file": "data/source/book5/chapter15-like-teacher-like-pupil.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c16-e01",
+      "chapter": "b5c16",
+      "type": "visit",
+      "description": "Sado stays at Tokuganji for his father's memorial anniversary and briefly meets Iori, who is collecting millet.",
+      "characters": [
+        "nagaoka_sado",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "tokuganji",
+      "source_ref": "book5/chapter16",
+      "source_file": "data/source/book5/chapter16-mountain-devils.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c16-e02",
+      "chapter": "b5c16",
+      "type": "raid_and_escape",
+      "description": "Iori witnesses the brigand raid, is tied to a bridge post, escapes and runs back to Musashi.",
+      "characters": [
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "mountain_bandits",
+        "hotengahara_villagers"
+      ],
+      "referenced_groups": [],
+      "location": "raid_village",
+      "source_ref": "book5/chapter16",
+      "source_file": "data/source/book5/chapter16-mountain-devils.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c16-e03",
+      "chapter": "b5c16",
+      "type": "collective_defense",
+      "description": "Musashi frees captives, organizes villagers into ambush groups and leads them against the raiders.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "mountain_bandits",
+        "hotengahara_villagers"
+      ],
+      "referenced_groups": [],
+      "location": "raid_village",
+      "source_ref": "book5/chapter16",
+      "source_file": "data/source/book5/chapter16-mountain-devils.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c16-e04",
+      "chapter": "b5c16",
+      "type": "investigation",
+      "description": "Sado investigates the next day, learns Musashi's name and sees his written injunction, but leaves without meeting him.",
+      "characters": [
+        "nagaoka_sado"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "iori"
+      ],
+      "groups": [
+        "hotengahara_villagers"
+      ],
+      "referenced_groups": [],
+      "location": "raid_village",
+      "source_ref": "book5/chapter16",
+      "source_file": "data/source/book5/chapter16-mountain-devils.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c17-e01",
+      "chapter": "b5c17",
+      "type": "time_jump",
+      "description": "The narrative marks roughly a year and a half since Sado's Tokuganji visit.",
+      "characters": [
+        "nagaoka_sado"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hosokawa_edo",
+      "source_ref": "book5/chapter17",
+      "source_file": "data/source/book5/chapter17-first-planting.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c17-e02",
+      "chapter": "b5c17",
+      "type": "recommendation",
+      "description": "Kakubei recommends his household guest Kojirō for Hosokawa service.",
+      "characters": [
+        "iwama_kakubei",
+        "nagaoka_sado"
+      ],
+      "referenced_characters": [
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hosokawa_edo",
+      "source_ref": "book5/chapter17",
+      "source_file": "data/source/book5/chapter17-first-planting.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c17-e03",
+      "chapter": "b5c17",
+      "type": "commission",
+      "description": "Tadatoshi agrees to inspect Kojirō and instructs Sado to locate the Musashi he previously praised.",
+      "characters": [
+        "hosokawa_tadatoshi",
+        "nagaoka_sado"
+      ],
+      "referenced_characters": [
+        "kojiro",
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hosokawa_edo",
+      "source_ref": "book5/chapter17",
+      "source_file": "data/source/book5/chapter17-first-planting.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c17-e04",
+      "chapter": "b5c17",
+      "type": "failed_search",
+      "description": "At Hōtengahara Sado learns that Musashi and Iori vanished the morning after the first-planting celebration a month earlier.",
+      "characters": [
+        "nagaoka_sado",
+        "sato_genzo"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "iori"
+      ],
+      "groups": [
+        "hotengahara_villagers"
+      ],
+      "referenced_groups": [],
+      "location": "hotengahara",
+      "source_ref": "book5/chapter17",
+      "source_file": "data/source/book5/chapter17-first-planting.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c18-e01",
+      "chapter": "b5c18",
+      "type": "entry",
+      "description": "Musashi and Iori pass the eastern barrier after Musashi names Yagyū Munenori as his Edo connection.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [
+        "yagyu_munenori"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "edo_east_barrier",
+      "source_ref": "book5/chapter18",
+      "source_file": "data/source/book5/chapter18-the-flies.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c18-e02",
+      "chapter": "b5c18",
+      "type": "ferry_encounter",
+      "description": "After the ferry crossing, Iori's pouch dispute reveals Jūrō as a Hangawara man; Jūrō recognizes Musashi's name.",
+      "characters": [
+        "musashi",
+        "iori",
+        "juro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "sumida_river",
+      "source_ref": "book5/chapter18",
+      "source_file": "data/source/book5/chapter18-the-flies.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c18-e03",
+      "chapter": "b5c18",
+      "type": "reunion",
+      "description": "At the horse market Sukekurō recognizes Musashi and invites him to the Yagyū household, alluding to an unidentified 'beautiful treasure.'",
+      "characters": [
+        "musashi",
+        "kimura_sukekuro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "bakurocho_inn",
+      "source_ref": "book5/chapter18",
+      "source_file": "data/source/book5/chapter18-the-flies.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c18-e04",
+      "chapter": "b5c18",
+      "type": "message_departure",
+      "description": "Musashi replies that he will visit only for a bout and sends Iori with the letter toward the Yagyū residence.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [
+        "kimura_sukekuro",
+        "yagyu_munenori"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "bakurocho_inn",
+      "source_ref": "book5/chapter18",
+      "source_file": "data/source/book5/chapter18-the-flies.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c19-e01",
+      "chapter": "b5c19",
+      "type": "artisan_refusal",
+      "description": "Kōsuke initially refuses to polish Musashi's sword because he believes the owner seeks only a better killing edge.",
+      "characters": [
+        "musashi",
+        "zushino_kosuke"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter19",
+      "source_file": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c19-e02",
+      "chapter": "b5c19",
+      "type": "recognition_and_agreement",
+      "description": "Their shared connection to Hon'ami Kōetsu changes the exchange; Kōsuke agrees to polish the blade.",
+      "characters": [
+        "musashi",
+        "zushino_kosuke"
+      ],
+      "referenced_characters": [
+        "honami_koetsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter19",
+      "source_file": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c19-e03",
+      "chapter": "b5c19",
+      "type": "exchange_and_lodging",
+      "description": "Kōsuke offers an ancient sword in exchange for a Kannon carving and invites Musashi to lodge in his house.",
+      "characters": [
+        "musashi",
+        "zushino_kosuke",
+        "kosuke_wife"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter19",
+      "source_file": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c19-e04",
+      "chapter": "b5c19",
+      "type": "object_identification",
+      "description": "Musashi recognizes Kojirō's Drying Pole among Kōsuke's commissions; the owner is not physically present.",
+      "characters": [
+        "musashi",
+        "zushino_kosuke"
+      ],
+      "referenced_characters": [
+        "kojiro",
+        "iwama_kakubei"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter19",
+      "source_file": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c20-e01",
+      "chapter": "b5c20",
+      "type": "misdirected_delivery",
+      "description": "Iori reaches the Yagyū storehouses, sleeps there and receives a rough map to the residence at Higakubo.",
+      "characters": [
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kobikicho",
+      "source_ref": "book5/chapter20",
+      "source_file": "data/source/book5/chapter20-the-fox.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c20-e02",
+      "chapter": "b5c20",
+      "type": "urban_route",
+      "description": "Iori loses time watching the castle and Hibiya construction before climbing toward Azabu.",
+      "characters": [
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "edo_castle_hibiya",
+      "source_ref": "book5/chapter20",
+      "source_file": "data/source/book5/chapter20-the-fox.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c20-e03",
+      "chapter": "b5c20",
+      "type": "mistaken_identity",
+      "description": "After wounding a fox, Iori sees Otsū and Hyōgo but mistakes both for fox transformations and hides.",
+      "characters": [
+        "iori",
+        "otsu",
+        "yagyu_hyogo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "azabu_hill",
+      "source_ref": "book5/chapter20",
+      "source_file": "data/source/book5/chapter20-the-fox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c20-e04",
+      "chapter": "b5c20",
+      "type": "reported_rescue",
+      "description": "The narrative reports that Sukekurō rescued Otsū from Matahachi the previous year and brought her into Yagyū protection.",
+      "characters": [
+        "otsu"
+      ],
+      "referenced_characters": [
+        "matahachi",
+        "kimura_sukekuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "higakubo_yagyu",
+      "source_ref": "book5/chapter20",
+      "source_file": "data/source/book5/chapter20-the-fox.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c21-e01",
+      "chapter": "b5c21",
+      "type": "urgent_letter",
+      "description": "A fast courier's letter from Shōda reports Sekishūsai's critical illness.",
+      "characters": [
+        "yagyu_munenori",
+        "yagyu_hyogo",
+        "kimura_sukekuro"
+      ],
+      "referenced_characters": [
+        "sekishusai",
+        "shoda_kizaemon"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "higakubo_yagyu",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c21-e02",
+      "chapter": "b5c21",
+      "type": "departure",
+      "description": "Munenori sends Hyōgo in his stead; Otsū obtains permission to accompany him and they depart that night.",
+      "characters": [
+        "yagyu_hyogo",
+        "otsu",
+        "yagyu_munenori"
+      ],
+      "referenced_characters": [
+        "sekishusai"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "higakubo_yagyu",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c21-e03",
+      "chapter": "b5c21",
+      "type": "road_encounter",
+      "description": "Hyōgo and Otsū find the exhausted Iori, calm his fox panic and learn of his letter.",
+      "characters": [
+        "yagyu_hyogo",
+        "otsu",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "dogen_slope",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c21-e04",
+      "chapter": "b5c21",
+      "type": "separation",
+      "description": "They direct Iori to the nearby Yagyū house, then resume their fast journey toward Sangen'ya and the Tōkaidō route.",
+      "characters": [
+        "yagyu_hyogo",
+        "otsu",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "sangenya_route",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c22-e01",
+      "chapter": "b5c22",
+      "type": "information",
+      "description": "Jūrō tells Osugi he saw Musashi at the Sumida ferry and had his lodging watched.",
+      "characters": [
+        "juro",
+        "osugi"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter22",
+      "source_file": "data/source/book5/chapter22-filial-piety.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c22-e02",
+      "chapter": "b5c22",
+      "type": "search_departure",
+      "description": "Impatient with delay, Osugi sets out alone for Kakubei's house on Isarago Hill to find Kojirō.",
+      "characters": [
+        "osugi"
+      ],
+      "referenced_characters": [
+        "kojiro",
+        "iwama_kakubei"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "isarago_hill",
+      "source_ref": "book5/chapter22",
+      "source_file": "data/source/book5/chapter22-filial-piety.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c22-e03",
+      "chapter": "b5c22",
+      "type": "retrieval",
+      "description": "Jūrō sends Koroku after Osugi to see her safely to or back from Kakubei's house.",
+      "characters": [
+        "koroku"
+      ],
+      "referenced_characters": [
+        "osugi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter22",
+      "source_file": "data/source/book5/chapter22-filial-piety.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c22-e04",
+      "chapter": "b5c22",
+      "type": "arrival",
+      "description": "Kojirō enters while Jūrō and the men are emotionally affected by Osugi's copied filial-piety sutra.",
+      "characters": [
+        "kojiro",
+        "juro"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter22",
+      "source_file": "data/source/book5/chapter22-filial-piety.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c23-e01",
+      "chapter": "b5c23",
+      "type": "ambush_plan",
+      "description": "The four agree that Kojirō will lure Musashi out so Osugi can strike him the following night.",
+      "characters": [
+        "kojiro",
+        "osugi",
+        "juro",
+        "koroku"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c23-e02",
+      "chapter": "b5c23",
+      "type": "approach",
+      "description": "They take positions around Kōsuke's house while Kojirō goes to the door for his sword and asks for Musashi.",
+      "characters": [
+        "kojiro",
+        "osugi",
+        "juro",
+        "koroku"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c23-e03",
+      "chapter": "b5c23",
+      "type": "fatal_attack",
+      "description": "Shinzō, who had followed the party, kills Jūrō and Koroku and shoves Osugi into a ditch.",
+      "characters": [
+        "hojo_shinzo",
+        "juro",
+        "koroku",
+        "osugi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "yanagihara",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c23-e04",
+      "chapter": "b5c23",
+      "type": "duel",
+      "description": "Kojirō cuts a severe wound from Shinzō's neck and flees as Kōsuke arrives to support the wounded man.",
+      "characters": [
+        "kojiro",
+        "hojo_shinzo",
+        "zushino_kosuke"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "yanagihara",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c24-e01",
+      "chapter": "b5c24",
+      "type": "medical_care",
+      "description": "Kōsuke brings Shinzō home; the wound is cauterized and Musashi attributes its form to Kojirō's swallow-flight stroke.",
+      "characters": [
+        "zushino_kosuke",
+        "kosuke_wife",
+        "hojo_shinzo",
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter24",
+      "source_file": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "certainty": "strong_inference",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c24-e02",
+      "chapter": "b5c24",
+      "type": "failed_carving",
+      "description": "After almost forty-eight hours of work, Musashi reduces the old block without producing the intended Kannon and stops to meditate.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter24",
+      "source_file": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c24-e03",
+      "chapter": "b5c24",
+      "type": "return",
+      "description": "Iori returns after three days, apologizes and gives Musashi Sukekurō's reply.",
+      "characters": [
+        "iori",
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter24",
+      "source_file": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c24-e04",
+      "chapter": "b5c24",
+      "type": "message_and_departure",
+      "description": "The reply postpones a Yagyū test; Musashi leaves to notify the Obata School while Iori remains to reflect on his conduct.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [
+        "kimura_sukekuro",
+        "yagyu_munenori",
+        "yagyu_hyogo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter24",
+      "source_file": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c25-e01",
+      "chapter": "b5c25",
+      "type": "notification",
+      "description": "Musashi reports Shinzō's condition and warns Yogorō not to continue the feud with Kojirō.",
+      "characters": [
+        "musashi",
+        "obata_yogoro"
+      ],
+      "referenced_characters": [
+        "hojo_shinzo",
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter25",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c25-e02",
+      "chapter": "b5c25",
+      "type": "recognition",
+      "description": "After glimpsing Musashi from afar, Kagenori recognizes unusual alertness and orders Yogorō to bring him back.",
+      "characters": [
+        "obata_kagenori",
+        "obata_yogoro"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter25",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c25-e03",
+      "chapter": "b5c25",
+      "type": "failed_search",
+      "description": "Yogorō searches the shrine grounds and Kōjimachi street but cannot find Musashi.",
+      "characters": [
+        "obata_yogoro"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter25",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "certainty": "explicit",
+      "movement_status": "uncertain_route",
+      "extensions": {
+        "legacy_movement_status": "uncertain"
+      }
+    },
+    {
+      "id": "b5c25-e04",
+      "chapter": "b5c25",
+      "type": "news",
+      "description": "Handayū says the Hosokawa house already knows of Shinzō's defeat; Yogorō returns with an undisclosed decision.",
+      "characters": [
+        "obata_yogoro",
+        "nakatogawa_handayu"
+      ],
+      "referenced_characters": [
+        "hojo_shinzo",
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "obata_school",
+      "source_ref": "book5/chapter25",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c26-e01",
+      "chapter": "b5c26",
+      "type": "recovery_departure",
+      "description": "Recovering Shinzō decides to leave; Musashi insists on escorting him toward his father's Ushigome house.",
+      "characters": [
+        "hojo_shinzo",
+        "zushino_kosuke",
+        "kosuke_wife",
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      }
+    },
+    {
+      "id": "b5c26-e02",
+      "chapter": "b5c26",
+      "type": "ambush_confrontation",
+      "description": "Hangawara men surround the pair and demand Shinzō; Musashi argues against the vendetta and holds them off.",
+      "characters": [
+        "musashi",
+        "hojo_shinzo",
+        "nembutsu_tazaemon"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "ushigafuchi_kudan",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    },
+    {
+      "id": "b5c26-e03",
+      "chapter": "b5c26",
+      "type": "nonlethal_escape",
+      "description": "Musashi throws Tazaemon into the moat, carries Shinzō clear and then runs with him rather than fight the gang.",
+      "characters": [
+        "musashi",
+        "hojo_shinzo",
+        "nembutsu_tazaemon"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "ushigafuchi_kudan",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "extensions": {
+        "legacy_movement_status": "route_confirmed"
+      }
+    },
+    {
+      "id": "b5c26-e04",
+      "chapter": "b5c26",
+      "type": "safe_delivery",
+      "description": "Musashi brings Shinzō within sight of his father's house near Akagi Myōjin and leaves without entering.",
+      "characters": [
+        "musashi",
+        "hojo_shinzo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hojo_ushigome",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed"
+    },
+    {
+      "id": "b5c26-e05",
+      "chapter": "b5c26",
+      "type": "reputation_attack",
+      "description": "Hangawara propaganda spreads through Edo, publicly branding Musashi a coward and demanding he answer Osugi's revenge claim.",
+      "characters": [],
+      "referenced_characters": [
+        "musashi",
+        "osugi"
+      ],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "nihombashi",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "none"
+      }
+    }
+  ],
+  "character_states": [
+    {
+      "id": "b5-final-state-musashi",
+      "chapter": "b5c26",
+      "character": "musashi",
+      "state": "Alive; leaves the vicinity of Hōjō's Ushigome house after safely escorting Shinzō. Exact destination unknown.",
+      "location": "hojo_ushigome",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-iori",
+      "chapter": "b5c26",
+      "character": "iori",
+      "state": "Alive; staying in Kōsuke's household while Musashi escorts Shinzō.",
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-otsu",
+      "chapter": "b5c21",
+      "character": "otsu",
+      "state": "Alive; traveling rapidly with Hyōgo toward Koyagyū because Sekishūsai is critically ill.",
+      "location": "sangenya_route",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-yagyu_hyogo",
+      "chapter": "b5c21",
+      "character": "yagyu_hyogo",
+      "state": "Alive; accompanying Otsū toward Koyagyū as Munenori's representative.",
+      "location": "sangenya_route",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-matahachi",
+      "chapter": "b5c3",
+      "character": "matahachi",
+      "state": "Alive in the retrospective report when Sukekurō removes Otsū from his control; current location at Book V end unknown.",
+      "location": null,
+      "source_ref": "book5/chapter3",
+      "source_file": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "reported_source_ref": "book5/chapter20",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-jotaro",
+      "chapter": "b5c9",
+      "character": "jotaro",
+      "state": "Alive; last directly shown traveling toward Edo with Daizō and Sukeichi. No later Book V direct sighting.",
+      "location": "takanawa_highroad",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-daizo",
+      "chapter": "b5c9",
+      "character": "daizo",
+      "state": "Alive when last directly seen heading toward Edo; later donations are reported but do not prove physical presence at the shrines.",
+      "location": "takanawa_highroad",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "reported_source_ref": "book5/chapter11",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-sukeichi",
+      "chapter": "b5c9",
+      "character": "sukeichi",
+      "state": "Alive; accompanying Daizō and Jōtarō toward Edo.",
+      "location": "takanawa_highroad",
+      "source_ref": "book5/chapter9",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-akemi",
+      "chapter": "b5c12",
+      "character": "akemi",
+      "state": "Alive; flees Sumiya along the dark moat after avoiding Kojirō. Subsequent location unknown.",
+      "location": "sumiya_yoshiwara",
+      "source_ref": "book5/chapter12",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-osugi",
+      "chapter": "b5c23",
+      "character": "osugi",
+      "state": "Alive after being pushed into a ditch; later invoked in Hangawara's public challenge. Exact current location is not restated.",
+      "location": "bakurocho_yajibei",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "reported_source_ref": "book5/chapter26",
+      "certainty": "strong_inference",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-kojiro",
+      "chapter": "b5c23",
+      "character": "kojiro",
+      "state": "Alive; flees after wounding Shinzō. His allies continue an anti-Musashi campaign, but his own exact position is unknown.",
+      "location": null,
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "reported_source_ref": "book5/chapter26",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-hojo_shinzo",
+      "chapter": "b5c26",
+      "character": "hojo_shinzo",
+      "state": "Alive and recovering; delivered near his father's house in Ushigome.",
+      "location": "hojo_ushigome",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-obata_kagenori",
+      "chapter": "b5c25",
+      "character": "obata_kagenori",
+      "state": "Gravely ill at the nearly deserted Obata School; no death occurs in Book V.",
+      "location": "obata_school",
+      "source_ref": "book5/chapter25",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-obata_yogoro",
+      "chapter": "b5c25",
+      "character": "obata_yogoro",
+      "state": "Returns toward the school after making an undisclosed decision; its content must remain unknown.",
+      "location": "obata_school",
+      "source_ref": "book5/chapter25",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-nagaoka_sado",
+      "chapter": "b5c17",
+      "character": "nagaoka_sado",
+      "state": "Alive; returns toward Edo after failing to find Musashi at Hōtengahara.",
+      "location": "hosokawa_edo",
+      "source_ref": "book5/chapter17",
+      "source_file": "data/source/book5/chapter17-first-planting.txt",
+      "certainty": "strong_inference",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-yagyu_munenori",
+      "chapter": "b5c21",
+      "character": "yagyu_munenori",
+      "state": "Alive at the Higakubo residence, unable to leave official duties, after sending Hyōgo.",
+      "location": "higakubo_yagyu",
+      "source_ref": "book5/chapter21",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-zushino_kosuke",
+      "chapter": "b5c26",
+      "character": "zushino_kosuke",
+      "state": "Alive at his Bakurōchō home/shop after caring for Shinzō.",
+      "location": "kosuke_shop",
+      "source_ref": "book5/chapter26",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-gonnosuke",
+      "chapter": "b5c4",
+      "character": "gonnosuke",
+      "state": "Alive after the second contest with Musashi; subsequent route not shown.",
+      "location": "inojigahara",
+      "source_ref": "book5/chapter4",
+      "source_file": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-geki",
+      "chapter": "b5c6",
+      "character": "geki",
+      "state": "Alive when last directly seen departing toward Wada; Musashi later reports returning his money in Sendai, without depicting Geki there.",
+      "location": null,
+      "source_ref": "book5/chapter6",
+      "source_file": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "reported_source_ref": "book5/chapter14",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-gion_toji",
+      "chapter": "b5c7",
+      "character": "gion_toji",
+      "state": "Alive at the burning Buna Valley cabin with his band; later location unknown.",
+      "location": "buna_valley",
+      "source_ref": "book5/chapter7",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-oko",
+      "chapter": "b5c7",
+      "character": "oko",
+      "state": "Alive but tied to a tree near the burning cabin when last shown; immediate rescue is not explicitly narrated.",
+      "location": "buna_valley",
+      "source_ref": "book5/chapter7",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-juro",
+      "chapter": "b5c23",
+      "character": "juro",
+      "state": "Dead from Shinzō's attack.",
+      "location": "yanagihara",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-koroku",
+      "chapter": "b5c23",
+      "character": "koroku",
+      "state": "Dead from Shinzō's attack.",
+      "location": "yanagihara",
+      "source_ref": "book5/chapter23",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    },
+    {
+      "id": "b5-final-state-sanemon",
+      "chapter": "b5c14",
+      "character": "sanemon",
+      "state": "Dead before Musashi meets Iori; buried at the family burial ground.",
+      "location": "hotengahara_burial",
+      "source_ref": "book5/chapter14",
+      "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "certainty": "explicit",
+      "scope": "book_end"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-musashi-otsu",
+      "participants": [
+        "musashi",
+        "otsu"
+      ],
+      "type": "mutual attachment / repeated separation",
+      "chapter_ids": [
+        "b5c1",
+        "b5c21"
+      ],
+      "evidence": [
+        "book5/chapter1",
+        "book5/chapter21"
+      ],
+      "certainty": "explicit",
+      "context": "The chapter-21 longing is Otsū's interior perspective; no reunion occurs in Book V.",
+      "extensions": {
+        "original": {
+          "id": "rel-musashi-otsu",
+          "a": "musashi",
+          "b": "otsu",
+          "type": "mutual attachment / repeated separation",
+          "evidence": [
+            "book5/chapter1",
+            "book5/chapter21"
+          ],
+          "certainty": "explicit",
+          "note": "The chapter-21 longing is Otsū's interior perspective; no reunion occurs in Book V."
+        }
+      }
+    },
+    {
+      "id": "rel-musashi-jotaro",
+      "participants": [
+        "musashi",
+        "jotaro"
+      ],
+      "type": "teacher and pupil, separated",
+      "chapter_ids": [
+        "b5c1",
+        "b5c4",
+        "b5c8"
+      ],
+      "evidence": [
+        "book5/chapter1",
+        "book5/chapter4",
+        "book5/chapter8"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-musashi-jotaro",
+          "a": "musashi",
+          "b": "jotaro",
+          "type": "teacher and pupil, separated",
+          "evidence": [
+            "book5/chapter1",
+            "book5/chapter4",
+            "book5/chapter8"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-matahachi-otsu",
+      "participants": [
+        "matahachi",
+        "otsu"
+      ],
+      "type": "abductor and captive / coercive control",
+      "chapter_ids": [
+        "b5c1",
+        "b5c3",
+        "b5c20"
+      ],
+      "evidence": [
+        "book5/chapter1",
+        "book5/chapter3",
+        "book5/chapter20"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-matahachi-otsu",
+          "a": "matahachi",
+          "b": "otsu",
+          "type": "abductor and captive / coercive control",
+          "evidence": [
+            "book5/chapter1",
+            "book5/chapter3",
+            "book5/chapter20"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-gonnosuke-mother",
+      "participants": [
+        "gonnosuke",
+        "gonnosuke_mother"
+      ],
+      "type": "son and mother",
+      "chapter_ids": [
+        "b5c2",
+        "b5c4"
+      ],
+      "evidence": [
+        "book5/chapter2",
+        "book5/chapter4"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-gonnosuke-mother",
+          "a": "gonnosuke",
+          "b": "gonnosuke_mother",
+          "type": "son and mother",
+          "evidence": [
+            "book5/chapter2",
+            "book5/chapter4"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-toji-oko",
+      "participants": [
+        "gion_toji",
+        "oko"
+      ],
+      "type": "partners described as husband and wife",
+      "chapter_ids": [
+        "b5c7"
+      ],
+      "evidence": [
+        "book5/chapter7"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-toji-oko",
+          "a": "gion_toji",
+          "b": "oko",
+          "type": "partners described as husband and wife",
+          "evidence": [
+            "book5/chapter7"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-oko-akemi",
+      "participants": [
+        "oko",
+        "akemi"
+      ],
+      "type": "mother and daughter",
+      "chapter_ids": [
+        "b5c7"
+      ],
+      "evidence": [
+        "book5/chapter7"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-oko-akemi",
+          "a": "oko",
+          "b": "akemi",
+          "type": "mother and daughter",
+          "evidence": [
+            "book5/chapter7"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-jinnai-akemi",
+      "participants": [
+        "shoji_jinnai",
+        "akemi"
+      ],
+      "type": "troupe leader and charge / employer",
+      "chapter_ids": [
+        "b5c8",
+        "b5c12"
+      ],
+      "evidence": [
+        "book5/chapter8",
+        "book5/chapter12"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-jinnai-akemi",
+          "a": "shoji_jinnai",
+          "b": "akemi",
+          "type": "troupe leader and charge / employer",
+          "evidence": [
+            "book5/chapter8",
+            "book5/chapter12"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-daizo-jotaro",
+      "participants": [
+        "daizo",
+        "jotaro"
+      ],
+      "type": "coercive protector / claimed guardian",
+      "chapter_ids": [
+        "b5c9"
+      ],
+      "evidence": [
+        "book5/chapter9"
+      ],
+      "certainty": "explicit",
+      "context": "Do not normalize this as consensual adoption.",
+      "extensions": {
+        "original": {
+          "id": "rel-daizo-jotaro",
+          "a": "daizo",
+          "b": "jotaro",
+          "type": "coercive protector / claimed guardian",
+          "evidence": [
+            "book5/chapter9"
+          ],
+          "certainty": "explicit",
+          "note": "Do not normalize this as consensual adoption."
+        }
+      }
+    },
+    {
+      "id": "rel-yajibei-osugi",
+      "participants": [
+        "yajibei",
+        "osugi"
+      ],
+      "type": "host and protector",
+      "chapter_ids": [
+        "b5c10",
+        "b5c11",
+        "b5c22"
+      ],
+      "evidence": [
+        "book5/chapter10",
+        "book5/chapter11",
+        "book5/chapter22"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-yajibei-osugi",
+          "a": "yajibei",
+          "b": "osugi",
+          "type": "host and protector",
+          "evidence": [
+            "book5/chapter10",
+            "book5/chapter11",
+            "book5/chapter22"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-kojiro-obata",
+      "participants": [
+        "kojiro",
+        "obata_kagenori"
+      ],
+      "type": "escalating school feud",
+      "chapter_ids": [
+        "b5c11",
+        "b5c13",
+        "b5c23"
+      ],
+      "evidence": [
+        "book5/chapter11",
+        "book5/chapter13",
+        "book5/chapter23"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-kojiro-obata",
+          "a": "kojiro",
+          "b": "obata_kagenori",
+          "type": "escalating school feud",
+          "evidence": [
+            "book5/chapter11",
+            "book5/chapter13",
+            "book5/chapter23"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-kagenori-shinzo",
+      "participants": [
+        "obata_kagenori",
+        "hojo_shinzo"
+      ],
+      "type": "teacher and senior pupil",
+      "chapter_ids": [
+        "b5c13",
+        "b5c25"
+      ],
+      "evidence": [
+        "book5/chapter13",
+        "book5/chapter25"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-kagenori-shinzo",
+          "a": "obata_kagenori",
+          "b": "hojo_shinzo",
+          "type": "teacher and senior pupil",
+          "evidence": [
+            "book5/chapter13",
+            "book5/chapter25"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-musashi-iori",
+      "participants": [
+        "musashi",
+        "iori"
+      ],
+      "type": "teacher and pupil / practical guardian",
+      "chapter_ids": [
+        "b5c14",
+        "b5c15",
+        "b5c18",
+        "b5c24"
+      ],
+      "evidence": [
+        "book5/chapter14",
+        "book5/chapter15",
+        "book5/chapter18",
+        "book5/chapter24"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-musashi-iori",
+          "a": "musashi",
+          "b": "iori",
+          "type": "teacher and pupil / practical guardian",
+          "evidence": [
+            "book5/chapter14",
+            "book5/chapter15",
+            "book5/chapter18",
+            "book5/chapter24"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-sado-musashi",
+      "participants": [
+        "nagaoka_sado",
+        "musashi"
+      ],
+      "type": "unfulfilled recruitment interest",
+      "chapter_ids": [
+        "b5c16",
+        "b5c17"
+      ],
+      "evidence": [
+        "book5/chapter16",
+        "book5/chapter17"
+      ],
+      "certainty": "explicit",
+      "context": "They do not meet face to face in Book V.",
+      "extensions": {
+        "original": {
+          "id": "rel-sado-musashi",
+          "a": "nagaoka_sado",
+          "b": "musashi",
+          "type": "unfulfilled recruitment interest",
+          "evidence": [
+            "book5/chapter16",
+            "book5/chapter17"
+          ],
+          "certainty": "explicit",
+          "note": "They do not meet face to face in Book V."
+        }
+      }
+    },
+    {
+      "id": "rel-kakubei-kojiro",
+      "participants": [
+        "iwama_kakubei",
+        "kojiro"
+      ],
+      "type": "host and sponsor",
+      "chapter_ids": [
+        "b5c17",
+        "b5c19",
+        "b5c25"
+      ],
+      "evidence": [
+        "book5/chapter17",
+        "book5/chapter19",
+        "book5/chapter25"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-kakubei-kojiro",
+          "a": "iwama_kakubei",
+          "b": "kojiro",
+          "type": "host and sponsor",
+          "evidence": [
+            "book5/chapter17",
+            "book5/chapter19",
+            "book5/chapter25"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-sukekuro-otsu",
+      "participants": [
+        "kimura_sukekuro",
+        "otsu"
+      ],
+      "type": "rescuer and protector",
+      "chapter_ids": [
+        "b5c20"
+      ],
+      "evidence": [
+        "book5/chapter20"
+      ],
+      "certainty": "explicit",
+      "context": "Reported retrospectively, not a present-time chapter-20 meeting.",
+      "extensions": {
+        "original": {
+          "id": "rel-sukekuro-otsu",
+          "a": "kimura_sukekuro",
+          "b": "otsu",
+          "type": "rescuer and protector",
+          "evidence": [
+            "book5/chapter20"
+          ],
+          "certainty": "explicit",
+          "note": "Reported retrospectively, not a present-time chapter-20 meeting."
+        }
+      }
+    },
+    {
+      "id": "rel-munenori-hyogo",
+      "participants": [
+        "yagyu_munenori",
+        "yagyu_hyogo"
+      ],
+      "type": "uncle and nephew",
+      "chapter_ids": [
+        "b5c20",
+        "b5c21"
+      ],
+      "evidence": [
+        "book5/chapter20",
+        "book5/chapter21"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-munenori-hyogo",
+          "a": "yagyu_munenori",
+          "b": "yagyu_hyogo",
+          "type": "uncle and nephew",
+          "evidence": [
+            "book5/chapter20",
+            "book5/chapter21"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-hyogo-otsu",
+      "participants": [
+        "yagyu_hyogo",
+        "otsu"
+      ],
+      "type": "protective friendship with Hyōgo's unspoken affection",
+      "chapter_ids": [
+        "b5c20",
+        "b5c21"
+      ],
+      "evidence": [
+        "book5/chapter20",
+        "book5/chapter21"
+      ],
+      "certainty": "explicit",
+      "context": "Only Hyōgo's internal feeling is established; reciprocity is not inferred.",
+      "extensions": {
+        "original": {
+          "id": "rel-hyogo-otsu",
+          "a": "yagyu_hyogo",
+          "b": "otsu",
+          "type": "protective friendship with Hyōgo's unspoken affection",
+          "evidence": [
+            "book5/chapter20",
+            "book5/chapter21"
+          ],
+          "certainty": "explicit",
+          "note": "Only Hyōgo's internal feeling is established; reciprocity is not inferred."
+        }
+      }
+    },
+    {
+      "id": "rel-kosuke-musashi",
+      "participants": [
+        "zushino_kosuke",
+        "musashi"
+      ],
+      "type": "artisan-client, host and ethical interlocutor",
+      "chapter_ids": [
+        "b5c19",
+        "b5c24"
+      ],
+      "evidence": [
+        "book5/chapter19",
+        "book5/chapter24"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-kosuke-musashi",
+          "a": "zushino_kosuke",
+          "b": "musashi",
+          "type": "artisan-client, host and ethical interlocutor",
+          "evidence": [
+            "book5/chapter19",
+            "book5/chapter24"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-kosuke-shinzo",
+      "participants": [
+        "zushino_kosuke",
+        "hojo_shinzo"
+      ],
+      "type": "rescuer and caregiver",
+      "chapter_ids": [
+        "b5c23",
+        "b5c24",
+        "b5c26"
+      ],
+      "evidence": [
+        "book5/chapter23",
+        "book5/chapter24",
+        "book5/chapter26"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-kosuke-shinzo",
+          "a": "zushino_kosuke",
+          "b": "hojo_shinzo",
+          "type": "rescuer and caregiver",
+          "evidence": [
+            "book5/chapter23",
+            "book5/chapter24",
+            "book5/chapter26"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-kagenori-yogoro",
+      "participants": [
+        "obata_kagenori",
+        "obata_yogoro"
+      ],
+      "type": "father and son / succession tension",
+      "chapter_ids": [
+        "b5c25"
+      ],
+      "evidence": [
+        "book5/chapter25"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-kagenori-yogoro",
+          "a": "obata_kagenori",
+          "b": "obata_yogoro",
+          "type": "father and son / succession tension",
+          "evidence": [
+            "book5/chapter25"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-kojiro-osugi",
+      "participants": [
+        "kojiro",
+        "osugi"
+      ],
+      "type": "self-appointed second in revenge plot",
+      "chapter_ids": [
+        "b5c23"
+      ],
+      "evidence": [
+        "book5/chapter23"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-kojiro-osugi",
+          "a": "kojiro",
+          "b": "osugi",
+          "type": "self-appointed second in revenge plot",
+          "evidence": [
+            "book5/chapter23"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    },
+    {
+      "id": "rel-hangawara-shinzo",
+      "participants": [
+        "hangawara_group",
+        "hojo_shinzo"
+      ],
+      "type": "vendetta after Jūrō and Koroku deaths",
+      "chapter_ids": [
+        "b5c23",
+        "b5c26"
+      ],
+      "evidence": [
+        "book5/chapter23",
+        "book5/chapter26"
+      ],
+      "certainty": "explicit",
+      "extensions": {
+        "original": {
+          "id": "rel-hangawara-shinzo",
+          "a": "hangawara_group",
+          "b": "hojo_shinzo",
+          "type": "vendetta after Jūrō and Koroku deaths",
+          "evidence": [
+            "book5/chapter23",
+            "book5/chapter26"
+          ],
+          "certainty": "explicit"
+        }
+      }
+    }
+  ],
+  "historical_context": [
+    {
+      "id": "b5-historical-01",
+      "topic": "Fukushima barrier and the Nakasendō",
+      "chapter_ids": [
+        "b5c1"
+      ],
+      "source_refs": [
+        "book5/chapter1"
+      ],
+      "summary": "real historical framework; exact narrative checkpoint geometry not reconstructed",
+      "extensions": {
+        "original": {
+          "topic": "Fukushima barrier and the Nakasendō",
+          "narrative_sources": [
+            "book5/chapter1"
+          ],
+          "status": "real historical framework; exact narrative checkpoint geometry not reconstructed"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-02",
+      "topic": "Narai-juku and Kiso post-town corridor",
+      "chapter_ids": [
+        "b5c2",
+        "b5c4"
+      ],
+      "source_refs": [
+        "book5/chapter2",
+        "book5/chapter4"
+      ],
+      "summary": "real historical locality; Daizō's premises are fictional/unmapped",
+      "extensions": {
+        "original": {
+          "topic": "Narai-juku and Kiso post-town corridor",
+          "narrative_sources": [
+            "book5/chapter2",
+            "book5/chapter4"
+          ],
+          "status": "real historical locality; Daizō's premises are fictional/unmapped"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-03",
+      "topic": "Shimosuwa, Wada Pass and the Kōshū/Nakasendō junction",
+      "chapter_ids": [
+        "b5c5",
+        "b5c6"
+      ],
+      "source_refs": [
+        "book5/chapter5",
+        "book5/chapter6"
+      ],
+      "summary": "real historical corridor; individual inn and teahouse unmapped",
+      "extensions": {
+        "original": {
+          "topic": "Shimosuwa, Wada Pass and the Kōshū/Nakasendō junction",
+          "narrative_sources": [
+            "book5/chapter5",
+            "book5/chapter6"
+          ],
+          "status": "real historical corridor; individual inn and teahouse unmapped"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-04",
+      "topic": "Yakuōin and Hachiōji",
+      "chapter_ids": [
+        "b5c8",
+        "b5c9"
+      ],
+      "source_refs": [
+        "book5/chapter8",
+        "book5/chapter9"
+      ],
+      "summary": "real temple/town context; old-fortress and mound scenes unresolved",
+      "extensions": {
+        "original": {
+          "topic": "Yakuōin and Hachiōji",
+          "narrative_sources": [
+            "book5/chapter8",
+            "book5/chapter9"
+          ],
+          "status": "real temple/town context; old-fortress and mound scenes unresolved"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-05",
+      "topic": "Early Edo urban growth, Nihombashi and the Sumida",
+      "chapter_ids": [
+        "b5c10",
+        "b5c11",
+        "b5c18",
+        "b5c20"
+      ],
+      "source_refs": [
+        "book5/chapter10",
+        "book5/chapter11",
+        "book5/chapter18",
+        "book5/chapter20"
+      ],
+      "summary": "historical urban/waterway context only; private homes and scene points unmapped",
+      "extensions": {
+        "original": {
+          "topic": "Early Edo urban growth, Nihombashi and the Sumida",
+          "narrative_sources": [
+            "book5/chapter10",
+            "book5/chapter11",
+            "book5/chapter18",
+            "book5/chapter20"
+          ],
+          "status": "historical urban/waterway context only; private homes and scene points unmapped"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-06",
+      "topic": "Sensōji and Kanda Myōjin",
+      "chapter_ids": [
+        "b5c11"
+      ],
+      "source_refs": [
+        "book5/chapter11"
+      ],
+      "summary": "real institutions; Daizō's donations are narrative claims, not externally verified",
+      "extensions": {
+        "original": {
+          "topic": "Sensōji and Kanda Myōjin",
+          "narrative_sources": [
+            "book5/chapter11"
+          ],
+          "status": "real institutions; Daizō's donations are narrative claims, not externally verified"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-07",
+      "topic": "Tone River floodplain and early-modern river works",
+      "chapter_ids": [
+        "b5c14",
+        "b5c15"
+      ],
+      "source_refs": [
+        "book5/chapter14",
+        "book5/chapter15"
+      ],
+      "summary": "historical environmental context; Hōtengahara remains unresolved",
+      "extensions": {
+        "original": {
+          "topic": "Tone River floodplain and early-modern river works",
+          "narrative_sources": [
+            "book5/chapter14",
+            "book5/chapter15"
+          ],
+          "status": "historical environmental context; Hōtengahara remains unresolved"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-08",
+      "topic": "Azabu/Iigura, Ushigome and Akagi shrine context",
+      "chapter_ids": [
+        "b5c20",
+        "b5c21",
+        "b5c26"
+      ],
+      "source_refs": [
+        "book5/chapter20",
+        "book5/chapter21",
+        "book5/chapter26"
+      ],
+      "summary": "historical area/toponym correspondence; Yagyū and Hōjō residences not geolocated",
+      "extensions": {
+        "original": {
+          "topic": "Azabu/Iigura, Ushigome and Akagi shrine context",
+          "narrative_sources": [
+            "book5/chapter20",
+            "book5/chapter21",
+            "book5/chapter26"
+          ],
+          "status": "historical area/toponym correspondence; Yagyū and Hōjō residences not geolocated"
+        }
+      },
+      "urls": []
+    },
+    {
+      "id": "b5-historical-09",
+      "topic": "Named martial and political figures",
+      "chapter_ids": [
+        "b5c4",
+        "b5c5",
+        "b5c13",
+        "b5c17",
+        "b5c21"
+      ],
+      "source_refs": [
+        "book5/chapter4",
+        "book5/chapter5",
+        "book5/chapter13",
+        "book5/chapter17",
+        "book5/chapter21"
+      ],
+      "summary": "narrative uses historical names; this scrape does not assert that fictional encounters or speeches are historical fact",
+      "extensions": {
+        "original": {
+          "topic": "Named martial and political figures",
+          "narrative_sources": [
+            "book5/chapter4",
+            "book5/chapter5",
+            "book5/chapter13",
+            "book5/chapter17",
+            "book5/chapter21"
+          ],
+          "status": "narrative uses historical names; this scrape does not assert that fictional encounters or speeches are historical fact"
+        }
+      },
+      "urls": []
+    }
+  ],
+  "external_validation": [
+    {
+      "id": "ext-kiso-fukushima",
+      "topic": "ext-kiso-fukushima",
+      "authority": "Kiso Town official site",
+      "url": "https://www.town-kiso.com/manabu/rekishi/bunkazai/m100079/",
+      "conclusion": "Fukushima was a major Nakasendō checkpoint and transport node; validates broad correspondence only.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-kiso-fukushima",
+          "authority": "Kiso Town official site",
+          "url": "https://www.town-kiso.com/manabu/rekishi/bunkazai/m100079/",
+          "supports": "Fukushima was a major Nakasendō checkpoint and transport node; validates broad correspondence only.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-shiojiri-narai",
+      "topic": "ext-shiojiri-narai",
+      "authority": "Shiojiri City official site",
+      "url": "https://www.city.shiojiri.lg.jp/site/bunkazaihouhou/29585.html",
+      "conclusion": "Narai is a preserved Nakasendō post-town along the Narai River; no private-premises point imported.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-shiojiri-narai",
+          "authority": "Shiojiri City official site",
+          "url": "https://www.city.shiojiri.lg.jp/site/bunkazaihouhou/29585.html",
+          "supports": "Narai is a preserved Nakasendō post-town along the Narai River; no private-premises point imported.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-shimosuwa",
+      "topic": "ext-shimosuwa",
+      "authority": "Shimosuwa Town official site",
+      "url": "https://www.town.shimosuwa.lg.jp/www/contents/1001000000491/index.html",
+      "conclusion": "Shimosuwa's role at the Nakasendō/Kōshū junction, as hot-spring post town and Suwa shrine gateway.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-shimosuwa",
+          "authority": "Shimosuwa Town official site",
+          "url": "https://www.town.shimosuwa.lg.jp/www/contents/1001000000491/index.html",
+          "supports": "Shimosuwa's role at the Nakasendō/Kōshū junction, as hot-spring post town and Suwa shrine gateway.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-hachioji-yakuoin",
+      "topic": "ext-hachioji-yakuoin",
+      "authority": "Hachiōji City official site",
+      "url": "https://www.city.hachioji.tokyo.jp/kankobunka/003/monogatari/p026961.html",
+      "conclusion": "Mount Takao and Yakuōin's longstanding religious and cultural setting.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-hachioji-yakuoin",
+          "authority": "Hachiōji City official site",
+          "url": "https://www.city.hachioji.tokyo.jp/kankobunka/003/monogatari/p026961.html",
+          "supports": "Mount Takao and Yakuōin's longstanding religious and cultural setting.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-tone-history",
+      "topic": "ext-tone-history",
+      "authority": "MLIT Kanto Regional Development Bureau",
+      "url": "https://www.ktr.mlit.go.jp/tonejo/tonejo00185.html",
+      "conclusion": "Early-modern eastward diversion of the Tone and links to flood control, new-field development and transport; not a locator for Hōtengahara.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-tone-history",
+          "authority": "MLIT Kanto Regional Development Bureau",
+          "url": "https://www.ktr.mlit.go.jp/tonejo/tonejo00185.html",
+          "supports": "Early-modern eastward diversion of the Tone and links to flood control, new-field development and transport; not a locator for Hōtengahara.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-edo-chronology",
+      "topic": "ext-edo-chronology",
+      "authority": "Tokyo Metropolitan Government",
+      "url": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/nenpyo",
+      "conclusion": "Ieyasu's 1590 entry, the shogunate in 1603, Nihombashi and Edo Castle construction chronology.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-edo-chronology",
+          "authority": "Tokyo Metropolitan Government",
+          "url": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/nenpyo",
+          "supports": "Ieyasu's 1590 entry, the shogunate in 1603, Nihombashi and Edo Castle construction chronology.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-sumida",
+      "topic": "ext-sumida",
+      "authority": "Tokyo Metropolitan Government Bureau of Construction",
+      "url": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/chisui/tokusyu/hanashi",
+      "conclusion": "Historical naming and provincial-boundary context for the Sumida; narrative ferry remains an unresolved point.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-sumida",
+          "authority": "Tokyo Metropolitan Government Bureau of Construction",
+          "url": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/chisui/tokusyu/hanashi",
+          "supports": "Historical naming and provincial-boundary context for the Sumida; narrative ferry remains an unresolved point.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-sensoji",
+      "topic": "ext-sensoji",
+      "authority": "Sensōji official site",
+      "url": "https://www.senso-ji.jp/english/",
+      "conclusion": "Sensōji/Asakusa Kannon's institutional continuity and Sumida origin tradition.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-sensoji",
+          "authority": "Sensōji official site",
+          "url": "https://www.senso-ji.jp/english/",
+          "supports": "Sensōji/Asakusa Kannon's institutional continuity and Sumida origin tradition.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-kanda",
+      "topic": "ext-kanda",
+      "authority": "Kanda Myōjin official site",
+      "url": "https://www.kandamyoujin.or.jp/what/",
+      "conclusion": "Kanda Myōjin's early-Edo relocations and enshrinement of Taira no Masakado; does not validate Daizō's donation.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-kanda",
+          "authority": "Kanda Myōjin official site",
+          "url": "https://www.kandamyoujin.or.jp/what/",
+          "supports": "Kanda Myōjin's early-Edo relocations and enshrinement of Taira no Masakado; does not validate Daizō's donation.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-azabu",
+      "topic": "ext-azabu",
+      "authority": "Minato City official site",
+      "url": "https://www.city.minato.tokyo.jp/kouhou/kuse/gaiyo/chimerekishi/index-azabu.html",
+      "conclusion": "Azabu and Iigura as attested historical toponyms; no Yagyū residence point inferred.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-azabu",
+          "authority": "Minato City official site",
+          "url": "https://www.city.minato.tokyo.jp/kouhou/kuse/gaiyo/chimerekishi/index-azabu.html",
+          "supports": "Azabu and Iigura as attested historical toponyms; no Yagyū residence point inferred.",
+          "accessed": "2026-08-20"
+        }
+      }
+    },
+    {
+      "id": "ext-akagi",
+      "topic": "ext-akagi",
+      "authority": "Shinjuku City cultural-property register",
+      "url": "https://www.city.shinjuku.lg.jp/content/000360259.pdf",
+      "conclusion": "Akagi-shrine tradition in the Ushigome area, with an explicit caution that elements of the received chronology are estimates.",
+      "uncertainty": null,
+      "accessed": "2026-08-20",
+      "extensions": {
+        "original": {
+          "id": "ext-akagi",
+          "authority": "Shinjuku City cultural-property register",
+          "url": "https://www.city.shinjuku.lg.jp/content/000360259.pdf",
+          "supports": "Akagi-shrine tradition in the Ushigome area, with an explicit caution that elements of the received chronology are estimates.",
+          "accessed": "2026-08-20"
+        }
+      }
+    }
+  ],
+  "extensions": {
+    "referential_audit": {
+      "expected_sections": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "expected_source_refs": [
+        "book5/chapter1",
+        "book5/chapter2",
+        "book5/chapter3",
+        "book5/chapter4",
+        "book5/chapter5",
+        "book5/chapter6",
+        "book5/chapter7",
+        "book5/chapter8",
+        "book5/chapter9",
+        "book5/chapter10",
+        "book5/chapter11",
+        "book5/chapter12",
+        "book5/chapter13",
+        "book5/chapter14",
+        "book5/chapter15",
+        "book5/chapter16",
+        "book5/chapter17",
+        "book5/chapter18",
+        "book5/chapter19",
+        "book5/chapter20",
+        "book5/chapter21",
+        "book5/chapter22",
+        "book5/chapter23",
+        "book5/chapter24",
+        "book5/chapter25",
+        "book5/chapter26"
+      ],
+      "chapter_count": 26,
+      "event_count": 105,
+      "coordinates_emitted": 0,
+      "checks": "Recomputed by scripts documented in research/book5-scrape-audit.md; stored counts are declarative and must match the executable audit."
+    }
+  }
+}

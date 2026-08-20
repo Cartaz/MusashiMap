@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "source_rule": "States are derived only from the eight Book I chapter source files in data/source/musashi-book1. A state describes narrative position at or within a chapter, not every transient movement.",
+  "source_rule": "States are derived only from the eight Book I chapter source files in data/source/book1. A state describes narrative position at or within a chapter, not every transient movement.",
   "book": "I",
   "title": "Earth",
   "characters": {

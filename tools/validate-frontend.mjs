@@ -3,7 +3,12 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 
-const root = process.cwd();
+const rootArgument = process.argv.indexOf("--root");
+if (rootArgument !== -1 && !process.argv[rootArgument + 1]) {
+  console.error("--root needs a directory");
+  process.exit(2);
+}
+const root = rootArgument === -1 ? process.cwd() : path.resolve(process.argv[rootArgument + 1]);
 const errors = [];
 const warnings = [];
 
@@ -11,7 +16,7 @@ const walk = async directory => {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
-    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "_site") continue;
     const full = path.join(directory, entry.name);
     if (entry.isDirectory()) files.push(...await walk(full));
     else files.push(full);
@@ -23,7 +28,7 @@ const files = await walk(root);
 const jsFiles = files.filter(file => file.endsWith(".js") || file.endsWith(".mjs"));
 const jsonFiles = files.filter(file => file.endsWith(".json"));
 const cssFiles = files.filter(file => file.endsWith(".css"));
-const sourceFiles = files.filter(file => /\.(?:html|js|mjs|json)$/.test(file));
+const sourceFiles = files.filter(file => /\.(?:html|js|mjs|json)$/.test(file) && !file.includes(`${path.sep}tools${path.sep}tests${path.sep}`));
 
 for (const file of jsFiles) {
   const result = spawnSync(process.execPath, ["--check", file], { encoding: "utf8" });
@@ -107,7 +112,8 @@ for (const reference of localReferences) {
 for (const file of jsFiles) {
   const content = await readFile(file, "utf8");
   for (const match of content.matchAll(/(?:from\s+|import\s*\()["'](\.[^"']+)["']/g)) {
-    const target = path.resolve(path.dirname(file), match[1]);
+    const cleanImport = match[1].split("?")[0].split("#")[0];
+    const target = path.resolve(path.dirname(file), cleanImport);
     if (!existsSync(target)) warnings.push(`JS import may need extension resolution: ${path.relative(root, file)} → ${match[1]}`);
   }
 }
@@ -128,36 +134,76 @@ const normalizeSelector = selector => selector
   .replace(/\s+/g, " ")
   .trim();
 
+// Return selectors together with their at-rule scope. Looking only at the text
+// before every opening brace conflates responsive overrides with duplicate base
+// rules and also mistakes dots in declaration URLs for class selectors.
+const extractRules = content => {
+  const clean = content.replace(/\/\*[\s\S]*?\*\//g, "");
+  const rules = [];
+  const stack = [];
+  let boundary = 0;
+  let quote = null;
+  let escaped = false;
+  for (let index = 0; index < clean.length; index += 1) {
+    const char = clean[index];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (char === "\\") escaped = true;
+      else if (char === quote) quote = null;
+      continue;
+    }
+    if (char === '"' || char === "'") {
+      quote = char;
+      continue;
+    }
+    if (char === ";" && stack.at(-1)?.kind === "at-rule") boundary = index + 1;
+    if (char === "{") {
+      const header = normalizeSelector(clean.slice(boundary, index));
+      const parentAllowsRule = !stack.length || stack.at(-1).kind === "at-rule";
+      if (header.startsWith("@")) {
+        stack.push({ kind: "at-rule", header });
+      } else {
+        if (header && parentAllowsRule) {
+          const scope = stack.filter(item => item.kind === "at-rule").map(item => item.header).join(" > ");
+          for (const selector of header.split(",").map(normalizeSelector).filter(Boolean)) rules.push({ selector, scope });
+        }
+        stack.push({ kind: "rule", header });
+      }
+      boundary = index + 1;
+    } else if (char === "}") {
+      stack.pop();
+      boundary = index + 1;
+    }
+  }
+  return rules;
+};
+
 for (const file of cssFiles) {
   const content = await readFile(file, "utf8");
-  const withoutComments = content.replace(/\/\*[\s\S]*?\*\//g, "");
-  for (const match of withoutComments.matchAll(/\.([A-Za-z_][\w-]*)/g)) {
-    addRef(cssClassDefinitions, match[1], file);
-  }
-
-  // Candidate duplicate-selector audit. It deliberately ignores at-rules and
-  // declarations, and reports repeated selectors across the same stylesheet.
-  // Repetition across media queries is allowed to remain a warning because it
-  // can be intentional responsive behavior.
-  for (const match of withoutComments.matchAll(/([^{}]+)\{/g)) {
-    const selector = normalizeSelector(match[1]);
-    if (!selector || selector.startsWith("@") || !selector.includes(".")) continue;
-    const key = selector;
+  for (const { selector, scope } of extractRules(content)) {
+    for (const match of selector.matchAll(/\.([A-Za-z_][\w-]*)/g)) addRef(cssClassDefinitions, match[1], file);
+    if (!selector.includes(".")) continue;
+    const key = `${path.relative(root, file)}\u0000${scope}\u0000${selector}`;
     if (!cssSelectorOccurrences.has(key)) cssSelectorOccurrences.set(key, []);
-    cssSelectorOccurrences.get(key).push(path.relative(root, file));
+    cssSelectorOccurrences.get(key).push({ file: path.relative(root, file), scope, selector });
   }
 }
 
-for (const [selector, occurrences] of cssSelectorOccurrences) {
+const duplicateSelectorCandidates = [];
+for (const occurrences of cssSelectorOccurrences.values()) {
   if (occurrences.length > 1) {
-    warnings.push(`Repeated CSS selector (${occurrences.length} definitions): ${selector} [${occurrences[0]}]`);
+    const { file, scope, selector } = occurrences[0];
+    duplicateSelectorCandidates.push(`${selector} (${occurrences.length}×, ${file}${scope ? `; ${scope}` : ""})`);
   }
+}
+if (duplicateSelectorCandidates.length) {
+  warnings.push(`Repeated CSS selectors in the same file/scope (${duplicateSelectorCandidates.length} candidates):\n  ${duplicateSelectorCandidates.join("\n  ")}`);
 }
 
 for (const file of sourceFiles) {
   const content = await readFile(file, "utf8");
-  for (const match of content.matchAll(/class(?:Name)?\s*=\s*["'`]([^"'`]*?)["'`]/g)) {
-    for (const name of match[1].split(/\s+/).filter(Boolean)) addRef(cssClassReferences, name, file);
+  for (const match of content.matchAll(/class(?:Name)?\s*[:=]\s*["'`]([^"'`]*?)["'`]/g)) {
+    for (const name of match[1].split(/\s+/).filter(name => /^[A-Za-z_][\w-]*$/.test(name))) addRef(cssClassReferences, name, file);
   }
   for (const match of content.matchAll(/classList\.(?:add|remove|toggle)\(([^)]*)\)/g)) {
     for (const name of match[1].matchAll(/["'`]([A-Za-z_][\w-]*)["'`]/g)) addRef(cssClassReferences, name[1], file);
@@ -166,7 +212,12 @@ for (const file of sourceFiles) {
 
 const knownDynamicClasses = new Set([
   "is-collapsed", "is-approximate", "is-last-known", "is-reported",
-  "active", "open", "hidden"
+  "active", "open", "hidden",
+  // Leaflet owns these classes; popup class names are passed through its API.
+  "leaflet-bottom", "leaflet-container", "leaflet-control-attribution",
+  "leaflet-control-zoom", "leaflet-marker-icon", "leaflet-popup-content",
+  "leaflet-popup-content-wrapper", "leaflet-popup-tip",
+  "musashi-character-popup", "musashi-movement-popup", "musashi-place-popup", "musashi-popup"
 ]);
 
 const unusedCandidates = [];

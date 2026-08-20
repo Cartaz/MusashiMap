@@ -1,0 +1,133 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import {
+  createReaderProgress,
+  getCharacterIntroductionSection,
+  getReaderSnapshot,
+  getRelevantHistoricalWiki,
+  getVisibleCharacters,
+  resolveCharacterPosition
+} from "./reader-progress.js";
+
+test("reader-progress is authoritative over chapters prepared for future books", () => {
+  const chapters = { sections: Array.from({ length: 19 }, (_, index) => ({ number: index + 1 })) };
+  const reader = createReaderProgress(chapters, {
+    state: { current_section: 1, minimum_section: 1, maximum_section: 8 }
+  });
+
+  assert.equal(reader.max, 8);
+  assert.deepEqual(reader.sections.map(section => section.number), [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.equal(reader.setSection(9), false);
+  assert.equal(reader.section, 1);
+});
+
+test("reader-progress fails closed when a publication boundary is missing", () => {
+  const chapters = { sections: Array.from({ length: 112 }, (_, index) => ({ number: index + 1 })) };
+
+  assert.throws(
+    () => createReaderProgress(chapters, { state: { current_section: 1, minimum_section: 1 } }),
+    /requires explicit minimum_section and maximum_section/
+  );
+  assert.throws(
+    () => createReaderProgress(chapters, 1),
+    /requires explicit minimum_section and maximum_section/
+  );
+  assert.throws(
+    () => createReaderProgress(chapters, { state: { current_section: 1, minimum_section: 1, maximum_section: "112junk" } }),
+    /requires explicit minimum_section and maximum_section/
+  );
+  assert.throws(
+    () => createReaderProgress(chapters, { state: { current_section: 1, minimum_section: 1, maximum_section: 112.9 } }),
+    /requires explicit minimum_section and maximum_section/
+  );
+  for (const malformedMaximum of [[112], true, { value: 112 }]) {
+    assert.throws(
+      () => createReaderProgress(chapters, { state: { current_section: 1, minimum_section: 1, maximum_section: malformedMaximum } }),
+      /requires explicit minimum_section and maximum_section/
+    );
+  }
+});
+
+test("reader navigation follows available sections without inventing gaps", () => {
+  const reader = createReaderProgress({ sections: [{ number: 2 }, { number: 4 }, { number: 7 }] }, {
+    current_section: 2,
+    minimum_section: 2,
+    maximum_section: 7
+  });
+
+  assert.equal(reader.next(), true);
+  assert.equal(reader.section, 4);
+  assert.equal(reader.previous(), true);
+  assert.equal(reader.section, 2);
+  assert.equal(reader.setSection(3), false);
+});
+
+test("character names remain hidden until project-local narrative evidence", () => {
+  const characters = [
+    { id: "early", present_in: [1] },
+    { id: "future", present_in: [12] },
+    { id: "unknown", present_in: [] }
+  ];
+
+  assert.equal(getCharacterIntroductionSection(characters[1]), 12);
+  assert.equal(getCharacterIntroductionSection(characters[2]), null);
+  assert.deepEqual(getVisibleCharacters(characters, 8).map(character => character.id), ["early"]);
+  assert.deepEqual(getVisibleCharacters(characters, 12).map(character => character.id), ["early", "future"]);
+});
+
+test("event, state and wiki evidence can safely establish an introduction", () => {
+  const character = { id: "mentioned", present_in: [] };
+  const evidence = {
+    states: [{ character: "mentioned", section: 6 }],
+    events: [{ section: 4, referenced_characters: ["mentioned"] }],
+    characterWiki: { mentioned: { current_by_section: { 5: "Known" } } }
+  };
+  assert.equal(getCharacterIntroductionSection(character, evidence), 4);
+});
+
+test("reader snapshot computes latest selected states and current events once", () => {
+  const snapshot = getReaderSnapshot({
+    states: [
+      { character: "a", section: 1, activity: "old" },
+      { character: "a", section: 3, activity: "new" },
+      { character: "b", section: 2 }
+    ],
+    events: [
+      { id: "visible", section: 3, characters: ["a"] },
+      { id: "other", section: 3, characters: ["b"] },
+      { id: "past", section: 2, characters: ["a"] }
+    ]
+  }, 3, ["a"]);
+
+  assert.equal(snapshot.latestStates.length, 2);
+  assert.equal(snapshot.selectedStates[0].activity, "new");
+  assert.deepEqual(snapshot.sectionEvents.map(event => event.id), ["visible"]);
+});
+
+test("character position semantics are shared by diary and map", () => {
+  const locations = new Map([
+    ["known", { id: "known", name: "Known", coordinates: [1, 2] }],
+    ["unmapped", { id: "unmapped", name: "Unmapped", coordinates: null }]
+  ]);
+
+  assert.equal(resolveCharacterPosition({ location_status: "unknown", last_known_location: "known" }, locations).mode, "last_known");
+  const reported = resolveCharacterPosition({ location_status: "reported_position", last_known_location: "unmapped" }, locations);
+  assert.equal(reported.mode, "reported");
+  assert.equal(reported.location, null);
+  assert.equal(reported.referencedLocation.name, "Unmapped");
+});
+
+test("micro-wiki entries cannot cross their spoiler-safe threshold", () => {
+  const entries = [{
+    id: "future-context",
+    novel_trigger: { first_book1_section: 3, spoiler_safe_until: 4 }
+  }, {
+    id: "book-aware-context",
+    novel_trigger: { first_section: 9, spoiler_safe_until: 9 }
+  }];
+
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 3), []);
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 4).map(entry => entry.id), ["future-context"]);
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 9).map(entry => entry.id), ["book-aware-context"]);
+});

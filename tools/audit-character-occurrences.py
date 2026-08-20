@@ -6,7 +6,7 @@ occurrence evidence separate from presence, location, or movement conclusions.
 
 Usage:
     python3 tools/audit-character-occurrences.py \
-      --root data/source/musashi-book1 \
+      --root data/source/book1 \
       --character "Jōtarō"
 
 The report excludes chapter headings and page-number footer lines, because a

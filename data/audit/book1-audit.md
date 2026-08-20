@@ -4,7 +4,7 @@ Date: 2026-08-16
 
 ## Source of truth
 
-This audit uses only the Book I chapter source files stored in `data/source/musashi-book1/`, plus the repository's existing `events.json`, `locations.json`, and character metadata. No external plot summary is used to create narrative facts.
+This audit uses only the Book I chapter source files stored in `data/source/book1/`, plus the repository's existing `events.json`, `locations.json`, and character metadata. No external plot summary is used to create narrative facts.
 
 ## Rules applied
 

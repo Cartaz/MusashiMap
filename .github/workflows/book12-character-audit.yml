@@ -3,9 +3,10 @@ name: Books I-II character audit
 on:
   push:
     paths:
-      - 'data/source/musashi-book1/**'
+      - 'data/source/book1/**'
       - 'data/source/book2/**'
       - 'tools/book12_character_audit.py'
+      - 'tools/requirements-character-audit.txt'
       - '.github/workflows/book12-character-audit.yml'
   workflow_dispatch:
 
@@ -20,11 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install NLP model
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install spacy
-          python -m spacy download en_core_web_sm
+      - name: Install pinned audit dependencies
+        run: python -m pip install -r tools/requirements-character-audit.txt
       - name: Generate candidate index
         run: python tools/book12_character_audit.py
       - name: Validate candidate index

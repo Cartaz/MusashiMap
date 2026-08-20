@@ -1,32 +1,1138 @@
 {
-  "version": 4,
+  "version": 5,
   "source": {
     "title": "Musashi",
     "author": "Eiji Yoshikawa",
     "translator": "Charles S. Terry",
     "corpus": "repository",
     "source_path": "data/source",
-    "source_url": null
+    "source_url": null,
+    "registered_sections": {
+      "minimum": 1,
+      "maximum": 112
+    },
+    "publication_gate": "data/reader-progress.json"
   },
   "sections": [
-    {"id":"s001","chapter_id":"b1c1","number":1,"book":"I","book_number":1,"book_title":"Earth","title":"The Little Bell"},
-    {"id":"s002","chapter_id":"b1c2","number":2,"book":"I","book_number":1,"book_title":"Earth","title":"The Comb"},
-    {"id":"s003","chapter_id":"b1c3","number":3,"book":"I","book_number":1,"book_title":"Earth","title":"The Flower Festival"},
-    {"id":"s004","chapter_id":"b1c4","number":4,"book":"I","book_number":1,"book_title":"Earth","title":"The Dowager's Wrath"},
-    {"id":"s005","chapter_id":"b1c5","number":5,"book":"I","book_number":1,"book_title":"Earth","title":"The Art of War"},
-    {"id":"s006","chapter_id":"b1c6","number":6,"book":"I","book_number":1,"book_title":"Earth","title":"The Old Cryptomeria Tree"},
-    {"id":"s007","chapter_id":"b1c7","number":7,"book":"I","book_number":1,"book_title":"Earth","title":"The Rock and the Tree"},
-    {"id":"s008","chapter_id":"b1c8","number":8,"book":"I","book_number":1,"book_title":"Earth","title":"The Birth of Musashi"},
-    {"id":"s009","chapter_id":"b2c1","number":9,"book":"II","book_number":2,"book_title":"Water","title":"The Yoshioka School"},
-    {"id":"s010","chapter_id":"b2c2","number":10,"book":"II","book_number":2,"book_title":"Water","title":"The Wheel of Fortune"},
-    {"id":"s011","chapter_id":"b2c3","number":11,"book":"II","book_number":2,"book_title":"Water","title":"Encounter and Retreat"},
-    {"id":"s012","chapter_id":"b2c4","number":12,"book":"II","book_number":2,"book_title":"Water","title":"The Water Sprite"},
-    {"id":"s013","chapter_id":"b2c5","number":13,"book":"II","book_number":2,"book_title":"Water","title":"A Spring Breeze"},
-    {"id":"s014","chapter_id":"b2c6","number":14,"book":"II","book_number":2,"book_title":"Water","title":"The Hōzōin"},
-    {"id":"s015","chapter_id":"b2c7","number":15,"book":"II","book_number":2,"book_title":"Water","title":"Hannya Plain"},
-    {"id":"s016","chapter_id":"b2c8","number":16,"book":"II","book_number":2,"book_title":"Water","title":"The Koyagyū Fief"},
-    {"id":"s017","chapter_id":"b2c9","number":17,"book":"II","book_number":2,"book_title":"Water","title":"The Peony"},
-    {"id":"s018","chapter_id":"b2c10","number":18,"book":"II","book_number":2,"book_title":"Water","title":"Jōtarō's Revenge"},
-    {"id":"s019","chapter_id":"b2c11","number":19,"book":"II","book_number":2,"book_title":"Water","title":"The Nightingales"}
+    {
+      "id": "s001",
+      "chapter_id": "b1c1",
+      "number": 1,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Little Bell",
+      "source_file": "data/source/book1/chapter1-the-little-bell.txt"
+    },
+    {
+      "id": "s002",
+      "chapter_id": "b1c2",
+      "number": 2,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Comb",
+      "source_file": "data/source/book1/chapter2-the-comb.txt"
+    },
+    {
+      "id": "s003",
+      "chapter_id": "b1c3",
+      "number": 3,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Flower Festival",
+      "source_file": "data/source/book1/chapter3-the-flower-festival.txt"
+    },
+    {
+      "id": "s004",
+      "chapter_id": "b1c4",
+      "number": 4,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Dowager's Wrath",
+      "source_file": "data/source/book1/chapter4-the-dowagers-wrath.txt"
+    },
+    {
+      "id": "s005",
+      "chapter_id": "b1c5",
+      "number": 5,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Art of War",
+      "source_file": "data/source/book1/chapter5-the-art-of-war.txt"
+    },
+    {
+      "id": "s006",
+      "chapter_id": "b1c6",
+      "number": 6,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Old Cryptomeria Tree",
+      "source_file": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt"
+    },
+    {
+      "id": "s007",
+      "chapter_id": "b1c7",
+      "number": 7,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Rock and the Tree",
+      "source_file": "data/source/book1/chapter7-the-rock-and-the-tree.txt"
+    },
+    {
+      "id": "s008",
+      "chapter_id": "b1c8",
+      "number": 8,
+      "book": "I",
+      "book_number": 1,
+      "book_title": "Earth",
+      "title": "The Birth of Musashi",
+      "source_file": "data/source/book1/chapter8-the-birth-of-musashi.txt"
+    },
+    {
+      "id": "s009",
+      "chapter_id": "b2c1",
+      "number": 9,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "The Yoshioka School",
+      "source_file": "data/source/book2/chapter1-the-yoshioka-school.txt"
+    },
+    {
+      "id": "s010",
+      "chapter_id": "b2c2",
+      "number": 10,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "The Wheel of Fortune",
+      "source_file": "data/source/book2/chapter2-the-wheel-of-fortune.txt"
+    },
+    {
+      "id": "s011",
+      "chapter_id": "b2c3",
+      "number": 11,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "Encounter and Retreat",
+      "source_file": "data/source/book2/chapter3-encounter-and-retreat.txt"
+    },
+    {
+      "id": "s012",
+      "chapter_id": "b2c4",
+      "number": 12,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "The Water Sprite",
+      "source_file": "data/source/book2/chapter4-the-water-sprite.txt"
+    },
+    {
+      "id": "s013",
+      "chapter_id": "b2c5",
+      "number": 13,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "A Spring Breeze",
+      "source_file": "data/source/book2/chapter5-a-spring-breeze.txt"
+    },
+    {
+      "id": "s014",
+      "chapter_id": "b2c6",
+      "number": 14,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "The Hōzōin",
+      "source_file": "data/source/book2/chapter6-the-hozoin.txt"
+    },
+    {
+      "id": "s015",
+      "chapter_id": "b2c7",
+      "number": 15,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "Hannya Plain",
+      "source_file": "data/source/book2/chapter7-hannya-plain.txt"
+    },
+    {
+      "id": "s016",
+      "chapter_id": "b2c8",
+      "number": 16,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "The Koyagyū Fief",
+      "source_file": "data/source/book2/chapter8-the-koyagyu-fief.txt"
+    },
+    {
+      "id": "s017",
+      "chapter_id": "b2c9",
+      "number": 17,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "The Peony",
+      "source_file": "data/source/book2/chapter9-the-peony.txt"
+    },
+    {
+      "id": "s018",
+      "chapter_id": "b2c10",
+      "number": 18,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "Jōtarō’s Revenge",
+      "source_file": "data/source/book2/chapter10-jotaros-revenge.txt"
+    },
+    {
+      "id": "s019",
+      "chapter_id": "b2c11",
+      "number": 19,
+      "book": "II",
+      "book_number": 2,
+      "book_title": "Water",
+      "title": "The Nightingales",
+      "source_file": "data/source/book2/chapter11-the-nightingales.txt"
+    },
+    {
+      "id": "s020",
+      "chapter_id": "b3c1",
+      "number": 20,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "Sasaki Kojirō",
+      "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt"
+    },
+    {
+      "id": "s021",
+      "chapter_id": "b3c2",
+      "number": 21,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "Reunion in Osaka",
+      "source_file": "data/source/book3/chapter2-reunion-in-osaka.txt"
+    },
+    {
+      "id": "s022",
+      "chapter_id": "b3c3",
+      "number": 22,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Handsome Young Man",
+      "source_file": "data/source/book3/chapter3-the-handsome-young-man.txt"
+    },
+    {
+      "id": "s023",
+      "chapter_id": "b3c4",
+      "number": 23,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Seashell of Forgetfulness",
+      "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt"
+    },
+    {
+      "id": "s024",
+      "chapter_id": "b3c5",
+      "number": 24,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "A Hero’s Passing",
+      "source_file": "data/source/book3/chapter5-a-heros-passing.txt"
+    },
+    {
+      "id": "s025",
+      "chapter_id": "b3c6",
+      "number": 25,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Drying Pole",
+      "source_file": "data/source/book3/chapter6-the-drying-pole.txt"
+    },
+    {
+      "id": "s026",
+      "chapter_id": "b3c7",
+      "number": 26,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "Eagle Mountain",
+      "source_file": "data/source/book3/chapter7-eagle-mountain.txt"
+    },
+    {
+      "id": "s027",
+      "chapter_id": "b3c8",
+      "number": 27,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Mayfly in Winter",
+      "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt"
+    },
+    {
+      "id": "s028",
+      "chapter_id": "b3c9",
+      "number": 28,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Pinwheel",
+      "source_file": "data/source/book3/chapter9-the-pinwheel.txt"
+    },
+    {
+      "id": "s029",
+      "chapter_id": "b3c10",
+      "number": 29,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Flying Horse",
+      "source_file": "data/source/book3/chapter10-the-flying-horse.txt"
+    },
+    {
+      "id": "s030",
+      "chapter_id": "b3c11",
+      "number": 30,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Butterfly in Winter",
+      "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt"
+    },
+    {
+      "id": "s031",
+      "chapter_id": "b3c12",
+      "number": 31,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Announcement",
+      "source_file": "data/source/book3/chapter12-the-announcement.txt"
+    },
+    {
+      "id": "s032",
+      "chapter_id": "b3c13",
+      "number": 32,
+      "book": "III",
+      "book_number": 3,
+      "book_title": "Fire",
+      "title": "The Great Bridge at Gojō Avenue",
+      "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt"
+    },
+    {
+      "id": "s033",
+      "chapter_id": "b4c1",
+      "number": 33,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Withered Field",
+      "source_file": "data/source/book4/chapter1-the-withered-field.txt"
+    },
+    {
+      "id": "s034",
+      "chapter_id": "b4c2",
+      "number": 34,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "A Man of Parts",
+      "source_file": "data/source/book4/chapter2-a-man-of-parts.txt"
+    },
+    {
+      "id": "s035",
+      "chapter_id": "b4c3",
+      "number": 35,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "Too Many Kojirōs",
+      "source_file": "data/source/book4/chapter3-too-many-kojiros.txt"
+    },
+    {
+      "id": "s036",
+      "chapter_id": "b4c4",
+      "number": 36,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Younger Brother",
+      "source_file": "data/source/book4/chapter4-the-younger-brother.txt"
+    },
+    {
+      "id": "s037",
+      "chapter_id": "b4c5",
+      "number": 37,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "A Mother’s Love",
+      "source_file": "data/source/book4/chapter5-a-mothers-love.txt"
+    },
+    {
+      "id": "s038",
+      "chapter_id": "b4c6",
+      "number": 38,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Urbane Craftsman",
+      "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt"
+    },
+    {
+      "id": "s039",
+      "chapter_id": "b4c7",
+      "number": 39,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "Reverberations in the Snow",
+      "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt"
+    },
+    {
+      "id": "s040",
+      "chapter_id": "b4c8",
+      "number": 40,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Elegant People",
+      "source_file": "data/source/book4/chapter8-the-elegant-people.txt"
+    },
+    {
+      "id": "s041",
+      "chapter_id": "b4c9",
+      "number": 41,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Broken Lute",
+      "source_file": "data/source/book4/chapter9-the-broken-lute.txt"
+    },
+    {
+      "id": "s042",
+      "chapter_id": "b4c10",
+      "number": 42,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "A Sickness of the Heart",
+      "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt"
+    },
+    {
+      "id": "s043",
+      "chapter_id": "b4c11",
+      "number": 43,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Scent of Aloeswood",
+      "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt"
+    },
+    {
+      "id": "s044",
+      "chapter_id": "b4c12",
+      "number": 44,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Gate",
+      "source_file": "data/source/book4/chapter12-the-gate.txt"
+    },
+    {
+      "id": "s045",
+      "chapter_id": "b4c13",
+      "number": 45,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "A Toast to the Morrow",
+      "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt"
+    },
+    {
+      "id": "s046",
+      "chapter_id": "b4c14",
+      "number": 46,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Death Trap",
+      "source_file": "data/source/book4/chapter14-the-death-trap.txt"
+    },
+    {
+      "id": "s047",
+      "chapter_id": "b4c15",
+      "number": 47,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "A Meeting in the Moonlight",
+      "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt"
+    },
+    {
+      "id": "s048",
+      "chapter_id": "b4c16",
+      "number": 48,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "Stray Geese",
+      "source_file": "data/source/book4/chapter16-stray-geese.txt"
+    },
+    {
+      "id": "s049",
+      "chapter_id": "b4c17",
+      "number": 49,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Spreading Pine",
+      "source_file": "data/source/book4/chapter17-the-spreading-pine.txt"
+    },
+    {
+      "id": "s050",
+      "chapter_id": "b4c18",
+      "number": 50,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "An Offering for the Dead",
+      "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt"
+    },
+    {
+      "id": "s051",
+      "chapter_id": "b4c19",
+      "number": 51,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "A Drink of Milk",
+      "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt"
+    },
+    {
+      "id": "s052",
+      "chapter_id": "b4c20",
+      "number": 52,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "Entwining Branches",
+      "source_file": "data/source/book4/chapter20-entwining-branches.txt"
+    },
+    {
+      "id": "s053",
+      "chapter_id": "b4c21",
+      "number": 53,
+      "book": "IV",
+      "book_number": 4,
+      "book_title": "Wind",
+      "title": "The Male and Female Waterfalls",
+      "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt"
+    },
+    {
+      "id": "s054",
+      "chapter_id": "b5c1",
+      "number": 54,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Abduction",
+      "source_file": "data/source/book5/chapter1-the-abduction.txt"
+    },
+    {
+      "id": "s055",
+      "chapter_id": "b5c2",
+      "number": 55,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Warrior of Kiso",
+      "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt"
+    },
+    {
+      "id": "s056",
+      "chapter_id": "b5c3",
+      "number": 56,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Poisonous Fangs",
+      "source_file": "data/source/book5/chapter3-poisonous-fangs.txt"
+    },
+    {
+      "id": "s057",
+      "chapter_id": "b5c4",
+      "number": 57,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "A Maternal Warning",
+      "source_file": "data/source/book5/chapter4-a-maternal-warning.txt"
+    },
+    {
+      "id": "s058",
+      "chapter_id": "b5c5",
+      "number": 58,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "A One-Night Love Affair",
+      "source_file": "data/source/book5/chapter5-a-one-night-love-affair.txt"
+    },
+    {
+      "id": "s059",
+      "chapter_id": "b5c6",
+      "number": 59,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "A Gift of Money",
+      "source_file": "data/source/book5/chapter6-a-gift-of-money.txt"
+    },
+    {
+      "id": "s060",
+      "chapter_id": "b5c7",
+      "number": 60,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "A Cleansing Fire",
+      "source_file": "data/source/book5/chapter7-a-cleansing-fire.txt"
+    },
+    {
+      "id": "s061",
+      "chapter_id": "b5c8",
+      "number": 61,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Playing with Fire",
+      "source_file": "data/source/book5/chapter8-playing-with-fire.txt"
+    },
+    {
+      "id": "s062",
+      "chapter_id": "b5c9",
+      "number": 62,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "A Cricket in the Grass",
+      "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt"
+    },
+    {
+      "id": "s063",
+      "chapter_id": "b5c10",
+      "number": 63,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Pioneers",
+      "source_file": "data/source/book5/chapter10-the-pioneers.txt"
+    },
+    {
+      "id": "s064",
+      "chapter_id": "b5c11",
+      "number": 64,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Slaughter by the Riverside",
+      "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt"
+    },
+    {
+      "id": "s065",
+      "chapter_id": "b5c12",
+      "number": 65,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Shavings",
+      "source_file": "data/source/book5/chapter12-shavings.txt"
+    },
+    {
+      "id": "s066",
+      "chapter_id": "b5c13",
+      "number": 66,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Owl",
+      "source_file": "data/source/book5/chapter13-the-owl.txt"
+    },
+    {
+      "id": "s067",
+      "chapter_id": "b5c14",
+      "number": 67,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "A Plate of Loaches",
+      "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt"
+    },
+    {
+      "id": "s068",
+      "chapter_id": "b5c15",
+      "number": 68,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Like Teacher, Like Pupil",
+      "source_file": "data/source/book5/chapter15-like-teacher-like-pupil.txt"
+    },
+    {
+      "id": "s069",
+      "chapter_id": "b5c16",
+      "number": 69,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Mountain Devils",
+      "source_file": "data/source/book5/chapter16-mountain-devils.txt"
+    },
+    {
+      "id": "s070",
+      "chapter_id": "b5c17",
+      "number": 70,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "First Planting",
+      "source_file": "data/source/book5/chapter17-first-planting.txt"
+    },
+    {
+      "id": "s071",
+      "chapter_id": "b5c18",
+      "number": 71,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Flies",
+      "source_file": "data/source/book5/chapter18-the-flies.txt"
+    },
+    {
+      "id": "s072",
+      "chapter_id": "b5c19",
+      "number": 72,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Soul Polisher",
+      "source_file": "data/source/book5/chapter19-the-soul-polisher.txt"
+    },
+    {
+      "id": "s073",
+      "chapter_id": "b5c20",
+      "number": 73,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Fox",
+      "source_file": "data/source/book5/chapter20-the-fox.txt"
+    },
+    {
+      "id": "s074",
+      "chapter_id": "b5c21",
+      "number": 74,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "An Urgent Letter",
+      "source_file": "data/source/book5/chapter21-an-urgent-letter.txt"
+    },
+    {
+      "id": "s075",
+      "chapter_id": "b5c22",
+      "number": 75,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Filial Piety",
+      "source_file": "data/source/book5/chapter22-filial-piety.txt"
+    },
+    {
+      "id": "s076",
+      "chapter_id": "b5c23",
+      "number": 76,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "Spring Shower in Red",
+      "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt"
+    },
+    {
+      "id": "s077",
+      "chapter_id": "b5c24",
+      "number": 77,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "A Block of Wood",
+      "source_file": "data/source/book5/chapter24-a-block-of-wood.txt"
+    },
+    {
+      "id": "s078",
+      "chapter_id": "b5c25",
+      "number": 78,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Deserted Prophet",
+      "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt"
+    },
+    {
+      "id": "s079",
+      "chapter_id": "b5c26",
+      "number": 79,
+      "book": "V",
+      "book_number": 5,
+      "book_title": "Sky",
+      "title": "The Talk of the Town",
+      "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt"
+    },
+    {
+      "id": "s080",
+      "chapter_id": "b6c1",
+      "number": 80,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "A Chat with the Men",
+      "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt"
+    },
+    {
+      "id": "s081",
+      "chapter_id": "b6c2",
+      "number": 81,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Buzzing Insects",
+      "source_file": "data/source/book6/chapter2-buzzing-insects.txt"
+    },
+    {
+      "id": "s082",
+      "chapter_id": "b6c3",
+      "number": 82,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Eagle",
+      "source_file": "data/source/book6/chapter3-the-eagle.txt"
+    },
+    {
+      "id": "s083",
+      "chapter_id": "b6c4",
+      "number": 83,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Green Persimmons",
+      "source_file": "data/source/book6/chapter4-green-persimmons.txt"
+    },
+    {
+      "id": "s084",
+      "chapter_id": "b6c5",
+      "number": 84,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Eyes",
+      "source_file": "data/source/book6/chapter5-eyes.txt"
+    },
+    {
+      "id": "s085",
+      "chapter_id": "b6c6",
+      "number": 85,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Four Sages with a Single Light",
+      "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt"
+    },
+    {
+      "id": "s086",
+      "chapter_id": "b6c7",
+      "number": 86,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Locust Tree",
+      "source_file": "data/source/book6/chapter7-the-locust-tree.txt"
+    },
+    {
+      "id": "s087",
+      "chapter_id": "b6c8",
+      "number": 87,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Tadaaki’s Madness",
+      "source_file": "data/source/book6/chapter8-tadaakis-madness.txt"
+    },
+    {
+      "id": "s088",
+      "chapter_id": "b6c9",
+      "number": 88,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Poignancy of Things",
+      "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt"
+    },
+    {
+      "id": "s089",
+      "chapter_id": "b6c10",
+      "number": 89,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Two Drumsticks",
+      "source_file": "data/source/book6/chapter10-two-drumsticks.txt"
+    },
+    {
+      "id": "s090",
+      "chapter_id": "b6c11",
+      "number": 90,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Demon’s Attendant",
+      "source_file": "data/source/book6/chapter11-the-demons-attendant.txt"
+    },
+    {
+      "id": "s091",
+      "chapter_id": "b6c12",
+      "number": 91,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Brother Disciples",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt"
+    },
+    {
+      "id": "s092",
+      "chapter_id": "b6c13",
+      "number": 92,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Pomegranate",
+      "source_file": "data/source/book6/chapter13-the-pomegranate.txt"
+    },
+    {
+      "id": "s093",
+      "chapter_id": "b6c14",
+      "number": 93,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "Land of Dreams",
+      "source_file": "data/source/book6/chapter14-land-of-dreams.txt"
+    },
+    {
+      "id": "s094",
+      "chapter_id": "b6c15",
+      "number": 94,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Challenge",
+      "source_file": "data/source/book6/chapter15-the-challenge.txt"
+    },
+    {
+      "id": "s095",
+      "chapter_id": "b6c16",
+      "number": 95,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Gateway to Glory",
+      "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt"
+    },
+    {
+      "id": "s096",
+      "chapter_id": "b6c17",
+      "number": 96,
+      "book": "VI",
+      "book_number": 6,
+      "book_title": "Sun and Moon",
+      "title": "The Sound of Heaven",
+      "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt"
+    },
+    {
+      "id": "s097",
+      "chapter_id": "b7c1",
+      "number": 97,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Runaway Ox",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt"
+    },
+    {
+      "id": "s098",
+      "chapter_id": "b7c2",
+      "number": 98,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "Hemp Seed",
+      "source_file": "data/source/book7/chapter2-hemp-seed.txt"
+    },
+    {
+      "id": "s099",
+      "chapter_id": "b7c3",
+      "number": 99,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "Sweepers and Salesmen",
+      "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt"
+    },
+    {
+      "id": "s100",
+      "chapter_id": "b7c4",
+      "number": 100,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "A Pear Blossom",
+      "source_file": "data/source/book7/chapter4-a-pear-blossom.txt"
+    },
+    {
+      "id": "s101",
+      "chapter_id": "b7c5",
+      "number": 101,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Port",
+      "source_file": "data/source/book7/chapter5-the-port.txt"
+    },
+    {
+      "id": "s102",
+      "chapter_id": "b7c6",
+      "number": 102,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Writing Teacher",
+      "source_file": "data/source/book7/chapter6-the-writing-teacher.txt"
+    },
+    {
+      "id": "s103",
+      "chapter_id": "b7c7",
+      "number": 103,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Circle",
+      "source_file": "data/source/book7/chapter7-the-circle.txt"
+    },
+    {
+      "id": "s104",
+      "chapter_id": "b7c8",
+      "number": 104,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "Shikama Blue",
+      "source_file": "data/source/book7/chapter8-shikama-blue.txt"
+    },
+    {
+      "id": "s105",
+      "chapter_id": "b7c9",
+      "number": 105,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Mercy of Kannon",
+      "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt"
+    },
+    {
+      "id": "s106",
+      "chapter_id": "b7c10",
+      "number": 106,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Tides of Life",
+      "source_file": "data/source/book7/chapter10-the-tides-of-life.txt"
+    },
+    {
+      "id": "s107",
+      "chapter_id": "b7c11",
+      "number": 107,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Evening Boat",
+      "source_file": "data/source/book7/chapter11-the-evening-boat.txt"
+    },
+    {
+      "id": "s108",
+      "chapter_id": "b7c12",
+      "number": 108,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "A Falcon and a Woman",
+      "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt"
+    },
+    {
+      "id": "s109",
+      "chapter_id": "b7c13",
+      "number": 109,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "Before the Thirteenth Day",
+      "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt"
+    },
+    {
+      "id": "s110",
+      "chapter_id": "b7c14",
+      "number": 110,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "At Daybreak",
+      "source_file": "data/source/book7/chapter14-at-daybreak.txt"
+    },
+    {
+      "id": "s111",
+      "chapter_id": "b7c15",
+      "number": 111,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Marriage",
+      "source_file": "data/source/book7/chapter15-the-marriage.txt"
+    },
+    {
+      "id": "s112",
+      "chapter_id": "b7c16",
+      "number": 112,
+      "book": "VII",
+      "book_number": 7,
+      "book_title": "The Perfect Light",
+      "title": "The Soul of the Deep",
+      "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt"
+    }
   ]
 }

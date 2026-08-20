@@ -1,9 +1,20 @@
 const ASSET_VERSION = "20260818-01";
+const jsonRequests = new Map();
 
 async function loadJson(path) {
-  const response = await fetch(`${path}?v=${ASSET_VERSION}`, { cache: "no-store" });
-  if (!response.ok) throw new Error(`Failed to load ${path}: HTTP ${response.status}`);
-  return response.json();
+  if (!jsonRequests.has(path)) {
+    const request = fetch(`${path}?v=${ASSET_VERSION}`, { cache: "no-store" })
+      .then(response => {
+        if (!response.ok) throw new Error(`Failed to load ${path}: HTTP ${response.status}`);
+        return response.json();
+      })
+      .catch(error => {
+        jsonRequests.delete(path);
+        throw error;
+      });
+    jsonRequests.set(path, request);
+  }
+  return jsonRequests.get(path);
 }
 
 export async function loadData() {

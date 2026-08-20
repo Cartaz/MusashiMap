@@ -69,20 +69,20 @@ Il renderer mantiene un fallback per gli eventi storici privi di `movement_statu
 Eseguire dalla root del repository:
 
 ```bash
-node tools/validate-book1.mjs
+node tools/validate-data.mjs
 ```
 
 Il validator controlla almeno:
 
 - riferimenti a personaggi e luoghi inesistenti;
 - coordinate e metadati di precisione incompleti;
-- punti `approximate_area` oltre il raggio massimo di 1 km;
+- punti e siti `approximate_area` oltre 1 km, oppure aree geografiche ampie oltre 5 km;
 - stati `dead` che tornano successivamente vivi/attivi;
 - transizioni geografiche senza un evento di movimento evidente;
 - eventi di movimento con semantica incompatibile con la destinazione;
 - presenza di tutti i capitoli/eventi attesi.
 
-Il validator segnala come warning i dati storici che non sono ancora migrati a `movement_status`, mentre i nuovi eventi devono usare esplicitamente il campo.
+Il validator richiede `movement_status` quando un evento contiene dati di percorso. Verifica inoltre che ogni sezione pubblicata dal contratto `reader-progress` abbia eventi e stati, così una nuova sezione non può essere esposta con una migrazione parziale.
 
 ## Rendering
 

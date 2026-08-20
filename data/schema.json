@@ -1,6 +1,14 @@
 {
-  "version": 4,
+  "version": 5,
   "description": "Canonical structural reference for the unified MusashiMap data model. This is not a JSON Schema validator.",
+  "global_section_contract": {
+    "registry_range": "1–112 across Books I–VII",
+    "section_identity": "Global number plus stable bNcN chapter_id",
+    "publication_authority": "data/reader-progress.json state.minimum_section/state.maximum_section",
+    "current_publication_range": "1–19",
+    "staging_rule": "A chapter may be registered with a local source above maximum_section without becoming reader-visible. Runtime data must remain gated by reader progress.",
+    "source_title_rule": "chapters.title is the first non-empty header of chapters.source_file"
+  },
   "entities": {
     "characters": {
       "id": "string",
@@ -10,6 +18,7 @@
       "present_in": "number[]|legacy compatibility",
       "entity_type": "character",
       "historical_status": "historical|fictional|fictionalized|unknown",
+      "first_section": "number|null; global first safe physical introduction",
       "chapter_states": "object keyed by bNcN"
     },
     "character_chapter_state": {
@@ -40,7 +49,8 @@
       "book": "string",
       "book_number": "number",
       "book_title": "string",
-      "title": "string"
+      "title": "string",
+      "source_file": "data/source/bookN/chapterN-slug.txt"
     },
     "events": {
       "id": "string",
@@ -84,22 +94,25 @@
     "context_entities": {
       "id": "string",
       "name": "string",
-      "type": "historical_person|historical_clan|historical_faction|historical_event|historical_work|other",
+      "type": "historical_person|historical_clan|historical_faction|historical_event|historical_work|historical_school|historical_performance_tradition|other",
       "period": "string|null",
       "date": "string|null",
       "summary": "string",
       "relevance": "contextual",
-      "sources": "string[]"
+      "first_section": "number|null; global narrative trigger threshold",
+      "sources": "string[]",
+      "source_urls": "https URL[]|optional"
     },
     "micro_wiki_entities": {
       "id": "string",
-      "type": "historical_person|historical_clan|historical_faction|historical_event|historical_work|other",
+      "type": "historical_person|historical_clan|historical_faction|historical_event|historical_work|historical_school|historical_performance_tradition|other",
       "display_name": "string",
       "novel_trigger": {
-        "first_chapter": "bNcN",
+        "first_section": "number; global narrative trigger threshold",
+        "first_book1_section": "number|legacy Book I compatibility",
         "name_in_text": "string",
         "context": "string",
-        "spoiler_safe_until": "bNcN"
+        "spoiler_safe_until": "number; global section at which this context is safe"
       },
       "wiki": {
         "summary": "string"
@@ -109,10 +122,27 @@
         "publisher": "string",
         "url": "string"
       }
+    },
+    "relationships": {
+      "from": "character id",
+      "to": "character id",
+      "type": "declared relationship type",
+      "subtype": "string",
+      "first_section": "number; global first safe reveal threshold"
+    },
+    "reader_progress": {
+      "minimum_section": "number; first published global section",
+      "maximum_section": "number; authoritative last published global section",
+      "current_section": "number within minimum–maximum",
+      "registered_but_unpublished": "chapters above maximum_section"
     }
   },
   "integrity_rules": [
     "Every cross-book chapter reference uses bNcN; legacy numeric fields may exist only during migration.",
+    "Global section numbers are contiguous from 1 through 112 and chapter IDs are unique across all seven books.",
+    "Every registered chapter resolves to exactly one local source_file and its title matches that file's first non-empty header exactly.",
+    "Registration beyond reader-progress.maximum_section is staging metadata, not publication or permission to expose dependent data.",
+    "Micro-wiki and relationship first_section fields are global reveal thresholds and must not exceed the authoritative reader maximum when rendered.",
     "characters lists physical participants in an event; referenced_characters is used for named people involved only through letters, reports, memories or other non-present references.",
     "character-state location is the physically established cartographic position at the end of the chapter; reported-only positions must use location:null and last_known_location when useful.",
     "location_status values such as reported_position, unknown and departed_* must not be interpreted as physical presence.",
