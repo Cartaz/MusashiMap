@@ -2,7 +2,7 @@
   "version": 3,
   "source": {
     "type": "novel_transcription",
-    "path": "data/source/musashi-book1",
+    "path": "data/source/book1",
     "rule": "Narrative location names and relationships are established only from the Book I source corpus. Coordinates belong to data/locations.json and are a separate geographic-identification layer."
   },
   "book": "I",

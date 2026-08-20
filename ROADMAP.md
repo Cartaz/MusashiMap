@@ -4,195 +4,76 @@
 
 ## 1. Obiettivo
 
-MusashiMap è un companion geografico per la lettura di *Musashi* di Eiji Yoshikawa. La mappa rappresenta prima di tutto il romanzo: deve aiutare il lettore a capire **dove sono i personaggi, quali luoghi attraversano e quali eventi stanno accadendo**, senza spoiler.
+MusashiMap è un companion geografico spoiler-safe per *Musashi* di Eiji
+Yoshikawa. Rappresenta luoghi, movimenti, relazioni e contesto al punto di
+lettura scelto; non pretende di essere un GIS storico o di colmare ciò che il
+testo lascia indeterminato.
 
-Non è un GIS storico, un atlante accademico o un'enciclopedia completa.
+## 2. Gerarchia delle fonti
 
-## 2. Fonte narrativa
+1. I file capitolo locali `data/source/book1/` … `data/source/book7/` sono la
+   fonte primaria per trama, presenze, movimenti e cronologia narrativa.
+2. Fonti istituzionali o accademiche esterne servono esclusivamente a validare
+   geografia moderna, topografia e contesto storico.
+3. Un riscontro moderno non autorizza coordinate precise per una casa privata,
+   un luogo fittizio o un itinerario non determinato dal testo.
+4. La corrispondenza con l'edizione Luni resta sospesa finché non sarà
+   disponibile il suo indice effettivo.
 
-Per ogni informazione narrativa la fonte primaria è esclusivamente la trascrizione Internet Archive usata dal progetto:
+## 3. Stato al 20 agosto 2026
 
-`https://archive.org/stream/EijiYoshikawaMusashi/Eiji%20Yoshikawa%20-%20Musashi_djvu.txt`
+| Ambito | Stato |
+|---|---|
+| Registro sorgenti, 112 capitoli | PASS |
+| Books I–II, sezioni 1–19 | Produzione / PASS |
+| Books III–VII, sezioni 20–112 | Scraping e audit staging / PASS |
+| Reader progress e firewall spoiler | PASS |
+| Validazione semantica produzione | PASS |
+| Contratto e validazione staging | PASS |
+| Frontend validator | PASS, zero warning |
+| Fallback basemap e overlay indipendenti | Implementato e testato |
+| Certificazione canvas vettoriale con GPU reale | Da completare |
 
-Fonti esterne sono ammesse soltanto per identificazione geografica moderna, coordinate, verifica topografica e contesto storico del micro-wiki.
+Il registro globale non è un confine di pubblicazione. Solo
+`reader-progress.state.maximum_section` rende una sezione selezionabile; il gate
+richiede per ogni sezione pubblicata eventi e stati coerenti.
 
-L'indice Luni coincide con la struttura già adottata dal progetto: **non va rimappato né modificato**.
+## 4. Prossime milestone
 
-## 3. Stato attuale
+### A. Migrazione Book III — Fire
 
-### Book I — audit narrativo
-**COMPLETATO / FONDATO SULLA FONTE**
+- Importare dal manifest canonico eventi, stati, personaggi e luoghi.
+- Auditare il timing di identità e relazioni prima di estendere wiki/context.
+- Risolvere soltanto le località sostenute da evidenza autorevole.
+- Portare il confine atomico da 19 a 32 solo quando tutti i gate passano.
 
-Gli otto capitoli del Libro I sono stati verificati direttamente contro `data/source/musashi-book1`, prima singolarmente e poi a coppie consecutive (`1-2`, `2-3`, … `7-8`).
+### B. Migrazioni Books IV–VII
 
-Sono stati corretti in particolare:
+Ripetere lo stesso ciclo, senza pubblicazioni parziali:
 
-- presenza fisica vs semplice menzione;
-- partenze e destinazioni intenzionali vs arrivi confermati;
-- continuità Matahachi/Akemi/Oko tra cap. 2 e 3;
-- stato di Temma come morto dal capitolo precedente;
-- posizione e trasferimento di Ogin;
-- distinzione tra posizione fisica e informazione riferita;
-- transizione Shinmen Takezō → Miyamoto Musashi nel cap. 8;
-- permanenza triennale di Musashi a Himeji Castle.
+| Libro | Sezioni | Capitoli |
+|---|---:|---:|
+| IV — Wind | 33–53 | 21 |
+| V — Sky | 54–79 | 26 |
+| VI — Sun and Moon | 80–96 | 17 |
+| VII — The Perfect Light | 97–112 | 16 |
 
-### Modello dati narrativo
-**COMPLETATO**
+### C. Certificazione e manutenzione
 
-Il modello distingue ora:
+- Verifica visuale desktop/mobile a ogni nuovo confine.
+- Test del basemap vettoriale su browser con accelerazione grafica.
+- Mantenimento dei gate CI e degli hash/line count delle fonti.
+- Aggiornamento di checkpoint, ledger e audit a ogni decisione geografica.
 
-- `current` — presenza fisica corrente;
-- `contextual` — posizione narrativa significativa da mantenere visibile anche dopo la partenza;
-- `last_known` — ultima posizione nota utile alla continuità;
-- `unmapped` — nessuna posizione cartografabile disponibile.
+## 5. Regole permanenti
 
-La presenza fisica **non determina più automaticamente la visibilità**.
-
-### Continuità cartografica
-**COMPLETATO / IN VALIDAZIONE**
-
-La mappa separa:
-
-1. stato narrativo;
-2. visibilità cartografica;
-3. focus della mappa;
-4. storia geografica significativa del capitolo.
-
-I marker contestuali non spostano più automaticamente il focus: il focus viene determinato dagli eventi salienti del capitolo.
-
-### Posizioni non cartografabili
-**COMPLETATO**
-
-Matahachi e Akemi, dopo la partenza verso una destinazione non conosciuta, non vengono falsamente lasciati nella vecchia posizione. Il sistema mostra il popup solo quando necessario e mantiene il resto della UI pulito.
-
-### Marker contestuali/residuali
-**COMPLETATO**
-
-I marker residuali hanno la stessa struttura visiva dei marker normali, con una sola differenza:
-
-- normale: `colore → bianco → nero`;
-- residuale: `colore → bianco → grigio chiaro`.
-
-Sono completamente opachi.
-
-### Audit geografico
-**COMPLETATO / SELETTIVO**
-
-È stata adottata la procedura:
-
-- corrispondenza geografica ad alta confidence → coordinate moderne;
-- luogo esplicitamente coincidente con un paese/località → posizione del paese/località;
-- abitazione/casa non identificabile con precisione → area approssimativa controllata;
-- luoghi come Casa Honiden/Shimmen → punto casuale entro il raggio approvato dell'area di riferimento;
-- niente falsa precisione.
-
-Le coordinate `approximate_area` devono conservare un raggio approvato, normalmente entro 1 km quando questa è la regola stabilita per quel luogo.
-
-### Micro-wiki
-**COMPLETATO / BOUNDED PASS CHIUSO**
-
-Il micro-wiki usa il romanzo per trigger e contesto di lettura; le fonti esterne servono soltanto alla spiegazione storica sintetica. Le informazioni sono protette dal limite di lettura.
-
-### Basemap
-**IMPLEMENTATO / VERIFICA VISIVA DA COMPLETARE**
-
-La soluzione corrente usa un basemap vettoriale MapLibre/OpenFreeMap/OpenMapTiles integrato nell'ambiente Leaflet, con preferenza per campi romanizzati giapponesi (`name:ja-Latn`, `name:ja_rm`) invece dei Kanji.
-
-## 4. Lavoro in corso
-
-### A. Validazione canonica Book I
-**PROSSIMO PASSO**
-
-Eseguire un controllo integrato dei dataset dopo la separazione tra stato narrativo e stato cartografico:
-
-- character states;
-- location states;
-- events;
-- transitions;
-- entity index;
-- renderer.
-
-L'obiettivo è trovare contraddizioni residue, non ripetere lo scraping già chiuso.
-
-### B. Integrazione reader-progress → map
-**IN PROGRESS**
-
-Rendere il reader-progress l'unica fonte autorevole per tutte le decisioni di visibilità della mappa. Eliminare eventuali listener o condizioni duplicate.
-
-### C. Verifica capitolo-per-capitolo
-**DA FARE**
-
-Testare visivamente ogni capitolo del Libro I, verificando:
-
-- personaggi;
-- luoghi;
-- marker correnti e residuali;
-- focus;
-- eventi;
-- popup non cartografabili;
-- wiki;
-- transizioni tra capitoli.
-
-### D. Basemap e label
-**DA CHIUDERE CON TEST REALE**
-
-Verificare su browser reale, preferibilmente mobile:
-
-- rendering del basemap;
-- densità geografica;
-- romanizzazione dei toponimi;
-- assenza di Kanji indesiderati;
-- marker e overlay;
-- performance e layout.
-
-## 5. Prossime milestone
-
-1. **Audit integrato Book I** — dati + renderer.
-2. **Test visuale completo capitoli 1–8.**
-3. **Chiusura reader-progress/map integration.**
-4. **Chiusura verifica basemap e label romanizzate.**
-5. **Polish UX/UI** senza alterare la semantica narrativa.
-6. **Preparazione Book II** soltanto dopo aver congelato il modello Book I.
-
-## 6. Regole permanenti per i futuri libri
-
-1. Partire sempre dal testo sorgente del libro.
-2. Analizzare capitolo per capitolo e poi a coppie consecutive.
-3. Non confondere presenza fisica, menzione e ultima posizione nota.
-4. Non cancellare una posizione dalla visualizzazione soltanto perché il personaggio ha lasciato fisicamente quel luogo.
-5. Non mostrare invece una posizione vecchia come se fosse quella corrente.
-6. Separare sempre `narrative_state` da `map_state`.
-7. Separare sempre `visibility` da `focus`.
-8. Distinguere arrivo confermato, destinazione intenzionale e direzione.
-9. Preservare l'incertezza geografica invece di inventare precisione.
-10. Usare fonti esterne soltanto per la parte geografica/storica consentita.
-11. Non usare informazioni future per risolvere uno stato passato.
-12. Il micro-wiki deve rispettare il firewall spoiler.
-13. I marker contestuali devono essere secondari visivamente ma non trasparenti.
-14. Il popup `unmapped` va usato solo quando non esiste alcuna posizione utile da mostrare.
-15. L'indice Luni è già corretto e non deve essere modificato.
-
-## 7. Stato sintetico
-
-```text
-PROGETTO / ARCHITETTURA                 DONE
-FONTE PRIMARIA BOOK I                  DONE
-SCRAPING BOOK I                        DONE
-AUDIT CAPITOLO-PER-CAPITOLO            DONE
-AUDIT A COPPIE                         DONE
-MODELLO NARRATIVO                      DONE
-MODELLO MAP STATE                      DONE
-CONTINUITÀ CARTOGRAFICA                DONE
-AUDIT GEOGRAFICO                       DONE / SELETTIVO
-MICRO-WIKI                             DONE
-POPUP NON CARTOGRAFABILI               DONE
-MARKER CORRENTI/RESIDUALI              DONE
-MAPPA LEAFLET                          DONE
-BASEMAP VETTORIALE                     IMPLEMENTED
-LABEL ROMANIZZATE                      IMPLEMENTED / VERIFY
-READER PROGRESS                        DONE / INTEGRATING
-AUDIT INTEGRATO RENDERER + DATI        NEXT
-TEST VISIVO CAPITOLI 1–8               NEXT
-POLISH UI                              NEXT
-BOOK II                                DOPO IL FREEZE DEL BOOK I
-```
+1. Analizzare prima capitolo per capitolo, poi riconciliare l'intero libro.
+2. Separare presenza fisica, menzione, ultima posizione nota e stato non mappabile.
+3. Separare stato narrativo, visibilità cartografica e focus.
+4. Distinguere arrivo confermato, rotta, intenzione e sola direzione.
+5. Non usare informazioni future per risolvere uno stato precedente.
+6. Conservare alias e identità ambigue fino al reveal esplicito.
+7. Lasciare `coordinates: null` quando la precisione non è difendibile.
+8. Pubblicare un libro solo come unità atomica completa.
+9. Usare il micro-wiki con soglie progressive verificabili.
+10. Non dedurre la struttura di edizioni esterne da memoria o somiglianza.

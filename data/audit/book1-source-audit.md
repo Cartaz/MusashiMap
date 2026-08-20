@@ -1,6 +1,6 @@
 # MusashiMap — Book I Source Audit
 
-**Source of truth:** `data/source/musashi-book1/*.txt`
+**Source of truth:** `data/source/book1/*.txt`
 
 This audit deliberately starts from the chapter corpus and then checks every derived JSON. The Luni chapter index is not modified: the project's Luni index is already identical to the adopted chapter numbering.
 

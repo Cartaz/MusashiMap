@@ -1,8 +1,8 @@
 {
-  "version": 5,
+  "version": 6,
   "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions, events and named historical works. The novel provides the trigger and reading context; an authoritative external historical source provides a concise historical explanation.",
   "source_policy": {
-    "novel_trigger_source": "Internet Archive transcription",
+    "novel_trigger_source": "Canonical local chapter corpus under data/source/book1 and data/source/book2",
     "historical_context_source": "authoritative external historical source",
     "rule": "Never merge external historical facts into novel evidence."
   },
@@ -282,6 +282,60 @@
         "publisher": "Encyclopaedia Britannica",
         "url": "https://www.britannica.com/biography/Sunzi"
       }
+    },
+    {
+      "id":"oda_nobunaga","type":"historical_person","display_name":"Oda Nobunaga",
+      "novel_trigger":{"first_section":9,"name_in_text":"Oda Nobunaga","context":"The opening of Book II uses Nobunaga's career and death to frame Kyoto's recent political past.","spoiler_safe_until":9},
+      "wiki":{"summary":"Japanese military leader (1534–1582) whose campaigns transformed the late Sengoku political order. The authority source fixes identity and dates; the novel's interpretation remains literary context."},
+      "source":{"title":"Oda Nobunaga, 1534–1582 — authority record","publisher":"National Diet Library","url":"https://id.ndl.go.jp/auth/ndlna/00624313"}
+    },
+    {
+      "id":"toyotomi_hideyoshi","type":"historical_person","display_name":"Toyotomi Hideyoshi",
+      "novel_trigger":{"first_section":9,"name_in_text":"Toyotomi Hideyoshi","context":"Book II's opening chronology names Hideyoshi as Nobunaga's successor and as the predecessor to Tokugawa supremacy.","spoiler_safe_until":9},
+      "wiki":{"summary":"Japanese ruler (1536–1598) who held the office of kanpaku. The institutional authority record also preserves Hashiba Hideyoshi among his variant names."},
+      "source":{"title":"Toyotomi Hideyoshi, 1536–1598 — authority record","publisher":"National Diet Library","url":"https://id.ndl.go.jp/auth/ndlna/00272338"}
+    },
+    {
+      "id":"tokugawa_hidetada","type":"historical_person","display_name":"Tokugawa Hidetada",
+      "novel_trigger":{"first_section":9,"name_in_text":"Hidetada","context":"The political introduction states that Ieyasu transferred the shogunal title to his third son Hidetada.","spoiler_safe_until":9},
+      "wiki":{"summary":"Second Tokugawa shogun (1579–1632), son of Tokugawa Ieyasu. This historical identification does not validate the novel's broader political narration."},
+      "source":{"title":"Tokugawa Hidetada, 1579–1632 — authority record","publisher":"National Diet Library","url":"https://id.ndl.go.jp/auth/ndlna/00625967"}
+    },
+    {
+      "id":"toyotomi_hideyori","type":"historical_person","display_name":"Toyotomi Hideyori",
+      "novel_trigger":{"first_section":9,"name_in_text":"Toyotomi Hideyori","context":"Book II names Hideyori at Osaka Castle while explaining the unsettled Tokugawa–Toyotomi balance.","spoiler_safe_until":9},
+      "wiki":{"summary":"Son and heir of Toyotomi Hideyoshi (1593–1615), associated with Osaka Castle and the final Toyotomi resistance. Only this general identity is supplied as context."},
+      "source":{"title":"Toyotomi Hideyori, 1593–1615 — authority record","publisher":"National Diet Library","url":"https://id.ndl.go.jp/auth/ndlna/00626440"}
+    },
+    {
+      "id":"okuni_kabuki","type":"historical_performance_tradition","display_name":"Okuni's kabuki-odori",
+      "novel_trigger":{"first_section":9,"name_in_text":"Okuni Kabuki","context":"Seijūrō and his companions discuss attending the popular Okuni performance in Kyoto.","spoiler_safe_until":9},
+      "wiki":{"summary":"At the start of the seventeenth century, a woman calling herself an Izumo shrine maiden, Okuni, made kabuki-odori highly popular in Kyoto; the form used song, dance and the fashions of kabukimono."},
+      "source":{"title":"The Beginning — History of Kabuki","publisher":"National Theatre of Japan / Japan Arts Council","url":"https://www2.ntj.jac.go.jp/unesco/kabuki/en/history/history1.html"}
+    },
+    {
+      "id":"yagyu_sekishusai_historical","type":"historical_person","display_name":"Yagyū Muneyoshi (Sekishūsai)",
+      "novel_trigger":{"first_section":13,"name_in_text":"Yagyū Muneyoshi / Sekishūsai","context":"Travelers describe the retired Yagyū master at Koyagyū before he later enters the narrative physically.","spoiler_safe_until":13},
+      "wiki":{"summary":"Nara City's historical material identifies Yagyū Munetoshi (Sekishūsai, 1527–1606) as a leading Yagyū figure and links his tradition with Kamiizumi Nobutsuna. The novel's meetings and dialogue are not treated as documentary history."},
+      "source":{"title":"Yagyū historical figures guide","publisher":"Nara City","url":"https://www.city.nara.lg.jp/uploaded/attachment/150695.pdf"}
+    },
+    {
+      "id":"yagyu_munenori_historical","type":"historical_person","display_name":"Yagyū Munenori",
+      "novel_trigger":{"first_section":13,"name_in_text":"Munenori, lord of Tajima","context":"Travelers identify Munenori as Sekishūsai's heir and report that he is away in Edo; this remains a mention, not physical presence.","spoiler_safe_until":13},
+      "wiki":{"summary":"Nara City's guide identifies Munenori as Sekishūsai's fifth son, a servant of Tokugawa Ieyasu and sword instructor to the second and third shoguns; he later became the first Yagyū daimyo."},
+      "source":{"title":"Yagyū historical figures guide","publisher":"Nara City","url":"https://www.city.nara.lg.jp/uploaded/attachment/150695.pdf"}
+    },
+    {
+      "id":"hozoin_ryu","type":"historical_school","display_name":"Hōzōin-ryū sōjutsu",
+      "novel_trigger":{"first_section":14,"name_in_text":"Hōzōin","context":"Musashi visits the Hōzōin establishment and confronts its spear tradition.","spoiler_safe_until":14},
+      "wiki":{"summary":"A Japanese spear tradition whose official lineage identifies the monk Hōzōin Kakuzenbō Hōin In'ei as founder. The historical school does not authenticate the novel's individual bouts."},
+      "source":{"title":"History of Hōzōin-ryū Takada-ha Sōjutsu","publisher":"Hōzōin-ryū Takada-ha Sōjutsu Hozonkai","url":"https://hozoin.jp/E-rekishi.htm"}
+    },
+    {
+      "id":"kamiizumi_nobutsuna","type":"historical_person","display_name":"Kamiizumi Nobutsuna (Lord Ise-no-kami)",
+      "novel_trigger":{"first_section":14,"name_in_text":"Lord Kōizumi of Ise","context":"Book II names the master associated with In'ei and Yagyū Muneyoshi; the translation's Kōizumi is normalized cautiously to the historically documented Kamiizumi tradition.","spoiler_safe_until":14},
+      "wiki":{"summary":"Sword master Kamiizumi Nobutsuna, also styled Ise-no-kami, is linked in Nara City's Yagyū historical material with Sekishūsai. The novel's translated name and anecdotes remain literary evidence."},
+      "source":{"title":"Yagyū historical figures guide","publisher":"Nara City","url":"https://www.city.nara.lg.jp/uploaded/attachment/150695.pdf"}
     }
   ]
 }

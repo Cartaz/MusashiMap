@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOTS = [ROOT / "data/source/musashi-book1", ROOT / "data/source/book2"]
+SOURCE_ROOTS = [ROOT / "data/source/book1", ROOT / "data/source/book2"]
 OUT = ROOT / "research/generated-books1-2-character-audit.json"
 
 
@@ -66,7 +66,7 @@ def main():
                     continue
                 seen.add(key)
                 records.append({
-                    "book": "I" if root.name == "musashi-book1" else "II",
+                    "book": "I" if root.name == "book1" else "II",
                     "chapter_file": str(path.relative_to(ROOT)),
                     "candidate": name,
                     "method": method,

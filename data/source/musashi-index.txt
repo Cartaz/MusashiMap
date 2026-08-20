@@ -1,28 +1,255 @@
-Musashi — Source Index
+Musashi — Complete Source Index
+
+Source corpus: data/source/book1/ through data/source/book7/
+Provenance: repository-local chapter transcriptions. Each title below is copied from the first non-empty header of the corresponding file.
+
+Scrape rules:
+- Narrative facts come only from the corresponding local chapter file.
+- Cross-chapter movement requires explicit textual support.
+- Unresolved geographic identities never receive guessed coordinates.
+- Registration in this index does not publish a chapter; reader visibility is governed by data/reader-progress.json.
 
 Book I — Earth
 
-Source corpus: data/source/musashi-book1/
-Provenance: Internet Archive transcription supplied for MusashiMap; chapter files are the repository's working source corpus for narrative scraping.
+1. [b1c1] The Little Bell
+   data/source/book1/chapter1-the-little-bell.txt
+2. [b1c2] The Comb
+   data/source/book1/chapter2-the-comb.txt
+3. [b1c3] The Flower Festival
+   data/source/book1/chapter3-the-flower-festival.txt
+4. [b1c4] The Dowager's Wrath
+   data/source/book1/chapter4-the-dowagers-wrath.txt
+5. [b1c5] The Art of War
+   data/source/book1/chapter5-the-art-of-war.txt
+6. [b1c6] The Old Cryptomeria Tree
+   data/source/book1/chapter6-the-old-cryptomeria-tree.txt
+7. [b1c7] The Rock and the Tree
+   data/source/book1/chapter7-the-rock-and-the-tree.txt
+8. [b1c8] The Birth of Musashi
+   data/source/book1/chapter8-the-birth-of-musashi.txt
 
-1. The Little Bell
-   data/source/musashi-book1/chapter1-the-little-bell.txt
-2. The Comb
-   data/source/musashi-book1/chapter2-the-comb.txt
-3. The Flower Festival
-   data/source/musashi-book1/chapter3-the-flower-festival.txt
-4. The Dowager's Wrath
-   data/source/musashi-book1/chapter4-the-dowager-s-wrath.txt
-5. The Art of War
-   data/source/musashi-book1/chapter5-the-art-of-war.txt
-6. The Old Cryptomeria Tree
-   data/source/musashi-book1/chapter6-the-old-cryptomeria-tree.txt
-7. The Rock and the Tree
-   data/source/musashi-book1/chapter7-the-rock-and-the-tree.txt
-8. The Birth of Musashi
-   data/source/musashi-book1/chapter8-the-birth-of-musashi.txt
+Book II — Water
 
-Scrape rule:
-- Chapter-local facts come only from the corresponding chapter file.
-- Cross-chapter movement is recorded only when the source explicitly establishes it or the transition is clearly stated.
-- Unresolved geographic identities remain unresolved rather than receiving guessed coordinates.
+9. [b2c1] The Yoshioka School
+   data/source/book2/chapter1-the-yoshioka-school.txt
+10. [b2c2] The Wheel of Fortune
+   data/source/book2/chapter2-the-wheel-of-fortune.txt
+11. [b2c3] Encounter and Retreat
+   data/source/book2/chapter3-encounter-and-retreat.txt
+12. [b2c4] The Water Sprite
+   data/source/book2/chapter4-the-water-sprite.txt
+13. [b2c5] A Spring Breeze
+   data/source/book2/chapter5-a-spring-breeze.txt
+14. [b2c6] The Hōzōin
+   data/source/book2/chapter6-the-hozoin.txt
+15. [b2c7] Hannya Plain
+   data/source/book2/chapter7-hannya-plain.txt
+16. [b2c8] The Koyagyū Fief
+   data/source/book2/chapter8-the-koyagyu-fief.txt
+17. [b2c9] The Peony
+   data/source/book2/chapter9-the-peony.txt
+18. [b2c10] Jōtarō’s Revenge
+   data/source/book2/chapter10-jotaros-revenge.txt
+19. [b2c11] The Nightingales
+   data/source/book2/chapter11-the-nightingales.txt
+
+Book III — Fire
+
+20. [b3c1] Sasaki Kojirō
+   data/source/book3/chapter1-sasaki-kojiro.txt
+21. [b3c2] Reunion in Osaka
+   data/source/book3/chapter2-reunion-in-osaka.txt
+22. [b3c3] The Handsome Young Man
+   data/source/book3/chapter3-the-handsome-young-man.txt
+23. [b3c4] The Seashell of Forgetfulness
+   data/source/book3/chapter4-the-seashell-of-forgetfulness.txt
+24. [b3c5] A Hero’s Passing
+   data/source/book3/chapter5-a-heros-passing.txt
+25. [b3c6] The Drying Pole
+   data/source/book3/chapter6-the-drying-pole.txt
+26. [b3c7] Eagle Mountain
+   data/source/book3/chapter7-eagle-mountain.txt
+27. [b3c8] The Mayfly in Winter
+   data/source/book3/chapter8-the-mayfly-in-winter.txt
+28. [b3c9] The Pinwheel
+   data/source/book3/chapter9-the-pinwheel.txt
+29. [b3c10] The Flying Horse
+   data/source/book3/chapter10-the-flying-horse.txt
+30. [b3c11] The Butterfly in Winter
+   data/source/book3/chapter11-the-butterfly-in-winter.txt
+31. [b3c12] The Announcement
+   data/source/book3/chapter12-the-announcement.txt
+32. [b3c13] The Great Bridge at Gojō Avenue
+   data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt
+
+Book IV — Wind
+
+33. [b4c1] The Withered Field
+   data/source/book4/chapter1-the-withered-field.txt
+34. [b4c2] A Man of Parts
+   data/source/book4/chapter2-a-man-of-parts.txt
+35. [b4c3] Too Many Kojirōs
+   data/source/book4/chapter3-too-many-kojiros.txt
+36. [b4c4] The Younger Brother
+   data/source/book4/chapter4-the-younger-brother.txt
+37. [b4c5] A Mother’s Love
+   data/source/book4/chapter5-a-mothers-love.txt
+38. [b4c6] The Urbane Craftsman
+   data/source/book4/chapter6-the-urbane-craftsman.txt
+39. [b4c7] Reverberations in the Snow
+   data/source/book4/chapter7-reverberations-in-the-snow.txt
+40. [b4c8] The Elegant People
+   data/source/book4/chapter8-the-elegant-people.txt
+41. [b4c9] The Broken Lute
+   data/source/book4/chapter9-the-broken-lute.txt
+42. [b4c10] A Sickness of the Heart
+   data/source/book4/chapter10-a-sickness-of-the-heart.txt
+43. [b4c11] The Scent of Aloeswood
+   data/source/book4/chapter11-the-scent-of-aloeswood.txt
+44. [b4c12] The Gate
+   data/source/book4/chapter12-the-gate.txt
+45. [b4c13] A Toast to the Morrow
+   data/source/book4/chapter13-a-toast-to-the-morrow.txt
+46. [b4c14] The Death Trap
+   data/source/book4/chapter14-the-death-trap.txt
+47. [b4c15] A Meeting in the Moonlight
+   data/source/book4/chapter15-a-meeting-in-the-moonlight.txt
+48. [b4c16] Stray Geese
+   data/source/book4/chapter16-stray-geese.txt
+49. [b4c17] The Spreading Pine
+   data/source/book4/chapter17-the-spreading-pine.txt
+50. [b4c18] An Offering for the Dead
+   data/source/book4/chapter18-an-offering-for-the-dead.txt
+51. [b4c19] A Drink of Milk
+   data/source/book4/chapter19-a-drink-of-milk.txt
+52. [b4c20] Entwining Branches
+   data/source/book4/chapter20-entwining-branches.txt
+53. [b4c21] The Male and Female Waterfalls
+   data/source/book4/chapter21-the-male-and-female-waterfalls.txt
+
+Book V — Sky
+
+54. [b5c1] The Abduction
+   data/source/book5/chapter1-the-abduction.txt
+55. [b5c2] The Warrior of Kiso
+   data/source/book5/chapter2-the-warrior-of-kiso.txt
+56. [b5c3] Poisonous Fangs
+   data/source/book5/chapter3-poisonous-fangs.txt
+57. [b5c4] A Maternal Warning
+   data/source/book5/chapter4-a-maternal-warning.txt
+58. [b5c5] A One-Night Love Affair
+   data/source/book5/chapter5-a-one-night-love-affair.txt
+59. [b5c6] A Gift of Money
+   data/source/book5/chapter6-a-gift-of-money.txt
+60. [b5c7] A Cleansing Fire
+   data/source/book5/chapter7-a-cleansing-fire.txt
+61. [b5c8] Playing with Fire
+   data/source/book5/chapter8-playing-with-fire.txt
+62. [b5c9] A Cricket in the Grass
+   data/source/book5/chapter9-a-cricket-in-the-grass.txt
+63. [b5c10] The Pioneers
+   data/source/book5/chapter10-the-pioneers.txt
+64. [b5c11] Slaughter by the Riverside
+   data/source/book5/chapter11-slaughter-by-the-riverside.txt
+65. [b5c12] Shavings
+   data/source/book5/chapter12-shavings.txt
+66. [b5c13] The Owl
+   data/source/book5/chapter13-the-owl.txt
+67. [b5c14] A Plate of Loaches
+   data/source/book5/chapter14-a-plate-of-loaches.txt
+68. [b5c15] Like Teacher, Like Pupil
+   data/source/book5/chapter15-like-teacher-like-pupil.txt
+69. [b5c16] Mountain Devils
+   data/source/book5/chapter16-mountain-devils.txt
+70. [b5c17] First Planting
+   data/source/book5/chapter17-first-planting.txt
+71. [b5c18] The Flies
+   data/source/book5/chapter18-the-flies.txt
+72. [b5c19] The Soul Polisher
+   data/source/book5/chapter19-the-soul-polisher.txt
+73. [b5c20] The Fox
+   data/source/book5/chapter20-the-fox.txt
+74. [b5c21] An Urgent Letter
+   data/source/book5/chapter21-an-urgent-letter.txt
+75. [b5c22] Filial Piety
+   data/source/book5/chapter22-filial-piety.txt
+76. [b5c23] Spring Shower in Red
+   data/source/book5/chapter23-spring-shower-in-red.txt
+77. [b5c24] A Block of Wood
+   data/source/book5/chapter24-a-block-of-wood.txt
+78. [b5c25] The Deserted Prophet
+   data/source/book5/chapter25-the-deserted-prophet.txt
+79. [b5c26] The Talk of the Town
+   data/source/book5/chapter26-the-talk-of-the-town.txt
+
+Book VI — Sun and Moon
+
+80. [b6c1] A Chat with the Men
+   data/source/book6/chapter1-a-chat-with-the-men.txt
+81. [b6c2] Buzzing Insects
+   data/source/book6/chapter2-buzzing-insects.txt
+82. [b6c3] The Eagle
+   data/source/book6/chapter3-the-eagle.txt
+83. [b6c4] Green Persimmons
+   data/source/book6/chapter4-green-persimmons.txt
+84. [b6c5] Eyes
+   data/source/book6/chapter5-eyes.txt
+85. [b6c6] Four Sages with a Single Light
+   data/source/book6/chapter6-four-sages-with-a-single-light.txt
+86. [b6c7] The Locust Tree
+   data/source/book6/chapter7-the-locust-tree.txt
+87. [b6c8] Tadaaki’s Madness
+   data/source/book6/chapter8-tadaakis-madness.txt
+88. [b6c9] The Poignancy of Things
+   data/source/book6/chapter9-the-poignancy-of-things.txt
+89. [b6c10] Two Drumsticks
+   data/source/book6/chapter10-two-drumsticks.txt
+90. [b6c11] The Demon’s Attendant
+   data/source/book6/chapter11-the-demons-attendant.txt
+91. [b6c12] Brother Disciples
+   data/source/book6/chapter12-brother-disciples.txt
+92. [b6c13] The Pomegranate
+   data/source/book6/chapter13-the-pomegranate.txt
+93. [b6c14] Land of Dreams
+   data/source/book6/chapter14-land-of-dreams.txt
+94. [b6c15] The Challenge
+   data/source/book6/chapter15-the-challenge.txt
+95. [b6c16] The Gateway to Glory
+   data/source/book6/chapter16-the-gateway-to-glory.txt
+96. [b6c17] The Sound of Heaven
+   data/source/book6/chapter17-the-sound-of-heaven.txt
+
+Book VII — The Perfect Light
+
+97. [b7c1] The Runaway Ox
+   data/source/book7/chapter1-the-runaway-ox.txt
+98. [b7c2] Hemp Seed
+   data/source/book7/chapter2-hemp-seed.txt
+99. [b7c3] Sweepers and Salesmen
+   data/source/book7/chapter3-sweepers-and-salesmen.txt
+100. [b7c4] A Pear Blossom
+   data/source/book7/chapter4-a-pear-blossom.txt
+101. [b7c5] The Port
+   data/source/book7/chapter5-the-port.txt
+102. [b7c6] The Writing Teacher
+   data/source/book7/chapter6-the-writing-teacher.txt
+103. [b7c7] The Circle
+   data/source/book7/chapter7-the-circle.txt
+104. [b7c8] Shikama Blue
+   data/source/book7/chapter8-shikama-blue.txt
+105. [b7c9] The Mercy of Kannon
+   data/source/book7/chapter9-the-mercy-of-kannon.txt
+106. [b7c10] The Tides of Life
+   data/source/book7/chapter10-the-tides-of-life.txt
+107. [b7c11] The Evening Boat
+   data/source/book7/chapter11-the-evening-boat.txt
+108. [b7c12] A Falcon and a Woman
+   data/source/book7/chapter12-a-falcon-and-a-woman.txt
+109. [b7c13] Before the Thirteenth Day
+   data/source/book7/chapter13-before-the-thirteenth-day.txt
+110. [b7c14] At Daybreak
+   data/source/book7/chapter14-at-daybreak.txt
+111. [b7c15] The Marriage
+   data/source/book7/chapter15-the-marriage.txt
+112. [b7c16] The Soul of the Deep
+   data/source/book7/chapter16-the-soul-of-the-deep.txt

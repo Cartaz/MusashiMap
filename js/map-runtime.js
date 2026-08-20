@@ -1,8 +1,7 @@
 import { loadMapData } from "./data.js";
-import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subscribeCanonicalReaderState } from "./reader-progress.js";
+import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 (() => {
-  const VERSION = "20260818-05";
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [];
   let selectedCharacters = new Set();
@@ -24,7 +23,6 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
   };
 
   const popups = window.MusashiMapPopups;
-  if (!popups) throw new Error("MusashiMap popup renderer is unavailable");
 
   const icon = (location, offset = [0, 0]) => {
     const type = placeTypeAliases[location?.type] ?? "literary_landmark";
@@ -68,6 +66,18 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
   const routeStyle = mode => mode === "intended"
     ? { color: "#b99ad6", weight: 2, opacity: .68, dashArray: "6 8", interactive: true }
     : { color: "#d97706", weight: 3, opacity: .78, interactive: true };
+
+  function showMapNotice(message) {
+    const note = document.querySelector("#map-note");
+    if (!note) return;
+    note.textContent = message;
+    note.hidden = !message;
+  }
+
+  const bindPopupIfAvailable = (layer, popup) => {
+    if (popup?.content) layer.bindPopup(popup.content, popup.options);
+    return layer;
+  };
 
   function closeUnmappedPopup() {
     const node = document.querySelector("#map-unmapped");
@@ -124,38 +134,6 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     node.hidden = false;
   }
 
-  function resolveMapState(state, byId) {
-    if (state?.location_status === "reported_position") {
-      const reportedId = state.location || state.last_known_location;
-      const reported = reportedId ? byId.get(reportedId) : null;
-      if (reported && hasCoords(reported)) return { location: reported, mode: "reported" };
-      return { location: null, mode: "unmapped" };
-    }
-
-    if (["departed_with_group", "departed_eastward", "departed_westward"].includes(state?.location_status)) {
-      const lastKnown = state?.last_known_location ? byId.get(state.last_known_location) : null;
-      if (lastKnown && hasCoords(lastKnown)) return { location: lastKnown, mode: "last_known" };
-      return { location: null, mode: "unmapped" };
-    }
-
-    if (state?.location_status === "unknown") {
-      const lastKnown = state?.last_known_location ? byId.get(state.last_known_location) : null;
-      if (lastKnown && hasCoords(lastKnown)) return { location: lastKnown, mode: "last_known" };
-      return { location: null, mode: "unmapped" };
-    }
-
-    const current = state?.location ? byId.get(state.location) : null;
-    if (current && hasCoords(current)) return { location: current, mode: "current" };
-    return { location: null, mode: "unmapped" };
-  }
-
-  function characterStatusLabel(mode) {
-    if (mode === "current") return "Presenza fisica";
-    if (mode === "reported") return "Posizione riferita";
-    if (mode === "last_known") return "Ultima posizione nota";
-    return "Posizione non determinata";
-  }
-
   function draw(section) {
     if (!map || !markers || !characterMarkers) return;
     markers.clearLayers();
@@ -163,15 +141,15 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     characterMarkers.clearLayers();
 
     const byId = new Map(locations.map(location => [location.id, location]));
-    const latestStates = getLatestStates(characterStates, section);
-    const sectionEvents = events.filter(event => event.section === section && (event.characters ?? []).some(id => selectedCharacters.has(id)));
+    const visibleCharacterIds = new Set(getVisibleCharacters(characters, section, { states: characterStates, events }).map(character => character.id));
+    const spoilerSafeSelection = [...selectedCharacters].filter(id => visibleCharacterIds.has(id));
+    const { selectedStates, sectionEvents } = getReaderSnapshot({ states: characterStates, events }, section, spoilerSafeSelection);
     const visibleCharacters = [];
     const unmapped = [];
 
-    latestStates.forEach(state => {
-      if (!selectedCharacters.has(state.character)) return;
+    selectedStates.forEach(state => {
       const character = characters.find(item => item.id === state.character);
-      const resolved = resolveMapState(state, byId);
+      const resolved = resolveCharacterPosition(state, byId);
       if (!resolved.location) {
         unmapped.push({ character, state, location: state.last_known_location ? byId.get(state.last_known_location) : null });
         return;
@@ -204,7 +182,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     visibleCharacters.forEach(item => {
       const offset = offsets.get(`character:${item.characterId}`) ?? [0, 0];
       const name = getDisplayCharacterName(item.character, section);
-      const status = characterStatusLabel(item.mode);
+      const status = getPositionStatusLabel(item.mode);
       const label = locationLabel(item.location);
       const detail = item.mode === "current"
         ? "Il testo colloca fisicamente il personaggio qui."
@@ -213,28 +191,25 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
           : item.mode === "last_known"
             ? "Questo è il luogo più recente che possiamo mantenere come posizione nota; non è una presenza fisica accertata nel capitolo corrente."
             : "La posizione attuale non è determinata.";
-      const popup = popups.character({
+      const popup = popups?.character?.({
         name,
         location: `${status} · ${label}`,
         description: item.state.activity ? `${detail} ${item.state.activity}` : detail
       });
-      L.marker(item.location.coordinates, {
+      bindPopupIfAvailable(L.marker(item.location.coordinates, {
         icon: characterIcon(item.color, item.location, offset, item.mode),
         title: `${name} · ${status} · ${label}`
-      })
-        .bindPopup(popup.content, popup.options)
-        .addTo(characterMarkers);
+      }), popup).addTo(characterMarkers);
     });
 
     visiblePlaces.forEach(location => {
       const offset = offsets.get(`place:${location.id}`) ?? [0, 0];
-      const popup = popups.place({
+      const popup = popups?.place?.({
         name: locationLabel(location),
         secondary: precisionLabel(location),
         description: location.map_note ?? "Localizzazione moderna"
       });
-      L.marker(location.coordinates, { icon: icon(location, offset), title: locationLabel(location) })
-        .bindPopup(popup.content, popup.options)
+      bindPopupIfAvailable(L.marker(location.coordinates, { icon: icon(location, offset), title: locationLabel(location) }), popup)
         .addTo(markers);
     });
 
@@ -246,13 +221,12 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
         if (!hasCoords(origin) || !hasCoords(destination)) return;
         const mode = routeMode(event);
         const title = mode === "confirmed" ? "Spostamento confermato" : "Direzione / destinazione intenzionale";
-        const popup = popups.movement({
+        const popup = popups?.movement?.({
           title,
           route: `${locationLabel(origin)} → ${locationLabel(destination)}`,
           description: event.description ?? ""
         });
-        L.polyline([origin.coordinates, destination.coordinates], routeStyle(mode))
-          .bindPopup(popup.content, popup.options)
+        bindPopupIfAvailable(L.polyline([origin.coordinates, destination.coordinates], routeStyle(mode)), popup)
           .addTo(routes);
       });
 
@@ -294,7 +268,7 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     const labelSourceLayers = new Set(["place", "water_name", "waterway_name", "transportation_name", "poi", "mountain_peak", "park", "aerodrome_label"]);
     return {
       ...nextStyle,
-      layers: nextStyle.layers.map(layer => ({
+      layers: (nextStyle.layers ?? []).map(layer => ({
         ...layer,
         ...(layer.type === "symbol" && layer.layout?.["text-field"] && layer.source === "openmaptiles" && labelSourceLayers.has(layer["source-layer"])
           ? { layout: { ...layer.layout, "text-field": cleanAdministrativeSuffixExpression() } }
@@ -303,7 +277,52 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
     };
   }
 
+  function addRasterBasemap() {
+    if (typeof L.tileLayer !== "function") {
+      showMapNotice("Cartografia di base non disponibile; le tracce narrative restano consultabili.");
+      return;
+    }
+    let tileFailureReported = false;
+    const fallback = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
+      maxZoom: 18
+    });
+    fallback.on("tileerror", () => {
+      if (tileFailureReported) return;
+      tileFailureReported = true;
+      showMapNotice("Cartografia di base non raggiungibile; marker e percorsi restano disponibili.");
+    });
+    fallback.addTo(map);
+    showMapNotice("Cartografia di base semplificata attiva.");
+  }
+
+  async function initializeBasemap() {
+    try {
+      if (typeof L.maplibreGL !== "function" || !window.maplibregl) throw new Error("MapLibre CDN unavailable");
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 8000);
+      let styleResponse;
+      try {
+        styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", { cache: "no-store", signal: controller.signal });
+      } finally {
+        window.clearTimeout(timeout);
+      }
+      if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
+      glLayer = L.maplibreGL({ style: customizeBasemapStyle(await styleResponse.json()) }).addTo(map);
+      showMapNotice("");
+    } catch (error) {
+      console.warn("Primary basemap unavailable; using raster fallback", error);
+      addRasterBasemap();
+    }
+  }
+
   async function boot() {
+    if (!window.L) {
+      showMapNotice("Mappa interattiva non disponibile. Il diario di lettura resta utilizzabile.");
+      console.error("Map initialization failed: Leaflet CDN unavailable");
+      return;
+    }
+
     try {
       map = L.map("map", {
         zoomControl: true,
@@ -312,12 +331,10 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
         maxZoom: 18
       }).setView([35.05, 135.55], 7);
 
-      const styleResponse = await fetch("https://tiles.openfreemap.org/styles/liberty", { cache: "no-store" });
-      if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
-      glLayer = L.maplibreGL({ style: customizeBasemapStyle(await styleResponse.json()) }).addTo(map);
       markers = L.layerGroup().addTo(map);
       routes = L.layerGroup().addTo(map);
       characterMarkers = L.layerGroup().addTo(map);
+      const basemapReady = initializeBasemap();
 
       const mapData = await loadMapData();
       locations = mapData.locations.locations;
@@ -332,7 +349,9 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
         previousSelectedCharacters = new Set(state.selectedCharacters);
         draw(state.section);
       }
+      await basemapReady;
     } catch (error) {
+      showMapNotice("Dati cartografici non disponibili. Il diario di lettura resta utilizzabile.");
       console.error("Map initialization failed", error);
     }
   }
@@ -347,10 +366,12 @@ import { getCanonicalReaderState, getDisplayCharacterName, getLatestStates, subs
 
     if (sectionChanged) unmappedPopupOpen = false;
     if (selectionChanged) {
-      const latestStates = getLatestStates(characterStates, state.section);
+      const visibleCharacterIds = new Set(getVisibleCharacters(characters, state.section, { states: characterStates, events }).map(character => character.id));
+      const spoilerSafeSelection = [...nextSelected].filter(id => visibleCharacterIds.has(id));
+      const { selectedStates } = getReaderSnapshot({ states: characterStates, events }, state.section, spoilerSafeSelection);
       const nonPhysicalWithoutLastKnown = new Set(["unknown", "reported_position", "departed_with_group", "departed_eastward", "departed_westward"]);
-      unmappedPopupOpen = [...nextSelected].some(id => {
-        const latest = latestStates.find(item => item.character === id);
+      unmappedPopupOpen = spoilerSafeSelection.some(id => {
+        const latest = selectedStates.find(item => item.character === id);
         return Boolean(latest && nonPhysicalWithoutLastKnown.has(latest.location_status) && !latest.last_known_location);
       });
     }

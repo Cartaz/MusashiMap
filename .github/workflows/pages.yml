@@ -35,13 +35,33 @@ jobs:
       - name: Validate frontend
         run: node tools/validate-frontend.mjs
 
+      - name: Validate narrative data
+        run: node tools/validate-data.mjs
+
+      - name: Validate staged books
+        run: node tools/validate-staging.mjs
+
+      - name: Run validator CLI tests
+        run: node --test tools/tests/*.test.mjs
+
+      - name: Run runtime safety tests
+        run: node js/runtime-safety.test.mjs
+
+      - name: Build spoiler-safe Pages artifact
+        run: node tools/build-pages.mjs
+
+      - name: Validate Pages artifact
+        run: |
+          node tools/validate-frontend.mjs --root _site
+          node tools/validate-pages-artifact.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "."
+          path: "_site"
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Deploy to GitHub Pages

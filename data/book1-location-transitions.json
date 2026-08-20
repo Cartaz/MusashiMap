@@ -1,7 +1,7 @@
 {
   "version": 3,
   "book": "I",
-  "source_rule": "Only the Book I chapter source files in data/source/musashi-book1 establish narrative movements.",
+  "source_rule": "Only the Book I chapter source files in data/source/book1 establish narrative movements.",
   "transitions": [
     {"section":1,"character_ids":["musashi","matahachi"],"from":"sekigahara","to":"mount_ibuki_area","movement_status":"confirmed_route","certainty":"confirmed","note":"They reach the wooded hills and forage there."},
     {"section":1,"character_ids":["musashi","matahachi"],"from":"mount_ibuki_area","to":"tarui","movement_status":"direction_only","certainty":"intended","note":"They travel in what they think is the direction of Tarui; arrival is not established."},

@@ -2,7 +2,7 @@
   "version": 6,
   "source": {
     "type": "repository_chapter_corpus",
-    "path": "data/source/musashi-book1",
+    "path": "data/source/book1",
     "upstream_corpus": "Internet Archive transcription of Musashi",
     "rule": "Narrative facts, names, aliases, locations and movements are extracted only from the eight Book I chapter files. External sources are used only for contextual micro-wiki summaries and modern geographic identification."
   },

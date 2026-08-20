@@ -2,7 +2,7 @@
 
 Date: 2026-08-16
 Scope: Book I / Earth, chapters 1–8
-Primary source: `data/source/musashi-book1/*.txt`
+Primary source: `data/source/book1/*.txt`
 
 ## Result
 

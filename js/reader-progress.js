@@ -1,5 +1,3 @@
-const clampSection = (section, min, max) => Math.min(max, Math.max(min, section));
-
 const canonicalState = {
   section: null,
   selectedCharacters: []
@@ -7,11 +5,27 @@ const canonicalState = {
 
 const subscribers = new Set();
 
+const asInteger = value => {
+  if (typeof value === "number") return Number.isSafeInteger(value) ? value : null;
+  if (typeof value !== "string" || !/^-?\d+$/.test(value.trim())) return null;
+  const parsed = Number(value);
+  return Number.isSafeInteger(parsed) ? parsed : null;
+};
+
+const validSections = values => values
+  .map(asInteger)
+  .filter(Number.isInteger);
+
+const earliestSection = values => {
+  const sections = validSections(values);
+  return sections.length ? Math.min(...sections) : null;
+};
+
 export function setCanonicalReaderState({ section, selectedCharacters = [] }) {
-  const nextSection = Number.parseInt(section, 10);
-  if (!Number.isInteger(nextSection)) return false;
+  const nextSection = asInteger(section);
+  if (nextSection === null) return false;
   canonicalState.section = nextSection;
-  canonicalState.selectedCharacters = [...new Set(selectedCharacters)];
+  canonicalState.selectedCharacters = [...new Set(selectedCharacters.filter(id => typeof id === "string"))];
   for (const subscriber of subscribers) subscriber(getCanonicalReaderState());
   return true;
 }
@@ -31,12 +45,12 @@ export function subscribeCanonicalReaderState(subscriber) {
 }
 
 export function getLatestStates(states, currentSection, idKey = "character") {
-  const section = Number.parseInt(currentSection, 10);
-  if (!Number.isInteger(section)) return [];
+  const section = asInteger(currentSection);
+  if (section === null) return [];
 
   const latest = new Map();
-  for (const state of states) {
-    if (!Number.isInteger(state.section) || state.section > section) continue;
+  for (const state of states ?? []) {
+    if (!Number.isInteger(state.section) || state.section > section || !state[idKey]) continue;
     const previous = latest.get(state[idKey]);
     if (!previous || state.section > previous.section) latest.set(state[idKey], state);
   }
@@ -48,13 +62,105 @@ export function getDisplayCharacterName(character, section) {
   return character?.name ?? "Personaggio sconosciuto";
 }
 
-export function createReaderProgress(chapters, initialSection = 1) {
-  const sections = [...chapters.sections].sort((a, b) => a.number - b.number);
-  if (!sections.length) throw new Error("No reader sections available");
+// A name can be revealed only after at least one project-local narrative
+// record introduces it. Missing evidence is treated conservatively: the
+// character remains hidden instead of falling back to the first section.
+export function getCharacterIntroductionSection(character, { states = [], events = [], characterWiki = {} } = {}) {
+  if (!character?.id) return null;
+  const candidates = [character.introduced_section, ...(character.present_in ?? [])];
 
-  const min = sections[0].number;
-  const max = sections.at(-1).number;
-  let currentSection = clampSection(initialSection, min, max);
+  for (const state of states ?? []) {
+    if (state.character === character.id) candidates.push(state.section);
+  }
+  for (const event of events ?? []) {
+    if ([...(event.characters ?? []), ...(event.referenced_characters ?? [])].includes(character.id)) {
+      candidates.push(event.section);
+    }
+  }
+
+  const wikiEntry = characterWiki?.[character.id];
+  if (wikiEntry) candidates.push(...Object.keys(wikiEntry.current_by_section ?? {}));
+  return earliestSection(candidates);
+}
+
+export function getVisibleCharacters(characters, currentSection, evidence = {}) {
+  const section = asInteger(currentSection);
+  if (section === null) return [];
+  return (characters ?? []).filter(character => {
+    const introduced = getCharacterIntroductionSection(character, evidence);
+    return introduced !== null && introduced <= section;
+  });
+}
+
+export function getReaderSnapshot({ states = [], events = [] }, currentSection, selectedCharacters = []) {
+  const section = asInteger(currentSection);
+  if (section === null) return { latestStates: [], selectedStates: [], sectionEvents: [] };
+  const selected = new Set(selectedCharacters);
+  const latestStates = getLatestStates(states, section);
+  return {
+    latestStates,
+    selectedStates: latestStates.filter(state => selected.has(state.character)),
+    sectionEvents: (events ?? []).filter(event =>
+      event.section === section && (event.characters ?? []).some(id => selected.has(id))
+    )
+  };
+}
+
+export function resolveCharacterPosition(state, locations) {
+  const byId = locations instanceof Map
+    ? locations
+    : new Map((locations ?? []).map(location => [location.id, location]));
+  const hasCoordinates = location => Array.isArray(location?.coordinates) && location.coordinates.length === 2;
+  const resolve = id => id ? byId.get(id) : null;
+
+  if (state?.location_status === "reported_position") {
+    const location = resolve(state.location || state.last_known_location);
+    return { location: hasCoordinates(location) ? location : null, referencedLocation: location ?? null, mode: location ? "reported" : "unmapped" };
+  }
+
+  if (["unknown", "departed_with_group", "departed_eastward", "departed_westward"].includes(state?.location_status)) {
+    const location = resolve(state?.last_known_location);
+    return { location: hasCoordinates(location) ? location : null, referencedLocation: location ?? null, mode: location ? "last_known" : "unmapped" };
+  }
+
+  const location = resolve(state?.location);
+  return { location: hasCoordinates(location) ? location : null, referencedLocation: location ?? null, mode: location ? "current" : "unmapped" };
+}
+
+export function getPositionStatusLabel(mode) {
+  if (mode === "current") return "Presenza fisica";
+  if (mode === "reported") return "Posizione riferita";
+  if (mode === "last_known") return "Ultima posizione nota";
+  return "Posizione non determinata";
+}
+
+export function createReaderProgress(chapters, progress) {
+  const allSections = [...(chapters?.sections ?? [])]
+    .filter(section => Number.isInteger(section.number))
+    .sort((a, b) => a.number - b.number);
+  if (!allSections.length) throw new Error("No reader sections available");
+
+  const progressState = typeof progress === "object" && progress !== null
+    ? (progress.state ?? progress)
+    : null;
+  const requestedMin = asInteger(progressState?.minimum_section);
+  const requestedMax = asInteger(progressState?.maximum_section);
+  if (requestedMin === null || requestedMax === null) {
+    throw new Error("Reader progress requires explicit minimum_section and maximum_section");
+  }
+  if (requestedMin > requestedMax) throw new Error("Invalid reader progress range");
+
+  // Only chapters inside the explicit reader-progress window are reachable.
+  // This lets editorial data for future books coexist safely in chapters.json.
+  const sections = allSections.filter(section => section.number >= requestedMin && section.number <= requestedMax);
+  if (!sections.length) throw new Error("Reader progress range has no available sections");
+
+  const sectionNumbers = sections.map(section => section.number);
+  const sectionSet = new Set(sectionNumbers);
+  const min = sectionNumbers[0];
+  const max = sectionNumbers.at(-1);
+  const requestedInitial = asInteger(progressState.current_section);
+  let currentSection = sectionSet.has(requestedInitial) ? requestedInitial : min;
 
   return {
     get section() {
@@ -63,6 +169,9 @@ export function createReaderProgress(chapters, initialSection = 1) {
     get current() {
       return sections.find(section => section.number === currentSection);
     },
+    get sections() {
+      return [...sections];
+    },
     get min() {
       return min;
     },
@@ -70,16 +179,20 @@ export function createReaderProgress(chapters, initialSection = 1) {
       return max;
     },
     setSection(section) {
-      const next = Number.parseInt(section, 10);
-      if (!Number.isInteger(next) || next < min || next > max) return false;
+      const next = asInteger(section);
+      if (next === null || !sectionSet.has(next)) return false;
       currentSection = next;
       return true;
     },
     next() {
-      return this.setSection(currentSection + 1);
+      const index = sectionNumbers.indexOf(currentSection);
+      return index >= 0 && index < sectionNumbers.length - 1
+        ? this.setSection(sectionNumbers[index + 1])
+        : false;
     },
     previous() {
-      return this.setSection(currentSection - 1);
+      const index = sectionNumbers.indexOf(currentSection);
+      return index > 0 ? this.setSection(sectionNumbers[index - 1]) : false;
     },
     isVisible(firstSection) {
       return Number.isInteger(firstSection) && firstSection <= currentSection;
@@ -96,11 +209,13 @@ export function createReaderProgress(chapters, initialSection = 1) {
 // The micro-wiki is a reading aid, not a permanent encyclopedia index.
 // Show entries introduced in the current section and the immediately preceding one.
 export function getRelevantHistoricalWiki(entries, currentSection) {
-  const section = Number.parseInt(currentSection, 10);
-  if (!Number.isInteger(section)) return [];
+  const section = asInteger(currentSection);
+  if (section === null) return [];
   const previousSection = section - 1;
-  return entries.filter(entry => {
-    const first = entry.novel_trigger?.first_book1_section;
-    return first === section || first === previousSection;
+  return (entries ?? []).filter(entry => {
+    const first = asInteger(entry.novel_trigger?.first_section ?? entry.novel_trigger?.first_book1_section);
+    const spoilerSafeUntil = asInteger(entry.novel_trigger?.spoiler_safe_until);
+    return first !== null && first <= section && (first === section || first === previousSection) &&
+      (spoilerSafeUntil === null || spoilerSafeUntil <= section);
   });
 }

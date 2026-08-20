@@ -1,0 +1,437 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": "Musashi Book III — Fire narrative staging",
+  "status": "staging_only_not_for_production",
+  "generated_on": "2026-08-20",
+  "book": { "number": 3, "title": "Fire", "global_sections": { "minimum": 20, "maximum": 32 }, "chapter_count": 13 },
+  "evidence_policy": {
+    "narrative_authority": "Only the 13 local files under data/source/book3",
+    "web_scope": "Geography and historicity only, after narrative entity freeze",
+    "entity_freeze": "2026-08-20T12:00:00+02:00",
+    "presence_rule": "physically_present requires on-page presence; recollection, report, intention and distant/unidentified sightings are mentioned_only",
+    "certainty_values": ["explicit", "strong_inference", "weak_inference"],
+    "movement_status_values": ["none", "departure_confirmed", "route_confirmed", "arrival_confirmed", "intended_destination", "direction_only", "uncertain"],
+    "coordinate_rule": "No coordinates are emitted unless an authoritative source supplies an unambiguous point; all Book III staging coordinates remain null."
+  },
+  "source_files": [
+    {"chapter_id":"b3c1","global_section":20,"title":"Sasaki Kojirō","file":"data/source/book3/chapter1-sasaki-kojiro.txt","line_count":648},
+    {"chapter_id":"b3c2","global_section":21,"title":"Reunion in Osaka","file":"data/source/book3/chapter2-reunion-in-osaka.txt","line_count":837},
+    {"chapter_id":"b3c3","global_section":22,"title":"The Handsome Young Man","file":"data/source/book3/chapter3-the-handsome-young-man.txt","line_count":471},
+    {"chapter_id":"b3c4","global_section":23,"title":"The Seashell of Forgetfulness","file":"data/source/book3/chapter4-the-seashell-of-forgetfulness.txt","line_count":356},
+    {"chapter_id":"b3c5","global_section":24,"title":"A Hero's Passing","file":"data/source/book3/chapter5-a-heros-passing.txt","line_count":344},
+    {"chapter_id":"b3c6","global_section":25,"title":"The Drying Pole","file":"data/source/book3/chapter6-the-drying-pole.txt","line_count":310},
+    {"chapter_id":"b3c7","global_section":26,"title":"Eagle Mountain","file":"data/source/book3/chapter7-eagle-mountain.txt","line_count":550},
+    {"chapter_id":"b3c8","global_section":27,"title":"The Mayfly in Winter","file":"data/source/book3/chapter8-the-mayfly-in-winter.txt","line_count":410},
+    {"chapter_id":"b3c9","global_section":28,"title":"The Pinwheel","file":"data/source/book3/chapter9-the-pinwheel.txt","line_count":464},
+    {"chapter_id":"b3c10","global_section":29,"title":"The Flying Horse","file":"data/source/book3/chapter10-the-flying-horse.txt","line_count":623},
+    {"chapter_id":"b3c11","global_section":30,"title":"The Butterfly in Winter","file":"data/source/book3/chapter11-the-butterfly-in-winter.txt","line_count":512},
+    {"chapter_id":"b3c12","global_section":31,"title":"The Announcement","file":"data/source/book3/chapter12-the-announcement.txt","line_count":645},
+    {"chapter_id":"b3c13","global_section":32,"title":"The Great Bridge at Gojō Avenue","file":"data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt","line_count":557}
+  ],
+  "entities": {
+    "characters": [
+      {"id":"musashi","name":"Miyamoto Musashi","aliases":["Takezō"],"kind":"narrative","physical_presence":["b3c7","b3c9","b3c12","b3c13"],"mentioned_in":["b3c1","b3c2","b3c5","b3c6","b3c8","b3c10","b3c11"]},
+      {"id":"matahachi","name":"Hon'iden Matahachi","aliases":["false Sasaki Kojirō"],"kind":"narrative","physical_presence":["b3c1","b3c2"],"mentioned_in":["b3c9","b3c12","b3c13"]},
+      {"id":"otsu","name":"Otsū","aliases":[],"kind":"narrative","physical_presence":["b3c8","b3c10","b3c13"],"mentioned_in":["b3c1","b3c2","b3c5","b3c11"]},
+      {"id":"jotaro","name":"Jōtarō","aliases":[],"kind":"narrative","physical_presence":["b3c8","b3c10","b3c13"],"mentioned_in":["b3c1","b3c11"]},
+      {"id":"osugi","name":"Osugi","aliases":["Granny Hon'iden"],"kind":"narrative","physical_presence":["b3c2","b3c5","b3c12","b3c13"],"mentioned_in":[]},
+      {"id":"gonroku","name":"Hon'iden Gonroku","aliases":["Uncle Gon"],"kind":"narrative","physical_presence":["b3c2","b3c5"],"mentioned_in":["b3c12"]},
+      {"id":"oko","name":"Oko","aliases":[],"kind":"narrative","physical_presence":["b3c4"],"mentioned_in":["b3c1","b3c2","b3c3","b3c9","b3c11","b3c12"]},
+      {"id":"akemi","name":"Akemi","aliases":[],"kind":"narrative","physical_presence":["b3c4","b3c5","b3c11","b3c13"],"mentioned_in":[]},
+      {"id":"aoki_tanzaemon","name":"Aoki Tanzaemon","aliases":["Tanzaemon","mendicant priest"],"kind":"narrative","physical_presence":["b3c1","b3c2","b3c11"],"mentioned_in":[]},
+      {"id":"unknown_certificate_bearer","name":"Unidentified certificate bearer","aliases":["chinless warrior","dead traveler"],"kind":"narrative_unidentified","physical_presence":["b3c1"],"mentioned_in":["b3c2"],"identity_note":"Explicitly not equated with the later living Sasaki Kojirō; the certificate is evidence carried by him, not proof of identity."},
+      {"id":"kojiro","name":"Sasaki Kojirō","aliases":["Ganryū","handsome young man","monkey owner"],"kind":"narrative_historical","physical_presence":["b3c3","b3c4","b3c6","b3c11","b3c13"],"mentioned_in":["b3c1","b3c2","b3c12"]},
+      {"id":"gion_toji","name":"Gion Tōji","aliases":[],"kind":"narrative","physical_presence":["b3c3","b3c4"],"mentioned_in":["b3c6","b3c12"]},
+      {"id":"yoshioka_seijuro","name":"Yoshioka Seijūrō","aliases":["Seijūrō"],"kind":"narrative","physical_presence":["b3c4","b3c5","b3c6","b3c11","b3c12"],"mentioned_in":["b3c3","b3c13"]},
+      {"id":"ueda_ryohei","name":"Ueda Ryōhei","aliases":[],"kind":"narrative","physical_presence":["b3c5","b3c6","b3c12"],"mentioned_in":[]},
+      {"id":"akakabe_yasoma","name":"Akakabe Yasoma","aliases":[],"kind":"narrative","physical_presence":["b3c2","b3c11"],"mentioned_in":[]},
+      {"id":"kohei","name":"Tsujikaze Kōhei","aliases":["Shishido Baiken","Baiken"],"kind":"narrative","physical_presence":["b3c9","b3c10"],"mentioned_in":["b3c7"],"identity_note":"Chapter 9 explicitly reveals Baiken as Tsujikaze Kōhei."},
+      {"id":"baiken_wife","name":"Baiken's wife","aliases":[],"kind":"narrative_unidentified","physical_presence":["b3c7","b3c9"],"mentioned_in":[]},
+      {"id":"iwa","name":"Iwa","aliases":["blacksmith apprentice"],"kind":"narrative","physical_presence":["b3c7","b3c9"],"mentioned_in":[]},
+      {"id":"baiken_infant","name":"Baiken household infant","aliases":[],"kind":"narrative_unidentified","physical_presence":["b3c7","b3c9"],"mentioned_in":[]},
+      {"id":"arakida_ujitomi","name":"Arakida Ujitomi","aliases":[],"kind":"narrative_historical","physical_presence":["b3c8"],"mentioned_in":[]},
+      {"id":"tsuge_sannojo","name":"Tsuge Sannojō","aliases":[],"kind":"narrative","physical_presence":["b3c10"],"mentioned_in":[]},
+      {"id":"matsuo_kaname","name":"Matsuo Kaname","aliases":["Musashi's uncle"],"kind":"narrative","physical_presence":["b3c12"],"mentioned_in":[]},
+      {"id":"musashi_aunt","name":"Musashi's unnamed aunt","aliases":["Kaname's wife"],"kind":"narrative_unidentified","physical_presence":["b3c12"],"mentioned_in":[]},
+      {"id":"monkey","name":"Kojirō's monkey","aliases":[],"kind":"animal","physical_presence":["b3c3","b3c6","b3c11","b3c13"],"mentioned_in":["b3c4"]},
+      {"id":"takuan","name":"Takuan Sōhō","aliases":["Takuan"],"kind":"narrative_historical","physical_presence":[],"mentioned_in":["b3c7","b3c8","b3c9"]},
+      {"id":"yoshioka_denshichiro","name":"Yoshioka Denshichirō","aliases":[],"kind":"narrative","physical_presence":[],"mentioned_in":["b3c3","b3c11","b3c12"]},
+      {"id":"yoshioka_kempo","name":"Yoshioka Kempo","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c3","b3c7","b3c12"]},
+      {"id":"temma","name":"Tsujikaze Temma","aliases":[],"kind":"narrative","physical_presence":[],"mentioned_in":["b3c9"]},
+      {"id":"ogin","name":"Ogin","aliases":[],"kind":"narrative","physical_presence":[],"mentioned_in":["b3c12"]},
+      {"id":"watanabe_hanzo","name":"Watanabe Hanzō","aliases":[],"kind":"narrative_or_historical_unresolved","physical_presence":[],"mentioned_in":["b3c10"]},
+      {"id":"fushimi_inspector","name":"Unidentified Fushimi works inspector","aliases":[],"kind":"narrative_unidentified","physical_presence":["b3c1"],"mentioned_in":[]},
+      {"id":"ship_captain","name":"Unidentified ship captain","aliases":[],"kind":"narrative_unidentified","physical_presence":["b3c3","b3c4"],"mentioned_in":[]},
+      {"id":"unnamed_groom","name":"Unidentified groom","aliases":[],"kind":"narrative_unidentified","physical_presence":["b3c7"],"mentioned_in":[]},
+      {"id":"kanemaki_jisai","name":"Kanemaki Jisai","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c1","b3c2","b3c3","b3c6"]},
+      {"id":"toda_seigen","name":"Toda Seigen","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c1","b3c2","b3c3","b3c6"]},
+      {"id":"ito_ittosai","name":"Itō Ittōsai","aliases":["Itō Yagorō"],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c1","b3c2","b3c3","b3c6"]},
+      {"id":"kusanagi_tenki","name":"Kusanagi Tenki","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c3"]},
+      {"id":"mikogami_tenzen","name":"Mikogami Tenzen","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c7","b3c9"]},
+      {"id":"karasumaru_mitsuhiro","name":"Karasumaru Mitsuhiro","aliases":["Lord Karasumaru"],"kind":"narrative_historical","physical_presence":[],"mentioned_in":["b3c8","b3c10","b3c13"]},
+      {"id":"arakida_ujitsune","name":"Arakida Ujitsune","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c8"]},
+      {"id":"tsukahara_bokuden","name":"Tsukahara Bokuden","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c7"]},
+      {"id":"yagyu_muneyoshi","name":"Yagyū Muneyoshi","aliases":["Sekishūsai"],"kind":"narrative_historical","physical_presence":[],"mentioned_in":["b3c7"]},
+      {"id":"lord_ikeda","name":"Lord Ikeda","aliases":[],"kind":"historical_context","physical_presence":[],"mentioned_in":["b3c1"]}
+    ],
+    "groups": [
+      {"id":"yoshioka_disciples","name":"Yoshioka disciples","physical_presence":["b3c4","b3c6","b3c12"],"mentioned_in":[]},
+      {"id":"kohei_henchmen","name":"Kōhei/Baiken henchmen","physical_presence":["b3c9","b3c10"],"mentioned_in":[]},
+      {"id":"ise_shrine_maidens","name":"House of Virgins shrine maidens","physical_presence":["b3c8"],"mentioned_in":[]},
+      {"id":"fushimi_workers","name":"Fushimi castle laborers and guards","physical_presence":["b3c1"],"mentioned_in":[]},
+      {"id":"ship_passengers","name":"Awa–Osaka ship passengers and crew","physical_presence":["b3c3","b3c4"],"mentioned_in":[]}
+      ,{"id":"sumiyoshi_fishermen","name":"Sumiyoshi fishermen","physical_presence":["b3c5"],"mentioned_in":[]}
+    ],
+    "locations": [
+      {"id":"fushimi_castle_works","name":"Fushimi Castle construction works","type":"site","coordinates":null,"mapping_status":"historically_validated_area_not_point","chapters":["b3c1"]},
+      {"id":"fushimi_deserted_house","name":"Deserted house in Fushimi","type":"fictional_or_unresolved_site","coordinates":null,"mapping_status":"unmappable","chapters":["b3c1","b3c2"]},
+      {"id":"fushimi_osaka_road","name":"Fushimi–Osaka road","type":"route","coordinates":null,"mapping_status":"route_not_reconstructed","chapters":["b3c2"]},
+      {"id":"osaka","name":"Osaka","type":"city","coordinates":null,"mapping_status":"region_only","chapters":["b3c1","b3c2","b3c3","b3c4","b3c6"]},
+      {"id":"osaka_town_of_priestesses","name":"Osaka Town of Priestesses","type":"district","coordinates":null,"mapping_status":"historical_name_unresolved","chapters":["b3c2"]},
+      {"id":"osaka_sideshow_lot","name":"Osaka sideshow and gambling lot","type":"fictional_or_unresolved_site","coordinates":null,"mapping_status":"unmappable","chapters":["b3c2"]},
+      {"id":"inland_sea_ship","name":"Ship from Awa toward Osaka","type":"moving_scene","coordinates":null,"mapping_status":"route_only","chapters":["b3c3","b3c4"]},
+      {"id":"kizugawa_harbor","name":"Kizugawa harbor","type":"harbor","coordinates":null,"mapping_status":"historical_extent_unresolved","chapters":["b3c4"]},
+      {"id":"sumiyoshi_taisha","name":"Sumiyoshi Taisha","type":"shrine","coordinates":null,"mapping_status":"validated_name_and_locality","chapters":["b3c4","b3c5"]},
+      {"id":"sumiyoshi_inn","name":"Unnamed inn at Sumiyoshi","type":"fictional_or_unresolved_site","coordinates":null,"mapping_status":"unmappable","chapters":["b3c4","b3c5","b3c11"]},
+      {"id":"sumiyoshi_shore","name":"Sumiyoshi shore","type":"shoreline","coordinates":null,"mapping_status":"historical_shoreline_shifted","chapters":["b3c4","b3c5"]},
+      {"id":"osaka_east_moat","name":"Osaka East Moat","type":"historical_feature","coordinates":null,"mapping_status":"historical_extent_unresolved","chapters":["b3c6"]},
+      {"id":"temma_landing","name":"Temma ferry landing","type":"landing","coordinates":null,"mapping_status":"validated_historical_waterway_context","chapters":["b3c6"]},
+      {"id":"yodo_river","name":"Yodo River","type":"river_route","coordinates":null,"mapping_status":"validated_corridor_not_point","chapters":["b3c1","b3c6","b3c11"]},
+      {"id":"kema_landing","name":"Kema dike and landing","type":"landing","coordinates":null,"mapping_status":"validated_locality_route_not_point","chapters":["b3c6"]},
+      {"id":"baiken_smithy","name":"Shishido Baiken's smithy near Ujii","type":"fictional_or_unresolved_site","coordinates":null,"mapping_status":"unmappable","chapters":["b3c7","b3c9"]},
+      {"id":"yokkaichi","name":"Yokkaichi","type":"town","coordinates":null,"mapping_status":"validated_historical_tokaido_context","chapters":["b3c7"]},
+      {"id":"yamada_ise","name":"Yamada, Ise","type":"town","coordinates":null,"mapping_status":"historical_extent_unresolved","chapters":["b3c7"]},
+      {"id":"ise_naiku","name":"Ise Jingu Naiku and Isuzu River","type":"shrine_complex","coordinates":null,"mapping_status":"validated_name_and_locality","chapters":["b3c7","b3c8"]},
+      {"id":"house_of_virgins","name":"House of Virgins","type":"narrative_site","coordinates":null,"mapping_status":"historical_correspondence_unverified","chapters":["b3c7","b3c8"]},
+      {"id":"arakida_house","name":"Arakida House / House of Study","type":"narrative_site","coordinates":null,"mapping_status":"historical_correspondence_unverified","chapters":["b3c8"]},
+      {"id":"eagle_mountain","name":"Eagle Mountain (Shūrei / 鷲嶺)","type":"mountain","coordinates":null,"mapping_status":"official_name_correspondence_validated_no_point_imported","chapters":["b3c7"]},
+      {"id":"ominato","name":"Ōminato","type":"historic_port","coordinates":null,"mapping_status":"validated_historic_maritime_locality","chapters":["b3c9"]},
+      {"id":"tsu","name":"Tsu","type":"town","coordinates":null,"mapping_status":"region_only","chapters":["b3c9"]},
+      {"id":"tokaido_omi_corridor","name":"Tōkaidō corridor from Suzuka toward Ōmi","type":"route","coordinates":null,"mapping_status":"route_not_reconstructed","chapters":["b3c10"]},
+      {"id":"koji_hill","name":"Kōji Hill","type":"road_feature","coordinates":null,"mapping_status":"toponym_unresolved","chapters":["b3c10"]},
+      {"id":"toribe_ruined_temple","name":"Ruined temple near Toribe Hill","type":"fictional_or_unresolved_site","coordinates":null,"mapping_status":"unmappable","chapters":["b3c11"]},
+      {"id":"yoshioka_school","name":"Yoshioka school at Shijō","type":"dojo","coordinates":null,"mapping_status":"historical_site_unresolved","chapters":["b3c6","b3c12"]},
+      {"id":"rendaiji_field","name":"Field at Rendaiji","type":"duel_site","coordinates":null,"mapping_status":"historical_extent_and_exact_site_unresolved","chapters":["b3c12","b3c13"]},
+      {"id":"matsuo_house","name":"Matsuo household on Yoshida Hill","type":"private_residence","coordinates":null,"mapping_status":"unmappable","chapters":["b3c12"]},
+      {"id":"kamo_river_gojo","name":"Kamo River at Gojō Avenue bridge","type":"river_crossing","coordinates":null,"mapping_status":"historical_bridge_context_validated_exact_narrative_point_unresolved","chapters":["b3c12","b3c13"]},
+      {"id":"karasumaru_house","name":"Karasumaru residence at Horikawa","type":"private_residence","coordinates":null,"mapping_status":"historical_exact_site_unresolved","chapters":["b3c8","b3c10","b3c13"]},
+      {"id":"zuzuya_inn","name":"Zuzuya Inn near Rokujō monastery","type":"fictional_or_unresolved_site","coordinates":null,"mapping_status":"unmappable","chapters":["b3c13"]},
+      {"id":"sannen_hill_inn","name":"Osugi's inn near Sannen Hill","type":"fictional_or_unresolved_site","coordinates":null,"mapping_status":"unmappable","chapters":["b3c13"]}
+    ]
+  },
+  "chapters": [
+    {
+      "chapter_id":"b3c1","global_section":20,"source_file":"data/source/book3/chapter1-sasaki-kojiro.txt",
+      "physically_present":["matahachi","aoki_tanzaemon","unknown_certificate_bearer","fushimi_inspector","fushimi_workers"],
+      "mentioned_only":["musashi","otsu","jotaro","oko","lord_ikeda","kanemaki_jisai","toda_seigen","ito_ittosai","kojiro"],
+      "locations":["fushimi_castle_works","fushimi_deserted_house","yodo_river","osaka"],
+      "events":[
+        {"id":"b3c1_e01","type":"arrival","actors":["matahachi"],"location":"fushimi_castle_works","description":"Matahachi works at the Fushimi Castle construction site and becomes ill.","source_ref":"chapter1-sasaki-kojiro.txt:L68-L151","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c1_e02","type":"violent_death","actors":["unknown_certificate_bearer","fushimi_inspector","fushimi_workers"],"location":"fushimi_castle_works","description":"The traveler kills an inspector and is then fatally attacked by the laborers and guards.","source_ref":"chapter1-sasaki-kojiro.txt:L242-L410","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c1_e03","type":"object_transfer","actors":["matahachi","unknown_certificate_bearer"],"location":"fushimi_castle_works","description":"Matahachi takes the dead traveler's bundle, money and sword-school certificate.","source_ref":"chapter1-sasaki-kojiro.txt:L411-L484","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c1_e04","type":"movement","actors":["matahachi"],"location":"fushimi_deserted_house","origin":"fushimi_castle_works","destination":"fushimi_deserted_house","description":"Matahachi flees and takes shelter in an abandoned Fushimi house.","source_ref":"chapter1-sasaki-kojiro.txt:L485-L565","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c1_e05","type":"identity_evidence","actors":["matahachi"],"referenced_actors":["kojiro"],"location":"fushimi_deserted_house","description":"He reads a certificate addressed to Sasaki Kojirō; the text does not establish that the dead bearer was Kojirō.","source_ref":"chapter1-sasaki-kojiro.txt:L602-L648","certainty":"explicit","movement_status":"none"}
+      ],
+      "end_states":[
+        {"character":"matahachi","location":"fushimi_deserted_house","state":"asleep with the traveler's bundle, money and certificate","source_ref":"chapter1-sasaki-kojiro.txt:L640-L648","certainty":"explicit"},
+        {"character":"aoki_tanzaemon","location":"fushimi_deserted_house","state":"wandering nearby and lamenting Jōtarō; precise final position unresolved","source_ref":"chapter1-sasaki-kojiro.txt:L532-L600","certainty":"strong_inference"},
+        {"character":"unknown_certificate_bearer","location":"fushimi_castle_works","state":"dead","source_ref":"chapter1-sasaki-kojiro.txt:L390-L430","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c2","global_section":21,"source_file":"data/source/book3/chapter2-reunion-in-osaka.txt",
+      "physically_present":["matahachi","aoki_tanzaemon","akakabe_yasoma","osugi","gonroku"],
+      "mentioned_only":["musashi","otsu","oko","akemi","kojiro","kanemaki_jisai","toda_seigen","ito_ittosai"],
+      "locations":["fushimi_deserted_house","fushimi_osaka_road","osaka","osaka_town_of_priestesses","osaka_sideshow_lot"],
+      "events":[
+        {"id":"b3c2_e01","type":"encounter","actors":["matahachi","aoki_tanzaemon"],"location":"fushimi_deserted_house","description":"Matahachi and the mendicant priest fight over food; the priest nearly gives the Aoki name and describes his Himeji background.","source_ref":"chapter2-reunion-in-osaka.txt:L1-L164","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c2_e02","type":"movement","actors":["matahachi"],"location":"fushimi_osaka_road","origin":"fushimi_deserted_house","destination":"osaka","description":"Matahachi leaves Fushimi to seek information in Osaka.","source_ref":"chapter2-reunion-in-osaka.txt:L165-L264","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c2_e03","type":"false_identity","actors":["matahachi","akakabe_yasoma"],"referenced_actors":["kojiro"],"location":"osaka_town_of_priestesses","description":"Matahachi claims the name Sasaki Kojirō; Yasoma flatters and swindles him.","source_ref":"chapter2-reunion-in-osaka.txt:L332-L465","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c2_e04","type":"reunion","actors":["matahachi","osugi","gonroku"],"location":"osaka_sideshow_lot","description":"After a gambling fight and flight into a tiger show, Matahachi reunites with Osugi and Gonroku.","source_ref":"chapter2-reunion-in-osaka.txt:L520-L694","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c2_e05","type":"alliance","actors":["matahachi","osugi","gonroku"],"referenced_actors":["musashi","otsu"],"location":"osaka","description":"Osugi accepts Matahachi's swordsmanship claims and draws him into her revenge plan against Musashi and Otsū.","source_ref":"chapter2-reunion-in-osaka.txt:L695-L837","certainty":"explicit","movement_status":"intended_destination"}
+      ],
+      "end_states":[
+        {"character":"matahachi","location":"osaka","state":"carrying Osugi toward an inn and committed to her revenge plan","source_ref":"chapter2-reunion-in-osaka.txt:L815-L837","certainty":"explicit"},
+        {"character":"osugi","location":"osaka","state":"with Matahachi and Gonroku, seeking lodging","source_ref":"chapter2-reunion-in-osaka.txt:L815-L837","certainty":"explicit"},
+        {"character":"gonroku","location":"osaka","state":"accompanying Osugi and Matahachi","source_ref":"chapter2-reunion-in-osaka.txt:L815-L837","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c3","global_section":22,"source_file":"data/source/book3/chapter3-the-handsome-young-man.txt",
+      "physically_present":["kojiro","gion_toji","monkey","ship_captain","ship_passengers"],
+      "mentioned_only":["oko","yoshioka_seijuro","yoshioka_denshichiro","yoshioka_kempo","kanemaki_jisai","toda_seigen","ito_ittosai","kusanagi_tenki"],
+      "locations":["inland_sea_ship","osaka"],
+      "events":[
+        {"id":"b3c3_e01","type":"movement","actors":["kojiro","gion_toji","monkey","ship_passengers"],"location":"inland_sea_ship","origin":"Awa/Shikoku","destination":"osaka","description":"A passenger ship crosses the Inland Sea from Awa toward Osaka.","source_ref":"chapter3-the-handsome-young-man.txt:L1-L90","certainty":"explicit","movement_status":"route_confirmed"},
+        {"id":"b3c3_e02","type":"biographical_disclosure","actors":["kojiro","gion_toji"],"referenced_actors":["kanemaki_jisai","toda_seigen","ito_ittosai","kusanagi_tenki"],"location":"inland_sea_ship","description":"Kojirō describes his training lineage, Iwakuni home, Drying Pole and intended equinox meeting with Tenki.","source_ref":"chapter3-the-handsome-young-man.txt:L136-L247","certainty":"explicit","movement_status":"intended_destination"},
+        {"id":"b3c3_e03","type":"assault","actors":["kojiro","gion_toji"],"location":"inland_sea_ship","description":"Kojirō cuts off Tōji's topknot during their confrontation.","source_ref":"chapter3-the-handsome-young-man.txt:L248-L318","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c3_e04","type":"weapon_intervention","actors":["kojiro","monkey","ship_captain"],"location":"inland_sea_ship","description":"After the monkey steals playing cards, Kojirō deflects the captain's musket barrel and prevents the shot from striking it.","source_ref":"chapter3-the-handsome-young-man.txt:L330-L471","certainty":"explicit","movement_status":"none"}
+      ],
+      "end_states":[
+        {"character":"kojiro","location":"inland_sea_ship","state":"aboard the Osaka-bound ship with the monkey after confronting Tōji and the captain","source_ref":"chapter3-the-handsome-young-man.txt:L430-L471","certainty":"explicit"},
+        {"character":"gion_toji","location":"inland_sea_ship","state":"aboard ship with topknot severed","source_ref":"chapter3-the-handsome-young-man.txt:L280-L471","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c4","global_section":23,"source_file":"data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+      "physically_present":["kojiro","gion_toji","oko","akemi","yoshioka_seijuro","ship_captain","yoshioka_disciples","ship_passengers"],
+      "mentioned_only":["monkey"],
+      "locations":["inland_sea_ship","kizugawa_harbor","sumiyoshi_taisha","sumiyoshi_inn","sumiyoshi_shore"],
+      "events":[
+        {"id":"b3c4_e01","type":"arrival","actors":["kojiro","gion_toji","ship_passengers"],"location":"kizugawa_harbor","origin":"inland_sea_ship","destination":"kizugawa_harbor","description":"The ship reaches Kizugawa harbor and Kojirō disembarks separately.","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L1-L58","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c4_e02","type":"reunion","actors":["gion_toji","oko","akemi","yoshioka_seijuro","yoshioka_disciples"],"location":"sumiyoshi_inn","description":"Tōji rejoins the Yoshioka party at a Sumiyoshi inn and his missing topknot becomes visible.","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L59-L185","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c4_e03","type":"search","actors":["akemi"],"location":"sumiyoshi_shore","description":"Akemi searches symbolically for a seashell of forgetfulness on the Sumiyoshi shore.","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L226-L268","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c4_e04","type":"sexual_assault","actors":["yoshioka_seijuro","akemi"],"location":"sumiyoshi_inn","description":"Seijūrō isolates and sexually assaults Akemi; she escapes the room afterward.","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L269-L356","certainty":"explicit","movement_status":"departure_confirmed"}
+      ],
+      "end_states":[
+        {"character":"akemi","location":"sumiyoshi_inn","state":"elsewhere in the inn after fleeing Seijūrō's room","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L344-L356","certainty":"explicit"},
+        {"character":"yoshioka_seijuro","location":"sumiyoshi_inn","state":"in the inn after assaulting Akemi","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L344-L356","certainty":"strong_inference"},
+        {"character":"kojiro","location":"kizugawa_harbor","state":"last seen leaving the harbor; destination not stated","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L36-L58","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c5","global_section":24,"source_file":"data/source/book3/chapter5-a-heros-passing.txt",
+      "physically_present":["osugi","matahachi","gonroku","akemi","yoshioka_seijuro","ueda_ryohei","sumiyoshi_fishermen"],
+      "mentioned_only":["musashi","otsu"],
+      "locations":["sumiyoshi_taisha","sumiyoshi_shore","sumiyoshi_inn"],
+      "events":[
+        {"id":"b3c5_e01","type":"visit","actors":["osugi","matahachi","gonroku"],"location":"sumiyoshi_taisha","description":"Osugi, Matahachi and Gonroku tour the shrine precincts; Matahachi quarrels and leaves.","source_ref":"chapter5-a-heros-passing.txt:L1-L107","certainty":"explicit","movement_status":"departure_confirmed"},
+        {"id":"b3c5_e02","type":"rescue_and_death","actors":["akemi","gonroku"],"location":"sumiyoshi_shore","description":"Akemi walks into the sea intending to die; Gonroku rescues her but drowns.","source_ref":"chapter5-a-heros-passing.txt:L108-L218","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c5_e03","type":"care","actors":["akemi","yoshioka_seijuro","sumiyoshi_fishermen"],"location":"sumiyoshi_inn","description":"Fishermen revive Akemi and Seijūrō tends her fever at the inn.","source_ref":"chapter5-a-heros-passing.txt:L219-L278","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c5_e04","type":"challenge_delivery","actors":["ueda_ryohei","yoshioka_seijuro"],"referenced_actors":["musashi"],"location":"sumiyoshi_inn","description":"Ryōhei delivers Musashi's challenge; Seijūrō takes his horse and rides toward Kyoto.","source_ref":"chapter5-a-heros-passing.txt:L279-L344","certainty":"explicit","movement_status":"direction_only"}
+      ],
+      "end_states":[
+        {"character":"gonroku","location":"sumiyoshi_shore","state":"dead, with Osugi beside his body","source_ref":"chapter5-a-heros-passing.txt:L200-L252","certainty":"explicit"},
+        {"character":"akemi","location":"sumiyoshi_inn","state":"feverish and left in the innkeeper's care","source_ref":"chapter5-a-heros-passing.txt:L253-L344","certainty":"explicit"},
+        {"character":"yoshioka_seijuro","location":"sumiyoshi_inn","state":"departed on Ryōhei's horse toward Kyoto","source_ref":"chapter5-a-heros-passing.txt:L318-L344","certainty":"explicit"},
+        {"character":"ueda_ryohei","location":"sumiyoshi_inn","state":"following Seijūrō on foot","source_ref":"chapter5-a-heros-passing.txt:L330-L344","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c6","global_section":25,"source_file":"data/source/book3/chapter6-the-drying-pole.txt",
+      "physically_present":["kojiro","monkey","yoshioka_seijuro","ueda_ryohei","yoshioka_disciples"],
+      "mentioned_only":["gion_toji","musashi","kanemaki_jisai","toda_seigen","ito_ittosai"],
+      "locations":["osaka_east_moat","temma_landing","yodo_river","kema_landing","yoshioka_school"],
+      "events":[
+        {"id":"b3c6_e01","type":"pursuit","actors":["kojiro","monkey","yoshioka_disciples"],"location":"temma_landing","origin":"osaka_east_moat","destination":"kema_landing","description":"Seven Yoshioka disciples trace Kojirō to the last upstream boat and pursue him toward Kema.","source_ref":"chapter6-the-drying-pole.txt:L1-L122","certainty":"explicit","movement_status":"route_confirmed"},
+        {"id":"b3c6_e02","type":"combat","actors":["kojiro","yoshioka_disciples"],"location":"kema_landing","description":"Kojirō lands to meet the challenge and kills multiple disciples; three survivors later bury the dead.","source_ref":"chapter6-the-drying-pole.txt:L123-L218","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c6_e03","type":"interrupted_combat","actors":["kojiro","ueda_ryohei","yoshioka_seijuro"],"location":"kema_landing","description":"Ryōhei attacks Kojirō and falls; Seijūrō recognizes Ganryū and defuses the confrontation.","source_ref":"chapter6-the-drying-pole.txt:L219-L273","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c6_e04","type":"movement","actors":["kojiro","monkey","yoshioka_seijuro","ueda_ryohei","yoshioka_disciples"],"location":"yodo_river","origin":"kema_landing","destination":"yoshioka_school","description":"The parties become outwardly friendly and continue toward Kyoto; the Yoshioka school is the intended destination.","source_ref":"chapter6-the-drying-pole.txt:L274-L310","certainty":"explicit","movement_status":"intended_destination"}
+      ],
+      "end_states":[
+        {"character":"kojiro","location":"yodo_river","state":"traveling toward Kyoto with Seijūrō, Ryōhei, monkey and surviving disciples","source_ref":"chapter6-the-drying-pole.txt:L274-L310","certainty":"explicit"},
+        {"character":"yoshioka_seijuro","location":"yodo_river","state":"traveling toward Kyoto with Kojirō","source_ref":"chapter6-the-drying-pole.txt:L274-L310","certainty":"explicit"},
+        {"character":"ueda_ryohei","location":"yodo_river","state":"traveling toward Kyoto after failed attack","source_ref":"chapter6-the-drying-pole.txt:L274-L310","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c7","global_section":26,"source_file":"data/source/book3/chapter7-eagle-mountain.txt",
+      "physically_present":["musashi","baiken_wife","iwa","baiken_infant","unnamed_groom"],
+      "mentioned_only":["kohei","takuan","mikogami_tenzen","tsukahara_bokuden","yagyu_muneyoshi","yoshioka_kempo"],
+      "locations":["yokkaichi","baiken_smithy","yamada_ise","ise_naiku","house_of_virgins","eagle_mountain"],
+      "events":[
+        {"id":"b3c7_e01","type":"movement","actors":["musashi"],"location":"yokkaichi","origin":"Kuwana","destination":"baiken_smithy","description":"Musashi travels through Yokkaichi toward Kameyama/Ujii while a foot injury worsens.","source_ref":"chapter7-eagle-mountain.txt:L94-L245","certainty":"explicit","movement_status":"route_confirmed"},
+        {"id":"b3c7_e02","type":"visit","actors":["musashi","baiken_wife","iwa","baiken_infant"],"referenced_actors":["kohei"],"location":"baiken_smithy","description":"Musashi seeks Baiken, meets the household, examines the chain-and-sickle weapon and sleeps at the smithy.","source_ref":"chapter7-eagle-mountain.txt:L246-L363","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c7_e03","type":"movement","actors":["musashi"],"location":"ise_naiku","origin":"baiken_smithy","destination":"yamada_ise","description":"Musashi reaches Yamada, seeks Baiken again and approaches the Inner Shrine as infection worsens.","source_ref":"chapter7-eagle-mountain.txt:L364-L448","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c7_e04","type":"pilgrimage_climb","actors":["musashi"],"location":"eagle_mountain","origin":"house_of_virgins","destination":"eagle_mountain","description":"After purification in the Isuzu River and leaving his swords at the House of Virgins, Musashi climbs Eagle Mountain; the abscess drains at the summit.","source_ref":"chapter7-eagle-mountain.txt:L449-L550","certainty":"explicit","movement_status":"arrival_confirmed"}
+      ],
+      "end_states":[
+        {"character":"musashi","location":"eagle_mountain","state":"at the summit with drained foot abscess and improving condition","source_ref":"chapter7-eagle-mountain.txt:L510-L550","certainty":"explicit"},
+        {"character":"baiken_wife","location":"baiken_smithy","state":"last seen at the smithy with apprentice and infant","source_ref":"chapter7-eagle-mountain.txt:L330-L363","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c8","global_section":27,"source_file":"data/source/book3/chapter8-the-mayfly-in-winter.txt",
+      "physically_present":["otsu","jotaro","arakida_ujitomi","ise_shrine_maidens"],
+      "mentioned_only":["musashi","takuan","karasumaru_mitsuhiro","arakida_ujitsune"],
+      "locations":["house_of_virgins","arakida_house","ise_naiku","karasumaru_house"],
+      "events":[
+        {"id":"b3c8_e01","type":"trace_discovery","actors":["otsu","jotaro"],"referenced_actors":["musashi"],"location":"house_of_virgins","description":"Otsū and Jōtarō encounter Musashi's pack and swords but do not securely identify them as his.","source_ref":"chapter8-the-mayfly-in-winter.txt:L1-L104","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c8_e02","type":"dismissal","actors":["otsu","arakida_ujitomi"],"location":"arakida_house","description":"After gossip about Otsū's chastity, Ujitomi dismisses her from the House of Virgins.","source_ref":"chapter8-the-mayfly-in-winter.txt:L188-L262","certainty":"explicit","movement_status":"departure_confirmed"},
+        {"id":"b3c8_e03","type":"commission","actors":["otsu","arakida_ujitomi"],"referenced_actors":["karasumaru_mitsuhiro"],"location":"arakida_house","destination":"karasumaru_house","description":"Ujitomi entrusts painted scrolls to Otsū for delivery to Karasumaru Mitsuhiro in Kyoto.","source_ref":"chapter8-the-mayfly-in-winter.txt:L263-L319","certainty":"explicit","movement_status":"intended_destination"},
+        {"id":"b3c8_e04","type":"object_transfer","actors":["otsu","jotaro"],"referenced_actors":["musashi"],"location":"house_of_virgins","description":"A servant reports that Musashi's belongings were released to an unidentified claimant against a receipt.","source_ref":"chapter8-the-mayfly-in-winter.txt:L320-L354","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c8_e05","type":"departure","actors":["otsu","jotaro"],"location":"ise_naiku","origin":"ise_naiku","destination":"karasumaru_house","description":"Otsū and Jōtarō pay respects and depart Ise for Kyoto with the scroll box.","source_ref":"chapter8-the-mayfly-in-winter.txt:L355-L410","certainty":"explicit","movement_status":"departure_confirmed"}
+      ],
+      "end_states":[
+        {"character":"otsu","location":"ise_naiku","state":"departing for Kyoto with scrolls and Jōtarō","source_ref":"chapter8-the-mayfly-in-winter.txt:L355-L410","certainty":"explicit"},
+        {"character":"jotaro","location":"ise_naiku","state":"departing for Kyoto with Otsū","source_ref":"chapter8-the-mayfly-in-winter.txt:L355-L410","certainty":"explicit"},
+        {"character":"musashi","location":null,"state":"not physically present; belongings claimed by an unidentified person, so location remains unknown","source_ref":"chapter8-the-mayfly-in-winter.txt:L320-L354","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c9","global_section":28,"source_file":"data/source/book3/chapter9-the-pinwheel.txt",
+      "physically_present":["musashi","kohei","baiken_wife","iwa","baiken_infant","kohei_henchmen"],
+      "mentioned_only":["takuan","mikogami_tenzen","matahachi","oko","temma"],
+      "locations":["ominato","tsu","baiken_smithy"],
+      "events":[
+        {"id":"b3c9_e01","type":"movement","actors":["musashi"],"location":"ominato","origin":"Ise coast","destination":"tsu","description":"With his foot healed, Musashi ferries to Ōminato and boards a boat to Tsu.","source_ref":"chapter9-the-pinwheel.txt:L1-L102","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c9_e02","type":"identity_reveal","actors":["musashi","kohei"],"location":"baiken_smithy","description":"Musashi follows Baiken to the smithy; the narration explicitly identifies Baiken as Tsujikaze Kōhei.","source_ref":"chapter9-the-pinwheel.txt:L103-L255","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c9_e03","type":"ambush","actors":["musashi","kohei","kohei_henchmen"],"location":"baiken_smithy","description":"Kōhei plies Musashi with drink and stages a night ambush; Musashi hides inside the house while attackers search the roads.","source_ref":"chapter9-the-pinwheel.txt:L256-L408","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c9_e04","type":"mercy","actors":["musashi","kohei"],"location":"baiken_smithy","description":"Musashi leaves the wrapped chain-and-sickle at Kōhei's neck instead of killing him, then departs.","source_ref":"chapter9-the-pinwheel.txt:L409-L464","certainty":"explicit","movement_status":"departure_confirmed"}
+      ],
+      "end_states":[
+        {"character":"musashi","location":"baiken_smithy","state":"departed alive; next destination unstated","source_ref":"chapter9-the-pinwheel.txt:L448-L464","certainty":"explicit"},
+        {"character":"kohei","location":"baiken_smithy","state":"asleep/alive with his weapon left at his neck","source_ref":"chapter9-the-pinwheel.txt:L430-L464","certainty":"explicit"},
+        {"character":"baiken_wife","location":"baiken_smithy","state":"asleep in the household","source_ref":"chapter9-the-pinwheel.txt:L430-L464","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c10","global_section":29,"source_file":"data/source/book3/chapter10-the-flying-horse.txt",
+      "physically_present":["otsu","jotaro","kohei","tsuge_sannojo","kohei_henchmen"],
+      "mentioned_only":["musashi","karasumaru_mitsuhiro","watanabe_hanzo"],
+      "locations":["tokaido_omi_corridor","koji_hill","karasumaru_house"],
+      "events":[
+        {"id":"b3c10_e01","type":"movement","actors":["otsu","jotaro"],"location":"tokaido_omi_corridor","origin":"Ise","destination":"karasumaru_house","description":"Otsū and Jōtarō rent a horse and continue toward Kyoto through the Suzuka–Ōmi corridor.","source_ref":"chapter10-the-flying-horse.txt:L1-L100","certainty":"explicit","movement_status":"route_confirmed"},
+        {"id":"b3c10_e02","type":"abduction","actors":["otsu","jotaro","kohei","kohei_henchmen"],"location":"tokaido_omi_corridor","description":"Baiken tries to seize the horse; Otsū cuts two fingertips while drawing his sword, the wounded horse bolts with Jōtarō, and Baiken's men bind and take Otsū.","source_ref":"chapter10-the-flying-horse.txt:L101-L284","certainty":"explicit","movement_status":"route_confirmed"},
+        {"id":"b3c10_e03","type":"separation","actors":["jotaro"],"location":"koji_hill","description":"Jōtarō escapes the runaway horse by grabbing a tree branch, falls unharmed, and runs back searching for Otsū.","source_ref":"chapter10-the-flying-horse.txt:L285-L338","certainty":"explicit","movement_status":"departure_confirmed"},
+        {"id":"b3c10_e04","type":"rescue","actors":["tsuge_sannojo","otsu","jotaro","kohei_henchmen"],"location":"koji_hill","description":"Sannojō deceives the henchmen with a false Musashi ambush story; Jōtarō frees Otsū and Sannojō guides them onward.","source_ref":"chapter10-the-flying-horse.txt:L339-L566","certainty":"explicit","movement_status":"route_confirmed"},
+        {"id":"b3c10_e05","type":"arrival","actors":["otsu","jotaro"],"location":"karasumaru_house","origin":"tokaido_omi_corridor","destination":"karasumaru_house","description":"They reach Kyoto and continue toward the Karasumaru residence to deliver the scrolls.","source_ref":"chapter10-the-flying-horse.txt:L567-L623","certainty":"explicit","movement_status":"intended_destination"}
+      ],
+      "end_states":[
+        {"character":"otsu","location":"karasumaru_house","state":"in Kyoto, heading to the Karasumaru residence with Jōtarō","source_ref":"chapter10-the-flying-horse.txt:L603-L623","certainty":"explicit"},
+        {"character":"jotaro","location":"karasumaru_house","state":"in Kyoto, accompanying Otsū","source_ref":"chapter10-the-flying-horse.txt:L603-L623","certainty":"explicit"},
+        {"character":"kohei","location":"tokaido_omi_corridor","state":"last seen injured after pursuit; exact final position not stated","source_ref":"chapter10-the-flying-horse.txt:L210-L284","certainty":"explicit"}
+      ]
+    },
+    {
+      "chapter_id":"b3c11","global_section":30,"source_file":"data/source/book3/chapter11-the-butterfly-in-winter.txt",
+      "physically_present":["akemi","akakabe_yasoma","aoki_tanzaemon","kojiro","yoshioka_seijuro","monkey"],
+      "mentioned_only":["musashi","oko","otsu","jotaro","yoshioka_denshichiro"],
+      "locations":["sumiyoshi_inn","yodo_river","toribe_ruined_temple"],
+      "events":[
+        {"id":"b3c11_e01","type":"movement","actors":["akemi"],"location":"yodo_river","origin":"sumiyoshi_inn","destination":"Kyoto","description":"Akemi slips away from the Sumiyoshi inn and travels by boat up the Yodo toward Kyoto.","source_ref":"chapter11-the-butterfly-in-winter.txt:L1-L78","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c11_e02","type":"assault_and_rescue","actors":["akemi","akakabe_yasoma","aoki_tanzaemon"],"location":"toribe_ruined_temple","description":"Yasoma attacks Akemi; Tanzaemon knocks him unconscious and shelters her in a ruined temple.","source_ref":"chapter11-the-butterfly-in-winter.txt:L79-L216","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c11_e03","type":"disclosure","actors":["akemi","aoki_tanzaemon"],"referenced_actors":["yoshioka_seijuro"],"location":"toribe_ruined_temple","description":"Akemi tells Tanzaemon about Seijūrō's assault.","source_ref":"chapter11-the-butterfly-in-winter.txt:L217-L318","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c11_e04","type":"rescue","actors":["akemi","kojiro","yoshioka_seijuro","monkey"],"location":"toribe_ruined_temple","description":"During a falcon hunt, Kojirō tracks a dog to the temple, kills it after it bites Akemi, treats her wound and carries her away.","source_ref":"chapter11-the-butterfly-in-winter.txt:L319-L512","certainty":"explicit","movement_status":"departure_confirmed"}
+      ],
+      "end_states":[
+        {"character":"akemi","location":"toribe_ruined_temple","state":"carried away from the temple by Kojirō; destination unstated in this chapter","source_ref":"chapter11-the-butterfly-in-winter.txt:L480-L512","certainty":"explicit"},
+        {"character":"kojiro","location":"toribe_ruined_temple","state":"departing while carrying Akemi, with monkey nearby","source_ref":"chapter11-the-butterfly-in-winter.txt:L480-L512","certainty":"explicit"},
+        {"character":"aoki_tanzaemon","location":"toribe_ruined_temple","state":"left at the ruined temple","source_ref":"chapter11-the-butterfly-in-winter.txt:L480-L512","certainty":"strong_inference"}
+      ]
+    },
+    {
+      "chapter_id":"b3c12","global_section":31,"source_file":"data/source/book3/chapter12-the-announcement.txt",
+      "physically_present":["yoshioka_seijuro","ueda_ryohei","yoshioka_disciples","musashi","matsuo_kaname","musashi_aunt","osugi"],
+      "mentioned_only":["kojiro","gion_toji","oko","yoshioka_denshichiro","yoshioka_kempo","matahachi","gonroku","ogin"],
+      "locations":["yoshioka_school","rendaiji_field","matsuo_house","kamo_river_gojo"],
+      "events":[
+        {"id":"b3c12_e01","type":"duel_scheduling","actors":["yoshioka_seijuro","ueda_ryohei","yoshioka_disciples"],"referenced_actors":["musashi"],"location":"yoshioka_school","destination":"rendaiji_field","description":"The Yoshioka school schedules the duel for the ninth day of the first month at Rendaiji and posts the announcement at Gojō Bridge.","source_ref":"chapter12-the-announcement.txt:L1-L165","certainty":"explicit","movement_status":"intended_destination"},
+        {"id":"b3c12_e02","type":"family_visit","actors":["musashi","matsuo_kaname","musashi_aunt"],"location":"matsuo_house","description":"Musashi finds his aunt and uncle but receives a hostile reception shaped by Osugi's accusations.","source_ref":"chapter12-the-announcement.txt:L166-L326","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c12_e03","type":"departure","actors":["musashi","musashi_aunt"],"location":"matsuo_house","origin":"matsuo_house","destination":"kamo_river_gojo","description":"Musashi leaves around midnight/New Year and reaches the Kamo River, where he eats rice cakes and bathes.","source_ref":"chapter12-the-announcement.txt:L327-L421","certainty":"explicit","movement_status":"arrival_confirmed"},
+        {"id":"b3c12_e04","type":"attack_and_restraint","actors":["osugi","musashi"],"location":"kamo_river_gojo","description":"Osugi attacks with sword and blow needles; Musashi disarms her, carries her to a boat and ties her there to await Matahachi.","source_ref":"chapter12-the-announcement.txt:L422-L645","certainty":"explicit","movement_status":"none"}
+      ],
+      "end_states":[
+        {"character":"musashi","location":"kamo_river_gojo","state":"at the Gojō riverbank after restraining Osugi","source_ref":"chapter12-the-announcement.txt:L610-L645","certainty":"explicit"},
+        {"character":"osugi","location":"kamo_river_gojo","state":"tied in a boat to await Matahachi","source_ref":"chapter12-the-announcement.txt:L610-L645","certainty":"explicit"},
+        {"character":"yoshioka_seijuro","location":"yoshioka_school","state":"duel announced for Rendaiji; remains associated with school, exact final room unstated","source_ref":"chapter12-the-announcement.txt:L145-L165","certainty":"strong_inference"}
+      ]
+    },
+    {
+      "chapter_id":"b3c13","global_section":32,"source_file":"data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
+      "physically_present":["musashi","akemi","kojiro","jotaro","otsu","osugi","monkey"],
+      "mentioned_only":["matahachi","yoshioka_seijuro","karasumaru_mitsuhiro"],
+      "locations":["rendaiji_field","kamo_river_gojo","zuzuya_inn","karasumaru_house","sannen_hill_inn"],
+      "events":[
+        {"id":"b3c13_e01","type":"challenge_reading","actors":["musashi"],"location":"kamo_river_gojo","destination":"rendaiji_field","description":"Musashi reads the posted Rendaiji duel announcement and recovers Osugi's blow needles.","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L1-L58","certainty":"explicit","movement_status":"intended_destination"},
+        {"id":"b3c13_e02","type":"reunion_and_disclosure","actors":["akemi","musashi","jotaro","otsu"],"referenced_actors":["yoshioka_seijuro"],"location":"kamo_river_gojo","description":"Akemi meets Musashi and discloses Seijūrō's assault and her feelings; Jōtarō observes while Otsū hides behind an oxcart.","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L59-L181","certainty":"explicit","movement_status":"none"},
+        {"id":"b3c13_e03","type":"first_encounter","actors":["musashi","kojiro","akemi","monkey"],"location":"kamo_river_gojo","destination":"zuzuya_inn","description":"Musashi and the real Kojirō see and assess one another; Musashi sends Akemi back with Kojirō toward the Zuzuya Inn.","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L182-L270","certainty":"explicit","movement_status":"intended_destination"},
+        {"id":"b3c13_e04","type":"escape","actors":["musashi","osugi","otsu","jotaro"],"location":"kamo_river_gojo","description":"Musashi frees Osugi and crosses the Kamo; Otsū and Jōtarō chase while Osugi pursues them.","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L271-L438","certainty":"explicit","movement_status":"departure_confirmed"},
+        {"id":"b3c13_e05","type":"manipulation","actors":["osugi","otsu","jotaro"],"referenced_actors":["matahachi"],"location":"kamo_river_gojo","description":"Osugi persuades Otsū to seek Matahachi with her; Jōtarō plans to return to the Karasumaru house, and they see the duel notice again.","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L439-L557","certainty":"explicit","movement_status":"intended_destination"}
+      ],
+      "end_states":[
+        {"character":"musashi","location":"kamo_river_gojo","state":"departed across the river; onward destination not stated","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L350-L438","certainty":"explicit"},
+        {"character":"otsu","location":"kamo_river_gojo","state":"with Osugi, intending to go to her Sannen Hill inn and seek Matahachi","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557","certainty":"explicit"},
+        {"character":"osugi","location":"kamo_river_gojo","state":"with Otsū, directing her toward the Sannen Hill inn","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557","certainty":"explicit"},
+        {"character":"jotaro","location":"kamo_river_gojo","state":"intending to return to the Karasumaru house","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L520-L557","certainty":"explicit"},
+        {"character":"akemi","location":"zuzuya_inn","state":"sent back with Kojirō; arrival at the inn is not shown","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L238-L270","certainty":"explicit"},
+        {"character":"kojiro","location":"zuzuya_inn","state":"escorting Akemi toward the inn; arrival not shown","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L238-L270","certainty":"explicit"}
+      ]
+    }
+  ],
+  "relationships": [
+    {"id":"rel_tanzaemon_jotaro","participants":["aoki_tanzaemon","jotaro"],"type":"father_son","first_chapter":"b3c1","status":"active_separated","source_ref":"chapter1-sasaki-kojiro.txt:L532-L600","certainty":"explicit"},
+    {"id":"rel_osugi_matahachi","participants":["osugi","matahachi"],"type":"mother_son","first_chapter":"b3c2","status":"reunited","source_ref":"chapter2-reunion-in-osaka.txt:L620-L837","certainty":"explicit"},
+    {"id":"rel_oko_akemi","participants":["oko","akemi"],"type":"mother_daughter","first_chapter":"b3c4","status":"separated_after_sumiyoshi","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L59-L104","certainty":"explicit"},
+    {"id":"rel_musashi_jotaro","participants":["musashi","jotaro"],"type":"mentor_pupil","first_chapter":"b3c8","status":"separated_searching","source_ref":"chapter8-the-mayfly-in-winter.txt:L1-L104","certainty":"explicit"},
+    {"id":"rel_otsu_jotaro","participants":["otsu","jotaro"],"type":"travel_companions","first_chapter":"b3c8","status":"temporarily_separating_in_kyoto","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557","certainty":"explicit"},
+    {"id":"rel_musashi_otsu","participants":["musashi","otsu"],"type":"mutual_attachment","first_chapter":"b3c8","status":"unreunited_in_book3","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L110-L181","certainty":"strong_inference"},
+    {"id":"rel_kojiro_monkey","participants":["kojiro","monkey"],"type":"keeper_companion","first_chapter":"b3c3","status":"active","source_ref":"chapter3-the-handsome-young-man.txt:L300-L471","certainty":"explicit"},
+    {"id":"rel_seijuro_akemi","participants":["yoshioka_seijuro","akemi"],"type":"sexual_violence_and_aftermath","first_chapter":"b3c4","status":"victim_escaped","source_ref":"chapter4-the-seashell-of-forgetfulness.txt:L269-L356","certainty":"explicit"},
+    {"id":"rel_musashi_seijuro","participants":["musashi","yoshioka_seijuro"],"type":"declared_duel_opponents","first_chapter":"b3c5","status":"duel_scheduled","source_ref":"chapter12-the-announcement.txt:L101-L165","certainty":"explicit"},
+    {"id":"rel_kojiro_seijuro","participants":["kojiro","yoshioka_seijuro"],"type":"new_association","first_chapter":"b3c6","status":"friendly_but_competitive","source_ref":"chapter6-the-drying-pole.txt:L219-L310","certainty":"explicit"},
+    {"id":"rel_kojiro_akemi","participants":["kojiro","akemi"],"type":"rescuer_and_protected_person","first_chapter":"b3c11","status":"traveling_together","source_ref":"chapter11-the-butterfly-in-winter.txt:L430-L512","certainty":"explicit"},
+    {"id":"rel_musashi_kojiro","participants":["musashi","kojiro"],"type":"mutual_martial_interest","first_chapter":"b3c13","status":"first_encounter_only","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L182-L238","certainty":"strong_inference"},
+    {"id":"rel_osugi_musashi","participants":["osugi","musashi"],"type":"revenge_pursuit","first_chapter":"b3c2","status":"active","source_ref":"chapter12-the-announcement.txt:L422-L645","certainty":"explicit"},
+    {"id":"rel_osugi_otsu","participants":["osugi","otsu"],"type":"deceptive_alliance","first_chapter":"b3c13","status":"traveling_together","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L439-L557","certainty":"explicit"},
+    {"id":"rel_matahachi_kojiro_name","participants":["matahachi","kojiro"],"type":"identity_impersonation","first_chapter":"b3c2","status":"ongoing_false_claim","source_ref":"chapter2-reunion-in-osaka.txt:L332-L404","certainty":"explicit"}
+  ],
+  "historical_context": [
+    {"id":"tokugawa_ieyasu","name":"Tokugawa Ieyasu","type":"historical_person","chapters":["b3c1","b3c2","b3c8"],"narrative_presence":"mentioned_only","source_ref":"chapter1-sasaki-kojiro.txt:L10-L58"},
+    {"id":"toyotomi_hideyoshi","name":"Toyotomi Hideyoshi","type":"historical_person","chapters":["b3c1","b3c2","b3c3","b3c8"],"narrative_presence":"mentioned_only","source_ref":"chapter1-sasaki-kojiro.txt:L10-L58"},
+    {"id":"toyotomi_hideyori","name":"Toyotomi Hideyori","type":"historical_person","chapters":["b3c1","b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter1-sasaki-kojiro.txt:L10-L35"},
+    {"id":"yodogimi","name":"Yodogimi","type":"historical_person","chapters":["b3c1"],"narrative_presence":"mentioned_only","source_ref":"chapter1-sasaki-kojiro.txt:L10-L35"},
+    {"id":"senhime","name":"Senhime","type":"historical_person","chapters":["b3c1"],"narrative_presence":"mentioned_only","source_ref":"chapter1-sasaki-kojiro.txt:L20-L58"},
+    {"id":"goto_matabei","name":"Gotō Matabei","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"sanada_yukimura","name":"Sanada Yukimura","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"akashi_kamon","name":"Akashi Kamon","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"chosokabe_morichika","name":"Chōsokabe Morichika","aliases":["Ichimusai"],"type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"ishida_mitsunari","name":"Ishida Mitsunari","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"naya_sukezaemon","name":"Naya Sukezaemon","aliases":["Luzon Sukezaemon"],"type":"historical_person","chapters":["b3c3"],"narrative_presence":"mentioned_only","source_ref":"chapter3-the-handsome-young-man.txt:L25-L90"},
+    {"id":"empress_jingu","name":"Empress Jingū","type":"legendary_historical_context","chapters":["b3c5"],"narrative_presence":"mentioned_only","source_ref":"chapter5-a-heros-passing.txt:L1-L55","note":"The chapter repeats shrine tradition; it is not treated as independently established history."},
+    {"id":"kobori_enshu","name":"Kobori Enshū","type":"historical_person","chapters":["b3c8"],"narrative_presence":"mentioned_only","source_ref":"chapter8-the-mayfly-in-winter.txt:L110-L188"},
+    {"id":"sen_no_rikyu","name":"Sen no Rikyū","type":"historical_person","chapters":["b3c8"],"narrative_presence":"mentioned_only","source_ref":"chapter8-the-mayfly-in-winter.txt:L110-L188"},
+    {"id":"karasumaru_mitsuhiro_context","name":"Karasumaru Mitsuhiro","type":"historical_person","chapters":["b3c8","b3c10","b3c13"],"narrative_presence":"mentioned_only","source_ref":"chapter8-the-mayfly-in-winter.txt:L263-L319"},
+    {"id":"tsukahara_bokuden_context","name":"Tsukahara Bokuden","type":"historical_person","chapters":["b3c7"],"narrative_presence":"mentioned_only","source_ref":"chapter7-eagle-mountain.txt:L1-L93"},
+    {"id":"lord_hachisuka","name":"Lord Hachisuka of Awa","type":"historical_person","chapters":["b3c1"],"narrative_presence":"mentioned_only","source_ref":"chapter1-sasaki-kojiro.txt:L100-L180"},
+    {"id":"saigyo","name":"Saigyō","type":"historical_person","chapters":["b3c1","b3c12"],"narrative_presence":"mentioned_only","source_ref":"chapter12-the-announcement.txt:L360-L421"},
+    {"id":"honda_masazumi","name":"Honda Masazumi","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"ban_danemon","name":"Ban Dan'emon","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"susukida_hayato","name":"Susukida Hayato Kanesuke","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"ono_shurinosuke","name":"Ono Shurinosuke","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"kato_kiyomasa","name":"Katō Kiyomasa","type":"historical_person","chapters":["b3c2"],"narrative_presence":"mentioned_only","source_ref":"chapter2-reunion-in-osaka.txt:L250-L332"},
+    {"id":"chaya_sukejiro","name":"Chaya Sukejirō","type":"historical_person","chapters":["b3c3"],"narrative_presence":"mentioned_only","source_ref":"chapter3-the-handsome-young-man.txt:L25-L90"},
+    {"id":"ikkyu","name":"Ikkyū Sōjun","type":"historical_person","chapters":["b3c3"],"narrative_presence":"mentioned_only","source_ref":"chapter3-the-handsome-young-man.txt:L220-L247"},
+    {"id":"kitabatake_tomonori","name":"Kitabatake Tomonori","type":"historical_person","chapters":["b3c7"],"narrative_presence":"mentioned_only","source_ref":"chapter7-eagle-mountain.txt:L1-L93"},
+    {"id":"tsukahara_hikoshiro","name":"Tsukahara Hikoshirō","type":"historical_person","chapters":["b3c7"],"narrative_presence":"mentioned_only","source_ref":"chapter7-eagle-mountain.txt:L1-L93"},
+    {"id":"taira_tadakiyo","name":"Taira no Tadakiyo","type":"historical_or_legendary_context","chapters":["b3c7"],"narrative_presence":"mentioned_only","source_ref":"chapter7-eagle-mountain.txt:L250-L363"},
+    {"id":"nikki_yoshinaga","name":"Nikki Yoshinaga","type":"historical_or_legendary_context","chapters":["b3c7"],"narrative_presence":"mentioned_only","source_ref":"chapter7-eagle-mountain.txt:L250-L363"},
+    {"id":"oda_nobunaga","name":"Oda Nobunaga","type":"historical_person","chapters":["b3c8"],"narrative_presence":"mentioned_only","source_ref":"chapter8-the-mayfly-in-winter.txt:L110-L188"},
+    {"id":"tokugawa_hidetada","name":"Tokugawa Hidetada","type":"historical_person","chapters":["b3c11"],"narrative_presence":"mentioned_only","source_ref":"chapter11-the-butterfly-in-winter.txt:L319-L390"}
+  ],
+  "external_validation": [
+    {"entity_id":"fushimi_castle_works","category":"geography_historicity","url":"https://www.city.kyoto.lg.jp/fushimi/page/0000013318.html","publisher":"Kyoto City, Fushimi Ward","evidence":"Official history identifies Fushimi as a road-and-water transport nexus and describes Hideyoshi's castle works, port opening and large labor mobilization.","result":"supports_general_setting_not_exact_worksite","certainty":"high","coordinates":null},
+    {"entity_id":"sumiyoshi_taisha","category":"geography_historicity","url":"https://www.sumiyoshitaisha.net/about/history.html","publisher":"Sumiyoshi Taisha","evidence":"Official shrine chronology documents the shrine's long history and explicitly flags scholarly debate around the traditional 211 date.","result":"name_and_historicity_supported_traditional_claims_not_adopted_as_fact","certainty":"high","coordinates":null},
+    {"entity_id":"sumiyoshi_shore","category":"historical_geography","url":"https://www.sumiyoshitaisha.net/faq/","publisher":"Sumiyoshi Taisha","evidence":"The official FAQ states that Osaka Bay formerly extended farther inland and that the Sumiyoshi area occupied a projecting part of the Uemachi plateau.","result":"supports_historical_coastal_context_not_narrative_shoreline_point","certainty":"medium","coordinates":null},
+    {"entity_id":"ise_naiku","category":"geography_historicity","url":"https://www.isejingu.or.jp/en/about/index.html","publisher":"Ise Jingu","evidence":"Official Jingu material identifies Naiku and the Uji Bridge crossing over the Isuzugawa at its entrance.","result":"name_and_general_layout_supported","certainty":"high","coordinates":null},
+    {"entity_id":"eagle_mountain","category":"toponym_resolution","url":"https://www.city.ise.mie.jp/iju/1011987.html","publisher":"Ise City","evidence":"Ise City's geography page lists 鷲嶺 (Shūrei, literally Eagle Ridge/Mountain) among the mountain chain south/east of the city.","result":"strong_correspondence_with_narrative_Eagle_Mountain","certainty":"high","coordinates":null},
+    {"entity_id":"eagle_mountain","category":"geography_detail","url":"https://www.bunka.pref.mie.lg.jp/Miebunka/detail?cls=mica_col04&pkey=0000004929","publisher":"Mie Prefecture cultural assets portal","evidence":"The prefectural record places Shūrei about 7 km south of Geku, gives elevation 548 m and notes a summit-area Kannon; it supports identity but is not imported as a coordinate.","result":"identity_and_elevation_supported","certainty":"high","coordinates":null},
+    {"entity_id":"ominato","category":"historical_geography","url":"https://www.city.ise.mie.jp/cul_spo_edu/culture/bunkazai_shiseki/bunkazai/komonjo/1009622.html","publisher":"Ise City","evidence":"The official cultural-property entry describes Ōminato records concerning shipping, shipbuilding and late-medieval maritime traffic.","result":"historic_maritime_role_supported","certainty":"high","coordinates":null},
+    {"entity_id":"yokkaichi","category":"historical_route","url":"https://www.city.yokkaichi.lg.jp/www/contents/1001000000141/index.html","publisher":"Yokkaichi City","evidence":"The city chronology records Yokkaichi becoming the 43rd Tōkaidō station in 1601.","result":"early_Edo_route_context_supported","certainty":"high","coordinates":null},
+    {"entity_id":"temma_landing","category":"historical_water_transport","url":"https://www.city.osaka.lg.jp/chuo/page/0000069440.html","publisher":"Osaka City, Chuo Ward","evidence":"Official local history describes the Temmabashi/Hakkenyahama area as a landing for Yodo River boats linking Kyoto and Osaka.","result":"water_transport_context_supported_exact_narrative_landing_unresolved","certainty":"medium","coordinates":null},
+    {"entity_id":"kema_landing","category":"historical_water_transport","url":"https://www.city.osaka.lg.jp/kita/page/0000000946.html","publisher":"Osaka City, Kita Ward","evidence":"The city page describes upstream Yodo boats being hauled through the Kema locality.","result":"Kema_as_upstream_route_locality_supported_exact_landing_unresolved","certainty":"medium","coordinates":null},
+    {"entity_id":"kamo_river_gojo","category":"historical_bridge","url":"https://www2.city.kyoto.lg.jp/somu/rekishi/fm/nenpyou/toshi_nenpyo.html","publisher":"Kyoto City Historical Materials Office","evidence":"Kyoto's official chronology records construction of the Great Gojō Bridge in 1589.","result":"bridge_existence_in_narrative_period_supported_exact_scene_point_unresolved","certainty":"high","coordinates":null},
+    {"entity_id":"karasumaru_mitsuhiro","category":"historicity","url":"https://ndlsearch.ndl.go.jp/books/R100000002-I000001574702","publisher":"National Diet Library","evidence":"NDL authority-linked catalogue identifies Karasumaru Mitsuhiro (1579–1638) and catalogues a three-volume work devoted to him.","result":"historical_person_supported_residence_not_located","certainty":"high","coordinates":null},
+    {"entity_id":"karasumaru_mitsuhiro","category":"historicity","url":"https://bunka.nii.ac.jp/heritages/detail/543315","publisher":"Agency for Cultural Affairs / Cultural Heritage Online","evidence":"Institutional catalogue describes Tōkōki as a draft travel account written by court noble Karasumaru Mitsuhiro.","result":"historical_and_cultural_role_supported","certainty":"high","coordinates":null},
+    {"entity_id":"kojiro","category":"historicity","url":"https://id.ndl.go.jp/auth/ndlna/00623269","publisher":"National Diet Library Authorities","evidence":"NDL has a personal-name authority for Sasaki Kojirō, identifies him as a swordsman and gives death year 1612.","result":"historical_name_authority_supported_novel_biography_not_validated","certainty":"medium","coordinates":null},
+    {"entity_id":"kojiro","category":"historical_uncertainty","url":"https://crd.ndl.go.jp/reference/entry/index.php?id=1000071814&page=ref_view","publisher":"National Diet Library Collaborative Reference Database","evidence":"The institutional reference notes that Musashi's attributed Book of Five Rings does not name Kojirō or describe the duel and that many later details depend on disputed later material.","result":"requires_strict_separation_of_novel_details_from_history","certainty":"high","coordinates":null},
+    {"entity_id":"tsukahara_bokuden","category":"historicity","url":"https://www.city.kashima.ibaraki.jp/site/bunkazai/50134.html","publisher":"Kashima City","evidence":"The city cultural-property page identifies Bokuden's 1489 birth and summarizes named sword lineages attributed to his training.","result":"historical_person_and_sword_context_supported","certainty":"high","coordinates":null},
+    {"entity_id":"arakida_ujitomi","category":"historicity","url":null,"publisher":null,"evidence":"No sufficiently specific official or institutional authority was located in this pass for the exact novel spelling Ujitomi.","result":"unresolved_do_not_merge_with_Arakida_Ujitsune_or_Moritake","certainty":"low","coordinates":null},
+    {"entity_id":"koji_hill","category":"toponym_resolution","url":null,"publisher":null,"evidence":"No authoritative match was found that safely resolves the translated/romanized Kōji Hill along the described route.","result":"unresolved_no_coordinate","certainty":"low","coordinates":null},
+    {"entity_id":"rendaiji_field","category":"toponym_resolution","url":"https://kyoto-bunkaisan.city.kyoto.lg.jp/report/pdf/tyousa/03/maizou_13.pdf","publisher":"Kyoto City Archaeological Research","evidence":"The report confirms a historical Kita-yama Rendaiji precinct, but this does not establish the novel's duel field as that exact archaeological site.","result":"name_context_only_exact_field_unresolved","certainty":"low","coordinates":null}
+  ],
+  "referential_audit": {
+    "status":"passed_2026-08-20",
+    "coverage":{"source_files":13,"source_lines":6727,"global_sections":13,"events":57,"end_states":41,"characters":43,"groups":6,"locations":34,"relationships":15,"historical_context_entities":31,"external_validation_records":19},
+    "checks":[
+      {"rule":"13 unique chapter IDs","result":"pass"},
+      {"rule":"global sections contiguous 20-32","result":"pass"},
+      {"rule":"all actor/group/location references resolve","result":"pass"},
+      {"rule":"all events have source_ref/certainty/movement_status","result":"pass"},
+      {"rule":"all end states have source_ref/certainty","result":"pass"},
+      {"rule":"all coordinates null","result":"pass"},
+      {"rule":"physical_presence and mentioned_in do not overlap per character","result":"pass"},
+      {"rule":"JSON parses with jq","result":"pass"}
+    ]
+  }
+}
