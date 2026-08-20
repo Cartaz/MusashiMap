@@ -1,8 +1,8 @@
 {
-  "version": 6,
+  "version": 7,
   "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions, events and named historical works. The novel provides the trigger and reading context; an authoritative external historical source provides a concise historical explanation.",
   "source_policy": {
-    "novel_trigger_source": "Canonical local chapter corpus under data/source/book1 and data/source/book2",
+    "novel_trigger_source": "Canonical local chapter corpus under data/source/book1, data/source/book2 and data/source/book3",
     "historical_context_source": "authoritative external historical source",
     "rule": "Never merge external historical facts into novel evidence."
   },
@@ -11,7 +11,7 @@
     "type": "historical_person",
     "display_name": "Example",
     "novel_trigger": {
-      "first_book1_section": 1,
+      "first_section": 1,
       "name_in_text": "Example",
       "context": "Why the reference matters at this point",
       "spoiler_safe_until": 1
@@ -336,6 +336,49 @@
       "novel_trigger":{"first_section":14,"name_in_text":"Lord Kōizumi of Ise","context":"Book II names the master associated with In'ei and Yagyū Muneyoshi; the translation's Kōizumi is normalized cautiously to the historically documented Kamiizumi tradition.","spoiler_safe_until":14},
       "wiki":{"summary":"Sword master Kamiizumi Nobutsuna, also styled Ise-no-kami, is linked in Nara City's Yagyū historical material with Sekishūsai. The novel's translated name and anecdotes remain literary evidence."},
       "source":{"title":"Yagyū historical figures guide","publisher":"Nara City","url":"https://www.city.nara.lg.jp/uploaded/attachment/150695.pdf"}
+    },
+    {
+      "id":"fushimi_castle_historical","type":"historical_place_context","display_name":"Fushimi castle town and port",
+      "novel_trigger":{"first_section":20,"name_in_text":"Fushimi Castle works","context":"Matahachi works at the large construction site and later hides in Fushimi.","spoiler_safe_until":20},
+      "wiki":{"summary":"Kyoto City's history describes Fushimi as a road-and-water transport hub shaped by Hideyoshi's castle construction and port development. This supports the broad setting, not the exact worksite."},
+      "source":{"title":"History of Fushimi","publisher":"Kyoto City, Fushimi Ward","url":"https://www.city.kyoto.lg.jp/fushimi/page/0000013318.html"}
+    },
+    {
+      "id":"sasaki_kojiro_historical","type":"historical_person","display_name":"Sasaki Kojirō",
+      "novel_trigger":{"first_section":25,"name_in_text":"Sasaki Kojirō / Ganryū","context":"Seijūrō explicitly identifies the previously unnamed young swordsman; this does not identify the earlier dead certificate bearer.","spoiler_safe_until":25},
+      "wiki":{"summary":"The National Diet Library maintains a personal-name authority for Sasaki Kojirō as a swordsman and records 1612 as his death year. The novel's biography and encounters remain literary evidence."},
+      "source":{"title":"Sasaki Kojirō — authority record","publisher":"National Diet Library Authorities","url":"https://id.ndl.go.jp/auth/ndlna/00623269"}
+    },
+    {
+      "id":"sumiyoshi_taisha_historical","type":"historical_institution","display_name":"Sumiyoshi Taisha",
+      "novel_trigger":{"first_section":23,"name_in_text":"Sumiyoshi shrine","context":"The Yoshioka party stays near the shrine and Akemi reaches the Sumiyoshi shore.","spoiler_safe_until":23},
+      "wiki":{"summary":"The shrine's official chronology supports its long historical presence at Sumiyoshi while noting scholarly debate around its traditional foundation date. It does not authenticate the novel's inn or shoreline scenes."},
+      "source":{"title":"History of Sumiyoshi Taisha","publisher":"Sumiyoshi Taisha","url":"https://www.sumiyoshitaisha.net/about/history.html"}
+    },
+    {
+      "id":"tsukahara_bokuden_historical","type":"historical_person","display_name":"Tsukahara Bokuden",
+      "novel_trigger":{"first_section":26,"name_in_text":"Tsukahara Bokuden","context":"The chapter invokes Bokuden while framing sword traditions known to Musashi.","spoiler_safe_until":26},
+      "wiki":{"summary":"Kashima City's cultural-property material identifies Bokuden as a historical swordsman born in 1489 and describes traditions associated with his training. The novel's anecdotes remain narrative context."},
+      "source":{"title":"Tsukahara Bokuden","publisher":"Kashima City","url":"https://www.city.kashima.ibaraki.jp/site/bunkazai/50134.html"}
+    },
+    {
+      "id":"ise_jingu_historical","type":"historical_institution","display_name":"Ise Jingū (Naikū)",
+      "novel_trigger":{"first_section":26,"name_in_text":"Inner Shrine","context":"Musashi approaches Naikū, purifies himself in the Isuzu River and leaves his swords before climbing Eagle Mountain.","spoiler_safe_until":26},
+      "wiki":{"summary":"Official Jingū material identifies Naikū and the Uji Bridge over the Isuzugawa at its entrance. This supports the general geography without fixing narrative scene coordinates."},
+      "source":{"title":"About Ise Jingū","publisher":"Ise Jingū","url":"https://www.isejingu.or.jp/en/about/index.html"}
+    },
+    {
+      "id":"karasumaru_mitsuhiro_historical","type":"historical_person","display_name":"Karasumaru Mitsuhiro",
+      "novel_trigger":{"first_section":27,"name_in_text":"Karasumaru Mitsuhiro","context":"Ujitomi entrusts Otsū with painted scrolls for delivery to Mitsuhiro in Kyoto.","spoiler_safe_until":27},
+      "wiki":{"summary":"Institutional catalogues identify Karasumaru Mitsuhiro (1579–1638) as a court noble and writer. His role and residence in the novel are not treated as documentary biography."},
+      "source":{"title":"Karasumaru Mitsuhiro catalogue record","publisher":"National Diet Library","url":"https://ndlsearch.ndl.go.jp/books/R100000002-I000001574702"},
+      "context_source":{"title":"Tōkōki cultural-property record","publisher":"Agency for Cultural Affairs / Cultural Heritage Online","url":"https://bunka.nii.ac.jp/heritages/detail/543315"}
+    },
+    {
+      "id":"gojo_bridge_historical","type":"historical_place_context","display_name":"Great Gojō Bridge",
+      "novel_trigger":{"first_section":31,"name_in_text":"Great Bridge at Gojō Avenue","context":"The Yoshioka school posts the Rendaiji duel announcement at the bridge.","spoiler_safe_until":31},
+      "wiki":{"summary":"Kyoto City's official chronology records construction of the Great Gojō Bridge in 1589. This supports the bridge's period existence, not the exact narrative scene point."},
+      "source":{"title":"Kyoto urban chronology","publisher":"Kyoto City Historical Materials Office","url":"https://www2.city.kyoto.lg.jp/somu/rekishi/fm/nenpyou/toshi_nenpyo.html"}
     }
   ]
 }

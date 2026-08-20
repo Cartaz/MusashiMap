@@ -402,7 +402,7 @@
         "takuan",
         "mikogami_tenzen",
         "tsukahara_bokuden",
-        "yagyu_muneyoshi",
+        "sekishusai",
         "yoshioka_kempo"
       ],
       "groups": [],
@@ -769,7 +769,7 @@
     },
     {
       "id": "gonroku",
-      "name": "Hon'iden Gonroku",
+      "name": "Fuchikawa Gonroku",
       "aliases": [
         "Uncle Gon"
       ],
@@ -780,7 +780,8 @@
       ],
       "mentioned_in": [
         "b3c12"
-      ]
+      ],
+      "identity_note": "Book I explicitly gives his surname as Fuchikawa; he is the same Uncle Gon who travels with Osugi."
     },
     {
       "id": "oko",
@@ -1230,16 +1231,19 @@
       ]
     },
     {
-      "id": "yagyu_muneyoshi",
-      "name": "Yagyū Muneyoshi",
+      "id": "sekishusai",
+      "name": "Yagyū Sekishūsai",
       "aliases": [
+        "Yagyū Muneyoshi",
+        "Yagyū Munetoshi",
         "Sekishūsai"
       ],
       "kind": "narrative_historical",
       "physical_presence": [],
       "mentioned_in": [
         "b3c7"
-      ]
+      ],
+      "identity_note": "Reuses the Books I–II canonical ID for the same historical/narrative person."
     },
     {
       "id": "lord_ikeda",

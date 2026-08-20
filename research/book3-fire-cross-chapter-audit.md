@@ -35,6 +35,8 @@ The most important identity decision is deliberately conservative:
 - The dead man in chapter 20 is `unknown_certificate_bearer`, not `kojiro`. He carries a certificate addressed to Sasaki Kojirō, but possession does not establish identity. The living Kojirō first appears physically in chapter 22.
 - Matahachi's “Sasaki Kojirō” is recorded as an impersonated alias, not a canonical identity merge.
 - “Shishido Baiken” is an alias of `kohei` because chapter 28 explicitly reveals that Baiken is Tsujikaze Kōhei.
+- “Uncle Gon” remains `gonroku`, whose surname was explicitly established as Fuchikawa in Book I; the earlier staging label “Hon'iden Gonroku” was corrected rather than creating a duplicate person.
+- The Book III mention “Yagyū Muneyoshi” reuses `sekishusai`, already established in Books I–II; the temporary `yagyu_muneyoshi` ID was removed to prevent a duplicate identity.
 - The person who claims Musashi's belongings in chapter 27 remains unidentified. A limping man seen at a distance is not converted into Musashi's physical presence.
 - `Arakida Ujitomi`, `Arakida Ujitsune`, and the historical poet Arakida Moritake are not merged. Similar family name and institutional context are insufficient.
 

@@ -100,6 +100,18 @@ writeJson("data/characters.json", {
   characters: publishedCharacters
 });
 
+const groupsDocument = readJson("data/groups.json");
+const publishedGroups = (groupsDocument.groups ?? [])
+  .filter(group => inPublishedRange(group.introduced_section)
+    || (group.present_in ?? []).some(inPublishedRange)
+    || (group.mentioned_in ?? []).some(inPublishedRange))
+  .map(group => ({
+    ...group,
+    present_in: (group.present_in ?? []).filter(inPublishedRange),
+    mentioned_in: (group.mentioned_in ?? []).filter(inPublishedRange)
+  }));
+writeJson("data/groups.json", { ...groupsDocument, groups: publishedGroups });
+
 const referencedLocations = new Set([
   ...publishedEvents.flatMap(event => [event.location, event.origin, event.destination, ...(event.via ?? [])]),
   ...publishedStates.flatMap(state => [state.location, state.last_known_location, state.departure_from])
@@ -117,10 +129,25 @@ const publishedMicroWiki = (microWikiDocument.entities ?? []).filter(entry => {
   return inPublishedRange(Number(first)) && inPublishedRange(Number(safe));
 });
 writeJson("data/context/micro-wiki.json", { ...microWikiDocument, entities: publishedMicroWiki });
+const identitiesDocument = readJson("data/identities.json");
+const chapterBySection = new Map(publishedSections.map(section => [section.number, section.chapter_id]));
+const publishedIdentities = (identitiesDocument.identities ?? [])
+  .filter(identity => inPublishedRange(identity.valid_from_section) && publishedCharacterIds.has(identity.character_id))
+  .map(identity => {
+    const validUntil = identity.valid_until_section === null
+      ? progress.maximum_section
+      : Math.min(identity.valid_until_section, progress.maximum_section);
+    return {
+      ...identity,
+      valid_until_section: validUntil,
+      valid_until_chapter: chapterBySection.get(validUntil) ?? null
+    };
+  });
+writeJson("data/identities.json", { ...identitiesDocument, identities: publishedIdentities });
 writeJson("data/reader-progress.json", readJson("data/reader-progress.json"));
 
 for (const forbidden of ["research", "tools", "docs", "data/source", "data/audit"]) {
   if (fs.existsSync(path.join(output, forbidden))) throw new Error(`Forbidden Pages path emitted: ${forbidden}.`);
 }
 
-console.log(`Pages artifact built: ${publishedSections.length} published sections, ${runtimeFiles.length + 8} files.`);
+console.log(`Pages artifact built: ${publishedSections.length} published sections, ${runtimeFiles.length + 10} files.`);

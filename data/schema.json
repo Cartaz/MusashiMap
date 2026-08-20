@@ -5,7 +5,7 @@
     "registry_range": "1–112 across Books I–VII",
     "section_identity": "Global number plus stable bNcN chapter_id",
     "publication_authority": "data/reader-progress.json state.minimum_section/state.maximum_section",
-    "current_publication_range": "1–19",
+    "current_publication_range": "1–32",
     "staging_rule": "A chapter may be registered with a local source above maximum_section without becoming reader-visible. Runtime data must remain gated by reader progress.",
     "source_title_rule": "chapters.title is the first non-empty header of chapters.source_file"
   },
@@ -20,6 +20,14 @@
       "historical_status": "historical|fictional|fictionalized|unknown",
       "first_section": "number|null; global first safe physical introduction",
       "chapter_states": "object keyed by bNcN"
+    },
+    "groups": {
+      "id": "string",
+      "name": "string",
+      "aliases": "string[]",
+      "introduced_section": "number; global first safe introduction",
+      "present_in": "number[]; physical group presence",
+      "mentioned_in": "number[]; non-physical references"
     },
     "character_chapter_state": {
       "narrative_presence": "active|mentioned|reported|historical_context",
@@ -144,6 +152,7 @@
     "Registration beyond reader-progress.maximum_section is staging metadata, not publication or permission to expose dependent data.",
     "Micro-wiki and relationship first_section fields are global reveal thresholds and must not exceed the authoritative reader maximum when rendered.",
     "characters lists physical participants in an event; referenced_characters is used for named people involved only through letters, reports, memories or other non-present references.",
+    "groups lists physically present narrative collectives; referenced_groups is used for collectives mentioned but not present.",
     "character-state location is the physically established cartographic position at the end of the chapter; reported-only positions must use location:null and last_known_location when useful.",
     "location_status values such as reported_position, unknown and departed_* must not be interpreted as physical presence.",
     "character-state destination must not expose a future movement that is first established in a later chapter.",

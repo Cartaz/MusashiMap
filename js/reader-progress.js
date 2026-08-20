@@ -57,8 +57,20 @@ export function getLatestStates(states, currentSection, idKey = "character") {
   return [...latest.values()];
 }
 
-export function getDisplayCharacterName(character, section) {
-  if (character?.id === "musashi" && Number(section) <= 7) return "Shinmen Takezō";
+export function getDisplayCharacterName(character, section, identities = []) {
+  const currentSection = asInteger(section);
+  const identity = (identities ?? [])
+    .filter(entry => entry.character_id === character?.id
+      && currentSection !== null
+      && asInteger(entry.valid_from_section) !== null
+      && entry.valid_from_section <= currentSection
+      && (entry.valid_until_section === null || asInteger(entry.valid_until_section) >= currentSection))
+    .sort((a, b) => b.valid_from_section - a.valid_from_section)[0];
+  if (identity?.status === "impersonated_name" && identity.reader_knows_canonical_identity && identity.display_name !== character?.name) {
+    return `${character?.name ?? "Personaggio sconosciuto"} (come ${identity.display_name})`;
+  }
+  if (identity?.display_name) return identity.display_name;
+  if (character?.id === "musashi" && currentSection !== null && currentSection <= 7) return "Shinmen Takezō";
   return character?.name ?? "Personaggio sconosciuto";
 }
 
