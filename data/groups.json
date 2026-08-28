@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "groups": [
     {"id":"fushimi_workers","name":"Lavoratori di Fushimi","aliases":[],"introduced_section":20,"present_in":[20],"mentioned_in":[]},
     {"id":"ship_passengers","name":"Passeggeri della nave","aliases":[],"introduced_section":22,"present_in":[22,23],"mentioned_in":[]},
@@ -12,6 +12,14 @@
     {"id":"mudoji_clergy","name":"Mudōji clergy","aliases":[],"introduced_section":50,"present_in":[50],"mentioned_in":[]},
     {"id":"sannoin_priests","name":"Sannōin / Enryakuji priests","aliases":[],"introduced_section":50,"present_in":[50],"mentioned_in":[]},
     {"id":"mount_hiei_priests","name":"Three Mount Hiei priests traveling with Kojirō","aliases":[],"introduced_section":51,"present_in":[51],"mentioned_in":[]},
-    {"id":"ichijoji_spectators","name":"Ichijōji spectators, farmers and clerics","aliases":[],"introduced_section":49,"present_in":[49],"mentioned_in":[]}
+    {"id":"ichijoji_spectators","name":"Ichijōji spectators, farmers and clerics","aliases":[],"introduced_section":49,"present_in":[49],"mentioned_in":[]},
+    {"id":"toji_band","name":"Tōji's bandits","aliases":[],"introduced_section":60,"present_in":[60],"mentioned_in":[]},
+    {"id":"jinnai_troupe","name":"Jinnai's troupe and staff","aliases":[],"introduced_section":61,"present_in":[61,62],"mentioned_in":[]},
+    {"id":"obata_students","name":"Obata School students","aliases":[],"introduced_section":64,"present_in":[64,66],"mentioned_in":[]},
+    {"id":"hangawara_group","name":"Hangawara Association men","aliases":[],"introduced_section":65,"present_in":[65,75,79],"mentioned_in":[]},
+    {"id":"mountain_bandits","name":"Hitachi mountain brigands","aliases":[],"introduced_section":69,"present_in":[69],"mentioned_in":[]},
+    {"id":"hotengahara_villagers","name":"Hōtengahara-area villagers","aliases":[],"introduced_section":69,"present_in":[69,70],"mentioned_in":[]},
+    {"id":"hosokawa_retainers","name":"Hosokawa retainers","aliases":[],"introduced_section":70,"present_in":[70],"mentioned_in":[]},
+    {"id":"edo_horse_traders","name":"Edo horse traders","aliases":[],"introduced_section":71,"present_in":[71],"mentioned_in":[]}
   ]
 }

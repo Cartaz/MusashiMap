@@ -17,9 +17,9 @@ The repository contains 112 chapter-level research sources under
 `data/source/book1/` through `data/source/book7/`. The complete registry is
 `data/source/musashi-index.txt`.
 
-The registry is deliberately separate from publication. Books I–IV (sections
-1–53) are normalized production data and are visible in the application.
-Books V–VII (sections 54–112; 59 chapters) are fully scraped and audited
+The registry is deliberately separate from publication. Books I–V (sections
+1–79) are normalized production data and are visible in the application.
+Books VI–VII (sections 80–112; 33 chapters) are fully scraped and audited
 research staging, but remain hidden until each book is migrated to the
 production datasets.
 `data/reader-progress.json` is the sole authority for that boundary.
@@ -60,8 +60,8 @@ Its core sequence is:
 
 ## Current status
 
-- Books I–IV: production data complete and validated (`PASS`), 53 published sections.
-- Books V–VII: 59/59 chapters scraped, reconciled and validated in canonical staging (sections 54–112).
+- Books I–V: production data complete and validated (`PASS`), 79 published sections.
+- Books VI–VII: 33/33 chapters scraped, reconciled and validated in canonical staging (sections 80–112).
 - Global source registry: 112/112 chapters.
 - Runtime: publication-aware navigation, spoiler firewall and graceful basemap degradation.
 - Frontend/CI: semantic/staging gates, runtime tests and a spoiler-filtered Pages artifact with zero frontend validator warnings.

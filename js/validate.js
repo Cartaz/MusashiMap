@@ -1,4 +1,5 @@
 import { loadData } from "./data.js";
+import { validateMovementEvent } from "./movement-contract.js";
 
 export function validateData({ characters, locations, chapters, events, states }) {
   const characterIds = new Set(characters.characters.map(c => c.id));
@@ -24,12 +25,13 @@ export function validateData({ characters, locations, chapters, events, states }
     }
     for (const id of event.via ?? []) if (!locationIds.has(id)) errors.push(`Event ${event.id}: luogo via inesistente ${id}`);
 
-    const hasRouteEndpoints = Boolean(event.origin || event.destination);
-    if (hasRouteEndpoints && !event.movement_status) warnings.push(`Event ${event.id}: spostamento con origin/destination ma movement_status mancante`);
-    if (event.movement_status === "arrival_confirmed" && !event.destination && !event.location) errors.push(`Event ${event.id}: arrival_confirmed richiede destination o location`);
-    if (event.movement_status === "confirmed_route" && (!event.origin || !event.destination)) errors.push(`Event ${event.id}: confirmed_route richiede origin e destination`);
-    if (["intended_destination", "direction_only"].includes(event.movement_status) && !event.destination) warnings.push(`Event ${event.id}: ${event.movement_status} senza destination esplicita`);
-    if (event.movement_status === "uncertain_route" && event.destination !== specialUnknownLocation) warnings.push(`Event ${event.id}: uncertain_route ha una destination cartografica esplicita`);
+    for (const violation of validateMovementEvent(event)) {
+      if (violation === "movement_status_required") errors.push(`Event ${event.id}: i dati di rotta richiedono un movement_status valido`);
+      if (violation === "physical_participant_required") errors.push(`Event ${event.id}: una rotta richiede almeno un partecipante fisico`);
+      if (violation === "arrival_target_required") errors.push(`Event ${event.id}: arrival_confirmed richiede destination o location nota`);
+      if (violation === "destination_evidence_required") errors.push(`Event ${event.id}: ${event.movement_status} richiede destination o destination_label`);
+      if (violation === "route_evidence_required") errors.push(`Event ${event.id}: ${event.movement_status} richiede dati o etichette di rotta`);
+    }
   }
 
   for (const state of states.character_states) {

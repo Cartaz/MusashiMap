@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "relationship_types": ["family","friend_ally","acquaintance","master","disciple","rival","enemy","authority","partner_family","servant_employer","faction"],
   "relationships": [
     {"from":"musashi","to":"ogin","type":"family","subtype":"younger_brother_older_sister","first_section":3},
@@ -47,6 +47,23 @@
     {"from":"koetsu","to":"myoshu","type":"family","subtype":"son_and_mother","first_section":34},
     {"from":"musashi","to":"yoshioka_denshichiro","type":"enemy","subtype":"formal_challenge_and_duel_at_rengeoin","first_section":38},
     {"from":"musashi","to":"yoshino_tayu","type":"acquaintance","subtype":"meeting_and_care_at_ogiya","first_section":40},
-    {"from":"matahachi","to":"akemi","type":"acquaintance","subtype":"temporary_eastbound_travel_companions","first_section":48}
+    {"from":"matahachi","to":"akemi","type":"acquaintance","subtype":"temporary_eastbound_travel_companions","first_section":48},
+    {"from":"gonnosuke","to":"gonnosuke_mother","type":"family","subtype":"son_and_mother","first_section":55},
+    {"from":"gion_toji","to":"oko","type":"partner_family","subtype":"described_as_husband_and_wife","first_section":60},
+    {"from":"shoji_jinnai","to":"akemi","type":"servant_employer","subtype":"troupe_leader_and_charge","first_section":61},
+    {"from":"daizo","to":"jotaro","type":"authority","subtype":"coercive_claimed_guardianship","first_section":62},
+    {"from":"yajibei","to":"osugi","type":"friend_ally","subtype":"host_and_protector","first_section":63},
+    {"from":"kojiro","to":"obata_kagenori","type":"enemy","subtype":"escalating_school_feud","first_section":64},
+    {"from":"obata_kagenori","to":"hojo_shinzo","type":"master","subtype":"teacher_and_senior_pupil","first_section":66},
+    {"from":"musashi","to":"iori","type":"master","subtype":"teacher_and_practical_guardian","first_section":67},
+    {"from":"nagaoka_sado","to":"musashi","type":"acquaintance","subtype":"unfulfilled_recruitment_interest_without_meeting","first_section":69},
+    {"from":"iwama_kakubei","to":"kojiro","type":"servant_employer","subtype":"host_and_sponsor","first_section":70},
+    {"from":"zushino_kosuke","to":"musashi","type":"acquaintance","subtype":"artisan_client_host_and_ethical_interlocutor","first_section":72},
+    {"from":"kimura_sukekuro","to":"otsu","type":"friend_ally","subtype":"rescuer_and_protector_reported_retrospectively","first_section":73},
+    {"from":"munenori","to":"yagyu_hyogo","type":"family","subtype":"uncle_and_nephew","first_section":73},
+    {"from":"yagyu_hyogo","to":"otsu","type":"friend_ally","subtype":"protective_friendship_unreciprocated_affection_not_inferred","first_section":73},
+    {"from":"zushino_kosuke","to":"hojo_shinzo","type":"friend_ally","subtype":"rescuer_and_caregiver","first_section":76},
+    {"from":"kojiro","to":"osugi","type":"friend_ally","subtype":"self_appointed_second_in_revenge_plot","first_section":76},
+    {"from":"obata_kagenori","to":"obata_yogoro","type":"family","subtype":"father_and_son","first_section":78}
   ]
 }

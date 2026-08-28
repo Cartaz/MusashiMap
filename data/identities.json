@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
@@ -121,6 +121,42 @@
       "reader_knows_canonical_identity": true,
       "status": "revealed_alias",
       "change_reason": "explicit_narrative_reveal"
+    },
+    {
+      "character_id": "iori",
+      "display_name": "Sannosuke",
+      "alias": null,
+      "valid_from_chapter": "b5c14",
+      "valid_until_chapter": "b5c14",
+      "valid_from_section": 67,
+      "valid_until_section": 67,
+      "reader_knows_canonical_identity": false,
+      "status": "birth_name",
+      "change_reason": "introduced_before_musashis_renaming"
+    },
+    {
+      "character_id": "iori",
+      "display_name": "Misawa Iori",
+      "alias": "Sannosuke",
+      "valid_from_chapter": "b5c15",
+      "valid_until_chapter": null,
+      "valid_from_section": 68,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "renamed",
+      "change_reason": "explicit_renaming_by_musashi"
+    },
+    {
+      "character_id": "akemi",
+      "display_name": "Hanagiri",
+      "alias": "Akemi",
+      "valid_from_chapter": "b5c12",
+      "valid_until_chapter": "b5c12",
+      "valid_from_section": 65,
+      "valid_until_section": 65,
+      "reader_knows_canonical_identity": true,
+      "status": "house_name",
+      "change_reason": "yoshiwara_house_name_used_in_current_chapter"
     }
   ]
 }

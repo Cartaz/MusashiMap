@@ -28,6 +28,7 @@ const runtimeFiles = [
   "js/data.js",
   "js/legend-toggle.js",
   "js/map-runtime.js",
+  "js/movement-contract.js",
   "js/popups.js",
   "js/reader-progress.js",
   "js/validate.js"
@@ -76,6 +77,10 @@ const characterWikiDocument = readJson("data/context/character-wiki.json");
 const publishedCharacterWiki = Object.fromEntries(Object.entries(characterWikiDocument.characters ?? {})
   .map(([id, entry]) => [id, {
     ...entry,
+    ...(entry.display_name_by_section ? {
+      display_name_by_section: Object.fromEntries(Object.entries(entry.display_name_by_section)
+        .filter(([section]) => inPublishedRange(Number(section))))
+    } : {}),
     current_by_section: Object.fromEntries(Object.entries(entry.current_by_section ?? {})
       .filter(([section]) => inPublishedRange(Number(section))))
   }])
