@@ -305,6 +305,9 @@ export function validateRepository(root = process.cwd()) {
     if ((hasRoute || MOVEMENT_TYPES.has(event.type)) && hasRoute && !MOVEMENT_STATUSES.has(event.movement_status)) {
       errors.push(`Movement event ${event.id} with route data needs a valid movement_status.`);
     }
+    if (hasRoute && !(event.characters?.length)) {
+      errors.push(`Event ${event.id} has route data without a physically participating character.`);
+    }
     const arrivalTarget = event.destination ?? event.location;
     if (event.movement_status === "arrival_confirmed" && (!arrivalTarget || arrivalTarget === "unknown")) {
       errors.push(`Event ${event.id} claims arrival_confirmed without a known destination/location.`);
@@ -312,6 +315,11 @@ export function validateRepository(root = process.cwd()) {
     if (["intended_destination", "direction_only"].includes(event.movement_status)
       && !event.destination && !isString(event.destination_label)) {
       errors.push(`Event ${event.id} needs a destination or destination_label for ${event.movement_status}.`);
+    }
+    if (["confirmed_route", "uncertain_route"].includes(event.movement_status)
+      && !event.origin && !event.destination && !(event.via?.length)
+      && !isString(event.origin_label) && !isString(event.destination_label)) {
+      errors.push(`Event ${event.id} claims ${event.movement_status} without any route evidence.`);
     }
   }
 

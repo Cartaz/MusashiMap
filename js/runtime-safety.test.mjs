@@ -102,6 +102,18 @@ test("Book III reader-facing prose respects identity reveal sections", () => {
   assert.doesNotMatch(prose(26, 27), /Tsujikaze|Kōhei|Kohei/i);
 });
 
+test("Matahachi's impersonation ends in the section where it is exposed", async () => {
+  const { getDisplayCharacterName } = await import("./reader-progress.js");
+  const characters = JSON.parse(readFileSync(new URL("../data/characters.json", import.meta.url))).characters;
+  const identities = JSON.parse(readFileSync(new URL("../data/identities.json", import.meta.url))).identities;
+  const matahachi = characters.find(character => character.id === "matahachi");
+
+  assert.match(getDisplayCharacterName(matahachi, 34, identities), /come Sasaki Kojirō/);
+  assert.equal(getDisplayCharacterName(matahachi, 35, identities), "Hon'den Matahachi");
+  assert.equal((matahachi.aliases ?? []).some(alias => /Inugami/i.test(alias)), false);
+  assert.equal(identities.some(identity => identity.character_id === "matahachi" && /Inugami/i.test(identity.display_name)), false);
+});
+
 test("event, state and wiki evidence can safely establish an introduction", () => {
   const character = { id: "mentioned", present_in: [] };
   const evidence = {

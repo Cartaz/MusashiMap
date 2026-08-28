@@ -1,15 +1,15 @@
 # MusashiMap — Checkpoint
 
-Date: 2026-08-20
+Date: 2026-08-28
 
 ## Current state
 
-Books I (*Earth*), II (*Water*) and III (*Fire*) are normalized production data.
-The app publishes sections 1–32 and derives every navigation and spoiler decision from
-`data/reader-progress.json`.
+Books I (*Earth*), II (*Water*), III (*Fire*) and IV (*Wind*) are normalized
+production data. The app publishes sections 1–53 and derives every navigation
+and spoiler decision from `data/reader-progress.json`.
 
-Books IV–VII have been read in full, extracted chapter by chapter, reconciled
-across chapters and checked against the local sources. Their 80 chapters remain
+Books V–VII have been read in full, extracted chapter by chapter, reconciled
+across chapters and checked against the local sources. Their 59 chapters remain
 in canonical research staging: they are deliberately not exposed by the app.
 
 ## Completed in this milestone
@@ -32,6 +32,16 @@ in canonical research staging: they are deliberately not exposed by the app.
   including runtime tests against premature names in event prose.
 - Audited Book III movement semantics so intentions, routes, uncertain
   departures and confirmed arrivals remain distinct.
+- Migrated Book IV atomically into production: 116 events, 71 chapter states,
+  23 new characters, 35 new locations and six new narrative groups.
+- Reused four established places and merged later Yoshioka collective presence
+  into the existing group instead of creating parallel canonical records.
+- Added five mature relationships, seven progressively gated historical-context
+  cards and the section-35 end of Matahachi's Kojirō impersonation.
+- Added line-level evidence to critical reveals, deaths and departures, plus a
+  semantic correction ledger in the Book IV production migration audit.
+- Strengthened route validation so referenced-only reports cannot produce map
+  geometry, and audited every Book IV warning at the section-53 boundary.
 
 ### Runtime and spoiler safety
 
@@ -61,19 +71,19 @@ in canonical research staging: they are deliberately not exposed by the app.
 
 ```text
 source registry     1 ----------------------------------------------- 112
-production data     1 -------------------------- 32
-research staging                                      33 ----------- 112
-reader-visible      1 -------------------------- 32
+production data     1 -------------------------------- 53
+research staging                                         54 -------- 112
+reader-visible      1 -------------------------------- 53
 ```
 
 Registering or scraping a chapter does not publish it. A book can move beyond
-section 32 only after its events, states, context and spoiler timing have been
+section 53 only after its events, states, context and spoiler timing have been
 migrated to production and the semantic gate passes at the new boundary.
 
 ## Remaining work
 
-1. Migrate Books IV–VII from their canonical manifests into production, one
-   complete book at a time.
+1. Migrate Book V (*Sky*), sections 54–79, from its canonical manifest into
+   production as one complete publication unit; then repeat for Books VI–VII.
 2. Extend identities, relationships and progressive context only after their
    reveal timing has been audited for the target book.
 3. Geocode only locations supported by sufficiently precise authoritative
