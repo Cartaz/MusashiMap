@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
@@ -157,6 +157,54 @@
       "reader_knows_canonical_identity": true,
       "status": "house_name",
       "change_reason": "yoshiwara_house_name_used_in_current_chapter"
+    },
+    {
+      "character_id": "daizo",
+      "display_name": "Daizō",
+      "alias": null,
+      "valid_from_chapter": "b5c2",
+      "valid_until_chapter": "b6c13",
+      "valid_from_section": 55,
+      "valid_until_section": 92,
+      "reader_knows_canonical_identity": false,
+      "status": "assumed_name",
+      "change_reason": "fugitive_identity_not_yet_revealed"
+    },
+    {
+      "character_id": "daizo",
+      "display_name": "Mizoguchi Shinano",
+      "alias": "Daizō of Narai",
+      "valid_from_chapter": "b6c14",
+      "valid_until_chapter": null,
+      "valid_from_section": 93,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "revealed_identity",
+      "change_reason": "explicit_reveal_by_takuan"
+    },
+    {
+      "character_id": "mikogami_tenzen",
+      "display_name": "Mikogami Tenzen",
+      "alias": null,
+      "valid_from_chapter": "b3c7",
+      "valid_until_chapter": "b6c7",
+      "valid_from_section": 26,
+      "valid_until_section": 86,
+      "reader_knows_canonical_identity": false,
+      "status": "earlier_name",
+      "change_reason": "later_name_not_yet_linked_to_the_earlier_mentions"
+    },
+    {
+      "character_id": "mikogami_tenzen",
+      "display_name": "Ono Tadaaki",
+      "alias": "Mikogami Tenzen",
+      "valid_from_chapter": "b6c8",
+      "valid_until_chapter": null,
+      "valid_from_section": 87,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "revealed_name",
+      "change_reason": "chapter_explicitly_links_both_names"
     }
   ]
 }

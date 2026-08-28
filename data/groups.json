@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "groups": [
     {"id":"fushimi_workers","name":"Lavoratori di Fushimi","aliases":[],"introduced_section":20,"present_in":[20],"mentioned_in":[]},
     {"id":"ship_passengers","name":"Passeggeri della nave","aliases":[],"introduced_section":22,"present_in":[22,23],"mentioned_in":[]},
@@ -16,10 +16,107 @@
     {"id":"toji_band","name":"Tōji's bandits","aliases":[],"introduced_section":60,"present_in":[60],"mentioned_in":[]},
     {"id":"jinnai_troupe","name":"Jinnai's troupe and staff","aliases":[],"introduced_section":61,"present_in":[61,62],"mentioned_in":[]},
     {"id":"obata_students","name":"Obata School students","aliases":[],"introduced_section":64,"present_in":[64,66],"mentioned_in":[]},
-    {"id":"hangawara_group","name":"Hangawara Association men","aliases":[],"introduced_section":65,"present_in":[65,75,79],"mentioned_in":[]},
+    {
+      "id": "hangawara_group",
+      "name": "Hangawara Association men",
+      "aliases": [],
+      "introduced_section": 65,
+      "present_in": [
+        65,
+        75,
+        79,
+        81,
+        87
+      ],
+      "mentioned_in": []
+    },
     {"id":"mountain_bandits","name":"Hitachi mountain brigands","aliases":[],"introduced_section":69,"present_in":[69],"mentioned_in":[]},
     {"id":"hotengahara_villagers","name":"Hōtengahara-area villagers","aliases":[],"introduced_section":69,"present_in":[69,70],"mentioned_in":[]},
-    {"id":"hosokawa_retainers","name":"Hosokawa retainers","aliases":[],"introduced_section":70,"present_in":[70],"mentioned_in":[]},
-    {"id":"edo_horse_traders","name":"Edo horse traders","aliases":[],"introduced_section":71,"present_in":[71],"mentioned_in":[]}
+    {
+      "id": "hosokawa_retainers",
+      "name": "Hosokawa retainers",
+      "aliases": [],
+      "introduced_section": 70,
+      "present_in": [
+        70,
+        80,
+        82,
+        94
+      ],
+      "mentioned_in": []
+    },
+    {"id":"edo_horse_traders","name":"Edo horse traders","aliases":[],"introduced_section":71,"present_in":[71],"mentioned_in":[]},
+    {
+      "id": "ono_students",
+      "name": "Ono dojo students",
+      "aliases": [],
+      "introduced_section": 87,
+      "present_in": [
+        87
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "musashino_farmers",
+      "name": "Musashino farmers",
+      "aliases": [],
+      "introduced_section": 84,
+      "present_in": [
+        84,
+        88,
+        91
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "mitsumine_staff",
+      "name": "Mitsumine priests, dancers and musicians",
+      "aliases": [],
+      "introduced_section": 89,
+      "present_in": [
+        89
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "baiken_ambush_group",
+      "name": "Baiken ambush group",
+      "aliases": [],
+      "introduced_section": 90,
+      "present_in": [
+        90
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "chichibu_officials",
+      "name": "Chichibu officials and guards",
+      "aliases": [],
+      "introduced_section": 90,
+      "present_in": [
+        90
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "daizo_confederates",
+      "name": "Daizō's Kiso confederates",
+      "aliases": [],
+      "introduced_section": 91,
+      "present_in": [
+        91
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "edo_castle_workers",
+      "name": "Edo Castle workers and guards",
+      "aliases": [],
+      "introduced_section": 93,
+      "present_in": [
+        93
+      ],
+      "mentioned_in": []
+    }
   ]
 }

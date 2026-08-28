@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "coordinate_policy": "Coordinates are modern identification aids only. They must never be interpreted as exact historical positions unless historical_match says otherwise. Every mapped location must carry an explicit precision/confidence classification. Narrative sites with approximate_area coordinates use a deterministic point within an approved radius; the radius is stored explicitly. C/D narrative locations remain coordinate-null unless stronger evidence is established.",
   "locations": [
     {"id":"sekigahara","name":"Sekigahara","type":"area","introduced_section":1,"coordinates":[35.3705,136.46164],"coordinate_precision":"exact","geographic_confidence":"exact","historical_match":"strong","modern_name_jp":"関ケ原","modern_name_romaji":"Sekigahara","map_note":"Narrative opening: battlefield region."},
@@ -141,7 +141,22 @@
     {"id":"yakuoin_takao","name":"Yakuōin at Mount Takao","type":"temple","introduced_section":61,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"official_name_and_locality","historical_match":"unresolved","map_note":"Book V staging status: official name and locality.","source_chapters":["b5c8"]},
     {"id":"hachioji","name":"Hachiōji inn town and old fortress","type":"town_area","introduced_section":61,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"city_area_only","historical_match":"unresolved","map_note":"Book V staging status: city area only.","source_chapters":["b5c8","b5c9"]},
     {"id":"hachioji_mound","name":"Head-burying mound near Hachiōji","type":"narrative_site","introduced_section":62,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"exact_site_unresolved","historical_match":"unresolved","map_note":"Book V staging status: exact site unresolved.","source_chapters":["b5c9"]},
-    {"id":"takanawa_highroad","name":"Takanawa highroad","type":"route","introduced_section":62,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"historical_corridor_not_reconstructed","historical_match":"unresolved","map_note":"Book V staging status: historical corridor not reconstructed.","source_chapters":["b5c9","b5c10"]},
+    {
+      "id": "takanawa_highroad",
+      "name": "Takanawa highroad",
+      "type": "route",
+      "introduced_section": 62,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_corridor_not_reconstructed",
+      "historical_match": "unresolved",
+      "map_note": "Book V staging status: historical corridor not reconstructed.",
+      "source_chapters": [
+        "b5c9",
+        "b5c10",
+        "b6c3"
+      ]
+    },
     {"id":"nihombashi","name":"Nihombashi","type":"district_bridge","introduced_section":63,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"official_historical_correspondence","historical_match":"unresolved","map_note":"Book V staging status: official historical correspondence.","source_chapters":["b5c10","b5c26"]},
     {"id":"bakurocho_yajibei","name":"Yajibei house in Bakurōchō","type":"private_residence","introduced_section":63,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"unmappable","historical_match":"unresolved","map_note":"Book V staging status: unmappable.","source_chapters":["b5c10","b5c11","b5c12","b5c22","b5c23"]},
     {"id":"sumida_river","name":"Sumida River and ferry","type":"river_route","introduced_section":64,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"official_historical_corridor_not_point","historical_match":"unresolved","map_note":"Book V staging status: official historical corridor not point.","source_chapters":["b5c11","b5c18"]},
@@ -165,10 +180,364 @@
     {"id":"higakubo_yagyu","name":"Yagyū residence at Higakubo","type":"private_residence","introduced_section":73,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"exact_site_unresolved","historical_match":"unresolved","map_note":"Book V staging status: exact site unresolved.","source_chapters":["b5c20","b5c21"]},
     {"id":"dogen_slope","name":"Dōgen Slope and Shibuya valley road","type":"route","introduced_section":74,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"historical_correspondence_unverified","historical_match":"unresolved","map_note":"Book V staging status: historical correspondence unverified.","source_chapters":["b5c21"]},
     {"id":"sangenya_route","name":"Route toward Sangen'ya / Oyama highroad","type":"route","introduced_section":74,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"route_not_reconstructed","historical_match":"unresolved","map_note":"Book V staging status: route not reconstructed.","source_chapters":["b5c21"]},
-    {"id":"isarago_hill","name":"Isarago Hill / Tsukinomisaki","type":"area","introduced_section":75,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"historical_extent_unresolved","historical_match":"unresolved","map_note":"Book V staging status: historical extent unresolved.","source_chapters":["b5c22"]},
+    {
+      "id": "isarago_hill",
+      "name": "Isarago Hill / Tsukinomisaki",
+      "type": "area",
+      "introduced_section": 75,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_extent_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book V staging status: historical extent unresolved.",
+      "source_chapters": [
+        "b5c22",
+        "b6c2",
+        "b6c3"
+      ]
+    },
     {"id":"yanagihara","name":"Yanagihara dike, horse market and firebreak","type":"urban_area","introduced_section":76,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"exact_scene_unresolved","historical_match":"unresolved","map_note":"Book V staging status: exact scene unresolved.","source_chapters":["b5c23"]},
     {"id":"ushigafuchi_kudan","name":"Ushigafuchi and wooded Kudan Hill","type":"area","introduced_section":79,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"historical_landscape_not_point","historical_match":"unresolved","map_note":"Book V staging status: historical landscape not point.","source_chapters":["b5c26"]},
     {"id":"akagi_myojin","name":"Akagi Myōjin Shrine area, Ushigome","type":"shrine_area","introduced_section":79,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"official_historical_correspondence_area_only","historical_match":"unresolved","map_note":"Book V staging status: official historical correspondence area only.","source_chapters":["b5c26"]},
-    {"id":"hojo_ushigome","name":"Hōjō family house in Ushigome","type":"private_residence","introduced_section":79,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"unmappable","historical_match":"unresolved","map_note":"Book V staging status: unmappable.","source_chapters":["b5c26"]}
+    {
+      "id": "hojo_ushigome",
+      "name": "Hōjō family house in Ushigome",
+      "type": "private_residence",
+      "introduced_section": 79,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book V staging status: unmappable.",
+      "source_chapters": [
+        "b5c26",
+        "b6c6",
+        "b6c13",
+        "b6c15",
+        "b6c16",
+        "b6c17"
+      ]
+    },
+    {
+      "id": "hosokawa_edo_residence",
+      "name": "Hosokawa Edo residence and archery range",
+      "type": "residence",
+      "introduced_section": 80,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: historical exact site unresolved.",
+      "source_chapters": [
+        "b6c1",
+        "b6c3"
+      ]
+    },
+    {
+      "id": "tsukinomisaki",
+      "name": "Tsukinomisaki",
+      "type": "historic_scenic_area",
+      "introduced_section": 81,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_area_context_validated_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: official area context validated not point.",
+      "source_chapters": [
+        "b6c2",
+        "b6c4"
+      ]
+    },
+    {
+      "id": "goroji_house",
+      "name": "Gorōji's house near Tokiwa Bridge",
+      "type": "private_residence",
+      "introduced_section": 82,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c3"
+      ]
+    },
+    {
+      "id": "donjiki_eatery",
+      "name": "Donjiki vacant-lot eatery",
+      "type": "narrative_site",
+      "introduced_section": 83,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c4"
+      ]
+    },
+    {
+      "id": "matahachi_nishikubo",
+      "name": "Matahachi's Nishikubo tenement",
+      "type": "private_residence",
+      "introduced_section": 83,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c4",
+        "b6c7"
+      ]
+    },
+    {
+      "id": "musashino_cabin",
+      "name": "Musashi's Musashino cabin",
+      "type": "narrative_site",
+      "introduced_section": 84,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c5",
+        "b6c9",
+        "b6c12",
+        "b6c15",
+        "b6c16",
+        "b6c17"
+      ]
+    },
+    {
+      "id": "daizo_pawnshop",
+      "name": "Daizō's pawnshop and storehouse",
+      "type": "narrative_site",
+      "introduced_section": 86,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c7",
+        "b6c12",
+        "b6c14"
+      ]
+    },
+    {
+      "id": "hamacho_house",
+      "name": "Osugi's rented Hamachō house",
+      "type": "private_residence",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c8"
+      ]
+    },
+    {
+      "id": "ono_dojo",
+      "name": "Ono dojo at Saikachi Slope, Kanda Hill",
+      "type": "dojo",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: historical exact site unresolved.",
+      "source_chapters": [
+        "b6c8"
+      ]
+    },
+    {
+      "id": "tanashi",
+      "name": "Tanashi",
+      "type": "historic_locality",
+      "introduced_section": 88,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_historical_context_validated_area_only",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: official historical context validated area only.",
+      "source_chapters": [
+        "b6c9"
+      ]
+    },
+    {
+      "id": "kotesashigahara",
+      "name": "Kotesashigahara and Iruma River corridor",
+      "type": "historic_battlefield_route",
+      "introduced_section": 88,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_battlefield_context_validated_route_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: official battlefield context validated route unresolved.",
+      "source_chapters": [
+        "b6c9"
+      ]
+    },
+    {
+      "id": "mitsumine_shrine",
+      "name": "Mitsumine Shrine and Kannon'in",
+      "type": "shrine_complex",
+      "introduced_section": 89,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_name_and_mountain_context_validated_no_point_imported",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: official name and mountain context validated no point imported.",
+      "source_chapters": [
+        "b6c10",
+        "b6c11"
+      ]
+    },
+    {
+      "id": "oinu_teahouse",
+      "name": "Oinu Teahouse",
+      "type": "narrative_site",
+      "introduced_section": 90,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c11",
+        "b6c12"
+      ]
+    },
+    {
+      "id": "kosaruzawa_bridge",
+      "name": "Kosaruzawa bridge and ambush site",
+      "type": "narrative_site",
+      "introduced_section": 90,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "toponym_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: toponym unresolved.",
+      "source_chapters": [
+        "b6c11"
+      ]
+    },
+    {
+      "id": "shomaru_pass",
+      "name": "Shōmaru Pass",
+      "type": "mountain_route",
+      "introduced_section": 91,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "route_not_reconstructed",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: route not reconstructed.",
+      "source_chapters": [
+        "b6c12"
+      ]
+    },
+    {
+      "id": "ogimachiya",
+      "name": "Ogimachiya",
+      "type": "historic_locality",
+      "introduced_section": 91,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "toponym_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: toponym unresolved.",
+      "source_chapters": [
+        "b6c12"
+      ]
+    },
+    {
+      "id": "head_burying_mound",
+      "name": "Forest of Head-burying Mound near Kawagoe",
+      "type": "narrative_site",
+      "introduced_section": 91,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: unmappable.",
+      "source_chapters": [
+        "b6c12"
+      ]
+    },
+    {
+      "id": "shojuan",
+      "name": "Shōjuan at Azabu",
+      "type": "temple",
+      "introduced_section": 91,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_correspondence_unverified",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: historical correspondence unverified.",
+      "source_chapters": [
+        "b6c12"
+      ]
+    },
+    {
+      "id": "edo_castle",
+      "name": "Edo Castle, Fukiage and Momiji Hill",
+      "type": "castle_complex",
+      "introduced_section": 86,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_historical_complex_validated_scene_point_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: official historical complex validated scene point unresolved.",
+      "source_chapters": [
+        "b6c7",
+        "b6c14"
+      ]
+    },
+    {
+      "id": "otemachi_prison",
+      "name": "Commissioner's residence and prison near Otemachi/Tokiwa Bridge",
+      "type": "administrative_site",
+      "introduced_section": 93,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: historical exact site unresolved.",
+      "source_chapters": [
+        "b6c14"
+      ]
+    },
+    {
+      "id": "nobidome",
+      "name": "Nobidome village",
+      "type": "translated_or_anachronistic_locality",
+      "introduced_section": 94,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "blocked_possible_1655_anachronism",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: blocked possible 1655 anachronism.",
+      "source_chapters": [
+        "b6c15"
+      ]
+    },
+    {
+      "id": "wadakura_pavilion",
+      "name": "Wadakura Gate Reception Pavilion, Orchid Room",
+      "type": "castle_site",
+      "introduced_section": 95,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_gate_context_validated_narrative_room_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VI staging status: official gate context validated narrative room unresolved.",
+      "source_chapters": [
+        "b6c16"
+      ]
+    }
   ]
 }
