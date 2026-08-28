@@ -160,6 +160,44 @@ test("Book V names follow the Sannosuke renaming and Hanagiri house-name windows
   assert.equal((iori.aliases ?? []).includes("Sannosuke"), false);
 });
 
+test("Book VI reveals identities without promoting inference or temporary names globally", async () => {
+  const { getDisplayCharacterName } = await import("./reader-progress.js");
+  const characters = JSON.parse(readFileSync(new URL("../data/characters.json", import.meta.url))).characters;
+  const identities = JSON.parse(readFileSync(new URL("../data/identities.json", import.meta.url))).identities;
+  const relationships = JSON.parse(readFileSync(new URL("../data/relationships.json", import.meta.url))).relationships;
+  const events = JSON.parse(readFileSync(new URL("../data/events.json", import.meta.url))).events;
+  const states = JSON.parse(readFileSync(new URL("../data/character-states.json", import.meta.url))).character_states;
+  const daizo = characters.find(character => character.id === "daizo");
+  const tadaaki = characters.find(character => character.id === "mikogami_tenzen");
+  const jotaro = characters.find(character => character.id === "jotaro");
+
+  assert.equal(getDisplayCharacterName(daizo, 92, identities), "Daizō");
+  assert.equal(getDisplayCharacterName(daizo, 93, identities), "Mizoguchi Shinano");
+  assert.equal(getDisplayCharacterName(tadaaki, 86, identities), "Mikogami Tenzen");
+  assert.equal(getDisplayCharacterName(tadaaki, 87, identities), "Ono Tadaaki");
+  assert.equal((daizo.aliases ?? []).includes("Mizoguchi Shinano"), false);
+  assert.equal((jotaro.aliases ?? []).includes("Jōta"), false);
+  assert.equal(relationships.some(({ from, to }) => [from, to].includes("iori") && [from, to].includes("otsu")), false);
+
+  const preRevealProse = [
+    ...events.filter(entry => entry.section < 93).map(entry => entry.description),
+    ...states.filter(entry => entry.section < 93).map(entry => entry.activity)
+  ].join("\n");
+  assert.doesNotMatch(preRevealProse, /Mizoguchi Shinano/i);
+  assert.equal(states.find(entry => entry.character === "gion_toji" && entry.section === 90)?.certainty, "strong_inference");
+});
+
+test("Book VI mixed scenes assign movement only to actual travelers", () => {
+  const events = JSON.parse(readFileSync(new URL("../data/events.json", import.meta.url))).events;
+  const byId = id => events.find(event => event.id === id);
+
+  assert.deepEqual(byId("b6c7-e01").characters, ["akemi"]);
+  assert.equal(byId("b6c8-e03").movement_status, null);
+  assert.deepEqual(byId("b6c12-e05").characters, ["gonnosuke", "iori"]);
+  assert.deepEqual(byId("b6c16-e05").characters, ["musashi"]);
+  assert.deepEqual(byId("b6c17-e04").characters, ["musashi"]);
+});
+
 test("event, state and wiki evidence can safely establish an introduction", () => {
   const character = { id: "mentioned", present_in: [] };
   const evidence = {

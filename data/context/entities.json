@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "description": "Historical and contextual entities referenced by Books I–V. These records are separate from narrative presence: the local novel corpus supplies the trigger, while authoritative external sources supply concise historical context. first_section is a global spoiler threshold.",
+  "version": 8,
+  "description": "Historical and contextual entities referenced by Books I–VI. These records are separate from narrative presence: the local novel corpus supplies the trigger, while authoritative external sources supply concise historical context. first_section is a global spoiler threshold.",
   "book2_exclusions": [
     {"names":["Yoshioka Kempō","Yoshioka school founders"],"reason":"Historical school context exists, but the exact personal identity and chronology used by the novel were not supported strongly enough by an authoritative one-to-one source."},
     {"names":["Kiichi Hōgen"],"reason":"The reference is legendary/literary; it was not converted into a historical-person record."},
@@ -29,6 +29,32 @@
     {"names":["Musashi as Masana","Akemi as Hanagiri","Sannosuke / Misawa Iori"],"reason":"Names are represented only at their progressive narrative windows and are not promoted to spoiler-prone global aliases."},
     {"names":["Matahachi–Otsū coercion","Hyōgo's affection for Otsū"],"reason":"The abduction is not allowed to overwrite the earlier relationship history, and Hyōgo's unspoken affection is not made reciprocal."},
     {"names":["reported journeys and rescues"],"reason":"Retrospective reports remain references and do not create present-time physical movement or co-presence."}
+  ],
+  "book6_exclusions": [
+    {
+      "names": [
+        "private residences, narrative cabins, teahouses and ambush sites"
+      ],
+      "reason": "Broad area history cannot establish exact fictional or private scene points; these locations remain coordinate-free."
+    },
+    {
+      "names": [
+        "Nobidome village in the Book VI timeframe"
+      ],
+      "reason": "Niiza City associates the documented development with the 1655 canal works, so the translated place name is retained but mapping remains blocked as a possible anachronism."
+    },
+    {
+      "names": [
+        "Iori–Otsū sibling relationship"
+      ],
+      "reason": "The pouch and flute create a strong reader inference in section 96, but the chapter does not give Iori an explicit identification or reunion; no canonical relationship is published."
+    },
+    {
+      "names": [
+        "Gion Tōji's death in section 90"
+      ],
+      "reason": "The ambush chapter implies he is among Gonnosuke's victims; the identification through Oko's husband becomes explicit only in section 91."
+    }
   ],
   "entities": [
     {"id":"kobayakawa_hideaki","name":"Kobayakawa Hideaki","type":"historical_person","period":"1582–1602","summary":"Daimyo who defected from the Western Army at Sekigahara and attacked Otani Yoshitsugu's forces, contributing decisively to Tokugawa Ieyasu's victory.","relevance":"contextual","sources":["NPS Battle of Sekigahara","Gifu Sekigahara Battlefield Memorial Museum"]},
@@ -76,6 +102,104 @@
     {"id":"kanda_myojin_historical","name":"Kanda Myōjin","type":"historical_institution","first_section":64,"summary":"The shrine's official history documents its early-Edo relocations and enshrinement tradition. Daizō's reported donation is not independently authenticated.","relevance":"contextual","sources":["Kanda Myōjin"],"source_urls":["https://www.kandamyoujin.or.jp/what/"]},
     {"id":"tone_river_works_historical","name":"Tone River early-modern works","type":"historical_event_context","first_section":67,"summary":"MLIT describes the early-modern eastward diversion of the Tone as a long sequence of works tied to flood control, new fields and transport. This does not identify fictional Hōtengahara.","relevance":"contextual","sources":["MLIT Kanto Regional Development Bureau"],"source_urls":["https://www.ktr.mlit.go.jp/tonejo/tonejo00185.html"]},
     {"id":"azabu_iigura_historical","name":"Azabu and Iigura","type":"historical_place_context","first_section":73,"summary":"Minato City documents Azabu and Iigura as historical place names. The novel's Yagyū residence and Iori's precise route are not geolocated from this correspondence.","relevance":"contextual","sources":["Minato City"],"source_urls":["https://www.city.minato.tokyo.jp/kouhou/kuse/gaiyo/chimerekishi/index-azabu.html"]},
-    {"id":"akagi_ushigome_historical","name":"Akagi shrine and Ushigome","type":"historical_place_context","first_section":79,"summary":"Shinjuku City's cultural register supports the Akagi shrine tradition in Ushigome while cautioning that parts of the received chronology are estimated. The Hōjō house remains unmapped.","relevance":"contextual","sources":["Shinjuku City"],"source_urls":["https://www.city.shinjuku.lg.jp/content/000360259.pdf"]}
+    {"id":"akagi_ushigome_historical","name":"Akagi shrine and Ushigome","type":"historical_place_context","first_section":79,"summary":"Shinjuku City's cultural register supports the Akagi shrine tradition in Ushigome while cautioning that parts of the received chronology are estimated. The Hōjō house remains unmapped.","relevance":"contextual","sources":["Shinjuku City"],"source_urls":["https://www.city.shinjuku.lg.jp/content/000360259.pdf"]},
+    {
+      "id": "takanawa_isarago_historical",
+      "name": "Takanawa and Isarago",
+      "type": "historical_place_context",
+      "first_section": 81,
+      "summary": "Minato City's district history documents Takanawa and the Edo-period Isarago place name. It does not locate the novel's cemetery or private lodging.",
+      "relevance": "contextual",
+      "sources": [
+        "Minato City"
+      ],
+      "source_urls": [
+        "https://www.city.minato.tokyo.jp/kouhou/kuse/gaiyo/chimerekishi/index-takanawa.html"
+      ]
+    },
+    {
+      "id": "tanashi_historical",
+      "name": "Tanashi",
+      "type": "historical_place_context",
+      "first_section": 88,
+      "summary": "Nishitokyo City's history supports Tanashi as an old locality name. The novel's overnight stop remains an unlocated narrative site.",
+      "relevance": "contextual",
+      "sources": [
+        "Nishitokyo City"
+      ],
+      "source_urls": [
+        "https://www.city.nishitokyo.lg.jp/siseizyoho/syokai/ayumi/oitati_tanasi.html"
+      ]
+    },
+    {
+      "id": "kotesashigahara_historical",
+      "name": "Kotesashigahara battlefield",
+      "type": "historical_place_context",
+      "first_section": 88,
+      "summary": "Tokorozawa City identifies Kotesashigahara as a battlefield of the 1333 Kamakura campaign. This supports only the broad battlefield context, not the novel's bones or walking route.",
+      "relevance": "contextual",
+      "sources": [
+        "Tokorozawa City"
+      ],
+      "source_urls": [
+        "https://www.city.tokorozawa.saitama.jp/iitokoro/enjoy/bunkakyoyo/bunkazai/kenshiteibunkazai/bunzai_20100420150030643.html"
+      ]
+    },
+    {
+      "id": "mitsumine_historical",
+      "name": "Mitsumine Shrine",
+      "type": "historical_place_context",
+      "first_section": 89,
+      "summary": "Chichibu City's guide describes Mitsumine Shrine as a mountain-worship site at about 1,100 metres. It does not validate the novel's treasure theft, lodging or ambush route.",
+      "relevance": "contextual",
+      "sources": [
+        "Chichibu City"
+      ],
+      "source_urls": [
+        "https://navi.city.chichibu.lg.jp/travel/ja/culture/2018/01/722/"
+      ]
+    },
+    {
+      "id": "edo_castle_historical",
+      "name": "Former Edo Castle complex",
+      "type": "historical_place_context",
+      "first_section": 86,
+      "summary": "The Imperial Household Agency identifies the present palace grounds and East Gardens with the former Edo Castle complex. No modern point is substituted for the novel's Fukiage, woodshed or prison scenes.",
+      "relevance": "contextual",
+      "sources": [
+        "Imperial Household Agency"
+      ],
+      "source_urls": [
+        "https://www.kunaicho.go.jp/learn/institution/shisetsu/kokyo/index.html"
+      ]
+    },
+    {
+      "id": "nobidome_historical_warning",
+      "name": "Nobidome historical warning",
+      "type": "historical_place_context",
+      "first_section": 94,
+      "summary": "Niiza City's account ties Nobidome canal and village development to 1655. Because that is later than the narrative frame, the translated locality is preserved without a mapped point.",
+      "relevance": "contextual",
+      "sources": [
+        "Niiza City"
+      ],
+      "source_urls": [
+        "https://www.city.niiza.lg.jp/site/bunkazai/nobitomeyousuiwoaruku.html"
+      ]
+    },
+    {
+      "id": "wadakura_historical",
+      "name": "Wadakura Gate",
+      "type": "historical_place_context",
+      "first_section": 95,
+      "summary": "Chiyoda City's official planning material lists Wadakura Gate among Edo Castle remains. The novel's Reception Pavilion and Orchid Room remain unresolved narrative interiors.",
+      "relevance": "contextual",
+      "sources": [
+        "Chiyoda City"
+      ],
+      "source_urls": [
+        "https://www.city.chiyoda.lg.jp/documents/30576/soan-honpen-2-1.pdf"
+      ]
+    }
   ]
 }

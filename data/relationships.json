@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "relationship_types": ["family","friend_ally","acquaintance","master","disciple","rival","enemy","authority","partner_family","servant_employer","faction"],
   "relationships": [
     {"from":"musashi","to":"ogin","type":"family","subtype":"younger_brother_older_sister","first_section":3},
@@ -64,6 +64,41 @@
     {"from":"yagyu_hyogo","to":"otsu","type":"friend_ally","subtype":"protective_friendship_unreciprocated_affection_not_inferred","first_section":73},
     {"from":"zushino_kosuke","to":"hojo_shinzo","type":"friend_ally","subtype":"rescuer_and_caregiver","first_section":76},
     {"from":"kojiro","to":"osugi","type":"friend_ally","subtype":"self_appointed_second_in_revenge_plot","first_section":76},
-    {"from":"obata_kagenori","to":"obata_yogoro","type":"family","subtype":"father_and_son","first_section":78}
+    {"from":"obata_kagenori","to":"obata_yogoro","type":"family","subtype":"father_and_son","first_section":78},
+    {
+      "from": "kojiro",
+      "to": "hosokawa_tadatoshi",
+      "type": "authority",
+      "subtype": "hosokawa_vassal_and_lord",
+      "first_section": 94
+    },
+    {
+      "from": "kojiro",
+      "to": "okatani_goroji",
+      "type": "acquaintance",
+      "subtype": "injured_opponent_then_regular_visitor",
+      "first_section": 82
+    },
+    {
+      "from": "matahachi",
+      "to": "daizo",
+      "type": "authority",
+      "subtype": "assassination_recruiter_and_recruited_agent",
+      "first_section": 86
+    },
+    {
+      "from": "daizo",
+      "to": "jotaro",
+      "type": "family",
+      "subtype": "father_and_son",
+      "first_section": 91
+    },
+    {
+      "from": "gonnosuke",
+      "to": "musashi",
+      "type": "friend_ally",
+      "subtype": "combat_ally_and_advocate",
+      "first_section": 90
+    }
   ]
 }

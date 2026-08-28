@@ -1,8 +1,8 @@
 {
-  "version": 9,
-  "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions, events and named historical works. The novel provides the trigger and reading context; an authoritative external historical source provides a concise historical explanation.",
+  "version": 10,
+  "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions, events, places and named historical works through Book VI. The novel provides the trigger and an authoritative external source provides concise historical context.",
   "source_policy": {
-    "novel_trigger_source": "Canonical local chapter corpus under data/source/book1 through data/source/book5",
+    "novel_trigger_source": "Canonical local chapter corpus under data/source/book1 through data/source/book6",
     "historical_context_source": "authoritative external historical source",
     "rule": "Never merge external historical facts into novel evidence."
   },
@@ -431,6 +431,139 @@
     {"id":"kanda_myojin_historical","type":"historical_institution","display_name":"Kanda Myōjin","novel_trigger":{"first_section":64,"name_in_text":"Kanda Myōjin","context":"A donation record is mentioned while Yajibei's party traces Daizō's reported activity.","spoiler_safe_until":64},"wiki":{"summary":"The shrine's official history documents its early-Edo relocations and enshrinement tradition. Daizō's reported donation is not independently authenticated."},"source":{"title":"What's Kanda Myōjin?","publisher":"Kanda Myōjin","url":"https://www.kandamyoujin.or.jp/what/"}},
     {"id":"tone_river_works_historical","type":"historical_event_context","display_name":"Tone River early-modern works","novel_trigger":{"first_section":67,"name_in_text":"Tone River floodplain","context":"Musashi meets Sannosuke in the flood-prone Hōtengahara setting.","spoiler_safe_until":67},"wiki":{"summary":"MLIT describes the early-modern eastward diversion of the Tone as a long sequence of works tied to flood control, new fields and transport. This does not identify fictional Hōtengahara."},"source":{"title":"Eastward diversion of the Tone River","publisher":"MLIT Kanto Regional Development Bureau","url":"https://www.ktr.mlit.go.jp/tonejo/tonejo00185.html"}},
     {"id":"azabu_iigura_historical","type":"historical_place_context","display_name":"Azabu and Iigura","novel_trigger":{"first_section":73,"name_in_text":"Azabu / Iigura","context":"Iori loses his way while attempting to deliver Musashi's letter to the Yagyū residence.","spoiler_safe_until":73},"wiki":{"summary":"Minato City documents Azabu and Iigura as historical place names. The novel's Yagyū residence and Iori's precise route are not geolocated from this correspondence."},"source":{"title":"History of place names: Azabu area","publisher":"Minato City","url":"https://www.city.minato.tokyo.jp/kouhou/kuse/gaiyo/chimerekishi/index-azabu.html"}},
-    {"id":"akagi_ushigome_historical","type":"historical_place_context","display_name":"Akagi shrine and Ushigome","novel_trigger":{"first_section":79,"name_in_text":"Akagi Myōjin / Ushigome","context":"Musashi brings the recovering Shinzō within sight of his father's house.","spoiler_safe_until":79},"wiki":{"summary":"Shinjuku City's cultural register supports the Akagi shrine tradition in Ushigome while cautioning that parts of the received chronology are estimated. The Hōjō house remains unmapped."},"source":{"title":"Shinjuku cultural-property register","publisher":"Shinjuku City","url":"https://www.city.shinjuku.lg.jp/content/000360259.pdf"}}
+    {"id":"akagi_ushigome_historical","type":"historical_place_context","display_name":"Akagi shrine and Ushigome","novel_trigger":{"first_section":79,"name_in_text":"Akagi Myōjin / Ushigome","context":"Musashi brings the recovering Shinzō within sight of his father's house.","spoiler_safe_until":79},"wiki":{"summary":"Shinjuku City's cultural register supports the Akagi shrine tradition in Ushigome while cautioning that parts of the received chronology are estimated. The Hōjō house remains unmapped."},"source":{"title":"Shinjuku cultural-property register","publisher":"Shinjuku City","url":"https://www.city.shinjuku.lg.jp/content/000360259.pdf"}},
+    {
+      "id": "takanawa_isarago_historical",
+      "type": "historical_place_context",
+      "display_name": "Takanawa and Isarago",
+      "novel_trigger": {
+        "first_section": 81,
+        "name_in_text": "Isarago / Takanawa",
+        "context": "Kojirō's conflict with Yogorō reaches the Isarago cemetery area.",
+        "spoiler_safe_until": 81
+      },
+      "wiki": {
+        "summary": "Minato City's history supports the old Takanawa and Isarago names but does not identify the novel's cemetery or lodging."
+      },
+      "source": {
+        "title": "Minato City district place-name history",
+        "publisher": "Minato City",
+        "url": "https://www.city.minato.tokyo.jp/kouhou/kuse/gaiyo/chimerekishi/index-takanawa.html"
+      }
+    },
+    {
+      "id": "tanashi_historical",
+      "type": "historical_place_context",
+      "display_name": "Tanashi",
+      "novel_trigger": {
+        "first_section": 88,
+        "name_in_text": "Tanashi",
+        "context": "Musashi and Iori stop overnight after the typhoon destroys their cabin.",
+        "spoiler_safe_until": 88
+      },
+      "wiki": {
+        "summary": "Official local history supports Tanashi as an old place name; the overnight house is not identifiable."
+      },
+      "source": {
+        "title": "History of Tanashi",
+        "publisher": "Nishitokyo City",
+        "url": "https://www.city.nishitokyo.lg.jp/siseizyoho/syokai/ayumi/oitati_tanasi.html"
+      }
+    },
+    {
+      "id": "kotesashigahara_historical",
+      "type": "historical_place_context",
+      "display_name": "Kotesashigahara battlefield",
+      "novel_trigger": {
+        "first_section": 88,
+        "name_in_text": "Kotesashigahara",
+        "context": "Iori encounters old battle bones along the route across the plain.",
+        "spoiler_safe_until": 88
+      },
+      "wiki": {
+        "summary": "Tokorozawa City documents the 1333 battlefield. The novel's bones and precise route remain narrative."
+      },
+      "source": {
+        "title": "Kotesashigahara ancient battlefield",
+        "publisher": "Tokorozawa City",
+        "url": "https://www.city.tokorozawa.saitama.jp/iitokoro/enjoy/bunkakyoyo/bunkazai/kenshiteibunkazai/bunzai_20100420150030643.html"
+      }
+    },
+    {
+      "id": "mitsumine_historical",
+      "type": "historical_place_context",
+      "display_name": "Mitsumine Shrine",
+      "novel_trigger": {
+        "first_section": 89,
+        "name_in_text": "Mitsumine Shrine",
+        "context": "Musashi searches donor records and observes the shrine festival musicians.",
+        "spoiler_safe_until": 89
+      },
+      "wiki": {
+        "summary": "Chichibu City's guide describes a mountain-worship shrine at about 1,100 metres; it does not authenticate the novel's theft or ambush."
+      },
+      "source": {
+        "title": "Mitsumine Shrine",
+        "publisher": "Chichibu City",
+        "url": "https://navi.city.chichibu.lg.jp/travel/ja/culture/2018/01/722/"
+      }
+    },
+    {
+      "id": "edo_castle_historical",
+      "type": "historical_place_context",
+      "display_name": "Former Edo Castle complex",
+      "novel_trigger": {
+        "first_section": 86,
+        "name_in_text": "Edo Castle",
+        "context": "Daizō's proposed assassination assigns Matahachi an intended destination inside the castle complex.",
+        "spoiler_safe_until": 86
+      },
+      "wiki": {
+        "summary": "The palace grounds include the former Edo Castle complex. Narrative interiors and routes remain unmapped."
+      },
+      "source": {
+        "title": "Imperial Palace facilities",
+        "publisher": "Imperial Household Agency",
+        "url": "https://www.kunaicho.go.jp/learn/institution/shisetsu/kokyo/index.html"
+      }
+    },
+    {
+      "id": "nobidome_historical_warning",
+      "type": "historical_place_context",
+      "display_name": "Nobidome historical warning",
+      "novel_trigger": {
+        "first_section": 94,
+        "name_in_text": "Nobidome",
+        "context": "Iori meets the Hosokawa advance party at the locality named Nobidome in the translation.",
+        "spoiler_safe_until": 94
+      },
+      "wiki": {
+        "summary": "Niiza City ties documented Nobidome development to 1655, later than the narrative frame; mapping is therefore blocked."
+      },
+      "source": {
+        "title": "Walking the Nobidome canal",
+        "publisher": "Niiza City",
+        "url": "https://www.city.niiza.lg.jp/site/bunkazai/nobitomeyousuiwoaruku.html"
+      }
+    },
+    {
+      "id": "wadakura_historical",
+      "type": "historical_place_context",
+      "display_name": "Wadakura Gate",
+      "novel_trigger": {
+        "first_section": 95,
+        "name_in_text": "Wadakura Gate",
+        "context": "Musashi answers the official summons at the Reception Pavilion near the gate.",
+        "spoiler_safe_until": 95
+      },
+      "wiki": {
+        "summary": "Official material supports Wadakura Gate as an Edo Castle remain, not the novel's Reception Pavilion or Orchid Room."
+      },
+      "source": {
+        "title": "Chiyoda City historical landscape plan",
+        "publisher": "Chiyoda City",
+        "url": "https://www.city.chiyoda.lg.jp/documents/30576/soan-honpen-2-1.pdf"
+      }
+    }
   ]
 }

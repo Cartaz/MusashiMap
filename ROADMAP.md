@@ -25,8 +25,8 @@ testo lascia indeterminato.
 | Ambito | Stato |
 |---|---|
 | Registro sorgenti, 112 capitoli | PASS |
-| Books I–V, sezioni 1–79 | Produzione / PASS |
-| Books VI–VII, 33 capitoli, sezioni 80–112 | Scraping e audit staging / PASS |
+| Books I–VI, sezioni 1–96 | Produzione / PASS |
+| Book VII, 16 capitoli, sezioni 97–112 | Scraping e audit staging / PASS |
 | Reader progress e firewall spoiler | PASS |
 | Validazione semantica produzione | PASS |
 | Contratto e validazione staging | PASS |
@@ -65,18 +65,25 @@ richiede per ogni sezione pubblicata eventi e stati coerenti.
 - Portato il confine atomico da 53 a 79 soltanto dopo una prova completa su
   copia temporanea priva di errori e warning.
 
-### D. Migrazioni Books VI–VII
+### D. Migrazione Book VI — Sun and Moon — completata
+
+- Importati e riconciliati 50 eventi e 35 stati con copertura di tutte le 17 sezioni.
+- Riconciliati Ono Tadaaki/Mikogami Tenzen, Daizō/Mizoguchi Shinano, Kōhei/Baiken e i registri già esistenti.
+- Separati gli eventi misti affinché soltanto i viaggiatori fisici producano geometria.
+- Conservati senza coordinate tutti i 25 luoghi Book VI.
+- Portato il confine atomico da 79 a 96 soltanto dopo una prova completa su copia temporanea priva di errori e warning.
+
+### E. Migrazione Book VII
 
 Ripetere lo stesso ciclo, senza pubblicazioni parziali:
 
 | Libro | Sezioni | Capitoli |
 |---|---:|---:|
-| VI — Sun and Moon | 80–96 | 17 |
 | VII — The Perfect Light | 97–112 | 16 |
 
-La prossima milestone è Book VI (*Sun and Moon*), sezioni 80–96.
+La prossima milestone è Book VII (*The Perfect Light*), sezioni 97–112.
 
-### E. Certificazione e manutenzione
+### F. Certificazione e manutenzione
 
 - Verifica visuale desktop/mobile a ogni nuovo confine.
 - Test del basemap vettoriale su browser con accelerazione grafica.

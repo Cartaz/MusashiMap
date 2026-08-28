@@ -4,13 +4,13 @@ Date: 2026-08-29
 
 ## Current state
 
-Books I (*Earth*), II (*Water*), III (*Fire*), IV (*Wind*) and V (*Sky*) are
-normalized production data. The app publishes sections 1–79 and derives every navigation
+Books I (*Earth*), II (*Water*), III (*Fire*), IV (*Wind*), V (*Sky*) and VI
+(*Sun and Moon*) are normalized production data. The app publishes sections 1–96 and derives every navigation
 and spoiler decision from `data/reader-progress.json`.
 
-Books VI–VII have been read in full, extracted chapter by chapter, reconciled
-across chapters and checked against the local sources. Their 33 chapters remain
-in canonical research staging: they are deliberately not exposed by the app.
+Book VII has been read in full, extracted chapter by chapter, reconciled across
+chapters and checked against the local sources. Its 16 chapters remain in
+canonical research staging and are deliberately not exposed by the app.
 
 ## Completed in this milestone
 
@@ -52,6 +52,16 @@ in canonical research staging: they are deliberately not exposed by the app.
   validation and Pages filtering, with regression coverage for Sannosuke/Iori.
 - Added line-level evidence to critical Book V reveals, deaths, departures and
   time jumps, plus a detailed semantic correction ledger.
+- Migrated Book VI atomically into production: 50 events, 35 chapter states,
+  15 new characters, 22 new locations and seven new groups.
+- Reconciled Ono Tadaaki with Mikogami Tenzen and added progressive identity
+  windows for that reveal and for Daizō/Mizoguchi Shinano.
+- Split mixed Book VI scenes into stationary action and physical movement so
+  non-travelers cannot acquire route geometry.
+- Preserved the section-96 Iori–Otsū clue as a strong inference rather than a
+  canonical relationship or completed reunion.
+- Retained line ranges for every staging event and state and added exact ranges
+  to all production normalization events.
 
 ### Runtime and spoiler safety
 
@@ -81,19 +91,19 @@ in canonical research staging: they are deliberately not exposed by the app.
 
 ```text
 source registry     1 ----------------------------------------------- 112
-production data     1 ----------------------------------------- 79
-research staging                                                   80 --- 112
-reader-visible      1 ----------------------------------------- 79
+production data     1 -------------------------------------------------- 96
+research staging                                                          97 --- 112
+reader-visible      1 -------------------------------------------------- 96
 ```
 
 Registering or scraping a chapter does not publish it. A book can move beyond
-section 79 only after its events, states, context and spoiler timing have been
+section 96 only after its events, states, context and spoiler timing have been
 migrated to production and the semantic gate passes at the new boundary.
 
 ## Remaining work
 
-1. Migrate Book VI (*Sun and Moon*), sections 80–96, from its canonical
-   manifest into production as one complete publication unit; then repeat for Book VII.
+1. Migrate Book VII (*The Perfect Light*), sections 97–112, from its canonical
+   manifest into production as one complete publication unit.
 2. Extend identities, relationships and progressive context only after their
    reveal timing has been audited for the target book.
 3. Geocode only locations supported by sufficiently precise authoritative
