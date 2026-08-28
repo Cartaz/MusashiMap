@@ -2,14 +2,45 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
+import { validateMovementEvent } from "./movement-contract.js";
+
 import {
   createReaderProgress,
   getCharacterIntroductionSection,
+  getProgressiveDisplayName,
   getReaderSnapshot,
   getRelevantHistoricalWiki,
   getVisibleCharacters,
   resolveCharacterPosition
 } from "./reader-progress.js";
+
+test("CLI and browser share one movement evidence contract", () => {
+  assert.deepEqual(validateMovementEvent({
+    characters: ["traveler"],
+    movement_status: "confirmed_route",
+    destination_label: "east toward Edo"
+  }), []);
+  assert.deepEqual(validateMovementEvent({
+    characters: ["traveler"],
+    movement_status: "confirmed_route"
+  }), ["route_evidence_required"]);
+  assert.deepEqual(validateMovementEvent({
+    characters: [],
+    origin: "reported-place",
+    movement_status: null
+  }), ["movement_status_required", "physical_participant_required"]);
+});
+
+test("wiki display names follow their narrative reveal threshold", () => {
+  const entry = {
+    display_name: "Giovane sconosciuto",
+    display_name_by_section: { 22: "Giovane sconosciuto", 25: "Sasaki Kojirō" }
+  };
+
+  assert.equal(getProgressiveDisplayName(entry, 24), "Giovane sconosciuto");
+  assert.equal(getProgressiveDisplayName(entry, 25), "Sasaki Kojirō");
+  assert.equal(getProgressiveDisplayName({ display_name: "Nome stabile" }, 25), "Nome stabile");
+});
 
 test("reader-progress is authoritative over chapters prepared for future books", () => {
   const chapters = { sections: Array.from({ length: 19 }, (_, index) => ({ number: index + 1 })) };
@@ -112,6 +143,21 @@ test("Matahachi's impersonation ends in the section where it is exposed", async 
   assert.equal(getDisplayCharacterName(matahachi, 35, identities), "Hon'den Matahachi");
   assert.equal((matahachi.aliases ?? []).some(alias => /Inugami/i.test(alias)), false);
   assert.equal(identities.some(identity => identity.character_id === "matahachi" && /Inugami/i.test(identity.display_name)), false);
+});
+
+test("Book V names follow the Sannosuke renaming and Hanagiri house-name windows", async () => {
+  const { getDisplayCharacterName } = await import("./reader-progress.js");
+  const characters = JSON.parse(readFileSync(new URL("../data/characters.json", import.meta.url))).characters;
+  const identities = JSON.parse(readFileSync(new URL("../data/identities.json", import.meta.url))).identities;
+  const iori = characters.find(character => character.id === "iori");
+  const akemi = characters.find(character => character.id === "akemi");
+
+  assert.equal(getDisplayCharacterName(iori, 67, identities), "Sannosuke");
+  assert.equal(getDisplayCharacterName(iori, 68, identities), "Misawa Iori");
+  assert.equal(getDisplayCharacterName(akemi, 64, identities), "Akemi");
+  assert.match(getDisplayCharacterName(akemi, 65, identities), /Hanagiri/);
+  assert.equal(getDisplayCharacterName(akemi, 66, identities), "Akemi");
+  assert.equal((iori.aliases ?? []).includes("Sannosuke"), false);
 });
 
 test("event, state and wiki evidence can safely establish an introduction", () => {

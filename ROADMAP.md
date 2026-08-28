@@ -20,13 +20,13 @@ testo lascia indeterminato.
 4. La corrispondenza con l'edizione Luni resta sospesa finché non sarà
    disponibile il suo indice effettivo.
 
-## 3. Stato al 28 agosto 2026
+## 3. Stato al 29 agosto 2026
 
 | Ambito | Stato |
 |---|---|
 | Registro sorgenti, 112 capitoli | PASS |
-| Books I–IV, sezioni 1–53 | Produzione / PASS |
-| Books V–VII, 59 capitoli, sezioni 54–112 | Scraping e audit staging / PASS |
+| Books I–V, sezioni 1–79 | Produzione / PASS |
+| Books VI–VII, 33 capitoli, sezioni 80–112 | Scraping e audit staging / PASS |
 | Reader progress e firewall spoiler | PASS |
 | Validazione semantica produzione | PASS |
 | Contratto e validazione staging | PASS |
@@ -56,19 +56,27 @@ richiede per ogni sezione pubblicata eventi e stati coerenti.
 - Portato il confine atomico da 32 a 53 soltanto dopo una prova completa su
   copia temporanea priva di errori e warning.
 
-### C. Migrazioni Books V–VII
+### C. Migrazione Book V — Sky — completata
+
+- Importati 105 eventi e derivati 86 stati progressivi dalle fonti locali,
+  mantenendo intatto il contratto runtime nonostante il ledger staging sparso.
+- Riconciliati identità, relazioni, movimenti, salti temporali e contesto.
+- Conservati senza coordinate tutti i 48 luoghi Book V.
+- Portato il confine atomico da 53 a 79 soltanto dopo una prova completa su
+  copia temporanea priva di errori e warning.
+
+### D. Migrazioni Books VI–VII
 
 Ripetere lo stesso ciclo, senza pubblicazioni parziali:
 
 | Libro | Sezioni | Capitoli |
 |---|---:|---:|
-| V — Sky | 54–79 | 26 |
 | VI — Sun and Moon | 80–96 | 17 |
 | VII — The Perfect Light | 97–112 | 16 |
 
-La prossima milestone è Book V (*Sky*), sezioni 54–79.
+La prossima milestone è Book VI (*Sun and Moon*), sezioni 80–96.
 
-### D. Certificazione e manutenzione
+### E. Certificazione e manutenzione
 
 - Verifica visuale desktop/mobile a ogni nuovo confine.
 - Test del basemap vettoriale su browser con accelerazione grafica.

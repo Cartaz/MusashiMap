@@ -74,6 +74,22 @@ export function getDisplayCharacterName(character, section, identities = []) {
   return character?.name ?? "Personaggio sconosciuto";
 }
 
+export function getProgressiveValue(values, section) {
+  const currentSection = asInteger(section);
+  if (currentSection === null) return null;
+  const eligible = Object.keys(values ?? {})
+    .map(asInteger)
+    .filter(fromSection => fromSection !== null && fromSection <= currentSection);
+  if (!eligible.length) return null;
+  return values[String(Math.max(...eligible))] ?? null;
+}
+
+export function getProgressiveDisplayName(entry, section) {
+  return getProgressiveValue(entry?.display_name_by_section, section)
+    ?? entry?.display_name
+    ?? "Personaggio sconosciuto";
+}
+
 // A name can be revealed only after at least one project-local narrative
 // record introduces it. Missing evidence is treated conservatively: the
 // character remains hidden instead of falling back to the first section.

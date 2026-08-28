@@ -98,8 +98,10 @@ for (const entry of microWiki) {
   if (!inRange(first, minimum, maximum) || !inRange(safe, minimum, maximum)) errors.push(`Micro-wiki ${entry.id} crosses the publication boundary.`);
 }
 for (const [id, entry] of Object.entries(characterWiki)) {
-  for (const section of Object.keys(entry.current_by_section ?? {}).map(Number)) {
-    if (!inRange(section, minimum, maximum)) errors.push(`Character wiki ${id} leaks section ${section}.`);
+  for (const field of ["current_by_section", "display_name_by_section"]) {
+    for (const section of Object.keys(entry[field] ?? {}).map(Number)) {
+      if (!inRange(section, minimum, maximum)) errors.push(`Character wiki ${id} ${field} leaks section ${section}.`);
+    }
   }
 }
 const identityRanges = new Map();

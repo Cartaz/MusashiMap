@@ -2,6 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { validateMovementEvent } from "../js/movement-contract.js";
+
 const REQUIRED_FILES = [
   "data/schema.json",
   "data/chapters.json",
@@ -18,11 +20,6 @@ const REQUIRED_FILES = [
   "data/context/micro-wiki.json"
 ];
 
-const MOVEMENT_STATUSES = new Set([
-  "arrival_confirmed", "confirmed_route", "intended_destination",
-  "direction_only", "uncertain_route"
-]);
-const MOVEMENT_TYPES = new Set(["journey", "arrival", "departure", "escape", "pursuit"]);
 const CERTAINTIES = new Set(["explicit", "strong_inference", "weak_inference"]);
 const CHAPTER_ID = /^b([1-7])c([1-9]\d*)$/;
 
@@ -301,25 +298,12 @@ export function validateRepository(root = process.cwd()) {
     for (const id of [event.location, event.origin, event.destination, ...(event.via ?? [])]) assertLocation(id, `Event ${event.id}`);
     if (!CERTAINTIES.has(event.certainty)) errors.push(`Event ${event.id} has invalid certainty ${event.certainty}.`);
     validateSourceRef(event, `Event ${event.id}`);
-    const hasRoute = Boolean(event.origin || event.destination || event.via?.length);
-    if ((hasRoute || MOVEMENT_TYPES.has(event.type)) && hasRoute && !MOVEMENT_STATUSES.has(event.movement_status)) {
-      errors.push(`Movement event ${event.id} with route data needs a valid movement_status.`);
-    }
-    if (hasRoute && !(event.characters?.length)) {
-      errors.push(`Event ${event.id} has route data without a physically participating character.`);
-    }
-    const arrivalTarget = event.destination ?? event.location;
-    if (event.movement_status === "arrival_confirmed" && (!arrivalTarget || arrivalTarget === "unknown")) {
-      errors.push(`Event ${event.id} claims arrival_confirmed without a known destination/location.`);
-    }
-    if (["intended_destination", "direction_only"].includes(event.movement_status)
-      && !event.destination && !isString(event.destination_label)) {
-      errors.push(`Event ${event.id} needs a destination or destination_label for ${event.movement_status}.`);
-    }
-    if (["confirmed_route", "uncertain_route"].includes(event.movement_status)
-      && !event.origin && !event.destination && !(event.via?.length)
-      && !isString(event.origin_label) && !isString(event.destination_label)) {
-      errors.push(`Event ${event.id} claims ${event.movement_status} without any route evidence.`);
+    for (const violation of validateMovementEvent(event)) {
+      if (violation === "movement_status_required") errors.push(`Movement event ${event.id} with route data needs a valid movement_status.`);
+      if (violation === "physical_participant_required") errors.push(`Event ${event.id} has route data without a physically participating character.`);
+      if (violation === "arrival_target_required") errors.push(`Event ${event.id} claims arrival_confirmed without a known destination/location.`);
+      if (violation === "destination_evidence_required") errors.push(`Event ${event.id} needs a destination or destination_label for ${event.movement_status}.`);
+      if (violation === "route_evidence_required") errors.push(`Event ${event.id} claims ${event.movement_status} without any route evidence.`);
     }
   }
 
@@ -393,9 +377,17 @@ export function validateRepository(root = process.cwd()) {
   for (const [characterId, entry] of Object.entries(characterWikiData.characters ?? {})) {
     if (entry.category !== "context") assertCharacter(characterId, "Character wiki");
     if (!isObject(entry.current_by_section)) errors.push(`Character wiki ${characterId} needs current_by_section.`);
-    for (const key of Object.keys(entry.current_by_section ?? {})) {
-      const section = Number(key);
-      if (!Number.isSafeInteger(section) || !sectionByNumber.has(section)) errors.push(`Character wiki ${characterId} has unknown section ${key}.`);
+    for (const [field, progressiveValues] of [["current_by_section", entry.current_by_section], ["display_name_by_section", entry.display_name_by_section]]) {
+      if (progressiveValues === undefined) continue;
+      if (!isObject(progressiveValues)) {
+        errors.push(`Character wiki ${characterId} ${field} must be an object.`);
+        continue;
+      }
+      for (const [key, value] of Object.entries(progressiveValues)) {
+        const section = Number(key);
+        if (!Number.isSafeInteger(section) || !sectionByNumber.has(section)) errors.push(`Character wiki ${characterId} ${field} has unknown section ${key}.`);
+        if (typeof value !== "string" || !value.trim()) errors.push(`Character wiki ${characterId} ${field} needs non-empty text at section ${key}.`);
+      }
     }
   }
 
