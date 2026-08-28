@@ -136,6 +136,12 @@ test("semantic CLI rejects unknown groups and false physical end positions", t =
   const eventsPath = path.join(root, "data/events.json");
   const events = JSON.parse(fs.readFileSync(eventsPath));
   events.events[0].groups = ["missing_group"];
+  events.events[0].characters = [];
+  events.events[0].referenced_characters = ["hero"];
+  events.events[0].origin = "place";
+  events.events[0].destination = "place";
+  events.events[0].movement_status = "confirmed_route";
+  events.events[1].movement_status = "confirmed_route";
   writeJson(root, "data/events.json", events);
 
   const statesPath = path.join(root, "data/character-states.json");
@@ -147,6 +153,8 @@ test("semantic CLI rejects unknown groups and false physical end positions", t =
   const result = run(root);
   assert.equal(result.status, 1);
   assert.match(result.output, /unknown group missing_group/);
+  assert.match(result.output, /route data without a physically participating character/);
+  assert.match(result.output, /claims confirmed_route without any route evidence/);
   assert.match(result.output, /Non-present state hero@1 cannot retain a physical location/);
   assert.match(result.output, /non-physical location_status unknown cannot retain a physical location/);
 });

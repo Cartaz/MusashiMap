@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
@@ -43,12 +43,24 @@
       "display_name": "Sasaki Kojirō",
       "alias": "false Sasaki Kojirō",
       "valid_from_chapter": "b3c2",
-      "valid_until_chapter": null,
+      "valid_until_chapter": "b4c2",
       "valid_from_section": 21,
-      "valid_until_section": null,
+      "valid_until_section": 34,
       "reader_knows_canonical_identity": true,
       "status": "impersonated_name",
       "change_reason": "identity_fraud"
+    },
+    {
+      "character_id": "matahachi",
+      "display_name": "Hon'den Matahachi",
+      "alias": null,
+      "valid_from_chapter": "b4c3",
+      "valid_until_chapter": null,
+      "valid_from_section": 35,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "canonical_name",
+      "change_reason": "impersonation_exposed_and_certificate_lost"
     },
     {
       "character_id": "kojiro",

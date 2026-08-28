@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "relationship_types": ["family","friend_ally","acquaintance","master","disciple","rival","enemy","authority","partner_family","servant_employer","faction"],
   "relationships": [
     {"from":"musashi","to":"ogin","type":"family","subtype":"younger_brother_older_sister","first_section":3},
@@ -42,6 +42,11 @@
     {"from":"yoshioka_seijuro","to":"akemi","type":"enemy","subtype":"sexual_assault_and_aftermath","first_section":23},
     {"from":"kojiro","to":"yoshioka_seijuro","type":"acquaintance","subtype":"friendly_but_competitive_martial_association","first_section":25},
     {"from":"kojiro","to":"akemi","type":"friend_ally","subtype":"rescuer_and_protected_traveler","first_section":30},
-    {"from":"musashi","to":"kojiro","type":"rival","subtype":"first_encounter_and_mutual_martial_interest","first_section":32}
+    {"from":"musashi","to":"kojiro","type":"rival","subtype":"first_encounter_and_mutual_martial_interest","first_section":32},
+    {"from":"musashi","to":"koetsu","type":"acquaintance","subtype":"tea_encounter_and_artistic_influence","first_section":34},
+    {"from":"koetsu","to":"myoshu","type":"family","subtype":"son_and_mother","first_section":34},
+    {"from":"musashi","to":"yoshioka_denshichiro","type":"enemy","subtype":"formal_challenge_and_duel_at_rengeoin","first_section":38},
+    {"from":"musashi","to":"yoshino_tayu","type":"acquaintance","subtype":"meeting_and_care_at_ogiya","first_section":40},
+    {"from":"matahachi","to":"akemi","type":"acquaintance","subtype":"temporary_eastbound_travel_companions","first_section":48}
   ]
 }

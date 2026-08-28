@@ -1,8 +1,8 @@
 {
-  "version": 7,
+  "version": 8,
   "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions, events and named historical works. The novel provides the trigger and reading context; an authoritative external historical source provides a concise historical explanation.",
   "source_policy": {
-    "novel_trigger_source": "Canonical local chapter corpus under data/source/book1, data/source/book2 and data/source/book3",
+    "novel_trigger_source": "Canonical local chapter corpus under data/source/book1, data/source/book2, data/source/book3 and data/source/book4",
     "historical_context_source": "authoritative external historical source",
     "rule": "Never merge external historical facts into novel evidence."
   },
@@ -379,6 +379,48 @@
       "novel_trigger":{"first_section":31,"name_in_text":"Great Bridge at Gojō Avenue","context":"The Yoshioka school posts the Rendaiji duel announcement at the bridge.","spoiler_safe_until":31},
       "wiki":{"summary":"Kyoto City's official chronology records construction of the Great Gojō Bridge in 1589. This supports the bridge's period existence, not the exact narrative scene point."},
       "source":{"title":"Kyoto urban chronology","publisher":"Kyoto City Historical Materials Office","url":"https://www2.city.kyoto.lg.jp/somu/rekishi/fm/nenpyou/toshi_nenpyo.html"}
+    },
+    {
+      "id":"honami_koetsu_historical","type":"historical_person","display_name":"Hon'ami Kōetsu",
+      "novel_trigger":{"first_section":34,"name_in_text":"Hon'ami Kōetsu","context":"Musashi meets Kōetsu and Myōshū at a tea picnic; the invitation to Hon'ami Lane has not yet become a stay.","spoiler_safe_until":34},
+      "wiki":{"summary":"Kyoto National Museum describes Kōetsu (1558–1637) as a calligrapher and maker in lacquer and ceramics from the Hon'ami sword-polishing and appraisal family. His meetings with Musashi remain literary scenes."},
+      "source":{"title":"Rinpa: The Aesthetics of the Capital","publisher":"Kyoto National Museum","url":"https://www.kyohaku.go.jp/old/eng/special/koremade/20151010_rinpa.html"}
+    },
+    {
+      "id":"rengeoin_historical","type":"historical_institution","display_name":"Rengeōin / Sanjūsangendō",
+      "novel_trigger":{"first_section":38,"name_in_text":"Rengeōin / Sanjūsangendō","context":"Musashi and Denshichirō formally establish their duel at Rengeōin.","spoiler_safe_until":38},
+      "wiki":{"summary":"The temple's official history identifies Rengeōin with Sanjūsangendō and records its twelfth-century foundation and later rebuilding. It does not authenticate the novel's duel."},
+      "source":{"title":"History of Sanjūsangendō","publisher":"Rengeōin Sanjūsangendō","url":"https://www.sanjusangendo.jp/history/"}
+    },
+    {
+      "id":"yoshino_tayu_historical","type":"historical_person_context","display_name":"Yoshino Tayū",
+      "novel_trigger":{"first_section":38,"name_in_text":"Yoshino Tayū","context":"Kōetsu names Yoshino while proposing an evening visit to the Ōgiya; Musashi has not yet met her.","spoiler_safe_until":38},
+      "wiki":{"summary":"Kyoto's official travel material preserves the cultural memory of the celebrated early-seventeenth-century Yoshino Tayū and associates her with Jōshōji. The novel's setting and encounters may involve literary compression."},
+      "source":{"title":"Japanese Musical Instruments Show: Tales from the 1000-year Capital","publisher":"Kyoto City Official Travel Guide","url":"https://kyoto.travel/en/travel-inspiration/japanese-musical-instruments-show-tales-from-the-1000-year-capital/"}
+    },
+    {
+      "id":"ichijoji_sagarimatsu_historical","type":"historical_place_context","display_name":"Ichijōji Sagarimatsu",
+      "novel_trigger":{"first_section":44,"name_in_text":"Ichijōji Sagarimatsu","context":"The Yoshioka men name the spreading pine as the site for their public duel with Musashi.","spoiler_safe_until":44},
+      "wiki":{"summary":"Kyoto's official guide identifies an old traffic point and presents the Musashi–Yoshioka episode as a famous legend; the present pine is a later generation. This is not independent proof of the novel's battle."},
+      "source":{"title":"Ichijōji Sagarimatsu","publisher":"Kyoto City Official Travel Guide","url":"https://ja.kyoto.travel/tourism/single02.php?category_id=9&tourism_id=103"}
+    },
+    {
+      "id":"enryakuji_historical","type":"historical_institution","display_name":"Enryakuji",
+      "novel_trigger":{"first_section":50,"name_in_text":"Enryakuji","context":"Musashi is taken to the Mount Hiei temple complex after the Ichijōji battle.","spoiler_safe_until":50},
+      "wiki":{"summary":"Enryakuji's official history records Nobunaga's destruction of the complex in 1571 and its gradual reconstruction. That supplies broad period context only; Musashi's stay remains narrative."},
+      "source":{"title":"History of Enryakuji","publisher":"Enryakuji","url":"https://hieizan.or.jp/about/history.html"}
+    },
+    {
+      "id":"seta_karahashi_historical","type":"historical_place_context","display_name":"Seta no Karahashi",
+      "novel_trigger":{"first_section":51,"name_in_text":"Seta no Karahashi","context":"The bridge is the intended rendezvous for the eastbound journey; the party has not yet reached Edo.","spoiler_safe_until":51},
+      "wiki":{"summary":"The Ōtsu tourism authority identifies Seta no Karahashi as a real and historically prominent bridge. It validates the locality label, not the novel's rendezvous."},
+      "source":{"title":"Seta no Karahashi Bridge","publisher":"Biwako Otsu Travel Guide / Otsu Tourism Association","url":"https://otsu.or.jp/en/thingstodo/spot62"}
+    },
+    {
+      "id":"male_female_waterfalls_literary","type":"literary_place_context","display_name":"Otaki and Metaki waterfalls",
+      "novel_trigger":{"first_section":53,"name_in_text":"Male and Female Waterfalls","context":"The eastbound party pauses at the paired waterfalls while Musashi performs austerity.","spoiler_safe_until":53},
+      "wiki":{"summary":"Nagiso Tourism Association identifies the two waterfalls near the Tsumago–Magome route with the Musashi–Otsū episode in Yoshikawa's novel. This validates the intended literary location, not historical biography or exact routing."},
+      "source":{"title":"O-taki and Me-taki Waterfalls","publisher":"Nagiso Tourism Association","url":"https://nagiso.jp/topics/o-taki-and-me-taki-waterfalls/"}
     }
   ]
 }
