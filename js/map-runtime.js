@@ -1,5 +1,6 @@
 import { loadMapData } from "./data.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
+import { isNonPhysicalLocationStatus } from "./position-contract.js";
 
 (() => {
   let map, glLayer, markers, routes, characterMarkers;
@@ -370,10 +371,9 @@ import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabe
       const visibleCharacterIds = new Set(getVisibleCharacters(characters, state.section, { states: characterStates, events }).map(character => character.id));
       const spoilerSafeSelection = [...nextSelected].filter(id => visibleCharacterIds.has(id));
       const { selectedStates } = getReaderSnapshot({ states: characterStates, events }, state.section, spoilerSafeSelection);
-      const nonPhysicalWithoutLastKnown = new Set(["unknown", "reported_position", "departed_with_group", "departed_eastward", "departed_westward"]);
       unmappedPopupOpen = spoilerSafeSelection.some(id => {
         const latest = selectedStates.find(item => item.character === id);
-        return Boolean(latest && nonPhysicalWithoutLastKnown.has(latest.location_status) && !latest.last_known_location);
+        return Boolean(latest && isNonPhysicalLocationStatus(latest.location_status) && !latest.last_known_location);
       });
     }
 
