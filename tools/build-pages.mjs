@@ -13,6 +13,7 @@ const runtimeFiles = [
   "css/marker-overrides.css",
   "css/paper-texture.css",
   "css/parchment-overrides.css",
+  "css/responsive-polish.css",
   "css/style-v2.css",
   "css/ui-redesign.css",
   "assets/icons/places/area.svg",

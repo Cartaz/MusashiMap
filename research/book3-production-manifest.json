@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "contract_version": "1.0.0",
   "contract": "docs/book-staging-contract.md",
-  "dataset": "Musashi Book III — Fire narrative staging",
-  "status": "staging_only_not_for_production",
+  "dataset": "Musashi Book III — Fire production provenance",
+  "status": "production_migrated_provenance",
   "generated_on": "2026-08-20",
   "book": {
     "number": 3,
@@ -5031,7 +5031,6 @@
           "result": "pass"
         }
       ]
-    },
-    "legacy_book3_filename": "research/book3-fire-staging-manifest.json"
+    }
   }
 }

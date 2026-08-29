@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "contract_version": "1.0.0",
   "contract": "docs/book-staging-contract.md",
-  "dataset": "Musashi Book VII — The Perfect Light complete narrative scrape",
-  "status": "research_staging_only_not_for_production",
+  "dataset": "Musashi Book VII — The Perfect Light production provenance",
+  "status": "production_migrated_provenance",
   "generated_on": "2026-08-20",
   "book": {
     "number": 7,
@@ -4800,7 +4800,7 @@
       "chapter_count": 16,
       "event_count": 78,
       "coordinates_emitted": 0,
-      "checks": "Recomputed by the executable custom audit documented in research/book7-scrape-audit.md; stored counts are declarative and must match."
+      "checks": "Recomputed by node tools/validate-staging.mjs; stored counts are declarative and must match the canonical manifest."
     }
   }
 }

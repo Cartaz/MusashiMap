@@ -1,0 +1,301 @@
+/* Final responsive layer: touch ergonomics, notched screens and large displays. */
+
+@media (max-width: 760px) {
+  .app-header {
+    min-height: 68px;
+    padding-top: 8px;
+    padding-right: max(10px, env(safe-area-inset-right));
+    padding-bottom: 9px;
+    padding-left: max(10px, env(safe-area-inset-left));
+  }
+
+  .section-navigation > button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .section-navigation #section-select {
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .map-stage {
+    height: calc(100svh - 68px);
+  }
+
+  .map-overlay {
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 80px);
+    max-width: none;
+  }
+
+  .character-filter {
+    min-height: 44px;
+  }
+
+  .map-character-panel:not(.is-collapsed) .filter-actions button,
+  .map-unmapped-close,
+  .wiki-card-toggle {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    min-height: 104px;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 6px;
+  }
+
+  .brand-lockup {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  .section-navigation {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    flex: 0 0 100%;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .section-navigation #section-select {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    padding-right: 26px;
+    padding-left: 9px;
+    font-size: 11px;
+  }
+
+  .map-stage {
+    height: calc(100svh - 104px);
+  }
+}
+
+/* iPhone-class landscape view: preserve map height and honor the notch. */
+@media (min-width: 481px) and (max-height: 500px) and (orientation: landscape) {
+  .app-header {
+    min-height: 60px;
+    gap: 12px;
+    padding: 7px max(12px, env(safe-area-inset-right)) 8px max(12px, env(safe-area-inset-left));
+  }
+
+  .brand-lockup {
+    min-width: 185px;
+  }
+
+  .brand-seal {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .app-header h1 {
+    font-size: 22px;
+  }
+
+  .chapter-jump {
+    display: none;
+  }
+
+  .section-navigation > button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .section-navigation #section-select {
+    height: 44px;
+    min-width: 160px;
+    min-height: 44px;
+  }
+
+  .map-overlay {
+    top: 8px;
+    left: 8px;
+    width: min(320px, calc(100% - 76px));
+    height: 58px;
+    padding: 7px 12px;
+  }
+
+  .map-overlay h2 {
+    font-size: 16px;
+  }
+
+  .map-legend.pergamena-chiusa,
+  .map-legend.pergamena-chiusa--verticale.is-collapsed {
+    top: 8px !important;
+    right: max(8px, env(safe-area-inset-right)) !important;
+    height: 142px !important;
+  }
+
+  .map-character-panel.pergamena-chiusa {
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    left: max(8px, env(safe-area-inset-left)) !important;
+  }
+}
+
+/* Scale the interface progressively on large desktop and 4K CSS viewports. */
+@media (min-width: 1920px) and (min-height: 1000px) {
+  :root {
+    --pergamena-chiusa-size: clamp(54px, 1.9vw, 72px);
+  }
+
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr) clamp(420px, 20vw, 620px);
+  }
+
+  .app-header {
+    gap: clamp(28px, 1.5vw, 48px);
+    padding: clamp(10px, .48vw, 18px) clamp(25px, 1.25vw, 48px);
+  }
+
+  .brand-lockup {
+    min-width: clamp(260px, 15vw, 460px);
+    gap: clamp(10px, .6vw, 18px);
+  }
+
+  .brand-seal {
+    width: clamp(31px, 1.25vw, 48px);
+    height: clamp(31px, 1.25vw, 48px);
+    font-size: clamp(16px, .62vw, 24px);
+  }
+
+  .app-header h1 {
+    font-size: clamp(29px, 1.1vw, 42px);
+  }
+
+  .section-navigation {
+    gap: clamp(4px, .32vw, 10px);
+  }
+
+  .section-navigation > button {
+    width: clamp(29px, 1.15vw, 44px);
+    height: clamp(29px, 1.15vw, 44px);
+    font-size: clamp(20px, .72vw, 28px);
+  }
+
+  #section-select {
+    width: clamp(220px, 12vw, 360px);
+    min-width: clamp(220px, 12vw, 360px);
+    max-width: none;
+    height: clamp(29px, 1.15vw, 44px);
+    padding-right: clamp(28px, 1.2vw, 42px);
+    padding-left: clamp(10px, .5vw, 18px);
+    font-size: clamp(12px, .4vw, 16px);
+  }
+
+  .chapter-jump {
+    height: clamp(29px, 1.15vw, 44px);
+  }
+
+  .chapter-jump label {
+    font-size: clamp(8px, .31vw, 12px);
+  }
+
+  .chapter-jump input {
+    width: clamp(38px, 1.45vw, 56px);
+    height: clamp(29px, 1.15vw, 44px);
+    font-size: clamp(12px, .4vw, 16px);
+  }
+
+  .chapter-jump button {
+    height: clamp(29px, 1.15vw, 44px);
+    font-size: clamp(8px, .31vw, 12px);
+  }
+
+  .map-overlay {
+    top: clamp(10px, .65vw, 25px);
+    left: clamp(50px, 2vw, 78px);
+    width: clamp(360px, 16vw, 620px);
+    height: clamp(68px, 3vw, 114px);
+    padding: clamp(9px, .55vw, 20px) clamp(15px, .8vw, 30px);
+  }
+
+  .map-overlay h2 {
+    font-size: clamp(20px, .9vw, 34px);
+  }
+
+  .map-overlay .placeholder-kicker {
+    font-size: clamp(10px, .36vw, 14px);
+  }
+
+  .map-legend.pergamena-chiusa {
+    top: clamp(10px, .65vw, 25px) !important;
+    right: clamp(10px, .65vw, 25px) !important;
+    height: clamp(190px, 6.5vw, 250px) !important;
+  }
+
+  .map-legend.pergamena-chiusa:not(.is-collapsed) {
+    width: clamp(320px, 12vw, 460px) !important;
+    padding: clamp(13px, .55vw, 21px) !important;
+  }
+
+  .map-legend.pergamena-chiusa--verticale.is-collapsed {
+    height: clamp(190px, 6.5vw, 250px) !important;
+  }
+
+  .legend-item {
+    font-size: clamp(10px, .36vw, 14px);
+  }
+
+  .map-character-panel.pergamena-chiusa {
+    left: clamp(10px, .65vw, 25px) !important;
+    bottom: clamp(10px, .65vw, 25px) !important;
+  }
+
+  .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed {
+    width: clamp(600px, 23vw, 880px) !important;
+  }
+
+  .map-character-panel.pergamena-chiusa:not(.is-collapsed) {
+    width: clamp(600px, 23vw, 880px) !important;
+    padding: clamp(12px, .55vw, 21px) clamp(18px, .8vw, 30px) !important;
+  }
+
+  .map-character-panel .panel-kicker,
+  .info-panel .diary-collapsed-label {
+    font-size: clamp(10px, .36vw, 14px) !important;
+  }
+
+  .character-filter {
+    min-height: clamp(34px, 1.1vw, 44px);
+    font-size: clamp(11px, .36vw, 14px);
+  }
+
+  .info-panel {
+    padding: clamp(28px, 1.4vw, 54px) clamp(26px, 1.25vw, 48px) !important;
+  }
+
+  .info-panel .diary-content > h2 {
+    font-size: clamp(20px, .72vw, 28px) !important;
+  }
+
+  .info-panel #event-list li,
+  .info-panel .wiki-card-toggle {
+    font-size: clamp(12px, .42vw, 16px) !important;
+  }
+
+  .info-panel .wiki-card-body,
+  .info-panel .sidebar-heading p {
+    font-size: clamp(11px, .36vw, 14px) !important;
+  }
+
+  .leaflet-control-zoom a {
+    width: clamp(32px, 1vw, 40px) !important;
+    height: clamp(32px, 1vw, 40px) !important;
+    font-size: clamp(18px, .57vw, 22px) !important;
+    line-height: clamp(32px, 1vw, 40px) !important;
+  }
+
+  .leaflet-control-attribution {
+    font-size: clamp(10px, .32vw, 12px);
+  }
+}
