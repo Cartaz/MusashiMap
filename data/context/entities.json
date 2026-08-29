@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "description": "Historical and contextual entities referenced by Books I–VI. These records are separate from narrative presence: the local novel corpus supplies the trigger, while authoritative external sources supply concise historical context. first_section is a global spoiler threshold.",
   "book2_exclusions": [
     {"names":["Yoshioka Kempō","Yoshioka school founders"],"reason":"Historical school context exists, but the exact personal identity and chronology used by the novel were not supported strongly enough by an authoritative one-to-one source."},
@@ -54,6 +54,40 @@
         "Gion Tōji's death in section 90"
       ],
       "reason": "The ambush chapter implies he is among Gonnosuke's victims; the identification through Oko's husband becomes explicit only in section 91."
+    }
+  ],
+  "book7_exclusions": [
+    {
+      "names": [
+        "private houses, inns, caves, roads and exact shoreline scenes"
+      ],
+      "reason": "Institutional and municipal sources support only broad place context; all unresolved narrative sites remain coordinate-free."
+    },
+    {
+      "names": [
+        "Muka",
+        "Torazō",
+        "mountain priest / Rinshōbō"
+      ],
+      "reason": "Temporary and unrevealed names are represented by section-bounded identity windows, not spoiler-prone global aliases."
+    },
+    {
+      "names": [
+        "Musashi–Otsū civil marriage"
+      ],
+      "reason": "The pair explicitly acknowledge one another as husband and wife, but the novel states no civil or institutional ceremony."
+    },
+    {
+      "names": [
+        "Matahachi as biological father of Akemi's baby"
+      ],
+      "reason": "Matahachi chooses and enacts social fatherhood; the text deliberately leaves biological paternity unresolved."
+    },
+    {
+      "names": [
+        "Funashima duel tradition as proof of novel choreography"
+      ],
+      "reason": "Official local material preserves the 1612 tradition while noting variant accounts; it does not authenticate the novel's dialogue, timing strategy or exact blows."
     }
   ],
   "entities": [
@@ -199,6 +233,104 @@
       ],
       "source_urls": [
         "https://www.city.chiyoda.lg.jp/documents/30576/soan-honpen-2-1.pdf"
+      ]
+    },
+    {
+      "id": "kofukuji_historical",
+      "name": "Kōfukuji",
+      "type": "historical_institution",
+      "first_section": 98,
+      "summary": "Kōfukuji's official history supports its long institutional continuity in Nara. The boys' contest and surrounding encounters remain literary scenes.",
+      "relevance": "contextual",
+      "sources": [
+        "Kōfukuji"
+      ],
+      "source_urls": [
+        "https://www.kohfukuji.com/english/index.html"
+      ]
+    },
+    {
+      "id": "kongoji_historical",
+      "name": "Amanosan Kongōji",
+      "type": "historical_institution",
+      "first_section": 99,
+      "summary": "Kawachinagano City documents Amanosan Kongōji and its Nyonin Kōya tradition. The memorial visit, image association and ambush are narrative evidence only.",
+      "relevance": "contextual",
+      "sources": [
+        "Kawachinagano City"
+      ],
+      "source_urls": [
+        "https://www.city.kawachinagano.lg.jp/soshiki/56/3718.html"
+      ]
+    },
+    {
+      "id": "koyasan_historical",
+      "name": "Mount Kōya sacred landscape",
+      "type": "historical_place_context",
+      "first_section": 100,
+      "summary": "UNESCO documents Kōyasan within the Kii sacred-sites and pilgrimage landscape. The novel's private political meeting and Mount Kudo network are not independently historicized.",
+      "relevance": "contextual",
+      "sources": [
+        "UNESCO World Heritage Centre"
+      ],
+      "source_urls": [
+        "https://whc.unesco.org/en/list/1142/"
+      ]
+    },
+    {
+      "id": "sakai_maritime_historical",
+      "name": "Sakai maritime trade and port",
+      "type": "historical_place_context",
+      "first_section": 101,
+      "summary": "Sakai City describes the city as a medieval and early-modern trade hub. The Kobayashi premises, individual ships and passenger movements remain novel evidence.",
+      "relevance": "contextual",
+      "sources": [
+        "Sakai City"
+      ],
+      "source_urls": [
+        "https://www.city.sakai.lg.jp/foreign-language/english/visitors/about/ourcity/location.html"
+      ]
+    },
+    {
+      "id": "himeji_shikama_historical",
+      "name": "Himeji and Shikama",
+      "type": "historical_place_context",
+      "first_section": 104,
+      "summary": "Himeji City supports the broad historical-city setting. It does not locate the novel's dyer household, cave, inn or exact estuary scene.",
+      "relevance": "contextual",
+      "sources": [
+        "Himeji City"
+      ],
+      "source_urls": [
+        "https://www.city.himeji.lg.jp/shisei/0000007248.html"
+      ]
+    },
+    {
+      "id": "kokura_hosokawa_historical",
+      "name": "Kokura under the Hosokawa",
+      "type": "historical_place_context",
+      "first_section": 108,
+      "summary": "Kitakyushu public cultural material dates Hosokawa Tadaoki's major Kokura Castle construction to 1602 and records the city's Musashi–Kojirō association. Private meetings and duel administration remain literary.",
+      "relevance": "contextual",
+      "sources": [
+        "Kitakyushu City Time and Wind Museum"
+      ],
+      "source_urls": [
+        "https://www.kitakyushu-museum.jp/exhibition/2019spring/"
+      ]
+    },
+    {
+      "id": "funashima_duel_tradition",
+      "name": "Funashima / Ganryū-jima duel tradition",
+      "type": "historical_event_context",
+      "first_section": 108,
+      "summary": "Shimonoseki City's official tourism material identifies Funashima with Ganryū-jima and preserves a 1612 duel tradition while explicitly noting variant accounts. The novel's choreography is not treated as archival fact.",
+      "relevance": "contextual",
+      "sources": [
+        "Shimonoseki City official tourism"
+      ],
+      "source_urls": [
+        "https://shimonoseki.travel/shimonosekistory/ganryujima/"
       ]
     }
   ]

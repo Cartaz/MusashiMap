@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "description": "Reader-facing micro-wiki for lightly mentioned historical people, families, clans, factions, institutions, events, places and named historical works through Book VI. The novel provides the trigger and an authoritative external source provides concise historical context.",
   "source_policy": {
     "novel_trigger_source": "Canonical local chapter corpus under data/source/book1 through data/source/book6",
@@ -563,6 +563,139 @@
         "title": "Chiyoda City historical landscape plan",
         "publisher": "Chiyoda City",
         "url": "https://www.city.chiyoda.lg.jp/documents/30576/soan-honpen-2-1.pdf"
+      }
+    },
+    {
+      "id": "kofukuji_historical",
+      "type": "historical_institution",
+      "display_name": "Kōfukuji",
+      "novel_trigger": {
+        "first_section": 98,
+        "name_in_text": "Kōfukuji",
+        "context": "Hyōgo, Ushinosuke, Iori and Gonnosuke meet during the public martial gathering in Nara.",
+        "spoiler_safe_until": 98
+      },
+      "wiki": {
+        "summary": "The temple's official history supports its long continuity in Nara; the chapter's contest and encounters remain literary."
+      },
+      "source": {
+        "title": "Kōfukuji official site",
+        "publisher": "Kōfukuji",
+        "url": "https://www.kohfukuji.com/english/index.html"
+      }
+    },
+    {
+      "id": "kongoji_historical",
+      "type": "historical_institution",
+      "display_name": "Amanosan Kongōji",
+      "novel_trigger": {
+        "first_section": 99,
+        "name_in_text": "Kongōji",
+        "context": "Gonnosuke and Iori join a memorial visit before the later ambush.",
+        "spoiler_safe_until": 99
+      },
+      "wiki": {
+        "summary": "Kawachinagano City documents Amanosan Kongōji and its Nyonin Kōya tradition; the chapter's memorial party and violence remain narrative."
+      },
+      "source": {
+        "title": "Amanosan Kongōji",
+        "publisher": "Kawachinagano City",
+        "url": "https://www.city.kawachinagano.lg.jp/soshiki/56/3718.html"
+      }
+    },
+    {
+      "id": "koyasan_historical",
+      "type": "historical_place_context",
+      "display_name": "Mount Kōya sacred landscape",
+      "novel_trigger": {
+        "first_section": 100,
+        "name_in_text": "Mount Kōya",
+        "context": "Sado's party enters the sacred-mountain setting before the private Mount Kudo meeting.",
+        "spoiler_safe_until": 100
+      },
+      "wiki": {
+        "summary": "UNESCO documents Kōyasan as part of the Kii sacred-sites and pilgrimage landscape; no private meeting or route is independently validated."
+      },
+      "source": {
+        "title": "Sacred Sites and Pilgrimage Routes in the Kii Mountain Range",
+        "publisher": "UNESCO World Heritage Centre",
+        "url": "https://whc.unesco.org/en/list/1142/"
+      }
+    },
+    {
+      "id": "sakai_maritime_historical",
+      "type": "historical_place_context",
+      "display_name": "Sakai maritime trade and port",
+      "novel_trigger": {
+        "first_section": 101,
+        "name_in_text": "Sakai",
+        "context": "Iori reaches the port and leaves westward with the Hosokawa household.",
+        "spoiler_safe_until": 101
+      },
+      "wiki": {
+        "summary": "Sakai City supports the broad trade-port setting, not the novel's premises, vessels or passenger routes."
+      },
+      "source": {
+        "title": "About Sakai City",
+        "publisher": "Sakai City",
+        "url": "https://www.city.sakai.lg.jp/foreign-language/english/visitors/about/ourcity/location.html"
+      }
+    },
+    {
+      "id": "himeji_shikama_historical",
+      "type": "historical_place_context",
+      "display_name": "Himeji and Shikama",
+      "novel_trigger": {
+        "first_section": 104,
+        "name_in_text": "Shikama / Himeji",
+        "context": "Otsū is drawn from the Shikama setting toward the Mikazuki encounter.",
+        "spoiler_safe_until": 104
+      },
+      "wiki": {
+        "summary": "Himeji City supports only the broad historical-city context; the dyer household, cave, inn and estuary remain unresolved."
+      },
+      "source": {
+        "title": "History of Himeji City",
+        "publisher": "Himeji City",
+        "url": "https://www.city.himeji.lg.jp/shisei/0000007248.html"
+      }
+    },
+    {
+      "id": "kokura_hosokawa_historical",
+      "type": "historical_place_context",
+      "display_name": "Kokura under the Hosokawa",
+      "novel_trigger": {
+        "first_section": 108,
+        "name_in_text": "Kokura Castle",
+        "context": "Tadatoshi oversees Kojirō's demonstration and the arrangements for the duel.",
+        "spoiler_safe_until": 108
+      },
+      "wiki": {
+        "summary": "Kitakyushu public cultural material supports the 1602 Hosokawa castle setting and local duel association, not the novel's private deliberations."
+      },
+      "source": {
+        "title": "Kokura Castle historical exhibition",
+        "publisher": "Kitakyushu City Time and Wind Museum",
+        "url": "https://www.kitakyushu-museum.jp/exhibition/2019spring/"
+      }
+    },
+    {
+      "id": "funashima_duel_tradition",
+      "type": "historical_event_context",
+      "display_name": "Funashima / Ganryū-jima duel tradition",
+      "novel_trigger": {
+        "first_section": 108,
+        "name_in_text": "Funashima",
+        "context": "The island is selected as the intended site of the formally arranged duel.",
+        "spoiler_safe_until": 108
+      },
+      "wiki": {
+        "summary": "Shimonoseki City identifies Funashima with Ganryū-jima and preserves a 1612 duel tradition while cautioning that accounts vary."
+      },
+      "source": {
+        "title": "Ganryū-jima",
+        "publisher": "Shimonoseki City official tourism",
+        "url": "https://shimonoseki.travel/shimonosekistory/ganryujima/"
       }
     }
   ]

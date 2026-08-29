@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "presence_semantics": "present_in means physically present on-page in the chapter. Mere mention or reported whereabouts belong in chapter-scoped narrative state, referenced_characters or research text, not present_in.",
   "taxonomy": {"entity_type":["character","historical_figure","group","other"],"narrative_role":["primary","secondary","tertiary","none"],"historical_status":["historical","fictional","fictionalized","unknown"],"map_relevance":["mapped","contextual","none"]},
   "main_cast": ["musashi","matahachi","otsu","takuan","kojiro","osugi","jotaro","akemi","ogin"],
@@ -74,7 +74,14 @@
         90,
         94,
         95,
-        96
+        96,
+        102,
+        103,
+        106,
+        107,
+        110,
+        111,
+        112
       ]
     },
     {
@@ -110,10 +117,58 @@
         56,
         83,
         86,
-        93
+        93,
+        102,
+        103,
+        106,
+        109,
+        110
       ]
     },
-    {"id":"otsu","name":"Otsu","aliases":["Otsū"],"importance":"main","entity_type":"character","narrative_role":"primary","historical_status":"unknown","map_relevance":"mapped","color":"#4c00ff","present_in":[3,4,5,6,7,8,13,17,19,27,29,32,37,42,44,47,52,53,54,56,73,74]},
+    {
+      "id": "otsu",
+      "name": "Otsu",
+      "aliases": [
+        "Otsū"
+      ],
+      "importance": "main",
+      "entity_type": "character",
+      "narrative_role": "primary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#4c00ff",
+      "present_in": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        13,
+        17,
+        19,
+        27,
+        29,
+        32,
+        37,
+        42,
+        44,
+        47,
+        52,
+        53,
+        54,
+        56,
+        73,
+        74,
+        97,
+        98,
+        101,
+        104,
+        105,
+        107,
+        111
+      ]
+    },
     {
       "id": "takuan",
       "name": "Takuan Sōhō",
@@ -185,7 +240,12 @@
         82,
         83,
         87,
-        94
+        94,
+        101,
+        108,
+        109,
+        111,
+        112
       ]
     },
     {
@@ -224,7 +284,11 @@
         81,
         87,
         92,
-        94
+        94,
+        104,
+        105,
+        107,
+        111
       ]
     },
     {
@@ -261,7 +325,11 @@
         54,
         61,
         62,
-        91
+        91,
+        104,
+        105,
+        107,
+        111
       ]
     },
     {
@@ -293,7 +361,10 @@
         65,
         83,
         86,
-        93
+        93,
+        106,
+        109,
+        110
       ]
     },
     {"id":"ogin","name":"Ogin","aliases":[],"importance":"main","entity_type":"character","narrative_role":"primary","historical_status":"unknown","map_relevance":"mapped","color":"#ffc800","present_in":[3,4]},
@@ -390,7 +461,24 @@
     {"id":"ueda_ryohei","name":"Ueda Ryōhei","aliases":["Ryohei","Ueda Ryōhei"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#f97316","present_in":[9,10,24,25,31,33,36]},
     {"id":"yoshioka_denshichiro","name":"Yoshioka Denshichirō","aliases":["Denshichiro","Yoshioka Denshichirō"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"fictionalized","map_relevance":"mapped","color":"#dc2626","present_in":[16,17,36,39]},
     {"id":"in_ei","name":"Kakuzenbō Hōzōin In'ei","aliases":["Kakuzenbō In'ei","Hōzōin In'ei","In'ei","Kakuzenbo"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"contextual","color":"#0f766e","present_in":[]},
-    {"id":"inshun","name":"Hōzōin Inshun","aliases":["Inshun","Hōzōin Inshun"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#059669","present_in":[15]},
+    {
+      "id": "inshun",
+      "name": "Hōzōin Inshun",
+      "aliases": [
+        "Inshun",
+        "Hōzōin Inshun"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#059669",
+      "present_in": [
+        15,
+        97
+      ]
+    },
     {"id":"nikkan","name":"Nikkan","aliases":["Nikkan","Hōzōin Nikkan"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#0891b2","present_in":[14,15]},
     {"id":"agon","name":"Agon","aliases":["Agon"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#b91c1c","present_in":[14]},
     {"id":"shoda_kizaemon","name":"Shōda Kizaemon","aliases":["Kizaemon","Shoda Kizaemon","Shōda Kizaemon"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#2563eb","present_in":[13,17,18]},
@@ -417,7 +505,29 @@
         85
       ]
     },
-    {"id":"kimura_sukekuro","name":"Kimura Sukekurō","aliases":["Kimura Sukekuro","Sukekurō","Kimura"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#0ea5e9","present_in":[17,18,71,74]},
+    {
+      "id": "kimura_sukekuro",
+      "name": "Kimura Sukekurō",
+      "aliases": [
+        "Kimura Sukekuro",
+        "Sukekurō",
+        "Kimura"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#0ea5e9",
+      "present_in": [
+        17,
+        18,
+        71,
+        74,
+        97,
+        98
+      ]
+    },
     {"id":"debuchi_magobei","name":"Debuchi Magobei","aliases":["Debuchi Magobee","Debuchi Heibei","Debuchi"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#84cc16","present_in":[17,18]},
     {"id":"murata_yozo","name":"Murata Yozō","aliases":["Murata Yozo","Murata"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#ea580c","present_in":[17,18]},
     {"id":"kocha","name":"Kocha","aliases":["Kocha"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#ec4899","present_in":[16,17,18]},
@@ -443,14 +553,80 @@
     {"id":"karasumaru_mitsuhiro","name":"Karasumaru Mitsuhiro","aliases":["Lord Karasumaru"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"contextual","color":"#166534","present_in":[40,41,42]},
     {"id":"arakida_ujitsune","name":"Arakida Ujitsune","aliases":[],"importance":"secondary","entity_type":"historical_figure","narrative_role":"tertiary","historical_status":"historical","map_relevance":"contextual","color":"#92400e","present_in":[]},
     {"id":"tsukahara_bokuden","name":"Tsukahara Bokuden","aliases":[],"importance":"secondary","entity_type":"historical_figure","narrative_role":"tertiary","historical_status":"historical","map_relevance":"contextual","color":"#1e40af","present_in":[]},
-    {"id":"koetsu","name":"Hon’ami Kōetsu","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#0e7490","present_in":[34,38,40,41]},
-    {"id":"myoshu","name":"Myōshū","aliases":["the old nun"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#a21caf","present_in":[34,38]},
+    {
+      "id": "koetsu",
+      "name": "Hon’ami Kōetsu",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#0e7490",
+      "present_in": [
+        34,
+        38,
+        40,
+        41,
+        99,
+        106
+      ]
+    },
+    {
+      "id": "myoshu",
+      "name": "Myōshū",
+      "aliases": [
+        "the old nun"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#a21caf",
+      "present_in": [
+        34,
+        38,
+        99
+      ]
+    },
     {"id":"konoe_nobutada","name":"Konoe Nobutada","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#b45309","present_in":[40,41]},
     {"id":"haiya_shoyu","name":"Haiya Shōyū","aliases":["Funabashi"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#4f46e5","present_in":[38,40,41]},
-    {"id":"yoshino_tayu","name":"Yoshino Tayū","aliases":["Yoshino Dayū"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#15803d","present_in":[40,41]},
+    {
+      "id": "yoshino_tayu",
+      "name": "Yoshino Tayū",
+      "aliases": [
+        "Yoshino Dayū"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#15803d",
+      "present_in": [
+        40,
+        41,
+        106
+      ]
+    },
     {"id":"sumigiku","name":"Sumigiku","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#be123c","present_in":[38,40]},
     {"id":"rinya","name":"Rin’ya","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#7e22ce","present_in":[40,43]},
-    {"id":"ichinomiya_gempachi","name":"Ichinomiya Gempachi","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#0369a1","present_in":[35]},
+    {
+      "id": "ichinomiya_gempachi",
+      "name": "Ichinomiya Gempachi",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#0369a1",
+      "present_in": [
+        35,
+        109
+      ]
+    },
     {"id":"miike_jurozaemon","name":"Miike Jūrōzaemon","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#a16207","present_in":[33,36,44,46,49]},
     {"id":"otaguro_hyosuke","name":"Ōtaguro Hyōsuke","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#0f766e","present_in":[36,38,39]},
     {"id":"nampo_yoichibei","name":"Nampo Yoichibei","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#9f1239","present_in":[36]},
@@ -486,7 +662,12 @@
         93,
         94,
         95,
-        96
+        96,
+        98,
+        99,
+        100,
+        106,
+        111
       ]
     },
     {"id":"gonnosuke_mother","name":"Gonnosuke's unnamed mother","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#a21caf","present_in":[55,57]},
@@ -588,7 +769,12 @@
         92,
         94,
         95,
-        96
+        96,
+        98,
+        99,
+        101,
+        110,
+        112
       ]
     },
     {
@@ -606,7 +792,11 @@
       "present_in": [
         69,
         70,
-        80
+        80,
+        100,
+        101,
+        110,
+        112
       ]
     },
     {
@@ -624,7 +814,8 @@
       "present_in": [
         70,
         80,
-        82
+        82,
+        108
       ]
     },
     {
@@ -641,14 +832,32 @@
         70,
         80,
         81,
-        82
+        82,
+        108,
+        112
       ]
     },
     {"id":"sato_genzo","name":"Satō Genzō","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#047857","present_in":[70]},
     {"id":"kumagoro","name":"Kumagorō of Chichibu","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#92400e","present_in":[71]},
     {"id":"zushino_kosuke","name":"Zushino Kōsuke","aliases":["soul polisher"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#1e40af","present_in":[72,76,77,79]},
     {"id":"kosuke_wife","name":"Kōsuke's unnamed wife","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#7c2d12","present_in":[72,77,79]},
-    {"id":"yagyu_hyogo","name":"Yagyū Hyōgo","aliases":[],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#334155","present_in":[73,74]},
+    {
+      "id": "yagyu_hyogo",
+      "name": "Yagyū Hyōgo",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#334155",
+      "present_in": [
+        73,
+        74,
+        97,
+        98
+      ]
+    },
     {
       "id": "obata_yogoro",
       "name": "Obata Yogorō",
@@ -767,7 +976,8 @@
       "map_relevance": "mapped",
       "color": "#4d7c0f",
       "present_in": [
-        87
+        87,
+        97
       ]
     },
     {
@@ -781,7 +991,10 @@
       "map_relevance": "mapped",
       "color": "#b45309",
       "present_in": [
-        87
+        87,
+        108,
+        109,
+        111
       ]
     },
     {
@@ -886,6 +1099,455 @@
       "present_in": [
         93,
         95
+      ]
+    },
+    {
+      "id": "akemi_baby",
+      "name": "Akemi's unnamed baby",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#1d4ed8",
+      "present_in": [
+        106,
+        109,
+        110
+      ]
+    },
+    {
+      "id": "ushinosuke",
+      "name": "Ushinosuke",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#155e75",
+      "present_in": [
+        97,
+        98
+      ]
+    },
+    {
+      "id": "nankobo",
+      "name": "Nankōbō",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#9f1239",
+      "present_in": [
+        98
+      ]
+    },
+    {
+      "id": "daun",
+      "name": "Daun",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#4c1d95",
+      "present_in": [
+        98
+      ]
+    },
+    {
+      "id": "toriumi_benzo",
+      "name": "Toriumi Benzō",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#365314",
+      "present_in": [
+        98,
+        99,
+        100
+      ]
+    },
+    {
+      "id": "oan",
+      "name": "Oan",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#92400e",
+      "present_in": [
+        99
+      ]
+    },
+    {
+      "id": "toroku",
+      "name": "Tōroku",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#1d4ed8",
+      "present_in": [
+        99
+      ]
+    },
+    {
+      "id": "sugizo",
+      "name": "Sugizō",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#155e75",
+      "present_in": [
+        99
+      ]
+    },
+    {
+      "id": "gensuke",
+      "name": "Gensuke",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#9f1239",
+      "present_in": [
+        99
+      ]
+    },
+    {
+      "id": "nuinosuke",
+      "name": "Nuinosuke",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#4c1d95",
+      "present_in": [
+        100,
+        101,
+        110,
+        111
+      ]
+    },
+    {
+      "id": "sanada_daisuke",
+      "name": "Sanada Daisuke",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#365314",
+      "present_in": [
+        100
+      ]
+    },
+    {
+      "id": "daisuke_wife",
+      "name": "Daisuke's unnamed wife",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#92400e",
+      "present_in": [
+        100
+      ]
+    },
+    {
+      "id": "sanada_yukimura",
+      "name": "Sanada Yukimura",
+      "aliases": [
+        "Denshin Gessō"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#1d4ed8",
+      "present_in": [
+        100
+      ]
+    },
+    {
+      "id": "osei",
+      "name": "Osei",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#155e75",
+      "present_in": [
+        101
+      ]
+    },
+    {
+      "id": "otsuru",
+      "name": "Otsuru",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#9f1239",
+      "present_in": [
+        101,
+        111
+      ]
+    },
+    {
+      "id": "sahei",
+      "name": "Sahei",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#4c1d95",
+      "present_in": [
+        101
+      ]
+    },
+    {
+      "id": "nambanya",
+      "name": "Namban'ya",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#365314",
+      "present_in": [
+        101
+      ]
+    },
+    {
+      "id": "gudo",
+      "name": "Gudō",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#92400e",
+      "present_in": [
+        102,
+        103
+      ]
+    },
+    {
+      "id": "watari_shima",
+      "name": "Watari Shima",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#1d4ed8",
+      "present_in": [
+        102
+      ]
+    },
+    {
+      "id": "miyake_gumbei",
+      "name": "Miyake Gumbei",
+      "aliases": [
+        "Tōgun practitioner"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#155e75",
+      "present_in": [
+        102
+      ]
+    },
+    {
+      "id": "asaya_mambei",
+      "name": "Asaya Mambei",
+      "aliases": [
+        "Mambei"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#9f1239",
+      "present_in": [
+        104
+      ]
+    },
+    {
+      "id": "haiya_shoeki",
+      "name": "Haiya Shōeki",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#4c1d95",
+      "present_in": [
+        106
+      ]
+    },
+    {
+      "id": "tatsunosuke",
+      "name": "Tatsunosuke",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#365314",
+      "present_in": [
+        108,
+        109,
+        111,
+        112
+      ]
+    },
+    {
+      "id": "ujiie_magoshiro",
+      "name": "Ujiie Magoshirō",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "historical",
+      "map_relevance": "mapped",
+      "color": "#92400e",
+      "present_in": [
+        108
+      ]
+    },
+    {
+      "id": "kojiro_aunt",
+      "name": "Kojirō's unnamed maternal aunt",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#1d4ed8",
+      "present_in": [
+        109
+      ]
+    },
+    {
+      "id": "kobayashi_tarozaemon",
+      "name": "Kobayashi Tarōzaemon",
+      "aliases": [
+        "Tarōzaemon"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#155e75",
+      "present_in": [
+        110,
+        111
+      ]
+    },
+    {
+      "id": "sasuke",
+      "name": "Sasuke",
+      "aliases": [],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#9f1239",
+      "present_in": [
+        111,
+        112
+      ]
+    },
+    {
+      "id": "utsumi_magobeinojo",
+      "name": "Utsumi Magobeinojō",
+      "aliases": [
+        "Magobeinojō"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#4c1d95",
+      "present_in": [
+        110
+      ]
+    },
+    {
+      "id": "koyama_handayu",
+      "name": "Koyama Handayū",
+      "aliases": [
+        "Handayū"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#365314",
+      "present_in": [
+        110
+      ]
+    },
+    {
+      "id": "kinami_kagashiro",
+      "name": "Kinami Kagashirō",
+      "aliases": [
+        "Kagashirō"
+      ],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "secondary",
+      "historical_status": "unknown",
+      "map_relevance": "mapped",
+      "color": "#92400e",
+      "present_in": [
+        110
       ]
     }
   ]

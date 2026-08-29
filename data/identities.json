@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
@@ -19,9 +19,9 @@
       "display_name": "Miyamoto Musashi",
       "alias": null,
       "valid_from_chapter": "b1c8",
-      "valid_until_chapter": null,
+      "valid_until_chapter": "b7c5",
       "valid_from_section": 8,
-      "valid_until_section": null,
+      "valid_until_section": 101,
       "reader_knows_canonical_identity": true,
       "status": "canonical_name",
       "change_reason": "name_change"
@@ -205,6 +205,66 @@
       "reader_knows_canonical_identity": true,
       "status": "revealed_name",
       "change_reason": "chapter_explicitly_links_both_names"
+    },
+    {
+      "character_id": "musashi",
+      "display_name": "Muka",
+      "alias": "Miyamoto Musashi",
+      "valid_from_chapter": "b7c6",
+      "valid_until_chapter": "b7c6",
+      "valid_from_section": 102,
+      "valid_until_section": 102,
+      "reader_knows_canonical_identity": true,
+      "status": "cover_name",
+      "change_reason": "okazaki_concealment"
+    },
+    {
+      "character_id": "musashi",
+      "display_name": "Miyamoto Musashi",
+      "alias": null,
+      "valid_from_chapter": "b7c7",
+      "valid_until_chapter": null,
+      "valid_from_section": 103,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "canonical_name",
+      "change_reason": "cover_name_no_longer_used"
+    },
+    {
+      "character_id": "toriumi_benzo",
+      "display_name": "Mountain priest",
+      "alias": null,
+      "valid_from_chapter": "b7c2",
+      "valid_until_chapter": "b7c3",
+      "valid_from_section": 98,
+      "valid_until_section": 99,
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "identity_not_yet_revealed"
+    },
+    {
+      "character_id": "toriumi_benzo",
+      "display_name": "Toriumi Benzō",
+      "alias": "Rinshōbō",
+      "valid_from_chapter": "b7c4",
+      "valid_until_chapter": null,
+      "valid_from_section": 100,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "revealed_identity",
+      "change_reason": "explicit_narrative_reconciliation"
+    },
+    {
+      "character_id": "hamada_toranosuke",
+      "display_name": "Hamada Toranosuke",
+      "alias": "Torazō",
+      "valid_from_chapter": "b7c1",
+      "valid_until_chapter": "b7c1",
+      "valid_from_section": 97,
+      "valid_until_section": 97,
+      "reader_knows_canonical_identity": true,
+      "status": "concealment_revealed_in_section",
+      "change_reason": "recognized_by_sukekuro"
     }
   ]
 }

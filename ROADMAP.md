@@ -25,8 +25,8 @@ testo lascia indeterminato.
 | Ambito | Stato |
 |---|---|
 | Registro sorgenti, 112 capitoli | PASS |
-| Books I–VI, sezioni 1–96 | Produzione / PASS |
-| Book VII, 16 capitoli, sezioni 97–112 | Scraping e audit staging / PASS |
+| Books I–VII, sezioni 1–112 | Produzione / PASS |
+| Manifest canonici Books III–VII | Provenienza staging / PASS |
 | Reader progress e firewall spoiler | PASS |
 | Validazione semantica produzione | PASS |
 | Contratto e validazione staging | PASS |
@@ -73,15 +73,18 @@ richiede per ogni sezione pubblicata eventi e stati coerenti.
 - Conservati senza coordinate tutti i 25 luoghi Book VI.
 - Portato il confine atomico da 79 a 96 soltanto dopo una prova completa su copia temporanea priva di errori e warning.
 
-### E. Migrazione Book VII
+### E. Migrazione Book VII — The Perfect Light — completata
 
-Ripetere lo stesso ciclo, senza pubblicazioni parziali:
-
-| Libro | Sezioni | Capitoli |
-|---|---:|---:|
-| VII — The Perfect Light | 97–112 | 16 |
-
-La prossima milestone è Book VII (*The Perfect Light*), sezioni 97–112.
+- Importati e riconciliati 82 eventi di produzione e 49 stati progressivi con
+  copertura delle 16 sezioni.
+- Riconciliati 30 nuovi personaggi, 39 nuovi luoghi, 12 gruppi e 14 relazioni;
+  riutilizzati i registri canonici già esistenti senza duplicarli.
+- Aggiunte finestre progressive per Muka e Toriumi Benzō/Rinshōbō, mantenendo
+  paternità, cerimonia matrimoniale e destinazione finale al loro grado reale di certezza.
+- Conservate senza coordinate tutte le 43 località Book VII, incluse le quattro
+  località riutilizzate da libri precedenti.
+- Portato il confine atomico da 96 a 112 soltanto dopo il superamento del gate
+  semantico completo senza errori o warning.
 
 ### F. Certificazione e manutenzione
 

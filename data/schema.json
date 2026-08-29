@@ -1,11 +1,11 @@
 {
-  "version": 8,
+  "version": 9,
   "description": "Canonical structural reference for the unified MusashiMap data model. This is not a JSON Schema validator.",
   "global_section_contract": {
     "registry_range": "1–112 across Books I–VII",
     "section_identity": "Global number plus stable bNcN chapter_id",
     "publication_authority": "data/reader-progress.json state.minimum_section/state.maximum_section",
-    "current_publication_range": "1–96",
+    "current_publication_range": "1–112",
     "staging_rule": "A chapter may be registered with a local source above maximum_section without becoming reader-visible. Runtime data must remain gated by reader progress.",
     "source_title_rule": "chapters.title is the first non-empty header of chapters.source_file"
   },

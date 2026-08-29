@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "relationship_types": ["family","friend_ally","acquaintance","master","disciple","rival","enemy","authority","partner_family","servant_employer","faction"],
   "relationships": [
     {"from":"musashi","to":"ogin","type":"family","subtype":"younger_brother_older_sister","first_section":3},
@@ -99,6 +99,104 @@
       "type": "friend_ally",
       "subtype": "combat_ally_and_advocate",
       "first_section": 90
+    },
+    {
+      "from": "musashi",
+      "to": "otsu",
+      "type": "partner_family",
+      "subtype": "mutually_acknowledged_husband_and_wife_without_stated_ceremony",
+      "first_section": 111
+    },
+    {
+      "from": "otsu",
+      "to": "osugi",
+      "type": "friend_ally",
+      "subtype": "reconciled_after_persecution_and_nursing_care",
+      "first_section": 107
+    },
+    {
+      "from": "osugi",
+      "to": "musashi",
+      "type": "acquaintance",
+      "subtype": "mutual_forgiveness_after_long_persecution",
+      "first_section": 111
+    },
+    {
+      "from": "matahachi",
+      "to": "akemi",
+      "type": "partner_family",
+      "subtype": "chosen_family_and_cohabiting_partners",
+      "first_section": 106
+    },
+    {
+      "from": "matahachi",
+      "to": "akemi_baby",
+      "type": "family",
+      "subtype": "social_fatherhood_biological_paternity_unconfirmed",
+      "first_section": 106
+    },
+    {
+      "from": "akemi",
+      "to": "akemi_baby",
+      "type": "family",
+      "subtype": "mother_and_child",
+      "first_section": 106
+    },
+    {
+      "from": "gonnosuke",
+      "to": "iori",
+      "type": "master",
+      "subtype": "guardian_teacher_and_child_companion",
+      "first_section": 98
+    },
+    {
+      "from": "nagaoka_sado",
+      "to": "iori",
+      "type": "authority",
+      "subtype": "household_patron_and_ward",
+      "first_section": 101
+    },
+    {
+      "from": "yagyu_hyogo",
+      "to": "ushinosuke",
+      "type": "master",
+      "subtype": "teacher_and_accepted_pupil",
+      "first_section": 98
+    },
+    {
+      "from": "toroku",
+      "to": "oan",
+      "type": "partner_family",
+      "subtype": "husband_and_wife",
+      "first_section": 99
+    },
+    {
+      "from": "sanada_yukimura",
+      "to": "toriumi_benzo",
+      "type": "authority",
+      "subtype": "lord_and_leading_retainer",
+      "first_section": 100
+    },
+    {
+      "from": "kojiro",
+      "to": "omitsu",
+      "type": "partner_family",
+      "subtype": "lovers_with_conditional_unrealized_marriage_plan",
+      "first_section": 108
+    },
+    {
+      "from": "kojiro",
+      "to": "tatsunosuke",
+      "type": "master",
+      "subtype": "teacher_and_live_in_pupil_attendant",
+      "first_section": 109
+    },
+    {
+      "from": "kojiro",
+      "to": "kojiro_aunt",
+      "type": "family",
+      "subtype": "nephew_and_maternal_aunt_who_raised_him",
+      "first_section": 109
     }
   ]
 }

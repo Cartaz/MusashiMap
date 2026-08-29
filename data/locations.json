@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "coordinate_policy": "Coordinates are modern identification aids only. They must never be interpreted as exact historical positions unless historical_match says otherwise. Every mapped location must carry an explicit precision/confidence classification. Narrative sites with approximate_area coordinates use a deterministic point within an approved radius; the radius is stored explicitly. C/D narrative locations remain coordinate-null unless stronger evidence is established.",
   "locations": [
     {"id":"sekigahara","name":"Sekigahara","type":"area","introduced_section":1,"coordinates":[35.3705,136.46164],"coordinate_precision":"exact","geographic_confidence":"exact","historical_match":"strong","modern_name_jp":"関ケ原","modern_name_romaji":"Sekigahara","map_note":"Narrative opening: battlefield region."},
@@ -9,7 +9,25 @@
     {"id":"miyamoto","name":"Miyamoto","type":"settlement_area","introduced_section":3,"coordinates":[35.09504,134.32751],"coordinate_precision":"modern_match","geographic_confidence":"high","historical_match":"strong","modern_name_romaji":"Miyamoto","map_note":"Modern Miyamoto/Musashi-no-Sato area used as the geographic anchor for the narrative settlement. This does not assert that every fictional house occupies the same historical coordinates."},
     {"id":"aida_river","name":"Aida River","type":"river","introduced_section":3,"coordinates":[35.0935,134.3295],"coordinate_precision":"representative_point","geographic_confidence":"medium","historical_match":"probable","modern_name_romaji":"Aida-gawa","map_note":"Representative point in the Miyamoto area. The river is a linear feature and should not be interpreted as a precise point location."},
     {"id":"mimasaka_highroad","name":"Mimasaka Highroad","type":"route","introduced_section":3,"coordinates":null,"coordinate_precision":"route","geographic_confidence":"pending","historical_match":"pending","modern_name_romaji":"Mimasaka Highroad","map_note":"Linear route; retained unresolved until route geometry can be represented without misleading point precision."},
-    {"id":"shippoji","name":"Shippoji","type":"temple","introduced_section":3,"coordinates":[35.0955,134.3262],"coordinate_precision":"approximate_area","coordinate_radius_m":1000,"geographic_confidence":"strong","historical_match":"unknown","modern_name_romaji":"Shippoji","map_note":"Miyamoto-area temple and recurring narrative hub; exact historical site not independently established."},
+    {
+      "id": "shippoji",
+      "name": "Shippoji",
+      "type": "temple",
+      "introduced_section": 3,
+      "coordinates": [
+        35.0955,
+        134.3262
+      ],
+      "coordinate_precision": "approximate_area",
+      "coordinate_radius_m": 1000,
+      "geographic_confidence": "strong",
+      "historical_match": "unknown",
+      "modern_name_romaji": "Shippoji",
+      "map_note": "Miyamoto-area temple and recurring narrative hub; exact historical site not independently established.",
+      "source_chapters": [
+        "b7c11"
+      ]
+    },
     {"id":"ogin_house","name":"Ogin's House","type":"narrative_site","introduced_section":3,"coordinates":[35.0918,134.332],"coordinate_precision":"approximate_area","coordinate_radius_m":1000,"geographic_confidence":"medium","historical_match":"unknown","modern_name_romaji":"Miyamoto area","map_note":"House built by Munisai overlooking the river. Exact site unresolved; deterministic approximate point within about 1 km of the Miyamoto anchor."},
     {"id":"honiden_house","name":"Hon'den House","type":"narrative_site","introduced_section":4,"coordinates":[35.0975,134.3228],"coordinate_precision":"approximate_area","coordinate_radius_m":1000,"geographic_confidence":"medium","historical_match":"unknown","modern_name_romaji":"Miyamoto area","map_note":"Osugi's family residence across the river from the Shimmen residence. Exact site unresolved; deterministic approximate point within about 1 km of the Miyamoto anchor."},
     {"id":"sanumo_mountains","name":"Sanumo Mountains","type":"area","introduced_section":4,"coordinates":[35.105,134.3],"coordinate_precision":"approximate_area","coordinate_radius_m":1000,"geographic_confidence":"possible","historical_match":"unknown","modern_name_romaji":"Sanumo","map_note":"Mountain refuge used by Takezo during the pursuit; approximate anchor only."},
@@ -46,10 +64,47 @@
     {"id":"sarusawa_pond","name":"Sarusawa Pond","type":"pond","introduced_section":14,"coordinates":[34.68144,135.83096],"coordinate_precision":"modern_match","geographic_confidence":"exact","historical_match":"strong","modern_name_romaji":"Sarusawa-ike","map_note":"Official Nara location; representative modern point for the pond."},
     {"id":"nara","name":"Nara","type":"urban_area","introduced_section":15,"coordinates":[34.6851,135.8048],"coordinate_precision":"representative_point","geographic_confidence":"high","historical_match":"strong","modern_name_romaji":"Nara","map_note":"Representative city anchor; not a claim about an exact historical street position."},
     {"id":"todaiji_area","name":"Tōdaiji area","type":"temple_area","introduced_section":15,"coordinates":[34.68899,135.83982],"coordinate_precision":"area","geographic_confidence":"exact","historical_match":"strong","modern_name_romaji":"Tōdaiji","map_note":"Modern Tōdaiji area anchor; narrative scenes are not assumed to occupy present-day building footprints."},
-    {"id":"hannya_plain","name":"Hannya Plain","type":"area","introduced_section":15,"coordinates":[34.7,135.83611],"coordinate_precision":"approximate_area","coordinate_radius_m":3000,"geographic_confidence":"high","historical_match":"probable","modern_name_romaji":"Hannya-no / 般若野","map_note":"Area-level historical/geographic anchor in the Nara/Tōdaiji-Hannyaji vicinity. Not equivalent to Hannya-ji itself and not an exact scene point."},
+    {
+      "id": "hannya_plain",
+      "name": "Hannya Plain",
+      "type": "area",
+      "introduced_section": 15,
+      "coordinates": [
+        34.7,
+        135.83611
+      ],
+      "coordinate_precision": "approximate_area",
+      "coordinate_radius_m": 3000,
+      "geographic_confidence": "high",
+      "historical_match": "probable",
+      "modern_name_romaji": "Hannya-no / 般若野",
+      "map_note": "Area-level historical/geographic anchor in the Nara/Tōdaiji-Hannyaji vicinity. Not equivalent to Hannya-ji itself and not an exact scene point.",
+      "source_chapters": [
+        "b7c1"
+      ]
+    },
     {"id":"hannya_observation_knoll","name":"Hannya Plain observation knoll","type":"narrative_site","introduced_section":15,"coordinates":null,"coordinate_precision":"narrative_site","geographic_confidence":"unknown","historical_match":"unknown","modern_name_romaji":"Hannya Plain","map_note":"Narrative sub-location; no independent coordinate."},
     {"id":"yagyu_valley","name":"Yagyū Valley","type":"valley","introduced_section":16,"coordinates":[34.72271,135.9565],"coordinate_precision":"representative_point","coordinate_radius_m":3000,"geographic_confidence":"high","historical_match":"probable","modern_name_romaji":"Yagyū-chō","map_note":"General Yagyū village/valley anchor. The exact trail point in the novel is not asserted."},
-    {"id":"koyagyu_castle","name":"Koyagyū Castle / Main House","type":"castle_context","introduced_section":16,"coordinates":[34.73102,135.95544],"coordinate_precision":"representative_point","coordinate_radius_m":1000,"geographic_confidence":"high","historical_match":"probable","modern_name_romaji":"Yagyū Castle / 柳生城","map_note":"Historical Yagyū castle context used as a regional anchor. Modern ruins are not asserted to be the exact footprint of every narrative building in the 1600 setting."},
+    {
+      "id": "koyagyu_castle",
+      "name": "Koyagyū Castle / Main House",
+      "type": "castle_context",
+      "introduced_section": 16,
+      "coordinates": [
+        34.73102,
+        135.95544
+      ],
+      "coordinate_precision": "representative_point",
+      "coordinate_radius_m": 1000,
+      "geographic_confidence": "high",
+      "historical_match": "probable",
+      "modern_name_romaji": "Yagyū Castle / 柳生城",
+      "map_note": "Historical Yagyū castle context used as a regional anchor. Modern ruins are not asserted to be the exact footprint of every narrative building in the 1600 setting.",
+      "source_chapters": [
+        "b7c1",
+        "b7c2"
+      ]
+    },
     {"id":"wataya","name":"Wataya","type":"narrative_site","introduced_section":16,"coordinates":null,"coordinate_precision":"narrative_site","geographic_confidence":"unknown","historical_match":"unknown","modern_name_romaji":"Wataya","map_note":"Narrative location; no defensible independent modern identification."},
     {"id":"shinindo","name":"Shin'indō","type":"narrative_site","introduced_section":17,"coordinates":null,"coordinate_precision":"narrative_site","geographic_confidence":"medium","historical_match":"unknown","modern_name_romaji":"Shin'indō","map_note":"Narrative sub-location within the Yagyū estate sequence; exact historical building footprint unresolved."},
     {"id":"sekishusai_mountain_house","name":"Sekishūsai's mountain house","type":"narrative_site","introduced_section":17,"coordinates":null,"coordinate_precision":"narrative_site","geographic_confidence":"unknown","historical_match":"unknown","modern_name_romaji":"Yagyū mountain area","map_note":"Child narrative location under the Yagyū context; no independent coordinate."},
@@ -57,7 +112,25 @@
     {"id":"fushimi_castle_works","name":"Fushimi Castle construction works","type":"site","introduced_section":20,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"historically_validated_area_not_point","historical_match":"unresolved","map_note":"Book III staging status: historically validated area not point.","source_chapters":["b3c1"]},
     {"id":"fushimi_deserted_house","name":"Deserted house in Fushimi","type":"fictional_or_unresolved_site","introduced_section":20,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"unmappable","historical_match":"unresolved","map_note":"Book III staging status: unmappable.","source_chapters":["b3c1","b3c2"]},
     {"id":"fushimi_osaka_road","name":"Fushimi–Osaka road","type":"route","introduced_section":21,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"route_not_reconstructed","historical_match":"unresolved","map_note":"Book III staging status: route not reconstructed.","source_chapters":["b3c2"]},
-    {"id":"osaka","name":"Osaka","type":"city","introduced_section":20,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"region_only","historical_match":"unresolved","map_note":"Book III staging status: region only.","source_chapters":["b3c1","b3c2","b3c3","b3c4","b3c6"]},
+    {
+      "id": "osaka",
+      "name": "Osaka",
+      "type": "city",
+      "introduced_section": 20,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "region_only",
+      "historical_match": "unresolved",
+      "map_note": "Book III staging status: region only.",
+      "source_chapters": [
+        "b3c1",
+        "b3c2",
+        "b3c3",
+        "b3c4",
+        "b3c6",
+        "b7c10"
+      ]
+    },
     {"id":"osaka_town_of_priestesses","name":"Osaka Town of Priestesses","type":"district","introduced_section":21,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"historical_name_unresolved","historical_match":"unresolved","map_note":"Book III staging status: historical name unresolved.","source_chapters":["b3c2"]},
     {"id":"osaka_sideshow_lot","name":"Osaka sideshow and gambling lot","type":"fictional_or_unresolved_site","introduced_section":21,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"unmappable","historical_match":"unresolved","map_note":"Book III staging status: unmappable.","source_chapters":["b3c2"]},
     {"id":"inland_sea_ship","name":"Ship from Awa toward Osaka","type":"moving_scene","introduced_section":22,"coordinates":null,"coordinate_precision":"unmapped","geographic_confidence":"route_only","historical_match":"unresolved","map_note":"Book III staging status: route only.","source_chapters":["b3c3","b3c4"]},
@@ -537,6 +610,566 @@
       "map_note": "Book VI staging status: official gate context validated narrative room unresolved.",
       "source_chapters": [
         "b6c16"
+      ]
+    },
+    {
+      "id": "koyagyu_dojo",
+      "name": "Yagyū dōjō at Koyagyū",
+      "type": "dojo",
+      "introduced_section": 97,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact site unresolved.",
+      "source_chapters": [
+        "b7c1",
+        "b7c2"
+      ]
+    },
+    {
+      "id": "tsukigase_route",
+      "name": "Koyagyū–Tsukigase/Araki road",
+      "type": "route",
+      "introduced_section": 97,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "route_not_reconstructed",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: route not reconstructed.",
+      "source_chapters": [
+        "b7c1"
+      ]
+    },
+    {
+      "id": "uji_road",
+      "name": "Road from Koyagyū toward Uji",
+      "type": "route",
+      "introduced_section": 98,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "route_not_reconstructed",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: route not reconstructed.",
+      "source_chapters": [
+        "b7c2"
+      ]
+    },
+    {
+      "id": "kofukuji",
+      "name": "Kōfukuji, Nara",
+      "type": "temple_complex",
+      "introduced_section": 98,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_institution_complex_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: official institution complex not point.",
+      "source_chapters": [
+        "b7c2"
+      ]
+    },
+    {
+      "id": "amano_village",
+      "name": "Amano village, Kawachi",
+      "type": "village",
+      "introduced_section": 99,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "named_area_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: named area not point.",
+      "source_chapters": [
+        "b7c3"
+      ]
+    },
+    {
+      "id": "kongoji",
+      "name": "Amanosan Kongōji",
+      "type": "temple_complex",
+      "introduced_section": 99,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_institution_complex_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: official institution complex not point.",
+      "source_chapters": [
+        "b7c3"
+      ]
+    },
+    {
+      "id": "amami_plateau",
+      "name": "Amami plateau, log bridge and gully",
+      "type": "route_area",
+      "introduced_section": 99,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_scene_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact scene unresolved.",
+      "source_chapters": [
+        "b7c3"
+      ]
+    },
+    {
+      "id": "mount_koya",
+      "name": "Mount Kōya / Kongōbuji and inner shrine",
+      "type": "sacred_area",
+      "introduced_section": 100,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_historic_complex_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: official historic complex not point.",
+      "source_chapters": [
+        "b7c4"
+      ]
+    },
+    {
+      "id": "mount_kudo",
+      "name": "Mount Kudo network and Yukimura residence",
+      "type": "narrative_area",
+      "introduced_section": 100,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact site unresolved.",
+      "source_chapters": [
+        "b7c4"
+      ]
+    },
+    {
+      "id": "kamuro",
+      "name": "Kamuro",
+      "type": "settlement_route",
+      "introduced_section": 100,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "toponym_exact_scene_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: toponym exact scene unresolved.",
+      "source_chapters": [
+        "b7c4"
+      ]
+    },
+    {
+      "id": "kishiwada",
+      "name": "Kishiwada pier",
+      "type": "port",
+      "introduced_section": 101,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "city_area_only",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: city area only.",
+      "source_chapters": [
+        "b7c5"
+      ]
+    },
+    {
+      "id": "sakai_port",
+      "name": "Sakai port and Kobayashi establishment",
+      "type": "port_district",
+      "introduced_section": 101,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_historic_port_private_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: official historic port private site unresolved.",
+      "source_chapters": [
+        "b7c5",
+        "b7c10"
+      ]
+    },
+    {
+      "id": "tatsumimaru",
+      "name": "Tatsumimaru",
+      "type": "vessel",
+      "introduced_section": 101,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "moving_narrative_site",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: moving narrative site.",
+      "source_chapters": [
+        "b7c5"
+      ]
+    },
+    {
+      "id": "okazaki_fish_district",
+      "name": "Okazaki fishmongers' district",
+      "type": "urban_district",
+      "introduced_section": 102,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_historical_extent_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact historical extent unresolved.",
+      "source_chapters": [
+        "b7c6"
+      ]
+    },
+    {
+      "id": "yahagi_bridge",
+      "name": "Yahagi River bridge",
+      "type": "bridge_corridor",
+      "introduced_section": 102,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_correspondence_not_pinpointed",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: historical correspondence not pinpointed.",
+      "source_chapters": [
+        "b7c6"
+      ]
+    },
+    {
+      "id": "honda_castle",
+      "name": "Honda castle in Okazaki",
+      "type": "castle",
+      "introduced_section": 102,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "narrative_correspondence_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: narrative correspondence unresolved.",
+      "source_chapters": [
+        "b7c6"
+      ]
+    },
+    {
+      "id": "tokaido_west",
+      "name": "Tōkaidō west from Okazaki",
+      "type": "route",
+      "introduced_section": 102,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "route_not_reconstructed",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: route not reconstructed.",
+      "source_chapters": [
+        "b7c6"
+      ]
+    },
+    {
+      "id": "daisenji",
+      "name": "Daisenji in Mino",
+      "type": "temple",
+      "introduced_section": 103,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_correspondence_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact correspondence unresolved.",
+      "source_chapters": [
+        "b7c7"
+      ]
+    },
+    {
+      "id": "hikone_temple",
+      "name": "Zen temple at Hikone",
+      "type": "temple",
+      "introduced_section": 103,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unidentified_institution",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: unidentified institution.",
+      "source_chapters": [
+        "b7c7"
+      ]
+    },
+    {
+      "id": "lake_biwa_temple",
+      "name": "Temple by Lake Biwa",
+      "type": "temple",
+      "introduced_section": 103,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unidentified_institution",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: unidentified institution.",
+      "source_chapters": [
+        "b7c7"
+      ]
+    },
+    {
+      "id": "seta_hiei_route",
+      "name": "Seta–Sakamoto–Mount Hiei pass route",
+      "type": "route",
+      "introduced_section": 103,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "route_not_reconstructed",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: route not reconstructed.",
+      "source_chapters": [
+        "b7c7"
+      ]
+    },
+    {
+      "id": "shikama",
+      "name": "Shikama dyers' quarter and port",
+      "type": "port_district",
+      "introduced_section": 104,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_area_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: historical area not point.",
+      "source_chapters": [
+        "b7c8"
+      ]
+    },
+    {
+      "id": "tatsuno",
+      "name": "Tatsuno",
+      "type": "town",
+      "introduced_section": 104,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "city_area_only",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: city area only.",
+      "source_chapters": [
+        "b7c8"
+      ]
+    },
+    {
+      "id": "mikazuki_shrine",
+      "name": "Mikazuki shrine",
+      "type": "shrine_area",
+      "introduced_section": 104,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact site unresolved.",
+      "source_chapters": [
+        "b7c8",
+        "b7c9"
+      ]
+    },
+    {
+      "id": "mikazuki_cave",
+      "name": "Cave near Mikazuki shrine",
+      "type": "narrative_site",
+      "introduced_section": 104,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: unmappable.",
+      "source_chapters": [
+        "b7c8",
+        "b7c9"
+      ]
+    },
+    {
+      "id": "mikazuki_inn",
+      "name": "Mikazuki inn",
+      "type": "narrative_venue",
+      "introduced_section": 104,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: unmappable.",
+      "source_chapters": [
+        "b7c8",
+        "b7c9"
+      ]
+    },
+    {
+      "id": "sayo_river",
+      "name": "Sayo River road",
+      "type": "route_area",
+      "introduced_section": 104,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "route_not_reconstructed",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: route not reconstructed.",
+      "source_chapters": [
+        "b7c8"
+      ]
+    },
+    {
+      "id": "himeji_aoki",
+      "name": "Aoki household in Himeji",
+      "type": "private_residence",
+      "introduced_section": 107,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: unmappable.",
+      "source_chapters": [
+        "b7c11"
+      ]
+    },
+    {
+      "id": "shikama_estuary",
+      "name": "Shikama estuary and beach",
+      "type": "coastal_area",
+      "introduced_section": 107,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_area_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: historical area not point.",
+      "source_chapters": [
+        "b7c11"
+      ]
+    },
+    {
+      "id": "itatsu_kojiro",
+      "name": "Kojirō's house by the Itatsu River",
+      "type": "private_residence",
+      "introduced_section": 108,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: unmappable.",
+      "source_chapters": [
+        "b7c12",
+        "b7c13"
+      ]
+    },
+    {
+      "id": "kokura_castle",
+      "name": "Kokura Castle",
+      "type": "castle_complex",
+      "introduced_section": 108,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_historical_complex_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: official historical complex not point.",
+      "source_chapters": [
+        "b7c12"
+      ]
+    },
+    {
+      "id": "shimonoseki",
+      "name": "Shimonoseki port and town",
+      "type": "port_town",
+      "introduced_section": 110,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "city_area_only",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: city area only.",
+      "source_chapters": [
+        "b7c14",
+        "b7c15",
+        "b7c16"
+      ]
+    },
+    {
+      "id": "moji",
+      "name": "Moji / Mojigasaki",
+      "type": "port_town",
+      "introduced_section": 110,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "city_area_only",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: city area only.",
+      "source_chapters": [
+        "b7c14"
+      ]
+    },
+    {
+      "id": "kokura",
+      "name": "Kokura castle town",
+      "type": "town_area",
+      "introduced_section": 109,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_area_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: historical area not point.",
+      "source_chapters": [
+        "b7c13",
+        "b7c14",
+        "b7c15"
+      ]
+    },
+    {
+      "id": "funashima",
+      "name": "Funashima / Ganryū-jima",
+      "type": "island",
+      "introduced_section": 108,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_historical_correspondence_island_not_scene_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: official historical correspondence island not scene point.",
+      "source_chapters": [
+        "b7c12",
+        "b7c13",
+        "b7c15",
+        "b7c16"
+      ]
+    },
+    {
+      "id": "hikojima",
+      "name": "Hikojima and Teshimachi inlet",
+      "type": "island_coast",
+      "introduced_section": 112,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "official_area_not_point",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: official area not point.",
+      "source_chapters": [
+        "b7c16"
+      ]
+    },
+    {
+      "id": "heike_pine",
+      "name": "Heike Pine beach, Shimonoseki",
+      "type": "narrative_site",
+      "introduced_section": 111,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact site unresolved.",
+      "source_chapters": [
+        "b7c15"
+      ]
+    },
+    {
+      "id": "tarozaemon_house",
+      "name": "Tarōzaemon's Shimonoseki house",
+      "type": "private_residence",
+      "introduced_section": 110,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "unmappable",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: unmappable.",
+      "source_chapters": [
+        "b7c14",
+        "b7c15"
+      ]
+    },
+    {
+      "id": "kokura_hill",
+      "name": "Hill overlooking Funashima from Kokura",
+      "type": "viewpoint_area",
+      "introduced_section": 110,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book VII staging status: exact site unresolved.",
+      "source_chapters": [
+        "b7c14"
       ]
     }
   ]

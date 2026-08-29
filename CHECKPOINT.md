@@ -4,13 +4,10 @@ Date: 2026-08-29
 
 ## Current state
 
-Books I (*Earth*), II (*Water*), III (*Fire*), IV (*Wind*), V (*Sky*) and VI
-(*Sun and Moon*) are normalized production data. The app publishes sections 1–96 and derives every navigation
-and spoiler decision from `data/reader-progress.json`.
-
-Book VII has been read in full, extracted chapter by chapter, reconciled across
-chapters and checked against the local sources. Its 16 chapters remain in
-canonical research staging and are deliberately not exposed by the app.
+All seven books are normalized production data. The app publishes sections
+1–112 and derives every navigation and spoiler decision from
+`data/reader-progress.json`. Canonical manifests for Books III–VII remain
+validated research provenance rather than a second publication authority.
 
 ## Completed in this milestone
 
@@ -62,6 +59,16 @@ canonical research staging and are deliberately not exposed by the app.
   canonical relationship or completed reunion.
 - Retained line ranges for every staging event and state and added exact ranges
   to all production normalization events.
+- Migrated Book VII atomically into production: 82 events, 49 progressive
+  states, 30 new characters, 39 new locations and 12 groups.
+- Reconciled Muka, Torazō and Toriumi Benzō/Rinshōbō with temporal identity
+  windows instead of spoiler-prone global aliases.
+- Separated letters, farewells, intended crossings and actual travel so only
+  physical travelers acquire route geometry.
+- Preserved Akemi's baby's unknown biological paternity, the absence of a
+  stated Musashi–Otsū ceremony and Musashi's unrecorded final destination.
+- Added seven progressively gated historical-context cards from institutional
+  and municipal sources without using them as plot evidence.
 
 ### Runtime and spoiler safety
 
@@ -91,27 +98,25 @@ canonical research staging and are deliberately not exposed by the app.
 
 ```text
 source registry     1 ----------------------------------------------- 112
-production data     1 -------------------------------------------------- 96
-research staging                                                          97 --- 112
-reader-visible      1 -------------------------------------------------- 96
+production data     1 ----------------------------------------------- 112
+research provenance  Books III ---------------------------------- VII
+reader-visible      1 ----------------------------------------------- 112
 ```
 
-Registering or scraping a chapter does not publish it. A book can move beyond
-section 96 only after its events, states, context and spoiler timing have been
-migrated to production and the semantic gate passes at the new boundary.
+Registering or scraping a chapter does not publish it. The final boundary moved
+to section 112 only after Book VII events, states, context and spoiler timing
+were migrated to production and the semantic gate passed at that boundary.
 
 ## Remaining work
 
-1. Migrate Book VII (*The Perfect Light*), sections 97–112, from its canonical
-   manifest into production as one complete publication unit.
-2. Extend identities, relationships and progressive context only after their
+1. Extend identities, relationships and progressive context only after their
    reveal timing has been audited for the target book.
-3. Geocode only locations supported by sufficiently precise authoritative
+2. Geocode only locations supported by sufficiently precise authoritative
    evidence; retain `null` for private, fictional or indeterminate places.
-4. Repeat visual certification after every publication increment. The overlay
+3. Repeat visual certification after every publication increment. The overlay
    and responsive layout have been exercised in headless Firefox; the vector
    canvas still merits a final check on a browser with hardware graphics.
-5. Keep the Luni-edition mapping deferred until its actual index is available.
+4. Keep the Luni-edition mapping deferred until its actual index is available.
 
 ## Permanent constraints
 
