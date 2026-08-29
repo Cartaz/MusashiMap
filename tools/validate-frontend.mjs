@@ -111,10 +111,15 @@ for (const reference of localReferences) {
 
 for (const file of jsFiles) {
   const content = await readFile(file, "utf8");
-  for (const match of content.matchAll(/(?:from\s+|import\s*\()["'](\.[^"']+)["']/g)) {
+  for (const match of content.matchAll(/(?:from\s+|import\s*(?:\(\s*)?)["'](\.[^"']+)["']/g)) {
     const cleanImport = match[1].split("?")[0].split("#")[0];
     const target = path.resolve(path.dirname(file), cleanImport);
-    if (!existsSync(target)) warnings.push(`JS import may need extension resolution: ${path.relative(root, file)} → ${match[1]}`);
+    const relativeFile = path.relative(root, file);
+    if (!target.startsWith(`${root}${path.sep}`) && target !== root) {
+      errors.push(`Unsafe local JS import: ${relativeFile} → ${match[1]}`);
+      continue;
+    }
+    if (!existsSync(target)) errors.push(`Missing local JS import: ${relativeFile} → ${match[1]}`);
   }
 }
 
