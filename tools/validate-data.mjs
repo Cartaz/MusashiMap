@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { validateMovementEvent } from "../js/movement-contract.js";
+import { validatePositionState } from "../js/position-contract.js";
 
 const REQUIRED_FILES = [
   "data/schema.json",
@@ -327,9 +328,10 @@ export function validateRepository(root = process.cwd()) {
     if (["departed", "away"].includes(state.status) && state.location !== null) {
       errors.push(`Non-present state ${key} cannot retain a physical location.`);
     }
-    if (["unknown", "reported_position", "departed", "departed_unknown", "intended_destination"].includes(state.location_status)
-      && state.location !== null) {
-      errors.push(`State ${key} with non-physical location_status ${state.location_status} cannot retain a physical location.`);
+    for (const violation of validatePositionState(state)) {
+      if (violation === "invalid_location_status") errors.push(`State ${key} has invalid location_status ${state.location_status}.`);
+      if (violation === "non_physical_location") errors.push(`State ${key} with non-physical location_status ${state.location_status} cannot retain a physical location.`);
+      if (violation === "reported_location_required") errors.push(`State ${key} with reported_position needs a reported or last-known location.`);
     }
     const previous = latestByCharacter.get(state.character);
     if (previous?.status === "dead" && state.status !== "dead") errors.push(`${state.character} becomes ${state.status} after being dead in section ${previous.section}.`);
