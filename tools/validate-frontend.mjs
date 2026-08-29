@@ -26,6 +26,9 @@ const walk = async directory => {
 
 const files = await walk(root);
 const jsFiles = files.filter(file => file.endsWith(".js") || file.endsWith(".mjs"));
+const browserJsFiles = jsFiles.filter(file =>
+  file.endsWith(".js") && path.relative(root, file).split(path.sep)[0] === "js"
+);
 const jsonFiles = files.filter(file => file.endsWith(".json"));
 const cssFiles = files.filter(file => file.endsWith(".css"));
 const sourceFiles = files.filter(file => /\.(?:html|js|mjs|json)$/.test(file) && !file.includes(`${path.sep}tools${path.sep}tests${path.sep}`));
@@ -109,7 +112,7 @@ for (const reference of localReferences) {
   if (!existsSync(target)) errors.push(`Missing local reference in index.html: ${reference}`);
 }
 
-for (const file of jsFiles) {
+for (const file of browserJsFiles) {
   const content = await readFile(file, "utf8");
   for (const match of content.matchAll(/(?:from\s+|import\s*(?:\(\s*)?)["'](\.[^"']+)["']/g)) {
     const cleanImport = match[1].split("?")[0].split("#")[0];
