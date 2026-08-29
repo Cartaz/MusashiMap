@@ -198,6 +198,53 @@ test("Book VI mixed scenes assign movement only to actual travelers", () => {
   assert.deepEqual(byId("b6c17-e04").characters, ["musashi"]);
 });
 
+test("Book VII keeps cover names and unresolved family facts progressive", async () => {
+  const { getDisplayCharacterName } = await import("./reader-progress.js");
+  const characters = JSON.parse(readFileSync(new URL("../data/characters.json", import.meta.url))).characters;
+  const identities = JSON.parse(readFileSync(new URL("../data/identities.json", import.meta.url))).identities;
+  const relationships = JSON.parse(readFileSync(new URL("../data/relationships.json", import.meta.url))).relationships;
+  const events = JSON.parse(readFileSync(new URL("../data/events.json", import.meta.url))).events;
+  const states = JSON.parse(readFileSync(new URL("../data/character-states.json", import.meta.url))).character_states;
+  const musashi = characters.find(character => character.id === "musashi");
+  const benzo = characters.find(character => character.id === "toriumi_benzo");
+  const baby = characters.find(character => character.id === "akemi_baby");
+
+  assert.equal(getDisplayCharacterName(musashi, 101, identities), "Miyamoto Musashi");
+  assert.equal(getDisplayCharacterName(musashi, 102, identities), "Muka");
+  assert.equal(getDisplayCharacterName(musashi, 103, identities), "Miyamoto Musashi");
+  assert.equal(getDisplayCharacterName(benzo, 98, identities), "Mountain priest");
+  assert.equal(getDisplayCharacterName(benzo, 99, identities), "Mountain priest");
+  assert.equal(getDisplayCharacterName(benzo, 100, identities), "Toriumi Benzō");
+  assert.equal((musashi.aliases ?? []).includes("Muka"), false);
+  assert.equal((benzo.aliases ?? []).includes("Rinshōbō"), false);
+  assert.equal((baby.aliases ?? []).length, 0);
+  assert.equal(relationships.some(({ from, to, subtype }) =>
+    [from, to].includes("matahachi") && [from, to].includes("akemi_baby") && /biological_father/i.test(subtype)), false);
+
+  const preBenzoReveal = [
+    ...events.filter(entry => entry.section >= 98 && entry.section < 100).map(entry => entry.description),
+    ...states.filter(entry => entry.section >= 98 && entry.section < 100).map(entry => entry.activity)
+  ].join("\n");
+  assert.doesNotMatch(preBenzoReveal, /Toriumi|Benzō|Benzo|Rinshōbō|Rinshobo/i);
+  assert.doesNotMatch(states.find(entry => entry.character === "omitsu" && entry.section === 111)?.activity ?? "", /death|dead|dies|killed/i);
+});
+
+test("Book VII separates farewells, crossings and the unknown final route", () => {
+  const events = JSON.parse(readFileSync(new URL("../data/events.json", import.meta.url))).events;
+  const states = JSON.parse(readFileSync(new URL("../data/character-states.json", import.meta.url))).character_states;
+  const byId = id => events.find(event => event.id === id);
+
+  assert.equal(byId("b7c15-e01").movement_status, null);
+  assert.deepEqual(byId("b7c15-e07").characters, ["musashi", "sasuke"]);
+  assert.equal(byId("b7c15-e07").destination, "funashima");
+  assert.deepEqual(byId("b7c14-e06").characters, ["matahachi", "akemi", "akemi_baby"]);
+  assert.equal(byId("b7c16-e06").movement_status, "uncertain_route");
+  assert.equal(byId("b7c16-e06").destination, undefined);
+  assert.match(byId("b7c16-e06").destination_label, /unrecorded/i);
+  assert.equal(states.find(entry => entry.character === "kojiro" && entry.section === 112)?.status, "dead");
+  assert.equal(states.find(entry => entry.character === "musashi" && entry.section === 112)?.location, null);
+});
+
 test("event, state and wiki evidence can safely establish an introduction", () => {
   const character = { id: "mentioned", present_in: [] };
   const evidence = {
