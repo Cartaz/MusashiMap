@@ -5,44 +5,24 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "_site");
 
-const runtimeFiles = [
-  "index.html",
-  "css/app.css",
-  "css/legend.css",
-  "css/map-unmapped.css",
-  "css/marker-overrides.css",
-  "css/paper-texture.css",
-  "css/parchment-overrides.css",
-  "css/responsive-polish.css",
-  "css/style-v2.css",
-  "css/ui-redesign.css",
-  "assets/icons/places/area.svg",
-  "assets/icons/places/castle.svg",
-  "assets/icons/places/city.svg",
-  "assets/icons/places/landmark.svg",
-  "assets/icons/places/river.svg",
-  "assets/icons/places/route.svg",
-  "assets/icons/places/temple.svg",
-  "assets/icons/places/village.svg",
-  "js/app.js",
-  "js/character-collision.js",
-  "js/character-selection.js",
-  "js/data.js",
-  "js/legend-toggle.js",
-  "js/map-runtime.js",
-  "js/movement-contract.js",
-  "js/popups.js",
-  "js/reader-progress.js",
-  "js/validate.js"
-];
-
 const readJson = relative => JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));
+let writtenFiles = 0;
 const writeFile = (relative, contents) => {
   const destination = path.join(output, relative);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, contents);
+  writtenFiles += 1;
 };
 const writeJson = (relative, value) => writeFile(relative, `${JSON.stringify(value, null, 2)}\n`);
+const copyDirectory = (relative, includeFile = () => true) => {
+  const directory = path.join(root, relative);
+  if (!fs.existsSync(directory)) throw new Error(`Missing runtime directory ${relative}.`);
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const child = path.join(relative, entry.name);
+    if (entry.isDirectory()) copyDirectory(child, includeFile);
+    else if (entry.isFile() && includeFile(child)) writeFile(child, fs.readFileSync(path.join(root, child)));
+  }
+};
 
 const progress = readJson("data/reader-progress.json")?.state;
 if (!Number.isInteger(progress?.minimum_section) || !Number.isInteger(progress?.maximum_section)) {
@@ -50,11 +30,11 @@ if (!Number.isInteger(progress?.minimum_section) || !Number.isInteger(progress?.
 }
 
 fs.rmSync(output, { recursive: true, force: true });
-for (const relative of runtimeFiles) {
-  const source = path.join(root, relative);
-  if (!fs.existsSync(source)) throw new Error(`Missing runtime asset ${relative}.`);
-  writeFile(relative, fs.readFileSync(source));
-}
+writeFile("index.html", fs.readFileSync(path.join(root, "index.html")));
+copyDirectory("css");
+copyDirectory("assets");
+// Browser runtime modules use .js; Node-only tests in js/ use .mjs and stay private.
+copyDirectory("js", relative => relative.endsWith(".js"));
 
 const chapters = readJson("data/chapters.json");
 const publishedSections = (chapters.sections ?? []).filter(section =>
@@ -157,4 +137,4 @@ for (const forbidden of ["research", "tools", "docs", "data/source", "data/audit
   if (fs.existsSync(path.join(output, forbidden))) throw new Error(`Forbidden Pages path emitted: ${forbidden}.`);
 }
 
-console.log(`Pages artifact built: ${publishedSections.length} published sections, ${runtimeFiles.length + 10} files.`);
+console.log(`Pages artifact built: ${publishedSections.length} published sections, ${writtenFiles} files.`);
