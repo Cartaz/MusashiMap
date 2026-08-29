@@ -1,5 +1,6 @@
 import { loadMapData } from "./data.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
+import { getPlacePresentation } from "./place-presentation.js";
 import { isNonPhysicalLocationStatus } from "./position-contract.js";
 
 (() => {
@@ -9,10 +10,6 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
   let unmappedPopupOpen = false;
   let previousSection = null;
   let previousSelectedCharacters = null;
-
-  const colors = { exact_site:"#e0a04b", settlement:"#c9d1d9", settlement_area:"#c9d1d9", urban_area:"#c9d1d9", area:"#8fb3c9", region:"#8fb3c9", route:"#b99ad6", river:"#8fb3c9", temple:"#b8c7a4", castle:"#b8c7a4", fortified_site:"#b8c7a4", bridge:"#b99ad6", narrative_site:"#d9a0b7", literary_landmark:"#d9a0b7" };
-  const placeIconPaths = { temple:"assets/icons/places/temple.svg", castle:"assets/icons/places/castle.svg", city:"assets/icons/places/city.svg", village:"assets/icons/places/village.svg", nature:"assets/icons/places/nature.svg", area:"assets/icons/places/area.svg", river:"assets/icons/places/river.svg", route:"assets/icons/places/route.svg", literary_landmark:"assets/icons/places/landmark.svg" };
-  const placeTypeAliases = { settlement:"city", settlement_area:"village", urban_area:"city", area:"area", region:"area", river:"river", route:"route", temple:"temple", castle:"castle", fortified_site:"castle", bridge:"route", narrative_site:"literary_landmark", literary_landmark:"literary_landmark", exact_site:"literary_landmark" };
 
   const hasCoords = location => Array.isArray(location?.coordinates) && location.coordinates.length === 2;
   const locationLabel = location => location?.name || location?.modern_name_romaji || "Località non determinata";
@@ -26,11 +23,10 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
   const popups = window.MusashiMapPopups;
 
   const icon = (location, offset = [0, 0]) => {
-    const type = placeTypeAliases[location?.type] ?? "literary_landmark";
-    const color = colors[location?.type] ?? "#c9d1d9";
+    const presentation = getPlacePresentation(location?.type) ?? getPlacePresentation("narrative_site");
     return L.divIcon({
       className: "musashi-map-marker-wrapper",
-      html: `<span class="musashi-map-marker" style="--marker-color:${color}"><img src="${placeIconPaths[type]}" alt="" aria-hidden="true"></span>`,
+      html: `<span class="musashi-map-marker" style="--marker-color:${presentation.markerColor}"><img src="${presentation.iconPath}" alt="" aria-hidden="true"></span>`,
       iconSize: [32, 32],
       iconAnchor: [16 - offset[0], 16 - offset[1]],
       popupAnchor: [0, -17]
