@@ -317,26 +317,21 @@ const normalizeManifest = manifest => {
     extensions: cleanObject({
       reconciliation: manifest.reconciliation,
       referential_audit: manifest.referential_audit,
-      legacy_character_occurrence_index: manifest.entities?.character_occurrence_index,
-      legacy_book3_filename: book === 3 ? "research/book3-fire-staging-manifest.json" : undefined
+      legacy_character_occurrence_index: manifest.entities?.character_occurrence_index
     })
   };
   return canonical;
 };
 
-const legacyInputForBook = async book => {
+const inputForBook = async book => {
   const canonical = canonicalFile(book);
   if (existsSync(canonical)) return canonical;
-  if (book === 3) {
-    const legacy = path.join(researchDir, "book3-fire-staging-manifest.json");
-    if (existsSync(legacy)) return legacy;
-  }
   return null;
 };
 
 if (writeNormalized) {
   for (let book = MIN_BOOK; book <= MAX_BOOK; book += 1) {
-    const input = await legacyInputForBook(book);
+    const input = await inputForBook(book);
     if (!input) continue;
     const manifest = await readJson(input);
     const normalized = normalizeManifest(manifest);

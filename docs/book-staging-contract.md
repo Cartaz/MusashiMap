@@ -18,9 +18,7 @@ research/book6-production-manifest.json
 research/book7-production-manifest.json
 ```
 
-`research/book3-fire-staging-manifest.json` remains the frozen legacy input for traceability. New consumers must use `book3-production-manifest.json`; `extensions.legacy_book3_filename` records the compatibility link.
-
-The validator discovers every canonical file matching `research/book[3-7]-production-manifest.json`. Book VII therefore enters the same gate automatically and does not require a hard-coded list update.
+These canonical manifests are the retained staging provenance. The validator discovers every file matching `research/book[3-7]-production-manifest.json`, so all five books pass through the same gate without a hard-coded filename list.
 
 ## Top-level object
 

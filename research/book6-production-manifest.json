@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "contract_version": "1.0.0",
   "contract": "docs/book-staging-contract.md",
-  "dataset": "Musashi Book VI — Sun and Moon production-candidate staging",
-  "status": "research_staging_not_imported",
+  "dataset": "Musashi Book VI — Sun and Moon production provenance",
+  "status": "production_migrated_provenance",
   "generated_on": "2026-08-20",
   "book": {
     "number": 6,

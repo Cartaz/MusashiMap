@@ -189,6 +189,7 @@ test("Book VI reveals identities without promoting inference or temporary names 
 
 test("Book VI mixed scenes assign movement only to actual travelers", () => {
   const events = JSON.parse(readFileSync(new URL("../data/events.json", import.meta.url))).events;
+  const characters = JSON.parse(readFileSync(new URL("../data/characters.json", import.meta.url))).characters;
   const byId = id => events.find(event => event.id === id);
 
   assert.deepEqual(byId("b6c7-e01").characters, ["akemi"]);
@@ -196,6 +197,35 @@ test("Book VI mixed scenes assign movement only to actual travelers", () => {
   assert.deepEqual(byId("b6c12-e05").characters, ["gonnosuke", "iori"]);
   assert.deepEqual(byId("b6c16-e05").characters, ["musashi"]);
   assert.deepEqual(byId("b6c17-e04").characters, ["musashi"]);
+  assert.equal(characters.find(character => character.id === "gonnosuke").present_in.includes(93), false);
+  assert.deepEqual(byId("b6c14-e04").characters, []);
+  assert.deepEqual(byId("b6c14-e04").referenced_characters, ["musashi", "gonnosuke"]);
+});
+
+test("relationship reveal thresholds follow the first explicit narrative evidence", () => {
+  const relationships = JSON.parse(readFileSync(new URL("../data/relationships.json", import.meta.url))).relationships;
+  const find = (from, to) => relationships.find(relation => relation.from === from && relation.to === to);
+
+  assert.equal(find("musashi", "lord_ikeda").first_section, 8);
+  assert.equal(find("takuan", "lord_ikeda").first_section, 5);
+  assert.equal(find("yoshioka_seijuro", "yoshioka_denshichiro").first_section, 9);
+  assert.equal(find("kojiro", "obata_kagenori").first_section, 66);
+  assert.equal(find("munenori", "yagyu_hyogo").first_section, 74);
+  assert.equal(find("iwama_kakubei", "kojiro").subtype, "recruitment_sponsor");
+});
+
+test("modern literary anchors do not imply impossible historical continuity", () => {
+  const locations = JSON.parse(readFileSync(new URL("../data/locations.json", import.meta.url))).locations;
+  const mampukuji = locations.find(location => location.id === "mampukuji");
+  const shimonida = locations.find(location => location.id === "kozukeshimonida");
+
+  assert.equal(mampukuji.coordinate_precision, "modern_literary_reference");
+  assert.equal(mampukuji.historical_match, "anachronistic_reference");
+  assert.match(mampukuji.map_note, /1661/);
+  assert.equal(shimonida.coordinates, null);
+  assert.equal(shimonida.modern_name_romaji, "Shimonita, Gunma");
+  assert.equal(shimonida.historical_match, "probable");
+  assert.match(shimonida.map_note, /probably corresponds/);
 });
 
 test("Book VII keeps cover names and unresolved family facts progressive", async () => {

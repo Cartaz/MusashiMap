@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "contract_version": "1.0.0",
   "contract": "docs/book-staging-contract.md",
-  "dataset": "Musashi Book V — Sky complete narrative scrape",
-  "status": "research_staging_only_not_for_production",
+  "dataset": "Musashi Book V — Sky production provenance",
+  "status": "production_migrated_provenance",
   "generated_on": "2026-08-20",
   "book": {
     "number": 5,
@@ -5901,7 +5901,7 @@
       "chapter_count": 26,
       "event_count": 105,
       "coordinates_emitted": 0,
-      "checks": "Recomputed by scripts documented in research/book5-scrape-audit.md; stored counts are declarative and must match the executable audit."
+      "checks": "Recomputed by node tools/validate-staging.mjs; stored counts are declarative and must match the canonical manifest."
     }
   }
 }

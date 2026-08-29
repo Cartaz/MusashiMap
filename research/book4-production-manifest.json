@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "contract_version": "1.0.0",
   "contract": "docs/book-staging-contract.md",
-  "dataset": "Musashi Book IV — Wind narrative production manifest",
-  "status": "research_complete_preproduction",
+  "dataset": "Musashi Book IV — Wind production provenance",
+  "status": "production_migrated_provenance",
   "generated_on": "2026-08-20",
   "book": {
     "number": 4,
