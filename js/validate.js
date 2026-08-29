@@ -1,5 +1,6 @@
 import { loadData } from "./data.js";
 import { validateMovementEvent } from "./movement-contract.js";
+import { isNonPhysicalLocationStatus, validatePositionState } from "./position-contract.js";
 
 export function validateData({ characters, locations, chapters, events, states }) {
   const characterIds = new Set(characters.characters.map(c => c.id));
@@ -11,7 +12,6 @@ export function validateData({ characters, locations, chapters, events, states }
   const warnings = [];
   const stateSections = new Map();
   const specialUnknownLocation = "unknown";
-  const nonPhysicalLocationStatuses = new Set(["reported_position", "unknown", "departed_with_group", "departed_eastward", "departed_westward"]);
 
   for (const event of events.events) {
     if (!sectionNumbers.has(event.section)) errors.push(`Event ${event.id}: sezione inesistente ${event.section}`);
@@ -42,9 +42,12 @@ export function validateData({ characters, locations, chapters, events, states }
     if (!characterIds.has(state.character)) errors.push(`State ${state.character}/${state.section}: personaggio inesistente`);
     if (state.location && !locationIds.has(state.location)) errors.push(`State ${state.character}/${state.section}: luogo inesistente ${state.location}`);
     if (state.last_known_location && !locationIds.has(state.last_known_location)) errors.push(`State ${state.character}/${state.section}: last_known_location inesistente ${state.last_known_location}`);
-    if (nonPhysicalLocationStatuses.has(state.location_status) && state.location) errors.push(`State ${state.character}/${state.section}: ${state.location_status} non può avere una posizione fisica corrente (${state.location})`);
-    if (nonPhysicalLocationStatuses.has(state.location_status) && !state.last_known_location && state.location_status !== "unknown") warnings.push(`State ${state.character}/${state.section}: ${state.location_status} senza last_known_location`);
-    if (state.location_status === "reported_position" && !state.location && !state.last_known_location) errors.push(`State ${state.character}/${state.section}: reported_position senza luogo riferito`);
+    for (const violation of validatePositionState(state)) {
+      if (violation === "invalid_location_status") errors.push(`State ${state.character}/${state.section}: location_status non valido ${state.location_status}`);
+      if (violation === "non_physical_location") errors.push(`State ${state.character}/${state.section}: ${state.location_status} non può avere una posizione fisica corrente (${state.location})`);
+      if (violation === "reported_location_required") errors.push(`State ${state.character}/${state.section}: reported_position senza luogo riferito`);
+    }
+    if (isNonPhysicalLocationStatus(state.location_status) && !state.last_known_location && state.location_status !== "unknown") warnings.push(`State ${state.character}/${state.section}: ${state.location_status} senza last_known_location`);
     if (state.location_status === "departed_with_group" && !state.departure_from) warnings.push(`State ${state.character}/${state.section}: departed_with_group senza departure_from`);
     const key = `${state.character}:${state.section}`;
     if (stateSections.has(key)) errors.push(`State ${state.character}/${state.section}: stato duplicato nella stessa sezione`);
@@ -99,7 +102,7 @@ export function validateData({ characters, locations, chapters, events, states }
 
   for (const [key, terminal] of terminalEventLocations) {
     const state = stateSections.get(key);
-    if (!state?.location || nonPhysicalLocationStatuses.has(state.location_status)) continue;
+    if (!state?.location || isNonPhysicalLocationStatus(state.location_status)) continue;
     if (state.location !== terminal.location) {
       warnings.push(`State/event mismatch ${key}: stato finale ${state.location} ma ultimo anchor ${terminal.eventId} indica ${terminal.location}`);
     }

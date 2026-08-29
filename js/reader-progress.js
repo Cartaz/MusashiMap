@@ -1,3 +1,5 @@
+import { getPositionReference } from "./position-contract.js";
+
 const canonicalState = {
   section: null,
   selectedCharacters: []
@@ -139,20 +141,14 @@ export function resolveCharacterPosition(state, locations) {
     ? locations
     : new Map((locations ?? []).map(location => [location.id, location]));
   const hasCoordinates = location => Array.isArray(location?.coordinates) && location.coordinates.length === 2;
-  const resolve = id => id ? byId.get(id) : null;
+  const { locationId, mode } = getPositionReference(state);
+  const location = locationId ? byId.get(locationId) : null;
 
-  if (state?.location_status === "reported_position") {
-    const location = resolve(state.location || state.last_known_location);
-    return { location: hasCoordinates(location) ? location : null, referencedLocation: location ?? null, mode: location ? "reported" : "unmapped" };
-  }
-
-  if (["unknown", "departed_with_group", "departed_eastward", "departed_westward"].includes(state?.location_status)) {
-    const location = resolve(state?.last_known_location);
-    return { location: hasCoordinates(location) ? location : null, referencedLocation: location ?? null, mode: location ? "last_known" : "unmapped" };
-  }
-
-  const location = resolve(state?.location);
-  return { location: hasCoordinates(location) ? location : null, referencedLocation: location ?? null, mode: location ? "current" : "unmapped" };
+  return {
+    location: hasCoordinates(location) ? location : null,
+    referencedLocation: location ?? null,
+    mode: location ? mode : "unmapped"
+  };
 }
 
 export function getPositionStatusLabel(mode) {
