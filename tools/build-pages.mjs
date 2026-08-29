@@ -26,6 +26,7 @@ const runtimeFiles = [
   "assets/icons/places/village.svg",
   "js/app.js",
   "js/character-collision.js",
+  "js/character-selection.js",
   "js/data.js",
   "js/legend-toggle.js",
   "js/map-runtime.js",
