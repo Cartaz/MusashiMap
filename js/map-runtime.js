@@ -1,6 +1,6 @@
 import { loadMapData } from "./data.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
-import { getPlacePresentation } from "./place-presentation.js";
+import { getPlacePresentation, isApproximateLocation } from "./place-presentation.js";
 import { isNonPhysicalLocationStatus } from "./position-contract.js";
 
 (() => {
@@ -26,7 +26,7 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
     const presentation = getPlacePresentation(location?.type) ?? getPlacePresentation("narrative_site");
     return L.divIcon({
       className: "musashi-map-marker-wrapper",
-      html: `<span class="musashi-map-marker" style="--marker-color:${presentation.markerColor}"><img src="${presentation.iconPath}" alt="" aria-hidden="true"></span>`,
+      html: `<span class="musashi-map-marker ${isApproximateLocation(location) ? "is-approximate" : ""}" style="--marker-color:${presentation.markerColor}"><img src="${presentation.iconPath}" alt="" aria-hidden="true"></span>`,
       iconSize: [32, 32],
       iconAnchor: [16 - offset[0], 16 - offset[1]],
       popupAnchor: [0, -17]
@@ -35,7 +35,7 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
 
   const characterIcon = (color, location, offset = [0, 0], mode = "current") => L.divIcon({
     className: "musashi-character-marker-wrapper",
-    html: `<span class="musashi-character-marker ${location?.coordinate_precision === "approximate_area" ? "is-approximate" : ""} ${mode === "reported" ? "is-reported" : mode === "last_known" ? "is-last-known" : ""}" style="--marker-color:${color}"></span>`,
+    html: `<span class="musashi-character-marker ${isApproximateLocation(location) ? "is-approximate" : ""} ${mode === "reported" ? "is-reported" : mode === "last_known" ? "is-last-known" : ""}" style="--marker-color:${color}"></span>`,
     iconSize: [26, 26],
     iconAnchor: [13 - offset[0], 13 - offset[1]]
   });

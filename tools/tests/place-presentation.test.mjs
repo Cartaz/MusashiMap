@@ -4,7 +4,7 @@ import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 
-import { getPlaceLegendEntries, getPlacePresentation } from "../../js/place-presentation.js";
+import { getPlaceLegendEntries, getPlacePresentation, isApproximateLocation } from "../../js/place-presentation.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const locations = JSON.parse(fs.readFileSync(path.join(root, "data/locations.json"), "utf8")).locations;
@@ -44,4 +44,15 @@ test("legend exposes each used presentation category once", () => {
   const ids = entries.map(entry => entry.id);
   assert.equal(ids.length, new Set(ids).size);
   assert.deepEqual(ids, ["city", "village", "area", "river", "route", "temple", "castle", "literary_landmark"]);
+});
+
+test("approximate coordinate precision has a shared visible marker state", () => {
+  assert.equal(isApproximateLocation({ coordinate_precision: "approximate_area" }), true);
+  for (const precision of ["exact", "modern_match", "modern_literary_reference", "representative_point", "area", undefined]) {
+    assert.equal(isApproximateLocation({ coordinate_precision: precision }), false, String(precision));
+  }
+
+  const markerCss = fs.readFileSync(path.join(root, "css/marker-overrides.css"), "utf8");
+  assert.match(markerCss, /\.musashi-map-marker\.is-approximate\s*\{/);
+  assert.match(markerCss, /\.musashi-character-marker\.is-approximate\s*\{/);
 });

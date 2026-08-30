@@ -36,6 +36,10 @@ export function getPlacePresentation(type) {
   return presentationId ? PRESENTATIONS.get(presentationId) : null;
 }
 
+export function isApproximateLocation(location) {
+  return location?.coordinate_precision === "approximate_area";
+}
+
 export function getPlaceLegendEntries(types) {
   const used = new Set();
   for (const type of types ?? []) {
