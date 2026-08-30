@@ -2,6 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { createRuntimeVersion, listLocalRuntimeUrls } from "./runtime-version.mjs";
+
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rootArgument = process.argv.indexOf("--root");
 const artifactRoot = rootArgument === -1
@@ -29,6 +31,52 @@ const assertReferences = (values, ids, label) => {
 
 for (const forbidden of ["research", "tools", "docs", "data/source", "data/audit"]) {
   if (fs.existsSync(path.join(artifactRoot, forbidden))) errors.push(`Forbidden artifact path ${forbidden}.`);
+}
+
+const walkRuntimeTextFiles = relative => {
+  const directory = path.join(artifactRoot, relative);
+  if (!fs.existsSync(directory)) return [];
+  const files = [];
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const child = path.join(relative, entry.name);
+    if (entry.isDirectory()) files.push(...walkRuntimeTextFiles(child));
+    else if (entry.isFile() && /\.(?:css|js)$/.test(entry.name)) files.push(child);
+  }
+  return files;
+};
+const expectedRuntimeVersion = createRuntimeVersion(repositoryRoot);
+const runtimeVersions = new Set();
+for (const relative of ["index.html", ...walkRuntimeTextFiles("css"), ...walkRuntimeTextFiles("js")]) {
+  const absolute = path.join(artifactRoot, relative);
+  if (!fs.existsSync(absolute)) {
+    errors.push(`Missing artifact runtime file ${relative}.`);
+    continue;
+  }
+  const content = fs.readFileSync(absolute, "utf8");
+  for (const value of listLocalRuntimeUrls(relative, content)) {
+    const [beforeHash] = value.split("#", 1);
+    const [pathname, query = ""] = beforeHash.split("?", 2);
+    const version = new URLSearchParams(query).get("v");
+    if (!version) errors.push(`${relative} has unversioned local runtime URL ${value}.`);
+    else {
+      runtimeVersions.add(version);
+      if (version !== expectedRuntimeVersion) {
+        errors.push(`${relative} uses runtime version ${version}; expected ${expectedRuntimeVersion}.`);
+      }
+    }
+
+    const target = pathname.startsWith(".")
+      ? path.resolve(path.dirname(absolute), pathname)
+      : path.resolve(artifactRoot, pathname);
+    if (!target.startsWith(`${artifactRoot}${path.sep}`) && target !== artifactRoot) {
+      errors.push(`${relative} has unsafe local runtime URL ${value}.`);
+    } else if (!fs.existsSync(target)) {
+      errors.push(`${relative} references missing runtime file ${value}.`);
+    }
+  }
+}
+if (runtimeVersions.size !== 1) {
+  errors.push(`Artifact must use exactly one runtime version; found ${[...runtimeVersions].join(", ") || "none"}.`);
 }
 
 const progress = readJson("data/reader-progress.json")?.state;
@@ -122,4 +170,4 @@ if (errors.length) {
   console.error(`Pages artifact validation failed (${errors.length}):\n- ${errors.join("\n- ")}`);
   process.exit(1);
 }
-console.log(`Pages artifact validation passed: ${chapters.length} sections, ${events.length} events, ${states.length} states, ${characters.length} characters.`);
+console.log(`Pages artifact validation passed: ${chapters.length} sections, ${events.length} events, ${states.length} states, ${characters.length} characters, runtime v=${expectedRuntimeVersion}.`);

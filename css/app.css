@@ -3,11 +3,11 @@
  * Modules are named by responsibility; later files may refine layout, but feature
  * semantics stay with their owner (markers, panels, surfaces, responsive).
  */
-@import url("./foundation.css?v=20260820-1");
-@import url("./map-controls.css?v=20260820-1");
-@import url("./markers.css?v=20260820-1");
-@import url("./components.css?v=20260820-1");
-@import url("./panels.css?v=20260820-1");
-@import url("./surfaces.css?v=20260820-1");
-@import url("./map-unmapped.css?v=20260820-1");
-@import url("./responsive.css?v=20260829-1");
+@import url("./foundation.css");
+@import url("./map-controls.css");
+@import url("./markers.css");
+@import url("./components.css");
+@import url("./panels.css");
+@import url("./surfaces.css");
+@import url("./map-unmapped.css");
+@import url("./responsive.css");

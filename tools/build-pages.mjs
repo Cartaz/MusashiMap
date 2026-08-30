@@ -2,8 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { createRuntimeVersion, versionRuntimeText } from "./runtime-version.mjs";
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "_site");
+const runtimeVersion = createRuntimeVersion(root);
 
 const readJson = relative => JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));
 let writtenFiles = 0;
@@ -14,13 +17,17 @@ const writeFile = (relative, contents) => {
   writtenFiles += 1;
 };
 const writeJson = (relative, value) => writeFile(relative, `${JSON.stringify(value, null, 2)}\n`);
-const copyDirectory = (relative, includeFile = () => true) => {
+const versionText = (relative, contents) => versionRuntimeText(relative, contents.toString("utf8"), runtimeVersion);
+const copyDirectory = (relative, includeFile = () => true, transform = (_relative, contents) => contents) => {
   const directory = path.join(root, relative);
   if (!fs.existsSync(directory)) throw new Error(`Missing runtime directory ${relative}.`);
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     const child = path.join(relative, entry.name);
-    if (entry.isDirectory()) copyDirectory(child, includeFile);
-    else if (entry.isFile() && includeFile(child)) writeFile(child, fs.readFileSync(path.join(root, child)));
+    if (entry.isDirectory()) copyDirectory(child, includeFile, transform);
+    else if (entry.isFile() && includeFile(child)) {
+      const contents = fs.readFileSync(path.join(root, child));
+      writeFile(child, transform(child, contents));
+    }
   }
 };
 
@@ -30,11 +37,11 @@ if (!Number.isInteger(progress?.minimum_section) || !Number.isInteger(progress?.
 }
 
 fs.rmSync(output, { recursive: true, force: true });
-writeFile("index.html", fs.readFileSync(path.join(root, "index.html")));
-copyDirectory("css");
+writeFile("index.html", versionText("index.html", fs.readFileSync(path.join(root, "index.html"))));
+copyDirectory("css", () => true, versionText);
 copyDirectory("assets");
 // Browser runtime modules use .js; Node-only tests in js/ use .mjs and stay private.
-copyDirectory("js", relative => relative.endsWith(".js"));
+copyDirectory("js", relative => relative.endsWith(".js"), versionText);
 
 const chapters = readJson("data/chapters.json");
 const publishedSections = (chapters.sections ?? []).filter(section =>
@@ -137,4 +144,4 @@ for (const forbidden of ["research", "tools", "docs", "data/source", "data/audit
   if (fs.existsSync(path.join(output, forbidden))) throw new Error(`Forbidden Pages path emitted: ${forbidden}.`);
 }
 
-console.log(`Pages artifact built: ${publishedSections.length} published sections, ${writtenFiles} files.`);
+console.log(`Pages artifact built: ${publishedSections.length} published sections, ${writtenFiles} files, runtime v=${runtimeVersion}.`);
