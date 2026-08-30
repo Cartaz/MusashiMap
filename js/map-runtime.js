@@ -2,6 +2,7 @@ import { loadMapData } from "./data.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
 import { getPlacePresentation, isApproximateLocation } from "./place-presentation.js";
 import { isNonPhysicalLocationStatus } from "./position-contract.js";
+import { installMarkerCollision } from "./marker-collision.js";
 
 (() => {
   let map, glLayer, markers, routes, characterMarkers;
@@ -22,33 +23,23 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
 
   const popups = window.MusashiMapPopups;
 
-  const icon = (location, offset = [0, 0]) => {
+  const icon = location => {
     const presentation = getPlacePresentation(location?.type) ?? getPlacePresentation("narrative_site");
     return L.divIcon({
       className: "musashi-map-marker-wrapper",
       html: `<span class="musashi-map-marker ${isApproximateLocation(location) ? "is-approximate" : ""}" style="--marker-color:${presentation.markerColor}"><img src="${presentation.iconPath}" alt="" aria-hidden="true"></span>`,
       iconSize: [32, 32],
-      iconAnchor: [16 - offset[0], 16 - offset[1]],
+      iconAnchor: [16, 16],
       popupAnchor: [0, -17]
     });
   };
 
-  const characterIcon = (color, location, offset = [0, 0], mode = "current") => L.divIcon({
+  const characterIcon = (color, location, mode = "current") => L.divIcon({
     className: "musashi-character-marker-wrapper",
     html: `<span class="musashi-character-marker ${isApproximateLocation(location) ? "is-approximate" : ""} ${mode === "reported" ? "is-reported" : mode === "last_known" ? "is-last-known" : ""}" style="--marker-color:${color}"></span>`,
     iconSize: [26, 26],
-    iconAnchor: [13 - offset[0], 13 - offset[1]]
+    iconAnchor: [13, 13]
   });
-
-  const coordinateKey = coordinates => coordinates.map(value => Number(value).toFixed(5)).join(",");
-  const collisionOffsets = total => {
-    if (total <= 1) return [[0, 0]];
-    const radius = total <= 3 ? 24 : 30;
-    return Array.from({ length: total }, (_, index) => {
-      const angle = -Math.PI / 2 + index * 2 * Math.PI / total;
-      return [Math.round(Math.cos(angle) * radius), Math.round(Math.sin(angle) * radius)];
-    });
-  };
 
   const routeMode = event => {
     const explicit = event?.movement_status;
@@ -163,21 +154,7 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
       .filter(location => Number.isInteger(location?.introduced_section) && location.introduced_section <= section)
       .filter(hasCoords);
 
-    const groups = new Map();
-    const register = (kind, id, location) => {
-      const position = coordinateKey(location.coordinates);
-      if (!groups.has(position)) groups.set(position, []);
-      const key = `${kind}:${id}`;
-      groups.get(position).push({ kind, id, location, key });
-    };
-    visiblePlaces.forEach(location => register("place", location.id, location));
-    visibleCharacters.forEach(item => register("character", item.characterId, item.location));
-
-    const offsets = new Map();
-    groups.forEach(group => collisionOffsets(group.length).forEach((offset, index) => offsets.set(group[index].key, offset)));
-
     visibleCharacters.forEach(item => {
-      const offset = offsets.get(`character:${item.characterId}`) ?? [0, 0];
       const name = getDisplayCharacterName(item.character, section, identities);
       const status = getPositionStatusLabel(item.mode);
       const label = locationLabel(item.location);
@@ -194,19 +171,18 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
         description: item.state.activity ? `${detail} ${item.state.activity}` : detail
       });
       bindPopupIfAvailable(L.marker(item.location.coordinates, {
-        icon: characterIcon(item.color, item.location, offset, item.mode),
+        icon: characterIcon(item.color, item.location, item.mode),
         title: `${name} · ${status} · ${label}`
       }), popup).addTo(characterMarkers);
     });
 
     visiblePlaces.forEach(location => {
-      const offset = offsets.get(`place:${location.id}`) ?? [0, 0];
       const popup = popups?.place?.({
         name: locationLabel(location),
         secondary: precisionLabel(location),
         description: location.map_note ?? "Localizzazione moderna"
       });
-      bindPopupIfAvailable(L.marker(location.coordinates, { icon: icon(location, offset), title: locationLabel(location) }), popup)
+      bindPopupIfAvailable(L.marker(location.coordinates, { icon: icon(location), title: locationLabel(location) }), popup)
         .addTo(markers);
     });
 
@@ -327,6 +303,7 @@ import { isNonPhysicalLocationStatus } from "./position-contract.js";
         minZoom: 1,
         maxZoom: 18
       }).setView([35.05, 135.55], 7);
+      installMarkerCollision(map);
 
       markers = L.layerGroup().addTo(map);
       routes = L.layerGroup().addTo(map);

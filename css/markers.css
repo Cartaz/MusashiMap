@@ -91,3 +91,44 @@
 .musashi-character-marker.is-last-known.is-approximate {
   border-style: solid !important;
 }
+
+/* Collision layout moves marker content, never Leaflet's anchored wrapper. */
+.musashi-map-marker-wrapper,
+.musashi-character-marker-wrapper {
+  --collision-x: 0px;
+  --collision-y: 0px;
+  --collision-distance: 0px;
+  --collision-angle: 0deg;
+  overflow: visible !important;
+}
+
+.musashi-character-marker-wrapper,
+.musashi-character-marker-wrapper.leaflet-marker-icon {
+  display: grid !important;
+  place-items: center !important;
+  width: 26px !important;
+  height: 26px !important;
+  padding: 0 !important;
+}
+
+.musashi-map-marker,
+.musashi-character-marker {
+  position: relative;
+  z-index: 1;
+  transform: translate(var(--collision-x), var(--collision-y));
+}
+
+.musashi-map-marker-wrapper.is-colliding::before,
+.musashi-character-marker-wrapper.is-colliding::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: var(--collision-distance);
+  height: 1.5px;
+  background: rgba(52,52,52,.5);
+  transform: rotate(var(--collision-angle));
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
