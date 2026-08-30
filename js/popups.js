@@ -17,31 +17,6 @@
     className: `${options?.className ?? ""} ${className}`.trim()
   });
 
-  const characterPanel = document.querySelector(".map-character-panel");
-  const characterHeading = characterPanel?.querySelector(".panel-heading");
-
-  if (characterPanel && characterHeading) {
-    characterPanel.classList.add("is-collapsed");
-    characterHeading.setAttribute("role", "button");
-    characterHeading.setAttribute("tabindex", "0");
-    characterHeading.setAttribute("aria-controls", "character-filter-body");
-    characterHeading.setAttribute("aria-expanded", "false");
-
-    const setOpen = open => {
-      characterPanel.classList.toggle("is-collapsed", !open);
-      characterHeading.setAttribute("aria-expanded", String(open));
-    };
-
-    const toggle = () => setOpen(characterPanel.classList.contains("is-collapsed"));
-    characterHeading.addEventListener("click", toggle);
-    characterHeading.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        toggle();
-      }
-    });
-  }
-
   const renderPopup = (kind, data) => {
     if (kind === "character") {
       const description = capitalizeFirst(data.description);
