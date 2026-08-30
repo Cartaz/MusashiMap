@@ -1,12 +1,13 @@
 /*
  * Frontend stylesheet entrypoint.
- * Keep this import order: each module intentionally refines the preceding one.
+ * Modules are named by responsibility; later files may refine layout, but feature
+ * semantics stay with their owner (markers, panels, surfaces, responsive).
  */
-@import url("./style-v2.css?v=20260820-1");
-@import url("./legend.css?v=20260820-1");
-@import url("./marker-overrides.css?v=20260820-1");
-@import url("./ui-redesign.css?v=20260820-1");
-@import url("./parchment-overrides.css?v=20260820-1");
-@import url("./paper-texture.css?v=20260820-1");
+@import url("./foundation.css?v=20260820-1");
+@import url("./map-controls.css?v=20260820-1");
+@import url("./markers.css?v=20260820-1");
+@import url("./components.css?v=20260820-1");
+@import url("./panels.css?v=20260820-1");
+@import url("./surfaces.css?v=20260820-1");
 @import url("./map-unmapped.css?v=20260820-1");
-@import url("./responsive-polish.css?v=20260829-1");
+@import url("./responsive.css?v=20260829-1");

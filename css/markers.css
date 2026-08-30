@@ -21,6 +21,7 @@
   border-radius: 0 !important;
   box-shadow: none !important;
   color: var(--marker-color) !important;
+  filter: drop-shadow(0 1px 1px rgba(35,29,22,.28));
 }
 
 .musashi-map-marker img {
@@ -34,6 +35,10 @@
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+}
+
+.musashi-map-marker.is-approximate img {
+  opacity: .72;
 }
 
 .musashi-map-marker.is-approximate {
@@ -77,6 +82,7 @@
 }
 
 .musashi-character-marker.is-approximate {
+  opacity: .92;
   outline: 1px dashed var(--marker-color);
   outline-offset: 2px;
 }
