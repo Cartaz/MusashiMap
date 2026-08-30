@@ -1,9 +1,8 @@
-const ASSET_VERSION = "20260820-03";
 const jsonRequests = new Map();
 
 async function loadJson(path) {
   if (!jsonRequests.has(path)) {
-    const request = fetch(`${path}?v=${ASSET_VERSION}`, { cache: "no-store" })
+    const request = fetch(path, { cache: "no-store" })
       .then(response => {
         if (!response.ok) throw new Error(`Failed to load ${path}: HTTP ${response.status}`);
         return response.json();
