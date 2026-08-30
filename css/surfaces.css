@@ -15,10 +15,7 @@ body {
   background-blend-mode: normal, normal, multiply;
 }
 
-.info-panel,
-.wiki-card,
-.validation,
-.character-filter,
+.data-status,
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
   background-color: var(--paper-surface-light);
@@ -30,9 +27,7 @@ body {
   background-blend-mode: normal, normal, multiply;
 }
 
-.map-overlay,
-.map-character-panel,
-.map-legend {
+.map-overlay {
   background-color: rgba(232,221,201,.97);
   background-image:
     radial-gradient(ellipse at 15% 10%, rgba(255,250,235,.34), transparent 42%),
@@ -91,13 +86,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   body,
-  .info-panel,
   .map-overlay,
-  .map-character-panel,
-  .map-legend,
-  .wiki-card,
-  .validation,
-  .character-filter,
+  .data-status,
   .leaflet-popup-content-wrapper,
   .leaflet-popup-tip,
   .leaflet-control-zoom a,
