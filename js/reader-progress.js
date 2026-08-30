@@ -2,10 +2,24 @@ import { getPositionReference } from "./position-contract.js";
 
 const canonicalState = {
   section: null,
+  furthestSection: null,
   selectedCharacters: []
 };
 
 const subscribers = new Set();
+
+const copyCanonicalState = () => ({
+  section: canonicalState.section,
+  furthestSection: canonicalState.furthestSection,
+  selectedCharacters: [...canonicalState.selectedCharacters]
+});
+
+const normalizeSelection = values => [...new Set((values ?? []).filter(id => typeof id === "string"))];
+const sameSelection = (left, right) => left.length === right.length && left.every((id, index) => id === right[index]);
+const notifyCanonicalState = previousState => {
+  const nextState = copyCanonicalState();
+  for (const subscriber of subscribers) subscriber(nextState, previousState);
+};
 
 const asInteger = value => {
   if (typeof value === "number") return Number.isSafeInteger(value) ? value : null;
@@ -23,26 +37,43 @@ const earliestSection = values => {
   return sections.length ? Math.min(...sections) : null;
 };
 
-export function setCanonicalReaderState({ section, selectedCharacters = [] }) {
+export function initializeCanonicalReaderState({ section, selectedCharacters = [] }) {
   const nextSection = asInteger(section);
   if (nextSection === null) return false;
   canonicalState.section = nextSection;
-  canonicalState.selectedCharacters = [...new Set(selectedCharacters.filter(id => typeof id === "string"))];
-  for (const subscriber of subscribers) subscriber(getCanonicalReaderState());
+  canonicalState.furthestSection = nextSection;
+  canonicalState.selectedCharacters = normalizeSelection(selectedCharacters);
+  notifyCanonicalState(null);
+  return true;
+}
+
+export function setCanonicalReaderState(update = {}) {
+  const nextSection = asInteger(update.section ?? canonicalState.section);
+  if (nextSection === null) return false;
+  const previousState = copyCanonicalState();
+  const nextSelection = normalizeSelection(update.selectedCharacters ?? canonicalState.selectedCharacters);
+  const nextFurthestSection = canonicalState.furthestSection === null
+    ? nextSection
+    : Math.max(canonicalState.furthestSection, nextSection);
+  if (nextSection === canonicalState.section
+    && nextFurthestSection === canonicalState.furthestSection
+    && sameSelection(nextSelection, canonicalState.selectedCharacters)) return true;
+
+  canonicalState.section = nextSection;
+  canonicalState.furthestSection = nextFurthestSection;
+  canonicalState.selectedCharacters = nextSelection;
+  notifyCanonicalState(previousState);
   return true;
 }
 
 export function getCanonicalReaderState() {
-  return {
-    section: canonicalState.section,
-    selectedCharacters: [...canonicalState.selectedCharacters]
-  };
+  return copyCanonicalState();
 }
 
 export function subscribeCanonicalReaderState(subscriber) {
   if (typeof subscriber !== "function") return () => {};
   subscribers.add(subscriber);
-  if (canonicalState.section !== null) subscriber(getCanonicalReaderState());
+  if (canonicalState.section !== null) subscriber(copyCanonicalState(), null);
   return () => subscribers.delete(subscriber);
 }
 
@@ -174,8 +205,8 @@ export function createReaderProgress(chapters, progress) {
   }
   if (requestedMin > requestedMax) throw new Error("Invalid reader progress range");
 
-  // Only chapters inside the explicit reader-progress window are reachable.
-  // This lets editorial data for future books coexist safely in chapters.json.
+  // This object owns the immutable publication/navigation contract only.
+  // Mutable section/selection state lives exclusively in canonicalState above.
   const sections = allSections.filter(section => section.number >= requestedMin && section.number <= requestedMax);
   if (!sections.length) throw new Error("Reader progress range has no available sections");
 
@@ -184,14 +215,28 @@ export function createReaderProgress(chapters, progress) {
   const min = sectionNumbers[0];
   const max = sectionNumbers.at(-1);
   const requestedInitial = asInteger(progressState.current_section);
-  let currentSection = sectionSet.has(requestedInitial) ? requestedInitial : min;
+  const initialSection = sectionSet.has(requestedInitial) ? requestedInitial : min;
+  const currentSection = () => {
+    const section = getCanonicalReaderState().section;
+    return sectionSet.has(section) ? section : initialSection;
+  };
+  const adjacentSection = (section, direction) => {
+    const current = asInteger(section);
+    const index = sectionNumbers.indexOf(current);
+    if (index === -1) return null;
+    const candidate = sectionNumbers[index + direction];
+    return Number.isInteger(candidate) ? candidate : null;
+  };
 
   return {
     get section() {
-      return currentSection;
+      return currentSection();
     },
     get current() {
-      return sections.find(section => section.number === currentSection);
+      return sections.find(section => section.number === currentSection());
+    },
+    get initialSection() {
+      return initialSection;
     },
     get sections() {
       return [...sections];
@@ -202,30 +247,41 @@ export function createReaderProgress(chapters, progress) {
     get max() {
       return max;
     },
+    hasSection(section) {
+      return sectionSet.has(asInteger(section));
+    },
+    nextSection(section = currentSection()) {
+      return adjacentSection(section, 1);
+    },
+    previousSection(section = currentSection()) {
+      return adjacentSection(section, -1);
+    },
+    // Compatibility methods delegate to the canonical store; they no longer
+    // maintain a second mutable currentSection inside this navigation model.
     setSection(section) {
       const next = asInteger(section);
-      if (next === null || !sectionSet.has(next)) return false;
-      currentSection = next;
-      return true;
+      if (!sectionSet.has(next)) return false;
+      const state = getCanonicalReaderState();
+      return state.section === null
+        ? initializeCanonicalReaderState({ section: next, selectedCharacters: state.selectedCharacters })
+        : setCanonicalReaderState({ section: next });
     },
     next() {
-      const index = sectionNumbers.indexOf(currentSection);
-      return index >= 0 && index < sectionNumbers.length - 1
-        ? this.setSection(sectionNumbers[index + 1])
-        : false;
+      const next = adjacentSection(currentSection(), 1);
+      return next === null ? false : this.setSection(next);
     },
     previous() {
-      const index = sectionNumbers.indexOf(currentSection);
-      return index > 0 ? this.setSection(sectionNumbers[index - 1]) : false;
+      const previous = adjacentSection(currentSection(), -1);
+      return previous === null ? false : this.setSection(previous);
     },
     isVisible(firstSection) {
-      return Number.isInteger(firstSection) && firstSection <= currentSection;
+      return Number.isInteger(firstSection) && firstSection <= currentSection();
     },
     visibleByFirstSection(items, firstSectionKey = "section") {
       return items.filter(item => this.isVisible(item[firstSectionKey]));
     },
     visibleLatestStates(states, idKey = "character") {
-      return getLatestStates(states, currentSection, idKey);
+      return getLatestStates(states, currentSection(), idKey);
     }
   };
 }
