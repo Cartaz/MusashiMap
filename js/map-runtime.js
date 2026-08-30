@@ -7,10 +7,7 @@ import { installMarkerCollision } from "./marker-collision.js";
 (() => {
   let map, glLayer, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [], identities = [];
-  let selectedCharacters = new Set();
   let unmappedPopupOpen = false;
-  let previousSection = null;
-  let previousSelectedCharacters = null;
 
   const hasCoords = location => Array.isArray(location?.coordinates) && location.coordinates.length === 2;
   const locationLabel = location => location?.name || location?.modern_name_romaji || "Località non determinata";
@@ -122,7 +119,7 @@ import { installMarkerCollision } from "./marker-collision.js";
     node.hidden = false;
   }
 
-  function draw(section) {
+  function draw(section, selectedCharacterIds = []) {
     if (!map || !markers || !characterMarkers) return;
     markers.clearLayers();
     routes.clearLayers();
@@ -130,7 +127,7 @@ import { installMarkerCollision } from "./marker-collision.js";
 
     const byId = new Map(locations.map(location => [location.id, location]));
     const visibleCharacterIds = new Set(getVisibleCharacters(characters, section, { states: characterStates, events }).map(character => character.id));
-    const spoilerSafeSelection = [...selectedCharacters].filter(id => visibleCharacterIds.has(id));
+    const spoilerSafeSelection = selectedCharacterIds.filter(id => visibleCharacterIds.has(id));
     const { selectedStates, sectionEvents } = getReaderSnapshot({ states: characterStates, events }, section, spoilerSafeSelection);
     const visibleCharacters = [];
     const unmapped = [];
@@ -318,12 +315,7 @@ import { installMarkerCollision } from "./marker-collision.js";
       identities = mapData.identities.identities;
 
       const state = getCanonicalReaderState();
-      if (state.section !== null) {
-        selectedCharacters = new Set(state.selectedCharacters);
-        previousSection = state.section;
-        previousSelectedCharacters = new Set(state.selectedCharacters);
-        draw(state.section);
-      }
+      if (state.section !== null) draw(state.section, state.selectedCharacters);
       await basemapReady;
     } catch (error) {
       showMapNotice("Dati cartografici non disponibili. Il diario di lettura resta utilizzabile.");
@@ -331,12 +323,13 @@ import { installMarkerCollision } from "./marker-collision.js";
     }
   }
 
-  subscribeCanonicalReaderState(state => {
+  subscribeCanonicalReaderState((state, previousState) => {
+    const previousSelected = new Set(previousState?.selectedCharacters ?? []);
     const nextSelected = new Set(state.selectedCharacters);
-    const sectionChanged = previousSection !== null && state.section !== previousSection;
-    const selectionChanged = previousSelectedCharacters !== null && (
-      nextSelected.size !== previousSelectedCharacters.size ||
-      [...nextSelected].some(id => !previousSelectedCharacters.has(id))
+    const sectionChanged = previousState !== null && state.section !== previousState.section;
+    const selectionChanged = previousState !== null && (
+      nextSelected.size !== previousSelected.size ||
+      [...nextSelected].some(id => !previousSelected.has(id))
     );
 
     if (sectionChanged) unmappedPopupOpen = false;
@@ -350,10 +343,7 @@ import { installMarkerCollision } from "./marker-collision.js";
       });
     }
 
-    selectedCharacters = nextSelected;
-    previousSection = state.section;
-    previousSelectedCharacters = nextSelected;
-    draw(state.section);
+    draw(state.section, state.selectedCharacters);
   });
 
   boot();
