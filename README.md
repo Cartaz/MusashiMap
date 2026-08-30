@@ -58,6 +58,8 @@ node tools/validate-frontend.mjs --root _site
 node tools/validate-pages-artifact.mjs
 ```
 
+`tools/validate-data.mjs` is the executable contract for production data structure and cross-file invariants; there is no separate field schema to keep in sync.
+
 `tools/build-pages.mjs` creates the minimal spoiler-filtered `_site/` artifact. Raw chapter sources, research dossiers and development files are deliberately excluded.
 
 ## Repository map

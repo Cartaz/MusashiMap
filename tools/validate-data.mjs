@@ -6,7 +6,6 @@ import { validateMovementEvent } from "../js/movement-contract.js";
 import { validatePositionState } from "../js/position-contract.js";
 
 const REQUIRED_FILES = [
-  "data/schema.json",
   "data/chapters.json",
   "data/reader-progress.json",
   "data/characters.json",
@@ -72,7 +71,6 @@ export function validateRepository(root = process.cwd()) {
   }
   if (errors.length) return { errors, warnings, counts: {} };
 
-  const schema = documents.get("data/schema.json");
   const chaptersData = documents.get("data/chapters.json");
   const progressData = documents.get("data/reader-progress.json");
   const charactersData = documents.get("data/characters.json");
@@ -85,10 +83,6 @@ export function validateRepository(root = process.cwd()) {
   const characterWikiData = documents.get("data/context/character-wiki.json");
   const contextEntitiesData = documents.get("data/context/entities.json");
   const microWikiData = documents.get("data/context/micro-wiki.json");
-
-  if (!isObject(schema?.entities) || !Array.isArray(schema?.integrity_rules)) {
-    errors.push("data/schema.json must define entities and integrity_rules.");
-  }
 
   const collections = [
     [chaptersData, "sections", "data/chapters.json"],
