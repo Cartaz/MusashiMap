@@ -52,7 +52,7 @@ test("approximate coordinate precision has a shared visible marker state", () =>
     assert.equal(isApproximateLocation({ coordinate_precision: precision }), false, String(precision));
   }
 
-  const markerCss = fs.readFileSync(path.join(root, "css/marker-overrides.css"), "utf8");
+  const markerCss = fs.readFileSync(path.join(root, "css/markers.css"), "utf8");
   assert.match(markerCss, /\.musashi-map-marker\.is-approximate\s*\{/);
   assert.match(markerCss, /\.musashi-character-marker\.is-approximate\s*\{/);
 });
