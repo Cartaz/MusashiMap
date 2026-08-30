@@ -26,7 +26,6 @@ const makeDataFixture = () => {
     chapter: section.chapter_id, section: section.number, character: "hero", location: "place",
     status: "present", activity: "Present", certainty: "explicit"
   });
-  writeJson(root, "data/schema.json", { entities: {}, integrity_rules: [] });
   writeJson(root, "data/chapters.json", { sections });
   writeJson(root, "data/reader-progress.json", { state: { minimum_section: 1, current_section: 1, maximum_section: 2 } });
   writeJson(root, "data/characters.json", {
