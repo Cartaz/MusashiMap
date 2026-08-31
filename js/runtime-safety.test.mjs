@@ -6,7 +6,6 @@ import { validateMovementEvent } from "./movement-contract.js";
 
 import {
   createReaderProgress,
-  getCharacterIntroductionSection,
   getProgressiveDisplayName,
   getReaderSnapshot,
   getRelevantHistoricalWiki,
@@ -50,8 +49,9 @@ test("reader-progress is authoritative over chapters prepared for future books",
 
   assert.equal(reader.max, 8);
   assert.deepEqual(reader.sections.map(section => section.number), [1, 2, 3, 4, 5, 6, 7, 8]);
-  assert.equal(reader.setSection(9), false);
-  assert.equal(reader.section, 1);
+  assert.equal(reader.hasSection(8), true);
+  assert.equal(reader.hasSection(9), false);
+  assert.equal(reader.initialSection, 1);
 });
 
 test("reader-progress fails closed when a publication boundary is missing", () => {
@@ -88,11 +88,13 @@ test("reader navigation follows available sections without inventing gaps", () =
     maximum_section: 7
   });
 
-  assert.equal(reader.next(), true);
-  assert.equal(reader.section, 4);
-  assert.equal(reader.previous(), true);
-  assert.equal(reader.section, 2);
-  assert.equal(reader.setSection(3), false);
+  assert.equal(reader.nextSection(2), 4);
+  assert.equal(reader.previousSection(4), 2);
+  assert.equal(reader.nextSection(4), 7);
+  assert.equal(reader.previousSection(7), 4);
+  assert.equal(reader.nextSection(7), null);
+  assert.equal(reader.previousSection(2), null);
+  assert.equal(reader.hasSection(3), false);
 });
 
 test("character names remain hidden until project-local narrative evidence", () => {
@@ -102,8 +104,6 @@ test("character names remain hidden until project-local narrative evidence", () 
     { id: "unknown", present_in: [] }
   ];
 
-  assert.equal(getCharacterIntroductionSection(characters[1]), 12);
-  assert.equal(getCharacterIntroductionSection(characters[2]), null);
   assert.deepEqual(getVisibleCharacters(characters, 8).map(character => character.id), ["early"]);
   assert.deepEqual(getVisibleCharacters(characters, 12).map(character => character.id), ["early", "future"]);
 });
@@ -282,7 +282,8 @@ test("event, state and wiki evidence can safely establish an introduction", () =
     events: [{ section: 4, referenced_characters: ["mentioned"] }],
     characterWiki: { mentioned: { current_by_section: { 5: "Known" } } }
   };
-  assert.equal(getCharacterIntroductionSection(character, evidence), 4);
+  assert.deepEqual(getVisibleCharacters([character], 3, evidence), []);
+  assert.deepEqual(getVisibleCharacters([character], 4, evidence).map(item => item.id), ["mentioned"]);
 });
 
 test("reader snapshot computes latest selected states and current events once", () => {
