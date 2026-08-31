@@ -61,5 +61,8 @@ The oracle should preserve uncertainty rather than invent precision.
 
 ## Current coverage
 
-- Book I — source-first oracle and production diff in progress/completed in this directory.
-- Books II–VII — not certified by this independent process until their own source-first oracle exists.
+- **Book I — Earth:** source-first oracle complete; production diff complete.
+- **Book II — Water:** source-first oracle complete; production diff complete.
+- **Books III–VII:** not independently certified until their own source-first oracle and production diff exist.
+
+“Complete” here means the two-pass audit artifacts exist and pass structural validation. It does not mean production has already been corrected; open findings remain findings until remediation and re-diff.
