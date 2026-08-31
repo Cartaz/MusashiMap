@@ -1,7 +1,8 @@
 import { loadMapData } from "./data.js";
 import { getMovementRouteMode } from "./movement-contract.js";
-import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
 import { getPlacePresentation, isApproximateLocation } from "./place-presentation.js";
+import { popups } from "./popups.js";
+import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
 import { isNonPhysicalLocationStatus } from "./position-contract.js";
 import { installMarkerCollision } from "./marker-collision.js";
 
@@ -18,8 +19,6 @@ import { installMarkerCollision } from "./marker-collision.js";
     if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno";
     return "Posizione indicativa dell'area";
   };
-
-  const popups = window.MusashiMapPopups;
 
   const icon = location => {
     const presentation = getPlacePresentation(location?.type) ?? getPlacePresentation("narrative_site");
@@ -153,7 +152,7 @@ import { installMarkerCollision } from "./marker-collision.js";
           : item.mode === "last_known"
             ? "Questo è il luogo più recente che possiamo mantenere come posizione nota; non è una presenza fisica accertata nel capitolo corrente."
             : "La posizione attuale non è determinata.";
-      const popup = popups?.character?.({
+      const popup = popups.character({
         name,
         location: `${status} · ${label}`,
         description: item.state.activity ? `${detail} ${item.state.activity}` : detail
@@ -165,7 +164,7 @@ import { installMarkerCollision } from "./marker-collision.js";
     });
 
     visiblePlaces.forEach(location => {
-      const popup = popups?.place?.({
+      const popup = popups.place({
         name: locationLabel(location),
         secondary: precisionLabel(location),
         description: location.map_note ?? "Localizzazione moderna"
@@ -183,7 +182,7 @@ import { installMarkerCollision } from "./marker-collision.js";
         const mode = getMovementRouteMode(event);
         if (!mode) return;
         const title = mode === "confirmed" ? "Spostamento confermato" : "Direzione / destinazione intenzionale";
-        const popup = popups?.movement?.({
+        const popup = popups.movement({
           title,
           route: `${locationLabel(origin)} → ${locationLabel(destination)}`,
           description: event.description ?? ""
