@@ -2,17 +2,17 @@
 
 [![Deploy to GitHub Pages](https://github.com/Cartaz/MusashiMap/actions/workflows/pages.yml/badge.svg)](https://github.com/Cartaz/MusashiMap/actions/workflows/pages.yml)
 
-An interactive, spoiler-safe atlas for following people, journeys, relationships and historical context in Eiji Yoshikawa's *Musashi*.
+An interactive, spoiler-safe atlas for following people, journeys and historical context in Eiji Yoshikawa's *Musashi*.
 
 [Open the map](https://cartaz.github.io/MusashiMap/)
 
 ## What it does
 
-MusashiMap reconstructs the novel chapter by chapter. The reader selects the last chapter they have completed; the map, event timeline, character positions, relationships and micro-wiki then expose only information available at that point.
+MusashiMap reconstructs the novel chapter by chapter. The reader selects the last chapter they have completed; the map, event timeline, character positions and micro-wiki then expose only information available at that point.
 
 - Tracks physical presence, last known position, movements and intended destinations.
 - Separates direct narrative evidence, reported information and inference.
-- Reveals aliases, identities and relationships only when the novel does.
+- Reveals aliases and identities only when the novel does.
 - Keeps uncertain, fictional or insufficiently documented places unmapped instead of inventing coordinates.
 - Degrades gracefully if the vector basemap is unavailable.
 - Runs as a static site with no backend and is deployable on GitHub Pages.
@@ -30,6 +30,8 @@ All seven books are published and validated.
 | Narrative events | 568 |
 | Chapter-level character states | 419 |
 | Relationships | 82 |
+
+This table describes repository dataset coverage, not browser UI surfaces. `data/relationships.json` contains the 82 validated relationship records and each record carries a `first_section`, but the current browser runtime does not load or render this dataset and the Pages builder does not publish it. Relationships are retained for audit/research and possible future UI work.
 
 `data/reader-progress.json` is the sole publication boundary. Source registration and research manifests never make future material visible by themselves.
 
