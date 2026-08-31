@@ -1,4 +1,62 @@
 {
+  "book1_expected": {
+    "b1c1": [
+      "musashi",
+      "matahachi",
+      "akemi",
+      "oko"
+    ],
+    "b1c2": [
+      "musashi",
+      "matahachi",
+      "akemi",
+      "oko",
+      "temma"
+    ],
+    "b1c3": [
+      "musashi",
+      "otsu",
+      "takuan",
+      "ogin"
+    ],
+    "b1c4": [
+      "musashi",
+      "otsu",
+      "takuan",
+      "osugi",
+      "ogin",
+      "heita",
+      "himeji_captain"
+    ],
+    "b1c5": [
+      "musashi",
+      "otsu",
+      "takuan",
+      "osugi",
+      "himeji_captain"
+    ],
+    "b1c6": [
+      "musashi",
+      "otsu",
+      "takuan",
+      "osugi",
+      "himeji_captain"
+    ],
+    "b1c7": [
+      "musashi",
+      "otsu",
+      "takuan",
+      "osugi",
+      "heita",
+      "gonroku"
+    ],
+    "b1c8": [
+      "musashi",
+      "otsu",
+      "takuan",
+      "lord_ikeda"
+    ]
+  },
   "book2_expected": {
     "b2c1": [
       "yoshioka_seijuro",
