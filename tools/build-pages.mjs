@@ -90,7 +90,6 @@ const publishedCharacters = (charactersDocument.characters ?? [])
 const publishedCharacterIds = new Set(publishedCharacters.map(character => character.id));
 writeJson("data/characters.json", {
   ...charactersDocument,
-  main_cast: (charactersDocument.main_cast ?? []).filter(id => publishedCharacterIds.has(id)),
   characters: publishedCharacters
 });
 
