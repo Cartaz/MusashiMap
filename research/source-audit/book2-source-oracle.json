@@ -1,0 +1,568 @@
+{
+  "version": 1,
+  "book": 2,
+  "book_title": "Water",
+  "sections": [9, 19],
+  "authority": "data/source/book2 only",
+  "independence_rule": "Facts below were established from the local Book II chapter text before comparison with production JSON. Canonical IDs are normalization labels only and are never evidence sources.",
+  "chapters": [
+    {
+      "id": "b2c1",
+      "section": 9,
+      "title": "The Yoshioka School",
+      "source_file": "data/source/book2/chapter1-the-yoshioka-school.txt",
+      "physical_characters": [
+        {"source_display": "Hon'iden Matahachi", "canonical_id": "matahachi"},
+        {"source_display": "Akemi", "canonical_id": "akemi"},
+        {"source_display": "Oko", "canonical_id": "oko"},
+        {"source_display": "Yoshioka Seijuro", "canonical_id": "yoshioka_seijuro"},
+        {"source_display": "Gion Toji", "canonical_id": "gion_toji"},
+        {"source_display": "Ueda Ryohei", "canonical_id": "ueda_ryohei"}
+      ],
+      "functional_actors": [
+        {"source_display": "Yoshioka students", "kind": "group"},
+        {"source_display": "pleasure-district women and attendants", "kind": "group"},
+        {"source_display": "Yoshioka messenger who reports Musashi's arrival", "kind": "unnamed_individual", "causal_role": "brings the chapter-ending challenge news"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Yoshioka Kempo", "canonical_id": "yoshioka_kempo", "kind": "named_biographical_reference"},
+        {"source_display": "Yoshioka Denshichiro", "canonical_id": "yoshioka_denshichiro", "kind": "named_reference"},
+        {"source_display": "Otsu", "canonical_id": "otsu", "kind": "named_memory_reference"},
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi", "kind": "reported_arrival"}
+      ],
+      "historical_context": [
+        "Oda Nobunaga",
+        "Toyotomi Hideyoshi",
+        "Tokugawa Ieyasu",
+        "Tokugawa Hidetada",
+        "Toyotomi Hideyori",
+        "Okuni Kabuki",
+        "Toda Seigen",
+        "Ogasawara Genshinsai",
+        "Ho Ittosai"
+      ],
+      "physical_locations": [
+        {"source_display": "Yoshioka School / Shijo Avenue", "location_id": "yoshioka_school", "status": "departure_and_report_context"},
+        {"source_display": "Kamo River pleasure district", "location_id": "kamo_river_pleasure_district"},
+        {"source_display": "Yomogi Teahouse", "location_id": "yomogi"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Takase River / Sanjo area around Yomogi", "location_id": null, "status": "scene_geography"},
+        {"source_display": "Miyamoto / Mimasaka", "location_id": "miyamoto_village", "status": "memory_reference"}
+      ],
+      "facts": [
+        {"id": "b2c1-s01", "type": "outing", "participants": ["yoshioka_seijuro", "gion_toji", "ueda_ryohei"], "description": "Seijuro, Toji, Ryohei and other Yoshioka students leave the school for the Kamo River pleasure district."},
+        {"id": "b2c1-s02", "type": "drinking_and_argument", "participants": ["yoshioka_seijuro", "gion_toji", "ueda_ryohei"], "description": "The Yoshioka party drinks, sings, boasts about swordsmanship and quarrels about the school's real standing."},
+        {"id": "b2c1-s03", "type": "movement", "participants": ["yoshioka_seijuro", "gion_toji"], "description": "Seijuro and Toji leave the first establishment and go to Yomogi while Ryohei remains with the other students."},
+        {"id": "b2c1-s04", "type": "arrival_and_hosting", "participants": ["yoshioka_seijuro", "gion_toji", "oko", "akemi"], "description": "Oko and Akemi receive Seijuro and Toji at Yomogi."},
+        {"id": "b2c1-s05", "type": "sexual_pressure", "participants": ["yoshioka_seijuro", "akemi"], "description": "Seijuro pursues Akemi sexually while Toji and Oko encourage a match."},
+        {"id": "b2c1-s06", "type": "household_conflict", "participants": ["matahachi", "oko", "akemi"], "description": "Matahachi quarrels with Oko over the teahouse, her relationship with Toji and his own dependence on her."},
+        {"id": "b2c1-s07", "type": "memory_and_regret", "participants": ["matahachi"], "description": "Matahachi remembers Otsu, his mother and Miyamoto, recognizes his decline and resolves to leave Oko."},
+        {"id": "b2c1-s08", "type": "attempted_departure", "participants": ["matahachi"], "description": "Matahachi leaves by the kitchen door, returns for money, searches Oko's belongings and remains trapped by indecision."},
+        {"id": "b2c1-s09", "type": "reported_challenge", "participants": ["matahachi"], "description": "A Yoshioka messenger reports at Yomogi that Miyamoto Musashi is at the school defeating its men and waiting for Seijuro."}
+      ]
+    },
+    {
+      "id": "b2c2",
+      "section": 10,
+      "title": "The Wheel of Fortune",
+      "source_file": "data/source/book2/chapter2-the-wheel-of-fortune.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Hon'iden Matahachi", "canonical_id": "matahachi"},
+        {"source_display": "Yoshioka Seijuro", "canonical_id": "yoshioka_seijuro"},
+        {"source_display": "Gion Toji", "canonical_id": "gion_toji"},
+        {"source_display": "Ueda Ryohei", "canonical_id": "ueda_ryohei"}
+      ],
+      "functional_actors": [
+        {"source_display": "Yoshioka disciples and retainers", "kind": "group"},
+        {"source_display": "Yoshioka servant who repeatedly questions Musashi at the gate", "kind": "unnamed_individual"},
+        {"source_display": "doctor treating the wounded", "kind": "unnamed_individual"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Yoshioka Kempo", "canonical_id": "yoshioka_kempo", "kind": "named_biographical_reference"},
+        {"source_display": "Yoshioka Denshichiro", "canonical_id": "yoshioka_denshichiro", "kind": "reported_absence"},
+        {"source_display": "Musashi's father", "canonical_id": null, "kind": "biographical_reference"},
+        {"source_display": "Kiichi Hogen", "canonical_id": null, "kind": "martial_ideal_reference"}
+      ],
+      "historical_context": ["Ashikaga shogunate / Yoshioka institutional history"],
+      "physical_locations": [
+        {"source_display": "Yoshioka School", "location_id": "yoshioka_school"},
+        {"source_display": "back gate and adjoining alley", "location_id": null, "status": "micro_route"},
+        {"source_display": "road between Kuyado and the burned Honnoji ruins", "location_id": "honnoji_ruins"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Ise", "location_id": null, "status": "reported_location_of_denshichiro"},
+        {"source_display": "Toribe Mountain", "location_id": null, "status": "hypothetical_body_disposal_reference"},
+        {"source_display": "Kamo River", "location_id": "kamo_river", "status": "hypothetical_body_disposal_reference"}
+      ],
+      "facts": [
+        {"id": "b2c2-s01", "type": "challenge_and_bouts", "participants": ["musashi"], "description": "Musashi enters the Yoshioka School, challenges Seijuro and defeats successive students with a wooden sword."},
+        {"id": "b2c2-s02", "type": "casualties", "participants": ["musashi"], "description": "Several Yoshioka men are seriously wounded and two die after the bouts."},
+        {"id": "b2c2-s03", "type": "return", "participants": ["yoshioka_seijuro", "gion_toji"], "description": "Seijuro and Toji return, learn the scale of the defeat and face anger over Seijuro's absence."},
+        {"id": "b2c2-s04", "type": "deliberation", "participants": ["yoshioka_seijuro", "gion_toji", "ueda_ryohei"], "description": "Senior members decide a direct Seijuro-Musashi fight is too risky and plan an ambush instead."},
+        {"id": "b2c2-s05", "type": "ambush_attempt", "participants": ["musashi", "gion_toji", "ueda_ryohei"], "description": "Yoshioka men surround Musashi's waiting room intending to kill him."},
+        {"id": "b2c2-s06", "type": "escape", "participants": ["musashi"], "description": "Musashi silently escapes by lifting floorboards and leaving before the ambush is sprung."},
+        {"id": "b2c2-s07", "type": "pursuit", "participants": ["gion_toji", "ueda_ryohei"], "description": "Pursuers stream through the gates and chase a fleeing figure through the back-street route toward Honnoji."},
+        {"id": "b2c2-s08", "type": "mistaken_capture", "participants": ["matahachi", "gion_toji", "ueda_ryohei"], "description": "The pursuers seize Matahachi, mistaking him for Musashi, until Toji recognizes him from Yomogi."},
+        {"id": "b2c2-s09", "type": "identity_recognition", "participants": ["matahachi"], "description": "Matahachi learns that Musashi is Takezo's new name and resolves to warn his old friend of the danger."},
+        {"id": "b2c2-s10", "type": "reported_absence", "participants": [], "description": "Denshichiro is reported away in Ise and is not physically present at the school."}
+      ]
+    },
+    {
+      "id": "b2c3",
+      "section": 11,
+      "title": "Encounter and Retreat",
+      "source_file": "data/source/book2/chapter3-encounter-and-retreat.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Osugi", "canonical_id": "osugi"},
+        {"source_display": "Fuchikawa Gonroku", "canonical_id": "gonroku"}
+      ],
+      "functional_actors": [
+        {"source_display": "Kiyomizudera potters", "kind": "group"},
+        {"source_display": "palanquin bearer who identifies Musashi", "kind": "unnamed_individual"},
+        {"source_display": "palanquin bearers and porters supporting Osugi", "kind": "group"},
+        {"source_display": "temple spectators, pilgrims and vendors", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Ogin / Musashi's sister", "canonical_id": "ogin", "kind": "prayer_reference"},
+        {"source_display": "Matahachi", "canonical_id": "matahachi", "kind": "family_conflict_reference"},
+        {"source_display": "Takuan", "canonical_id": "takuan", "kind": "remembered_warning"}
+      ],
+      "historical_context": [
+        "Taira no Masakado",
+        "Fujiwara no Sumitomo",
+        "Oda Nobunaga",
+        "Toyotomi Hideyoshi",
+        "Tokugawa Ieyasu"
+      ],
+      "physical_locations": [
+        {"source_display": "Chawan Hill / ceramics district", "location_id": "chawan_hill"},
+        {"source_display": "Kiyomizudera grounds", "location_id": "kiyomizudera"},
+        {"source_display": "Hongando", "location_id": "hongando"},
+        {"source_display": "western gate / Sannen and Chawan hill search area", "location_id": "kiyomizudera", "status": "extended_scene_area"}
+      ],
+      "referenced_locations": [],
+      "facts": [
+        {"id": "b2c3-s01", "type": "observation_and_insight", "participants": ["musashi"], "description": "Musashi studies potters at work and takes their concentration and technique as a corrective to his own vanity."},
+        {"id": "b2c3-s02", "type": "identification", "participants": ["musashi"], "description": "A palanquin bearer asks Musashi's name and carries the information back toward Chawan Hill."},
+        {"id": "b2c3-s03", "type": "journey_and_prayer", "participants": ["musashi"], "description": "Musashi climbs through Kiyomizudera, prays for his sister and reflects on the life he wants to lead."},
+        {"id": "b2c3-s04", "type": "encirclement", "participants": ["musashi"], "description": "Porters surround Musashi near Hongando while crowds gather to watch."},
+        {"id": "b2c3-s05", "type": "arrival_and_challenge", "participants": ["osugi", "gonroku", "musashi"], "description": "Osugi and Gonroku arrive after their prolonged search and formally challenge Musashi over the Hon'iden grievance."},
+        {"id": "b2c3-s06", "type": "refusal", "participants": ["musashi", "osugi", "gonroku"], "description": "Musashi refuses to draw his sword against them and walks directly through the hostile crowd."},
+        {"id": "b2c3-s07", "type": "escape", "participants": ["musashi", "osugi", "gonroku"], "description": "Musashi vanishes from the temple area while porters and supporters search the grounds until evening."}
+      ]
+    },
+    {
+      "id": "b2c4",
+      "section": 12,
+      "title": "The Water Sprite",
+      "source_file": "data/source/book2/chapter4-the-water-sprite.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Hon'iden Matahachi", "canonical_id": "matahachi"}
+      ],
+      "functional_actors": [
+        {"source_display": "old innkeeper", "kind": "unnamed_individual"},
+        {"source_display": "sake-shop master", "kind": "unnamed_individual"},
+        {"source_display": "Sanjo checkpoint officials", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Aoki Tanzaemon", "canonical_id": "aoki_tanzaemon", "kind": "explicit_family_and_biographical_reference"},
+        {"source_display": "Tsukahara Bokuden", "canonical_id": "tsukahara_bokuden", "kind": "martial_reference"},
+        {"source_display": "Yagyu / Tokugawa sword instructor", "canonical_id": "yagyu_munenori", "kind": "martial_reference"},
+        {"source_display": "Takuan", "canonical_id": "takuan", "kind": "remembered_teacher"},
+        {"source_display": "Yoshioka Seijuro", "canonical_id": "yoshioka_seijuro", "kind": "message_recipient"},
+        {"source_display": "Yoshioka Kempo", "canonical_id": "yoshioka_kempo", "kind": "letter_reference"},
+        {"source_display": "Musashi's father / Lord Shimmen", "canonical_id": null, "kind": "biographical_and_allegiance_reference"}
+      ],
+      "historical_context": ["Toyotomi Hideyoshi", "Tokugawa-Osaka political divide"],
+      "physical_locations": [
+        {"source_display": "cheap inn northwest of Kyoto", "location_id": "kyoto_cheap_inn"},
+        {"source_display": "sake shop", "location_id": "sake_shop"},
+        {"source_display": "Sanjo checkpoint", "location_id": "sanjo_checkpoint"},
+        {"source_display": "Daigo mountain road", "location_id": "daigo"},
+        {"source_display": "Rokuamida crossroads", "location_id": "rokuamida"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Nara / Hozoin", "location_id": "hozoin", "status": "intended_destination"},
+        {"source_display": "Gojo Avenue great bridge", "location_id": null, "status": "future_meeting_plan"}
+      ],
+      "facts": [
+        {"id": "b2c4-s01", "type": "meeting", "participants": ["jotaro", "musashi"], "description": "Jotaro visits the cheap inn, writes for the innkeeper and develops an immediate rapport with Musashi."},
+        {"id": "b2c4-s02", "type": "family_reveal", "participants": ["jotaro", "musashi"], "description": "Jotaro states that his father is Aoki Tanzaemon, a former 2,500-koku samurai who lost his status; Musashi explicitly reflects on his own role in Tanzaemon's misfortune."},
+        {"id": "b2c4-s03", "type": "discipleship_request", "participants": ["jotaro", "musashi"], "description": "Jotaro asks to become Musashi's follower and Musashi conditionally agrees if the boy obtains his master's consent."},
+        {"id": "b2c4-s04", "type": "departure", "participants": ["musashi"], "description": "Musashi leaves the inn early for Nara, initially trying to avoid taking Jotaro with him."},
+        {"id": "b2c4-s05", "type": "checkpoint_crossing", "participants": ["musashi"], "description": "Musashi passes the tightened Sanjo security checkpoint and reflects on his former Osaka allegiance."},
+        {"id": "b2c4-s06", "type": "pursuit_and_reconciliation", "participants": ["jotaro", "musashi"], "description": "Jotaro catches Musashi near Daigo, accuses him of breaking his promise and shows he received permission to leave; Musashi accepts him as follower."},
+        {"id": "b2c4-s07", "type": "letter_delivery", "participants": ["jotaro", "musashi", "matahachi"], "description": "Jotaro gives Musashi Matahachi's drunken letter warning him that the Yoshioka are hunting him."},
+        {"id": "b2c4-s08", "type": "message_composition", "participants": ["musashi", "jotaro"], "description": "At Rokuamida Musashi writes a provocative but formal reply to Seijuro and entrusts it to Jotaro."},
+        {"id": "b2c4-s09", "type": "search_request", "participants": ["musashi", "jotaro"], "description": "Musashi also asks Jotaro to find Matahachi and invite him to a future meeting at the Gojo Avenue bridge."},
+        {"id": "b2c4-s10", "type": "separation", "participants": ["musashi", "jotaro"], "description": "Jotaro turns back toward Kyoto while Musashi continues toward Nara."}
+      ]
+    },
+    {
+      "id": "b2c5",
+      "section": 13,
+      "title": "A Spring Breeze",
+      "source_file": "data/source/book2/chapter5-a-spring-breeze.txt",
+      "physical_characters": [
+        {"source_display": "Akemi", "canonical_id": "akemi"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Shoda Kizaemon", "canonical_id": "shoda_kizaemon"}
+      ],
+      "functional_actors": [
+        {"source_display": "oxcart driver", "kind": "unnamed_individual"},
+        {"source_display": "roadside teahouse proprietor", "kind": "unnamed_individual"},
+        {"source_display": "Shoda's groom", "kind": "unnamed_individual"},
+        {"source_display": "ronin gamblers", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Hon'iden Matahachi", "canonical_id": "matahachi", "kind": "search_target"},
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi", "kind": "teacher_and_love_reference"},
+        {"source_display": "Yagyu Muneyoshi / Sekishusai", "canonical_id": "sekishusai", "kind": "named_reference"},
+        {"source_display": "Yagyu Munenori", "canonical_id": "yagyu_munenori", "kind": "named_reference"},
+        {"source_display": "Yoshioka Kempo", "canonical_id": "yoshioka_kempo", "kind": "martial_reputation_reference"}
+      ],
+      "historical_context": [
+        "Sanada Yukimura",
+        "Sengoku Soya",
+        "Ban Dan'emon",
+        "post-Sekigahara ronin displacement"
+      ],
+      "physical_locations": [
+        {"source_display": "Takase River near Yomogi", "location_id": "yomogi"},
+        {"source_display": "Yamato highroad", "location_id": "yamato_highroad"},
+        {"source_display": "Mampukuji area", "location_id": null, "status": "route_scene"},
+        {"source_display": "roadside teahouse near Uji", "location_id": null, "status": "scene_site"},
+        {"source_display": "Uji Bridge", "location_id": "uji_bridge"},
+        {"source_display": "Kizu River ferry", "location_id": "kizu_river_ferry"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Koyagyu", "location_id": "koyagyu", "status": "destination_for_otsu_and_shoda"},
+        {"source_display": "Nara / Hozoin", "location_id": "hozoin", "status": "destination_for_jotaro"},
+        {"source_display": "Kasagi Temple road", "location_id": null, "status": "confirmed_departure_route"}
+      ],
+      "facts": [
+        {"id": "b2c5-s01", "type": "meeting_and_message", "participants": ["akemi", "jotaro"], "description": "Jotaro finds Yomogi, asks Akemi for Matahachi and leaves Musashi's future meeting message with her."},
+        {"id": "b2c5-s02", "type": "identity_recognition", "participants": ["akemi", "jotaro"], "description": "From the written name and Jotaro's description, Akemi realizes Miyamoto Musashi is Takezo and revives her long-held hope of seeing him again."},
+        {"id": "b2c5-s03", "type": "journey_mishap", "participants": ["jotaro"], "description": "Jotaro hitches a ride on a Kofukuji-bound oxcart, is thrown off and discovers he has lost the bamboo tube containing the Yoshioka reply."},
+        {"id": "b2c5-s04", "type": "object_recovery", "participants": ["jotaro", "otsu", "shoda_kizaemon"], "description": "Otsu tells Jotaro who found the tube; Shoda returns it unopened and rebukes the boy for neglecting his mission."},
+        {"id": "b2c5-s05", "type": "meeting", "participants": ["jotaro", "otsu", "shoda_kizaemon"], "description": "Jotaro travels with Otsu and Shoda and learns Otsu's name and that she supports herself by playing the flute."},
+        {"id": "b2c5-s06", "type": "warning_and_context", "participants": ["otsu", "shoda_kizaemon"], "description": "At a teahouse the group hears a detailed warning about the dangerous ronin environment around Nara."},
+        {"id": "b2c5-s07", "type": "identity_and_invitation", "participants": ["otsu", "shoda_kizaemon"], "description": "Shoda reveals his full identity and Yagyu service and invites Otsu to Koyagyu to play for Sekishusai."},
+        {"id": "b2c5-s08", "type": "decision", "participants": ["otsu"], "description": "Otsu accepts largely because the Yagyu household may have records or visitors who can lead her to Musashi."},
+        {"id": "b2c5-s09", "type": "shared_journey", "participants": ["otsu", "shoda_kizaemon", "jotaro"], "description": "They cross Uji Bridge and continue together toward the Kizu River."},
+        {"id": "b2c5-s10", "type": "separation", "participants": ["otsu", "shoda_kizaemon", "jotaro"], "description": "At the Kizu River ferry Jotaro continues toward Nara while Otsu and Shoda take the Kasagi road toward Koyagyu."}
+      ]
+    },
+    {
+      "id": "b2c6",
+      "section": 14,
+      "title": "The Hōzōin",
+      "source_file": "data/source/book2/chapter6-the-hozoin.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Agon", "canonical_id": "agon"},
+        {"source_display": "Nikkan", "canonical_id": "nikkan"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Yamazoe Dampachi", "canonical_id": "yamazoe_dampachi"},
+        {"source_display": "Otomo Banryu", "canonical_id": "otomo_banryu"},
+        {"source_display": "Yasukawa Yasubei", "canonical_id": "yasukawa_yasubei"}
+      ],
+      "functional_actors": [
+        {"source_display": "young Ozoin monk who directs Musashi", "kind": "unnamed_individual"},
+        {"source_display": "Hozoin steward", "kind": "unnamed_individual"},
+        {"source_display": "Hozoin priests, visiting warriors and observers", "kind": "group"},
+        {"source_display": "young widow who boards Musashi", "kind": "unnamed_individual"},
+        {"source_display": "dumpling-shop household", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Kakuzenbo In'ei", "canonical_id": "inei", "kind": "school_history_reference"},
+        {"source_display": "Inshun", "canonical_id": "inshun", "kind": "absent_master_reference"},
+        {"source_display": "Yagyu Muneyoshi", "canonical_id": "sekishusai", "kind": "martial_lineage_reference"},
+        {"source_display": "Lord Koizumi of Ise", "canonical_id": null, "kind": "martial_lineage_reference"},
+        {"source_display": "Takuan", "canonical_id": "takuan", "kind": "remembered_teacher"},
+        {"source_display": "Yoshioka Seijuro", "canonical_id": "yoshioka_seijuro", "kind": "reply_letter_reference"},
+        {"source_display": "Otsu", "canonical_id": "otsu", "kind": "private_memory_reference"}
+      ],
+      "historical_context": ["Empress Komyo", "Okubo Nagayasu", "Nara urban administration"],
+      "physical_locations": [
+        {"source_display": "Abura Hill", "location_id": "abura_hill"},
+        {"source_display": "Ozoin", "location_id": "ozoin"},
+        {"source_display": "Ozoin vegetable garden", "location_id": "ozoin"},
+        {"source_display": "Hozoin", "location_id": "hozoin"},
+        {"source_display": "Sarusawa Pond district", "location_id": "sarusawa_pond"},
+        {"source_display": "private boardinghouse near the dumpling shop", "location_id": "nara_boardinghouse"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Hannya Plain", "location_id": "hannya_plain", "status": "reported_ambush_site"}
+      ],
+      "facts": [
+        {"id": "b2c6-s01", "type": "arrival_and_lineage_context", "participants": ["musashi"], "description": "Musashi reaches Abura Hill, is directed through the Ozoin and learns the institutional relationship among In'ei, Nikkan and Inshun."},
+        {"id": "b2c6-s02", "type": "nonverbal_encounter", "participants": ["musashi", "nikkan"], "description": "Musashi passes Nikkan working in the garden and reacts defensively to the force he senses from the old priest."},
+        {"id": "b2c6-s03", "type": "registration", "participants": ["musashi"], "description": "Musashi registers at the Hozoin, states his lack of a conventional teacher and accepts the risk of injury or death."},
+        {"id": "b2c6-s04", "type": "violent_bout", "participants": ["musashi", "agon"], "description": "After Agon defeats other challengers, Musashi accepts a bout and kills him with a counterattack."},
+        {"id": "b2c6-s05", "type": "teaching_encounter", "participants": ["musashi", "nikkan"], "description": "Nikkan explains that Musashi's excessive projected belligerence is itself a weakness and tells him he must learn to become weaker."},
+        {"id": "b2c6-s06", "type": "identity_and_lineage_reveal", "participants": ["musashi", "nikkan"], "description": "Nikkan identifies himself as Ozoin abbot, In'ei's old friend and the man who transmitted the Hozoin lance art to Inshun."},
+        {"id": "b2c6-s07", "type": "inner_defeat", "participants": ["musashi", "nikkan"], "description": "Although Musashi won physically against Agon, he leaves feeling spiritually outclassed by Nikkan."},
+        {"id": "b2c6-s08", "type": "message_arrangement", "participants": ["musashi", "jotaro"], "description": "Musashi returns to Hozoin to leave directions so Jotaro can find him near Sarusawa Pond."},
+        {"id": "b2c6-s09", "type": "temporary_lodging", "participants": ["musashi"], "description": "Musashi moves to a private boardinghouse near Sarusawa Pond whose widowed owner values a male lodger as protection."},
+        {"id": "b2c6-s10", "type": "proposal_and_refusal", "participants": ["musashi", "yamazoe_dampachi", "otomo_banryu", "yasukawa_yasubei"], "description": "Three ronin flatter Musashi and propose a gambling-oriented public martial spectacle; he rejects them angrily."},
+        {"id": "b2c6-s11", "type": "reunion_and_reply", "participants": ["musashi", "jotaro"], "description": "Jotaro reaches Musashi, delivers the Yoshioka reply and reports that he could not find Matahachi."},
+        {"id": "b2c6-s12", "type": "gift_and_departure_preparation", "participants": ["musashi", "jotaro"], "description": "The widow gives Musashi clothing and permits Jotaro to keep an old Noh mask before they prepare to leave."},
+        {"id": "b2c6-s13", "type": "ambush_warning", "participants": ["musashi", "jotaro"], "description": "The dumpling-maker's wife warns that Hozoin priests and ronin are waiting toward Hannya Plain because forged insults have been attributed to Musashi; he chooses to leave anyway."}
+      ]
+    },
+    {
+      "id": "b2c7",
+      "section": 15,
+      "title": "Hannya Plain",
+      "source_file": "data/source/book2/chapter7-hannya-plain.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Yamazoe Dampachi", "canonical_id": "yamazoe_dampachi"},
+        {"source_display": "Otomo Banryu", "canonical_id": "otomo_banryu"},
+        {"source_display": "Yasukawa Yasubei", "canonical_id": "yasukawa_yasubei"},
+        {"source_display": "Inshun", "canonical_id": "inshun"},
+        {"source_display": "Nikkan", "canonical_id": "nikkan"}
+      ],
+      "functional_actors": [
+        {"source_display": "Hozoin lancers", "kind": "group"},
+        {"source_display": "Nara ronin group", "kind": "group"},
+        {"source_display": "five Nara officials serving Okubo Nagayasu", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Yagyu Muneyoshi / Sekishusai", "canonical_id": "sekishusai", "kind": "martial_guidance_reference"},
+        {"source_display": "Yagyu Munenori", "canonical_id": "yagyu_munenori", "kind": "Koyagyu_context_reference"},
+        {"source_display": "Lord Koizumi of Ise", "canonical_id": null, "kind": "martial_guidance_reference"},
+        {"source_display": "Okubo Nagayasu", "canonical_id": null, "kind": "administrative_reference"}
+      ],
+      "historical_context": [],
+      "physical_locations": [
+        {"source_display": "road near Todaiji", "location_id": "todaiji_route"},
+        {"source_display": "Hannya Plain / Hannya Hill", "location_id": "hannya_plain"},
+        {"source_display": "knoll from which Jotaro watches", "location_id": "hannya_plain", "status": "scene_subarea"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Tsukigase", "location_id": "tsukigase", "status": "Dampachi_claimed_destination"},
+        {"source_display": "Yagyu Valley / Koyagyu", "location_id": "koyagyu", "status": "discussed_future_route"}
+      ],
+      "facts": [
+        {"id": "b2c7-s01", "type": "separation_for_safety", "participants": ["musashi", "jotaro"], "description": "Musashi sends the frightened Jotaro to watch from a hill rather than enter the expected ambush."},
+        {"id": "b2c7-s02", "type": "deceptive_encounter", "participants": ["musashi", "yamazoe_dampachi"], "description": "Dampachi approaches Musashi under a friendly pretext while attempting to guide him toward the waiting group."},
+        {"id": "b2c7-s03", "type": "violent_death", "participants": ["musashi", "yamazoe_dampachi"], "description": "Musashi detects the deception and kills Dampachi before entering the main gathering."},
+        {"id": "b2c7-s04", "type": "confrontation", "participants": ["musashi", "inshun", "otomo_banryu", "yasukawa_yasubei"], "description": "Musashi reaches the assembled priests and ronin; Inshun confronts him over the false reports and posters."},
+        {"id": "b2c7-s05", "type": "mass_combat", "participants": ["musashi"], "description": "Musashi attacks the ronin first and kills roughly five or six before the survivors scatter."},
+        {"id": "b2c7-s06", "type": "jotaro_observation", "participants": ["jotaro", "musashi"], "description": "Jotaro watches, prays for Musashi, realizes his teacher is winning and finally runs toward the battle when the Hozoin lancers move."},
+        {"id": "b2c7-s07", "type": "alliance_reversal", "participants": ["inshun", "musashi"], "description": "On Inshun's command the Hozoin lancers attack and finish the ronin rather than attacking Musashi."},
+        {"id": "b2c7-s08", "type": "reunion", "participants": ["jotaro", "musashi", "inshun"], "description": "Jotaro reaches Musashi and Inshun courteously introduces himself after the killing stops."},
+        {"id": "b2c7-s09", "type": "operation_reveal", "participants": ["nikkan", "inshun", "musashi"], "description": "Nikkan arrives with Nara officials and reveals that he and Inshun deliberately used the false ambush as an opportunity to eliminate the troublesome ronin leadership with administrative cooperation."},
+        {"id": "b2c7-s10", "type": "memorial_action", "participants": ["nikkan", "jotaro"], "description": "Nikkan writes a sacred invocation on stones and has Jotaro scatter them among the dead before chanting for them."},
+        {"id": "b2c7-s11", "type": "final_guidance", "participants": ["nikkan", "musashi"], "description": "Nikkan again warns Musashi that excessive strength and pride may kill him young and directs him toward Sekishusai and Lord Koizumi as models."}
+      ]
+    },
+    {
+      "id": "b2c8",
+      "section": 16,
+      "title": "The Koyagyū Fief",
+      "source_file": "data/source/book2/chapter8-the-koyagyu-fief.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Kocha", "canonical_id": "kocha"},
+        {"source_display": "Yoshioka Denshichiro", "canonical_id": "yoshioka_denshichiro"}
+      ],
+      "functional_actors": [
+        {"source_display": "Denshichiro's two traveling companions", "kind": "group"},
+        {"source_display": "Wataya inn staff and guests", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Yagyu Muneyoshi / Sekishusai", "canonical_id": "sekishusai", "kind": "current_residence_and_challenge_target"},
+        {"source_display": "Shoda Kizaemon", "canonical_id": "shoda_kizaemon", "kind": "reported_visitor"},
+        {"source_display": "Yagyu Munenori", "canonical_id": "yagyu_munenori", "kind": "family_and_reputation_reference"},
+        {"source_display": "Yagyu Hyogo Toshitoshi", "canonical_id": "yagyu_hyogo", "kind": "family_and_reputation_reference"},
+        {"source_display": "Yagyu Gorozaemon", "canonical_id": null, "kind": "family_reference"},
+        {"source_display": "Yagyu Toshikatsu", "canonical_id": null, "kind": "family_reference"},
+        {"source_display": "Yoshioka Kempo", "canonical_id": "yoshioka_kempo", "kind": "past_connection_reference"}
+      ],
+      "historical_context": ["Kato Kiyomasa", "Tokugawa Ieyasu", "Koyagyu local governance"],
+      "physical_locations": [
+        {"source_display": "Yagyu Valley / Koyagyu", "location_id": "koyagyu"},
+        {"source_display": "Kasagidera and Joruriji route", "location_id": null, "status": "confirmed_recent_route"},
+        {"source_display": "Koyagyu Castle exterior", "location_id": "koyagyu_castle"},
+        {"source_display": "Wataya inn", "location_id": "wataya_inn"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Sekishusai mountain house", "location_id": "sekishusai_mountain_house", "status": "known_residence_not_yet_visited"}
+      ],
+      "facts": [
+        {"id": "b2c8-s01", "type": "arrival_and_observation", "participants": ["musashi", "jotaro"], "description": "About ten days after Hannya Plain, Musashi and Jotaro stay in Koyagyu and survey the unusually stable, prosperous fief."},
+        {"id": "b2c8-s02", "type": "teaching", "participants": ["musashi", "jotaro"], "description": "Musashi explains that serious martial study includes geography, agriculture, customs, governance and the condition of a lord's territory, not just fighting."},
+        {"id": "b2c8-s03", "type": "inn_interaction", "participants": ["jotaro", "kocha"], "description": "At the Wataya Jotaro meets Kocha and the children immediately quarrel."},
+        {"id": "b2c8-s04", "type": "overheard_information", "participants": ["musashi", "yoshioka_denshichiro"], "description": "In the communal bath Musashi overhears Denshichiro and companions belittle Sekishusai after Shoda politely refused their requested match."},
+        {"id": "b2c8-s05", "type": "identity_avoidance", "participants": ["musashi", "yoshioka_denshichiro"], "description": "Musashi recognizes the Yoshioka connection but remains unrecognized while vulnerable in the bath."},
+        {"id": "b2c8-s06", "type": "objective_formation", "participants": ["musashi"], "description": "After comparing the Yagyu fief with Yoshioka arrogance, Musashi resolves that meeting Sekishusai will be his true test."}
+      ]
+    },
+    {
+      "id": "b2c9",
+      "section": 17,
+      "title": "The Peony",
+      "source_file": "data/source/book2/chapter9-the-peony.txt",
+      "physical_characters": [
+        {"source_display": "Yagyu Muneyoshi / Sekishusai", "canonical_id": "sekishusai"},
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Shoda Kizaemon", "canonical_id": "shoda_kizaemon"},
+        {"source_display": "Yoshioka Denshichiro", "canonical_id": "yoshioka_denshichiro"},
+        {"source_display": "Kocha", "canonical_id": "kocha"},
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Murata Yozo", "canonical_id": "murata_yozo"},
+        {"source_display": "Kimura Sukekuro", "canonical_id": "kimura_sukekuro"},
+        {"source_display": "Debuchi Magobei", "canonical_id": "debuchi_magobei"}
+      ],
+      "functional_actors": [
+        {"source_display": "Denshichiro's companions", "kind": "group"},
+        {"source_display": "Yagyu stable keeper and guards", "kind": "group"},
+        {"source_display": "Yagyu training students", "kind": "group"},
+        {"source_display": "Taro, the large black dog", "kind": "animal", "causal_role": "attacks Jotaro at chapter end"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Lord Koizumi of Ise", "canonical_id": null, "kind": "teacher_and_lineage_reference"},
+        {"source_display": "Kakuzenbo In'ei", "canonical_id": "inei", "kind": "lineage_reference"},
+        {"source_display": "Yagyu Munenori", "canonical_id": "yagyu_munenori", "kind": "family_reference"},
+        {"source_display": "Yagyu Hyogo", "canonical_id": "yagyu_hyogo", "kind": "family_reference"},
+        {"source_display": "Yoshioka Kempo", "canonical_id": "yoshioka_kempo", "kind": "past_acquaintance_reference"}
+      ],
+      "historical_context": ["Ashikaga Yoshiaki", "Oda Nobunaga", "Toyotomi Hideyoshi", "Tokugawa Ieyasu"],
+      "physical_locations": [
+        {"source_display": "Sekishusai mountain house", "location_id": "sekishusai_mountain_house"},
+        {"source_display": "Wataya inn", "location_id": "wataya_inn"},
+        {"source_display": "river near Wataya", "location_id": null, "status": "scene_site"},
+        {"source_display": "Yagyu dojo / Koyagyu Castle", "location_id": "yagyu_dojo"}
+      ],
+      "referenced_locations": [],
+      "facts": [
+        {"id": "b2c9-s01", "type": "historical_biographical_context", "participants": ["sekishusai"], "description": "The chapter establishes Sekishusai's withdrawal from warfare, martial lineage under Lord Koizumi and philosophy of governing and self-control."},
+        {"id": "b2c9-s02", "type": "mentorship_and_companionship", "participants": ["sekishusai", "otsu"], "description": "Otsu lives at Sekishusai's mountain house, plays flute for him and learns tea, poetry and flower arranging."},
+        {"id": "b2c9-s03", "type": "refusal_strategy", "participants": ["sekishusai", "shoda_kizaemon", "otsu"], "description": "After Denshichiro persists in seeking a match, Sekishusai decides to send Otsu with a letter and a white peony instead of receiving him."},
+        {"id": "b2c9-s04", "type": "message_delivery", "participants": ["otsu", "yoshioka_denshichiro"], "description": "Otsu delivers Sekishusai's tactful refusal and peony to Denshichiro at the Wataya; he rejects the flower and gives up the visit angrily."},
+        {"id": "b2c9-s05", "type": "object_transfer", "participants": ["otsu", "kocha"], "description": "Otsu gives the rejected peony to Kocha rather than taking it back to the castle."},
+        {"id": "b2c9-s06", "type": "perception_test", "participants": ["musashi", "kocha"], "description": "Musashi sees the peony, cuts the stem himself and recognizes that the original cut was made by a far superior swordsman."},
+        {"id": "b2c9-s07", "type": "confidence_shift", "participants": ["musashi"], "description": "The quality of the cut briefly undermines Musashi's confidence and convinces him the Yagyu are worthy opponents."},
+        {"id": "b2c9-s08", "type": "road_encounter", "participants": ["otsu", "jotaro"], "description": "Returning from Wataya, Otsu meets Jotaro bathing in a river and invites him to visit the castle."},
+        {"id": "b2c9-s09", "type": "evaluation", "participants": ["sekishusai", "otsu"], "description": "Sekishusai learns Denshichiro failed even to notice the peony's cut and judges that the Yoshioka house effectively ended with Kempo."},
+        {"id": "b2c9-s10", "type": "training_scene", "participants": ["shoda_kizaemon"], "description": "At the Yagyu dojo Kizaemon drives students through severe Shinkage-style training, illustrating the household's standard."},
+        {"id": "b2c9-s11", "type": "letter_delivery", "participants": ["jotaro", "shoda_kizaemon"], "description": "Jotaro enters the castle and forces Kizaemon to read Musashi's unusual letter asking who made the peony cut."},
+        {"id": "b2c9-s12", "type": "object_analysis", "participants": ["shoda_kizaemon", "murata_yozo", "kimura_sukekuro", "debuchi_magobei"], "description": "The Yagyu retainers compare the two cuts, learn Sekishusai made the original and infer that Musashi has unusual perception."},
+        {"id": "b2c9-s13", "type": "invitation_decision", "participants": ["shoda_kizaemon", "murata_yozo", "kimura_sukekuro", "debuchi_magobei"], "description": "The retainers decide to invite Musashi informally to the Shin'indo for food, sake and martial conversation."},
+        {"id": "b2c9-s14", "type": "animal_attack", "participants": ["jotaro"], "description": "While waiting, Jotaro provokes and strikes the large black dog Taro; the dog attacks and injures him."}
+      ]
+    },
+    {
+      "id": "b2c10",
+      "section": 18,
+      "title": "Jōtarō’s Revenge",
+      "source_file": "data/source/book2/chapter10-jotaros-revenge.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Kocha", "canonical_id": "kocha"},
+        {"source_display": "Shoda Kizaemon", "canonical_id": "shoda_kizaemon"},
+        {"source_display": "Kimura Sukekuro", "canonical_id": "kimura_sukekuro"},
+        {"source_display": "Debuchi Magobei", "canonical_id": "debuchi_magobei"},
+        {"source_display": "Murata Yozo", "canonical_id": "murata_yozo"}
+      ],
+      "functional_actors": [
+        {"source_display": "Kocha's father", "kind": "unnamed_individual"},
+        {"source_display": "Taro, Munenori's black dog", "kind": "animal", "causal_role": "killed by Jotaro in revenge"},
+        {"source_display": "Taro's two keepers", "kind": "group"},
+        {"source_display": "Yagyu foot soldiers and guards", "kind": "group"},
+        {"source_display": "castle servants", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Yagyu Sekishusai", "canonical_id": "sekishusai", "kind": "Musashi_challenge_target"},
+        {"source_display": "Yagyu Munenori", "canonical_id": "yagyu_munenori", "kind": "owner_of_Taro"},
+        {"source_display": "Otsu", "canonical_id": "otsu", "kind": "audible_flute_presence_strong_inference"},
+        {"source_display": "Lord Yorinori of Kishu", "canonical_id": null, "kind": "dog_lineage_reference"}
+      ],
+      "historical_context": ["Sekigahara recollections during the Shin'indo discussion"],
+      "physical_locations": [
+        {"source_display": "Wataya inn", "location_id": "wataya_inn"},
+        {"source_display": "Koyagyu Castle main gate", "location_id": "koyagyu_castle"},
+        {"source_display": "Shin'indo", "location_id": "shinindo"},
+        {"source_display": "castle grounds near dojo / Taro scene", "location_id": "koyagyu_castle"},
+        {"source_display": "garden before the keep", "location_id": "koyagyu_castle", "status": "scene_subarea"},
+        {"source_display": "inner-castle moat edge", "location_id": "koyagyu_castle", "status": "escape_route"}
+      ],
+      "referenced_locations": [],
+      "facts": [
+        {"id": "b2c10-s01", "type": "reply_delivery", "participants": ["jotaro", "musashi"], "description": "Jotaro returns to Wataya wounded and delivers Kizaemon's invitation without admitting how the dog injured him."},
+        {"id": "b2c10-s02", "type": "child_relationship", "participants": ["jotaro", "kocha"], "description": "Kocha treats Jotaro's injuries; they admit liking each other and share an intimate childlike scene before Kocha's father interrupts them."},
+        {"id": "b2c10-s03", "type": "departure", "participants": ["musashi", "jotaro", "kocha"], "description": "Musashi settles the Wataya bill and leaves with Jotaro at sunset for Koyagyu Castle."},
+        {"id": "b2c10-s04", "type": "invited_arrival", "participants": ["musashi", "jotaro"], "description": "Musashi presents Kizaemon's letter at the main gate and is admitted as an expected guest; Jotaro is left in an attendants' room."},
+        {"id": "b2c10-s05", "type": "shinindo_discussion", "participants": ["musashi", "shoda_kizaemon", "kimura_sukekuro", "debuchi_magobei", "murata_yozo"], "description": "The four senior retainers host Musashi with sake and question his ability to perceive the peony cut; the conversation becomes a mutual test."},
+        {"id": "b2c10-s06", "type": "implicit_challenge", "participants": ["musashi", "shoda_kizaemon", "kimura_sukekuro", "debuchi_magobei", "murata_yozo"], "description": "Musashi says the perception cannot be explained without facing him with a sword, effectively issuing a challenge the hosts decline to take immediately."},
+        {"id": "b2c10-s07", "type": "animal_killing", "participants": ["jotaro"], "description": "Jotaro finds Taro and kills the dog as revenge for the earlier attack."},
+        {"id": "b2c10-s08", "type": "punishment_conflict", "participants": ["jotaro", "musashi"], "description": "A dog keeper tries to kill Jotaro; Musashi intervenes, attacks another man and violently turns Jotaro himself into a projectile against the keeper."},
+        {"id": "b2c10-s09", "type": "collective_confrontation", "participants": ["musashi", "jotaro", "shoda_kizaemon", "kimura_sukekuro", "debuchi_magobei", "murata_yozo"], "description": "The incident escalates until the four senior retainers disperse the crowd and place responsibility on themselves."},
+        {"id": "b2c10-s10", "type": "challenge_declaration", "participants": ["musashi", "shoda_kizaemon", "kimura_sukekuro", "debuchi_magobei", "murata_yozo"], "description": "Musashi refuses detention and declares that his true purpose is to reach Sekishusai, treating the confrontation as one man against an entire castle."},
+        {"id": "b2c10-s11", "type": "duel_and_encirclement", "participants": ["musashi", "kimura_sukekuro", "shoda_kizaemon", "debuchi_magobei", "murata_yozo", "jotaro"], "description": "Kimura attacks Musashi; Jotaro throws sand, Musashi evades, and all four retainers eventually encircle him."},
+        {"id": "b2c10-s12", "type": "flute_distraction_and_escape", "participants": ["musashi"], "description": "A distant flute that Musashi recognizes as Otsu's breaks his concentration; Kimura tears his sleeve, after which Musashi escapes toward the inner-castle moat."}
+      ]
+    },
+    {
+      "id": "b2c11",
+      "section": 19,
+      "title": "The Nightingales",
+      "source_file": "data/source/book2/chapter11-the-nightingales.txt",
+      "physical_characters": [
+        {"source_display": "Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Jotaro", "canonical_id": "jotaro"},
+        {"source_display": "Takuan Soho", "canonical_id": "takuan"}
+      ],
+      "functional_actors": [
+        {"source_display": "castle searchers with torches", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Yagyu Sekishusai", "canonical_id": "sekishusai", "kind": "challenge_target_and_correspondent"},
+        {"source_display": "Yagyu Munenori", "canonical_id": "yagyu_munenori", "kind": "Takuan_friendship_reference"},
+        {"source_display": "Yagyu Gorozaemon", "canonical_id": null, "kind": "Takuan_backstory_reference"},
+        {"source_display": "Suzuki Ihaku", "canonical_id": null, "kind": "Takuan_backstory_reference"},
+        {"source_display": "Yagyu Hyogo", "canonical_id": "yagyu_hyogo", "kind": "Sekishusai_letter_reference"},
+        {"source_display": "Lord Kato of Higo", "canonical_id": null, "kind": "Hyogo_service_reference"},
+        {"source_display": "Hon'iden Matahachi", "canonical_id": "matahachi", "kind": "Otsu_past_betrayal_reference"}
+      ],
+      "historical_context": ["Daitokuji / Sangen'in Zen-samurai network", "Nansoji"],
+      "physical_locations": [
+        {"source_display": "inner-castle moat", "location_id": "koyagyu_castle"},
+        {"source_display": "Koyagyu castle woods, valleys and back gate", "location_id": "koyagyu_castle"},
+        {"source_display": "Sekishusai mountain-house gate", "location_id": "sekishusai_mountain_house"},
+        {"source_display": "Tsukigase-Iga back road", "location_id": "tsukigase_iga_back_road"},
+        {"source_display": "chestnut-tree crossroads / side road", "location_id": "tsukigase_iga_back_road", "status": "scene_subarea"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Hanada Bridge", "location_id": "hanada_bridge", "status": "memory_reference"},
+        {"source_display": "Shippoji", "location_id": "shippoji", "status": "memory_and_biographical_reference"}
+      ],
+      "facts": [
+        {"id": "b2c11-s01", "type": "escape_and_hiding", "participants": ["musashi"], "description": "Musashi descends into the inner-castle moat, hides from torch-bearing searchers and later climbs out using branches as footholds."},
+        {"id": "b2c11-s02", "type": "night_search", "participants": ["musashi"], "description": "Still determined to challenge Sekishusai, Musashi spends the night searching the outer castle grounds for the mountain house."},
+        {"id": "b2c11-s03", "type": "arrival_and_change_of_mind", "participants": ["musashi"], "description": "At dawn Musashi reaches Sekishusai's gate, reads the paired inscriptions and abandons the idea of barging in on the retired master."},
+        {"id": "b2c11-s04", "type": "concealed_observation", "participants": ["musashi", "otsu", "jotaro"], "description": "Musashi sees Otsu and Jotaro emerge near the mountain house and hears them discussing the previous night's crisis without revealing himself."},
+        {"id": "b2c11-s05", "type": "recognition_and_flight", "participants": ["musashi", "otsu", "jotaro"], "description": "Jotaro finds Musashi's towel, Otsu glimpses him, and Musashi flees despite their pursuit and repeated calls."},
+        {"id": "b2c11-s06", "type": "pursuit", "participants": ["otsu", "jotaro", "musashi"], "description": "Otsu and Jotaro chase Musashi onto the Tsukigase-Iga back road until he disappears into wooded foothills."},
+        {"id": "b2c11-s07", "type": "takuan_reunion", "participants": ["otsu", "jotaro", "takuan"], "description": "At the roadside Otsu and Jotaro encounter Takuan, whose arrival follows an invitation from Sekishusai."},
+        {"id": "b2c11-s08", "type": "relationship_backstory", "participants": ["takuan"], "description": "The chapter explains Takuan's long-standing connection with Munenori, Sekishusai and the Yagyu circle through Daitokuji/Sangen'in."},
+        {"id": "b2c11-s09", "type": "emotional_confrontation", "participants": ["otsu", "takuan"], "description": "Otsu tells Takuan she remains determined to find Musashi; Takuan warns that her fixation may lead her toward self-destruction."},
+        {"id": "b2c11-s10", "type": "separation_decision", "participants": ["otsu", "jotaro", "takuan"], "description": "Otsu refuses to remain peacefully at Koyagyu; Jotaro chooses to continue with her after retrieving his mask, while Takuan accepts that he cannot stop them."}
+      ]
+    }
+  ]
+}
