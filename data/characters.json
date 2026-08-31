@@ -2,7 +2,6 @@
   "version": 17,
   "presence_semantics": "present_in means physically present on-page in the chapter. Mere mention or reported whereabouts belong in chapter-scoped narrative state, referenced_characters or research text, not present_in.",
   "taxonomy": {"entity_type":["character","historical_figure","group","other"],"narrative_role":["primary","secondary","tertiary","none"],"historical_status":["historical","fictional","fictionalized","unknown"],"map_relevance":["mapped","contextual","none"]},
-  "main_cast": ["musashi","matahachi","otsu","takuan","kojiro","osugi","jotaro","akemi","ogin"],
   "characters": [
     {
       "id": "musashi",

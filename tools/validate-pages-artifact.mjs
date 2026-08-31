@@ -89,8 +89,7 @@ if (!Number.isSafeInteger(minimum) || !Number.isSafeInteger(maximum) || minimum 
 const chapters = readJson("data/chapters.json").sections ?? [];
 const events = readJson("data/events.json").events ?? [];
 const states = readJson("data/character-states.json").character_states ?? [];
-const charactersDocument = readJson("data/characters.json");
-const characters = charactersDocument.characters ?? [];
+const characters = readJson("data/characters.json").characters ?? [];
 const groups = readJson("data/groups.json").groups ?? [];
 const locations = readJson("data/locations.json").locations ?? [];
 const microWiki = readJson("data/context/micro-wiki.json").entities ?? [];
@@ -109,9 +108,6 @@ const chapterIds = new Set(chapters.map(chapter => chapter.chapter_id));
 const characterIds = new Set(characters.map(character => character.id));
 const groupIds = new Set(groups.map(group => group.id));
 const locationIds = new Set(locations.map(location => location.id));
-for (const id of charactersDocument.main_cast ?? []) {
-  if (!characterIds.has(id)) errors.push(`Artifact main_cast leaks unavailable character ${id}.`);
-}
 for (const character of characters) {
   if (character.introduced_section !== undefined && !inRange(character.introduced_section, minimum, maximum)) {
     errors.push(`Character ${character.id} has unpublished introduced_section ${character.introduced_section}.`);

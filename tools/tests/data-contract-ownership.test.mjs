@@ -15,3 +15,11 @@ test("production data has one executable contract instead of a parallel pseudo-s
   const readme = fs.readFileSync(path.join(root, "README.md"), "utf8");
   assert.match(readme, /validate-data\.mjs` is the executable contract for production data structure and cross-file invariants/);
 });
+
+test("character importance is the single main-cast classification", () => {
+  const charactersDocument = JSON.parse(fs.readFileSync(path.join(root, "data/characters.json"), "utf8"));
+  assert.equal(Object.hasOwn(charactersDocument, "main_cast"), false);
+
+  const importanceValues = [...new Set((charactersDocument.characters ?? []).map(character => character.importance))].sort();
+  assert.deepEqual(importanceValues, ["main", "secondary"]);
+});
