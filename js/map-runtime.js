@@ -1,11 +1,12 @@
 import { loadMapData } from "./data.js";
+import { getMovementRouteMode } from "./movement-contract.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
 import { getPlacePresentation, isApproximateLocation } from "./place-presentation.js";
 import { isNonPhysicalLocationStatus } from "./position-contract.js";
 import { installMarkerCollision } from "./marker-collision.js";
 
 (() => {
-  let map, glLayer, markers, routes, characterMarkers;
+  let map, markers, routes, characterMarkers;
   let locations = [], events = [], characterStates = [], characters = [], identities = [];
   let unmappedPopupOpen = false;
 
@@ -37,16 +38,6 @@ import { installMarkerCollision } from "./marker-collision.js";
     iconSize: [26, 26],
     iconAnchor: [13, 13]
   });
-
-  const routeMode = event => {
-    const explicit = event?.movement_status;
-    if (["arrival_confirmed", "confirmed_route"].includes(explicit)) return "confirmed";
-    if (["intended_destination", "direction_only", "uncertain_route"].includes(explicit)) return "intended";
-    const certainty = String(event?.certainty ?? "").toLowerCase();
-    if (event?.type === "journey" && (event?.destination === "unknown" || certainty.includes("intended") || certainty.includes("uncertain") || certainty.includes("possible"))) return "intended";
-    if (event?.type === "departure" || event?.type === "direction") return "intended";
-    return "confirmed";
-  };
 
   const routeStyle = mode => mode === "intended"
     ? { color: "#b99ad6", weight: 2, opacity: .68, dashArray: "6 8", interactive: true }
@@ -189,7 +180,8 @@ import { installMarkerCollision } from "./marker-collision.js";
         const origin = byId.get(event.origin);
         const destination = byId.get(event.destination);
         if (!hasCoords(origin) || !hasCoords(destination)) return;
-        const mode = routeMode(event);
+        const mode = getMovementRouteMode(event);
+        if (!mode) return;
         const title = mode === "confirmed" ? "Spostamento confermato" : "Direzione / destinazione intenzionale";
         const popup = popups?.movement?.({
           title,
@@ -278,7 +270,7 @@ import { installMarkerCollision } from "./marker-collision.js";
         window.clearTimeout(timeout);
       }
       if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
-      glLayer = L.maplibreGL({ style: customizeBasemapStyle(await styleResponse.json()) }).addTo(map);
+      L.maplibreGL({ style: customizeBasemapStyle(await styleResponse.json()) }).addTo(map);
       showMapNotice("");
     } catch (error) {
       console.warn("Primary basemap unavailable; using raster fallback", error);
