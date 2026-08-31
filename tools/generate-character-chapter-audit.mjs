@@ -15,11 +15,11 @@ const characters = readJson("data/characters.json").characters;
 const events = readJson("data/events.json").events;
 const states = readJson("data/character-states.json").character_states;
 const relationships = readJson("data/relationships.json").relationships;
-const book1Analysis = readJson("data/book1-analysis.json");
 const auditConfig = readJson("research/character-audit-config.json");
+const book1Expected = auditConfig.book1_expected;
 const book2Expected = auditConfig.book2_expected;
 const manifestIdMaps = auditConfig.manifest_id_maps;
-if (!book2Expected || !manifestIdMaps) throw new Error("Invalid character audit configuration.");
+if (!book1Expected || !book2Expected || !manifestIdMaps) throw new Error("Invalid character audit configuration.");
 
 const characterById = new Map(characters.map(character => [character.id, character]));
 const chapterById = new Map(chapters.map(chapter => [chapter.chapter_id, chapter]));
@@ -30,13 +30,7 @@ const maximumSection = Math.max(...chapters.map(chapter => chapter.number));
 
 function independentRosters() {
   const result = new Map();
-  for (const [id, sections] of Object.entries(book1Analysis.physical_presence)) {
-    for (const section of sections) {
-      const chapter = chapters.find(item => item.number === section);
-      if (!chapter) continue;
-      result.set(chapter.chapter_id, [...(result.get(chapter.chapter_id) ?? []), id]);
-    }
-  }
+  for (const [chapter, ids] of Object.entries(book1Expected)) result.set(chapter, ids);
   for (const [chapter, ids] of Object.entries(book2Expected)) result.set(chapter, ids);
   for (const book of manifestBooks) {
     const manifest = readJson(`research/book${book}-production-manifest.json`);
