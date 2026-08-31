@@ -1,65 +1,22 @@
-# Canonical staging contract for Books III–VII
+# Books III–VII research provenance format
 
-Status: active  
+Status: active provenance guide  
 Contract version: `1.0.0`  
-Validator: `node tools/validate-staging.mjs`
+Validator: `node tools/validate-research-manifests.mjs`
 
-## Purpose
+> The filename `book-staging-contract.md` is retained as a stable historical contract identifier because the canonical manifests already reference it. MusashiMap no longer has an active staging or migration pipeline, and validation never rewrites manifests.
 
-This contract is the lossless boundary between book research and production migration. It gives Books III–VII one structural vocabulary without upgrading literary claims, guessing identities, adding coordinates, or discarding legacy evidence.
+## Purpose and ownership
 
-Canonical manifests live at:
+The five canonical manifests under `research/book3-production-manifest.json` through `research/book7-production-manifest.json` preserve the normalized research evidence from Books III–VII. They are provenance records, not production inputs and not a second publication authority.
 
-```text
-research/book3-production-manifest.json
-research/book4-production-manifest.json
-research/book5-production-manifest.json
-research/book6-production-manifest.json
-research/book7-production-manifest.json
-```
+`tools/validate-research-manifests.mjs` is the executable integrity gate. This document explains the retained format and its semantics; when a structural invariant matters to automation, the validator is authoritative.
 
-These canonical manifests are the retained staging provenance. The validator discovers every file matching `research/book[3-7]-production-manifest.json`, so all five books pass through the same gate without a hard-coded filename list.
+Production behavior is owned by the JSON files under `data/`. Reader visibility is owned only by `data/reader-progress.json`. Historical migration details may remain inside manifest `extensions`, but no maintenance workflow consumes legacy record shapes.
 
-## Top-level object
+## Canonical manifest set
 
-Every canonical manifest contains:
-
-```json
-{
-  "schema_version": "1.0.0",
-  "contract_version": "1.0.0",
-  "contract": "docs/book-staging-contract.md",
-  "dataset": "human-readable dataset name",
-  "status": "research status",
-  "generated_on": "YYYY-MM-DD",
-  "book": {},
-  "evidence_policy": {},
-  "source_files": [],
-  "chapters": [],
-  "characters": [],
-  "groups": [],
-  "locations": [],
-  "events": [],
-  "character_states": [],
-  "relationships": [],
-  "historical_context": [],
-  "external_validation": [],
-  "extensions": {}
-}
-```
-
-The named arrays are always present, including when empty. `extensions` is the only compatibility namespace. It may retain prior audit objects, reconciliation notes or original record shapes, but canonical consumers must not need it to resolve ordinary references.
-
-## Book and source files
-
-`book` requires:
-
-- `number`: integer 3–7 and equal to the filename;
-- `title`;
-- `chapter_count`;
-- `global_sections.minimum` and `global_sections.maximum`.
-
-Chapter IDs are ordered and contiguous from `bNc1` to `bNc{chapter_count}`. Global sections are ordered and contiguous across the book. The current cross-book ranges are:
+The repository must contain exactly these five manifests:
 
 | Book | Title | Chapters | Global sections |
 |---:|---|---:|---:|
@@ -69,107 +26,46 @@ Chapter IDs are ordered and contiguous from `bNc1` to `bNc{chapter_count}`. Glob
 | VI | Sun and Moon | 17 | 80–96 |
 | VII | The Perfect Light | 16 | 97–112 |
 
-Each `source_files` record is aligned one-to-one with a chapter and contains:
+Each manifest uses `contract_version: "1.0.0"` and keeps `contract: "docs/book-staging-contract.md"` as the stable contract identifier.
 
-```json
-{
-  "chapter_id": "b5c1",
-  "global_section": 54,
-  "title": "The Abduction",
-  "file": "data/source/book5/chapter1-the-abduction.txt",
-  "line_count": 420,
-  "sha256": "optional lowercase digest"
-}
-```
+## Top-level structure
 
-The validator requires the file to exist, checks `line_count` when present, and recomputes `sha256` when present. A missing hash is not synthesized.
+Canonical manifests contain the following arrays, even when an array is empty:
 
-`source_ref` may be one of the formats already supported by the research corpus:
+- `source_files`
+- `chapters`
+- `characters`
+- `groups`
+- `locations`
+- `events`
+- `character_states`
+- `relationships`
+- `historical_context`
+- `external_validation`
 
-- repository path, optionally with `:Lstart-Lend`;
-- source basename, optionally with line range;
-- stable `bookN/chapterM` token.
+`extensions` may retain historical reconciliation material or original migration evidence. Canonical consumers must not require `extensions` to resolve ordinary chapter, entity, event, state or source references.
 
-All three must resolve to the chapter's registered source file.
+## Books, chapters and sources
 
-## Chapters
+`book.number` must match the manifest filename. `chapter_count` must match the number of chapter records. Chapter IDs are ordered and contiguous from `bNc1` through the final local chapter, and global section numbers are contiguous within and across Books III–VII.
 
-Canonical chapter records have:
+`source_files` is aligned one-to-one with chapters. A source record identifies its chapter, global section and local source file; optional line counts and SHA-256 digests are checked when present. The referenced source file must exist.
 
-```json
-{
-  "id": "b4c1",
-  "global_section": 33,
-  "title": "The Withered Field",
-  "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
-  "source_file": "data/source/book4/chapter1-the-withered-field.txt",
-  "characters": [],
-  "referenced_characters": [],
-  "groups": [],
-  "referenced_groups": [],
-  "locations": [],
-  "event_ids": [],
-  "character_state_ids": [],
-  "end_summary": "optional unstructured chapter-end evidence"
-}
-```
+Source references may use the repository path, a registered source basename or a stable `bookN/chapterM` token, optionally with a line range. Every source reference must resolve to the source registered for the relevant chapter.
 
-`characters` means physical on-page presence. `referenced_characters` means mention, report, memory, correspondence or other non-physical reference. The two sets must be disjoint. Group presences are moved out of legacy character-presence arrays into `groups`; named collectives are never expanded into invented people.
+## Presence and entity references
 
-`end_summary` preserves Book V/VII-style prose summaries that cannot be losslessly split into character states. It is evidence, not a substitute for structured `character_states`.
+Chapter `characters` and `groups` mean physical on-page presence. `referenced_characters` and `referenced_groups` mean mention, report, memory, correspondence or another non-physical reference. The present and referenced-only sets are disjoint.
 
-## Characters, groups and locations
+Character, group and location IDs are unique and every foreign key used by chapters, events, states, relationships or occurrence indexes must resolve inside the same manifest.
 
-Identity records preserve their research fields. At minimum, characters and groups require unique `id` and `name`; characters always expose `aliases`, even when empty.
+Historical provenance may preserve older evidence inside `extensions`; it does not create an alternative entity registry.
 
-Occurrence indexes are canonicalized as:
+## Events and movement
 
-- `physical_presence`: chapter IDs with direct presence;
-- `mentioned_in`: chapter IDs with reference-only occurrence.
+Events are top-level records linked back to exactly one chapter through both `event.chapter` and that chapter's `event_ids` list. Participant and referenced-only semantics match the chapter rules.
 
-These arrays may be derived mechanically from chapter records. The validator checks every chapter reference.
-
-Locations require a unique `id` and `name`. Existing geographic fields such as `type`, `coordinates`, `mapping_status`, `coordinate_precision` or confidence notes are retained. Normalization never generates coordinates. `null` remains the required value for unresolved points.
-
-## Events
-
-Events are top-level and linked to chapters by ID:
-
-```json
-{
-  "id": "b5c1-e01",
-  "chapter": "b5c1",
-  "type": "travel",
-  "description": "Narrative evidence without reinterpretation.",
-  "characters": ["musashi", "otsu", "jotaro"],
-  "referenced_characters": [],
-  "groups": [],
-  "referenced_groups": [],
-  "location": "suhara_nezame",
-  "origin": null,
-  "destination": null,
-  "origin_label": "optional unresolved literal from the source manifest",
-  "destination_label": "optional unresolved literal from the source manifest",
-  "source_ref": "book5/chapter1",
-  "source_file": "data/source/book5/chapter1-the-abduction.txt",
-  "certainty": "explicit",
-  "movement_status": "confirmed_route"
-}
-```
-
-Canonical participant semantics are fixed:
-
-- `characters`: physically participating named people;
-- `referenced_characters`: mentioned or reported people who are not physically participating;
-- `groups` and `referenced_groups`: the equivalent collective references.
-
-Legacy `actors`, `participants`, and `participants_present` all map to `characters` after registered groups are split out. Legacy `referenced_actors` and `mentioned` map to `referenced_characters` or `referenced_groups`.
-
-`location`, `origin` and `destination` are either registered location IDs or `null`. A literal such as `Awa/Shikoku`, `Kyoto` or `unknown` that is not a registered ID moves to `origin_label` or `destination_label`; the exact text is retained but does not masquerade as a resolvable foreign key.
-
-### Movement status
-
-Non-movement events use `movement_status: null`. Movement events use only the production vocabulary defined in `docs/movement-semantics.md`:
+`location`, `origin` and `destination` are registered location IDs or `null`. Movement events use the production vocabulary documented in `docs/movement-semantics.md`:
 
 - `arrival_confirmed`
 - `confirmed_route`
@@ -177,89 +73,44 @@ Non-movement events use `movement_status: null`. Movement events use only the pr
 - `direction_only`
 - `uncertain_route`
 
-The lossless legacy translation is:
-
-| Legacy value | Canonical value | Preservation |
-|---|---|---|
-| `none` | `null` | original stored in `extensions.legacy_movement_status` |
-| `route_confirmed` | `confirmed_route` | original stored in extensions |
-| `departure_confirmed` | `confirmed_route` | confirms actual movement, not arrival; original stored in extensions |
-| `uncertain` | `uncertain_route` | original stored in extensions |
-| production value | unchanged | no extension required |
-
-This translation changes vocabulary, not the narrative claim. Rendering geometry still requires resolvable endpoints; `confirmed_route` alone does not authorize an invented line.
+Non-movement events use `movement_status: null`. Historical aliases for movement statuses may remain only as retained provenance inside `extensions`; the validator does not translate them.
 
 ## Character states
 
-Structured states are top-level:
+Character states are top-level records. Each state references a registered character, an existing chapter when applicable, a registered location or `null`, and a resolvable source reference. Every state must be indexed exactly once by its owning chapter.
 
-```json
-{
-  "id": "b6c1-state-hosokawa_tadatoshi",
-  "chapter": "b6c1",
-  "character": "hosokawa_tadatoshi",
-  "state": "at the archery range after authorizing both searches",
-  "location": "hosokawa_edo_residence",
-  "source_ref": "chapter1-a-chat-with-the-men.txt:L145-L162",
-  "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
-  "certainty": "explicit",
-  "scope": "chapter_end"
-}
-```
+A reported source may be retained separately from direct evidence. Missing or unresolved locations remain `null`; validation does not infer coordinates or movement.
 
-`scope` is `chapter_end` for chapter ledgers and `book_end` for final-book reconciliations. Missing certainty is retained as `unspecified`; it is not silently upgraded. A null location remains null. `reported_source_ref` optionally preserves a later report separately from last direct presence.
+## Relationships and context
 
-## Relationships
+Relationship participants must resolve to registered characters or groups. Relationship chapter IDs must exist, and evidence must resolve either to an event ID or a registered source reference.
 
-Relationships require:
-
-- unique `id`;
-- `participants`: registered character or group IDs;
-- `type`;
-- `chapter_ids`;
-- `evidence`: event IDs or resolvable source references;
-- `status`, `certainty`, and `context` when supported.
-
-Directional legacy shapes (`subject/object`, `a/b`, `from/to`) are preserved in `extensions.original`; canonical `participants` does not erase that evidence. Generated IDs are deterministic and book-qualified when the source record had none.
-
-## Historical and external validation records
-
-`historical_context` uses canonical `id`, `topic`, `chapter_ids`, `source_refs`, optional `urls`, and `summary`. `external_validation` uses canonical `id`, `topic`, `authority`, `url`, `conclusion`, `uncertainty`, optional `narrative_effect`, `coordinates`, and `accessed`.
-
-Because legacy books recorded different research metadata, each normalized record retains `extensions.original`. This is intentional lossless provenance, not an alternative canonical schema. External validation may qualify geography or historicity but cannot overwrite narrative events.
+Historical-context records may reference chapters, source references and HTTP(S) URLs. External-validation records may contain an HTTP(S) URL. These records document context or modern geography and cannot override narrative evidence.
 
 ## Validation invariants
 
-`tools/validate-staging.mjs` enforces:
+The read-only validator enforces, among other checks:
 
-- valid JSON and contract version;
-- automatic discovery of Books III–VII canonical manifests;
-- filename/book-number agreement;
-- required top-level arrays;
-- unique non-empty source, chapter, character, group, location, event, state, relationship, historical-context and external-validation IDs;
-- contiguous, ordered local chapter IDs and global sections, including continuity between adjacent discovered books;
-- chapter count and section bounds;
+- the complete canonical manifest set for Books III–VII;
+- contract version and stable contract identifier;
+- valid JSON and required top-level arrays;
+- unique non-empty IDs;
+- ordered contiguous chapter IDs and global sections;
 - one source-file record per chapter;
-- source existence, line count and optional SHA-256;
-- resolution of chapter, event and state source references;
-- disjoint physical presence and mention sets;
-- resolution of all character, group and location foreign keys;
-- exact bidirectional resolution of chapter event/state indexes;
-- canonical movement status values;
-- relationship participant, chapter and evidence references;
-- historical-context chapter/source references and HTTP(S) validation URLs;
+- source existence, optional line counts and optional SHA-256 values;
+- source-reference resolution;
+- disjoint physical and referenced-only sets;
+- character, group and location foreign keys;
+- exact chapter ownership of events and character states;
+- canonical movement statuses;
+- relationship participants, chapters and evidence;
+- historical-context source references and URLs;
 - occurrence chapter references.
 
-Run validation:
+Run the gate from the repository root:
 
 ```bash
-node tools/validate-staging.mjs
+node tools/validate-research-manifests.mjs
 ```
 
-Normalize a newly arrived or legacy manifest and immediately validate all discovered books:
-
-```bash
-node tools/validate-staging.mjs --normalize
-```
-
-Normalization is deterministic and idempotent. It may move legacy metadata into `extensions`, but it must not invent evidence or discard the original value.
+The validator is intentionally read-only. If provenance must be corrected, edit the canonical manifest from primary evidence and validate the result. There is no compatibility normalizer or migration command to maintain.
