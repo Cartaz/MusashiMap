@@ -11,7 +11,7 @@ This directory contains the canonical research provenance retained by MusashiMap
 
 The reports are generated from production data and the canonical book manifests. Edit their inputs or generators rather than hand-editing the reports.
 
-Manual reconciliation that exists only to reproduce these audits lives beside the reports in `character-audit-config.json` and the `geography-audit/` configuration directory. These files own research inputs such as Book II roster baselines, manifest ID remaps and geography source assignments; the generator scripts own only transformation and validation logic.
+Manual reconciliation that exists only to reproduce these audits lives beside the reports in `character-audit-config.json` and the `geography-audit/` configuration directory. These files own research inputs such as Books I–II roster baselines, manifest ID remaps and geography source assignments; the generator scripts own only transformation and validation logic.
 
 ## Canonical book manifests
 
