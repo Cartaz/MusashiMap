@@ -1,0 +1,378 @@
+{
+  "version": 1,
+  "book": 1,
+  "book_title": "Earth",
+  "sections": [1, 8],
+  "authority": "data/source/book1 only",
+  "independence_rule": "Facts below were established from the local chapter text before comparison with production JSON. Canonical IDs are normalization labels, not evidence sources.",
+  "chapters": [
+    {
+      "id": "b1c1",
+      "section": 1,
+      "title": "The Little Bell",
+      "source_file": "data/source/book1/chapter1-the-little-bell.txt",
+      "physical_characters": [
+        {"source_display": "Takezo", "canonical_id": "musashi"},
+        {"source_display": "Matahachi", "canonical_id": "matahachi"},
+        {"source_display": "Akemi", "canonical_id": "akemi"},
+        {"source_display": "Oko", "canonical_id": "oko"}
+      ],
+      "functional_actors": [
+        {"source_display": "Eastern cavalry passing over the battlefield", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Otsu", "canonical_id": "otsu", "kind": "named_reference"},
+        {"source_display": "Takezo's sister", "canonical_id": "ogin", "kind": "relationship_reference", "reader_knows_canonical_name": false},
+        {"source_display": "Munisai", "canonical_id": null, "kind": "named_biographical_reference"},
+        {"source_display": "Lord Shimmen", "canonical_id": null, "kind": "named_authority_reference"}
+      ],
+      "historical_context": [
+        "Kobayakawa Hideaki",
+        "Ishida Mitsunari",
+        "Ukita",
+        "Shimazu",
+        "Konishi",
+        "Tokugawa Ieyasu",
+        "Battle of Sekigahara"
+      ],
+      "physical_locations": [
+        {"source_display": "Sekigahara battlefield", "location_id": "sekigahara"},
+        {"source_display": "wooded hills / Mount Ibuki area", "location_id": "mount_ibuki_area"},
+        {"source_display": "corpse-strewn field near the Mount Fuwa marsh area", "location_id": null, "status": "unmodeled_scene_area"},
+        {"source_display": "Oko and Akemi's house", "location_id": "oko_akemi_house"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Tarui", "location_id": "tarui", "status": "direction_only"},
+        {"source_display": "Mount Fuwa / marsh south of it", "location_id": null, "status": "route_context"}
+      ],
+      "facts": [
+        {"id": "b1c1-s01", "type": "battle_aftermath", "participants": ["musashi"], "description": "Takezo survives wounded among the dead after the Western Army's defeat."},
+        {"id": "b1c1-s02", "type": "reunion", "participants": ["musashi", "matahachi"], "description": "Takezo and Matahachi discover that both survived and leave the battlefield together."},
+        {"id": "b1c1-s03", "type": "danger_evasion", "participants": ["musashi", "matahachi"], "description": "They play dead while mounted troops pass directly through the battlefield."},
+        {"id": "b1c1-s04", "type": "journey", "participants": ["musashi", "matahachi"], "description": "They reach the Mount Ibuki area and survive for two days on gathered food."},
+        {"id": "b1c1-s05", "type": "directional_journey", "participants": ["musashi", "matahachi"], "description": "They move in what they believe is the direction of Tarui; arrival in Tarui is not established."},
+        {"id": "b1c1-s06", "type": "first_encounter", "participants": ["musashi", "matahachi", "akemi"], "description": "They physically encounter Akemi among battlefield corpses before reaching her home."},
+        {"id": "b1c1-s07", "type": "arrival_and_shelter", "participants": ["musashi", "matahachi", "akemi", "oko"], "description": "Akemi and Oko admit the two fugitives and shelter them in the woodshed."},
+        {"id": "b1c1-s08", "type": "recovery", "participants": ["musashi", "matahachi", "akemi", "oko"], "description": "Matahachi is treated for illness and Takezo tends his bullet wounds during an extended stay."},
+        {"id": "b1c1-s09", "type": "biographical_disclosure", "participants": ["musashi", "matahachi", "akemi"], "description": "Akemi explains the household's moxa trade and the continuing danger from Tokugawa patrols."}
+      ]
+    },
+    {
+      "id": "b1c2",
+      "section": 2,
+      "title": "The Comb",
+      "source_file": "data/source/book1/chapter2-the-comb.txt",
+      "physical_characters": [
+        {"source_display": "Takezo", "canonical_id": "musashi"},
+        {"source_display": "Matahachi", "canonical_id": "matahachi"},
+        {"source_display": "Akemi", "canonical_id": "akemi"},
+        {"source_display": "Oko", "canonical_id": "oko"},
+        {"source_display": "Tsujikaze Temma", "canonical_id": "temma"}
+      ],
+      "functional_actors": [
+        {"source_display": "Temma's armed followers", "kind": "group"},
+        {"source_display": "one follower killed by Matahachi", "kind": "unnamed_individual"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Tsujikaze Kohei", "canonical_id": "kohei", "kind": "named_reference"},
+        {"source_display": "Otsu", "canonical_id": "otsu", "kind": "named_reference"},
+        {"source_display": "Ogin / Takezo's older sister", "canonical_id": "ogin", "kind": "biographical_reference"},
+        {"source_display": "Munisai", "canonical_id": null, "kind": "named_biographical_reference"},
+        {"source_display": "Takezo's mother", "canonical_id": null, "kind": "unnamed_biographical_reference"},
+        {"source_display": "Arima Kihei", "canonical_id": null, "kind": "named_biographical_reference"},
+        {"source_display": "Akemi's father", "canonical_id": null, "kind": "unnamed_biographical_reference"}
+      ],
+      "historical_context": ["Ukita forces / Sekigahara campaign context"],
+      "physical_locations": [
+        {"source_display": "Oko and Akemi's house", "location_id": "oko_akemi_house"},
+        {"source_display": "Mount Ibuki mountain area", "location_id": "mount_ibuki_area"}
+      ],
+      "referenced_locations": [],
+      "facts": [
+        {"id": "b1c2-s01", "type": "journey", "participants": ["musashi", "akemi"], "description": "Takezo accompanies Akemi into the mountain to gather mushrooms."},
+        {"id": "b1c2-s02", "type": "confrontation", "participants": ["musashi", "akemi", "temma"], "description": "Temma confronts Akemi over the household's battlefield scavenging."},
+        {"id": "b1c2-s03", "type": "revelation", "participants": ["musashi", "akemi"], "description": "Akemi explains the battlefield-looting activity and the belief that Temma killed her father."},
+        {"id": "b1c2-s04", "type": "object_transfer", "participants": ["musashi", "oko"], "description": "Oko gives Takezo a heavy black-oak practice sword taken from battlefield plunder."},
+        {"id": "b1c2-s05", "type": "sexual_advance", "participants": ["musashi", "oko"], "description": "Oko enters Takezo's sleeping space at night and makes a sexual advance that he rejects."},
+        {"id": "b1c2-s06", "type": "raid_and_fight", "participants": ["musashi", "matahachi", "temma"], "description": "Temma and his followers raid the house; Takezo and Matahachi fight them."},
+        {"id": "b1c2-s07", "type": "violent_death", "participants": ["musashi", "temma"], "description": "Takezo pursues Temma and kills him with the wooden sword."},
+        {"id": "b1c2-s08", "type": "violent_death", "participants": ["matahachi"], "description": "Matahachi kills one unnamed member of Temma's group during the fighting."},
+        {"id": "b1c2-s09", "type": "warning", "participants": ["musashi", "akemi", "oko", "matahachi"], "description": "The household warns that Temma's younger brother Kohei is more dangerous and may retaliate."},
+        {"id": "b1c2-s10", "type": "relationship_shift", "participants": ["matahachi", "oko"], "description": "Matahachi and Oko become increasingly intimate during the final night at the house."},
+        {"id": "b1c2-s11", "type": "departure", "participants": ["matahachi", "akemi", "oko"], "description": "Oko, Akemi and Matahachi leave together while Takezo sleeps; their destination is not established."},
+        {"id": "b1c2-s12", "type": "discovery", "participants": ["musashi"], "description": "Takezo wakes to the empty house, finds Oko's red comb and thinks of Otsu."}
+      ]
+    },
+    {
+      "id": "b1c3",
+      "section": 3,
+      "title": "The Flower Festival",
+      "source_file": "data/source/book1/chapter3-the-flower-festival.txt",
+      "physical_characters": [
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Takuan Soho", "canonical_id": "takuan"},
+        {"source_display": "Ogin", "canonical_id": "ogin"},
+        {"source_display": "Takezo", "canonical_id": "musashi"}
+      ],
+      "functional_actors": [
+        {"source_display": "Shippoji clergy and festival visitors", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Matahachi", "canonical_id": "matahachi", "kind": "named_reference"},
+        {"source_display": "Munisai", "canonical_id": null, "kind": "named_biographical_reference"},
+        {"source_display": "Lord Shimmen", "canonical_id": null, "kind": "named_authority_reference"}
+      ],
+      "historical_context": [
+        "Mimasaka highroad",
+        "Shikozaka silver mines",
+        "Buddhist Flower Festival / Buddha's birthday",
+        "Takuan's religious background and Zen associations"
+      ],
+      "physical_locations": [
+        {"source_display": "Shippoji", "location_id": "shippoji"},
+        {"source_display": "Aida River banks", "location_id": "aida_river"},
+        {"source_display": "Ogin's house", "location_id": "ogin_house"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Mimasaka highroad", "location_id": "mimasaka_highroad", "status": "background_geography"},
+        {"source_display": "Nakayama Pass", "location_id": "nakayama_pass", "status": "background_geography"}
+      ],
+      "facts": [
+        {"id": "b1c3-s01", "type": "residence_context", "participants": ["otsu", "takuan"], "description": "Otsu lives at Shippoji and Takuan is staying there."},
+        {"id": "b1c3-s02", "type": "journey", "participants": ["otsu", "takuan"], "description": "They go to the Aida River to gather flowers for the festival."},
+        {"id": "b1c3-s03", "type": "journey", "participants": ["otsu", "takuan"], "description": "They continue to Ogin's house to collect Otsu's festival obi."},
+        {"id": "b1c3-s04", "type": "meeting_and_family_context", "participants": ["otsu", "takuan", "ogin"], "description": "Ogin discusses the presumed deaths of Takezo and Matahachi and the Shimmen household history."},
+        {"id": "b1c3-s05", "type": "memorial_action", "participants": ["otsu"], "description": "Otsu reacts emotionally to memorial inscriptions treating Takezo and Matahachi as dead."},
+        {"id": "b1c3-s06", "type": "festival", "participants": ["otsu", "takuan"], "description": "Shippoji holds the Flower Festival and Otsu participates in the ceremony."},
+        {"id": "b1c3-s07", "type": "appearance_and_escape", "participants": ["musashi", "otsu"], "description": "Otsu recognizes Takezo in the festival crowd; he immediately flees when she calls to him."}
+      ]
+    },
+    {
+      "id": "b1c4",
+      "section": 4,
+      "title": "The Dowager's Wrath",
+      "source_file": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "physical_characters": [
+        {"source_display": "Takezo", "canonical_id": "musashi"},
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Takuan", "canonical_id": "takuan"},
+        {"source_display": "Osugi", "canonical_id": "osugi"},
+        {"source_display": "Ogin", "canonical_id": "ogin"},
+        {"source_display": "Heita", "canonical_id": "heita"},
+        {"source_display": "Himeji garrison captain / Scraggly Beard", "canonical_id": "aoki_tanzaemon", "reader_knows_canonical_name": false}
+      ],
+      "functional_actors": [
+        {"source_display": "Osugi's daughter", "kind": "unnamed_individual"},
+        {"source_display": "Osugi's daughter-in-law", "kind": "unnamed_individual", "causal_role": "summons the ambush party"},
+        {"source_display": "unnamed charcoal maker", "kind": "unnamed_individual", "causal_role": "reports Ogin's arrest and rumored location"},
+        {"source_display": "Himeji soldiers and village search parties", "kind": "group"},
+        {"source_display": "unnamed soldier killed outside Ogin's house", "kind": "unnamed_individual"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Matahachi", "canonical_id": "matahachi", "kind": "named_reference"}
+      ],
+      "historical_context": ["Akamatsu lineage of the Hon'iden and Shimmen houses", "Tokugawa occupation / Himeji garrison context"],
+      "physical_locations": [
+        {"source_display": "Hon'iden house", "location_id": "honiden_house"},
+        {"source_display": "Ogin's house", "location_id": "ogin_house"},
+        {"source_display": "Sanumo mountains", "location_id": "sanumo_mountains"},
+        {"source_display": "Shippoji", "location_id": "shippoji"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Hinagura stockade", "location_id": "hinagura_stockade", "status": "reported_position_only"}
+      ],
+      "facts": [
+        {"id": "b1c4-s01", "type": "information", "participants": ["heita", "osugi"], "description": "Heita tells Osugi that Otsu saw Takezo at the festival."},
+        {"id": "b1c4-s02", "type": "visit", "participants": ["osugi", "otsu", "ogin"], "description": "Osugi and Otsu go to Ogin's house seeking Takezo and information about Matahachi."},
+        {"id": "b1c4-s03", "type": "arrest", "participants": ["ogin", "aoki_tanzaemon"], "description": "The Himeji party raids Ogin's house and arrests her; Otsu witnesses the violence and escapes."},
+        {"id": "b1c4-s04", "type": "refuge_and_information", "participants": ["otsu", "takuan"], "description": "Otsu reaches Takuan at Shippoji and reports Ogin's arrest."},
+        {"id": "b1c4-s05", "type": "search_evasion", "participants": ["musashi"], "description": "Takezo hides in the Sanumo mountains while soldiers and villagers search for him."},
+        {"id": "b1c4-s06", "type": "forced_information", "participants": ["musashi"], "description": "Takezo questions a charcoal maker and learns Ogin was arrested and is rumored to be at Hinagura."},
+        {"id": "b1c4-s07", "type": "intervention_and_escape", "participants": ["musashi", "otsu", "aoki_tanzaemon"], "description": "Takezo returns physically to Shippoji, sees the Himeji officer assaulting Otsu, strikes him and escapes as the alarm is raised."},
+        {"id": "b1c4-s08", "type": "conversation", "participants": ["musashi", "osugi"], "description": "Takezo goes to the Hon'iden house, tells Osugi that Matahachi is alive and explains his intent to rescue Ogin."},
+        {"id": "b1c4-s09", "type": "betrayal_and_ambush", "participants": ["musashi", "osugi"], "description": "Osugi pretends to reconcile, sends her daughter-in-law for armed help and traps Takezo while he bathes."},
+        {"id": "b1c4-s10", "type": "escape", "participants": ["musashi"], "description": "Takezo fights through the ambush, retrieves his clothes and escapes over the roof."}
+      ]
+    },
+    {
+      "id": "b1c5",
+      "section": 5,
+      "title": "The Art of War",
+      "source_file": "data/source/book1/chapter5-the-art-of-war.txt",
+      "physical_characters": [
+        {"source_display": "Takezo", "canonical_id": "musashi"},
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Takuan", "canonical_id": "takuan"},
+        {"source_display": "Osugi", "canonical_id": "osugi"},
+        {"source_display": "Himeji garrison captain / Scraggly Beard", "canonical_id": "aoki_tanzaemon", "reader_knows_canonical_name": false}
+      ],
+      "functional_actors": [
+        {"source_display": "Shippoji priest and temple attendants", "kind": "group"},
+        {"source_display": "Himeji search force", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Matahachi", "canonical_id": "matahachi", "kind": "letter_reference"},
+        {"source_display": "Oko", "canonical_id": "oko", "kind": "letter_reference"},
+        {"source_display": "Ikeda Terumasa", "canonical_id": "lord_ikeda", "kind": "named_reference"},
+        {"source_display": "Ogin", "canonical_id": "ogin", "kind": "reported_prisoner"}
+      ],
+      "historical_context": ["Takuan's prior Zen/tea association with Ikeda Terumasa"],
+      "physical_locations": [
+        {"source_display": "Shippoji", "location_id": "shippoji"},
+        {"source_display": "mountain route through Sanumo and Tsujinohara", "location_id": "sanumo_mountains"},
+        {"source_display": "Tsujinohara", "location_id": "tsujinohara"},
+        {"source_display": "Itadori Pasture", "location_id": "itadori_pasture"}
+      ],
+      "referenced_locations": [],
+      "facts": [
+        {"id": "b1c5-s01", "type": "letter_and_relationship_break", "participants": ["otsu"], "description": "Otsu receives letters from Matahachi and Oko stating that Matahachi is alive and intends to marry Oko."},
+        {"id": "b1c5-s02", "type": "emotional_crisis", "participants": ["otsu"], "description": "The letters trigger a severe emotional crisis before Takuan intervenes."},
+        {"id": "b1c5-s03", "type": "confrontation", "participants": ["takuan", "aoki_tanzaemon"], "description": "Takuan confronts the Himeji officer over the failed manhunt and establishes his personal connection to Ikeda Terumasa."},
+        {"id": "b1c5-s04", "type": "wager_and_authority_transfer", "participants": ["takuan", "aoki_tanzaemon"], "description": "The officer agrees that Takuan may decide Takezo's fate if he captures him within three days; Takuan stakes his own life on failure."},
+        {"id": "b1c5-s05", "type": "journey", "participants": ["takuan", "otsu"], "description": "Takuan and Otsu travel into the mountains and establish their waiting place at Itadori Pasture."},
+        {"id": "b1c5-s06", "type": "vigil", "participants": ["takuan", "otsu"], "description": "They remain in the mountain area for three days waiting for Takezo; Otsu's flute becomes part of the encounter that draws him near."},
+        {"id": "b1c5-s07", "type": "meeting", "participants": ["musashi", "takuan", "otsu"], "description": "Takezo approaches the camp, accepts food and engages Takuan in conversation."},
+        {"id": "b1c5-s08", "type": "capture", "participants": ["musashi", "takuan", "otsu"], "description": "Takuan breaks down Takezo's resistance psychologically and binds him without a physical contest."}
+      ]
+    },
+    {
+      "id": "b1c6",
+      "section": 6,
+      "title": "The Old Cryptomeria Tree",
+      "source_file": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+      "physical_characters": [
+        {"source_display": "Takezo", "canonical_id": "musashi"},
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Takuan", "canonical_id": "takuan"},
+        {"source_display": "Osugi", "canonical_id": "osugi"},
+        {"source_display": "Himeji garrison captain / Scraggly Beard", "canonical_id": "aoki_tanzaemon", "reader_knows_canonical_name": false}
+      ],
+      "functional_actors": [
+        {"source_display": "Miyamoto villagers", "kind": "group"},
+        {"source_display": "Shippoji acolyte / temple staff", "kind": "group"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Matahachi", "canonical_id": "matahachi", "kind": "named_reference"},
+        {"source_display": "Ogin", "canonical_id": "ogin", "kind": "named_reference"}
+      ],
+      "historical_context": [],
+      "physical_locations": [
+        {"source_display": "Shippoji", "location_id": "shippoji"},
+        {"source_display": "old cryptomeria at Shippoji", "location_id": "old_cryptomeria_shippoji"}
+      ],
+      "referenced_locations": [],
+      "facts": [
+        {"id": "b1c6-s01", "type": "public_return", "participants": ["musashi", "takuan", "otsu"], "description": "Takuan returns the captured Takezo to Shippoji and displays him before the village."},
+        {"id": "b1c6-s02", "type": "public_judgment", "participants": ["musashi", "takuan", "osugi", "aoki_tanzaemon"], "description": "Villagers debate Takezo's fate; Osugi demands harsh punishment and the Himeji officer tries to reclaim official authority."},
+        {"id": "b1c6-s03", "type": "authority_dispute", "participants": ["takuan", "aoki_tanzaemon"], "description": "Takuan invokes the prior bargain and prevents the officer from taking custody."},
+        {"id": "b1c6-s04", "type": "restraint", "participants": ["musashi", "takuan", "osugi"], "description": "Takezo is hoisted and bound high in the old cryptomeria as punishment."},
+        {"id": "b1c6-s05", "type": "marriage_pressure", "participants": ["otsu", "osugi"], "description": "Osugi pressures Otsu to enter the Hon'iden household as Matahachi's bride before his return."},
+        {"id": "b1c6-s06", "type": "transformative_confrontation", "participants": ["musashi", "takuan"], "description": "Takuan challenges Takezo's ideas of strength, courage and the samurai way while he is bound in the tree."},
+        {"id": "b1c6-s07", "type": "intervention", "participants": ["otsu", "takuan", "musashi"], "description": "Otsu openly defends Takezo against Takuan's treatment and identifies with his suffering."},
+        {"id": "b1c6-s08", "type": "plea", "participants": ["otsu", "takuan"], "description": "During the storm Otsu repeatedly begs Takuan to release Takezo; he refuses."}
+      ]
+    },
+    {
+      "id": "b1c7",
+      "section": 7,
+      "title": "The Rock and the Tree",
+      "source_file": "data/source/book1/chapter7-the-rock-and-the-tree.txt",
+      "physical_characters": [
+        {"source_display": "Takezo", "canonical_id": "musashi"},
+        {"source_display": "Otsu", "canonical_id": "otsu"},
+        {"source_display": "Takuan", "canonical_id": "takuan"},
+        {"source_display": "Osugi", "canonical_id": "osugi"},
+        {"source_display": "Heita", "canonical_id": "heita"},
+        {"source_display": "Fuchikawa Gonroku / Uncle Gon", "canonical_id": "gonroku"}
+      ],
+      "functional_actors": [
+        {"source_display": "Osugi's son-in-law / Heita's father", "kind": "unnamed_individual", "causal_role": "temporary head of the Hon'iden house"},
+        {"source_display": "Hon'iden relatives and tenants", "kind": "group"},
+        {"source_display": "border official", "kind": "unnamed_individual"},
+        {"source_display": "Mikazuki teahouse owner", "kind": "unnamed_individual"},
+        {"source_display": "Hinagura soldiers", "kind": "group"},
+        {"source_display": "unnamed Hinagura prisoner/guard questioned by Takezo", "kind": "unnamed_individual"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Ogin", "canonical_id": "ogin", "kind": "named_reference"},
+        {"source_display": "Matahachi", "canonical_id": "matahachi", "kind": "named_reference"}
+      ],
+      "historical_context": [],
+      "physical_locations": [
+        {"source_display": "old cryptomeria / Shippoji", "location_id": "old_cryptomeria_shippoji"},
+        {"source_display": "Nakayama Pass", "location_id": "nakayama_pass"},
+        {"source_display": "Hon'iden house", "location_id": "honiden_house"},
+        {"source_display": "provincial border at Nakayama route", "location_id": "nakayama_pass"},
+        {"source_display": "Mikazuki Teahouse", "location_id": "mikazuki_teahouse"},
+        {"source_display": "ravine near Mikazuki Teahouse", "location_id": null, "status": "unmodeled_scene_site"},
+        {"source_display": "Hinagura stockade", "location_id": "hinagura_stockade"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Hanada Bridge / Himeji", "location_id": "hanada_bridge", "status": "intended_destination"},
+        {"source_display": "Shingu", "location_id": "shingu", "status": "intended_overnight_stop_not_reached"},
+        {"source_display": "Himeji", "location_id": "himeji_area", "status": "reported_transfer_and_direction"}
+      ],
+      "facts": [
+        {"id": "b1c7-s01", "type": "transformative_dialogue", "participants": ["musashi", "takuan"], "description": "Takuan continues the confrontation over courage and human purpose until Takezo explicitly asks to live and change."},
+        {"id": "b1c7-s02", "type": "rescue_and_escape", "participants": ["musashi", "otsu"], "description": "Otsu climbs the cryptomeria, cuts Takezo free and escapes with him."},
+        {"id": "b1c7-s03", "type": "journey", "participants": ["musashi", "otsu"], "description": "They reach Nakayama Pass together after the escape."},
+        {"id": "b1c7-s04", "type": "separation", "participants": ["musashi", "otsu"], "description": "Takezo goes to rescue Ogin while Otsu agrees to continue toward Himeji and wait at Hanada Bridge."},
+        {"id": "b1c7-s05", "type": "mobilization", "participants": ["heita", "osugi", "gonroku"], "description": "Heita reports the escape; Osugi mobilizes relatives and tenants and begins pursuit with Gonroku."},
+        {"id": "b1c7-s06", "type": "border_crossing", "participants": ["osugi", "gonroku"], "description": "A border official refuses the large pursuit party; only Osugi and Gonroku continue across."},
+        {"id": "b1c7-s07", "type": "illness_and_refuge", "participants": ["otsu"], "description": "Otsu becomes seriously ill and is given a back room at the Mikazuki Teahouse."},
+        {"id": "b1c7-s08", "type": "pursuit_and_escape", "participants": ["otsu", "osugi", "gonroku"], "description": "Osugi and Gonroku discover Otsu; she flees and disappears into a ravine near the teahouse."},
+        {"id": "b1c7-s09", "type": "reconnaissance", "participants": ["musashi"], "description": "Takezo studies the Hinagura stockade and its approaches before deciding how to attack."},
+        {"id": "b1c7-s10", "type": "assault", "participants": ["musashi"], "description": "Takezo storms the stockade while trying to find and rescue Ogin."},
+        {"id": "b1c7-s11", "type": "reported_transfer", "participants": ["musashi"], "description": "He learns Ogin had already been transferred toward Himeji."},
+        {"id": "b1c7-s12", "type": "departure", "participants": ["musashi"], "description": "Takezo escapes the stockade and heads toward Himeji."}
+      ]
+    },
+    {
+      "id": "b1c8",
+      "section": 8,
+      "title": "The Birth of Musashi",
+      "source_file": "data/source/book1/chapter8-the-birth-of-musashi.txt",
+      "physical_characters": [
+        {"source_display": "Takezo / Miyamoto Musashi", "canonical_id": "musashi"},
+        {"source_display": "Takuan", "canonical_id": "takuan"},
+        {"source_display": "Ikeda Terumasa", "canonical_id": "lord_ikeda"},
+        {"source_display": "Otsu", "canonical_id": "otsu"}
+      ],
+      "functional_actors": [
+        {"source_display": "Himeji castle guard captain", "kind": "unnamed_individual"},
+        {"source_display": "Himeji castle servants", "kind": "group"},
+        {"source_display": "Hanada Bridge basket/souvenir shop household", "kind": "group", "presence": "reported_and_local_scene_context"}
+      ],
+      "referenced_characters": [
+        {"source_display": "Ogin", "canonical_id": "ogin", "kind": "named_reference"},
+        {"source_display": "Osugi", "canonical_id": "osugi", "kind": "named_reference"},
+        {"source_display": "Fuchikawa Gonroku", "canonical_id": "gonroku", "kind": "named_reference"},
+        {"source_display": "Aoki Tanzaemon", "canonical_id": "aoki_tanzaemon", "kind": "identity_reveal_and_report"},
+        {"source_display": "Matahachi", "canonical_id": "matahachi", "kind": "named_reference"}
+      ],
+      "historical_context": ["Sun-tzu / The Art of War", "Akamatsu lineage and Himeji history"],
+      "physical_locations": [
+        {"source_display": "Himeji castle town / outskirts", "location_id": "himeji_area"},
+        {"source_display": "Hanada Bridge", "location_id": "hanada_bridge"},
+        {"source_display": "Himeji Castle", "location_id": "himeji_castle"}
+      ],
+      "referenced_locations": [
+        {"source_display": "Sayo district", "location_id": "sayo_district", "status": "reported_location_of_ogin"}
+      ],
+      "facts": [
+        {"id": "b1c8-s01", "type": "waiting_and_search", "participants": ["musashi"], "description": "Takezo waits around Hanada Bridge and Himeji while trying to find both Otsu and information about Ogin."},
+        {"id": "b1c8-s02", "type": "meeting_and_arrival", "participants": ["musashi", "takuan"], "description": "Takuan finds Takezo and leads him into Himeji Castle."},
+        {"id": "b1c8-s03", "type": "authority_decision", "participants": ["musashi", "takuan", "lord_ikeda"], "description": "Ikeda accepts that Takuan may determine Takezo's punishment because his retainer Aoki Tanzaemon made the earlier binding promise."},
+        {"id": "b1c8-s04", "type": "identity_reconciliation", "participants": ["takuan", "lord_ikeda", "aoki_tanzaemon"], "description": "The text retrospectively identifies the officer who made the capture bargain as Aoki Tanzaemon; earlier 'Himeji captain/Scraggly Beard' scenes belong to this same person."},
+        {"id": "b1c8-s05", "type": "confinement_and_study", "participants": ["musashi"], "description": "Takezo spends roughly three years confined in the castle room studying military, historical and Zen texts."},
+        {"id": "b1c8-s06", "type": "release", "participants": ["musashi", "takuan", "lord_ikeda"], "description": "Takuan returns and Takezo is released; Ikeda offers service and Takezo declines."},
+        {"id": "b1c8-s07", "type": "name_change", "participants": ["musashi", "takuan", "lord_ikeda"], "description": "Takezo adopts the name Miyamoto Musashi and chooses an independent path of training."},
+        {"id": "b1c8-s08", "type": "information", "participants": ["musashi", "takuan"], "description": "Takuan reports Ogin's later situation, Osugi and Gonroku's continuing search, and Aoki Tanzaemon's dismissal from Ikeda service."},
+        {"id": "b1c8-s09", "type": "separate_departures", "participants": ["musashi", "takuan"], "description": "Takuan leaves westward and Musashi starts eastward."},
+        {"id": "b1c8-s10", "type": "reunion", "participants": ["musashi", "otsu"], "description": "Otsu meets Musashi at Hanada Bridge after waiting there for nearly three years."},
+        {"id": "b1c8-s11", "type": "retrospective_rescue_report", "participants": ["otsu", "takuan"], "description": "Otsu explains that Takuan rescued her from the ravine near Mikazuki and arranged her work near Hanada Bridge."},
+        {"id": "b1c8-s12", "type": "separation", "participants": ["musashi", "otsu"], "description": "Musashi refuses to take Otsu on his journey and leaves while she is preparing to travel with him."}
+      ]
+    }
+  ]
+}
