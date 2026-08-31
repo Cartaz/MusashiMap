@@ -1,0 +1,247 @@
+{
+  "manifest_topic_assignments": {
+    "3": {
+      "fushimi_castle_works": [
+        "fushimi_castle_works",
+        "fushimi_osaka_road"
+      ],
+      "sumiyoshi_taisha": [
+        "sumiyoshi_taisha",
+        "sumiyoshi_inn"
+      ],
+      "sumiyoshi_shore": [
+        "sumiyoshi_shore"
+      ],
+      "ise_naiku": [
+        "ise_naiku",
+        "yamada_ise",
+        "house_of_virgins",
+        "arakida_house"
+      ],
+      "eagle_mountain": [
+        "eagle_mountain"
+      ],
+      "ominato": [
+        "ominato"
+      ],
+      "yokkaichi": [
+        "yokkaichi",
+        "tokaido_omi_corridor"
+      ],
+      "temma_landing": [
+        "temma_landing",
+        "osaka",
+        "kizugawa_harbor",
+        "yodo_river"
+      ],
+      "kema_landing": [
+        "kema_landing",
+        "yodo_river"
+      ],
+      "kamo_river_gojo": [
+        "kamo_river_gojo"
+      ],
+      "karasumaru_mitsuhiro": [
+        "karasumaru_house"
+      ],
+      "koji_hill": [
+        "koji_hill"
+      ],
+      "rendaiji_field": [
+        "rendaiji_field"
+      ]
+    },
+    "4": {
+      "Ichijōji Sagarimatsu": [
+        "ichijoji_sagarimatsu",
+        "ichijoji_mountain_approach"
+      ],
+      "Hachidai Shrine and spreading pine tradition": [
+        "ichijoji_sagarimatsu"
+      ],
+      "Rengeōin / Sanjūsangendō": [
+        "rengeoin_sanjusangendo"
+      ],
+      "Enryakuji destruction and rebuilding": [
+        "enryakuji",
+        "mudoji_mount_hiei",
+        "mount_hiei_otsu_road",
+        "seta_hiei_route"
+      ],
+      "Enryakuji reconstruction chronology": [
+        "enryakuji"
+      ],
+      "Seta no Karahashi": [
+        "seta_karahashi",
+        "uchidegahama",
+        "seta_hiei_route"
+      ],
+      "Hon’ami Kōetsu": [
+        "honami_lane_house",
+        "koetsu_field_picnic"
+      ],
+      "Kōetsu ceramic work": [
+        "honami_lane_house"
+      ],
+      "Kōetsu calligraphy": [
+        "honami_lane_house"
+      ],
+      "Male and Female Waterfalls literary association": [
+        "otaki_metaki",
+        "magome_pass"
+      ],
+      "Nakasendō route near the waterfalls": [
+        "otaki_metaki",
+        "magome_pass",
+        "nakasendo_omi_mino",
+        "nakatsugawa"
+      ],
+      "Yoshino Tayū and Kōetsu cultural memory": [
+        "ogiya_yanagimachi",
+        "yoshino_cottage"
+      ]
+    },
+    "5": {
+      "ext-kiso-fukushima": [
+        "fukushima_checkpoint",
+        "suhara_nezame",
+        "kiso_highroad"
+      ],
+      "ext-shiojiri-narai": [
+        "narai",
+        "shiojiri_pass",
+        "kiso_highroad"
+      ],
+      "ext-shimosuwa": [
+        "shimosuwa",
+        "suwa_myojin",
+        "wada_daimon_corridor"
+      ],
+      "ext-hachioji-yakuoin": [
+        "hachioji",
+        "yakuoin_takao",
+        "kobotoke_pass",
+        "hachioji_mound"
+      ],
+      "ext-tone-history": [
+        "tone_floodplain",
+        "hotengahara",
+        "hotengahara_burial",
+        "hotengahara_shack",
+        "raid_village",
+        "tokuganji"
+      ],
+      "ext-edo-chronology": [
+        "edo",
+        "nihombashi",
+        "edo_castle_hibiya",
+        "edo_castle",
+        "yanagihara",
+        "ushigafuchi_kudan"
+      ],
+      "ext-sumida": [
+        "sumida_river",
+        "edo_east_barrier"
+      ],
+      "ext-sensoji": [
+        "sensoji",
+        "sensoji_riverside"
+      ],
+      "ext-kanda": [
+        "ono_dojo",
+        "obata_school",
+        "kobikicho"
+      ],
+      "ext-azabu": [
+        "azabu_hill",
+        "dogen_slope",
+        "shojuan"
+      ],
+      "ext-akagi": [
+        "akagi_myojin",
+        "hojo_ushigome"
+      ]
+    },
+    "6": {
+      "tsukinomisaki": [
+        "tsukinomisaki",
+        "isarago_hill",
+        "takanawa_highroad",
+        "hosokawa_edo_residence"
+      ],
+      "isarago_hill": [
+        "isarago_hill",
+        "takanawa_highroad"
+      ],
+      "hojo_ushigome": [
+        "hojo_ushigome"
+      ],
+      "mitsumine_shrine": [
+        "mitsumine_shrine",
+        "kosaruzawa_bridge",
+        "oinu_teahouse",
+        "shomaru_pass"
+      ],
+      "kotesashigahara": [
+        "kotesashigahara"
+      ],
+      "tanashi": [
+        "tanashi"
+      ],
+      "nobidome": [
+        "nobidome"
+      ],
+      "daizo_pawnshop": [
+        "daizo_pawnshop"
+      ],
+      "wadakura_pavilion": [
+        "wadakura_pavilion",
+        "otemachi_prison",
+        "edo_castle"
+      ]
+    },
+    "7": {
+      "ext-ganryujima": [
+        "funashima",
+        "shimonoseki",
+        "heike_pine",
+        "kokura_hill"
+      ],
+      "ext-hikojima": [
+        "hikojima"
+      ],
+      "ext-kokura-castle": [
+        "kokura_castle",
+        "kokura",
+        "moji",
+        "itatsu_kojiro"
+      ],
+      "ext-sakai": [
+        "sakai_port"
+      ],
+      "ext-sakai-archaeology": [
+        "sakai_port"
+      ],
+      "ext-kongoji": [
+        "kongoji",
+        "amami_plateau"
+      ],
+      "ext-koyasan": [
+        "mount_koya",
+        "mount_kudo",
+        "kamuro"
+      ],
+      "ext-kofukuji": [
+        "kofukuji"
+      ],
+      "ext-kofukuji-history": [
+        "kofukuji"
+      ],
+      "ext-himeji-history": [
+        "himeji_area",
+        "shikama",
+        "shikama_estuary"
+      ]
+    }
+  }
+}

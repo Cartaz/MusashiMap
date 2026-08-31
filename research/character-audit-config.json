@@ -1,0 +1,108 @@
+{
+  "book2_expected": {
+    "b2c1": [
+      "yoshioka_seijuro",
+      "gion_toji",
+      "ueda_ryohei",
+      "oko",
+      "akemi",
+      "matahachi"
+    ],
+    "b2c2": [
+      "musashi",
+      "yoshioka_seijuro",
+      "gion_toji",
+      "ueda_ryohei",
+      "matahachi"
+    ],
+    "b2c3": [
+      "musashi",
+      "osugi",
+      "gonroku"
+    ],
+    "b2c4": [
+      "musashi",
+      "jotaro",
+      "matahachi"
+    ],
+    "b2c5": [
+      "jotaro",
+      "akemi",
+      "otsu",
+      "shoda_kizaemon"
+    ],
+    "b2c6": [
+      "musashi",
+      "nikkan",
+      "agon",
+      "jotaro",
+      "yamazoe_dampachi",
+      "otomo_banryu",
+      "yasukawa_yasubei"
+    ],
+    "b2c7": [
+      "musashi",
+      "jotaro",
+      "yamazoe_dampachi",
+      "yasukawa_yasubei",
+      "otomo_banryu",
+      "inshun",
+      "nikkan"
+    ],
+    "b2c8": [
+      "musashi",
+      "jotaro",
+      "kocha",
+      "yoshioka_denshichiro"
+    ],
+    "b2c9": [
+      "sekishusai",
+      "otsu",
+      "shoda_kizaemon",
+      "yoshioka_denshichiro",
+      "kocha",
+      "musashi",
+      "jotaro",
+      "kimura_sukekuro",
+      "murata_yozo",
+      "debuchi_magobei"
+    ],
+    "b2c10": [
+      "musashi",
+      "jotaro",
+      "kocha",
+      "shoda_kizaemon",
+      "kimura_sukekuro",
+      "murata_yozo",
+      "debuchi_magobei"
+    ],
+    "b2c11": [
+      "musashi",
+      "otsu",
+      "jotaro",
+      "takuan",
+      "sekishusai"
+    ]
+  },
+  "manifest_id_maps": {
+    "3": {},
+    "4": {
+      "denshichiro": "yoshioka_denshichiro",
+      "sasaki_kojiro": "kojiro",
+      "seijuro": "yoshioka_seijuro"
+    },
+    "5": {
+      "yagyu_munenori": "munenori"
+    },
+    "6": {
+      "baiken": "kohei",
+      "ono_tadaaki": "mikogami_tenzen",
+      "yagyu_munenori": "munenori"
+    },
+    "7": {
+      "honami_koetsu": "koetsu",
+      "toranosuke": "hamada_toranosuke",
+      "yoshino_dayu": "yoshino_tayu"
+    }
+  }
+}
