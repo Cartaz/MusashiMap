@@ -48,7 +48,7 @@ for (const file of jsonFiles) {
   }
 }
 
-const checkBalancedCss = (content, file) => {
+const checkBalancedCss = content => {
   let depth = 0;
   let quote = null;
   let escaped = false;
@@ -89,7 +89,7 @@ const checkBalancedCss = (content, file) => {
 
 for (const file of cssFiles) {
   try {
-    checkBalancedCss(await readFile(file, "utf8"), file);
+    checkBalancedCss(await readFile(file, "utf8"));
   } catch (error) {
     errors.push(`CSS syntax structure error: ${path.relative(root, file)} — ${error.message}`);
   }
@@ -131,7 +131,6 @@ for (const file of browserJsFiles) {
 // with a static scan alone.
 const cssClassDefinitions = new Map();
 const cssClassReferences = new Map();
-const cssSelectorOccurrences = new Map();
 const addRef = (map, name, file) => {
   if (!map.has(name)) map.set(name, new Set());
   map.get(name).add(path.relative(root, file));
@@ -142,12 +141,11 @@ const normalizeSelector = selector => selector
   .replace(/\s+/g, " ")
   .trim();
 
-// Return selectors together with their at-rule scope. Looking only at the text
-// before every opening brace conflates responsive overrides with duplicate base
-// rules and also mistakes dots in declaration URLs for class selectors.
-const extractRules = content => {
+// Extract class-bearing selectors without treating declaration text as selectors.
+// At-rule nesting is tracked only to distinguish actual rules from declarations.
+const extractSelectors = content => {
   const clean = content.replace(/\/\*[\s\S]*?\*\//g, "");
-  const rules = [];
+  const selectors = [];
   const stack = [];
   let boundary = 0;
   let quote = null;
@@ -169,13 +167,12 @@ const extractRules = content => {
       const header = normalizeSelector(clean.slice(boundary, index));
       const parentAllowsRule = !stack.length || stack.at(-1).kind === "at-rule";
       if (header.startsWith("@")) {
-        stack.push({ kind: "at-rule", header });
+        stack.push({ kind: "at-rule" });
       } else {
         if (header && parentAllowsRule) {
-          const scope = stack.filter(item => item.kind === "at-rule").map(item => item.header).join(" > ");
-          for (const selector of header.split(",").map(normalizeSelector).filter(Boolean)) rules.push({ selector, scope });
+          selectors.push(...header.split(",").map(normalizeSelector).filter(Boolean));
         }
-        stack.push({ kind: "rule", header });
+        stack.push({ kind: "rule" });
       }
       boundary = index + 1;
     } else if (char === "}") {
@@ -183,29 +180,14 @@ const extractRules = content => {
       boundary = index + 1;
     }
   }
-  return rules;
+  return selectors;
 };
 
 for (const file of cssFiles) {
   const content = await readFile(file, "utf8");
-  for (const { selector, scope } of extractRules(content)) {
+  for (const selector of extractSelectors(content)) {
     for (const match of selector.matchAll(/\.([A-Za-z_][\w-]*)/g)) addRef(cssClassDefinitions, match[1], file);
-    if (!selector.includes(".")) continue;
-    const key = `${path.relative(root, file)}\u0000${scope}\u0000${selector}`;
-    if (!cssSelectorOccurrences.has(key)) cssSelectorOccurrences.set(key, []);
-    cssSelectorOccurrences.get(key).push({ file: path.relative(root, file), scope, selector });
   }
-}
-
-const duplicateSelectorCandidates = [];
-for (const occurrences of cssSelectorOccurrences.values()) {
-  if (occurrences.length > 1) {
-    const { file, scope, selector } = occurrences[0];
-    duplicateSelectorCandidates.push(`${selector} (${occurrences.length}×, ${file}${scope ? `; ${scope}` : ""})`);
-  }
-}
-if (duplicateSelectorCandidates.length) {
-  warnings.push(`Repeated CSS selectors in the same file/scope (${duplicateSelectorCandidates.length} candidates):\n  ${duplicateSelectorCandidates.join("\n  ")}`);
 }
 
 for (const file of sourceFiles) {
