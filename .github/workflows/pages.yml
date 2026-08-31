@@ -41,6 +41,9 @@ jobs:
       - name: Validate research provenance
         run: node tools/validate-research-manifests.mjs
 
+      - name: Validate independent source audits
+        run: node tools/validate-source-audit.mjs
+
       - name: Run validator CLI tests
         run: node --test tools/tests/*.test.mjs
 
