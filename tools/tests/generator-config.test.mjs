@@ -12,15 +12,21 @@ const locations = new Set(readJson("data/locations.json").locations.map(location
 
 test("character audit reconciliation lives in research config", () => {
   const config = readJson("research/character-audit-config.json");
-  const book2Chapters = readJson("data/chapters.json").sections
+  const chapters = readJson("data/chapters.json").sections;
+  const book1Chapters = chapters
+    .filter(chapter => chapter.book_number === 1)
+    .map(chapter => chapter.chapter_id);
+  const book2Chapters = chapters
     .filter(chapter => chapter.book_number === 2)
     .map(chapter => chapter.chapter_id);
 
+  assert.deepEqual(Object.keys(config.book1_expected), book1Chapters);
   assert.deepEqual(Object.keys(config.book2_expected), book2Chapters);
   assert.deepEqual(Object.keys(config.manifest_id_maps).map(Number).sort((a, b) => a - b), [3, 4, 5, 6, 7]);
 
   const generator = readFileSync(path.join(root, "tools/generate-character-chapter-audit.mjs"), "utf8");
-  assert.doesNotMatch(generator, /const manifestIdMaps = \{|const book2Expected = \{/);
+  assert.doesNotMatch(generator, /const manifestIdMaps = \{|const book1Expected = \{|const book2Expected = \{/);
+  assert.doesNotMatch(generator, /book1-analysis\.json/);
   assert.match(generator, /research\/character-audit-config\.json/);
 });
 
