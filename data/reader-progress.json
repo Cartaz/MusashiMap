@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "book": "I-VII",
   "title": "Earth / Water / Fire / Wind / Sky / Sun and Moon / The Perfect Light",
   "purpose": "Single reader-progress contract for spoiler-safe visibility across characters, locations, events, movements, relationships and historical micro-wiki triggers.",
@@ -11,7 +11,7 @@
   },
   "visibility_rules": {
     "character_state": "Visible when the character has a state at or before current_section.",
-    "location_state": "Visible when the location is referenced by a visible character, event or transition at or before current_section.",
+    "location_state": "Visible from location.introduced_section onward; once introduced, a place remains visible in later sections.",
     "event": "Visible only when event.section <= current_section.",
     "movement": "Visible only when the transition is introduced by current_section; intended destinations remain intentions until a confirmed arrival exists.",
     "relationship": "Visible only when relationship.first_section <= current_section.",
