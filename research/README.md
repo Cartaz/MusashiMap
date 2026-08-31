@@ -15,7 +15,7 @@ Manual reconciliation that exists only to reproduce these audits lives beside th
 
 ## Canonical book manifests
 
-The following manifests preserve the normalized chapter research used to migrate Books III–VII:
+The following manifests preserve the normalized chapter research used to produce Books III–VII:
 
 - `book3-production-manifest.json` — *Fire*, sections 20–32
 - `book4-production-manifest.json` — *Wind*, sections 33–53
@@ -23,13 +23,13 @@ The following manifests preserve the normalized chapter research used to migrate
 - `book6-production-manifest.json` — *Sun and Moon*, sections 80–96
 - `book7-production-manifest.json` — *The Perfect Light*, sections 97–112
 
-Validate all five with:
+Validate all five with the read-only provenance gate:
 
 ```bash
-node tools/validate-staging.mjs
+node tools/validate-research-manifests.mjs
 ```
 
-These files are provenance records, not a second publication authority. Reader visibility is controlled only by `data/reader-progress.json`.
+These files are provenance records, not a second publication authority. The old migration/normalization path is retired; maintenance edits canonical manifests directly and validation never rewrites them. Reader visibility is controlled only by `data/reader-progress.json`.
 
 ## Source hierarchy
 
@@ -40,4 +40,4 @@ These files are provenance records, not a second publication authority. Reader v
 
 Unknown coordinates intentionally remain `null`. Mentions, memories and reported movement do not become physical map presence.
 
-The working method and evidence rules live in [`docs/book-research-workflow.md`](../docs/book-research-workflow.md); the manifest schema lives in [`docs/book-staging-contract.md`](../docs/book-staging-contract.md).
+The working method and evidence rules live in [`docs/book-research-workflow.md`](../docs/book-research-workflow.md); the provenance format guide lives at the historically retained contract path [`docs/book-staging-contract.md`](../docs/book-staging-contract.md).

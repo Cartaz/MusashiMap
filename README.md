@@ -50,7 +50,7 @@ Node.js 22 is used in CI. Run the same gates as the Pages workflow from the repo
 ```bash
 node tools/validate-frontend.mjs
 node tools/validate-data.mjs
-node tools/validate-staging.mjs
+node tools/validate-research-manifests.mjs
 node --test tools/tests/*.test.mjs
 node js/runtime-safety.test.mjs
 node tools/build-pages.mjs
@@ -60,6 +60,8 @@ node tools/validate-pages-artifact.mjs
 
 `tools/validate-data.mjs` is the executable contract for production data structure and cross-file invariants; there is no separate field schema to keep in sync.
 
+`tools/validate-research-manifests.mjs` is the read-only integrity gate for the retained Books III–VII research provenance. Migration and normalization are not runtime or maintenance responsibilities.
+
 `tools/build-pages.mjs` creates the minimal spoiler-filtered `_site/` artifact. Raw chapter sources, research dossiers and development files are deliberately excluded.
 
 ## Repository map
@@ -67,13 +69,13 @@ node tools/validate-pages-artifact.mjs
 ```text
 css/        responsive presentation and map UI
 data/       production data, publication state and local source corpus
-docs/       research workflow, staging contract and movement semantics
+docs/       research workflow, provenance format and movement semantics
 js/         application runtime and safety tests
 research/   canonical book manifests and consolidated audits
 tools/      validators, audit generators and Pages builder
 ```
 
-The canonical research index is [research/README.md](research/README.md). The reusable extraction procedure is documented in [docs/book-research-workflow.md](docs/book-research-workflow.md), the Books III–VII provenance format in [docs/book-staging-contract.md](docs/book-staging-contract.md), and route semantics in [docs/movement-semantics.md](docs/movement-semantics.md).
+The canonical research index is [research/README.md](research/README.md). The reusable extraction procedure is documented in [docs/book-research-workflow.md](docs/book-research-workflow.md), the retained Books III–VII provenance format in [docs/book-staging-contract.md](docs/book-staging-contract.md), and route semantics in [docs/movement-semantics.md](docs/movement-semantics.md).
 
 ## Evidence policy
 

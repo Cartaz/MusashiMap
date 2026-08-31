@@ -38,8 +38,8 @@ jobs:
       - name: Validate narrative data
         run: node tools/validate-data.mjs
 
-      - name: Validate staged books
-        run: node tools/validate-staging.mjs
+      - name: Validate research provenance
+        run: node tools/validate-research-manifests.mjs
 
       - name: Run validator CLI tests
         run: node --test tools/tests/*.test.mjs
