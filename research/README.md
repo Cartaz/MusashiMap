@@ -2,6 +2,14 @@
 
 This directory contains the canonical research provenance retained by MusashiMap. Temporary scrape notes, migration checklists and per-pass ledgers were consolidated after all seven books reached production.
 
+## Independent source audit
+
+[`source-audit/`](source-audit/) is deliberately separate from the generated production audits below. It contains source-first chapter oracles built directly from `data/source/` before production JSON is consulted, followed by a separate source-to-production diff.
+
+Use this layer to answer **completeness/recall** questions: whether a character mention, physical scene, movement, event, identity reveal or other narrative fact was omitted or misclassified. The generated audits below remain useful for **consistency** questions about data that already exists.
+
+A book is not independently certified merely because the generated audits and validators are green. Independent certification requires a completed source oracle and production diff for that book.
+
 ## Repository-wide audits
 
 | Report | Scope | Rebuild command |
@@ -34,9 +42,10 @@ These files are provenance records, not a second publication authority. The old 
 ## Source hierarchy
 
 1. Local chapter files are authoritative for narrative facts.
-2. Production JSON is authoritative for application behavior.
-3. Canonical manifests preserve research evidence and migration history.
-4. External sources validate modern geography or historical context only.
+2. Independent source oracles are authoritative for source-audit expectations once completed; they must not be derived from production.
+3. Production JSON is authoritative for application behavior.
+4. Canonical manifests preserve research evidence and migration history.
+5. External sources validate modern geography or historical context only.
 
 Unknown coordinates intentionally remain `null`. Mentions, memories and reported movement do not become physical map presence.
 
