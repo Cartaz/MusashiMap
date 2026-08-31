@@ -1,12 +1,18 @@
-const MOVEMENT_STATUSES = new Set([
-  "arrival_confirmed",
-  "confirmed_route",
-  "intended_destination",
-  "direction_only",
-  "uncertain_route"
+const MOVEMENT_ROUTE_MODES = new Map([
+  ["arrival_confirmed", "confirmed"],
+  ["confirmed_route", "confirmed"],
+  ["intended_destination", "intended"],
+  ["direction_only", "intended"],
+  ["uncertain_route", "intended"]
 ]);
 
+const MOVEMENT_STATUSES = new Set(MOVEMENT_ROUTE_MODES.keys());
+
 const isNonEmptyString = value => typeof value === "string" && value.length > 0;
+
+export function getMovementRouteMode(event) {
+  return MOVEMENT_ROUTE_MODES.get(event?.movement_status) ?? null;
+}
 
 export function validateMovementEvent(event) {
   const violations = [];
