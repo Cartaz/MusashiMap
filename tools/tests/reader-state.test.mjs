@@ -59,20 +59,25 @@ test("canonical state owns furthest section and exposes transitions to subscribe
   unsubscribe();
 });
 
-test("legacy reader mutators delegate to canonical state instead of storing a second section", () => {
-  initializeCanonicalReaderState({ section: 2, selectedCharacters: ["a"] });
+test("reader navigation exposes no mutable compatibility API", () => {
   const reader = createReaderProgress({ sections: [{ number: 2 }, { number: 4 }, { number: 7 }] }, {
     current_section: 2,
     minimum_section: 2,
     maximum_section: 7
   });
 
-  assert.equal(reader.next(), true);
-  assert.equal(reader.section, 4);
-  assert.equal(getCanonicalReaderState().section, 4);
-  assert.equal(reader.previous(), true);
-  assert.equal(reader.section, 2);
-  assert.equal(reader.setSection(3), false);
+  for (const name of [
+    "section",
+    "current",
+    "setSection",
+    "next",
+    "previous",
+    "isVisible",
+    "visibleByFirstSection",
+    "visibleLatestStates"
+  ]) {
+    assert.equal(name in reader, false, name);
+  }
 });
 
 test("app and map runtime do not keep duplicate reader-state ownership", () => {

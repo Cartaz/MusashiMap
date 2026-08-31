@@ -77,7 +77,7 @@ export function subscribeCanonicalReaderState(subscriber) {
   return () => subscribers.delete(subscriber);
 }
 
-export function getLatestStates(states, currentSection, idKey = "character") {
+function getLatestStates(states, currentSection, idKey = "character") {
   const section = asInteger(currentSection);
   if (section === null) return [];
 
@@ -126,7 +126,7 @@ export function getProgressiveDisplayName(entry, section) {
 // A name can be revealed only after at least one project-local narrative
 // record introduces it. Missing evidence is treated conservatively: the
 // character remains hidden instead of falling back to the first section.
-export function getCharacterIntroductionSection(character, { states = [], events = [], characterWiki = {} } = {}) {
+function getCharacterIntroductionSection(character, { states = [], events = [], characterWiki = {} } = {}) {
   if (!character?.id) return null;
   const candidates = [character.introduced_section, ...(character.present_in ?? [])];
 
@@ -205,8 +205,6 @@ export function createReaderProgress(chapters, progress) {
   }
   if (requestedMin > requestedMax) throw new Error("Invalid reader progress range");
 
-  // This object owns the immutable publication/navigation contract only.
-  // Mutable section/selection state lives exclusively in canonicalState above.
   const sections = allSections.filter(section => section.number >= requestedMin && section.number <= requestedMax);
   if (!sections.length) throw new Error("Reader progress range has no available sections");
 
@@ -216,10 +214,6 @@ export function createReaderProgress(chapters, progress) {
   const max = sectionNumbers.at(-1);
   const requestedInitial = asInteger(progressState.current_section);
   const initialSection = sectionSet.has(requestedInitial) ? requestedInitial : min;
-  const currentSection = () => {
-    const section = getCanonicalReaderState().section;
-    return sectionSet.has(section) ? section : initialSection;
-  };
   const adjacentSection = (section, direction) => {
     const current = asInteger(section);
     const index = sectionNumbers.indexOf(current);
@@ -229,12 +223,6 @@ export function createReaderProgress(chapters, progress) {
   };
 
   return {
-    get section() {
-      return currentSection();
-    },
-    get current() {
-      return sections.find(section => section.number === currentSection());
-    },
     get initialSection() {
       return initialSection;
     },
@@ -250,38 +238,11 @@ export function createReaderProgress(chapters, progress) {
     hasSection(section) {
       return sectionSet.has(asInteger(section));
     },
-    nextSection(section = currentSection()) {
+    nextSection(section) {
       return adjacentSection(section, 1);
     },
-    previousSection(section = currentSection()) {
+    previousSection(section) {
       return adjacentSection(section, -1);
-    },
-    // Compatibility methods delegate to the canonical store; they no longer
-    // maintain a second mutable currentSection inside this navigation model.
-    setSection(section) {
-      const next = asInteger(section);
-      if (!sectionSet.has(next)) return false;
-      const state = getCanonicalReaderState();
-      return state.section === null
-        ? initializeCanonicalReaderState({ section: next, selectedCharacters: state.selectedCharacters })
-        : setCanonicalReaderState({ section: next });
-    },
-    next() {
-      const next = adjacentSection(currentSection(), 1);
-      return next === null ? false : this.setSection(next);
-    },
-    previous() {
-      const previous = adjacentSection(currentSection(), -1);
-      return previous === null ? false : this.setSection(previous);
-    },
-    isVisible(firstSection) {
-      return Number.isInteger(firstSection) && firstSection <= currentSection();
-    },
-    visibleByFirstSection(items, firstSectionKey = "section") {
-      return items.filter(item => this.isVisible(item[firstSectionKey]));
-    },
-    visibleLatestStates(states, idKey = "character") {
-      return getLatestStates(states, currentSection(), idKey);
     }
   };
 }
