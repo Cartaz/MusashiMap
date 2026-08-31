@@ -16,34 +16,17 @@ const events = readJson("data/events.json").events;
 const states = readJson("data/character-states.json").character_states;
 const relationships = readJson("data/relationships.json").relationships;
 const book1Analysis = readJson("data/book1-analysis.json");
+const auditConfig = readJson("research/character-audit-config.json");
+const book2Expected = auditConfig.book2_expected;
+const manifestIdMaps = auditConfig.manifest_id_maps;
+if (!book2Expected || !manifestIdMaps) throw new Error("Invalid character audit configuration.");
 
 const characterById = new Map(characters.map(character => [character.id, character]));
 const chapterById = new Map(chapters.map(chapter => [chapter.chapter_id, chapter]));
 const name = id => characterById.get(id)?.name ?? `ID sconosciuto: ${id}`;
-
-const manifestIdMaps = {
-  3: {},
-  4: { denshichiro: "yoshioka_denshichiro", sasaki_kojiro: "kojiro", seijuro: "yoshioka_seijuro" },
-  5: { yagyu_munenori: "munenori" },
-  6: { baiken: "kohei", ono_tadaaki: "mikogami_tenzen", yagyu_munenori: "munenori" },
-  7: { honami_koetsu: "koetsu", toranosuke: "hamada_toranosuke", yoshino_dayu: "yoshino_tayu" }
-};
-
-// Book II's independent chapter roster was manually reconciled against the
-// local chapter corpus and is frozen here as an audit baseline.
-const book2Expected = {
-  b2c1: ["yoshioka_seijuro", "gion_toji", "ueda_ryohei", "oko", "akemi", "matahachi"],
-  b2c2: ["musashi", "yoshioka_seijuro", "gion_toji", "ueda_ryohei", "matahachi"],
-  b2c3: ["musashi", "osugi", "gonroku"],
-  b2c4: ["musashi", "jotaro", "matahachi"],
-  b2c5: ["jotaro", "akemi", "otsu", "shoda_kizaemon"],
-  b2c6: ["musashi", "nikkan", "agon", "jotaro", "yamazoe_dampachi", "otomo_banryu", "yasukawa_yasubei"],
-  b2c7: ["musashi", "jotaro", "yamazoe_dampachi", "yasukawa_yasubei", "otomo_banryu", "inshun", "nikkan"],
-  b2c8: ["musashi", "jotaro", "kocha", "yoshioka_denshichiro"],
-  b2c9: ["sekishusai", "otsu", "shoda_kizaemon", "yoshioka_denshichiro", "kocha", "musashi", "jotaro", "kimura_sukekuro", "murata_yozo", "debuchi_magobei"],
-  b2c10: ["musashi", "jotaro", "kocha", "shoda_kizaemon", "kimura_sukekuro", "murata_yozo", "debuchi_magobei"],
-  b2c11: ["musashi", "otsu", "jotaro", "takuan", "sekishusai"]
-};
+const bookNumbers = unique(chapters.map(chapter => chapter.book_number)).sort((a, b) => a - b);
+const manifestBooks = Object.keys(manifestIdMaps).map(Number).sort((a, b) => a - b);
+const maximumSection = Math.max(...chapters.map(chapter => chapter.number));
 
 function independentRosters() {
   const result = new Map();
@@ -55,7 +38,7 @@ function independentRosters() {
     }
   }
   for (const [chapter, ids] of Object.entries(book2Expected)) result.set(chapter, ids);
-  for (let book = 3; book <= 7; book += 1) {
+  for (const book of manifestBooks) {
     const manifest = readJson(`research/book${book}-production-manifest.json`);
     const remap = manifestIdMaps[book];
     for (const chapter of manifest.chapters) {
@@ -122,7 +105,7 @@ const lines = [
   "",
   "## Esito e metodo",
   "",
-  `- Capitoli verificati: **${chapters.length}/112**.`,
+  `- Capitoli verificati: **${chapters.length}/${maximumSection}**.`,
   `- Personaggi censiti: **${characters.length}**.`,
   `- Eventi/azioni verificati: **${events.length}**.`,
   `- Stati/posizioni finali verificati: **${states.length}**.`,
@@ -140,7 +123,7 @@ const lines = [
   ""
 ];
 
-for (let book = 1; book <= 7; book += 1) {
+for (const book of bookNumbers) {
   const bookChapters = chapters.filter(chapter => chapter.book_number === book);
   lines.push(`## Libro ${bookChapters[0].book} — ${bookChapters[0].book_title}`, "");
   for (const chapter of bookChapters) {

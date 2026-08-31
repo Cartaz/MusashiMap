@@ -1,0 +1,356 @@
+{
+  "manual_assignments": [
+    {
+      "location_ids": [
+        "sekigahara"
+      ],
+      "source_ids": [
+        "sekigahara-town"
+      ],
+      "scope": "direct"
+    },
+    {
+      "location_ids": [
+        "mount_ibuki_area",
+        "oko_akemi_house"
+      ],
+      "source_ids": [
+        "ibuki-maibara"
+      ],
+      "scope": "area_anchor"
+    },
+    {
+      "location_ids": [
+        "miyamoto",
+        "shippoji",
+        "ogin_house",
+        "honiden_house",
+        "old_cryptomeria_shippoji",
+        "nakayama_pass",
+        "sanumo_mountains",
+        "itadori_pasture",
+        "hinagura_stockade"
+      ],
+      "source_ids": [
+        "miyamoto-mimasaka"
+      ],
+      "scope": "broad_area_only"
+    },
+    {
+      "location_ids": [
+        "himeji_area",
+        "himeji_castle",
+        "hanada_bridge",
+        "himeji_aoki",
+        "shikama",
+        "shikama_estuary"
+      ],
+      "source_ids": [
+        "himeji-city"
+      ],
+      "scope": "city_or_castle_area"
+    },
+    {
+      "location_ids": [
+        "mikazuki_shrine",
+        "mikazuki_cave",
+        "mikazuki_inn",
+        "sayo_river",
+        "amano_village"
+      ],
+      "source_ids": [
+        "sayo-mikazuki"
+      ],
+      "scope": "municipal_area_only"
+    },
+    {
+      "location_ids": [
+        "kiyomizudera",
+        "chawan_hill",
+        "mountain_god_hall"
+      ],
+      "source_ids": [
+        "kiyomizudera"
+      ],
+      "scope": "site_or_parent_area"
+    },
+    {
+      "location_ids": [
+        "daigo"
+      ],
+      "source_ids": [
+        "daigoji"
+      ],
+      "scope": "direct"
+    },
+    {
+      "location_ids": [
+        "mampukuji"
+      ],
+      "source_ids": [
+        "manpukuji",
+        "manpukuji-uji"
+      ],
+      "scope": "modern_namesake_anachronistic"
+    },
+    {
+      "location_ids": [
+        "uji_bridge",
+        "kizugawa_ferry",
+        "uji_road"
+      ],
+      "source_ids": [
+        "uji-bridge"
+      ],
+      "scope": "bridge_or_regional_corridor"
+    },
+    {
+      "location_ids": [
+        "hannya_plain",
+        "hannya_observation_knoll"
+      ],
+      "source_ids": [
+        "nara-hannya"
+      ],
+      "scope": "area_anchor"
+    },
+    {
+      "location_ids": [
+        "koyagyu_castle",
+        "sekishusai_mountain_house",
+        "shinindo",
+        "tsukigase_iga_back_road",
+        "tsukigase_route",
+        "koyagyu_dojo"
+      ],
+      "source_ids": [
+        "nara-yagyu"
+      ],
+      "scope": "parent_area_or_corridor"
+    },
+    {
+      "location_ids": [
+        "hozoin"
+      ],
+      "source_ids": [
+        "hozoin"
+      ],
+      "scope": "direct"
+    },
+    {
+      "location_ids": [
+        "sarusawa_pond"
+      ],
+      "source_ids": [
+        "sarusawa"
+      ],
+      "scope": "direct"
+    },
+    {
+      "location_ids": [
+        "yoshioka_school"
+      ],
+      "source_ids": [
+        "yoshioka-ndl"
+      ],
+      "scope": "historical_locality_not_footprint"
+    },
+    {
+      "location_ids": [
+        "kamo_river_pleasure_district",
+        "honnoji_ruins",
+        "sanjo_checkpoint",
+        "kamo_river_gojo"
+      ],
+      "source_ids": [
+        "kyoto-kamo"
+      ],
+      "scope": "city_or_river_context"
+    },
+    {
+      "location_ids": [
+        "rokuamida"
+      ],
+      "source_ids": [
+        "kyoto-rokuamida"
+      ],
+      "scope": "multi_site_concept"
+    },
+    {
+      "location_ids": [
+        "tarui"
+      ],
+      "source_ids": [
+        "tarui-town"
+      ],
+      "scope": "modern_town_and_historical_road_context"
+    },
+    {
+      "location_ids": [
+        "aida_river",
+        "mimasaka_highroad",
+        "tsujinohara",
+        "hinagura"
+      ],
+      "source_ids": [
+        "miyamoto-mimasaka"
+      ],
+      "scope": "broad_area_only"
+    },
+    {
+      "location_ids": [
+        "mikazuki_teahouse",
+        "sayo_district"
+      ],
+      "source_ids": [
+        "sayo-mikazuki"
+      ],
+      "scope": "municipal_area_only"
+    },
+    {
+      "location_ids": [
+        "shingu"
+      ],
+      "source_ids": [
+        "tatsuno-city"
+      ],
+      "scope": "modern_municipal_area_only"
+    },
+    {
+      "location_ids": [
+        "nara"
+      ],
+      "source_ids": [
+        "nara-city"
+      ],
+      "scope": "modern_city_area"
+    },
+    {
+      "location_ids": [
+        "todaiji_area"
+      ],
+      "source_ids": [
+        "todaiji-nara"
+      ],
+      "scope": "direct_complex"
+    },
+    {
+      "location_ids": [
+        "yagyu_valley"
+      ],
+      "source_ids": [
+        "nara-yagyu"
+      ],
+      "scope": "modern_valley_area"
+    },
+    {
+      "location_ids": [
+        "osaka_east_moat"
+      ],
+      "source_ids": [
+        "osaka-castle"
+      ],
+      "scope": "castle_area_historical_extent_unresolved"
+    },
+    {
+      "location_ids": [
+        "tsu"
+      ],
+      "source_ids": [
+        "tsu-city"
+      ],
+      "scope": "modern_city_and_historical_context"
+    },
+    {
+      "location_ids": [
+        "gion_woods"
+      ],
+      "source_ids": [
+        "yasaka-gion"
+      ],
+      "scope": "shrine_area_historical_woodland_extent_unresolved"
+    },
+    {
+      "location_ids": [
+        "daitokuji"
+      ],
+      "source_ids": [
+        "daitokuji-kyoto"
+      ],
+      "scope": "direct_complex"
+    },
+    {
+      "location_ids": [
+        "kurama"
+      ],
+      "source_ids": [
+        "kurama-kyoto"
+      ],
+      "scope": "modern_historic_area"
+    },
+    {
+      "location_ids": [
+        "mount_daimonji_ravine"
+      ],
+      "source_ids": [
+        "daimonji-kyoto"
+      ],
+      "scope": "mountain_area_exact_ravine_unresolved"
+    },
+    {
+      "location_ids": [
+        "kozukeshimonida"
+      ],
+      "source_ids": [
+        "shimonita-town"
+      ],
+      "scope": "probable_toponym_correspondence"
+    },
+    {
+      "location_ids": [
+        "tajima"
+      ],
+      "source_ids": [
+        "tajima-hyogo"
+      ],
+      "scope": "modern_region"
+    },
+    {
+      "location_ids": [
+        "kishiwada"
+      ],
+      "source_ids": [
+        "kishiwada-city"
+      ],
+      "scope": "city_coast_only_pier_unresolved"
+    },
+    {
+      "location_ids": [
+        "okazaki_fish_district",
+        "honda_castle"
+      ],
+      "source_ids": [
+        "okazaki-castle"
+      ],
+      "scope": "okazaki_area_exact_narrative_site_unresolved"
+    },
+    {
+      "location_ids": [
+        "yahagi_bridge"
+      ],
+      "source_ids": [
+        "yahagi-okazaki"
+      ],
+      "scope": "historical_bridge_corridor"
+    },
+    {
+      "location_ids": [
+        "tatsuno"
+      ],
+      "source_ids": [
+        "tatsuno-city"
+      ],
+      "scope": "modern_city_area"
+    }
+  ]
+}

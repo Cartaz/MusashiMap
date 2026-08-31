@@ -1,0 +1,232 @@
+{
+  "audit_period": {
+    "report_label": "tra il 20 e il 29 agosto 2026",
+    "fallback_checked": "2026-08-20"
+  },
+  "manual_sources": [
+    {
+      "id": "sekigahara-town",
+      "authority": "Sekigahara Town",
+      "title": "Sekigahara battlefield official guide",
+      "url": "https://www.town.sekigahara.gifu.jp/secure/7099/%E9%96%A2%E3%82%B1%E5%8E%9F%E7%94%BA%E5%BD%B9%E5%A0%B4%E6%A7%98_%E3%83%97%E3%83%AD%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%86%8A%E5%AD%90.pdf",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "ibuki-maibara",
+      "authority": "Maibara City",
+      "title": "Mount Ibuki official site",
+      "url": "https://www.city.maibara.lg.jp/mtibuki/index.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "miyamoto-mimasaka",
+      "authority": "Mimasaka City",
+      "title": "Miyamoto Musashi birthplace-site area",
+      "url": "https://www.city.mimasaka.lg.jp/kanko/spot/history_culture/musashi/1460348700995.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "himeji-city",
+      "authority": "Himeji City",
+      "title": "Himeji Castle official site and address",
+      "url": "https://www.city.himeji.lg.jp/castle/0000007744.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "sayo-mikazuki",
+      "authority": "Sayo Town",
+      "title": "Mikazuki district official information",
+      "url": "https://www.town.sayo.lg.jp/cms-sypher/www/section/detail.jsp?id=31",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "kiyomizudera",
+      "authority": "Kiyomizudera",
+      "title": "Official grounds and access",
+      "url": "https://www.kiyomizudera.or.jp/en/visit/",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "daigoji",
+      "authority": "Daigoji",
+      "title": "Official location and access",
+      "url": "https://www.daigoji.or.jp/en/",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "manpukuji",
+      "authority": "Ōbaku-san Manpukuji",
+      "title": "Official history and present address",
+      "url": "https://www.obakusan.or.jp/about/",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "manpukuji-uji",
+      "authority": "Uji City",
+      "title": "Official history: foundation in 1661",
+      "url": "https://www.city.uji.kyoto.jp/uploaded/attachment/34243.pdf",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "uji-bridge",
+      "authority": "Uji City",
+      "title": "Uji historical geography and bridge context",
+      "url": "https://www.city.uji.kyoto.jp/site/ijuteiju/63390.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "nara-hannya",
+      "authority": "Nara City",
+      "title": "Hannyaji and Hannyaji-village history",
+      "url": "https://www.city.nara.lg.jp/site/bunkazai/105906.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "nara-yagyu",
+      "authority": "Nara City",
+      "title": "Yagyū Kaidō and modern Yagyū area",
+      "url": "https://www.city.nara.lg.jp/sightseeing/naraharu/111707.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "hozoin",
+      "authority": "Hōzōin-ryū",
+      "title": "Official school history and Hōzōin-site context",
+      "url": "https://hozoin.org/rekisi/",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "sarusawa",
+      "authority": "Nara City Tourism Association",
+      "title": "Sarusawa Pond",
+      "url": "https://narashikanko.or.jp/spot/detail_10060.html",
+      "checked": "2026-08-20"
+    },
+    {
+      "id": "yoshioka-ndl",
+      "authority": "National Diet Library Search",
+      "title": "Yoshioka dojo locality record",
+      "url": "https://ndlsearch.ndl.go.jp/books/R100000094-I1459090",
+      "checked": "2026-08-20"
+    },
+    {
+      "id": "kyoto-kamo",
+      "authority": "Kyoto City Historical Materials Office",
+      "title": "Kamo River in Kyoto historical chronology",
+      "url": "https://www2.city.kyoto.lg.jp/somu/rekishi/fm/nenpyou/htmlsheet/toshi08.html",
+      "checked": "2026-08-20"
+    },
+    {
+      "id": "kyoto-rokuamida",
+      "authority": "Kyoto City Official Travel Guide",
+      "title": "Rakuyō Six Amida pilgrimage",
+      "url": "https://ja.kyoto.travel/event/single.php?event_id=3974",
+      "checked": "2026-08-20"
+    },
+    {
+      "id": "tarui-town",
+      "authority": "Tarui Town",
+      "title": "Official Tarui-juku and Nakasendō/Minoji junction history",
+      "url": "https://www.town.tarui.lg.jp/page/1424.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "nara-city",
+      "authority": "Nara City",
+      "title": "Ancient Nara world-heritage geography",
+      "url": "https://www.city.nara.lg.jp/site/world-heritage/index-2.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "todaiji-nara",
+      "authority": "Nara City Tourism Association",
+      "title": "Tōdaiji present address and access",
+      "url": "https://narashikanko.or.jp/spot/detail_10001.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "osaka-castle",
+      "authority": "Osaka City",
+      "title": "Osaka Castle and present castle-park context",
+      "url": "https://www.city.osaka.lg.jp/chuo/page/0000636470.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "tsu-city",
+      "authority": "Tsu City",
+      "title": "Official city position and historical port/castle-town profile",
+      "url": "https://www.info.city.tsu.mie.jp/shisei/city_profile/1004788.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "yasaka-gion",
+      "authority": "Kyoto City Official Travel Guide",
+      "title": "Yasaka Shrine in present-day Gion",
+      "url": "https://ja.kyoto.travel/tourism/single01.php?category_id=7&tourism_id=474",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "daitokuji-kyoto",
+      "authority": "Kyoto City Official Travel Guide",
+      "title": "Daitokuji history and current address",
+      "url": "https://ja.kyoto.travel/tourism/single02.php?category_id=9&tourism_id=2250",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "kurama-kyoto",
+      "authority": "Kyoto City",
+      "title": "Kurama historic-landscape protection area",
+      "url": "https://www.city.kyoto.lg.jp/tokei/page/0000281785.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "daimonji-kyoto",
+      "authority": "Kyoto City Cultural Heritage",
+      "title": "Higashiyama and Mount Daimonji cultural landscape",
+      "url": "https://kyoto-bunkaisan.city.kyoto.lg.jp/kyotoisan/nintei-theme/yamatomidori.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "shimonita-town",
+      "authority": "Shimonita Town",
+      "title": "Official town position and historical road role",
+      "url": "https://www.town.shimonita.lg.jp/soumu/m01/m01/02.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "tajima-hyogo",
+      "authority": "Hyogo Prefecture",
+      "title": "Present-day Tajima region and boundaries",
+      "url": "https://web.pref.hyogo.lg.jp/tjk01/tajima/intro.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "kishiwada-city",
+      "authority": "Kishiwada City",
+      "title": "Present city between Osaka Bay and the Izumi Mountains",
+      "url": "https://www.city.kishiwada.osaka.jp/uploaded/attachment/129508.pdf",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "okazaki-castle",
+      "authority": "Okazaki City",
+      "title": "Official Okazaki Castle historic-site record",
+      "url": "https://www.city.okazaki.lg.jp/bunka/torikumi_bunka/1004568/1004592/1004726/1004736.html",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "yahagi-okazaki",
+      "authority": "Okazaki City",
+      "title": "Official historical-landscape study of Yahagi Bridge",
+      "url": "https://www.city.okazaki.lg.jp/_res/projects/default_project/_page_/001/002/894/03dai1sho2025.pdf",
+      "checked": "2026-08-29"
+    },
+    {
+      "id": "tatsuno-city",
+      "authority": "Tatsuno City",
+      "title": "Official present-day city position",
+      "url": "https://www.city.tatsuno.lg.jp/gyosei/gaiyo/5333.html",
+      "checked": "2026-08-29"
+    }
+  ]
+}
