@@ -66,8 +66,9 @@ The oracle should preserve uncertainty rather than invent precision.
 - **Book I — Earth:** source-first oracle complete; production diff complete.
 - **Book II — Water:** source-first oracle complete; production diff complete.
 - **Book III — Fire:** source-first oracle complete; production diff complete.
-- **Books IV–VII:** not independently certified until their own source-first oracle and production diff exist.
+- **Book IV — Wind:** source-first oracle complete; production diff complete.
+- **Books V–VII:** not independently certified until their own source-first oracle and production diff exist.
 
-Independent two-pass coverage is therefore **32/112 chapters**.
+Independent two-pass coverage is therefore **53/112 chapters**.
 
 “Complete” here means the two-pass audit artifacts exist and pass structural validation. It does not mean production has already been corrected; open findings remain findings until remediation and re-diff.
