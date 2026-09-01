@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "relationship_types": ["family","friend_ally","acquaintance","master","disciple","rival","enemy","authority","partner_family","servant_employer","faction"],
   "relationships": [
     {"from":"musashi","to":"ogin","type":"family","subtype":"younger_brother_older_sister","first_section":3},
@@ -38,7 +38,7 @@
     {"from":"otsu","to":"sekishusai","type":"acquaintance","subtype":"trusted_companion_at_mountain_house","first_section":17},
     {"from":"sekishusai","to":"shoda_kizaemon","type":"servant_employer","subtype":"household_master_and_retainer","first_section":17},
     {"from":"otsu","to":"yoshioka_denshichiro","type":"acquaintance","subtype":"direct_messenger_for_sekishusai","first_section":17},
-    {"from":"aoki_tanzaemon","to":"jotaro","type":"family","subtype":"father_and_separated_son","first_section":20},
+    {"from":"aoki_tanzaemon","to":"jotaro","type":"family","subtype":"father_and_separated_son","first_section":12},
     {"from":"yoshioka_seijuro","to":"akemi","type":"enemy","subtype":"sexual_assault_and_aftermath","first_section":23},
     {"from":"kojiro","to":"yoshioka_seijuro","type":"acquaintance","subtype":"friendly_but_competitive_martial_association","first_section":25},
     {"from":"kojiro","to":"akemi","type":"friend_ally","subtype":"rescuer_and_protected_traveler","first_section":30},
@@ -85,13 +85,6 @@
       "type": "authority",
       "subtype": "assassination_recruiter_and_recruited_agent",
       "first_section": 86
-    },
-    {
-      "from": "daizo",
-      "to": "jotaro",
-      "type": "family",
-      "subtype": "father_and_son",
-      "first_section": 91
     },
     {
       "from": "gonnosuke",
