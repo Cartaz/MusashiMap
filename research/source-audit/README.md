@@ -45,6 +45,8 @@ Only after Pass 1 is complete, compare the oracle with production. Classify each
 
 An intentional exclusion is not an error, but it must be documented; silence is not an exclusion policy.
 
+The comparison is bidirectional. Production can expose a fact omitted by the first independent pass, but such a candidate is added to the audit only after it is rechecked against the local source text. This preserves independence without pretending that the human/source-first extraction is infallible.
+
 ## Scope rules
 
 `physical_characters` is strict physical on-page presence. Mere mention never qualifies.
@@ -63,6 +65,9 @@ The oracle should preserve uncertainty rather than invent precision.
 
 - **Book I — Earth:** source-first oracle complete; production diff complete.
 - **Book II — Water:** source-first oracle complete; production diff complete.
-- **Books III–VII:** not independently certified until their own source-first oracle and production diff exist.
+- **Book III — Fire:** source-first oracle complete; production diff complete.
+- **Books IV–VII:** not independently certified until their own source-first oracle and production diff exist.
+
+Independent two-pass coverage is therefore **32/112 chapters**.
 
 “Complete” here means the two-pass audit artifacts exist and pass structural validation. It does not mean production has already been corrected; open findings remain findings until remediation and re-diff.
