@@ -421,9 +421,12 @@
       "entity_type": "character",
       "narrative_role": "secondary",
       "historical_status": "unknown",
-      "map_relevance": "contextual",
+      "map_relevance": "mapped",
       "color": "#6b7280",
       "present_in": [
+        4,
+        5,
+        6,
         20,
         21,
         30,
@@ -431,7 +434,6 @@
       ]
     },
     {"id":"lord_ikeda","name":"Ikeda Terumasa","aliases":["Lord Ikeda","Lord Terumasa"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"mapped","color":"#b45309","present_in":[8]},
-    {"id":"himeji_captain","name":"Himeji garrison captain","aliases":["the captain","Scraggly Beard"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#64748b","present_in":[4,5,6]},
     {"id":"yoshioka_kempo","name":"Yoshioka Kempō","aliases":["Yoshioka Kenpō","Kempō"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"fictionalized","map_relevance":"contextual","color":"#a855f7","present_in":[]},
     {"id":"yoshioka_seijuro","name":"Yoshioka Seijūrō","aliases":["Seijuro","Yoshioka Seijūrō"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"fictionalized","map_relevance":"mapped","color":"#ef4444","present_in":[9,10,23,24,25,30,31,33,36]},
     {

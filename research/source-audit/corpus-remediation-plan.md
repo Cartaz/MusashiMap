@@ -140,6 +140,20 @@ First repair the ownership/contracts that allowed recurring errors. Then apply c
 
 ## Remediation workstreams
 
+### Progress — 2026-09-05
+
+R1 items 1–2 (relationship thresholds and coercion preservation) were corrected in `c7ce5ec` and protected in `1845fe4`; `0855fab` refreshed their generated report and restored a successful Pages deployment.
+
+R1 item 3 (B1-IDENT-001, independently corroborated in Book II) is now corrected:
+
+- One production person, `aoki_tanzaemon`, owns the officer's physical presence and history in sections 4–6 and the later books.
+- The existing temporal-identity contract displays the Himeji role through section 7 and the canonical name from section 8. The wiki follows the same reveal, and exposes the family connection only from section 12.
+- The section-9 absence-only state belonging to the duplicate record is removed: the more informative section-8 report already establishes an unknown current location and remains the latest state.
+- Source evidence: `data/source/book1/chapter8-the-birth-of-musashi.txt:L98-L108` and `L323-L329`; family corroboration at `data/source/book2/chapter4-the-water-sprite.txt:L174-L194`.
+- Two runtime regression cases cover unified history, pre-introduction invisibility, name and family thresholds, and the unknown position after the reveal. Production now contains 154 characters and 418 states; the audit baseline above records the original pre-remediation counts.
+
+The source-first oracle snapshots and original findings remain unchanged as historical evidence. R1 item 4 (manifest canonical IDs), the corresponding cross-provenance uniqueness guard in item 5, and R2–R6 remain open. Passing CI does not certify those outstanding semantic corrections.
+
 ### R1 — relationship and identity integrity
 
 Priority: **P0**

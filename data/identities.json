@@ -3,6 +3,30 @@
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
+      "character_id": "aoki_tanzaemon",
+      "display_name": "Himeji garrison captain",
+      "alias": null,
+      "valid_from_chapter": "b1c4",
+      "valid_until_chapter": "b1c7",
+      "valid_from_section": 4,
+      "valid_until_section": 7,
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "introduced_by_role_before_name_reveal"
+    },
+    {
+      "character_id": "aoki_tanzaemon",
+      "display_name": "Aoki Tanzaemon",
+      "alias": null,
+      "valid_from_chapter": "b1c8",
+      "valid_until_chapter": null,
+      "valid_from_section": 8,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "canonical_name",
+      "change_reason": "explicit_identification_of_himeji_officer"
+    },
+    {
       "character_id": "musashi",
       "display_name": "Shinmen Takezo",
       "alias": null,
