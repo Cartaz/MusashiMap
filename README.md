@@ -29,9 +29,9 @@ All seven books are published and validated.
 | Locations | 229 |
 | Narrative events | 568 |
 | Chapter-level character states | 419 |
-| Relationships | 82 |
+| Relationships | 81 |
 
-This table describes repository dataset coverage, not browser UI surfaces. `data/relationships.json` contains the 82 validated relationship records and each record carries a `first_section`, but the current browser runtime does not load or render this dataset and the Pages builder does not publish it. Relationships are retained for audit/research and possible future UI work.
+This table describes repository dataset coverage, not browser UI surfaces. Each validated record in `data/relationships.json` carries a `first_section`, but the current browser runtime does not load or render this dataset and the Pages builder does not publish it. Relationships are retained for audit/research and possible future UI work.
 
 `data/reader-progress.json` is the sole publication boundary. Source registration and research manifests never make future material visible by themselves.
 
@@ -53,6 +53,7 @@ Node.js 22 is used in CI. Run the same gates as the Pages workflow from the repo
 node tools/validate-frontend.mjs
 node tools/validate-data.mjs
 node tools/validate-research-manifests.mjs
+node tools/validate-source-audit.mjs
 node --test tools/tests/*.test.mjs
 node js/runtime-safety.test.mjs
 node tools/build-pages.mjs
@@ -91,6 +92,8 @@ node tools/generate-geography-audit.mjs
 ```
 
 They produce [the character audit](research/character-chapter-audit.md) and [the geography audit](research/geography-book-audit.md).
+
+After changing production data or audit configuration, regenerate these reports and commit any resulting changes together with their inputs. The test suite checks that the committed reports match the current data.
 
 ## Deployment
 
