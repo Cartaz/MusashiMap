@@ -8,7 +8,7 @@
 - Personaggi censiti: **155**.
 - Eventi/azioni verificati: **568**.
 - Stati/posizioni finali verificati: **419**.
-- Relazioni canoniche verificate alla soglia d'introduzione: **82**.
+- Relazioni canoniche verificate alla soglia d'introduzione: **81**.
 - Errori bloccanti: **0**.
 - Presenze sceniche senza evento o stato dedicato (controllate contro i dossier indipendenti): **29**.
 
@@ -374,6 +374,7 @@ Azioni ed evidenza:
 Relazioni introdotte o rivelate qui:
 
 - Miyamoto Musashi → Jōtarō: **master/traveling_mentor_and_young_follower** (soglia 12).
+- Aoki Tanzaemon → Jōtarō: **family/father_and_separated_son** (soglia 12).
 
 Solo nominati/riferiti, non fisicamente presenti: Yoshioka Seijūrō (`yoshioka_seijuro`).
 
@@ -620,10 +621,6 @@ Azioni ed evidenza:
 - `b3c1_e03` — **object_transfer** @ `fushimi_castle_works`: Matahachi takes the dead traveler's bundle, money and sword-school certificate. — fisici: Hon'den Matahachi, Unidentified certificate bearer. Evidenza: explicit; chapter1-sasaki-kojiro.txt:L411-L484.
 - `b3c1_e04` — **movement** @ `fushimi_deserted_house`: Matahachi flees and takes shelter in an abandoned Fushimi house. — fisici: Hon'den Matahachi. Evidenza: explicit; chapter1-sasaki-kojiro.txt:L485-L565.
 - `b3c1_e05` — **identity_evidence** @ `fushimi_deserted_house`: He reads a certificate addressed to Sasaki Kojirō; the text does not establish that the dead bearer was Kojirō. — fisici: Hon'den Matahachi; menzionati: Sasaki Kojiro. Evidenza: explicit; chapter1-sasaki-kojiro.txt:L602-L648.
-
-Relazioni introdotte o rivelate qui:
-
-- Aoki Tanzaemon → Jōtarō: **family/father_and_separated_son** (soglia 20).
 
 Solo nominati/riferiti, non fisicamente presenti: Sasaki Kojiro (`kojiro`).
 
@@ -2162,11 +2159,11 @@ Fonte: `data/source/book6/chapter12-brother-disciples.txt`
 | Personaggio presente | Posizioni/scene fisiche | Stato a fine capitolo | Relazioni/interazioni pertinenti |
 |---|---|---|---|
 | Takuan Sōhō (`takuan`) | `musashino_cabin` | Nessuno stato finale strutturato | Co-azioni: Jōtarō, Misawa Iori |
-| Jōtarō (`jotaro`) | `head_burying_mound` → `musashino_cabin` | `musashino_cabin`; present; Instructed to seek his father at Shōjuan and flee. (explicit; data/source/book6/chapter12-brother-disciples.txt:L545-L582) | Canoniche: Aoki Tanzaemon: family/father_and_separated_son; Daizō of Narai: authority/coercive_claimed_guardianship; Daizō of Narai: family/father_and_son (introdotta qui)<br>Co-azioni: Takuan Sōhō, Daizō of Narai, Misawa Iori |
+| Jōtarō (`jotaro`) | `head_burying_mound` → `musashino_cabin` | `musashino_cabin`; present; Instructed to seek his father at Shōjuan and flee. (explicit; data/source/book6/chapter12-brother-disciples.txt:L545-L582) | Canoniche: Aoki Tanzaemon: family/father_and_separated_son; Daizō of Narai: authority/coercive_claimed_guardianship<br>Co-azioni: Takuan Sōhō, Daizō of Narai, Misawa Iori |
 | Oko (`oko`) | `oinu_teahouse` | Nessuno stato finale strutturato | Co-azioni: Musō Gonnosuke |
 | Aoki Tanzaemon (`aoki_tanzaemon`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | luogo non risolto; in_transit; Traveling toward Shōjuan. (explicit; data/source/book6/chapter12-brother-disciples.txt:L430-L474) | Canoniche: Jōtarō: family/father_and_separated_son |
 | Musō Gonnosuke (`gonnosuke`) | `oinu_teahouse` → `shomaru_pass` | luogo non risolto; in_transit; Traveling back toward Chichibu. (explicit; data/source/book6/chapter12-brother-disciples.txt:L130-L157) | Co-azioni: Oko, Misawa Iori |
-| Daizō of Narai (`daizo`) | `head_burying_mound` | Nessuno stato finale strutturato | Canoniche: Jōtarō: authority/coercive_claimed_guardianship; Jōtarō: family/father_and_son (introdotta qui)<br>Co-azioni: Jōtarō, Misawa Iori |
+| Daizō of Narai (`daizo`) | `head_burying_mound` | Nessuno stato finale strutturato | Canoniche: Jōtarō: authority/coercive_claimed_guardianship<br>Co-azioni: Jōtarō, Misawa Iori |
 | Misawa Iori (`iori`) | `head_burying_mound` → `musashino_cabin` → `shomaru_pass` | `musashino_cabin`; present; With Takuan after recovering consciousness. (explicit; data/source/book6/chapter12-brother-disciples.txt:L505-L582) | Co-azioni: Takuan Sōhō, Jōtarō, Musō Gonnosuke, Daizō of Narai |
 | Kuro (`kuro`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | Nessuno stato finale strutturato | Nessuna relazione/co-azione strutturata nel capitolo |
 
@@ -2178,10 +2175,6 @@ Azioni ed evidenza:
 - `b6c12-e04` — **confession_and_instruction** @ `musashino_cabin`: Jōtarō explains Daizō's plot; Takuan tells him to reunite with his father and flee in disguise. — fisici: Jōtarō, Takuan Sōhō, Misawa Iori; menzionati: Daizō of Narai. Evidenza: explicit; data/source/book6/chapter12-brother-disciples.txt:L505-L582.
 - `b6c12-e05` — **escape** @ `shomaru_pass`: Gonnosuke and Iori escape the pursuing villagers and shake off the last searchers at Shōmaru Pass. — fisici: Musō Gonnosuke, Misawa Iori. Evidenza: explicit; data/source/book6/chapter12-brother-disciples.txt:L54-L70.
 - `b6c12-e06` — **departure_plan** @ `musashino_cabin`: After Jōtarō's confession, Takuan directs him to seek his father at Shōjuan and flee in disguise. — fisici: Jōtarō; menzionati: Aoki Tanzaemon. Evidenza: explicit; data/source/book6/chapter12-brother-disciples.txt:L335-L360.
-
-Relazioni introdotte o rivelate qui:
-
-- Daizō of Narai → Jōtarō: **family/father_and_son** (soglia 91).
 
 ### 92. The Pomegranate (b6c13)
 
