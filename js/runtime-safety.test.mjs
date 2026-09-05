@@ -6,7 +6,9 @@ import { validateMovementEvent } from "./movement-contract.js";
 
 import {
   createReaderProgress,
+  getDisplayCharacterName,
   getProgressiveDisplayName,
+  getProgressiveValue,
   getReaderSnapshot,
   getRelevantHistoricalWiki,
   getVisibleCharacters,
@@ -119,6 +121,47 @@ test("temporal identities do not reveal canonical names before the source does",
   assert.equal(getDisplayCharacterName({ id: "kohei", name: "Tsujikaze Kōhei" }, 26, identities), "Shishido Baiken");
   assert.equal(getDisplayCharacterName({ id: "kohei", name: "Tsujikaze Kōhei" }, 28, identities), "Tsujikaze Kōhei");
   assert.equal(getDisplayCharacterName({ id: "matahachi", name: "Hon'iden Matahachi" }, 21, identities), "Hon'iden Matahachi (come Sasaki Kojirō)");
+});
+
+test("Himeji officer keeps one history across the Book I name reveal", () => {
+  const read = file => JSON.parse(readFileSync(new URL(`../data/${file}.json`, import.meta.url)));
+  const characters = read("characters").characters;
+  const identities = read("identities").identities;
+  const states = read("character-states").character_states;
+  const events = read("events").events;
+  const officer = characters.find(character => character.id === "aoki_tanzaemon");
+
+  assert.equal(characters.some(character => character.id === "himeji_captain"), false);
+  assert.equal(getVisibleCharacters([officer], 3, { states, events }).length, 0);
+  assert.deepEqual(getVisibleCharacters([officer], 4, { states, events }), [officer]);
+  assert.deepEqual(officer.present_in, [4, 5, 6, 20, 21, 30, 91]);
+  for (let section = 4; section <= 7; section += 1) {
+    assert.equal(getDisplayCharacterName(officer, section, identities), "Himeji garrison captain");
+  }
+  assert.equal(getDisplayCharacterName(officer, 8, identities), "Aoki Tanzaemon");
+  for (const id of ["b1c4-01", "b1c4-03", "b1c4-05"]) {
+    assert.ok(events.find(event => event.id === id).characters.includes(officer.id));
+  }
+  const snapshot = getReaderSnapshot({ states, events }, 9, [officer.id]);
+  assert.equal(snapshot.selectedStates.length, 1);
+  assert.equal(snapshot.selectedStates[0].section, 8);
+  assert.equal(snapshot.selectedStates[0].location, null);
+  assert.equal(snapshot.selectedStates[0].location_status, "unknown");
+});
+
+test("Himeji officer wiki reveals the name and family at their separate thresholds", () => {
+  const wiki = JSON.parse(readFileSync(new URL("../data/context/character-wiki.json", import.meta.url))).characters.aoki_tanzaemon;
+
+  assert.equal(getProgressiveValue(wiki.current_by_section, 3), null);
+  assert.ok(getProgressiveValue(wiki.current_by_section, 4));
+  assert.equal(getProgressiveDisplayName(wiki, 7), "Capitano della guarnigione di Himeji");
+  assert.equal(getProgressiveDisplayName(wiki, 8), "Aoki Tanzaemon");
+  for (let section = 4; section < 12; section += 1) {
+    const visible = `${getProgressiveDisplayName(wiki, section)} ${wiki.role} ${getProgressiveValue(wiki.current_by_section, section)}`;
+    assert.doesNotMatch(visible, /padre|figlio|Jōtarō|Jotaro/i);
+    if (section < 8) assert.doesNotMatch(visible, /Aoki|Tanzaemon/i);
+  }
+  assert.match(getProgressiveValue(wiki.current_by_section, 12), /Jōtarō/);
 });
 
 test("Book III reader-facing prose respects identity reveal sections", () => {

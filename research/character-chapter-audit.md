@@ -5,9 +5,9 @@
 ## Esito e metodo
 
 - Capitoli verificati: **112/112**.
-- Personaggi censiti: **155**.
+- Personaggi censiti: **154**.
 - Eventi/azioni verificati: **568**.
-- Stati/posizioni finali verificati: **419**.
+- Stati/posizioni finali verificati: **418**.
 - Relazioni canoniche verificate alla soglia d'introduzione: **81**.
 - Errori bloccanti: **0**.
 - Presenze sceniche senza evento o stato dedicato (controllate contro i dossier indipendenti): **29**.
@@ -18,7 +18,7 @@ La posizione intra-capitolo deriva esclusivamente dagli eventi con partecipazion
 
 - Nessun errore bloccante.
 
-- NOTA — b1c6: himeji_captain è presenza scenica attestata dal dossier, senza evento/stato strutturato dedicato
+- NOTA — b1c6: aoki_tanzaemon è presenza scenica attestata dal dossier, senza evento/stato strutturato dedicato
 - NOTA — b3c4: ship_captain è presenza scenica attestata dal dossier, senza evento/stato strutturato dedicato
 - NOTA — b3c7: unnamed_groom è presenza scenica attestata dal dossier, senza evento/stato strutturato dedicato
 - NOTA — b3c9: iwa è presenza scenica attestata dal dossier, senza evento/stato strutturato dedicato
@@ -139,21 +139,21 @@ Fonte: `data/source/book1/chapter4-the-dowagers-wrath.txt`
 
 | Personaggio presente | Posizioni/scene fisiche | Stato a fine capitolo | Relazioni/interazioni pertinenti |
 |---|---|---|---|
-| Miyamoto Musashi (`musashi`) | `honiden_house` | `sanumo_mountains`; hiding; evades the search and moves between the mountains and the village outskirts (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Ogin: family/younger_brother_older_sister; Takuan Sōhō: master/spiritual_and_moral_guide; Otsu: friend_ally/deep_personal_bond; Obaba Osugi: enemy/family_conflict_and_pursuit (introdotta qui)<br>Co-azioni: Obaba Osugi, Himeji garrison captain |
+| Miyamoto Musashi (`musashi`) | `honiden_house` | `sanumo_mountains`; hiding; evades the search and moves between the mountains and the village outskirts (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Ogin: family/younger_brother_older_sister; Takuan Sōhō: master/spiritual_and_moral_guide; Otsu: friend_ally/deep_personal_bond; Obaba Osugi: enemy/family_conflict_and_pursuit (introdotta qui)<br>Co-azioni: Obaba Osugi, Aoki Tanzaemon |
 | Otsu (`otsu`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `shippoji`; present; returns to Shippoji after witnessing Ogin's arrest and remains under Takuan's protection (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Miyamoto Musashi: friend_ally/deep_personal_bond; Obaba Osugi: partner_family/future_daughter_in_law (introdotta qui); Takuan Sōhō: acquaintance/trusted_guide; Ogin: acquaintance/friend_and_seamstress |
 | Takuan Sōhō (`takuan`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `shippoji`; present; receives Otsu after the raid and continues managing Takezo's situation (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Miyamoto Musashi: master/spiritual_and_moral_guide; Otsu: acquaintance/trusted_guide |
-| Obaba Osugi (`osugi`) | `miyamoto` → `honiden_house` | `honiden_house`; present; organizes the trap that attempts to capture Takezo (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Miyamoto Musashi: enemy/family_conflict_and_pursuit (introdotta qui); Otsu: partner_family/future_daughter_in_law (introdotta qui)<br>Co-azioni: Miyamoto Musashi, Himeji garrison captain |
-| Ogin (`ogin`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | luogo non risolto; imprisoned; is arrested at her house; a villager reports only a rumor that she is held at Hinagura (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Miyamoto Musashi: family/younger_brother_older_sister; Otsu: acquaintance/friend_and_seamstress<br>Co-azioni: Himeji garrison captain |
+| Obaba Osugi (`osugi`) | `miyamoto` → `honiden_house` | `honiden_house`; present; organizes the trap that attempts to capture Takezo (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Miyamoto Musashi: enemy/family_conflict_and_pursuit (introdotta qui); Otsu: partner_family/future_daughter_in_law (introdotta qui)<br>Co-azioni: Miyamoto Musashi, Aoki Tanzaemon |
+| Ogin (`ogin`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | luogo non risolto; imprisoned; is arrested at her house; a villager reports only a rumor that she is held at Hinagura (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Canoniche: Miyamoto Musashi: family/younger_brother_older_sister; Otsu: acquaintance/friend_and_seamstress<br>Co-azioni: Aoki Tanzaemon |
 | Heita (`heita`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `honiden_house`; present; brings Osugi news about Takezo (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Nessuna relazione/co-azione strutturata nel capitolo |
-| Himeji garrison captain (`himeji_captain`) | `miyamoto` → `honiden_house` | `miyamoto`; searching; leads the Himeji search and participates in Ogin's arrest (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Co-azioni: Miyamoto Musashi, Obaba Osugi, Ogin |
+| Aoki Tanzaemon (`aoki_tanzaemon`) | `miyamoto` → `honiden_house` | `miyamoto`; searching; leads the Himeji search and participates in Ogin's arrest (explicit; data/source/book1/chapter4-the-dowagers-wrath.txt) | Co-azioni: Miyamoto Musashi, Obaba Osugi, Ogin |
 
 Azioni ed evidenza:
 
-- `b1c4-01` — **search** @ `miyamoto`: Osugi learns that Takezo has been seen and the Himeji garrison begins an intensified search. — fisici: Obaba Osugi, Himeji garrison captain; menzionati: Miyamoto Musashi. Evidenza: explicit; book1/chapter4.
+- `b1c4-01` — **search** @ `miyamoto`: Osugi learns that Takezo has been seen and the Himeji garrison begins an intensified search. — fisici: Obaba Osugi, Aoki Tanzaemon; menzionati: Miyamoto Musashi. Evidenza: explicit; book1/chapter4.
 - `b1c4-02` — **escape**: Takezo repeatedly evades the Himeji soldiers and hides in the Sanumo Mountains. — fisici: Miyamoto Musashi. Evidenza: explicit; book1/chapter4.
-- `b1c4-03` — **capture**: Himeji soldiers raid Ogin's house and arrest her. A villager later reports only a rumor that she is held at Hinagura, so arrival there is not yet confirmed. Otsu witnesses the arrest and escapes. — fisici: Ogin, Himeji garrison captain. Evidenza: explicit; book1/chapter4.
+- `b1c4-03` — **capture**: Himeji soldiers raid Ogin's house and arrest her. A villager later reports only a rumor that she is held at Hinagura, so arrival there is not yet confirmed. Otsu witnesses the arrest and escapes. — fisici: Ogin, Aoki Tanzaemon. Evidenza: explicit; book1/chapter4.
 - `b1c4-04` — **conversation** @ `honiden_house`: Takezo secretly tells Osugi that Matahachi is alive and asks her to pass the news to Otsu. — fisici: Miyamoto Musashi, Obaba Osugi. Evidenza: explicit; book1/chapter4.
-- `b1c4-05` — **trap** @ `honiden_house`: Osugi deceives Takezo into taking a bath while a group of soldiers and villagers surround the house; Takezo escapes. — fisici: Miyamoto Musashi, Obaba Osugi, Himeji garrison captain. Evidenza: explicit; book1/chapter4.
+- `b1c4-05` — **trap** @ `honiden_house`: Osugi deceives Takezo into taking a bath while a group of soldiers and villagers surround the house; Takezo escapes. — fisici: Miyamoto Musashi, Obaba Osugi, Aoki Tanzaemon. Evidenza: explicit; book1/chapter4.
 
 Relazioni introdotte o rivelate qui:
 
@@ -171,7 +171,7 @@ Fonte: `data/source/book1/chapter5-the-art-of-war.txt`
 | Otsu (`otsu`) | `shippoji` → `itadori_pasture` | `itadori_pasture`; present; stays with Takuan and helps bring Takezo into the camp (explicit; data/source/book1/chapter5-the-art-of-war.txt) | Canoniche: Miyamoto Musashi: friend_ally/deep_personal_bond; Obaba Osugi: partner_family/future_daughter_in_law; Takuan Sōhō: acquaintance/trusted_guide<br>Co-azioni: Miyamoto Musashi, Takuan Sōhō |
 | Takuan Sōhō (`takuan`) | `itadori_pasture` | `itadori_pasture`; present; captures Takezo according to his plan (explicit; data/source/book1/chapter5-the-art-of-war.txt) | Canoniche: Miyamoto Musashi: master/spiritual_and_moral_guide; Otsu: acquaintance/trusted_guide<br>Co-azioni: Miyamoto Musashi, Otsu |
 | Obaba Osugi (`osugi`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `honiden_house`; present; remains at the Hon'den residence while Takezo is hunted (explicit; data/source/book1/chapter5-the-art-of-war.txt) | Canoniche: Miyamoto Musashi: enemy/family_conflict_and_pursuit; Otsu: partner_family/future_daughter_in_law |
-| Himeji garrison captain (`himeji_captain`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `miyamoto`; searching; continues the search for Takezo (explicit; data/source/book1/chapter5-the-art-of-war.txt) | Nessuna relazione/co-azione strutturata nel capitolo |
+| Aoki Tanzaemon (`aoki_tanzaemon`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `miyamoto`; searching; continues the search for Takezo (explicit; data/source/book1/chapter5-the-art-of-war.txt) | Nessuna relazione/co-azione strutturata nel capitolo |
 
 Azioni ed evidenza:
 
@@ -196,7 +196,7 @@ Fonte: `data/source/book1/chapter6-the-old-cryptomeria-tree.txt`
 | Otsu (`otsu`) | `old_cryptomeria_shippoji` | `shippoji`; present; remains at the temple and argues for Takezo's life (explicit; data/source/book1/chapter6-the-old-cryptomeria-tree.txt) | Canoniche: Miyamoto Musashi: friend_ally/deep_personal_bond; Obaba Osugi: partner_family/future_daughter_in_law; Takuan Sōhō: acquaintance/trusted_guide<br>Co-azioni: Miyamoto Musashi, Takuan Sōhō |
 | Takuan Sōhō (`takuan`) | `old_cryptomeria_shippoji` | `shippoji`; present; controls the punishment and prepares Takezo for transformation (explicit; data/source/book1/chapter6-the-old-cryptomeria-tree.txt) | Canoniche: Miyamoto Musashi: master/spiritual_and_moral_guide; Otsu: acquaintance/trusted_guide<br>Co-azioni: Miyamoto Musashi, Otsu, Obaba Osugi |
 | Obaba Osugi (`osugi`) | `old_cryptomeria_shippoji` | `old_cryptomeria_shippoji`; present; confronts Takezo at the punishment scene (explicit; data/source/book1/chapter6-the-old-cryptomeria-tree.txt) | Canoniche: Miyamoto Musashi: enemy/family_conflict_and_pursuit; Otsu: partner_family/future_daughter_in_law<br>Co-azioni: Miyamoto Musashi, Takuan Sōhō |
-| Himeji garrison captain (`himeji_captain`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | Nessuno stato finale strutturato | Nessuna relazione/co-azione strutturata nel capitolo |
+| Aoki Tanzaemon (`aoki_tanzaemon`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | Nessuno stato finale strutturato | Nessuna relazione/co-azione strutturata nel capitolo |
 
 Azioni ed evidenza:
 
