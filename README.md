@@ -25,10 +25,10 @@ All seven books are published and validated.
 |---|---:|
 | Books | 7 / 7 |
 | Chapters | 112 / 112 |
-| Characters | 155 |
+| Characters | 154 |
 | Locations | 229 |
 | Narrative events | 568 |
-| Chapter-level character states | 419 |
+| Chapter-level character states | 418 |
 | Relationships | 81 |
 
 This table describes repository dataset coverage, not browser UI surfaces. Each validated record in `data/relationships.json` carries a `first_section`, but the current browser runtime does not load or render this dataset and the Pages builder does not publish it. Relationships are retained for audit/research and possible future UI work.
