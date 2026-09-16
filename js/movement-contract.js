@@ -14,6 +14,20 @@ export function getMovementRouteMode(event) {
   return MOVEMENT_ROUTE_MODES.get(event?.movement_status) ?? null;
 }
 
+// A line is a schematic sequence of evidenced places, never a reconstructed road.
+// Do not silently bridge an unknown waypoint with an invented direct segment.
+export function getMovementRouteCoordinates(event, locationsById) {
+  if (!event?.origin || !event.destination || !Array.isArray(event.via ?? [])) return null;
+  const ids = [event.origin, ...(event.via ?? []), event.destination];
+  const coordinates = [];
+  for (const id of ids) {
+    const point = locationsById.get(id)?.coordinates;
+    if (!Array.isArray(point) || point.length !== 2 || !point.every(Number.isFinite)) return null;
+    coordinates.push(point);
+  }
+  return coordinates;
+}
+
 export function validateMovementEvent(event) {
   const violations = [];
   const hasRouteData = Boolean(event?.origin || event?.destination || event?.via?.length);
