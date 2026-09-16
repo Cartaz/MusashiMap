@@ -1,5 +1,5 @@
 import { loadMapData } from "./data.js";
-import { getMovementRouteMode } from "./movement-contract.js";
+import { getMovementRouteCoordinates, getMovementRouteMode } from "./movement-contract.js";
 import { getPlacePresentation, isApproximateLocation } from "./place-presentation.js";
 import { popups } from "./popups.js";
 import { getCanonicalReaderState, getDisplayCharacterName, getPositionStatusLabel, getReaderSnapshot, getVisibleCharacters, resolveCharacterPosition, subscribeCanonicalReaderState } from "./reader-progress.js";
@@ -178,16 +178,20 @@ import { installMarkerCollision } from "./marker-collision.js";
       .forEach(event => {
         const origin = byId.get(event.origin);
         const destination = byId.get(event.destination);
-        if (!hasCoords(origin) || !hasCoords(destination)) return;
+        const coordinates = getMovementRouteCoordinates(event, byId);
+        if (!coordinates) return;
         const mode = getMovementRouteMode(event);
         if (!mode) return;
         const title = mode === "confirmed" ? "Spostamento confermato" : "Direzione / destinazione intenzionale";
+        const via = (event.via ?? []).map(id => locationLabel(byId.get(id)));
+        const route = [locationLabel(origin), ...via, locationLabel(destination)].join(" → ");
+        const note = "Collegamenti schematici tra luoghi documentati; il tracciato storico esatto non è ricostruito.";
         const popup = popups.movement({
           title,
-          route: `${locationLabel(origin)} → ${locationLabel(destination)}`,
-          description: event.description ?? ""
+          route,
+          description: `${note} ${event.description ?? ""}`.trim()
         });
-        bindPopupIfAvailable(L.polyline([origin.coordinates, destination.coordinates], routeStyle(mode)), popup)
+        bindPopupIfAvailable(L.polyline(coordinates, routeStyle(mode)), popup)
           .addTo(routes);
       });
 
