@@ -50,3 +50,11 @@ test("the provenance contract detects a later-known name with a second internal 
     "7: duplicate duplicates canonical original (Later name)"
   ]);
 });
+
+test("apostrophes and diacritics cannot hide a duplicate canonical identity", () => {
+  const characters = [{ id: "koetsu", name: "Hon'ami Kōetsu" }];
+  const manifests = [{ book: { number: 5 }, characters: [{ id: "duplicate", name: "Honami Koetsu" }] }];
+  assert.deepEqual(findCanonicalNameConflicts(characters, [], manifests), [
+    "5: duplicate duplicates canonical koetsu (Honami Koetsu)"
+  ]);
+});
