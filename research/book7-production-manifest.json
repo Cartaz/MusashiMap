@@ -182,7 +182,7 @@
       ],
       "referenced_characters": [
         "sekishusai",
-        "yagyu_munenori",
+        "munenori",
         "mikogami_tenzen",
         "kojiro"
       ],
@@ -230,7 +230,7 @@
         "takuan",
         "musashi",
         "sekishusai",
-        "yagyu_munenori"
+        "munenori"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -1491,7 +1491,7 @@
       ]
     },
     {
-      "id": "yagyu_munenori",
+      "id": "munenori",
       "name": "Yagyū Munenori",
       "aliases": [],
       "kind": "historical_context",

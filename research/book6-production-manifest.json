@@ -339,7 +339,7 @@
         "hojo_shinzo",
         "hojo_ujikatsu",
         "takuan",
-        "yagyu_munenori"
+        "munenori"
       ],
       "referenced_characters": [
         "otsu"
@@ -410,7 +410,7 @@
       "referenced_characters": [
         "matahachi",
         "musashi",
-        "yagyu_munenori",
+        "munenori",
         "tokugawa_hidetada",
         "hamada_elder_brother"
       ],
@@ -621,7 +621,7 @@
         "jotaro",
         "gonnosuke",
         "musashi",
-        "yagyu_munenori"
+        "munenori"
       ],
       "groups": [
         "edo_castle_workers"
@@ -996,7 +996,7 @@
       "mentioned_in": []
     },
     {
-      "id": "yagyu_munenori",
+      "id": "munenori",
       "name": "Yagyū Munenori",
       "aliases": [],
       "physical_presence": [
@@ -1829,7 +1829,7 @@
       "characters": [
         "musashi",
         "hojo_ujikatsu",
-        "yagyu_munenori"
+        "munenori"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -1849,7 +1849,7 @@
         "musashi",
         "takuan",
         "hojo_ujikatsu",
-        "yagyu_munenori"
+        "munenori"
       ],
       "referenced_characters": [
         "otsu"
