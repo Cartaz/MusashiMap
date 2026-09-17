@@ -178,12 +178,12 @@
         "otsu",
         "yagyu_hyogo",
         "ushinosuke",
-        "toranosuke"
+        "hamada_toranosuke"
       ],
       "referenced_characters": [
         "sekishusai",
-        "yagyu_munenori",
-        "ono_tadaaki",
+        "munenori",
+        "mikogami_tenzen",
         "kojiro"
       ],
       "groups": [
@@ -230,7 +230,7 @@
         "takuan",
         "musashi",
         "sekishusai",
-        "yagyu_munenori"
+        "munenori"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -265,7 +265,7 @@
         "toriumi_benzo",
         "oan",
         "toroku",
-        "honami_koetsu",
+        "koetsu",
         "myoshu",
         "sugizo",
         "gensuke"
@@ -517,7 +517,7 @@
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "characters": [
         "musashi",
-        "honami_koetsu",
+        "koetsu",
         "matahachi",
         "haiya_shoeki",
         "yoshino_dayu",
@@ -600,7 +600,7 @@
       ],
       "referenced_characters": [
         "musashi",
-        "ono_tadaaki",
+        "mikogami_tenzen",
         "sekishusai"
       ],
       "groups": [],
@@ -1045,7 +1045,7 @@
       "mentioned_in": []
     },
     {
-      "id": "toranosuke",
+      "id": "hamada_toranosuke",
       "name": "Hamada Toranosuke",
       "aliases": [
         "Torazō"
@@ -1112,7 +1112,7 @@
       "mentioned_in": []
     },
     {
-      "id": "honami_koetsu",
+      "id": "koetsu",
       "name": "Hon'ami Kōetsu",
       "aliases": [
         "Kōetsu"
@@ -1491,7 +1491,7 @@
       ]
     },
     {
-      "id": "yagyu_munenori",
+      "id": "munenori",
       "name": "Yagyū Munenori",
       "aliases": [],
       "kind": "historical_context",
@@ -1516,7 +1516,7 @@
       ]
     },
     {
-      "id": "ono_tadaaki",
+      "id": "mikogami_tenzen",
       "name": "Ono Tadaaki",
       "aliases": [],
       "kind": "historical_context",
@@ -2029,7 +2029,7 @@
       "description": "Toranosuke stops the runaway ox and Sukekurō reaches Otsū near the Kasagi road.",
       "characters": [
         "otsu",
-        "toranosuke",
+        "hamada_toranosuke",
         "kimura_sukekuro"
       ],
       "referenced_characters": [],
@@ -2047,7 +2047,7 @@
       "type": "identity_disclosure",
       "description": "Sukekurō recognizes Torazō as Hamada Toranosuke; Toranosuke explains the rōnin are expelled men, not Tōdō troops, and conceals himself because of Ono Tadaaki's disgrace.",
       "characters": [
-        "toranosuke",
+        "hamada_toranosuke",
         "kimura_sukekuro"
       ],
       "referenced_characters": [],
@@ -2202,7 +2202,7 @@
       "characters": [
         "gonnosuke",
         "iori",
-        "honami_koetsu",
+        "koetsu",
         "myoshu"
       ],
       "referenced_characters": [],
@@ -2893,7 +2893,7 @@
       "description": "In early fourth month 1612 Musashi boards a regular westbound ship from Sakai for the arranged duel at Kokura.",
       "characters": [
         "musashi",
-        "honami_koetsu",
+        "koetsu",
         "matahachi",
         "haiya_shoeki",
         "yoshino_dayu"
@@ -2919,7 +2919,7 @@
       "description": "Gonnosuke arrives just after Musashi's vessel has left and learns that Iori is with Sado.",
       "characters": [
         "gonnosuke",
-        "honami_koetsu",
+        "koetsu",
         "matahachi"
       ],
       "referenced_characters": [],
@@ -2938,7 +2938,7 @@
       "description": "Gonnosuke reports that Yukimura recognized the error, freed him and apologized; he then searched neighboring provinces for Iori.",
       "characters": [
         "gonnosuke",
-        "honami_koetsu",
+        "koetsu",
         "matahachi"
       ],
       "referenced_characters": [],
@@ -2960,7 +2960,7 @@
       "description": "Gonnosuke elects to continue overland and walks with Kōetsu and Matahachi toward Osaka.",
       "characters": [
         "gonnosuke",
-        "honami_koetsu",
+        "koetsu",
         "matahachi"
       ],
       "referenced_characters": [],
@@ -2984,7 +2984,7 @@
         "matahachi",
         "akemi",
         "akemi_baby",
-        "honami_koetsu",
+        "koetsu",
         "gonnosuke"
       ],
       "referenced_characters": [],
@@ -3834,7 +3834,7 @@
     {
       "id": "b7-final-state-toranosuke",
       "chapter": "b7c1",
-      "character": "toranosuke",
+      "character": "hamada_toranosuke",
       "state": "Alive, traveling under the Torazō concealment after rescuing Otsū; exact subsequent location unknown.",
       "location": null,
       "source_ref": "book7/chapter1",
@@ -3856,7 +3856,7 @@
     {
       "id": "b7-final-state-honami_koetsu",
       "chapter": "b7c10",
-      "character": "honami_koetsu",
+      "character": "koetsu",
       "state": "Alive in Osaka after accompanying Gonnosuke and receiving Matahachi's returned priestly garments.",
       "location": "osaka",
       "source_ref": "book7/chapter10",

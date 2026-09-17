@@ -829,7 +829,7 @@
         "kumagoro"
       ],
       "referenced_characters": [
-        "yagyu_munenori",
+        "munenori",
         "takuan"
       ],
       "groups": [
@@ -864,7 +864,7 @@
       "referenced_characters": [
         "kojiro",
         "iwama_kakubei",
-        "honami_koetsu"
+        "koetsu"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -921,7 +921,7 @@
       "source_ref": "book5/chapter21",
       "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
       "characters": [
-        "yagyu_munenori",
+        "munenori",
         "yagyu_hyogo",
         "otsu",
         "kimura_sukekuro",
@@ -1041,7 +1041,7 @@
       "referenced_characters": [
         "kojiro",
         "kimura_sukekuro",
-        "yagyu_munenori",
+        "munenori",
         "yagyu_hyogo"
       ],
       "groups": [],
@@ -1644,7 +1644,7 @@
       ]
     },
     {
-      "id": "yagyu_munenori",
+      "id": "munenori",
       "name": "Yagyū Munenori",
       "aliases": [
         "Lord Tajima"
@@ -1727,7 +1727,7 @@
       ]
     },
     {
-      "id": "honami_koetsu",
+      "id": "koetsu",
       "name": "Hon'ami Kōetsu",
       "aliases": [
         "Kōetsu"
@@ -3658,7 +3658,7 @@
         "iori"
       ],
       "referenced_characters": [
-        "yagyu_munenori"
+        "munenori"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -3722,7 +3722,7 @@
       ],
       "referenced_characters": [
         "kimura_sukekuro",
-        "yagyu_munenori"
+        "munenori"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -3766,7 +3766,7 @@
         "zushino_kosuke"
       ],
       "referenced_characters": [
-        "honami_koetsu"
+        "koetsu"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -3910,7 +3910,7 @@
       "type": "urgent_letter",
       "description": "A fast courier's letter from Shōda reports Sekishūsai's critical illness.",
       "characters": [
-        "yagyu_munenori",
+        "munenori",
         "yagyu_hyogo",
         "kimura_sukekuro"
       ],
@@ -3937,7 +3937,7 @@
       "characters": [
         "yagyu_hyogo",
         "otsu",
-        "yagyu_munenori"
+        "munenori"
       ],
       "referenced_characters": [
         "sekishusai"
@@ -4244,7 +4244,7 @@
       ],
       "referenced_characters": [
         "kimura_sukekuro",
-        "yagyu_munenori",
+        "munenori",
         "yagyu_hyogo"
       ],
       "groups": [],
@@ -4634,7 +4634,7 @@
     {
       "id": "b5-final-state-yagyu_munenori",
       "chapter": "b5c21",
-      "character": "yagyu_munenori",
+      "character": "munenori",
       "state": "Alive at the Higakubo residence, unable to leave official duties, after sending Hyōgo.",
       "location": "higakubo_yagyu",
       "source_ref": "book5/chapter21",
@@ -5203,7 +5203,7 @@
     {
       "id": "rel-munenori-hyogo",
       "participants": [
-        "yagyu_munenori",
+        "munenori",
         "yagyu_hyogo"
       ],
       "type": "uncle and nephew",

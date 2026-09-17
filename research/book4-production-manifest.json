@@ -191,7 +191,7 @@
       "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "characters": [
-        "seijuro",
+        "yoshioka_seijuro",
         "sasaki_kojiro",
         "akemi",
         "jotaro",
@@ -238,7 +238,7 @@
         "myoshu"
       ],
       "referenced_characters": [
-        "seijuro",
+        "yoshioka_seijuro",
         "yoshioka_kempo",
         "maeda_toshiie",
         "tokugawa_ieyasu",
@@ -247,7 +247,7 @@
         "imagawa_yoshimoto",
         "karasumaru_mitsuhiro",
         "shokado_shojo",
-        "yagyu_sekishusai",
+        "sekishusai",
         "takuan"
       ],
       "groups": [],
@@ -321,8 +321,8 @@
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "characters": [
-        "denshichiro",
-        "seijuro",
+        "yoshioka_denshichiro",
+        "yoshioka_seijuro",
         "matahachi",
         "ueda_ryohei",
         "miike_jurozaemon",
@@ -418,7 +418,7 @@
         "sumigiku"
       ],
       "referenced_characters": [
-        "denshichiro",
+        "yoshioka_denshichiro",
         "yoshino_tayu",
         "karasumaru_mitsuhiro"
       ],
@@ -452,7 +452,7 @@
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "characters": [
         "musashi",
-        "denshichiro",
+        "yoshioka_denshichiro",
         "otaguro_hyosuke",
         "yoshioka_genzaemon"
       ],
@@ -498,7 +498,7 @@
         "rinya"
       ],
       "referenced_characters": [
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "groups": [
         "ogiya_staff"
@@ -645,8 +645,8 @@
       "referenced_characters": [
         "yoshioka_genjiro",
         "yoshioka_genzaemon",
-        "seijuro",
-        "denshichiro",
+        "yoshioka_seijuro",
+        "yoshioka_denshichiro",
         "itakura_katsushige"
       ],
       "groups": [
@@ -1178,7 +1178,7 @@
       ]
     },
     {
-      "id": "seijuro",
+      "id": "yoshioka_seijuro",
       "name": "Yoshioka Seijūrō",
       "aliases": [
         "Young Master"
@@ -1194,7 +1194,7 @@
       ]
     },
     {
-      "id": "denshichiro",
+      "id": "yoshioka_denshichiro",
       "name": "Yoshioka Denshichirō",
       "aliases": [],
       "kind": "narrative",
@@ -1622,7 +1622,7 @@
       ]
     },
     {
-      "id": "yagyu_sekishusai",
+      "id": "sekishusai",
       "name": "Yagyū Sekishūsai",
       "aliases": [],
       "kind": "historical_context",
@@ -2031,7 +2031,7 @@
       "type": "reported_duel",
       "description": "Tamihachi reports that Musashi shattered Seijūrō's right shoulder with one wooden-sword blow in the adjacent field.",
       "characters": [
-        "seijuro",
+        "yoshioka_seijuro",
         "tamihachi"
       ],
       "referenced_characters": [
@@ -2055,7 +2055,7 @@
       "description": "At Seijūrō's request Kojirō amputates the irreparably injured right arm.",
       "characters": [
         "sasaki_kojiro",
-        "seijuro",
+        "yoshioka_seijuro",
         "ueda_ryohei"
       ],
       "referenced_characters": [],
@@ -2076,7 +2076,7 @@
       "type": "departure",
       "description": "The Yoshioka party carries Seijūrō toward the Shijō school while Musashi has already gone.",
       "characters": [
-        "seijuro",
+        "yoshioka_seijuro",
         "ueda_ryohei",
         "miike_jurozaemon"
       ],
@@ -2104,7 +2104,7 @@
         "musashi"
       ],
       "referenced_characters": [
-        "seijuro"
+        "yoshioka_seijuro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -2148,7 +2148,7 @@
       ],
       "referenced_characters": [
         "yoshioka_kempo",
-        "yagyu_sekishusai",
+        "sekishusai",
         "takuan"
       ],
       "groups": [],
@@ -2346,7 +2346,7 @@
       "type": "arrival",
       "description": "Denshichirō returns to Kyoto from travel through Ise, Yamato and Osaka.",
       "characters": [
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2363,7 +2363,7 @@
       "type": "release",
       "description": "Denshichirō cuts Matahachi free from the tree.",
       "characters": [
-        "denshichiro",
+        "yoshioka_denshichiro",
         "matahachi"
       ],
       "referenced_characters": [],
@@ -2384,8 +2384,8 @@
       "type": "succession",
       "description": "Seijūrō cedes the Yoshioka house and school to Denshichirō and warns him not to fight Musashi.",
       "characters": [
-        "seijuro",
-        "denshichiro",
+        "yoshioka_seijuro",
+        "yoshioka_denshichiro",
         "ueda_ryohei"
       ],
       "referenced_characters": [
@@ -2408,7 +2408,7 @@
       "type": "rupture",
       "description": "Denshichirō rejects restraint; Nampo Yoichibei leaves the school rather than support revenge.",
       "characters": [
-        "denshichiro",
+        "yoshioka_denshichiro",
         "nampo_yoichibei",
         "miike_jurozaemon",
         "otaguro_hyosuke"
@@ -2431,7 +2431,7 @@
       "type": "challenge_preparation",
       "description": "After learning Musashi is staying with Kōetsu, Denshichirō prepares a formal challenge.",
       "characters": [
-        "denshichiro",
+        "yoshioka_denshichiro",
         "ueda_ryohei",
         "otaguro_hyosuke"
       ],
@@ -2454,7 +2454,7 @@
       "type": "disappearance",
       "description": "Seijūrō leaves a long letter and disappears from the school.",
       "characters": [
-        "seijuro"
+        "yoshioka_seijuro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2655,7 +2655,7 @@
         "otaguro_hyosuke"
       ],
       "referenced_characters": [
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -2719,7 +2719,7 @@
         "musashi"
       ],
       "referenced_characters": [
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -2761,7 +2761,7 @@
       "description": "Denshichirō waits with Ōtaguro and Yoshioka retainers; Musashi appears from the veranda after warming himself.",
       "characters": [
         "musashi",
-        "denshichiro",
+        "yoshioka_denshichiro",
         "otaguro_hyosuke"
       ],
       "referenced_characters": [],
@@ -2781,7 +2781,7 @@
       "characters": [
         "musashi",
         "otaguro_hyosuke",
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2802,7 +2802,7 @@
       "description": "Musashi kills Denshichirō with his sword.",
       "characters": [
         "musashi",
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2872,7 +2872,7 @@
         "koetsu"
       ],
       "referenced_characters": [
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -2917,7 +2917,7 @@
         "yoshino_tayu"
       ],
       "referenced_characters": [
-        "denshichiro"
+        "yoshioka_denshichiro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -4515,7 +4515,7 @@
     {
       "id": "b4c1-state-seijuro",
       "chapter": "b4c1",
-      "character": "seijuro",
+      "character": "yoshioka_seijuro",
       "state": "Alive, gravely wounded and newly one-armed; being carried home.",
       "location": "yoshioka_school",
       "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
@@ -4614,7 +4614,7 @@
     {
       "id": "b4c4-state-denshichiro",
       "chapter": "b4c4",
-      "character": "denshichiro",
+      "character": "yoshioka_denshichiro",
       "state": "Head of the Yoshioka school and committed to challenging Musashi.",
       "location": "yoshioka_school",
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
@@ -4625,7 +4625,7 @@
     {
       "id": "b4c4-state-seijuro",
       "chapter": "b4c4",
-      "character": "seijuro",
+      "character": "yoshioka_seijuro",
       "state": "Departed to an unknown destination.",
       "location": null,
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
@@ -4746,7 +4746,7 @@
     {
       "id": "b4c7-state-denshichiro",
       "chapter": "b4c7",
-      "character": "denshichiro",
+      "character": "yoshioka_denshichiro",
       "state": "Dead.",
       "location": "rengeoin_sanjusangendo",
       "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
@@ -5622,8 +5622,8 @@
     {
       "id": "b4-relationship-12",
       "participants": [
-        "seijuro",
-        "denshichiro"
+        "yoshioka_seijuro",
+        "yoshioka_denshichiro"
       ],
       "type": "brother_and_predecessor",
       "chapter_ids": [
