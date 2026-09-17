@@ -400,7 +400,7 @@
         "hamada_toranosuke",
         "kojiro",
         "yajibei",
-        "ono_tadaaki",
+        "mikogami_tenzen",
         "omitsu",
         "numata_kajuro",
         "kamei_hyosuke",
@@ -500,7 +500,7 @@
       "characters": [
         "musashi",
         "iori",
-        "baiken",
+        "kohei",
         "oko",
         "gion_toji",
         "gonnosuke",
@@ -1037,7 +1037,7 @@
       "identity_note": "Chapter 14 explicitly identifies Daizō as the fugitive Mizoguchi Shinano."
     },
     {
-      "id": "ono_tadaaki",
+      "id": "mikogami_tenzen",
       "name": "Ono Tadaaki",
       "aliases": [
         "Mikogami Tenzen"
@@ -1111,7 +1111,7 @@
       "mentioned_in": []
     },
     {
-      "id": "baiken",
+      "id": "kohei",
       "name": "Shishido Baiken",
       "aliases": [
         "Tsujikaze Kōhei",
@@ -1958,7 +1958,7 @@
       "description": "After Tadaaki concedes responsibility for his students, Kojirō attacks and cuts his topknot while Tadaaki cuts Kojirō's sleeve.",
       "characters": [
         "kojiro",
-        "ono_tadaaki"
+        "mikogami_tenzen"
       ],
       "referenced_characters": [],
       "groups": [
@@ -1980,7 +1980,7 @@
       "type": "retirement",
       "description": "Tadaaki announces retirement and tonsure, expels Toranosuke, and releases Osugi; he later leaves Edo.",
       "characters": [
-        "ono_tadaaki",
+        "mikogami_tenzen",
         "hamada_toranosuke",
         "osugi"
       ],
@@ -2088,7 +2088,7 @@
       "type": "ambush",
       "description": "Baiken's group ambushes Musashi; Musashi kills five and Gonnosuke kills seven with his staff, leaving one lancer-priest survivor.",
       "characters": [
-        "baiken",
+        "kohei",
         "oko",
         "gion_toji",
         "musashi",
@@ -2647,7 +2647,7 @@
     {
       "id": "b6c8-state-ono_tadaaki",
       "chapter": "b6c8",
-      "character": "ono_tadaaki",
+      "character": "mikogami_tenzen",
       "state": "has withdrawn from the dojo and disappeared from Edo; rumors of madness are unverified reports",
       "location": null,
       "source_ref": "chapter8-tadaakis-madness.txt:L458-L496",
@@ -2702,7 +2702,7 @@
     {
       "id": "b6c11-state-baiken",
       "chapter": "b6c11",
-      "character": "baiken",
+      "character": "kohei",
       "state": "dead",
       "location": "kosaruzawa_bridge",
       "source_ref": "chapter11-the-demons-attendant.txt:L300-L367",
