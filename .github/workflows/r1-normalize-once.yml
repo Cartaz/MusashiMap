@@ -1,0 +1,47 @@
+name: One-time R1 provenance ID normalization
+
+on:
+  push:
+    branches:
+      - fix/r1-canonical-manifest-ids-20260917
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    if: github.actor == 'Cartaz'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out isolated branch
+        uses: actions/checkout@v6
+        with:
+          ref: fix/r1-canonical-manifest-ids-20260917
+          persist-credentials: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Normalize canonical character references
+        run: node tools/normalize-r1-once.mjs
+
+      - name: Validate all semantic data and research references
+        run: |
+          node tools/validate-research-manifests.mjs
+          node tools/validate-data.mjs
+          node tools/validate-source-audit.mjs
+          node --test tools/tests/*.test.mjs
+          node js/runtime-safety.test.mjs
+          git diff --check
+
+      - name: Commit corrected provenance and retire one-time tools
+        run: |
+          git rm -- tools/normalize-r1-once.mjs .github/workflows/r1-normalize-once.yml
+          git add -- research/book6-production-manifest.json research/book7-production-manifest.json
+          git diff --cached --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Normalize Books VI–VII provenance person IDs and retire migration'
+          git push origin HEAD:refs/heads/fix/r1-canonical-manifest-ids-20260917
