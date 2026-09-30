@@ -269,7 +269,15 @@ import { installMarkerCollision } from "./marker-collision.js";
       if (fallbackActive) return;
       fallbackActive = true;
       releaseListeners();
-      if (vectorLayer && map.hasLayer(vectorLayer)) map.removeLayer(vectorLayer);
+      if (vectorLayer && map.hasLayer(vectorLayer)) {
+        // A failed adapter onAdd can register a Leaflet layer before creating
+        // its GL map. Its normal onRemove assumes GL exists; roll back the
+        // incomplete container through the public layer API instead.
+        if (!vectorLayer.getMaplibreMap()) {
+          vectorLayer.onRemove = () => vectorLayer.getContainer()?.remove();
+        }
+        map.removeLayer(vectorLayer);
+      }
       console.warn("Primary basemap unavailable; using raster fallback", error);
       addRasterBasemap();
     };

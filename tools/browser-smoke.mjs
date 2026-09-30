@@ -28,8 +28,8 @@ let browser;
 const pageErrors = [];
 const blankStyle = { version: 8, sources: {}, layers: [] };
 const png = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a2ioAAAAASUVORK5CYII=", "base64");
-const newPage = async () => {
-  const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, ignoreHTTPSErrors: process.env.BROWSER_IGNORE_HTTPS_ERRORS === "1" });
+const newPage = async (testBrowser = browser) => {
+  const page = await testBrowser.newPage({ viewport: { width: 1440, height: 900 }, ignoreHTTPSErrors: process.env.BROWSER_IGNORE_HTTPS_ERRORS === "1" });
   page.on("pageerror", error => pageErrors.push(error.message));
   // Only basemap data is controlled: Leaflet, MapLibre and the complete app run.
   await page.route("https://tiles.openfreemap.org/styles/liberty", route => route.fulfill({ json: blankStyle }));
@@ -162,6 +162,26 @@ try {
   assert.equal(await unavailableMap.locator("#chapter").inputValue(), "2");
   await unavailableMap.close();
 
+  const failedConstructor = await newPage();
+  await failedConstructor.addInitScript(() => {
+    let maplibre;
+    Object.defineProperty(window, "maplibregl", {
+      configurable: true,
+      get() { return maplibre; },
+      set(value) {
+        maplibre = value;
+        value.Map = class { constructor() { throw new Error("Injected WebGL context failure"); } };
+      }
+    });
+  });
+  await loaded(failedConstructor);
+  await failedConstructor.waitForFunction(() => document.querySelector("#map-note").textContent.includes("semplificata"));
+  await failedConstructor.locator("#next-section").click();
+  assert.equal(await failedConstructor.locator("#chapter").inputValue(), "2");
+  assert.equal(await failedConstructor.locator(".leaflet-gl-layer").count(), 0);
+  assert.ok(await failedConstructor.locator(".leaflet-tile").count() > 0);
+  await failedConstructor.close();
+
   for (const resource of ["https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js", "https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.3/leaflet-maplibre-gl.js", "https://tiles.openfreemap.org/styles/liberty"]) {
     const failedBasemap = await newPage();
     await failedBasemap.route(resource, route => route.abort());
@@ -191,8 +211,24 @@ try {
   await lateError.waitForFunction(() => document.querySelector("#map-note").textContent.includes("semplificata"));
   assert.ok(await lateError.locator(".leaflet-tile").count() > 0);
   await lateError.close();
+
+  const noWebGLBrowser = await chromium.launch({
+    ...(process.env.BROWSER_EXECUTABLE_PATH ? { executablePath: process.env.BROWSER_EXECUTABLE_PATH } : {}),
+    args: ["--no-sandbox", "--disable-webgl"]
+  });
+  try {
+    const noWebGL = await newPage(noWebGLBrowser);
+    await loaded(noWebGL);
+    await noWebGL.waitForFunction(() => document.querySelector("#map-note").textContent.includes("semplificata"));
+    assert.equal(await noWebGL.locator(".leaflet-gl-layer").count(), 0);
+    assert.ok(await noWebGL.locator(".leaflet-tile").count() > 0);
+    await noWebGL.locator("#next-section").click();
+    assert.equal(await noWebGL.locator("#chapter").inputValue(), "2");
+  } finally {
+    await noWebGLBrowser.close();
+  }
   assert.deepEqual(pageErrors, []);
-  console.log("Browser smoke passed: 112 chapters, spoiler names, persistent selections, input recovery, panel resizing, mobile portrait/landscape, data/CDN failures and vector fallback.");
+  console.log("Browser smoke passed: 112 chapters, spoiler names, persistent selections, input recovery, panel resizing, mobile portrait/landscape, data/CDN/WebGL failures and vector fallback.");
 } finally {
   if (browser) await browser.close();
   await new Promise(resolve => server.close(resolve));
