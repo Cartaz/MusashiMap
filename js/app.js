@@ -1,4 +1,4 @@
-import { mergeNewlyVisibleSelection } from "./character-selection.js";
+import { mergeNewlyVisibleSelection, updateCharacterSelection } from "./character-selection.js";
 import { loadData } from "./data.js";
 import { getPlaceLegendEntries } from "./place-presentation.js";
 import {
@@ -98,11 +98,10 @@ function renderCharacterFilters(selectedCharacters, section) {
     const displayName = getDisplayCharacterName(character, section, data.identities?.identities);
     input.setAttribute("aria-label", `Segui ${displayName}`);
     input.addEventListener("change", () => {
-      const nextSelected = new Set(selectedCharacters);
-      if (input.checked) nextSelected.add(character.id);
-      else nextSelected.delete(character.id);
       const state = getCanonicalReaderState();
-      setCanonicalReaderState({ section: state.section, selectedCharacters: [...nextSelected] });
+      setCanonicalReaderState({
+        selectedCharacters: updateCharacterSelection(state.selectedCharacters, [character.id], input.checked)
+      });
     });
     const name = document.createElement("span");
     name.className = "character-filter-name";
@@ -224,6 +223,7 @@ function render() {
   status.textContent = `Sezione ${section} · informazioni visibili fino a questo punto della storia`;
   sectionSelect.value = String(section);
   chapterInput.value = String(section);
+  chapterInput.setCustomValidity("");
   prevButton.disabled = section <= reader.min;
   nextButton.disabled = section >= reader.max;
   const characterById = new Map(data.characters.characters.map(character => [character.id, character]));
@@ -264,6 +264,7 @@ try {
     : [...visibleIds];
   initializeCanonicalReaderState({ section: initialSection, selectedCharacters: initialSelected });
 } catch (error) {
+  status.textContent = "Dati non disponibili. Ricarica la pagina per riprovare.";
   dataStatus.textContent = "Errore nel caricamento dei dati";
   dataStatus.dataset.state = "error";
   console.error(error);
@@ -282,6 +283,7 @@ if (reader) {
       if (!applySection(chapterInput.value)) chapterInput.reportValidity();
     } else if (event.key === "Escape") {
       chapterInput.value = String(getCanonicalReaderState().section);
+      chapterInput.setCustomValidity("");
     }
   });
   chapterApply.addEventListener("click", () => {
@@ -300,12 +302,16 @@ if (reader) {
     const state = getCanonicalReaderState();
     setCanonicalReaderState({
       section: state.section,
-      selectedCharacters: getVisibleMainCharacters(state.section).map(character => character.id)
+      selectedCharacters: updateCharacterSelection(state.selectedCharacters,
+        getVisibleMainCharacters(state.section).map(character => character.id), true)
     });
   });
   selectNone.addEventListener("click", () => {
     const state = getCanonicalReaderState();
-    setCanonicalReaderState({ section: state.section, selectedCharacters: [] });
+    setCanonicalReaderState({
+      selectedCharacters: updateCharacterSelection(state.selectedCharacters,
+        getVisibleMainCharacters(state.section).map(character => character.id), false)
+    });
   });
 } else {
   for (const control of [chapterInput, chapterApply, prevButton, nextButton, sectionSelect, selectAll, selectNone]) {

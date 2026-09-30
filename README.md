@@ -67,6 +67,21 @@ node tools/validate-pages-artifact.mjs
 
 `tools/build-pages.mjs` creates the minimal spoiler-filtered `_site/` artifact. Raw chapter sources, research dossiers and development files are deliberately excluded.
 
+CI also starts the built application in Chromium and checks all 112 chapters,
+progressive names, character selection across rewinds, input recovery, panel
+resizing, mobile portrait/landscape and simulated data/CDN/basemap failures.
+To run the same browser gate locally after building `_site/`:
+
+```bash
+npm install --no-save --package-lock=false playwright@1.62.1
+npx playwright install --with-deps chromium
+node tools/browser-smoke.mjs
+```
+
+Playwright is a development-only dependency; serving or publishing the application
+still requires no package installation. The browser gate controls basemap data for
+reproducibility while running the actual mapping libraries and application modules.
+
 ## Repository map
 
 ```text
