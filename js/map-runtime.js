@@ -212,7 +212,7 @@ import { installMarkerCollision } from "./marker-collision.js";
   }
 
   function romanizedLabelExpression() {
-    return ["coalesce", ["get", "name:ja-Latn"], ["get", "name:ja_rm"], ["get", "name:latin"], ["get", "name_en"], ["get", "name"]];
+    return ["coalesce", ["get", "name:ja-Latn"], ["get", "name:ja_rm"], ["get", "name:latin"], ["get", "name_en"], ["get", "name"], ""];
   }
 
   function cleanAdministrativeSuffixExpression() {
@@ -262,8 +262,22 @@ import { installMarkerCollision } from "./marker-collision.js";
   }
 
   async function initializeBasemap() {
+    let vectorLayer;
+    let releaseListeners = () => {};
+    let fallbackActive = false;
+    const useFallback = error => {
+      if (fallbackActive) return;
+      fallbackActive = true;
+      releaseListeners();
+      if (vectorLayer && map.hasLayer(vectorLayer)) map.removeLayer(vectorLayer);
+      console.warn("Primary basemap unavailable; using raster fallback", error);
+      addRasterBasemap();
+    };
     try {
-      if (typeof L.maplibreGL !== "function" || !window.maplibregl) throw new Error("MapLibre CDN unavailable");
+      if (!window.maplibregl) throw new Error("MapLibre CDN unavailable");
+      // The adapter requires both globals; load it only after those prerequisites
+      // are available so a missing CDN cannot cause an uncaught dependency error.
+      await import("https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.3/leaflet-maplibre-gl.js");
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 8000);
       let styleResponse;
@@ -273,11 +287,34 @@ import { installMarkerCollision } from "./marker-collision.js";
         window.clearTimeout(timeout);
       }
       if (!styleResponse.ok) throw new Error(`OpenFreeMap style: ${styleResponse.status}`);
-      L.maplibreGL({ style: customizeBasemapStyle(await styleResponse.json()) }).addTo(map);
-      showMapNotice("");
+      const style = customizeBasemapStyle(await styleResponse.json());
+      // Install listeners before applying the real style: validation errors can
+      // fire synchronously, while tile and WebGL failures arrive after startup.
+      vectorLayer = L.maplibreGL({ style: { version: 8, sources: {}, layers: [] } });
+      vectorLayer.addTo(map);
+      const vectorMap = vectorLayer.getMaplibreMap();
+      await new Promise(resolve => {
+        const loadTimeout = window.setTimeout(() => onError({ error: new Error("Vector basemap load timed out") }), 8000);
+        const onLoad = () => {
+          window.clearTimeout(loadTimeout);
+          showMapNotice("");
+          resolve();
+        };
+        const onError = event => {
+          useFallback(event.error);
+          resolve();
+        };
+        releaseListeners = () => {
+          window.clearTimeout(loadTimeout);
+          vectorMap.off("load", onLoad);
+          vectorMap.off("error", onError);
+        };
+        vectorMap.once("load", onLoad);
+        vectorMap.on("error", onError);
+        vectorMap.setStyle(style, { diff: false });
+      });
     } catch (error) {
-      console.warn("Primary basemap unavailable; using raster fallback", error);
-      addRasterBasemap();
+      useFallback(error);
     }
   }
 
@@ -296,12 +333,15 @@ import { installMarkerCollision } from "./marker-collision.js";
         maxZoom: 18
       }).setView([35.05, 135.55], 7);
       installMarkerCollision(map);
+      // Leaflet tracks window resizes, but opening the diary resizes only its
+      // container. The map owns this observation, independently of panel UI.
+      const resizeObserver = new ResizeObserver(() => map.invalidateSize({ animate: false }));
+      resizeObserver.observe(map.getContainer());
+      map.once("unload", () => resizeObserver.disconnect());
 
       markers = L.layerGroup().addTo(map);
       routes = L.layerGroup().addTo(map);
       characterMarkers = L.layerGroup().addTo(map);
-      const basemapReady = initializeBasemap();
-
       const mapData = await loadMapData();
       locations = mapData.locations.locations;
       events = mapData.events.events;
@@ -309,6 +349,7 @@ import { installMarkerCollision } from "./marker-collision.js";
       characters = mapData.characters.characters;
       identities = mapData.identities.identities;
 
+      const basemapReady = initializeBasemap();
       const state = getCanonicalReaderState();
       if (state.section !== null) draw(state.section, state.selectedCharacters);
       await basemapReady;

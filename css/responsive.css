@@ -1,5 +1,10 @@
 /* Final responsive layer: touch ergonomics, notched screens and large displays. */
 
+.map-overlay:has(#map-note:not([hidden])) {
+  height: auto;
+  min-height: 63px;
+}
+
 @media (max-width: 760px) {
   .app-header {
     min-height: 68px;
