@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "relationship_types": ["family","friend_ally","acquaintance","master","disciple","rival","enemy","authority","partner_family","servant_employer","faction"],
   "relationships": [
     {"from":"musashi","to":"ogin","type":"family","subtype":"younger_brother_older_sister","first_section":3},
@@ -32,7 +32,7 @@
     {"from":"musashi","to":"nikkan","type":"master","subtype":"brief_spiritual_instruction","first_section":14},
     {"from":"musashi","to":"agon","type":"enemy","subtype":"fatal_hozoin_bout","first_section":14},
     {"from":"musashi","to":"yamazoe_dampachi","type":"enemy","subtype":"hannya_plain_combat","first_section":15},
-    {"from":"musashi","to":"inshun","type":"rival","subtype":"hozoin_lancer_opposition","first_section":15},
+    {"from":"musashi","to":"inshun","type":"acquaintance","subtype":"hozoin_encounter_without_personal_duel","first_section":15},
     {"from":"jotaro","to":"kocha","type":"acquaintance","subtype":"children_meeting_at_wataya","first_section":16},
     {"from":"yoshioka_seijuro","to":"yoshioka_denshichiro","type":"family","subtype":"older_brother_younger_brother","first_section":9},
     {"from":"otsu","to":"sekishusai","type":"acquaintance","subtype":"trusted_companion_at_mountain_house","first_section":17},
@@ -190,6 +190,8 @@
       "type": "family",
       "subtype": "nephew_and_maternal_aunt_who_raised_him",
       "first_section": 109
-    }
+    },
+    {"from":"yoshino_second","to":"haiya_shoeki","type":"family","subtype":"wife_and_husband","first_section":106},
+    {"from":"obata_kagenori","to":"hojo_shinzo","type":"family","subtype":"planned_adoption_and_obata_succession","first_section":84}
   ]
 }

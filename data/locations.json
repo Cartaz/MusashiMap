@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "coordinate_policy": "Coordinates are modern identification aids only. They must never be interpreted as exact historical positions unless historical_match says otherwise. Every mapped location must carry an explicit precision/confidence classification. Narrative sites with approximate_area coordinates use a deterministic point within an approved radius; the radius is stored explicitly. C/D narrative locations remain coordinate-null unless stronger evidence is established.",
   "locations": [
     {"id":"sekigahara","name":"Sekigahara","type":"area","introduced_section":1,"coordinates":[35.3705,136.46164],"coordinate_precision":"exact","geographic_confidence":"exact","historical_match":"strong","modern_name_jp":"関ケ原","modern_name_romaji":"Sekigahara","map_note":"Narrative opening: battlefield region."},
@@ -1170,6 +1170,342 @@
       "map_note": "Book VII staging status: exact site unresolved.",
       "source_chapters": [
         "b7c14"
+      ]
+    },
+    {
+      "id": "mikazuki_ravine",
+      "name": "Ravine near Mikazuki Teahouse",
+      "type": "narrative_site",
+      "introduced_section": 7,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b1c7"
+      ]
+    },
+    {
+      "id": "hachidai_shrine",
+      "name": "Hachidai Shrine",
+      "type": "narrative_site",
+      "introduced_section": 49,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c17"
+      ]
+    },
+    {
+      "id": "edo_new_moat_road",
+      "name": "Road by the new Edo moat",
+      "type": "narrative_site",
+      "introduced_section": 66,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b5c13"
+      ]
+    },
+    {
+      "id": "bakurocho_horse_market",
+      "name": "Bakurōchō horse market",
+      "type": "narrative_site",
+      "introduced_section": 71,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b5c18"
+      ]
+    },
+    {
+      "id": "kojimachi_road",
+      "name": "Kōjimachi road",
+      "type": "narrative_site",
+      "introduced_section": 78,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b5c25"
+      ]
+    },
+    {
+      "id": "mitsumine_inner_approach",
+      "name": "Inner Mitsumine shrine approach",
+      "type": "narrative_site",
+      "introduced_section": 90,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c11"
+      ]
+    },
+    {
+      "id": "hachijoji",
+      "name": "Hachijōji temple and shed",
+      "type": "narrative_site",
+      "introduced_section": 102,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b7c6"
+      ]
+    },
+    {
+      "id": "kanmon_crossing_boat",
+      "name": "Boat crossing the Kanmon Strait",
+      "type": "narrative_site",
+      "introduced_section": 112,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b7c16"
+      ]
+    },
+    {
+      "id": "sarusawa_boardinghouse",
+      "name": "Boardinghouse near Sarusawa Pond",
+      "type": "narrative_site",
+      "introduced_section": 14,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b2c6"
+      ]
+    },
+    {
+      "id": "mount_fudesute",
+      "name": "Mount Fudesute",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "yonkenjaya",
+      "name": "Yonkenjaya",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "yasugawa",
+      "name": "Yasugawa",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "kaga_village",
+      "name": "Kaga Village",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "makado_pass",
+      "name": "Makado Pass",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "seto_otsu",
+      "name": "Seto in Ōtsu",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "omi_lakeside",
+      "name": "Ōmi lakeside",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "keage",
+      "name": "Keage",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "kusatsu_nakasendo",
+      "name": "Kusatsu on the Nakasendō",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
+    },
+    {
+      "id": "hikone_nakasendo",
+      "name": "Hikone on the Nakasendō",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
+    },
+    {
+      "id": "toriimoto",
+      "name": "Toriimoto",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
+    },
+    {
+      "id": "suribachi_pass",
+      "name": "Suribachi Pass",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
+    },
+    {
+      "id": "yajibei_route_house",
+      "name": "Yajibei’s house on Kojirō’s route",
+      "type": "route_waypoint",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c8"
+      ]
+    },
+    {
+      "id": "kanda_hill",
+      "name": "Kanda Hill",
+      "type": "route_waypoint",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c8"
+      ]
+    },
+    {
+      "id": "saikachi_slope",
+      "name": "Saikachi Slope",
+      "type": "route_waypoint",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c8"
       ]
     }
   ]

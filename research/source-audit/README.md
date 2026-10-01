@@ -1,5 +1,13 @@
 # Independent source audit
 
+## Current remediation checkpoint — recovered 2026-10-01
+
+The [chapter review](chapter-review-2026-09-30.md) and [machine-readable inventory](chapter-review-2026-09-30.json) record the current comparison across all 112 chapters. The seven original oracles remain unchanged; first-pass errors are resolved in [separate adjudications](review-adjudications-2026-09-30.json). The old production diffs and remediation plan are historical baselines, not lists of current defects.
+
+The review reuses existing source-first inventories and targeted primary-text rechecks; it is not a newly independent full-text reread or proof of zero loss. A substantial duplicated passage in Book II, chapter 5 and several transcription artifacts require the unavailable original master. Source text is preserved unchanged.
+
+Regenerate with `node tools/generate-source-review.mjs`; verify without writing with `node tools/generate-source-review.mjs --check`.
+
 This directory contains source-first audit material that is intentionally independent from production JSON, generated reports and Books III–VII production manifests.
 
 ## Purpose

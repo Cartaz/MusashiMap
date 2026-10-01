@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "source_rule": "End-of-chapter states are derived only from the chapter source files in data/source. Transient movements are represented in events.json; a null location means the text does not establish a current cartographic position.",
   "character_states": [
     {"chapter":"b1c1","section":1,"character":"musashi","location":"oko_akemi_house","status":"hiding","activity":"arrived wounded with Matahachi and is recovering","certainty":"explicit"},
@@ -39,7 +39,7 @@
     {"chapter":"b1c6","section":6,"character":"osugi","location":"old_cryptomeria_shippoji","status":"present","activity":"confronts Takezo at the punishment scene","certainty":"explicit"},
     {"chapter":"b1c6","section":6,"character":"ogin","location":null,"last_known_location":"hinagura_stockade","status":"imprisoned","activity":"is discussed as imprisoned at Hinagura; she is not physically present on page","certainty":"explicit","location_status":"reported_position"},
     {"chapter":"b1c6","section":6,"character":"matahachi","location":null,"last_known_location":"oko_akemi_house","status":"away","activity":"remains absent and is discussed as the lost Hon'den heir","certainty":"explicit","location_status":"unknown"},
-    {"chapter":"b1c7","section":7,"character":"musashi","location":"himeji_area","status":"travelling","activity":"after attacking Hinagura and learning Ogin was transferred, heads toward Himeji","certainty":"explicit"},
+    {"chapter":"b1c7","section":7,"character":"musashi","location":null,"status":"fled","activity":"Escapes the Hinagura stockade into the gorge; arrival at Himeji is not established in this chapter.","certainty":"explicit","last_known_location":"hinagura_stockade","location_status":"unknown"},
     {"chapter":"b1c7","section":7,"character":"otsu","location":null,"last_known_location":"mikazuki_teahouse","status":"away","activity":"falls ill at Mikazuki, escapes Osugi and Gonroku, and disappears into a ravine; later recovery is established only in chapter 8","certainty":"explicit","location_status":"unknown"},
     {"chapter":"b1c7","section":7,"character":"takuan","location":"shippoji","status":"present","activity":"remains at Shippoji while Takezo and Otsu escape","certainty":"explicit"},
     {"chapter":"b1c7","section":7,"character":"osugi","location":null,"last_known_location":"mikazuki_teahouse","status":"away","activity":"pursues Otsu with Gonroku after reaching the Mikazuki Teahouse","certainty":"explicit","location_status":"unknown"},
@@ -132,7 +132,7 @@
     {"chapter":"b2c11","section":19,"character":"otsu","location":"tsukigase_iga_back_road","status":"travelling","activity":"searches for Musashi with Jotaro, meets Takuan and later parts from him on the road","certainty":"explicit"},
     {"chapter":"b2c11","section":19,"character":"jotaro","location":"koyagyu_castle","status":"returning","activity":"turns back toward Koyagyu Castle to retrieve his mask before following Musashi","certainty":"explicit"},
     {"chapter":"b2c11","section":19,"character":"takuan","location":"tsukigase_iga_back_road","status":"travelling","activity":"meets Otsu and Jotaro near the chestnut tree and speaks with them before they part","certainty":"explicit"},
-    {"chapter":"b2c11","section":19,"character":"sekishusai","location":"sekishusai_mountain_house","status":"present","activity":"remains inside the mountain house; Musashi reaches the gate but does not meet him","certainty":"explicit"},
+    {"chapter":"b2c11","section":19,"character":"sekishusai","location":null,"status":"reported","activity":"Residence and off-page interactions reported; no direct on-page encounter in this chapter.","certainty":"explicit","last_known_location":"sekishusai_mountain_house","location_status":"reported_position"},
     {"chapter":"b2c11","section":19,"character":"kocha","location":null,"last_known_location":"wataya","status":"away","activity":"does not appear physically in the mountain-house and back-road sequence","certainty":"explicit","location_status":"unknown"},
     {"chapter":"b2c11","section":19,"character":"shoda_kizaemon","location":null,"last_known_location":"koyagyu_castle","status":"away","activity":"does not appear physically in the chapter's search and road sequence","certainty":"explicit","location_status":"unknown"},
     {"chapter":"b2c11","section":19,"character":"kimura_sukekuro","location":null,"last_known_location":"koyagyu_castle","status":"away","activity":"does not appear physically after the preceding confrontation","certainty":"explicit","location_status":"unknown"},
@@ -362,19 +362,7 @@
       "scope": "chapter_end",
       "staging_id": "b6c2-state-kojiro"
     },
-    {
-      "chapter": "b6c2",
-      "character": "obata_yogoro",
-      "location": "isarago_hill",
-      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt:L245-L263",
-      "section": 81,
-      "status": "dead",
-      "activity": "Engaged with Kojirō; not marked dead until chapter 82 evidence.",
-      "certainty": "explicit",
-      "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
-      "scope": "chapter_end",
-      "staging_id": "b6c2-state-obata_yogoro"
-    },
+    {"chapter":"b6c2","character":"obata_yogoro","location":"isarago_hill","source_ref":"data/source/book6/chapter2-buzzing-insects.txt:L245-L263","section":81,"status":"present","activity":"Facing Kojirō at Isarago; the chapter ends before his fate is stated.","certainty":"explicit","source_file":"data/source/book6/chapter2-buzzing-insects.txt","scope":"chapter_end","staging_id":"b6c2-state-obata_yogoro"},
     {
       "chapter": "b6c3",
       "character": "okatani_goroji",
@@ -557,19 +545,7 @@
       "scope": "chapter_end",
       "staging_id": "b6c11-state-musashi"
     },
-    {
-      "chapter": "b6c11",
-      "character": "kohei",
-      "location": "kosaruzawa_bridge",
-      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L300-L367",
-      "section": 90,
-      "status": "dead",
-      "activity": "Dead.",
-      "certainty": "explicit",
-      "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
-      "scope": "chapter_end",
-      "staging_id": "b6c11-state-baiken"
-    },
+    {"chapter":"b6c11","character":"kohei","location":"mitsumine_inner_approach","source_ref":"data/source/book6/chapter11-the-demons-attendant.txt:L300-L367","section":90,"status":"dead","activity":"Dead.","certainty":"explicit","source_file":"data/source/book6/chapter11-the-demons-attendant.txt","scope":"chapter_end","staging_id":"b6c11-state-baiken"},
     {
       "chapter": "b6c11",
       "character": "oko",
@@ -583,19 +559,7 @@
       "scope": "chapter_end",
       "staging_id": "b6c11-state-oko"
     },
-    {
-      "chapter": "b6c11",
-      "character": "gion_toji",
-      "location": "kosaruzawa_bridge",
-      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L300-L367",
-      "section": 90,
-      "status": "dead",
-      "activity": "Dead among Gonnosuke's victims; chapter 12 confirms Oko's husband was killed by him.",
-      "certainty": "strong_inference",
-      "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
-      "scope": "chapter_end",
-      "staging_id": "b6c11-state-gion_toji"
-    },
+    {"chapter":"b6c11","character":"gion_toji","location":"mitsumine_inner_approach","source_ref":"data/source/book6/chapter11-the-demons-attendant.txt:L300-L367","section":90,"status":"dead","activity":"Dead among Gonnosuke's victims; chapter 12 confirms Oko's husband was killed by him.","certainty":"strong_inference","source_file":"data/source/book6/chapter11-the-demons-attendant.txt","scope":"chapter_end","staging_id":"b6c11-state-gion_toji"},
     {
       "chapter": "b6c12",
       "character": "iori",
@@ -1127,18 +1091,7 @@
       "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
       "scope": "chapter_end"
     },
-    {
-      "chapter": "b7c11",
-      "character": "musashi",
-      "location": null,
-      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
-      "section": 107,
-      "status": "in_transit",
-      "activity": "Continuing by ship toward Kokura without disembarking.",
-      "certainty": "explicit",
-      "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
-      "scope": "chapter_end"
-    },
+    {"chapter":"b7c11","character":"musashi","location":null,"source_ref":"data/source/book7/chapter11-the-evening-boat.txt:L175-L190","section":107,"status":"reported","activity":"Jōtarō reports that Musashi’s ship continued toward Kokura without disembarkation.","certainty":"explicit","source_file":"data/source/book7/chapter11-the-evening-boat.txt","scope":"chapter_end","last_known_location":"shikama_estuary","location_status":"reported_position"},
     {
       "chapter": "b7c12",
       "character": "kojiro",
@@ -1378,6 +1331,8 @@
       "certainty": "explicit",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "scope": "chapter_end"
-    }
+    },
+    {"chapter":"b6c3","section":82,"character":"obata_yogoro","location":"isarago_hill","status":"dead","activity":"His corpse is directly seen near the temple; this chapter confirms his death.","certainty":"explicit","source_ref":"data/source/book6/chapter3-the-eagle.txt:L49-L76","source_file":"data/source/book6/chapter3-the-eagle.txt","scope":"chapter_end"},
+    {"chapter":"b6c5","section":84,"character":"obata_kagenori","location":null,"status":"dead","activity":"Shinzō reports Kagenori’s death; adoption and succession are still in preparation.","certainty":"explicit","source_ref":"data/source/book6/chapter5-eyes.txt:L170-L185","source_file":"data/source/book6/chapter5-eyes.txt","scope":"chapter_end","last_known_location":"obata_school","location_status":"unknown"}
   ]
 }

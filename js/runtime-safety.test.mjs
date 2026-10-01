@@ -134,7 +134,7 @@ test("Himeji officer keeps one history across the Book I name reveal", () => {
   assert.equal(characters.some(character => character.id === "himeji_captain"), false);
   assert.equal(getVisibleCharacters([officer], 3, { states, events }).length, 0);
   assert.deepEqual(getVisibleCharacters([officer], 4, { states, events }), [officer]);
-  assert.deepEqual(officer.present_in, [4, 5, 6, 20, 21, 30, 91]);
+  assert.deepEqual(officer.present_in, [4, 5, 6, 20, 21, 30, 91, 107]);
   for (let section = 4; section <= 7; section += 1) {
     assert.equal(getDisplayCharacterName(officer, section, identities), "Himeji garrison captain");
   }

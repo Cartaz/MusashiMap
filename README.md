@@ -25,13 +25,15 @@ All seven books are published and validated.
 |---|---:|
 | Books | 7 / 7 |
 | Chapters | 112 / 112 |
-| Characters | 154 |
-| Locations | 229 |
-| Narrative events | 568 |
-| Chapter-level character states | 418 |
-| Relationships | 81 |
+| Characters | 155 |
+| Locations | 253 |
+| Event records (including chapter references) | 758 |
+| Chapter-level character states | 420 |
+| Relationships | 83 |
 
 This table describes repository dataset coverage, not browser UI surfaces. Each validated record in `data/relationships.json` carries a `first_section`, but the current browser runtime does not load or render this dataset and the Pages builder does not publish it. Relationships are retained for audit/research and possible future UI work.
+
+The [chapter-by-chapter source review](research/source-audit/chapter-review-2026-09-30.md), recovered and revalidated on 2026-10-01, records all 112 chapter comparisons, source hashes, corrections and first-pass adjudications. It does not certify loss-free extraction: the original master was unavailable, and the local transcription contains a duplicated passage requiring collation. Internal consistency is not proof of semantic completeness.
 
 `data/reader-progress.json` is the sole publication boundary. Source registration and research manifests never make future material visible by themselves.
 
@@ -104,6 +106,7 @@ Two generated, repository-wide reports make the current audit reproducible:
 ```bash
 node tools/generate-character-chapter-audit.mjs
 node tools/generate-geography-audit.mjs
+node tools/generate-source-review.mjs
 ```
 
 They produce [the character audit](research/character-chapter-audit.md) and [the geography audit](research/geography-book-audit.md).

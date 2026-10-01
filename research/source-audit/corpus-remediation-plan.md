@@ -1,5 +1,7 @@
 # Corpus-wide semantic remediation plan
 
+> Historical baseline. Current corrections and residual source-integrity limits are recorded in [the chapter review](chapter-review-2026-09-30.md), [the intervention register](remediation-2026-09-30.json) and [the roster adjudications](review-adjudications-2026-09-30.json), recovered and revalidated on 2026-10-01. Counts and failures below describe the earlier baseline. A completed comparison is not a loss-free certification against the unavailable original master.
+
 ## Audit baseline
 
 The independent two-pass audit now covers the complete local Terry corpus used by MusashiMap:

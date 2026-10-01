@@ -191,17 +191,20 @@
       "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "characters": [
-        "yoshioka_seijuro",
-        "sasaki_kojiro",
-        "akemi",
+        "kojiro",
         "jotaro",
-        "tamihachi",
+        "akemi",
+        "yoshioka_seijuro",
         "ueda_ryohei",
-        "miike_jurozaemon"
+        "monkey",
+        "miike_jurozaemon",
+        "tamihachi"
       ],
       "referenced_characters": [
         "musashi",
-        "otsu"
+        "osugi",
+        "otsu",
+        "yoshioka_kempo"
       ],
       "groups": [
         "yoshioka_disciples"
@@ -217,7 +220,9 @@
         "b4c1-e02",
         "b4c1-e03",
         "b4c1-e04",
-        "b4c1-e05"
+        "b4c1-e05",
+        "b4c1-audit-s09",
+        "b4c1-audit-references"
       ],
       "character_state_ids": [
         "b4c1-state-musashi",
@@ -238,17 +243,11 @@
         "myoshu"
       ],
       "referenced_characters": [
-        "yoshioka_seijuro",
-        "yoshioka_kempo",
-        "maeda_toshiie",
-        "tokugawa_ieyasu",
-        "oda_nobunaga",
-        "toyotomi_hideyoshi",
-        "imagawa_yoshimoto",
-        "karasumaru_mitsuhiro",
-        "shokado_shojo",
+        "nikkan",
         "sekishusai",
-        "takuan"
+        "takuan",
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -261,7 +260,8 @@
         "b4c2-e01",
         "b4c2-e02",
         "b4c2-e03",
-        "b4c2-e04"
+        "b4c2-e04",
+        "b4c2-audit-references"
       ],
       "character_state_ids": [
         "b4c2-state-musashi",
@@ -276,19 +276,14 @@
       "source_file": "data/source/book4/chapter3-too-many-kojiros.txt",
       "characters": [
         "matahachi",
-        "sasaki_kojiro",
+        "kojiro",
         "akemi",
         "ichinomiya_gempachi"
       ],
       "referenced_characters": [
-        "musashi",
-        "osugi",
-        "oko",
-        "kusanagi_tenki",
         "kanemaki_jisai",
-        "ito_ittosai",
-        "toda_seigen",
-        "akakabe_yasoma"
+        "kusanagi_tenki",
+        "musashi"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -321,20 +316,21 @@
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "characters": [
-        "yoshioka_denshichiro",
-        "yoshioka_seijuro",
         "matahachi",
+        "yoshioka_seijuro",
         "ueda_ryohei",
+        "yoshioka_denshichiro",
         "miike_jurozaemon",
-        "nampo_yoichibei",
-        "otaguro_hyosuke"
+        "otaguro_hyosuke",
+        "nampo_yoichibei"
       ],
       "referenced_characters": [
-        "musashi",
-        "koetsu",
         "gion_toji",
+        "koetsu",
+        "musashi",
         "oko",
-        "osugi"
+        "osugi",
+        "yoshioka_kempo"
       ],
       "groups": [
         "yoshioka_disciples"
@@ -351,7 +347,9 @@
         "b4c4-e03",
         "b4c4-e04",
         "b4c4-e05",
-        "b4c4-e06"
+        "b4c4-e06",
+        "b4c4-audit-s03",
+        "b4c4-audit-references"
       ],
       "character_state_ids": [
         "b4c4-state-denshichiro",
@@ -367,16 +365,19 @@
       "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "characters": [
+        "matahachi",
         "otsu",
+        "takuan",
+        "kojiro",
         "osugi",
         "akemi",
-        "matahachi",
-        "sasaki_kojiro",
-        "takuan",
         "akakabe_yasoma"
       ],
       "referenced_characters": [
-        "musashi"
+        "jotaro",
+        "karasumaru_mitsuhiro",
+        "musashi",
+        "oko"
       ],
       "groups": [
         "temple_watchmen"
@@ -393,7 +394,8 @@
         "b4c5-e04",
         "b4c5-e05",
         "b4c5-e06",
-        "b4c5-e07"
+        "b4c5-e07",
+        "b4c5-audit-references"
       ],
       "character_state_ids": [
         "b4c5-state-otsu",
@@ -414,13 +416,14 @@
         "koetsu",
         "myoshu",
         "haiya_shoyu",
-        "otaguro_hyosuke",
-        "sumigiku"
+        "sumigiku",
+        "rinya",
+        "otaguro_hyosuke"
       ],
       "referenced_characters": [
-        "yoshioka_denshichiro",
+        "karasumaru_mitsuhiro",
         "yoshino_tayu",
-        "karasumaru_mitsuhiro"
+        "yoshioka_denshichiro"
       ],
       "groups": [
         "yoshioka_disciples",
@@ -452,11 +455,17 @@
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "characters": [
         "musashi",
+        "ueda_ryohei",
         "yoshioka_denshichiro",
+        "rinya",
+        "miike_jurozaemon",
         "otaguro_hyosuke",
         "yoshioka_genzaemon"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
+      ],
       "groups": [
         "yoshioka_disciples"
       ],
@@ -469,9 +478,11 @@
       "event_ids": [
         "b4c7-e01",
         "b4c7-e02",
+        "b4c7-audit-arrival",
         "b4c7-e03",
         "b4c7-e04",
-        "b4c7-e05"
+        "b4c7-e05",
+        "b4c7-audit-references"
       ],
       "character_state_ids": [
         "b4c7-state-musashi",
@@ -488,16 +499,18 @@
       "source_file": "data/source/book4/chapter8-the-elegant-people.txt",
       "characters": [
         "musashi",
-        "yoshino_tayu",
-        "koetsu",
         "takuan",
-        "haiya_shoyu",
         "karasumaru_mitsuhiro",
+        "koetsu",
         "konoe_nobutada",
+        "haiya_shoyu",
+        "yoshino_tayu",
         "sumigiku",
         "rinya"
       ],
       "referenced_characters": [
+        "jotaro",
+        "otsu",
         "yoshioka_denshichiro"
       ],
       "groups": [
@@ -512,7 +525,8 @@
         "b4c8-e01",
         "b4c8-e02",
         "b4c8-e03",
-        "b4c8-e04"
+        "b4c8-e04",
+        "b4c8-audit-references"
       ],
       "character_state_ids": [
         "b4c8-state-musashi",
@@ -527,14 +541,16 @@
       "source_file": "data/source/book4/chapter9-the-broken-lute.txt",
       "characters": [
         "musashi",
-        "yoshino_tayu",
-        "koetsu",
         "takuan",
-        "haiya_shoyu",
         "karasumaru_mitsuhiro",
-        "konoe_nobutada"
+        "koetsu",
+        "haiya_shoyu",
+        "yoshino_tayu"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "yoshioka_denshichiro",
+        "yoshioka_seijuro"
+      ],
       "groups": [
         "yoshioka_disciples"
       ],
@@ -547,7 +563,8 @@
         "b4c9-e01",
         "b4c9-e02",
         "b4c9-e03",
-        "b4c9-e04"
+        "b4c9-e04",
+        "b4c9-audit-references"
       ],
       "character_state_ids": [
         "b4c9-state-musashi",
@@ -562,14 +579,15 @@
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "characters": [
         "otsu",
-        "jotaro",
         "takuan",
+        "jotaro",
         "karasumaru_mitsuhiro"
       ],
       "referenced_characters": [
+        "koetsu",
         "musashi",
-        "yoshino_tayu",
-        "koetsu"
+        "myoshu",
+        "yoshino_tayu"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -577,14 +595,16 @@
         "karasumaru_residence",
         "daitokuji",
         "tajima",
-        "ogiya_yanagimachi"
+        "ogiya_yanagimachi",
+        "karasumaru_house"
       ],
       "event_ids": [
         "b4c10-e01",
         "b4c10-e02",
         "b4c10-e03",
         "b4c10-e04",
-        "b4c10-e05"
+        "b4c10-e05",
+        "b4c10-audit-references"
       ],
       "character_state_ids": [
         "b4c10-state-otsu",
@@ -599,13 +619,17 @@
       "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "characters": [
-        "jotaro",
         "musashi",
+        "jotaro",
         "rinya"
       ],
       "referenced_characters": [
-        "yoshino_tayu",
-        "koetsu"
+        "koetsu",
+        "myoshu",
+        "ogin",
+        "otsu",
+        "takuan",
+        "yoshino_tayu"
       ],
       "groups": [
         "ogiya_staff",
@@ -621,7 +645,8 @@
         "b4c11-e02",
         "b4c11-e03",
         "b4c11-e04",
-        "b4c11-e05"
+        "b4c11-e05",
+        "b4c11-audit-references"
       ],
       "character_state_ids": [
         "b4c11-state-musashi",
@@ -637,17 +662,20 @@
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "characters": [
         "musashi",
+        "otsu",
+        "kojiro",
         "jotaro",
-        "sasaki_kojiro",
-        "miike_jurozaemon",
-        "otsu"
+        "miike_jurozaemon"
       ],
       "referenced_characters": [
+        "itakura_katsushige",
+        "karasumaru_mitsuhiro",
+        "takuan",
+        "yoshioka_denshichiro",
         "yoshioka_genjiro",
         "yoshioka_genzaemon",
-        "yoshioka_seijuro",
-        "yoshioka_denshichiro",
-        "itakura_katsushige"
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
       ],
       "groups": [
         "yoshioka_disciples"
@@ -657,7 +685,8 @@
         "ogiya_yanagimachi",
         "yanagi_riding_ground",
         "karasumaru_residence",
-        "ichijoji_sagarimatsu"
+        "ichijoji_sagarimatsu",
+        "karasumaru_house"
       ],
       "event_ids": [
         "b4c12-e01",
@@ -665,7 +694,8 @@
         "b4c12-e03",
         "b4c12-e04",
         "b4c12-e05",
-        "b4c12-e06"
+        "b4c12-e06",
+        "b4c12-audit-references"
       ],
       "character_state_ids": [
         "b4c12-state-musashi",
@@ -685,10 +715,10 @@
         "akemi"
       ],
       "referenced_characters": [
+        "gion_toji",
         "musashi",
-        "otsu",
         "oko",
-        "gion_toji"
+        "otsu"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -700,7 +730,8 @@
         "b4c13-e01",
         "b4c13-e02",
         "b4c13-e03",
-        "b4c13-e04"
+        "b4c13-e04",
+        "b4c13-audit-references"
       ],
       "character_state_ids": [
         "b4c13-state-osugi",
@@ -715,14 +746,16 @@
       "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
       "source_file": "data/source/book4/chapter14-the-death-trap.txt",
       "characters": [
-        "sasaki_kojiro",
-        "yoshioka_genzaemon",
-        "yoshioka_genjiro",
+        "kojiro",
         "miike_jurozaemon",
-        "kobashi_kurando"
+        "yoshioka_genzaemon",
+        "yoshioka_genjiro"
       ],
       "referenced_characters": [
-        "musashi"
+        "akemi",
+        "musashi",
+        "yoshioka_denshichiro",
+        "yoshioka_seijuro"
       ],
       "groups": [
         "yoshioka_disciples"
@@ -735,7 +768,8 @@
         "b4c14-e01",
         "b4c14-e02",
         "b4c14-e03",
-        "b4c14-e04"
+        "b4c14-e04",
+        "b4c14-audit-references"
       ],
       "character_state_ids": [
         "b4c14-state-yoshioka_genjiro",
@@ -750,12 +784,16 @@
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "characters": [
         "musashi",
-        "sasaki_kojiro",
         "otsu",
+        "kojiro",
         "jotaro"
       ],
       "referenced_characters": [
-        "matsuo_kaname"
+        "karasumaru_mitsuhiro",
+        "matsuo_kaname",
+        "musashi_aunt",
+        "ogin",
+        "takuan"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -772,7 +810,8 @@
         "b4c15-e03",
         "b4c15-e04",
         "b4c15-e05",
-        "b4c15-e06"
+        "b4c15-e06",
+        "b4c15-audit-references"
       ],
       "character_state_ids": [
         "b4c15-state-musashi",
@@ -788,25 +827,28 @@
       "source_ref": "data/source/book4/chapter16-stray-geese.txt",
       "source_file": "data/source/book4/chapter16-stray-geese.txt",
       "characters": [
-        "osugi",
         "matahachi",
+        "osugi",
         "akemi"
       ],
       "referenced_characters": [
+        "jotaro",
         "musashi",
-        "jotaro"
+        "otsu"
       ],
       "groups": [],
       "referenced_groups": [],
       "locations": [
         "mount_daimonji_ravine",
-        "edo"
+        "edo",
+        "ichijoji_sagarimatsu"
       ],
       "event_ids": [
         "b4c16-e01",
         "b4c16-e02",
         "b4c16-e03",
-        "b4c16-e04"
+        "b4c16-e04",
+        "b4c16-audit-references"
       ],
       "character_state_ids": [
         "b4c16-state-matahachi",
@@ -822,13 +864,17 @@
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "characters": [
         "musashi",
-        "sasaki_kojiro",
-        "yoshioka_genzaemon",
-        "yoshioka_genjiro",
+        "kojiro",
         "miike_jurozaemon",
-        "kobashi_kurando"
+        "kobashi_kurando",
+        "yoshioka_genzaemon",
+        "yoshioka_genjiro"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "jotaro",
+        "ogin",
+        "otsu"
+      ],
       "groups": [
         "yoshioka_disciples",
         "ichijoji_spectators"
@@ -836,17 +882,20 @@
       "referenced_groups": [],
       "locations": [
         "ichijoji_sagarimatsu",
-        "shugakuin_escape_route"
+        "shugakuin_escape_route",
+        "hachidai_shrine"
       ],
       "event_ids": [
         "b4c17-e01",
         "b4c17-e02",
+        "b4c17-audit-s03",
         "b4c17-e03",
         "b4c17-e04",
         "b4c17-e05",
         "b4c17-e06",
         "b4c17-e07",
-        "b4c17-e08"
+        "b4c17-e08",
+        "b4c17-audit-references"
       ],
       "character_state_ids": [
         "b4c17-state-musashi",
@@ -864,13 +913,14 @@
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "characters": [
         "musashi",
-        "seinen",
-        "osugi"
+        "osugi",
+        "seinen"
       ],
       "referenced_characters": [
+        "otsu",
+        "yoshioka_denshichiro",
         "yoshioka_genjiro",
-        "oda_nobunaga",
-        "toyotomi_hideyoshi"
+        "yoshioka_seijuro"
       ],
       "groups": [
         "mudoji_clergy",
@@ -888,7 +938,8 @@
         "b4c18-e03",
         "b4c18-e04",
         "b4c18-e05",
-        "b4c18-e06"
+        "b4c18-e06",
+        "b4c18-audit-references"
       ],
       "character_state_ids": [
         "b4c18-state-musashi",
@@ -904,14 +955,18 @@
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "characters": [
         "musashi",
-        "osugi",
         "matahachi",
-        "sasaki_kojiro"
+        "kojiro",
+        "osugi"
       ],
       "referenced_characters": [
         "akemi",
+        "karasumaru_mitsuhiro",
         "otsu",
-        "karasumaru_mitsuhiro"
+        "yoshioka_denshichiro",
+        "yoshioka_genjiro",
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
       ],
       "groups": [
         "mount_hiei_priests"
@@ -931,7 +986,8 @@
         "b4c19-e05",
         "b4c19-e06",
         "b4c19-e07",
-        "b4c19-e08"
+        "b4c19-e08",
+        "b4c19-audit-references"
       ],
       "character_state_ids": [
         "b4c19-state-musashi",
@@ -949,12 +1005,14 @@
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "characters": [
         "musashi",
-        "otsu",
-        "jotaro",
         "matahachi",
-        "sasaki_kojiro"
+        "otsu",
+        "kojiro",
+        "jotaro"
       ],
       "referenced_characters": [
+        "akemi",
+        "karasumaru_mitsuhiro",
         "osugi"
       ],
       "groups": [],
@@ -966,7 +1024,11 @@
         "seta_karahashi",
         "nakasendo_omi_mino",
         "nakatsugawa",
-        "edo"
+        "edo",
+        "kusatsu_nakasendo",
+        "hikone_nakasendo",
+        "toriimoto",
+        "suribachi_pass"
       ],
       "event_ids": [
         "b4c20-e01",
@@ -976,7 +1038,8 @@
         "b4c20-e05",
         "b4c20-e06",
         "b4c20-e07",
-        "b4c20-e08"
+        "b4c20-e08",
+        "b4c20-audit-references"
       ],
       "character_state_ids": [
         "b4c20-state-musashi",
@@ -998,7 +1061,8 @@
         "jotaro"
       ],
       "referenced_characters": [
-        "matahachi"
+        "matahachi",
+        "osugi"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -1013,7 +1077,8 @@
         "b4c21-e02",
         "b4c21-e03",
         "b4c21-e04",
-        "b4c21-e05"
+        "b4c21-e05",
+        "b4c21-audit-references"
       ],
       "character_state_ids": [
         "b4c21-state-musashi",
@@ -1059,7 +1124,7 @@
       ]
     },
     {
-      "id": "sasaki_kojiro",
+      "id": "kojiro",
       "name": "Sasaki Kojirō",
       "aliases": [
         "Ganryū"
@@ -1116,7 +1181,12 @@
       ],
       "mentioned_in": [
         "b4c1",
+        "b4c8",
+        "b4c11",
         "b4c13",
+        "b4c16",
+        "b4c17",
+        "b4c18",
         "b4c19"
       ]
     },
@@ -1137,7 +1207,10 @@
         "b4c21"
       ],
       "mentioned_in": [
-        "b4c16"
+        "b4c5",
+        "b4c8",
+        "b4c16",
+        "b4c17"
       ]
     },
     {
@@ -1153,7 +1226,9 @@
         "b4c16"
       ],
       "mentioned_in": [
-        "b4c19"
+        "b4c14",
+        "b4c19",
+        "b4c20"
       ]
     },
     {
@@ -1172,9 +1247,10 @@
         "b4c19"
       ],
       "mentioned_in": [
-        "b4c3",
+        "b4c1",
         "b4c4",
-        "b4c20"
+        "b4c20",
+        "b4c21"
       ]
     },
     {
@@ -1190,7 +1266,12 @@
       ],
       "mentioned_in": [
         "b4c2",
-        "b4c12"
+        "b4c7",
+        "b4c9",
+        "b4c12",
+        "b4c14",
+        "b4c18",
+        "b4c19"
       ]
     },
     {
@@ -1205,7 +1286,11 @@
       "mentioned_in": [
         "b4c6",
         "b4c8",
-        "b4c12"
+        "b4c9",
+        "b4c12",
+        "b4c14",
+        "b4c18",
+        "b4c19"
       ]
     },
     {
@@ -1236,7 +1321,10 @@
         "b4c2",
         "b4c6"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b4c10",
+        "b4c11"
+      ]
     },
     {
       "id": "takuan",
@@ -1250,7 +1338,10 @@
         "b4c10"
       ],
       "mentioned_in": [
-        "b4c2"
+        "b4c2",
+        "b4c11",
+        "b4c12",
+        "b4c15"
       ]
     },
     {
@@ -1267,9 +1358,12 @@
         "b4c10"
       ],
       "mentioned_in": [
-        "b4c2",
+        "b4c5",
         "b4c6",
-        "b4c19"
+        "b4c12",
+        "b4c15",
+        "b4c19",
+        "b4c20"
       ]
     },
     {
@@ -1278,8 +1372,7 @@
       "aliases": [],
       "kind": "narrative_historical",
       "physical_presence": [
-        "b4c8",
-        "b4c9"
+        "b4c8"
       ],
       "mentioned_in": []
     },
@@ -1331,6 +1424,8 @@
       "aliases": [],
       "kind": "narrative",
       "physical_presence": [
+        "b4c6",
+        "b4c7",
         "b4c8",
         "b4c11"
       ],
@@ -1372,9 +1467,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c3"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "toda_seigen",
@@ -1382,9 +1475,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c3"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "ueda_ryohei",
@@ -1393,7 +1484,8 @@
       "kind": "narrative",
       "physical_presence": [
         "b4c1",
-        "b4c4"
+        "b4c4",
+        "b4c7"
       ],
       "mentioned_in": []
     },
@@ -1405,6 +1497,7 @@
       "physical_presence": [
         "b4c1",
         "b4c4",
+        "b4c7",
         "b4c12",
         "b4c14",
         "b4c17"
@@ -1439,7 +1532,6 @@
       "aliases": [],
       "kind": "narrative",
       "physical_presence": [
-        "b4c14",
         "b4c17"
       ],
       "mentioned_in": []
@@ -1469,7 +1561,8 @@
       ],
       "mentioned_in": [
         "b4c12",
-        "b4c18"
+        "b4c18",
+        "b4c19"
       ]
     },
     {
@@ -1490,9 +1583,7 @@
       "physical_presence": [
         "b4c5"
       ],
-      "mentioned_in": [
-        "b4c3"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "matsuo_kaname",
@@ -1523,8 +1614,8 @@
       "kind": "narrative",
       "physical_presence": [],
       "mentioned_in": [
-        "b4c3",
         "b4c4",
+        "b4c5",
         "b4c13"
       ]
     },
@@ -1546,7 +1637,12 @@
       "kind": "historical_context",
       "physical_presence": [],
       "mentioned_in": [
-        "b4c2"
+        "b4c1",
+        "b4c2",
+        "b4c4",
+        "b4c7",
+        "b4c12",
+        "b4c19"
       ]
     },
     {
@@ -1565,10 +1661,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c2",
-        "b4c18"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "toyotomi_hideyoshi",
@@ -1576,10 +1669,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c2",
-        "b4c18"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "tokugawa_ieyasu",
@@ -1587,9 +1677,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c2"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "maeda_toshiie",
@@ -1597,9 +1685,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c2"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "imagawa_yoshimoto",
@@ -1607,9 +1693,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c2"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "shokado_shojo",
@@ -1617,9 +1701,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b4c2"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "sekishusai",
@@ -1629,6 +1711,53 @@
       "physical_presence": [],
       "mentioned_in": [
         "b4c2"
+      ]
+    },
+    {
+      "id": "monkey",
+      "name": "Kojirō's monkey",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [
+        "b4c1"
+      ],
+      "mentioned_in": []
+    },
+    {
+      "id": "musashi_aunt",
+      "name": "Musashi's unnamed aunt",
+      "aliases": [
+        "Kaname's wife"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b4c15"
+      ]
+    },
+    {
+      "id": "nikkan",
+      "name": "Nikkan",
+      "aliases": [
+        "Nikkan",
+        "Hōzōin Nikkan"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b4c2"
+      ]
+    },
+    {
+      "id": "ogin",
+      "name": "Ogin",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b4c11",
+        "b4c15",
+        "b4c17"
       ]
     }
   ],
@@ -1980,6 +2109,92 @@
       "type": "province",
       "mapping_status": "region_only",
       "coordinates": null
+    },
+    {
+      "id": "hachidai_shrine",
+      "name": "Hachidai Shrine",
+      "type": "narrative_site",
+      "introduced_section": 49,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c17"
+      ]
+    },
+    {
+      "id": "hikone_nakasendo",
+      "name": "Hikone on the Nakasendō",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
+    },
+    {
+      "id": "karasumaru_house",
+      "name": "Karasumaru residence at Horikawa",
+      "type": "private_residence",
+      "introduced_section": 27,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "historical_exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Book III staging status: historical exact site unresolved.",
+      "source_chapters": [
+        "b3c8",
+        "b3c10",
+        "b3c13"
+      ]
+    },
+    {
+      "id": "kusatsu_nakasendo",
+      "name": "Kusatsu on the Nakasendō",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
+    },
+    {
+      "id": "suribachi_pass",
+      "name": "Suribachi Pass",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
+    },
+    {
+      "id": "toriimoto",
+      "name": "Toriimoto",
+      "type": "route_waypoint",
+      "introduced_section": 52,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b4c20"
+      ]
     }
   ],
   "events": [
@@ -1991,7 +2206,8 @@
       "characters": [
         "jotaro",
         "ueda_ryohei",
-        "miike_jurozaemon"
+        "miike_jurozaemon",
+        "monkey"
       ],
       "referenced_characters": [
         "otsu"
@@ -2005,7 +2221,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 33
     },
     {
       "id": "b4c1-e02",
@@ -2013,17 +2230,18 @@
       "type": "arrival",
       "description": "Kojirō and Akemi reach the withered field after Akemi's attempted escape.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "akemi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "rendaiji_field",
-      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L315-L317",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 33
     },
     {
       "id": "b4c1-e03",
@@ -2040,13 +2258,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "rendaiji_field",
-      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L290-L303",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 33
     },
     {
       "id": "b4c1-e04",
@@ -2054,7 +2273,7 @@
       "type": "medical_emergency",
       "description": "At Seijūrō's request Kojirō amputates the irreparably injured right arm.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "yoshioka_seijuro",
         "ueda_ryohei"
       ],
@@ -2062,19 +2281,20 @@
       "groups": [],
       "referenced_groups": [],
       "location": "rendaiji_field",
-      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L324-L356",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 33
     },
     {
       "id": "b4c1-e05",
       "chapter": "b4c1",
       "type": "departure",
-      "description": "The Yoshioka party carries Seijūrō toward the Shijō school while Musashi has already gone.",
+      "description": "The Yoshioka party carries Seijūrō away from the field toward the Shijō school and a doctor; arrival is not shown.",
       "characters": [
         "yoshioka_seijuro",
         "ueda_ryohei",
@@ -2087,13 +2307,52 @@
       "referenced_groups": [],
       "location": "rendaiji_field",
       "destination": "yoshioka_school",
-      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L357-L371",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 33
+    },
+    {
+      "id": "b4c1-audit-s09",
+      "chapter": "b4c1",
+      "section": 33,
+      "type": "coercive_relationship",
+      "characters": [
+        "kojiro",
+        "akemi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Kojirō continues to control and taunt Akemi while she fears his cruelty but remains in his company.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "source_file": "data/source/book4/chapter1-the-withered-field.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b4c1-audit-references",
+      "chapter": "b4c1",
+      "section": 33,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "osugi",
+        "yoshioka_kempo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "source_file": "data/source/book4/chapter1-the-withered-field.txt",
+      "movement_status": null
     },
     {
       "id": "b4c2-e01",
@@ -2112,10 +2371,11 @@
       "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt",
       "source_file": "data/source/book4/chapter2-a-man-of-parts.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 34
     },
     {
       "id": "b4c2-e02",
@@ -2134,7 +2394,8 @@
       "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt",
       "source_file": "data/source/book4/chapter2-a-man-of-parts.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 34
     },
     {
       "id": "b4c2-e03",
@@ -2160,13 +2421,14 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 34
     },
     {
       "id": "b4c2-e04",
       "chapter": "b4c2",
       "type": "invitation",
-      "description": "Kōetsu and Myōshū invite Musashi to stay at their Hon’ami Lane home.",
+      "description": "Myōshū and Kōetsu invite Musashi to visit their Hon’ami Lane home; he does not accept a stay in this chapter.",
       "characters": [
         "musashi",
         "koetsu",
@@ -2177,10 +2439,32 @@
       "referenced_groups": [],
       "location": "koetsu_field_picnic",
       "destination": "honami_lane_house",
-      "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt",
+      "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt:L393-L406",
       "source_file": "data/source/book4/chapter2-a-man-of-parts.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": null,
+      "section": 34,
+      "referenced_locations": [
+        "honami_lane_house"
+      ]
+    },
+    {
+      "id": "b4c2-audit-references",
+      "chapter": "b4c2",
+      "section": 34,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "nikkan"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt",
+      "source_file": "data/source/book4/chapter2-a-man-of-parts.txt",
+      "movement_status": null
     },
     {
       "id": "b4c3-e01",
@@ -2191,7 +2475,7 @@
         "matahachi"
       ],
       "referenced_characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "musashi"
       ],
       "groups": [],
@@ -2203,7 +2487,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 35
     },
     {
       "id": "b4c3-e02",
@@ -2226,7 +2511,11 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 35,
+      "via": [
+        "kyoto_south_avenues"
+      ]
     },
     {
       "id": "b4c3-e03",
@@ -2236,7 +2525,7 @@
       "characters": [
         "matahachi",
         "akemi",
-        "sasaki_kojiro"
+        "kojiro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2245,7 +2534,8 @@
       "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt",
       "source_file": "data/source/book4/chapter3-too-many-kojiros.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 35
     },
     {
       "id": "b4c3-e04",
@@ -2254,20 +2544,21 @@
       "description": "Kojirō identifies himself and his Ganryū name, then knocks the impostor unconscious.",
       "characters": [
         "matahachi",
-        "sasaki_kojiro",
+        "kojiro",
         "akemi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "matsubara_pine_wood",
-      "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt",
+      "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt:L362-L424",
       "source_file": "data/source/book4/chapter3-too-many-kojiros.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 35
     },
     {
       "id": "b4c3-e05",
@@ -2291,7 +2582,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 35
     },
     {
       "id": "b4c3-e06",
@@ -2301,7 +2593,7 @@
       "characters": [
         "matahachi",
         "ichinomiya_gempachi",
-        "sasaki_kojiro"
+        "kojiro"
       ],
       "referenced_characters": [
         "kanemaki_jisai"
@@ -2315,19 +2607,21 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 35
     },
     {
       "id": "b4c3-e07",
       "chapter": "b4c3",
       "type": "departure",
-      "description": "Gempachi leaves for Kōzuke; Matahachi remains tied to a tree with an impostor notice while Akemi has escaped again.",
+      "description": "Gempachi leaves intending to return to Kōzuke; Matahachi remains tied to a tree with an impostor notice while Akemi has escaped again.",
       "characters": [
+        "ichinomiya_gempachi"
+      ],
+      "referenced_characters": [
         "matahachi",
-        "ichinomiya_gempachi",
         "akemi"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "matsubara_pine_wood",
@@ -2335,10 +2629,11 @@
       "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt",
       "source_file": "data/source/book4/chapter3-too-many-kojiros.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 35
     },
     {
       "id": "b4c4-e01",
@@ -2355,7 +2650,8 @@
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 36
     },
     {
       "id": "b4c4-e02",
@@ -2376,7 +2672,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 36
     },
     {
       "id": "b4c4-e03",
@@ -2400,7 +2697,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 36
     },
     {
       "id": "b4c4-e04",
@@ -2408,22 +2706,24 @@
       "type": "rupture",
       "description": "Denshichirō rejects restraint; Nampo Yoichibei leaves the school rather than support revenge.",
       "characters": [
+        "nampo_yoichibei"
+      ],
+      "referenced_characters": [
         "yoshioka_denshichiro",
-        "nampo_yoichibei",
         "miike_jurozaemon",
         "otaguro_hyosuke"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "yoshioka_school",
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 36
     },
     {
       "id": "b4c4-e05",
@@ -2446,7 +2746,8 @@
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 36
     },
     {
       "id": "b4c4-e06",
@@ -2463,10 +2764,51 @@
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 36
+    },
+    {
+      "id": "b4c4-audit-s03",
+      "chapter": "b4c4",
+      "section": 36,
+      "type": "deception",
+      "characters": [
+        "matahachi",
+        "yoshioka_denshichiro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Matahachi gives Denshichirō a distorted story portraying Musashi as the abductor of his fiancée and himself as a revenge-seeker.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
+      "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b4c4-audit-references",
+      "chapter": "b4c4",
+      "section": 36,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gion_toji",
+        "oko",
+        "osugi",
+        "yoshioka_kempo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
+      "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
+      "movement_status": null
     },
     {
       "id": "b4c5-e01",
@@ -2488,7 +2830,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 37
     },
     {
       "id": "b4c5-e02",
@@ -2508,7 +2851,8 @@
       "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 37
     },
     {
       "id": "b4c5-e03",
@@ -2516,7 +2860,7 @@
       "type": "encounter",
       "description": "Kojirō, still searching for Akemi, crosses the group's path.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "otsu",
         "osugi"
       ],
@@ -2532,7 +2876,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 37
     },
     {
       "id": "b4c5-e04",
@@ -2556,7 +2901,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 37
     },
     {
       "id": "b4c5-e05",
@@ -2574,13 +2920,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mountain_god_hall",
-      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt:L580-L726",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 37
     },
     {
       "id": "b4c5-e06",
@@ -2595,10 +2942,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mountain_god_hall",
-      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt:L810-L821",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 37
     },
     {
       "id": "b4c5-e07",
@@ -2606,21 +2954,43 @@
       "type": "flight",
       "description": "Takuan confronts Osugi; Osugi and Matahachi flee the scene.",
       "characters": [
-        "takuan",
         "osugi",
         "matahachi"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "takuan"
+      ],
       "groups": [],
       "referenced_groups": [],
       "location": "mountain_god_hall",
       "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 37
+    },
+    {
+      "id": "b4c5-audit-references",
+      "chapter": "b4c5",
+      "section": 37,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "jotaro",
+        "karasumaru_mitsuhiro",
+        "oko"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
+      "movement_status": null
     },
     {
       "id": "b4c6-e01",
@@ -2642,7 +3012,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 38
     },
     {
       "id": "b4c6-e02",
@@ -2664,7 +3035,8 @@
       "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 38
     },
     {
       "id": "b4c6-e03",
@@ -2675,7 +3047,8 @@
         "musashi",
         "koetsu",
         "haiya_shoyu",
-        "sumigiku"
+        "sumigiku",
+        "rinya"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2684,13 +3057,14 @@
       "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 38
     },
     {
       "id": "b4c6-e04",
       "chapter": "b4c6",
       "type": "poetry_exchange",
-      "description": "Musashi's blank-paper response reaches Yoshino while she entertains Karasumaru's courtly party off-page.",
+      "description": "Shōyū drafts an invitation poem, Kōetsu completes it and Sumigiku carries it to Yoshino’s party. Karasumaru returns blank paper; Kōetsu interprets its whiteness as snow and a refusal to leave the other guests. Musashi does not author the reply.",
       "characters": [
         "musashi",
         "sumigiku"
@@ -2702,19 +3076,20 @@
       "groups": [],
       "referenced_groups": [],
       "location": "ogiya_yanagimachi",
-      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
+      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt:L468-L535",
       "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 38
     },
     {
       "id": "b4c6-e05",
       "chapter": "b4c6",
       "type": "departure",
-      "description": "Musashi quietly leaves the Ōgiya to keep the duel appointment.",
+      "description": "Musashi quietly leaves the Ōgiya intending to keep the duel appointment at Rengeōin.",
       "characters": [
         "musashi"
       ],
@@ -2728,10 +3103,11 @@
       "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 38
     },
     {
       "id": "b4c7-e01",
@@ -2739,7 +3115,8 @@
       "type": "route",
       "description": "Musashi walks through snowy Shijō, the Kamo crossing and Gion woods to Rengeōin.",
       "characters": [
-        "musashi"
+        "musashi",
+        "rinya"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2752,17 +3129,19 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 39
     },
     {
       "id": "b4c7-e02",
       "chapter": "b4c7",
       "type": "duel_setup",
-      "description": "Denshichirō waits with Ōtaguro and Yoshioka retainers; Musashi appears from the veranda after warming himself.",
+      "description": "Denshichirō waits at Rengeōin with Ōtaguro and senior Yoshioka retainers; Musashi has not entered this scene.",
       "characters": [
-        "musashi",
         "yoshioka_denshichiro",
-        "otaguro_hyosuke"
+        "otaguro_hyosuke",
+        "ueda_ryohei",
+        "miike_jurozaemon"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2771,7 +3150,27 @@
       "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 39
+    },
+    {
+      "id": "b4c7-audit-arrival",
+      "chapter": "b4c7",
+      "section": 39,
+      "type": "duel_setup",
+      "characters": [
+        "musashi",
+        "yoshioka_denshichiro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "rengeoin_sanjusangendo",
+      "description": "Musashi reaches Rengeōin, warms himself in the temple and takes the veranda position before revealing himself.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "movement_status": null
     },
     {
       "id": "b4c7-e03",
@@ -2787,13 +3186,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt:L398-L423",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 39
     },
     {
       "id": "b4c7-e04",
@@ -2808,13 +3208,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt:L398-L427",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 39
     },
     {
       "id": "b4c7-e05",
@@ -2822,20 +3223,43 @@
       "type": "escape",
       "description": "Genzaemon and the disciples search while Musashi hides under the eaves and escapes from the north side.",
       "characters": [
-        "musashi",
+        "musashi"
+      ],
+      "referenced_characters": [
         "yoshioka_genzaemon"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "rengeoin_sanjusangendo",
       "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "direction_only",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 39,
+      "origin": "rengeoin_sanjusangendo",
+      "destination": "unknown"
+    },
+    {
+      "id": "b4c7-audit-references",
+      "chapter": "b4c7",
+      "section": 39,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "movement_status": null
     },
     {
       "id": "b4c8-e01",
@@ -2859,7 +3283,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 40
     },
     {
       "id": "b4c8-e02",
@@ -2880,7 +3305,8 @@
       "source_ref": "data/source/book4/chapter8-the-elegant-people.txt",
       "source_file": "data/source/book4/chapter8-the-elegant-people.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 40
     },
     {
       "id": "b4c8-e03",
@@ -2905,7 +3331,8 @@
       "source_ref": "data/source/book4/chapter8-the-elegant-people.txt",
       "source_file": "data/source/book4/chapter8-the-elegant-people.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 40
     },
     {
       "id": "b4c8-e04",
@@ -2928,7 +3355,27 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 40
+    },
+    {
+      "id": "b4c8-audit-references",
+      "chapter": "b4c8",
+      "section": 40,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "jotaro",
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter8-the-elegant-people.txt",
+      "source_file": "data/source/book4/chapter8-the-elegant-people.txt",
+      "movement_status": null
     },
     {
       "id": "b4c9-e01",
@@ -2941,8 +3388,7 @@
         "koetsu",
         "takuan",
         "haiya_shoyu",
-        "karasumaru_mitsuhiro",
-        "konoe_nobutada"
+        "karasumaru_mitsuhiro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2954,7 +3400,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 41
     },
     {
       "id": "b4c9-e02",
@@ -2975,7 +3422,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 41
     },
     {
       "id": "b4c9-e03",
@@ -2996,7 +3444,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 41
     },
     {
       "id": "b4c9-e04",
@@ -3017,7 +3466,27 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 41
+    },
+    {
+      "id": "b4c9-audit-references",
+      "chapter": "b4c9",
+      "section": 41,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "yoshioka_denshichiro",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter9-the-broken-lute.txt",
+      "source_file": "data/source/book4/chapter9-the-broken-lute.txt",
+      "movement_status": null
     },
     {
       "id": "b4c10-e01",
@@ -3032,14 +3501,15 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 42
     },
     {
       "id": "b4c10-e02",
@@ -3055,35 +3525,38 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 42
     },
     {
       "id": "b4c10-e03",
       "chapter": "b4c10",
       "type": "departure",
-      "description": "Takuan entrusts Otsū and Jōtarō to Karasumaru, then departs immediately for Tajima.",
+      "description": "Takuan entrusts Otsū and Jōtarō to Karasumaru, then departs intending to reach his seriously ill mother in Tajima.",
       "characters": [
-        "takuan",
+        "takuan"
+      ],
+      "referenced_characters": [
         "karasumaru_mitsuhiro",
         "otsu",
         "jotaro"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "destination": "tajima",
       "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 42
     },
     {
       "id": "b4c10-e04",
@@ -3100,38 +3573,59 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 42
     },
     {
       "id": "b4c10-e05",
       "chapter": "b4c10",
       "type": "departure",
-      "description": "Jōtarō angrily sets out to find Yanagimachi and the Ōgiya.",
+      "description": "Jōtarō angrily sets out intending to find Yanagimachi and the Ōgiya; Otsū remains ill at Karasumaru's residence.",
       "characters": [
-        "jotaro",
-        "otsu"
+        "jotaro"
       ],
       "referenced_characters": [
+        "otsu",
         "musashi"
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "destination": "ogiya_yanagimachi",
       "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 42
+    },
+    {
+      "id": "b4c10-audit-references",
+      "chapter": "b4c10",
+      "section": 42,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "koetsu",
+        "myoshu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
+      "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
+      "movement_status": null
     },
     {
       "id": "b4c11-e01",
@@ -3148,7 +3642,8 @@
       "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 43
     },
     {
       "id": "b4c11-e02",
@@ -3166,7 +3661,8 @@
       "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 43
     },
     {
       "id": "b4c11-e03",
@@ -3189,7 +3685,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 43
     },
     {
       "id": "b4c11-e04",
@@ -3212,7 +3709,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 43
     },
     {
       "id": "b4c11-e05",
@@ -3230,32 +3728,56 @@
       "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 43
+    },
+    {
+      "id": "b4c11-audit-references",
+      "chapter": "b4c11",
+      "section": 43,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "myoshu",
+        "ogin",
+        "otsu",
+        "takuan"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
+      "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
+      "movement_status": null
     },
     {
       "id": "b4c12-e01",
       "chapter": "b4c12",
       "type": "confrontation",
-      "description": "Yoshioka men surround the disguised Musashi and Jōtarō at the Yanagimachi gate.",
+      "description": "Musashi sends Jōtarō over the wall before the Yoshioka confrontation at the Yanagimachi gate.",
       "characters": [
         "musashi",
-        "jotaro",
         "miike_jurozaemon"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "jotaro"
+      ],
       "groups": [],
       "referenced_groups": [],
       "location": "ogiya_yanagimachi",
-      "source_ref": "data/source/book4/chapter12-the-gate.txt",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt:L291-L328",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 44
     },
     {
       "id": "b4c12-e02",
@@ -3263,7 +3785,7 @@
       "type": "intervention",
       "description": "Kojirō prevents an illegal street melee and invokes magistrate Itakura's authority.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "musashi",
         "miike_jurozaemon"
       ],
@@ -3279,7 +3801,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 44
     },
     {
       "id": "b4c12-e03",
@@ -3288,7 +3811,7 @@
       "description": "A public duel is set for five the morning after next at the spreading pine; child Genjirō is named Yoshioka representative with disciples as seconds.",
       "characters": [
         "musashi",
-        "sasaki_kojiro",
+        "kojiro",
         "miike_jurozaemon"
       ],
       "referenced_characters": [
@@ -3302,13 +3825,14 @@
       "source_ref": "data/source/book4/chapter12-the-gate.txt",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 44
     },
     {
       "id": "b4c12-e04",
       "chapter": "b4c12",
-      "type": "separation",
-      "description": "Musashi and Jōtarō separate at the Yanagi Riding Grounds after escaping the crowd.",
+      "type": "reunion",
+      "description": "Musashi and Jōtarō reunite at the Yanagi Riding Grounds after escaping the crowd.",
       "characters": [
         "musashi",
         "jotaro"
@@ -3317,13 +3841,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "yanagi_riding_ground",
-      "source_ref": "data/source/book4/chapter12-the-gate.txt",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt:L291-L328",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 44
     },
     {
       "id": "b4c12-e05",
@@ -3331,22 +3856,23 @@
       "type": "refusal",
       "description": "At Karasumaru's rear gate Musashi refuses to visit sick Otsū before the likely fatal duel and leaves Jōtarō a message.",
       "characters": [
-        "musashi",
-        "jotaro"
+        "musashi"
       ],
       "referenced_characters": [
+        "jotaro",
         "otsu"
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter12-the-gate.txt",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 44
     },
     {
       "id": "b4c12-e06",
@@ -3362,14 +3888,37 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter12-the-gate.txt",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 44
+    },
+    {
+      "id": "b4c12-audit-references",
+      "chapter": "b4c12",
+      "section": 44,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "karasumaru_mitsuhiro",
+        "takuan",
+        "yoshioka_denshichiro",
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt",
+      "source_file": "data/source/book4/chapter12-the-gate.txt",
+      "movement_status": null
     },
     {
       "id": "b4c13-e01",
@@ -3392,7 +3941,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 45
     },
     {
       "id": "b4c13-e02",
@@ -3416,7 +3966,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 45
     },
     {
       "id": "b4c13-e03",
@@ -3434,16 +3985,19 @@
       "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
       "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "uncertain_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 45,
+      "origin": "sannen_hill_inn",
+      "destination": "unknown"
     },
     {
       "id": "b4c13-e04",
       "chapter": "b4c13",
       "type": "departure",
-      "description": "Around two in the morning Osugi and Matahachi leave with a drawn map for Ichijōji.",
+      "description": "Around two in the morning Osugi and Matahachi leave with a drawn map, intending to reach Ichijōji.",
       "characters": [
         "osugi",
         "matahachi"
@@ -3458,10 +4012,29 @@
       "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
       "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 45
+    },
+    {
+      "id": "b4c13-audit-references",
+      "chapter": "b4c13",
+      "section": 45,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+      "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+      "movement_status": null
     },
     {
       "id": "b4c14-e01",
@@ -3471,8 +4044,7 @@
       "characters": [
         "yoshioka_genzaemon",
         "yoshioka_genjiro",
-        "miike_jurozaemon",
-        "kobashi_kurando"
+        "miike_jurozaemon"
       ],
       "referenced_characters": [
         "musashi"
@@ -3486,7 +4058,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 46
     },
     {
       "id": "b4c14-e02",
@@ -3494,7 +4067,7 @@
       "type": "arrival",
       "description": "Kojirō arrives as an observer and clashes verbally with the Yoshioka group.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "yoshioka_genzaemon",
         "miike_jurozaemon"
       ],
@@ -3505,7 +4078,8 @@
       "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
       "source_file": "data/source/book4/chapter14-the-death-trap.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 46
     },
     {
       "id": "b4c14-e03",
@@ -3513,7 +4087,7 @@
       "type": "intelligence",
       "description": "Kojirō supplies a hostile account of Musashi's past and tactical habits.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "yoshioka_genzaemon",
         "miike_jurozaemon"
       ],
@@ -3529,7 +4103,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 46
     },
     {
       "id": "b4c14-e04",
@@ -3537,7 +4112,7 @@
       "type": "unresolved_plan",
       "description": "Kojirō whispers an additional trick intended to ensure Musashi arrives; the text withholds its content.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "yoshioka_genzaemon"
       ],
       "referenced_characters": [
@@ -3552,7 +4127,28 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 46
+    },
+    {
+      "id": "b4c14-audit-references",
+      "chapter": "b4c14",
+      "section": 46,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "akemi",
+        "yoshioka_denshichiro",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
+      "source_file": "data/source/book4/chapter14-the-death-trap.txt",
+      "movement_status": null
     },
     {
       "id": "b4c15-e01",
@@ -3572,7 +4168,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 47
     },
     {
       "id": "b4c15-e02",
@@ -3594,7 +4191,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 47
     },
     {
       "id": "b4c15-e03",
@@ -3603,20 +4201,21 @@
       "description": "At the Upper Kamo crossing Kojirō warns Musashi about the Yoshioka numbers; Musashi insists on going alone.",
       "characters": [
         "musashi",
-        "sasaki_kojiro"
+        "kojiro"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "upper_kamo_bridge",
       "destination": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L180-L213",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 47
     },
     {
       "id": "b4c15-e04",
@@ -3638,7 +4237,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 47
     },
     {
       "id": "b4c15-e05",
@@ -3659,30 +4259,54 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 47
     },
     {
       "id": "b4c15-e06",
       "chapter": "b4c15",
       "type": "departure",
-      "description": "Musashi leaves Otsū and Jōtarō and continues toward Ichijōji.",
+      "description": "Musashi leaves Otsū and Jōtarō and continues toward Ichijōji; arrival is not shown in this chapter.",
       "characters": [
-        "musashi",
+        "musashi"
+      ],
+      "referenced_characters": [
         "otsu",
         "jotaro"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "ichijoji_mountain_approach",
       "destination": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L545-L565",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 47
+    },
+    {
+      "id": "b4c15-audit-references",
+      "chapter": "b4c15",
+      "section": 47,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "karasumaru_mitsuhiro",
+        "musashi_aunt",
+        "ogin",
+        "takuan"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "movement_status": null
     },
     {
       "id": "b4c16-e01",
@@ -3705,7 +4329,9 @@
       "movement_status": "uncertain_route",
       "extensions": {
         "legacy_movement_status": "uncertain"
-      }
+      },
+      "section": 48,
+      "destination": "ichijoji_sagarimatsu"
     },
     {
       "id": "b4c16-e02",
@@ -3728,7 +4354,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 48
     },
     {
       "id": "b4c16-e03",
@@ -3749,7 +4376,8 @@
       "source_ref": "data/source/book4/chapter16-stray-geese.txt",
       "source_file": "data/source/book4/chapter16-stray-geese.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 48
     },
     {
       "id": "b4c16-e04",
@@ -3758,20 +4386,40 @@
       "description": "Matahachi chooses Akemi and leaves Osugi alone on the mountain.",
       "characters": [
         "matahachi",
-        "akemi",
+        "akemi"
+      ],
+      "referenced_characters": [
         "osugi"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "mount_daimonji_ravine",
       "source_ref": "data/source/book4/chapter16-stray-geese.txt",
       "source_file": "data/source/book4/chapter16-stray-geese.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 48
+    },
+    {
+      "id": "b4c16-audit-references",
+      "chapter": "b4c16",
+      "section": 48,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter16-stray-geese.txt",
+      "source_file": "data/source/book4/chapter16-stray-geese.txt",
+      "movement_status": null
     },
     {
       "id": "b4c17-e01",
@@ -3779,7 +4427,7 @@
       "type": "arrival",
       "description": "Kojirō reaches the spreading pine and takes an elevated observer's position.",
       "characters": [
-        "sasaki_kojiro",
+        "kojiro",
         "yoshioka_genzaemon",
         "yoshioka_genjiro"
       ],
@@ -3790,7 +4438,8 @@
       "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 49
     },
     {
       "id": "b4c17-e02",
@@ -3807,7 +4456,26 @@
       "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 49
+    },
+    {
+      "id": "b4c17-audit-s03",
+      "chapter": "b4c17",
+      "section": 49,
+      "type": "spiritual_crisis",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hachidai_shrine",
+      "description": "At Hachidai Shrine Musashi nearly prays for supernatural protection, stops himself and reframes the episode as a warning against hidden attachment to life.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "movement_status": null
     },
     {
       "id": "b4c17-e03",
@@ -3827,7 +4495,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 49
     },
     {
       "id": "b4c17-e04",
@@ -3842,13 +4511,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt:L205-L233",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 49
     },
     {
       "id": "b4c17-e05",
@@ -3865,13 +4535,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt:L265-L305",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 49
     },
     {
       "id": "b4c17-e06",
@@ -3891,7 +4562,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 49
     },
     {
       "id": "b4c17-e07",
@@ -3911,7 +4583,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 49
     },
     {
       "id": "b4c17-e08",
@@ -3931,7 +4604,31 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 49,
+      "via": [
+        "shugakuin_escape_route"
+      ]
+    },
+    {
+      "id": "b4c17-audit-references",
+      "chapter": "b4c17",
+      "section": 49,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "jotaro",
+        "ogin",
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "movement_status": null
     },
     {
       "id": "b4c18-e01",
@@ -3952,7 +4649,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 50
     },
     {
       "id": "b4c18-e02",
@@ -3975,7 +4673,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 50
     },
     {
       "id": "b4c18-e03",
@@ -3995,7 +4694,8 @@
       "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 50
     },
     {
       "id": "b4c18-e04",
@@ -4016,7 +4716,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 50
     },
     {
       "id": "b4c18-e05",
@@ -4038,13 +4739,14 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 50
     },
     {
       "id": "b4c18-e06",
       "chapter": "b4c18",
-      "type": "departure",
-      "description": "The temple supplies a cow; Musashi leads it toward Ōtsu with Osugi riding, leaving the Kannon behind.",
+      "type": "departure_preparation",
+      "description": "The temple supplies a cow for the planned descent toward Ōtsu; Musashi and the ill Osugi remain at Mudōji at chapter end.",
       "characters": [
         "musashi",
         "osugi",
@@ -4053,14 +4755,35 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "mount_hiei_otsu_road",
-      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "location": "mudoji_mount_hiei",
+      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L333-L344",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 50
+    },
+    {
+      "id": "b4c18-audit-references",
+      "chapter": "b4c18",
+      "section": 50,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "otsu",
+        "yoshioka_denshichiro",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "movement_status": null
     },
     {
       "id": "b4c19-e01",
@@ -4081,7 +4804,11 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 51,
+      "via": [
+        "mount_hiei_otsu_road"
+      ]
     },
     {
       "id": "b4c19-e02",
@@ -4089,17 +4816,20 @@
       "type": "escape",
       "description": "After secretly drinking fresh milk, Osugi abandons Musashi and escapes toward Sakamoto or Ōtsu.",
       "characters": [
-        "osugi",
+        "osugi"
+      ],
+      "referenced_characters": [
         "musashi"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "mount_hiei_otsu_road",
       "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "explicit",
-      "movement_status": "direction_only"
+      "movement_status": "direction_only",
+      "section": 51,
+      "destination_label": "Sakamoto or Ōtsu"
     },
     {
       "id": "b4c19-e03",
@@ -4120,7 +4850,8 @@
       "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 51
     },
     {
       "id": "b4c19-e04",
@@ -4138,29 +4869,30 @@
       "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 51
     },
     {
       "id": "b4c19-e05",
       "chapter": "b4c19",
       "type": "departure_report",
       "description": "Akemi, who had traveled with Matahachi, has already left the inn with their belongings and money.",
-      "characters": [
-        "matahachi"
-      ],
+      "characters": [],
       "referenced_characters": [
-        "akemi"
+        "akemi",
+        "matahachi"
       ],
       "groups": [],
       "referenced_groups": [],
       "location": "otsu_pass_inn",
-      "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
+      "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt:L282-L310",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 51
     },
     {
       "id": "b4c19-e06",
@@ -4179,7 +4911,8 @@
       "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 51
     },
     {
       "id": "b4c19-e07",
@@ -4187,10 +4920,10 @@
       "type": "errand",
       "description": "Musashi sends Matahachi to find Osugi and meet him at Seta's Kara Bridge.",
       "characters": [
-        "musashi",
         "matahachi"
       ],
       "referenced_characters": [
+        "musashi",
         "osugi"
       ],
       "groups": [],
@@ -4200,7 +4933,8 @@
       "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 51
     },
     {
       "id": "b4c19-e08",
@@ -4209,7 +4943,7 @@
       "description": "Kojirō arrives with three Mount Hiei priests, disparages Musashi to stonecutters, then discovers Musashi overheard him; their future rivalry is acknowledged.",
       "characters": [
         "musashi",
-        "sasaki_kojiro"
+        "kojiro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -4218,7 +4952,29 @@
       "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 51
+    },
+    {
+      "id": "b4c19-audit-references",
+      "chapter": "b4c19",
+      "section": 51,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "yoshioka_denshichiro",
+        "yoshioka_genjiro",
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
+      "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
+      "movement_status": null
     },
     {
       "id": "b4c20-e01",
@@ -4241,7 +4997,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 52
     },
     {
       "id": "b4c20-e02",
@@ -4265,7 +5022,8 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 52
     },
     {
       "id": "b4c20-e03",
@@ -4286,7 +5044,8 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 52
     },
     {
       "id": "b4c20-e04",
@@ -4305,7 +5064,8 @@
       "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 52
     },
     {
       "id": "b4c20-e05",
@@ -4325,30 +5085,32 @@
       "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 52
     },
     {
       "id": "b4c20-e06",
       "chapter": "b4c20",
       "type": "delay",
-      "description": "Matahachi is diverted near a brothel by Kojirō, becomes drunk and misses the Seta rendezvous.",
+      "description": "Matahachi is diverted into an unidentified brothel by Kojirō, becomes drunk and misses the Seta rendezvous.",
       "characters": [
         "matahachi",
-        "sasaki_kojiro"
+        "kojiro"
       ],
       "referenced_characters": [
         "musashi"
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "seta_karahashi",
-      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "location": null,
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt:L231-L339",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 52
     },
     {
       "id": "b4c20-e07",
@@ -4371,7 +5133,15 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 52,
+      "origin": "seta_karahashi",
+      "via": [
+        "kusatsu_nakasendo",
+        "hikone_nakasendo",
+        "toriimoto",
+        "suribachi_pass"
+      ]
     },
     {
       "id": "b4c20-e08",
@@ -4394,7 +5164,28 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 52
+    },
+    {
+      "id": "b4c20-audit-references",
+      "chapter": "b4c20",
+      "section": 52,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "akemi",
+        "karasumaru_mitsuhiro",
+        "osugi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "source_file": "data/source/book4/chapter20-entwining-branches.txt",
+      "movement_status": null
     },
     {
       "id": "b4c21-e01",
@@ -4413,7 +5204,8 @@
       "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 53
     },
     {
       "id": "b4c21-e02",
@@ -4436,7 +5228,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 53
     },
     {
       "id": "b4c21-e03",
@@ -4455,7 +5248,8 @@
       "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 53
     },
     {
       "id": "b4c21-e04",
@@ -4469,13 +5263,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "otaki_metaki",
-      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt:L114-L158",
       "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 53
     },
     {
       "id": "b4c21-e05",
@@ -4491,13 +5286,32 @@
       "groups": [],
       "referenced_groups": [],
       "location": "otaki_metaki",
-      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt:L159-L174",
       "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 53
+    },
+    {
+      "id": "b4c21-audit-references",
+      "chapter": "b4c21",
+      "section": 53,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "osugi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "movement_status": null
     }
   ],
   "character_states": [
@@ -4517,7 +5331,7 @@
       "chapter": "b4c1",
       "character": "yoshioka_seijuro",
       "state": "Alive, gravely wounded and newly one-armed; being carried home.",
-      "location": "yoshioka_school",
+      "location": null,
       "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "unspecified",
@@ -4526,9 +5340,9 @@
     {
       "id": "b4c1-state-sasaki_kojiro",
       "chapter": "b4c1",
-      "character": "sasaki_kojiro",
-      "state": "At the field with Akemi after the emergency amputation.",
-      "location": "rendaiji_field",
+      "character": "kojiro",
+      "state": "Leaves the field with Akemi; their immediate destination is not established.",
+      "location": null,
       "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "unspecified",
@@ -4538,8 +5352,8 @@
       "id": "b4c1-state-jotaro",
       "chapter": "b4c1",
       "character": "jotaro",
-      "state": "Still searching for Otsū.",
-      "location": "rendaiji_field",
+      "state": "Last seen searching the field for Otsū; his final position is not restated.",
+      "location": null,
       "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "unspecified",
@@ -4549,8 +5363,8 @@
       "id": "b4c2-state-musashi",
       "chapter": "b4c2",
       "character": "musashi",
-      "state": "Accepts the Hon’ami invitation.",
-      "location": "koetsu_field_picnic",
+      "state": "Leaves the field alone; immediate destination unknown.",
+      "location": null,
       "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt",
       "source_file": "data/source/book4/chapter2-a-man-of-parts.txt",
       "certainty": "unspecified",
@@ -4560,9 +5374,9 @@
       "id": "b4c2-state-koetsu",
       "chapter": "b4c2",
       "character": "koetsu",
-      "state": "Becomes Musashi's host and artistic interlocutor.",
+      "state": "Invites Musashi to visit Hon'ami Lane; no stay has yet been accepted.",
       "location": "koetsu_field_picnic",
-      "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt",
+      "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt:L393-L406",
       "source_file": "data/source/book4/chapter2-a-man-of-parts.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -4573,7 +5387,7 @@
       "character": "matahachi",
       "state": "Tied to a pine with a public impostor notice.",
       "location": "matsubara_pine_wood",
-      "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt",
+      "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt:L638-L668",
       "source_file": "data/source/book4/chapter3-too-many-kojiros.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -4603,7 +5417,7 @@
     {
       "id": "b4c3-state-sasaki_kojiro",
       "chapter": "b4c3",
-      "character": "sasaki_kojiro",
+      "character": "kojiro",
       "state": "Searching for Akemi.",
       "location": null,
       "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt",
@@ -4661,7 +5475,7 @@
       "character": "otsu",
       "state": "Alive but unconscious, under the rescuers' care.",
       "location": "mountain_god_hall",
-      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt:L810-L821",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -4672,7 +5486,7 @@
       "character": "akakabe_yasoma",
       "state": "Dead; watchmen prepare burial.",
       "location": "mountain_god_hall",
-      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt:L716-L726",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -4749,7 +5563,7 @@
       "character": "yoshioka_denshichiro",
       "state": "Dead.",
       "location": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt:L398-L427",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -4760,7 +5574,7 @@
       "character": "otaguro_hyosuke",
       "state": "Dead.",
       "location": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt:L398-L427",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -4825,7 +5639,7 @@
       "chapter": "b4c10",
       "character": "otsu",
       "state": "Ill and sheltered by Karasumaru.",
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "unspecified",
@@ -4879,9 +5693,9 @@
       "id": "b4c11-state-yoshino_tayu",
       "chapter": "b4c11",
       "character": "yoshino_tayu",
-      "state": "Remains inside the Ōgiya.",
-      "location": "ogiya_yanagimachi",
-      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
+      "state": "Reported busy with guests inside the Ōgiya; she is not directly present in the scene.",
+      "location": null,
+      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt:L152-L192",
       "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -4902,7 +5716,7 @@
       "chapter": "b4c12",
       "character": "otsu",
       "state": "Outside Karasumaru's rear gate with Jōtarō.",
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter12-the-gate.txt",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "unspecified",
@@ -4913,7 +5727,7 @@
       "chapter": "b4c12",
       "character": "jotaro",
       "state": "With Otsū, carrying Musashi's farewell message.",
-      "location": "karasumaru_residence",
+      "location": "karasumaru_house",
       "source_ref": "data/source/book4/chapter12-the-gate.txt",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "unspecified",
@@ -4966,7 +5780,7 @@
     {
       "id": "b4c14-state-sasaki_kojiro",
       "chapter": "b4c14",
-      "character": "sasaki_kojiro",
+      "character": "kojiro",
       "state": "Present as observer and tactical adviser, not a declared combatant.",
       "location": "ichijoji_sagarimatsu",
       "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
@@ -4980,7 +5794,7 @@
       "character": "musashi",
       "state": "Continuing alone toward the spreading pine.",
       "location": null,
-      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L545-L565",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5010,10 +5824,10 @@
     {
       "id": "b4c15-state-sasaki_kojiro",
       "chapter": "b4c15",
-      "character": "sasaki_kojiro",
+      "character": "kojiro",
       "state": "Ahead toward the duel site.",
-      "location": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "location": null,
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L180-L213",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5068,7 +5882,7 @@
       "character": "yoshioka_genjiro",
       "state": "Dead.",
       "location": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt:L205-L233",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5079,7 +5893,7 @@
       "character": "miike_jurozaemon",
       "state": "Dead.",
       "location": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt:L265-L305",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5090,7 +5904,7 @@
       "character": "kobashi_kurando",
       "state": "Struck by Musashi; survival is unresolved.",
       "location": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt:L265-L305",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5098,7 +5912,7 @@
     {
       "id": "b4c17-state-sasaki_kojiro",
       "chapter": "b4c17",
-      "character": "sasaki_kojiro",
+      "character": "kojiro",
       "state": "Observer of the battle; not recorded fighting.",
       "location": "ichijoji_sagarimatsu",
       "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
@@ -5110,9 +5924,9 @@
       "id": "b4c18-state-musashi",
       "chapter": "b4c18",
       "character": "musashi",
-      "state": "Descending toward Ōtsu, leading Osugi's cow.",
-      "location": "mount_hiei_otsu_road",
-      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "state": "At Mudōji after accepting the cow for a planned descent toward Ōtsu.",
+      "location": "mudoji_mount_hiei",
+      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L325-L344",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5121,9 +5935,9 @@
       "id": "b4c18-state-osugi",
       "chapter": "b4c18",
       "character": "osugi",
-      "state": "Ill and riding the cow under Musashi's care.",
-      "location": "mount_hiei_otsu_road",
-      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "state": "Ill and under Musashi's care at Mudōji; the descent has not yet begun.",
+      "location": "mudoji_mount_hiei",
+      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L325-L344",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5178,7 +5992,7 @@
       "character": "akemi",
       "state": "Traveling alone after leaving Matahachi; destination unresolved.",
       "location": null,
-      "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
+      "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt:L282-L310",
       "source_file": "data/source/book4/chapter19-a-drink-of-milk.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5186,7 +6000,7 @@
     {
       "id": "b4c19-state-sasaki_kojiro",
       "chapter": "b4c19",
-      "character": "sasaki_kojiro",
+      "character": "kojiro",
       "state": "Now openly regards Musashi as a future rival.",
       "location": "otsu_pass_inn",
       "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
@@ -5198,9 +6012,9 @@
       "id": "b4c20-state-musashi",
       "chapter": "b4c20",
       "character": "musashi",
-      "state": "Traveling east on the Nakasendō with Otsū and Jōtarō.",
-      "location": "nakasendo_omi_mino",
-      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "state": "Traveling east with Otsū and Jōtarō near Nakatsugawa.",
+      "location": "nakatsugawa",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt:L345-L365",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5209,9 +6023,9 @@
       "id": "b4c20-state-otsu",
       "chapter": "b4c20",
       "character": "otsu",
-      "state": "Traveling east with Musashi and Jōtarō, riding the cow when seen by Matahachi.",
-      "location": "nakasendo_omi_mino",
-      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "state": "Traveling east with Musashi and Jōtarō near Nakatsugawa, riding the cow when seen by Matahachi.",
+      "location": "nakatsugawa",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt:L345-L365",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5220,9 +6034,9 @@
       "id": "b4c20-state-jotaro",
       "chapter": "b4c20",
       "character": "jotaro",
-      "state": "Traveling east with Musashi and Otsū.",
-      "location": "nakasendo_omi_mino",
-      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "state": "Traveling east with Musashi and Otsū near Nakatsugawa.",
+      "location": "nakatsugawa",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt:L345-L365",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5231,9 +6045,9 @@
       "id": "b4c20-state-matahachi",
       "chapter": "b4c20",
       "character": "matahachi",
-      "state": "Following the group east, now resentful of Musashi.",
-      "location": "nakasendo_omi_mino",
-      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "state": "Catches sight of the group near Nakatsugawa and turns resentfully against Musashi.",
+      "location": "nakatsugawa",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt:L345-L365",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5241,10 +6055,10 @@
     {
       "id": "b4c20-state-sasaki_kojiro",
       "chapter": "b4c20",
-      "character": "sasaki_kojiro",
-      "state": "Behind the eastbound party after diverting Matahachi.",
+      "character": "kojiro",
+      "state": "Remains at the unidentified brothel after diverting Matahachi; his subsequent route is not established.",
       "location": null,
-      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt:L231-L339",
       "source_file": "data/source/book4/chapter20-entwining-branches.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5255,7 +6069,7 @@
       "character": "musashi",
       "state": "Performing austerity under the male waterfall; alive and still oriented toward the eastward journey.",
       "location": "otaki_metaki",
-      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt:L114-L158",
       "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5266,7 +6080,7 @@
       "character": "otsu",
       "state": "Waiting in the hut with Musashi's clothing and swords.",
       "location": "otaki_metaki",
-      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt:L159-L174",
       "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5277,7 +6091,7 @@
       "character": "jotaro",
       "state": "At the waterfalls with Otsū; the planned Edo journey is paused, not completed.",
       "location": "otaki_metaki",
-      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt:L159-L174",
       "source_file": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
       "certainty": "unspecified",
       "scope": "chapter_end"
@@ -5446,7 +6260,7 @@
       "id": "b4-relationship-06",
       "participants": [
         "musashi",
-        "sasaki_kojiro"
+        "kojiro"
       ],
       "type": "emerging_rival",
       "chapter_ids": [
@@ -5463,7 +6277,7 @@
         "original": {
           "subject": "musashi",
           "predicate": "emerging_rival",
-          "object": "sasaki_kojiro",
+          "object": "kojiro",
           "evidence": [
             "b4c15-e03",
             "b4c19-e08"
@@ -5476,7 +6290,7 @@
       "id": "b4-relationship-07",
       "participants": [
         "matahachi",
-        "sasaki_kojiro"
+        "kojiro"
       ],
       "type": "impersonates",
       "chapter_ids": [
@@ -5492,7 +6306,7 @@
         "original": {
           "subject": "matahachi",
           "predicate": "impersonates",
-          "object": "sasaki_kojiro",
+          "object": "kojiro",
           "evidence": [
             "b4c3-e01",
             "b4c3-e04"
@@ -5637,9 +6451,9 @@
       "certainty": "unspecified",
       "extensions": {
         "original": {
-          "subject": "seijuro",
+          "subject": "yoshioka_seijuro",
           "predicate": "brother_and_predecessor",
-          "object": "denshichiro",
+          "object": "yoshioka_denshichiro",
           "evidence": [
             "b4c4-e03",
             "b4c4-e06"
@@ -6089,7 +6903,7 @@
         ]
       },
       {
-        "character": "sasaki_kojiro",
+        "character": "kojiro",
         "physical_presence": [
           "b4c1",
           "b4c3",
@@ -6178,7 +6992,7 @@
         ]
       },
       {
-        "character": "seijuro",
+        "character": "yoshioka_seijuro",
         "physical_presence": [
           "b4c1",
           "b4c4"
@@ -6189,7 +7003,7 @@
         ]
       },
       {
-        "character": "denshichiro",
+        "character": "yoshioka_denshichiro",
         "physical_presence": [
           "b4c4",
           "b4c7"

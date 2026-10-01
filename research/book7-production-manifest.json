@@ -173,18 +173,20 @@
       "source_ref": "book7/chapter1",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "characters": [
+        "otsu",
         "inshun",
         "kimura_sukekuro",
-        "otsu",
         "yagyu_hyogo",
-        "ushinosuke",
-        "hamada_toranosuke"
+        "hamada_toranosuke",
+        "ushinosuke"
       ],
       "referenced_characters": [
-        "sekishusai",
-        "munenori",
+        "in_ei",
+        "jotaro",
+        "kojiro",
         "mikogami_tenzen",
-        "kojiro"
+        "munenori",
+        "sekishusai"
       ],
       "groups": [
         "hozo_in_party",
@@ -202,10 +204,13 @@
         "b7c1-e02",
         "b7c1-e03",
         "b7c1-e04",
-        "b7c1-e05"
+        "b7c1-e05",
+        "b7c1-audit-references"
       ],
       "character_state_ids": [
-        "b7-final-state-toranosuke"
+        "b7-final-state-toranosuke",
+        "b7c1-state-otsu",
+        "b7c1-state-yagyu_hyogo"
       ],
       "end_summary": "Otsū is safe with Sukekurō near Hannya; Toranosuke leaves after correcting the false warning; Ushinosuke's immediate return is not shown until the next chapter."
     },
@@ -216,21 +221,22 @@
       "source_ref": "book7/chapter2",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "characters": [
-        "yagyu_hyogo",
         "otsu",
         "kimura_sukekuro",
+        "gonnosuke",
+        "iori",
+        "yagyu_hyogo",
         "ushinosuke",
         "nankobo",
         "daun",
-        "toriumi_benzo",
-        "gonnosuke",
-        "iori"
+        "toriumi_benzo"
       ],
       "referenced_characters": [
-        "takuan",
+        "mikogami_tenzen",
+        "munenori",
         "musashi",
         "sekishusai",
-        "munenori"
+        "takuan"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -245,11 +251,14 @@
         "b7c2-e02",
         "b7c2-e03",
         "b7c2-e04",
-        "b7c2-e05"
+        "b7c2-e05",
+        "b7c2-audit-references"
       ],
       "character_state_ids": [
         "b7-final-state-yagyu_hyogo",
-        "b7-final-state-ushinosuke"
+        "b7-final-state-ushinosuke",
+        "b7c2-state-iori",
+        "b7c2-state-gonnosuke"
       ],
       "end_summary": "Otsū is already traveling toward Edo; Gonnosuke and Iori leave Nara still seeking her; Hyōgo, Sukekurō and Ushinosuke remain associated with Koyagyū."
     },
@@ -260,19 +269,23 @@
       "source_ref": "book7/chapter3",
       "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "characters": [
+        "koetsu",
+        "myoshu",
         "gonnosuke",
         "iori",
         "toriumi_benzo",
         "oan",
         "toroku",
-        "koetsu",
-        "myoshu",
         "sugizo",
         "gensuke"
       ],
       "referenced_characters": [
+        "hojo_ujikatsu",
+        "kimura_sukekuro",
         "musashi",
-        "otsu"
+        "otsu",
+        "toyotomi_hideyoshi",
+        "yagyu_hyogo"
       ],
       "groups": [
         "kongoji_clergy",
@@ -288,9 +301,13 @@
         "b7c3-e01",
         "b7c3-e02",
         "b7c3-e03",
-        "b7c3-e04"
+        "b7c3-e04",
+        "b7c3-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c3-state-iori",
+        "b7c3-state-gonnosuke"
+      ],
       "end_summary": "Gonnosuke is a bound captive being taken toward the Mount Kudo network; Iori is alive in the ravine but separated, with his exact immediate route unknown."
     },
     {
@@ -300,17 +317,19 @@
       "source_ref": "book7/chapter4",
       "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
       "characters": [
+        "gonnosuke",
         "nagaoka_sado",
+        "toriumi_benzo",
         "nuinosuke",
         "sanada_daisuke",
         "daisuke_wife",
-        "sanada_yukimura",
-        "toriumi_benzo",
-        "gonnosuke"
+        "sanada_yukimura"
       ],
       "referenced_characters": [
+        "gudo",
+        "hosokawa_tadatoshi",
         "musashi",
-        "hosokawa_tadaoki"
+        "toyotomi_hideyoshi"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -323,9 +342,13 @@
         "b7c4-e01",
         "b7c4-e02",
         "b7c4-e03",
-        "b7c4-e04"
+        "b7c4-e04",
+        "b7c4-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c4-state-gonnosuke",
+        "b7c4-state-nagaoka_sado"
+      ],
       "end_summary": "Sado and Nuinosuke continue their journey; Gonnosuke remains captive at Kamuro under Daisuke and Benzō pending Yukimura's judgment."
     },
     {
@@ -335,15 +358,15 @@
       "source_ref": "book7/chapter5",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "characters": [
+        "otsu",
+        "kojiro",
         "iori",
+        "nagaoka_sado",
+        "nuinosuke",
         "osei",
         "otsuru",
         "sahei",
-        "nambanya",
-        "kojiro",
-        "nagaoka_sado",
-        "nuinosuke",
-        "otsu"
+        "nambanya"
       ],
       "referenced_characters": [
         "gonnosuke",
@@ -365,9 +388,13 @@
         "b7c5-e03",
         "b7c5-e04",
         "b7c5-e05",
-        "b7c5-e06"
+        "b7c5-e06",
+        "b7c5-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c5-state-iori",
+        "b7c5-state-kojiro"
+      ],
       "end_summary": "Iori is aboard Tatsumimaru under Sado's protection, bound for Kokura; Otsū has passed through Sakai without reuniting with him."
     },
     {
@@ -384,8 +411,10 @@
         "miyake_gumbei"
       ],
       "referenced_characters": [
+        "kojiro",
         "otsu",
-        "takuan"
+        "takuan",
+        "yoshioka_kempo"
       ],
       "groups": [
         "honda_attackers",
@@ -396,16 +425,21 @@
         "okazaki_fish_district",
         "yahagi_bridge",
         "honda_castle",
-        "tokaido_west"
+        "tokaido_west",
+        "hachijoji"
       ],
       "event_ids": [
         "b7c6-e01",
         "b7c6-e02",
         "b7c6-e03",
         "b7c6-e04",
-        "b7c6-e05"
+        "b7c6-e05",
+        "b7c6-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c6-state-musashi",
+        "b7c6-state-matahachi"
+      ],
       "end_summary": "Gudō, Matahachi and Musashi are traveling west from Okazaki; Musashi has abandoned the Muka residence after his identity became exposed."
     },
     {
@@ -419,7 +453,9 @@
         "matahachi",
         "gudo"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "otsu"
+      ],
       "groups": [],
       "referenced_groups": [],
       "locations": [
@@ -432,10 +468,13 @@
         "b7c7-e01",
         "b7c7-e02",
         "b7c7-e03",
-        "b7c7-e04"
+        "b7c7-e04",
+        "b7c7-e05",
+        "b7c7-audit-references"
       ],
       "character_state_ids": [
-        "b7-final-state-gudo"
+        "b7-final-state-gudo",
+        "b7c7-state-musashi"
       ],
       "end_summary": "Gudō and Matahachi continue toward Kyoto; Musashi remains on the pass with a new insight, but his immediate destination is unstated."
     },
@@ -447,13 +486,16 @@
       "source_file": "data/source/book7/chapter8-shikama-blue.txt",
       "characters": [
         "otsu",
-        "jotaro",
         "osugi",
+        "jotaro",
         "asaya_mambei"
       ],
       "referenced_characters": [
-        "musashi",
+        "aoki_tanzaemon",
         "kojiro",
+        "musashi",
+        "nagaoka_sado",
+        "ogin",
         "takuan"
       ],
       "groups": [
@@ -466,16 +508,22 @@
         "mikazuki_shrine",
         "mikazuki_cave",
         "sayo_river",
-        "mikazuki_inn"
+        "mikazuki_inn",
+        "himeji_aoki"
       ],
       "event_ids": [
         "b7c8-e01",
         "b7c8-e02",
         "b7c8-e03",
         "b7c8-e04",
-        "b7c8-e05"
+        "b7c8-e05",
+        "b7c8-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c8-state-otsu",
+        "b7c8-state-jotaro",
+        "b7c8-state-osugi"
+      ],
       "end_summary": "Otsū and Jōtarō are at the Mikazuki inn planning Himeji; Osugi is confined in the cave; surviving Hon'iden men are dispersed or wounded."
     },
     {
@@ -489,7 +537,9 @@
         "osugi",
         "jotaro"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "matahachi"
+      ],
       "groups": [
         "honiden_men"
       ],
@@ -504,9 +554,13 @@
         "b7c9-e02",
         "b7c9-e03",
         "b7c9-e04",
-        "b7c9-e05"
+        "b7c9-e05",
+        "b7c9-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c9-state-otsu",
+        "b7c9-state-osugi"
+      ],
       "end_summary": "Otsū is unconscious but receiving aid; Osugi is remorseful and directing her own men to rescue Otsū; Jōtarō remains unaware at the inn."
     },
     {
@@ -517,19 +571,22 @@
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "characters": [
         "musashi",
-        "koetsu",
         "matahachi",
-        "haiya_shoeki",
-        "yoshino_dayu",
-        "gonnosuke",
         "akemi",
-        "akemi_baby"
+        "koetsu",
+        "yoshino_second",
+        "gonnosuke",
+        "akemi_baby",
+        "haiya_shoeki"
       ],
       "referenced_characters": [
+        "gudo",
+        "haiya_shoyu",
         "iori",
         "kojiro",
         "nagaoka_sado",
-        "sanada_yukimura"
+        "sanada_yukimura",
+        "yoshino_tayu"
       ],
       "groups": [
         "hosokawa_party"
@@ -544,10 +601,14 @@
         "b7c10-e02",
         "b7c10-e03",
         "b7c10-e04",
-        "b7c10-e05"
+        "b7c10-e05",
+        "b7c10-e06",
+        "b7c10-audit-references"
       ],
       "character_state_ids": [
-        "b7-final-state-honami_koetsu"
+        "b7-final-state-honami_koetsu",
+        "b7c10-state-musashi",
+        "b7c10-state-matahachi"
       ],
       "end_summary": "Musashi is sailing west; Gonnosuke and Kōetsu are in Osaka; Matahachi has gone after Akemi and her baby, with paternity unresolved."
     },
@@ -561,10 +622,12 @@
         "otsu",
         "osugi",
         "jotaro",
-        "musashi"
+        "aoki_tanzaemon"
       ],
       "referenced_characters": [
-        "gonnosuke"
+        "matahachi",
+        "musashi",
+        "ogin"
       ],
       "groups": [
         "himeji_samurai"
@@ -573,15 +636,23 @@
       "locations": [
         "shippoji",
         "himeji_aoki",
-        "shikama_estuary"
+        "shikama_estuary",
+        "kokura"
       ],
       "event_ids": [
         "b7c11-e01",
+        "b7c11-audit-aoki",
         "b7c11-e02",
         "b7c11-e03",
-        "b7c11-e04"
+        "b7c11-e04",
+        "b7c11-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c11-state-otsu",
+        "b7c11-state-osugi",
+        "b7c11-state-jotaro",
+        "b7c11-state-musashi"
+      ],
       "end_summary": "Otsū, Osugi and Jōtarō prepare to travel from Shikama toward Kokura; Musashi's ship continues west without a reunion."
     },
     {
@@ -592,16 +663,18 @@
       "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "characters": [
         "kojiro",
+        "hosokawa_tadatoshi",
         "iwama_kakubei",
         "omitsu",
         "tatsunosuke",
-        "ujiie_magoshiro",
-        "hosokawa_tadatoshi"
+        "ujiie_magoshiro"
       ],
       "referenced_characters": [
-        "musashi",
+        "kanemaki_jisai",
         "mikogami_tenzen",
-        "sekishusai"
+        "musashi",
+        "sekishusai",
+        "toda_seigen"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -612,11 +685,17 @@
       ],
       "event_ids": [
         "b7c12-e01",
+        "b7c12-audit-s02",
         "b7c12-e02",
         "b7c12-e03",
-        "b7c12-e04"
+        "b7c12-e04",
+        "b7c12-audit-s09",
+        "b7c12-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c12-state-kojiro",
+        "b7c12-state-omitsu"
+      ],
       "end_summary": "Kojirō is at his Itatsu River house preparing for the Funashima duel; Omitsu and Kakubei contemplate marriage only after his return."
     },
     {
@@ -627,18 +706,20 @@
       "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "characters": [
         "matahachi",
-        "akemi",
-        "akemi_baby",
-        "ichinomiya_gempachi",
         "kojiro",
+        "akemi",
+        "ichinomiya_gempachi",
         "omitsu",
+        "akemi_baby",
         "tatsunosuke",
         "kojiro_aunt"
       ],
       "referenced_characters": [
-        "musashi",
-        "iwama_kakubei",
         "hosokawa_tadatoshi",
+        "ito_ittosai",
+        "kanemaki_jisai",
+        "kusanagi_tenki",
+        "musashi",
         "osugi"
       ],
       "groups": [
@@ -653,11 +734,18 @@
       "event_ids": [
         "b7c13-e01",
         "b7c13-e02",
+        "b7c13-audit-s03",
         "b7c13-e03",
         "b7c13-e04",
-        "b7c13-e05"
+        "b7c13-e05",
+        "b7c13-audit-s07",
+        "b7c13-audit-references"
       ],
-      "character_state_ids": [],
+      "character_state_ids": [
+        "b7c13-state-kojiro",
+        "b7c13-state-matahachi",
+        "b7c13-state-akemi"
+      ],
       "end_summary": "Kojirō remains at his crowded house under intense pressure to win; Matahachi, Akemi and the baby are lodged in Kokura."
     },
     {
@@ -668,22 +756,21 @@
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "characters": [
         "musashi",
-        "iori",
-        "nuinosuke",
-        "nagaoka_sado",
-        "kobayashi_tarozaemon",
         "matahachi",
         "akemi",
+        "iori",
+        "nagaoka_sado",
         "akemi_baby",
+        "nuinosuke",
+        "kobayashi_tarozaemon",
         "utsumi_magobeinojo",
         "koyama_handayu",
         "kinami_kagashiro"
       ],
       "referenced_characters": [
-        "kojiro",
-        "iwama_kakubei",
         "hosokawa_tadatoshi",
-        "hosokawa_tadaoki"
+        "iwama_kakubei",
+        "kojiro"
       ],
       "groups": [
         "shimmen_six"
@@ -694,14 +781,17 @@
         "moji",
         "kokura",
         "tarozaemon_house",
-        "kokura_hill"
+        "kokura_hill",
+        "funashima"
       ],
       "event_ids": [
         "b7c14-e01",
         "b7c14-e02",
         "b7c14-e03",
         "b7c14-e04",
-        "b7c14-e05"
+        "b7c14-e05",
+        "b7c14-e06",
+        "b7c14-audit-references"
       ],
       "character_state_ids": [
         "b7-final-state-matahachi",
@@ -717,22 +807,22 @@
       "source_ref": "book7/chapter15",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "characters": [
-        "nuinosuke",
-        "kojiro",
-        "tatsunosuke",
-        "omitsu",
-        "kobayashi_tarozaemon",
-        "sasuke",
-        "otsuru",
         "musashi",
-        "gonnosuke",
-        "osugi",
         "otsu",
-        "jotaro"
+        "kojiro",
+        "osugi",
+        "jotaro",
+        "gonnosuke",
+        "omitsu",
+        "nuinosuke",
+        "otsuru",
+        "tatsunosuke",
+        "kobayashi_tarozaemon",
+        "sasuke"
       ],
       "referenced_characters": [
-        "nagaoka_sado",
-        "hosokawa_tadatoshi"
+        "hosokawa_tadatoshi",
+        "nagaoka_sado"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -749,7 +839,9 @@
         "b7c15-e03",
         "b7c15-e04",
         "b7c15-e05",
-        "b7c15-e06"
+        "b7c15-e06",
+        "b7c15-e07",
+        "b7c15-audit-references"
       ],
       "character_state_ids": [
         "b7-final-state-otsu",
@@ -768,19 +860,19 @@
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "characters": [
         "musashi",
-        "sasuke",
         "kojiro",
-        "tatsunosuke",
-        "nagaoka_sado",
         "iori",
-        "iwama_kakubei"
+        "nagaoka_sado",
+        "iwama_kakubei",
+        "tatsunosuke",
+        "sasuke"
       ],
       "referenced_characters": [
-        "otsu",
-        "osugi",
+        "akemi",
         "gonnosuke",
         "matahachi",
-        "akemi"
+        "osugi",
+        "otsu"
       ],
       "groups": [
         "kojiro_supporters",
@@ -790,7 +882,8 @@
       "locations": [
         "shimonoseki",
         "hikojima",
-        "funashima"
+        "funashima",
+        "kanmon_crossing_boat"
       ],
       "event_ids": [
         "b7c16-e01",
@@ -798,7 +891,8 @@
         "b7c16-e03",
         "b7c16-e04",
         "b7c16-e05",
-        "b7c16-e06"
+        "b7c16-e06",
+        "b7c16-audit-references"
       ],
       "character_state_ids": [
         "b7-final-state-musashi",
@@ -826,7 +920,6 @@
         "b7c6",
         "b7c7",
         "b7c10",
-        "b7c11",
         "b7c14",
         "b7c15",
         "b7c16"
@@ -837,6 +930,7 @@
         "b7c4",
         "b7c5",
         "b7c8",
+        "b7c11",
         "b7c12",
         "b7c13"
       ]
@@ -858,6 +952,7 @@
       "mentioned_in": [
         "b7c3",
         "b7c6",
+        "b7c7",
         "b7c16"
       ]
     },
@@ -874,7 +969,9 @@
         "b7c11",
         "b7c15"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b7c1"
+      ]
     },
     {
       "id": "matahachi",
@@ -889,6 +986,8 @@
         "b7c14"
       ],
       "mentioned_in": [
+        "b7c9",
+        "b7c11",
         "b7c16"
       ]
     },
@@ -952,7 +1051,6 @@
       ],
       "mentioned_in": [
         "b7c5",
-        "b7c11",
         "b7c16"
       ]
     },
@@ -990,6 +1088,7 @@
       ],
       "mentioned_in": [
         "b7c1",
+        "b7c6",
         "b7c8",
         "b7c10",
         "b7c14"
@@ -1006,7 +1105,9 @@
         "b7c1",
         "b7c2"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b7c3"
+      ]
     },
     {
       "id": "kimura_sukekuro",
@@ -1019,7 +1120,9 @@
         "b7c1",
         "b7c2"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b7c3"
+      ]
     },
     {
       "id": "ushinosuke",
@@ -1168,6 +1271,7 @@
         "b7c16"
       ],
       "mentioned_in": [
+        "b7c8",
         "b7c10",
         "b7c15"
       ]
@@ -1269,7 +1373,10 @@
         "b7c6",
         "b7c7"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b7c4",
+        "b7c10"
+      ]
     },
     {
       "id": "watari_shima",
@@ -1316,12 +1423,13 @@
       "mentioned_in": []
     },
     {
-      "id": "yoshino_dayu",
-      "name": "Yoshino Dayū",
+      "id": "yoshino_second",
+      "name": "Second Yoshino Tayū",
       "aliases": [
-        "Shōeki's second wife"
+        "Second Yoshino Dayū",
+        "Shōeki's wife"
       ],
-      "kind": "narrative_historical",
+      "kind": "narrative_unverified",
       "physical_presence": [
         "b7c10"
       ],
@@ -1339,7 +1447,6 @@
         "b7c16"
       ],
       "mentioned_in": [
-        "b7c13",
         "b7c14"
       ]
     },
@@ -1389,6 +1496,7 @@
         "b7c12"
       ],
       "mentioned_in": [
+        "b7c4",
         "b7c13",
         "b7c14",
         "b7c15"
@@ -1523,6 +1631,7 @@
       "physical_presence": [],
       "mentioned_in": [
         "b7c1",
+        "b7c2",
         "b7c12"
       ]
     },
@@ -1534,9 +1643,147 @@
       ],
       "kind": "historical_context",
       "physical_presence": [],
+      "mentioned_in": []
+    },
+    {
+      "id": "aoki_tanzaemon",
+      "name": "Aoki Tanzaemon",
+      "aliases": [
+        "Tanzaemon"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [
+        "b7c11"
+      ],
       "mentioned_in": [
-        "b7c4",
-        "b7c14"
+        "b7c8"
+      ]
+    },
+    {
+      "id": "haiya_shoyu",
+      "name": "Haiya Shōyū",
+      "aliases": [
+        "Funabashi"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c10"
+      ]
+    },
+    {
+      "id": "hojo_ujikatsu",
+      "name": "Hōjō Ujikatsu",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c3"
+      ]
+    },
+    {
+      "id": "ito_ittosai",
+      "name": "Itō Ittōsai",
+      "aliases": [
+        "Itō Yagorō"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c13"
+      ]
+    },
+    {
+      "id": "kanemaki_jisai",
+      "name": "Kanemaki Jisai",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c12",
+        "b7c13"
+      ]
+    },
+    {
+      "id": "kusanagi_tenki",
+      "name": "Kusanagi Tenki",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c13"
+      ]
+    },
+    {
+      "id": "ogin",
+      "name": "Ogin",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c8",
+        "b7c11"
+      ]
+    },
+    {
+      "id": "toda_seigen",
+      "name": "Toda Seigen",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c12"
+      ]
+    },
+    {
+      "id": "toyotomi_hideyoshi",
+      "name": "Toyotomi Hideyoshi",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c3",
+        "b7c4"
+      ]
+    },
+    {
+      "id": "yoshino_tayu",
+      "name": "Yoshino Tayū",
+      "aliases": [
+        "Yoshino Dayū"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c10"
+      ]
+    },
+    {
+      "id": "yoshioka_kempo",
+      "name": "Yoshioka Kempō",
+      "aliases": [
+        "Yoshioka Kenpō",
+        "Kempō"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c6"
+      ]
+    },
+    {
+      "id": "in_ei",
+      "name": "Kakuzenbō Hōzōin In'ei",
+      "aliases": [
+        "Kakuzenbō In'ei",
+        "Hōzōin In'ei",
+        "In'ei",
+        "Kakuzenbo"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b7c1"
       ]
     }
   ],
@@ -1954,6 +2201,34 @@
       "type": "viewpoint_area",
       "mapping_status": "exact_site_unresolved",
       "coordinates": null
+    },
+    {
+      "id": "hachijoji",
+      "name": "Hachijōji temple and shed",
+      "type": "narrative_site",
+      "introduced_section": 102,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b7c6"
+      ]
+    },
+    {
+      "id": "kanmon_crossing_boat",
+      "name": "Boat crossing the Kanmon Strait",
+      "type": "narrative_site",
+      "introduced_section": 112,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b7c16"
+      ]
     }
   ],
   "events": [
@@ -1973,10 +2248,11 @@
       ],
       "referenced_groups": [],
       "location": "koyagyu_castle",
-      "source_ref": "book7/chapter1",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 97
     },
     {
       "id": "b7c1-e02",
@@ -1991,13 +2267,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "tsukigase_route",
-      "source_ref": "book7/chapter1",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 97,
+      "origin": "koyagyu_castle",
+      "destination": "tsukigase_route"
     },
     {
       "id": "b7c1-e03",
@@ -2014,13 +2293,16 @@
       ],
       "referenced_groups": [],
       "location": "tsukigase_route",
-      "source_ref": "book7/chapter1",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 97,
+      "origin": "tsukigase_route",
+      "destination_label": "the runaway ox's course"
     },
     {
       "id": "b7c1-e04",
@@ -2036,10 +2318,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hannya_plain",
-      "source_ref": "book7/chapter1",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 97
     },
     {
       "id": "b7c1-e05",
@@ -2054,13 +2337,37 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hannya_plain",
-      "source_ref": "book7/chapter1",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 97
+    },
+    {
+      "id": "b7c1-audit-references",
+      "chapter": "b7c1",
+      "section": 97,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "in_ei",
+        "jotaro",
+        "kojiro",
+        "mikogami_tenzen",
+        "munenori",
+        "sekishusai"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "movement_status": null
     },
     {
       "id": "b7c2-e01",
@@ -2075,13 +2382,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "koyagyu_castle",
-      "source_ref": "book7/chapter2",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 98,
+      "origin": "koyagyu_castle",
+      "destination_label": "toward Edo; arrival unconfirmed"
     },
     {
       "id": "b7c2-e02",
@@ -2096,13 +2406,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "koyagyu_dojo",
-      "source_ref": "book7/chapter2",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 98
     },
     {
       "id": "b7c2-e03",
@@ -2116,19 +2427,25 @@
       "groups": [],
       "referenced_groups": [],
       "location": "uji_road",
-      "source_ref": "book7/chapter2",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 98,
+      "origin": "koyagyu_castle",
+      "destination": "koyagyu_castle",
+      "via": [
+        "uji_road"
+      ]
     },
     {
       "id": "b7c2-e04",
       "chapter": "b7c2",
       "type": "tournament",
-      "description": "At the Kōfukuji field tournament Nankōbō defeats Daun and refuses the unidentified-looking mountain priest, later reconciled as Benzō.",
+      "description": "At the Kōfukuji field tournament Nankōbō defeats Daun and refuses to fight an unidentified mountain priest.",
       "characters": [
         "yagyu_hyogo",
         "kimura_sukekuro",
@@ -2141,13 +2458,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kofukuji",
-      "source_ref": "book7/chapter2",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 98
     },
     {
       "id": "b7c2-e05",
@@ -2164,13 +2482,36 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kofukuji",
-      "source_ref": "book7/chapter2",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 98
+    },
+    {
+      "id": "b7c2-audit-references",
+      "chapter": "b7c2",
+      "section": 98,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "mikogami_tenzen",
+        "munenori",
+        "musashi",
+        "sekishusai",
+        "takuan"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
+      "source_file": "data/source/book7/chapter2-hemp-seed.txt",
+      "movement_status": null
     },
     {
       "id": "b7c3-e01",
@@ -2189,10 +2530,11 @@
       ],
       "referenced_groups": [],
       "location": "kongoji",
-      "source_ref": "book7/chapter3",
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 99
     },
     {
       "id": "b7c3-e02",
@@ -2209,13 +2551,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kongoji",
-      "source_ref": "book7/chapter3",
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 99
     },
     {
       "id": "b7c3-e03",
@@ -2231,13 +2574,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "amami_plateau",
-      "source_ref": "book7/chapter3",
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 99
     },
     {
       "id": "b7c3-e04",
@@ -2256,13 +2600,39 @@
       ],
       "referenced_groups": [],
       "location": "amami_plateau",
-      "source_ref": "book7/chapter3",
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "certainty": "explicit",
       "movement_status": "uncertain_route",
       "extensions": {
         "legacy_movement_status": "uncertain"
-      }
+      },
+      "section": 99,
+      "origin": "amami_plateau",
+      "destination_label": "separated unknown outcomes"
+    },
+    {
+      "id": "b7c3-audit-references",
+      "chapter": "b7c3",
+      "section": 99,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hojo_ujikatsu",
+        "kimura_sukekuro",
+        "musashi",
+        "otsu",
+        "toyotomi_hideyoshi",
+        "yagyu_hyogo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
+      "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
+      "movement_status": null
     },
     {
       "id": "b7c4-e01",
@@ -2278,13 +2648,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mount_koya",
-      "source_ref": "book7/chapter4",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
       "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 100,
+      "origin": "mount_koya",
+      "destination": "mount_kudo"
     },
     {
       "id": "b7c4-e02",
@@ -2300,13 +2673,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mount_kudo",
-      "source_ref": "book7/chapter4",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
       "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 100
     },
     {
       "id": "b7c4-e03",
@@ -2324,10 +2698,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kamuro",
-      "source_ref": "book7/chapter4",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
       "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 100
     },
     {
       "id": "b7c4-e04",
@@ -2342,13 +2717,35 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kamuro",
-      "source_ref": "book7/chapter4",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
       "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 100
+    },
+    {
+      "id": "b7c4-audit-references",
+      "chapter": "b7c4",
+      "section": 100,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gudo",
+        "hosokawa_tadatoshi",
+        "musashi",
+        "toyotomi_hideyoshi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
+      "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
+      "movement_status": null
     },
     {
       "id": "b7c5-e01",
@@ -2364,13 +2761,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kishiwada",
-      "source_ref": "book7/chapter5",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 101,
+      "origin_label": "the gully near Amami Plateau",
+      "destination": "kishiwada"
     },
     {
       "id": "b7c5-e02",
@@ -2387,13 +2787,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "sakai_port",
-      "source_ref": "book7/chapter5",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 101
     },
     {
       "id": "b7c5-e03",
@@ -2408,13 +2809,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "sakai_port",
-      "source_ref": "book7/chapter5",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 101
     },
     {
       "id": "b7c5-e04",
@@ -2433,13 +2835,14 @@
       ],
       "referenced_groups": [],
       "location": "sakai_port",
-      "source_ref": "book7/chapter5",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 101
     },
     {
       "id": "b7c5-e05",
@@ -2455,13 +2858,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "sakai_port",
-      "source_ref": "book7/chapter5",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 101
     },
     {
       "id": "b7c5-e06",
@@ -2480,13 +2884,36 @@
       ],
       "referenced_groups": [],
       "location": "tatsumimaru",
-      "source_ref": "book7/chapter5",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 101,
+      "origin": "sakai_port",
+      "destination_label": "Kokura by sea"
+    },
+    {
+      "id": "b7c5-audit-references",
+      "chapter": "b7c5",
+      "section": 101,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gonnosuke",
+        "kobayashi_tarozaemon",
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
+      "source_file": "data/source/book7/chapter5-the-port.txt",
+      "movement_status": null
     },
     {
       "id": "b7c6-e01",
@@ -2502,13 +2929,14 @@
       ],
       "referenced_groups": [],
       "location": "okazaki_fish_district",
-      "source_ref": "book7/chapter6",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
       "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 102
     },
     {
       "id": "b7c6-e02",
@@ -2522,14 +2950,15 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "yahagi_bridge",
-      "source_ref": "book7/chapter6",
+      "location": "hachijoji",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
       "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 102
     },
     {
       "id": "b7c6-e03",
@@ -2545,13 +2974,14 @@
       ],
       "referenced_groups": [],
       "location": "yahagi_bridge",
-      "source_ref": "book7/chapter6",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
       "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 102
     },
     {
       "id": "b7c6-e04",
@@ -2567,10 +2997,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "honda_castle",
-      "source_ref": "book7/chapter6",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
       "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 102
     },
     {
       "id": "b7c6-e05",
@@ -2586,10 +3017,33 @@
       "groups": [],
       "referenced_groups": [],
       "location": "tokaido_west",
-      "source_ref": "book7/chapter6",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
       "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
       "certainty": "explicit",
-      "movement_status": "direction_only"
+      "movement_status": "direction_only",
+      "section": 102,
+      "destination_label": "west toward Kyoto"
+    },
+    {
+      "id": "b7c6-audit-references",
+      "chapter": "b7c6",
+      "section": 102,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "kojiro",
+        "otsu",
+        "takuan",
+        "yoshioka_kempo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "movement_status": null
     },
     {
       "id": "b7c7-e01",
@@ -2605,13 +3059,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "daisenji",
-      "source_ref": "book7/chapter7",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
       "source_file": "data/source/book7/chapter7-the-circle.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 103,
+      "origin": "daisenji",
+      "destination": "lake_biwa_temple"
     },
     {
       "id": "b7c7-e02",
@@ -2627,10 +3084,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "lake_biwa_temple",
-      "source_ref": "book7/chapter7",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
       "source_file": "data/source/book7/chapter7-the-circle.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 103
     },
     {
       "id": "b7c7-e03",
@@ -2646,19 +3104,20 @@
       "groups": [],
       "referenced_groups": [],
       "location": "seta_hiei_route",
-      "source_ref": "book7/chapter7",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
       "source_file": "data/source/book7/chapter7-the-circle.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 103
     },
     {
       "id": "b7c7-e04",
       "chapter": "b7c7",
       "type": "separation",
-      "description": "Musashi stops pursuing; Gudō and Matahachi continue toward Kyoto while Musashi's next route is not specified.",
+      "description": "Musashi stops pursuing; Gudō and Matahachi prepare to continue toward Kyoto while Musashi's next route is unspecified.",
       "characters": [
         "musashi",
         "gudo",
@@ -2668,13 +3127,55 @@
       "groups": [],
       "referenced_groups": [],
       "location": "seta_hiei_route",
-      "source_ref": "book7/chapter7",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
       "source_file": "data/source/book7/chapter7-the-circle.txt",
       "certainty": "explicit",
-      "movement_status": "uncertain_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "uncertain"
-      }
+      },
+      "section": 103
+    },
+    {
+      "id": "b7c7-e05",
+      "chapter": "b7c7",
+      "type": "departure",
+      "description": "Gudō and Matahachi continue toward Kyoto; Musashi remains behind and does not share their route.",
+      "characters": [
+        "gudo",
+        "matahachi"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "seta_hiei_route",
+      "destination_label": "toward Kyoto",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt:L87-L133",
+      "source_file": "data/source/book7/chapter7-the-circle.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "section": 103
+    },
+    {
+      "id": "b7c7-audit-references",
+      "chapter": "b7c7",
+      "section": 103,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
+      "source_file": "data/source/book7/chapter7-the-circle.txt",
+      "movement_status": null
     },
     {
       "id": "b7c8-e01",
@@ -2690,13 +3191,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "shikama",
-      "source_ref": "book7/chapter8",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
       "source_file": "data/source/book7/chapter8-shikama-blue.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 104,
+      "origin": "shikama",
+      "destination": "mikazuki_shrine"
     },
     {
       "id": "b7c8-e02",
@@ -2714,10 +3218,11 @@
       ],
       "referenced_groups": [],
       "location": "mikazuki_shrine",
-      "source_ref": "book7/chapter8",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
       "source_file": "data/source/book7/chapter8-shikama-blue.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 104
     },
     {
       "id": "b7c8-e03",
@@ -2733,13 +3238,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mikazuki_cave",
-      "source_ref": "book7/chapter8",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
       "source_file": "data/source/book7/chapter8-shikama-blue.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 104
     },
     {
       "id": "b7c8-e04",
@@ -2756,13 +3262,14 @@
       ],
       "referenced_groups": [],
       "location": "sayo_river",
-      "source_ref": "book7/chapter8",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
       "source_file": "data/source/book7/chapter8-shikama-blue.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 104
     },
     {
       "id": "b7c8-e05",
@@ -2777,10 +3284,35 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mikazuki_inn",
-      "source_ref": "book7/chapter8",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
       "source_file": "data/source/book7/chapter8-shikama-blue.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 104,
+      "destination": "himeji_aoki"
+    },
+    {
+      "id": "b7c8-audit-references",
+      "chapter": "b7c8",
+      "section": 104,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "aoki_tanzaemon",
+        "kojiro",
+        "musashi",
+        "nagaoka_sado",
+        "ogin",
+        "takuan"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
+      "source_file": "data/source/book7/chapter8-shikama-blue.txt",
+      "movement_status": null
     },
     {
       "id": "b7c9-e01",
@@ -2788,20 +3320,22 @@
       "type": "solitary_return",
       "description": "Otsū leaves the sleeping Jōtarō at the inn during the storm and returns alone toward the shrine.",
       "characters": [
-        "otsu",
-        "jotaro"
+        "otsu"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "mikazuki_inn",
-      "source_ref": "book7/chapter9",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 105,
+      "origin": "mikazuki_inn",
+      "destination": "mikazuki_cave"
     },
     {
       "id": "b7c9-e02",
@@ -2816,13 +3350,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mikazuki_cave",
-      "source_ref": "book7/chapter9",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 105
     },
     {
       "id": "b7c9-e03",
@@ -2837,13 +3372,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mikazuki_cave",
-      "source_ref": "book7/chapter9",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 105
     },
     {
       "id": "b7c9-e04",
@@ -2858,13 +3394,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mikazuki_cave",
-      "source_ref": "book7/chapter9",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 105
     },
     {
       "id": "b7c9-e05",
@@ -2881,36 +3418,59 @@
       ],
       "referenced_groups": [],
       "location": "mikazuki_cave",
-      "source_ref": "book7/chapter9",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 105
+    },
+    {
+      "id": "b7c9-audit-references",
+      "chapter": "b7c9",
+      "section": 105,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "matahachi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
+      "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
+      "movement_status": null
     },
     {
       "id": "b7c10-e01",
       "chapter": "b7c10",
-      "type": "departure_for_duel",
-      "description": "In early fourth month 1612 Musashi boards a regular westbound ship from Sakai for the arranged duel at Kokura.",
+      "type": "farewell_and_boarding",
+      "description": "In early fourth month 1612 Musashi says farewell to the party, including Shōeki and his wife, the second Yoshino Tayū, and boards a regular westbound ship at Sakai. The narrator recalls the first Yoshino, whose whereabouts remain unknown.",
       "characters": [
         "musashi",
         "koetsu",
         "matahachi",
         "haiya_shoeki",
-        "yoshino_dayu"
+        "yoshino_second"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "yoshino_tayu",
+        "haiya_shoyu"
+      ],
       "groups": [
         "hosokawa_party"
       ],
       "referenced_groups": [],
       "location": "sakai_port",
-      "source_ref": "book7/chapter10",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt:L4-L35",
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 106
     },
     {
       "id": "b7c10-e02",
@@ -2926,10 +3486,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "sakai_port",
-      "source_ref": "book7/chapter10",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 106
     },
     {
       "id": "b7c10-e03",
@@ -2945,13 +3506,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "sakai_port",
-      "source_ref": "book7/chapter10",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 106
     },
     {
       "id": "b7c10-e04",
@@ -2967,13 +3529,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "osaka",
-      "source_ref": "book7/chapter10",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 106,
+      "origin": "sakai_port",
+      "destination": "osaka"
     },
     {
       "id": "b7c10-e05",
@@ -2991,13 +3556,56 @@
       "groups": [],
       "referenced_groups": [],
       "location": "osaka",
-      "source_ref": "book7/chapter10",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      },
+      "section": 106
+    },
+    {
+      "id": "b7c10-e06",
+      "chapter": "b7c10",
+      "type": "sea_departure",
+      "description": "Musashi's regular ship leaves Sakai westbound for the arranged duel at Kokura.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "sakai_port",
+      "destination_label": "Kokura by sea",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt:L5-L90",
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
-      "extensions": {
-        "legacy_movement_status": "departure_confirmed"
-      }
+      "section": 106
+    },
+    {
+      "id": "b7c10-audit-references",
+      "chapter": "b7c10",
+      "section": 106,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gudo",
+        "iori",
+        "kojiro",
+        "nagaoka_sado",
+        "sanada_yukimura"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "movement_status": null
     },
     {
       "id": "b7c11-e01",
@@ -3013,13 +3621,32 @@
       "groups": [],
       "referenced_groups": [],
       "location": "shippoji",
-      "source_ref": "book7/chapter11",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
       "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 107
+    },
+    {
+      "id": "b7c11-audit-aoki",
+      "chapter": "b7c11",
+      "section": 107,
+      "type": "planning_flashback",
+      "characters": [
+        "aoki_tanzaemon"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "The directly narrated flashback stages Aoki in Himeji helping plan the attempt to contact Musashi’s ship.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt:L88-L96",
+      "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
+      "movement_status": null
     },
     {
       "id": "b7c11-e02",
@@ -3037,32 +3664,40 @@
       ],
       "referenced_groups": [],
       "location": "shikama_estuary",
-      "source_ref": "book7/chapter11",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
       "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 107
     },
     {
       "id": "b7c11-e03",
       "chapter": "b7c11",
       "type": "ship_contact",
-      "description": "A samurai rows out and speaks with Musashi; he declines to disembark and the captain continues toward Kokura.",
+      "description": "Jōtarō reports the messenger’s contact with Musashi’s passing ship, his refusal to disembark and its continuation toward Kokura; Musashi is not directly staged.",
       "characters": [
+        "jotaro",
+        "otsu",
+        "osugi"
+      ],
+      "referenced_characters": [
         "musashi"
       ],
-      "referenced_characters": [],
       "groups": [
         "himeji_samurai"
       ],
       "referenced_groups": [],
       "location": "shikama_estuary",
-      "source_ref": "book7/chapter11",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt:L175-L190",
       "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 107,
+      "origin": "shikama_estuary",
+      "destination_label": "Kokura aboard the passing ship"
     },
     {
       "id": "b7c11-e04",
@@ -3078,10 +3713,31 @@
       "groups": [],
       "referenced_groups": [],
       "location": "shikama_estuary",
-      "source_ref": "book7/chapter11",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
       "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 107,
+      "destination": "kokura"
+    },
+    {
+      "id": "b7c11-audit-references",
+      "chapter": "b7c11",
+      "section": 107,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "matahachi",
+        "ogin"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
+      "movement_status": null
     },
     {
       "id": "b7c12-e01",
@@ -3097,13 +3753,34 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kokura_castle",
-      "source_ref": "book7/chapter12",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 108
+    },
+    {
+      "id": "b7c12-audit-s02",
+      "chapter": "b7c12",
+      "section": 108,
+      "type": "reputation_hostility",
+      "characters": [
+        "kojiro"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Praise of Musashi provokes Kojirō into repeated public attacks on Musashi's character and Ichijōji conduct, helping turn rivalry into expected confrontation.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "movement_status": null
     },
     {
       "id": "b7c12-e02",
@@ -3119,13 +3796,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kokura_castle",
-      "source_ref": "book7/chapter12",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 108
     },
     {
       "id": "b7c12-e03",
@@ -3140,10 +3818,12 @@
       "groups": [],
       "referenced_groups": [],
       "location": "itatsu_kojiro",
-      "source_ref": "book7/chapter12",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 108,
+      "destination": "funashima"
     },
     {
       "id": "b7c12-e04",
@@ -3159,13 +3839,54 @@
       "groups": [],
       "referenced_groups": [],
       "location": "itatsu_kojiro",
-      "source_ref": "book7/chapter12",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 108
+    },
+    {
+      "id": "b7c12-audit-s09",
+      "chapter": "b7c12",
+      "section": 108,
+      "type": "mortality_pressure",
+      "characters": [
+        "kojiro",
+        "omitsu"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Despite outward confidence, Kojirō increasingly thinks about Omitsu, his dead mother and the possibility of his own death.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b7c12-audit-references",
+      "chapter": "b7c12",
+      "section": 108,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "kanemaki_jisai",
+        "mikogami_tenzen",
+        "sekishusai",
+        "toda_seigen"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "movement_status": null
     },
     {
       "id": "b7c13-e01",
@@ -3173,19 +3894,23 @@
       "type": "public_notice",
       "description": "Official notices announce the 13th-day, 8 a.m. Funashima bout and prohibit supporters and civilian vessels from the straits.",
       "characters": [],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "musashi",
+        "kojiro"
+      ],
       "groups": [
         "kojiro_supporters"
       ],
       "referenced_groups": [],
       "location": "kokura",
-      "source_ref": "book7/chapter13",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 109
     },
     {
       "id": "b7c13-e02",
@@ -3201,10 +3926,31 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kokura",
-      "source_ref": "book7/chapter13",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 109
+    },
+    {
+      "id": "b7c13-audit-s03",
+      "chapter": "b7c13",
+      "section": 109,
+      "type": "past_confronted",
+      "characters": [
+        "matahachi",
+        "ichinomiya_gempachi",
+        "kojiro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Gempachi recognizes Matahachi from the period when he falsely called himself Sasaki Kojirō; Matahachi now looks back on that impersonation with shame rather than pride.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "movement_status": null
     },
     {
       "id": "b7c13-e03",
@@ -3221,10 +3967,11 @@
       ],
       "referenced_groups": [],
       "location": "itatsu_kojiro",
-      "source_ref": "book7/chapter13",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 109
     },
     {
       "id": "b7c13-e04",
@@ -3239,13 +3986,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "itatsu_kojiro",
-      "source_ref": "book7/chapter13",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 109
     },
     {
       "id": "b7c13-e05",
@@ -3260,10 +4008,51 @@
       "groups": [],
       "referenced_groups": [],
       "location": "itatsu_kojiro",
-      "source_ref": "book7/chapter13",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 109
+    },
+    {
+      "id": "b7c13-audit-s07",
+      "chapter": "b7c13",
+      "section": 109,
+      "type": "win_pressure",
+      "characters": [
+        "kojiro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Surrounded by admirers and gifts, Kojirō becomes psychologically burdened by the repeated inner command that he must win.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b7c13-audit-references",
+      "chapter": "b7c13",
+      "section": 109,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hosokawa_tadatoshi",
+        "ito_ittosai",
+        "kanemaki_jisai",
+        "kusanagi_tenki",
+        "osugi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "movement_status": null
     },
     {
       "id": "b7c14-e01",
@@ -3279,10 +4068,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "moji",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 110
     },
     {
       "id": "b7c14-e02",
@@ -3301,13 +4091,14 @@
       ],
       "referenced_groups": [],
       "location": "kokura",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 110
     },
     {
       "id": "b7c14-e03",
@@ -3324,10 +4115,11 @@
       "groups": [],
       "referenced_groups": [],
       "location": "tarozaemon_house",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 110
     },
     {
       "id": "b7c14-e04",
@@ -3343,16 +4135,18 @@
       "groups": [],
       "referenced_groups": [],
       "location": "tarozaemon_house",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 110,
+      "destination": "funashima"
     },
     {
       "id": "b7c14-e05",
       "chapter": "b7c14",
       "type": "letter_shared",
-      "description": "Nuinosuke reads Musashi's reassuring letter to Akemi and Matahachi, who then climb a hill to watch Funashima from afar.",
+      "description": "Nuinosuke reads Musashi's reassuring letter to Akemi and Matahachi and tells them where Funashima can be seen.",
       "characters": [
         "nuinosuke",
         "matahachi",
@@ -3363,16 +4157,59 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kokura",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": null,
+      "section": 110
+    },
+    {
+      "id": "b7c14-e06",
+      "chapter": "b7c14",
+      "type": "climb_to_watch_duel",
+      "description": "Matahachi and Akemi climb the indicated Kokura hill with the baby to watch Funashima and pray from afar.",
+      "characters": [
+        "matahachi",
+        "akemi",
+        "akemi_baby"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "kokura",
+      "destination": "kokura_hill",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt:L451-L480",
+      "source_file": "data/source/book7/chapter14-at-daybreak.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "section": 110
+    },
+    {
+      "id": "b7c14-audit-references",
+      "chapter": "b7c14",
+      "section": 110,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hosokawa_tadatoshi",
+        "iwama_kakubei",
+        "kojiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
+      "source_file": "data/source/book7/chapter14-at-daybreak.txt",
+      "movement_status": null
     },
     {
       "id": "b7c15-e01",
       "chapter": "b7c15",
-      "type": "kojiro_departure",
-      "description": "Kojirō departs in Tadatoshi's new boat with Tatsunosuke and the falcon while Omitsu weeps unseen behind a tree.",
+      "type": "departure_preparation",
+      "description": "Kojirō boards Tadatoshi's new boat with Tatsunosuke while Omitsu watches unseen and Nuinosuke attends the departure.",
       "characters": [
         "kojiro",
         "tatsunosuke",
@@ -3383,13 +4220,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kokura",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 111
     },
     {
       "id": "b7c15-e02",
@@ -3404,13 +4242,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "funashima",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 111,
+      "origin": "kokura",
+      "destination": "funashima"
     },
     {
       "id": "b7c15-e03",
@@ -3427,13 +4268,16 @@
       "groups": [],
       "referenced_groups": [],
       "location": "tarozaemon_house",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 111,
+      "origin": "tarozaemon_house",
+      "destination": "heike_pine"
     },
     {
       "id": "b7c15-e04",
@@ -3449,13 +4293,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "heike_pine",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 111
     },
     {
       "id": "b7c15-e05",
@@ -3472,19 +4317,20 @@
       "groups": [],
       "referenced_groups": [],
       "location": "heike_pine",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 111
     },
     {
       "id": "b7c15-e06",
       "chapter": "b7c15",
-      "type": "departure_for_funashima",
-      "description": "Musashi boards Sasuke's boat; Otsū, restrained from running into the water, composes herself and bows with Jōtarō, Osugi and Gonnosuke.",
+      "type": "farewell",
+      "description": "Musashi takes leave of Otsū, Jōtarō, Osugi and Gonnosuke at the shore before boarding Sasuke's boat.",
       "characters": [
         "musashi",
         "sasuke",
@@ -3497,13 +4343,54 @@
       "groups": [],
       "referenced_groups": [],
       "location": "heike_pine",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
+      "source_file": "data/source/book7/chapter15-the-marriage.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      },
+      "section": 111
+    },
+    {
+      "id": "b7c15-e07",
+      "chapter": "b7c15",
+      "type": "departure_for_funashima",
+      "description": "Musashi and Sasuke leave the shore by boat for Funashima; Otsū, Jōtarō, Osugi and Gonnosuke remain ashore.",
+      "characters": [
+        "musashi",
+        "sasuke"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "heike_pine",
+      "destination": "funashima",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt:L364-L394",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
-      "extensions": {
-        "legacy_movement_status": "departure_confirmed"
-      }
+      "section": 111
+    },
+    {
+      "id": "b7c15-audit-references",
+      "chapter": "b7c15",
+      "section": 111,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hosokawa_tadatoshi",
+        "nagaoka_sado"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
+      "source_file": "data/source/book7/chapter15-the-marriage.txt",
+      "movement_status": null
     },
     {
       "id": "b7c16-e01",
@@ -3517,14 +4404,17 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "shimonoseki",
-      "source_ref": "book7/chapter16",
+      "location": "kanmon_crossing_boat",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 112,
+      "origin": "shimonoseki",
+      "destination": "funashima"
     },
     {
       "id": "b7c16-e02",
@@ -3542,10 +4432,11 @@
       ],
       "referenced_groups": [],
       "location": "hikojima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 112
     },
     {
       "id": "b7c16-e03",
@@ -3567,10 +4458,11 @@
       ],
       "referenced_groups": [],
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 112
     },
     {
       "id": "b7c16-e04",
@@ -3585,13 +4477,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 112
     },
     {
       "id": "b7c16-e05",
@@ -3611,13 +4504,14 @@
       ],
       "referenced_groups": [],
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 112
     },
     {
       "id": "b7c16-e06",
@@ -3632,13 +4526,38 @@
       "groups": [],
       "referenced_groups": [],
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "movement_status": "uncertain_route",
       "extensions": {
         "legacy_movement_status": "uncertain"
-      }
+      },
+      "section": 112,
+      "origin": "funashima",
+      "destination_label": "an explicitly unrecorded destination"
+    },
+    {
+      "id": "b7c16-audit-references",
+      "chapter": "b7c16",
+      "section": 112,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "akemi",
+        "gonnosuke",
+        "matahachi",
+        "osugi",
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
+      "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
+      "movement_status": null
     }
   ],
   "character_states": [
@@ -3648,7 +4567,7 @@
       "character": "musashi",
       "state": "Alive after defeating Kojirō; departs Funashima with Sasuke. Destination and any clash with revenge parties are unrecorded.",
       "location": null,
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3659,7 +4578,7 @@
       "character": "kojiro",
       "state": "Narratively dead after Musashi's blow. A trace of breath is detected before departure, but the narrator explicitly says he did not return to the living.",
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3670,7 +4589,7 @@
       "character": "otsu",
       "state": "Alive on the Shimonoseki shore; acknowledged by Musashi as his wife and awaiting the duel's outcome.",
       "location": "heike_pine",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3681,7 +4600,7 @@
       "character": "osugi",
       "state": "Alive, reconciled with both Otsū and Musashi, bowing from the shore as Musashi departs.",
       "location": "heike_pine",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3692,7 +4611,7 @@
       "character": "jotaro",
       "state": "Alive on the Shimonoseki shore after helping restrain and support Otsū; he missed speaking directly to Musashi.",
       "location": "heike_pine",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3703,7 +4622,7 @@
       "character": "gonnosuke",
       "state": "Alive on the Shimonoseki shore after reuniting with Musashi and witnessing the farewells.",
       "location": "heike_pine",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3714,7 +4633,7 @@
       "character": "iori",
       "state": "Alive on Funashima as Sado's attendant and witness to the duel.",
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3725,7 +4644,7 @@
       "character": "nagaoka_sado",
       "state": "Alive on Funashima, acting as senior witness and guardian of Iori.",
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3736,7 +4655,7 @@
       "character": "iwama_kakubei",
       "state": "Alive on Funashima, shocked by Kojirō's defeat but restrained by official duty.",
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3747,7 +4666,7 @@
       "character": "tatsunosuke",
       "state": "Alive on Funashima as Kojirō's attendant; his post-duel disposition is not narrated.",
       "location": "funashima",
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3758,7 +4677,7 @@
       "character": "sasuke",
       "state": "Alive, taking Musashi away from Funashima by boat; destination unknown.",
       "location": null,
-      "source_ref": "book7/chapter16",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3769,7 +4688,7 @@
       "character": "matahachi",
       "state": "Alive with Akemi and the baby on a Kokura hill, watching and praying from afar; later movement is not shown.",
       "location": "kokura_hill",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "reported_source_ref": "book7/chapter16",
       "certainty": "explicit",
@@ -3781,7 +4700,7 @@
       "character": "akemi",
       "state": "Alive with Matahachi and her baby on a Kokura hill; biological paternity remains unstated.",
       "location": "kokura_hill",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "reported_source_ref": "book7/chapter16",
       "certainty": "explicit",
@@ -3793,7 +4712,7 @@
       "character": "akemi_baby",
       "state": "Alive in Akemi's care on the Kokura hill.",
       "location": "kokura_hill",
-      "source_ref": "book7/chapter14",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
       "source_file": "data/source/book7/chapter14-at-daybreak.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3802,9 +4721,9 @@
       "id": "b7-final-state-omitsu",
       "chapter": "b7c15",
       "character": "omitsu",
-      "state": "Alive in Kokura after watching Kojirō depart; the planned marriage cannot occur after his narrated death.",
+      "state": "Alive in Kokura after watching Kojirō depart; the marriage plan remains conditional on his return.",
       "location": "kokura",
-      "source_ref": "book7/chapter15",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
       "source_file": "data/source/book7/chapter15-the-marriage.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3815,7 +4734,7 @@
       "character": "yagyu_hyogo",
       "state": "Alive and based at Koyagyū, having accepted Ushinosuke as a pupil and stated an intention to serve the Owari Tokugawa in Nagoya.",
       "location": "koyagyu_castle",
-      "source_ref": "book7/chapter2",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3826,7 +4745,7 @@
       "character": "ushinosuke",
       "state": "Alive at the Yagyū orbit as Hyōgo's accepted pupil.",
       "location": "koyagyu_dojo",
-      "source_ref": "book7/chapter2",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
       "source_file": "data/source/book7/chapter2-hemp-seed.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3837,7 +4756,7 @@
       "character": "hamada_toranosuke",
       "state": "Alive, traveling under the Torazō concealment after rescuing Otsū; exact subsequent location unknown.",
       "location": null,
-      "source_ref": "book7/chapter1",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3848,7 +4767,7 @@
       "character": "gudo",
       "state": "Alive, continuing toward Kyoto with Matahachi at the end of his direct appearance.",
       "location": "seta_hiei_route",
-      "source_ref": "book7/chapter7",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
       "source_file": "data/source/book7/chapter7-the-circle.txt",
       "certainty": "explicit",
       "scope": "book_end"
@@ -3859,10 +4778,329 @@
       "character": "koetsu",
       "state": "Alive in Osaka after accompanying Gonnosuke and receiving Matahachi's returned priestly garments.",
       "location": "osaka",
-      "source_ref": "book7/chapter10",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
       "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
       "certainty": "explicit",
       "scope": "book_end"
+    },
+    {
+      "id": "b7c1-state-otsu",
+      "chapter": "b7c1",
+      "character": "otsu",
+      "state": "Safe near Hannya Plain after Toranosuke stops the runaway ox.",
+      "location": "hannya_plain",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c1-state-yagyu_hyogo",
+      "chapter": "b7c1",
+      "character": "yagyu_hyogo",
+      "state": "At Koyagyū after the Tsukigase dispute is clarified.",
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c2-state-iori",
+      "chapter": "b7c2",
+      "character": "iori",
+      "state": "Reconciled with Ushinosuke after their contest.",
+      "location": "kofukuji",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
+      "source_file": "data/source/book7/chapter2-hemp-seed.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c2-state-gonnosuke",
+      "chapter": "b7c2",
+      "character": "gonnosuke",
+      "state": "With Iori after de-escalating the boys' fight.",
+      "location": "kofukuji",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
+      "source_file": "data/source/book7/chapter2-hemp-seed.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c3-state-iori",
+      "chapter": "b7c3",
+      "character": "iori",
+      "state": "Separated after falling into the gully during the ambush.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
+      "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c3-state-gonnosuke",
+      "chapter": "b7c3",
+      "character": "gonnosuke",
+      "state": "Bound by the false cord merchants after Iori falls away.",
+      "location": "amami_plateau",
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
+      "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c4-state-gonnosuke",
+      "chapter": "b7c4",
+      "character": "gonnosuke",
+      "state": "Alive but bound at Kamuro while the spy accusation is suppressed.",
+      "location": "kamuro",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
+      "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c4-state-nagaoka_sado",
+      "chapter": "b7c4",
+      "character": "nagaoka_sado",
+      "state": "Present when the captive Gonnosuke is brought before Daisuke.",
+      "location": "kamuro",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
+      "source_file": "data/source/book7/chapter4-a-pear-blossom.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c5-state-iori",
+      "chapter": "b7c5",
+      "character": "iori",
+      "state": "Sailing from Sakai with Sado's household toward Kokura.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
+      "source_file": "data/source/book7/chapter5-the-port.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c5-state-kojiro",
+      "chapter": "b7c5",
+      "character": "kojiro",
+      "state": "Sailing with the Hosokawa party toward Kokura.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
+      "source_file": "data/source/book7/chapter5-the-port.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c6-state-musashi",
+      "chapter": "b7c6",
+      "character": "musashi",
+      "state": "Following west toward Kyoto after Gudō and Matahachi.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c6-state-matahachi",
+      "chapter": "b7c6",
+      "character": "matahachi",
+      "state": "Walking west with Gudō toward Kyoto.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "source_file": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c7-state-musashi",
+      "chapter": "b7c7",
+      "character": "musashi",
+      "state": "Remains behind after ceasing to follow Gudō.",
+      "location": "seta_hiei_route",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
+      "source_file": "data/source/book7/chapter7-the-circle.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c8-state-otsu",
+      "chapter": "b7c8",
+      "character": "otsu",
+      "state": "Reunited with Jōtarō and considering a journey to his Himeji home.",
+      "location": "mikazuki_inn",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
+      "source_file": "data/source/book7/chapter8-shikama-blue.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c8-state-jotaro",
+      "chapter": "b7c8",
+      "character": "jotaro",
+      "state": "Reunited with Otsū after defeating her captors.",
+      "location": "mikazuki_inn",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
+      "source_file": "data/source/book7/chapter8-shikama-blue.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c8-state-osugi",
+      "chapter": "b7c8",
+      "character": "osugi",
+      "state": "Confined in the cave by Jōtarō.",
+      "location": "mikazuki_cave",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
+      "source_file": "data/source/book7/chapter8-shikama-blue.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c9-state-otsu",
+      "chapter": "b7c9",
+      "character": "otsu",
+      "state": "Unconscious but alive while Osugi repents and calls for help.",
+      "location": "mikazuki_cave",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
+      "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c9-state-osugi",
+      "chapter": "b7c9",
+      "character": "osugi",
+      "state": "Trying to save Otsū after recognizing her own cruelty.",
+      "location": "mikazuki_cave",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
+      "source_file": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c10-state-musashi",
+      "chapter": "b7c10",
+      "character": "musashi",
+      "state": "Aboard a westbound ship from Sakai toward Kokura.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c10-state-matahachi",
+      "chapter": "b7c10",
+      "character": "matahachi",
+      "state": "Following Akemi and choosing work and social fatherhood.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c11-state-otsu",
+      "chapter": "b7c11",
+      "character": "otsu",
+      "state": "Resolved to continue toward Kokura despite illness.",
+      "location": "shikama_estuary",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c11-state-osugi",
+      "chapter": "b7c11",
+      "character": "osugi",
+      "state": "Traveling with Otsū after their reconciliation.",
+      "location": "shikama_estuary",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c11-state-jotaro",
+      "chapter": "b7c11",
+      "character": "jotaro",
+      "state": "Accompanying Otsū and Osugi.",
+      "location": "shikama_estuary",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c11-state-musashi",
+      "chapter": "b7c11",
+      "character": "musashi",
+      "state": "Jōtarō reports that Musashi’s ship continued toward Kokura without disembarkation.",
+      "location": null,
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt:L175-L190",
+      "source_file": "data/source/book7/chapter11-the-evening-boat.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c12-state-kojiro",
+      "chapter": "b7c12",
+      "character": "kojiro",
+      "state": "Preparing for the Funashima duel; the marriage plan remains conditional.",
+      "location": "itatsu_kojiro",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c12-state-omitsu",
+      "chapter": "b7c12",
+      "character": "omitsu",
+      "state": "Anxious after Kakubei accepts a marriage only after the duel.",
+      "location": "itatsu_kojiro",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "source_file": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c13-state-kojiro",
+      "chapter": "b7c13",
+      "character": "kojiro",
+      "state": "At his crowded house after writing testaments and receiving his aunt.",
+      "location": "itatsu_kojiro",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c13-state-matahachi",
+      "chapter": "b7c13",
+      "character": "matahachi",
+      "state": "Living with Akemi and acting as father to her baby.",
+      "location": "kokura",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b7c13-state-akemi",
+      "chapter": "b7c13",
+      "character": "akemi",
+      "state": "Caring for her baby with Matahachi; biological paternity remains unknown.",
+      "location": "kokura",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
     }
   ],
   "relationships": [
@@ -4402,6 +5640,21 @@
           "certainty": "explicit"
         }
       }
+    },
+    {
+      "id": "b7-yoshino-second-shoeki",
+      "type": "family",
+      "subtype": "wife_and_husband",
+      "participants": [
+        "yoshino_second",
+        "haiya_shoeki"
+      ],
+      "chapter_ids": [
+        "b7c10"
+      ],
+      "evidence": [
+        "b7c10-e01"
+      ]
     }
   ],
   "historical_context": [

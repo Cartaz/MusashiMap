@@ -164,14 +164,15 @@
       "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt",
       "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
       "characters": [
+        "nagaoka_sado",
         "hosokawa_tadatoshi",
+        "iwama_kakubei",
         "okatani_goroji",
         "matsushita_mainosuke",
-        "mori_retainer",
-        "nagaoka_sado",
-        "iwama_kakubei"
+        "mori_retainer"
       ],
       "referenced_characters": [
+        "hosokawa_tadaoki",
         "kojiro",
         "musashi"
       ],
@@ -183,8 +184,9 @@
         "hosokawa_edo_residence"
       ],
       "event_ids": [
-        "b6c1_e1",
-        "b6c1_e2"
+        "b6c1-e01",
+        "b6c1-e02",
+        "b6c1-audit-references"
       ],
       "character_state_ids": [
         "b6c1-state-hosokawa_tadatoshi"
@@ -203,9 +205,12 @@
         "obata_yogoro"
       ],
       "referenced_characters": [
+        "hojo_shinzo",
+        "hosokawa_tadaoki",
+        "hosokawa_tadatoshi",
         "matahachi",
         "musashi",
-        "hosokawa_tadatoshi"
+        "yajibei"
       ],
       "groups": [
         "hangawara_gang"
@@ -216,8 +221,9 @@
         "isarago_hill"
       ],
       "event_ids": [
-        "b6c2_e1",
-        "b6c2_e2"
+        "b6c2-e01",
+        "b6c2-e02",
+        "b6c2-audit-references"
       ],
       "character_state_ids": [
         "b6c2-state-kojiro",
@@ -231,13 +237,15 @@
       "source_ref": "data/source/book6/chapter3-the-eagle.txt",
       "source_file": "data/source/book6/chapter3-the-eagle.txt",
       "characters": [
-        "iwama_kakubei",
         "kojiro",
         "hosokawa_tadatoshi",
+        "iwama_kakubei",
+        "obata_yogoro",
         "okatani_goroji"
       ],
       "referenced_characters": [
-        "obata_yogoro"
+        "hosokawa_tadaoki",
+        "kanemaki_jisai"
       ],
       "groups": [
         "hosokawa_retainers"
@@ -250,13 +258,15 @@
         "goroji_house"
       ],
       "event_ids": [
-        "b6c3_e1",
-        "b6c3_e2",
-        "b6c3_e3"
+        "b6c3-e01",
+        "b6c3-e02",
+        "b6c3-e03",
+        "b6c3-audit-references"
       ],
       "character_state_ids": [
         "b6c3-state-okatani_goroji",
-        "b6c3-state-kojiro"
+        "b6c3-state-kojiro",
+        "b6c3-state-obata_yogoro"
       ]
     },
     {
@@ -266,16 +276,17 @@
       "source_ref": "data/source/book6/chapter4-green-persimmons.txt",
       "source_file": "data/source/book6/chapter4-green-persimmons.txt",
       "characters": [
-        "kojiro",
         "matahachi",
-        "hamada_elder_brother",
+        "kojiro",
         "akemi",
-        "umpei"
+        "umpei",
+        "hamada_elder_brother"
       ],
       "referenced_characters": [
         "daizo",
-        "osugi",
-        "musashi"
+        "iwama_kakubei",
+        "musashi",
+        "osugi"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -285,8 +296,10 @@
         "tsukinomisaki"
       ],
       "event_ids": [
-        "b6c4_e1",
-        "b6c4_e2"
+        "b6c4-e01",
+        "b6c4-e02",
+        "b6c4-audit-s06",
+        "b6c4-audit-references"
       ],
       "character_state_ids": [
         "b6c4-state-matahachi",
@@ -301,15 +314,17 @@
       "source_file": "data/source/book6/chapter5-eyes.txt",
       "characters": [
         "musashi",
-        "iori",
-        "hojo_shinzo"
+        "hojo_shinzo",
+        "iori"
       ],
       "referenced_characters": [
-        "jotaro",
-        "kojiro",
-        "obata_yogoro",
         "hojo_ujikatsu",
-        "otsu"
+        "jotaro",
+        "munenori",
+        "obata_kagenori",
+        "obata_yogoro",
+        "otsu",
+        "zushino_kosuke"
       ],
       "groups": [
         "musashino_farmers"
@@ -320,12 +335,16 @@
         "hojo_ushigome"
       ],
       "event_ids": [
-        "b6c5_e1",
-        "b6c5_e2"
+        "b6c5-e01",
+        "b6c5-e02",
+        "b6c5-audit-s05",
+        "b6c5-audit-s06",
+        "b6c5-audit-references"
       ],
       "character_state_ids": [
         "b6c5-state-musashi",
-        "b6c5-state-iori"
+        "b6c5-state-iori",
+        "b6c5-state-obata_kagenori"
       ]
     },
     {
@@ -336,13 +355,20 @@
       "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
       "characters": [
         "musashi",
-        "hojo_shinzo",
-        "hojo_ujikatsu",
         "takuan",
-        "munenori"
+        "munenori",
+        "hojo_shinzo",
+        "hojo_ujikatsu"
       ],
       "referenced_characters": [
-        "otsu"
+        "karasumaru_mitsuhiro",
+        "kimura_sukekuro",
+        "mikogami_tenzen",
+        "otsu",
+        "sekishusai",
+        "tokugawa_hidetada",
+        "tokugawa_ieyasu",
+        "yagyu_hyogo"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -350,8 +376,10 @@
         "hojo_ushigome"
       ],
       "event_ids": [
-        "b6c6_e1",
-        "b6c6_e2"
+        "b6c6-e01",
+        "b6c6-e02",
+        "b6c6-audit-s09",
+        "b6c6-audit-references"
       ],
       "character_state_ids": [
         "b6c6-state-musashi"
@@ -365,12 +393,12 @@
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "characters": [
         "matahachi",
-        "daizo",
-        "akemi"
+        "akemi",
+        "daizo"
       ],
       "referenced_characters": [
-        "umpei",
-        "tokugawa_hidetada"
+        "tokugawa_hidetada",
+        "umpei"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -380,9 +408,10 @@
         "edo_castle"
       ],
       "event_ids": [
-        "b6c7_e1",
-        "b6c7_e2",
-        "b6c7_e3"
+        "b6c7-e01",
+        "b6c7-e02",
+        "b6c7-e03",
+        "b6c7-audit-references"
       ],
       "character_state_ids": [
         "b6c7-state-matahachi",
@@ -396,11 +425,11 @@
       "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt",
       "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
       "characters": [
-        "osugi",
-        "hamada_toranosuke",
         "kojiro",
-        "yajibei",
+        "osugi",
         "mikogami_tenzen",
+        "yajibei",
+        "hamada_toranosuke",
         "omitsu",
         "numata_kajuro",
         "kamei_hyosuke",
@@ -408,11 +437,10 @@
         "ito_magobei"
       ],
       "referenced_characters": [
+        "ito_ittosai",
         "matahachi",
-        "musashi",
         "munenori",
-        "tokugawa_hidetada",
-        "hamada_elder_brother"
+        "musashi"
       ],
       "groups": [
         "hangawara_gang",
@@ -421,12 +449,19 @@
       "referenced_groups": [],
       "locations": [
         "hamacho_house",
-        "ono_dojo"
+        "ono_dojo",
+        "takanawa_highroad",
+        "yajibei_route_house",
+        "kanda_hill",
+        "saikachi_slope"
       ],
       "event_ids": [
-        "b6c8_e1",
-        "b6c8_e2",
-        "b6c8_e3"
+        "b6c8-e01",
+        "b6c8-audit-route",
+        "b6c8-e02",
+        "b6c8-e03",
+        "b6c8-e04",
+        "b6c8-audit-references"
       ],
       "character_state_ids": [
         "b6c8-state-ono_tadaaki",
@@ -443,7 +478,9 @@
         "musashi",
         "iori"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "jotaro"
+      ],
       "groups": [
         "musashino_farmers"
       ],
@@ -454,8 +491,10 @@
         "kotesashigahara"
       ],
       "event_ids": [
-        "b6c9_e1",
-        "b6c9_e2"
+        "b6c9-e01",
+        "b6c9-e02",
+        "b6c9-audit-s08",
+        "b6c9-audit-references"
       ],
       "character_state_ids": [
         "b6c9-state-musashi"
@@ -473,8 +512,9 @@
       ],
       "referenced_characters": [
         "daizo",
-        "otsu",
-        "matahachi"
+        "gonroku",
+        "matahachi",
+        "otsu"
       ],
       "groups": [
         "mitsumine_staff"
@@ -484,8 +524,9 @@
         "mitsumine_shrine"
       ],
       "event_ids": [
-        "b6c10_e1",
-        "b6c10_e2"
+        "b6c10-e01",
+        "b6c10-e02",
+        "b6c10-audit-references"
       ],
       "character_state_ids": [
         "b6c10-state-musashi"
@@ -499,14 +540,16 @@
       "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
       "characters": [
         "musashi",
-        "iori",
-        "kohei",
         "oko",
+        "kohei",
         "gion_toji",
         "gonnosuke",
+        "iori",
         "kuro"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "temma"
+      ],
       "groups": [
         "baiken_ambush_group",
         "chichibu_officials"
@@ -515,11 +558,13 @@
       "locations": [
         "mitsumine_shrine",
         "oinu_teahouse",
-        "kosaruzawa_bridge"
+        "kosaruzawa_bridge",
+        "mitsumine_inner_approach"
       ],
       "event_ids": [
-        "b6c11_e1",
-        "b6c11_e2"
+        "b6c11-e01",
+        "b6c11-e02",
+        "b6c11-audit-references"
       ],
       "character_state_ids": [
         "b6c11-state-musashi",
@@ -535,17 +580,18 @@
       "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "characters": [
-        "gonnosuke",
-        "iori",
-        "oko",
-        "kuro",
-        "daizo",
-        "jotaro",
         "takuan",
-        "aoki_tanzaemon"
+        "jotaro",
+        "oko",
+        "aoki_tanzaemon",
+        "gonnosuke",
+        "daizo",
+        "iori",
+        "kuro"
       ],
       "referenced_characters": [
-        "musashi"
+        "musashi",
+        "otsu"
       ],
       "groups": [
         "daizo_confederates",
@@ -561,10 +607,17 @@
         "shojuan"
       ],
       "event_ids": [
-        "b6c12_e1",
-        "b6c12_e2",
-        "b6c12_e3",
-        "b6c12_e4"
+        "b6c12-e01",
+        "b6c12-e02",
+        "b6c12-e03",
+        "b6c12-audit-s08",
+        "b6c12-audit-s09",
+        "b6c12-audit-s10",
+        "b6c12-audit-s14",
+        "b6c12-e04",
+        "b6c12-e05",
+        "b6c12-e06",
+        "b6c12-audit-references"
       ],
       "character_state_ids": [
         "b6c12-state-iori",
@@ -581,12 +634,13 @@
       "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
       "characters": [
         "takuan",
-        "iori",
+        "osugi",
         "hojo_shinzo",
-        "osugi"
+        "iori"
       ],
       "referenced_characters": [
         "hojo_ujikatsu",
+        "matahachi",
         "musashi"
       ],
       "groups": [],
@@ -595,7 +649,9 @@
         "hojo_ushigome"
       ],
       "event_ids": [
-        "b6c13_e1"
+        "b6c13-e01",
+        "b6c13-audit-s02",
+        "b6c13-audit-references"
       ],
       "character_state_ids": [
         "b6c13-state-iori",
@@ -609,19 +665,23 @@
       "source_ref": "data/source/book6/chapter14-land-of-dreams.txt",
       "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
       "characters": [
-        "tokugawa_hidetada",
         "matahachi",
         "takuan",
         "akemi",
         "hojo_ujikatsu",
+        "tokugawa_hidetada",
         "sakai_tadakatsu"
       ],
       "referenced_characters": [
         "daizo",
-        "jotaro",
         "gonnosuke",
+        "jotaro",
+        "munenori",
         "musashi",
-        "munenori"
+        "oko",
+        "otsu",
+        "sekishusai",
+        "tokugawa_ieyasu"
       ],
       "groups": [
         "edo_castle_workers"
@@ -633,9 +693,12 @@
         "daizo_pawnshop"
       ],
       "event_ids": [
-        "b6c14_e1",
-        "b6c14_e2",
-        "b6c14_e3"
+        "b6c14-e01",
+        "b6c14-e02",
+        "b6c14-e04",
+        "b6c14-e03",
+        "b6c14-e05",
+        "b6c14-audit-references"
       ],
       "character_state_ids": [
         "b6c14-state-matahachi",
@@ -650,14 +713,19 @@
       "source_ref": "data/source/book6/chapter15-the-challenge.txt",
       "source_file": "data/source/book6/chapter15-the-challenge.txt",
       "characters": [
-        "iori",
-        "hojo_shinzo",
-        "osugi",
-        "kojiro",
         "musashi",
-        "gonnosuke"
+        "kojiro",
+        "osugi",
+        "gonnosuke",
+        "hojo_shinzo",
+        "iori"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "gonroku",
+        "hojo_ujikatsu",
+        "matahachi",
+        "takuan"
+      ],
       "groups": [
         "hosokawa_retainers"
       ],
@@ -668,9 +736,10 @@
         "nobidome"
       ],
       "event_ids": [
-        "b6c15_e1",
-        "b6c15_e2",
-        "b6c15_e3"
+        "b6c15-e01",
+        "b6c15-e02",
+        "b6c15-e03",
+        "b6c15-audit-references"
       ],
       "character_state_ids": [
         "b6c15-state-iori",
@@ -684,16 +753,19 @@
       "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "characters": [
+        "musashi",
+        "takuan",
+        "gonnosuke",
         "hojo_shinzo",
         "iori",
-        "musashi",
-        "gonnosuke",
-        "takuan",
         "hojo_ujikatsu",
         "sakai_tadakatsu"
       ],
       "referenced_characters": [
-        "kojiro"
+        "kojiro",
+        "obata_kagenori",
+        "obata_yogoro",
+        "osugi"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -703,9 +775,12 @@
         "wadakura_pavilion"
       ],
       "event_ids": [
-        "b6c16_e1",
-        "b6c16_e2",
-        "b6c16_e3"
+        "b6c16-e01",
+        "b6c16-e04",
+        "b6c16-e02",
+        "b6c16-e03",
+        "b6c16-e05",
+        "b6c16-audit-references"
       ],
       "character_state_ids": [
         "b6c16-state-musashi",
@@ -720,15 +795,16 @@
       "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
       "characters": [
         "musashi",
-        "gonnosuke",
         "takuan",
-        "hojo_ujikatsu",
+        "gonnosuke",
         "hojo_shinzo",
-        "iori"
+        "iori",
+        "hojo_ujikatsu"
       ],
       "referenced_characters": [
+        "osugi",
         "otsu",
-        "osugi"
+        "sanemon"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -737,9 +813,12 @@
         "hojo_ushigome"
       ],
       "event_ids": [
-        "b6c17_e1",
-        "b6c17_e2",
-        "b6c17_e3"
+        "b6c17-e01",
+        "b6c17-e02",
+        "b6c17-e03",
+        "b6c17-e04",
+        "b6c17-audit-s02",
+        "b6c17-audit-references"
       ],
       "character_state_ids": [
         "b6c17-state-musashi",
@@ -768,7 +847,6 @@
         "b6c1",
         "b6c2",
         "b6c4",
-        "b6c7",
         "b6c8",
         "b6c12",
         "b6c13",
@@ -807,7 +885,6 @@
       ],
       "mentioned_in": [
         "b6c1",
-        "b6c5",
         "b6c16"
       ]
     },
@@ -869,7 +946,9 @@
         "b6c2",
         "b6c3"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b6c4"
+      ]
     },
     {
       "id": "osugi",
@@ -885,6 +964,7 @@
       ],
       "mentioned_in": [
         "b6c4",
+        "b6c16",
         "b6c17"
       ]
     },
@@ -893,11 +973,12 @@
       "name": "Obata Yogorō",
       "aliases": [],
       "physical_presence": [
-        "b6c2"
+        "b6c2",
+        "b6c3"
       ],
       "mentioned_in": [
-        "b6c3",
-        "b6c5"
+        "b6c5",
+        "b6c16"
       ]
     },
     {
@@ -912,7 +993,9 @@
       "mentioned_in": [
         "b6c2",
         "b6c8",
-        "b6c10"
+        "b6c10",
+        "b6c13",
+        "b6c15"
       ]
     },
     {
@@ -944,9 +1027,7 @@
       "physical_presence": [
         "b6c4"
       ],
-      "mentioned_in": [
-        "b6c8"
-      ],
+      "mentioned_in": [],
       "identity_note": "Kept distinct from Hamada Toranosuke; chapter 8 explicitly identifies one slain man as Toranosuke's elder brother."
     },
     {
@@ -961,7 +1042,9 @@
         "b6c16",
         "b6c17"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b6c2"
+      ]
     },
     {
       "id": "hojo_ujikatsu",
@@ -970,13 +1053,13 @@
       "physical_presence": [
         "b6c6",
         "b6c14",
-        "b6c17",
-        "b6c16"
+        "b6c16",
+        "b6c17"
       ],
       "mentioned_in": [
         "b6c5",
         "b6c13",
-        "b6c16"
+        "b6c15"
       ]
     },
     {
@@ -993,7 +1076,9 @@
         "b6c16",
         "b6c17"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b6c15"
+      ]
     },
     {
       "id": "munenori",
@@ -1003,6 +1088,7 @@
         "b6c6"
       ],
       "mentioned_in": [
+        "b6c5",
         "b6c8",
         "b6c14"
       ]
@@ -1016,6 +1102,8 @@
         "b6c5",
         "b6c6",
         "b6c10",
+        "b6c12",
+        "b6c14",
         "b6c17"
       ]
     },
@@ -1045,7 +1133,9 @@
       "physical_presence": [
         "b6c8"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b6c6"
+      ]
     },
     {
       "id": "hamada_toranosuke",
@@ -1072,7 +1162,9 @@
       "physical_presence": [
         "b6c8"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b6c2"
+      ]
     },
     {
       "id": "numata_kajuro",
@@ -1130,7 +1222,9 @@
         "b6c11",
         "b6c12"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b6c14"
+      ]
     },
     {
       "id": "gion_toji",
@@ -1139,9 +1233,7 @@
       "physical_presence": [
         "b6c11"
       ],
-      "mentioned_in": [
-        "b6c12"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "gonnosuke",
@@ -1152,7 +1244,6 @@
       "physical_presence": [
         "b6c11",
         "b6c12",
-        "b6c14",
         "b6c15",
         "b6c16",
         "b6c17"
@@ -1183,6 +1274,7 @@
       ],
       "mentioned_in": [
         "b6c5",
+        "b6c9",
         "b6c14"
       ]
     },
@@ -1205,9 +1297,8 @@
         "b6c14"
       ],
       "mentioned_in": [
-        "b6c7",
-        "b6c8",
-        "b6c12"
+        "b6c6",
+        "b6c7"
       ]
     },
     {
@@ -1221,6 +1312,166 @@
         "b6c16"
       ],
       "mentioned_in": []
+    },
+    {
+      "id": "gonroku",
+      "name": "Fuchikawa Gonroku",
+      "aliases": [
+        "Uncle Gon",
+        "Gon"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c10",
+        "b6c15"
+      ]
+    },
+    {
+      "id": "hosokawa_tadaoki",
+      "name": "Hosokawa Tadaoki",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c1",
+        "b6c2",
+        "b6c3"
+      ]
+    },
+    {
+      "id": "kanemaki_jisai",
+      "name": "Kanemaki Jisai",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c3"
+      ]
+    },
+    {
+      "id": "karasumaru_mitsuhiro",
+      "name": "Karasumaru Mitsuhiro",
+      "aliases": [
+        "Lord Karasumaru"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c6"
+      ]
+    },
+    {
+      "id": "kimura_sukekuro",
+      "name": "Kimura Sukekurō",
+      "aliases": [
+        "Kimura Sukekuro",
+        "Sukekurō",
+        "Kimura"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c6"
+      ]
+    },
+    {
+      "id": "obata_kagenori",
+      "name": "Obata Kagenori",
+      "aliases": [
+        "Old Man Owl"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c5",
+        "b6c16"
+      ]
+    },
+    {
+      "id": "sanemon",
+      "name": "San'emon",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c17"
+      ]
+    },
+    {
+      "id": "sekishusai",
+      "name": "Yagyū Sekishūsai",
+      "aliases": [
+        "Yagyū Muneyoshi",
+        "Yagyū Munetoshi",
+        "Sekishūsai",
+        "Muneyoshi",
+        "Munetoshi"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c6",
+        "b6c14"
+      ]
+    },
+    {
+      "id": "temma",
+      "name": "Tsujikaze Temma",
+      "aliases": [
+        "Temma",
+        "Tsujikaze"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c11"
+      ]
+    },
+    {
+      "id": "tokugawa_ieyasu",
+      "name": "Tokugawa Ieyasu",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c6",
+        "b6c14"
+      ]
+    },
+    {
+      "id": "yagyu_hyogo",
+      "name": "Yagyū Hyōgo",
+      "aliases": [],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c6"
+      ]
+    },
+    {
+      "id": "zushino_kosuke",
+      "name": "Zushino Kōsuke",
+      "aliases": [
+        "soul polisher"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c5"
+      ]
+    },
+    {
+      "id": "ito_ittosai",
+      "name": "Itō Ittōsai",
+      "aliases": [
+        "Itō Yagorō"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b6c8"
+      ]
     }
   ],
   "groups": [
@@ -1579,11 +1830,67 @@
       "chapters": [
         "b6c16"
       ]
+    },
+    {
+      "id": "kanda_hill",
+      "name": "Kanda Hill",
+      "type": "route_waypoint",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c8"
+      ]
+    },
+    {
+      "id": "mitsumine_inner_approach",
+      "name": "Inner Mitsumine shrine approach",
+      "type": "narrative_site",
+      "introduced_section": 90,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c11"
+      ]
+    },
+    {
+      "id": "saikachi_slope",
+      "name": "Saikachi Slope",
+      "type": "route_waypoint",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c8"
+      ]
+    },
+    {
+      "id": "yajibei_route_house",
+      "name": "Yajibei’s house on Kojirō’s route",
+      "type": "route_waypoint",
+      "introduced_section": 87,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b6c8"
+      ]
     }
   ],
   "events": [
     {
-      "id": "b6c1_e1",
+      "id": "b6c1-e01",
       "chapter": "b6c1",
       "type": "discussion",
       "description": "Tadatoshi compares lance and sword practice and weighs Kojirō against Musashi.",
@@ -1597,16 +1904,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hosokawa_edo_residence",
-      "source_ref": "chapter1-a-chat-with-the-men.txt:L1-L118",
+      "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt:L1-L118",
       "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 80
     },
     {
-      "id": "b6c1_e2",
+      "id": "b6c1-e02",
       "chapter": "b6c1",
       "type": "summons_plan",
       "description": "Sado is to bring Musashi if found; Kakubei may bring Kojirō for an interview.",
@@ -1622,13 +1930,33 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hosokawa_edo_residence",
-      "source_ref": "chapter1-a-chat-with-the-men.txt:L119-L162",
+      "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt:L119-L162",
       "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 80,
+      "destination_label": "the unknown whereabouts of Musashi and Kojirō"
     },
     {
-      "id": "b6c2_e1",
+      "id": "b6c1-audit-references",
+      "chapter": "b6c1",
+      "section": 80,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hosokawa_tadaoki"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt",
+      "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c2-e01",
       "chapter": "b6c2",
       "type": "invitation",
       "description": "Kakubei brings Tadatoshi's interview invitation; Kojirō first accepts, then refuses out of pride.",
@@ -1642,16 +1970,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "tsukinomisaki",
-      "source_ref": "chapter2-buzzing-insects.txt:L65-L184",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt:L65-L184",
       "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 81
     },
     {
-      "id": "b6c2_e2",
+      "id": "b6c2-e02",
       "chapter": "b6c2",
       "type": "ambush",
       "description": "Yogorō ambushes the sleeping Kojirō; the chapter closes before the duel's outcome is stated.",
@@ -1663,39 +1992,63 @@
       "groups": [],
       "referenced_groups": [],
       "location": "isarago_hill",
-      "source_ref": "chapter2-buzzing-insects.txt:L185-L263",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt:L185-L263",
       "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 81
     },
     {
-      "id": "b6c3_e1",
+      "id": "b6c2-audit-references",
+      "chapter": "b6c2",
+      "section": 81,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hojo_shinzo",
+        "hosokawa_tadaoki",
+        "matahachi",
+        "musashi",
+        "yajibei"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt",
+      "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c3-e01",
       "chapter": "b6c3",
       "type": "death_discovery",
       "description": "Yogorō's corpse is discovered and Kojirō supplies funeral money.",
       "characters": [
-        "iwama_kakubei",
-        "kojiro"
+        "kojiro",
+        "obata_yogoro"
       ],
       "referenced_characters": [
-        "obata_yogoro"
+        "iwama_kakubei"
       ],
       "groups": [],
       "referenced_groups": [],
       "location": "isarago_hill",
-      "source_ref": "chapter3-the-eagle.txt:L1-L63",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt:L1-L63",
       "source_file": "data/source/book6/chapter3-the-eagle.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 82
     },
     {
-      "id": "b6c3_e2",
+      "id": "b6c3-e02",
       "chapter": "b6c3",
       "type": "combat_test",
       "description": "In the interview bout Kojirō breaks Gorōji's real lance and severely injures his pelvis and thigh.",
@@ -1708,16 +2061,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hosokawa_edo_residence",
-      "source_ref": "chapter3-the-eagle.txt:L93-L225",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt:L93-L225",
       "source_file": "data/source/book6/chapter3-the-eagle.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 82
     },
     {
-      "id": "b6c3_e3",
+      "id": "b6c3-e03",
       "chapter": "b6c3",
       "type": "visit",
       "description": "Kojirō repeatedly visits the injured Gorōji, strengthening his position among the retainers.",
@@ -1729,13 +2083,33 @@
       "groups": [],
       "referenced_groups": [],
       "location": "goroji_house",
-      "source_ref": "chapter3-the-eagle.txt:L226-L265",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt:L226-L265",
       "source_file": "data/source/book6/chapter3-the-eagle.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 82
     },
     {
-      "id": "b6c4_e1",
+      "id": "b6c3-audit-references",
+      "chapter": "b6c3",
+      "section": 82,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hosokawa_tadaoki",
+        "kanemaki_jisai"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt",
+      "source_file": "data/source/book6/chapter3-the-eagle.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c4-e01",
       "chapter": "b6c4",
       "type": "violent_death",
       "description": "Kojirō kills two samurai attacking Matahachi and publicly assumes responsibility.",
@@ -1747,16 +2121,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "donjiki_eatery",
-      "source_ref": "chapter4-green-persimmons.txt:L1-L105",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt:L1-L105",
       "source_file": "data/source/book6/chapter4-green-persimmons.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 83
     },
     {
-      "id": "b6c4_e2",
+      "id": "b6c4-e02",
       "chapter": "b6c4",
       "type": "discovery",
       "description": "After hearing Matahachi's story, Kojirō follows him and discovers Akemi living with him.",
@@ -1769,13 +2144,54 @@
       "groups": [],
       "referenced_groups": [],
       "location": "matahachi_nishikubo",
-      "source_ref": "chapter4-green-persimmons.txt:L106-L251",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt:L106-L251",
       "source_file": "data/source/book6/chapter4-green-persimmons.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 83
     },
     {
-      "id": "b6c5_e1",
+      "id": "b6c4-audit-s06",
+      "chapter": "b6c4",
+      "section": 83,
+      "type": "employment_offer",
+      "characters": [
+        "umpei",
+        "matahachi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "matahachi_nishikubo",
+      "description": "Umpei, an experienced well-digger boss working for the shōgun's castle project, again offers Matahachi higher-paid work inside the castle grounds.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt",
+      "source_file": "data/source/book6/chapter4-green-persimmons.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c4-audit-references",
+      "chapter": "b6c4",
+      "section": 83,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "daizo",
+        "iwama_kakubei",
+        "musashi",
+        "osugi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt",
+      "source_file": "data/source/book6/chapter4-green-persimmons.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c5-e01",
       "chapter": "b6c5",
       "type": "construction",
       "description": "Musashi and Iori build a cabin and Musashi trains the boy's gaze.",
@@ -1789,16 +2205,17 @@
       ],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter5-eyes.txt:L1-L142",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L1-L142",
       "source_file": "data/source/book6/chapter5-eyes.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 84
     },
     {
-      "id": "b6c5_e2",
+      "id": "b6c5-e02",
       "chapter": "b6c5",
       "type": "news_and_departure",
       "description": "Shinzō reports Yogorō's death and invites Musashi to Ujikatsu's residence; they ride away together.",
@@ -1813,16 +2230,82 @@
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter5-eyes.txt:L143-L266",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L143-L266",
       "source_file": "data/source/book6/chapter5-eyes.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 84,
+      "origin": "musashino_cabin",
+      "destination": "hojo_ushigome"
     },
     {
-      "id": "b6c6_e1",
+      "id": "b6c5-audit-s05",
+      "chapter": "b6c5",
+      "section": 84,
+      "type": "death_news",
+      "characters": [
+        "hojo_shinzo",
+        "musashi"
+      ],
+      "referenced_characters": [
+        "obata_yogoro",
+        "obata_kagenori"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "musashino_cabin",
+      "description": "Shinzō reports that Kagenori has died and that Yogorō also died after going alone to seek revenge on Kojirō.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L170-L185",
+      "source_file": "data/source/book6/chapter5-eyes.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c5-audit-s06",
+      "chapter": "b6c5",
+      "section": 84,
+      "type": "succession_revelation",
+      "characters": [
+        "hojo_shinzo"
+      ],
+      "referenced_characters": [
+        "obata_kagenori",
+        "munenori"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "musashino_cabin",
+      "description": "With Yogorō dead, Shinzō says adoption proceedings arranged through his father and Munenori will make him Kagenori's heir and successor to the Obata name.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L170-L185",
+      "source_file": "data/source/book6/chapter5-eyes.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c5-audit-references",
+      "chapter": "b6c5",
+      "section": 84,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "jotaro",
+        "otsu",
+        "zushino_kosuke"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter5-eyes.txt",
+      "source_file": "data/source/book6/chapter5-eyes.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c6-e01",
       "chapter": "b6c6",
       "type": "test",
       "description": "Musashi detects and circumvents the staged garden ambush prepared to test him.",
@@ -1835,13 +2318,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hojo_ushigome",
-      "source_ref": "chapter6-four-sages-with-a-single-light.txt:L1-L159",
+      "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt:L1-L159",
       "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 85
     },
     {
-      "id": "b6c6_e2",
+      "id": "b6c6-e02",
       "chapter": "b6c6",
       "type": "recommendation_plan",
       "description": "The group proposes Musashi as shogunal instructor and discusses marrying him to Otsū; Musashi remains reluctant.",
@@ -1857,37 +2341,84 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hojo_ushigome",
-      "source_ref": "chapter6-four-sages-with-a-single-light.txt:L160-L311",
+      "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt:L160-L311",
       "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 85
     },
     {
-      "id": "b6c7_e1",
-      "chapter": "b6c7",
-      "type": "departure",
-      "description": "Akemi leaves Matahachi.",
+      "id": "b6c6-audit-s09",
+      "chapter": "b6c6",
+      "section": 85,
+      "type": "sword_doctrine",
       "characters": [
-        "akemi",
-        "matahachi"
+        "musashi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
+      "location": "hojo_ushigome",
+      "description": "Musashi internally rejects the sword of conquest and mere technical instruction, defining the Way instead as a means to establish order, protect and refine the spirit and ultimately contribute to peace and good government.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+      "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c6-audit-references",
+      "chapter": "b6c6",
+      "section": 85,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "karasumaru_mitsuhiro",
+        "kimura_sukekuro",
+        "mikogami_tenzen",
+        "sekishusai",
+        "tokugawa_hidetada",
+        "tokugawa_ieyasu",
+        "yagyu_hyogo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+      "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c7-e01",
+      "chapter": "b6c7",
+      "type": "departure",
+      "description": "Akemi leaves Matahachi.",
+      "characters": [
+        "akemi"
+      ],
+      "referenced_characters": [
+        "matahachi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
       "location": "matahachi_nishikubo",
-      "source_ref": "chapter7-the-locust-tree.txt:L1-L51",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L1-L51",
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 86,
+      "origin": "matahachi_nishikubo",
+      "destination_label": "an unstated destination"
     },
     {
-      "id": "b6c7_e2",
+      "id": "b6c7-e02",
       "chapter": "b6c7",
       "type": "assassination_plot",
       "description": "Daizō pays Matahachi to enter Edo Castle as a well digger and kill Hidetada with a hidden musket.",
@@ -1901,13 +2432,15 @@
       "groups": [],
       "referenced_groups": [],
       "location": "daizo_pawnshop",
-      "source_ref": "chapter7-the-locust-tree.txt:L52-L205",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L52-L205",
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 86,
+      "destination": "edo_castle"
     },
     {
-      "id": "b6c7_e3",
+      "id": "b6c7-e03",
       "chapter": "b6c7",
       "type": "funds_audit",
       "description": "Daizō retrieves the cached advance and finds twenty-eight of thirty gold pieces remaining.",
@@ -1918,16 +2451,35 @@
       "groups": [],
       "referenced_groups": [],
       "location": "daizo_pawnshop",
-      "source_ref": "chapter7-the-locust-tree.txt:L206-L236",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L206-L236",
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 86
     },
     {
-      "id": "b6c8_e1",
+      "id": "b6c7-audit-references",
+      "chapter": "b6c7",
+      "section": 86,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "umpei"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt",
+      "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c8-e01",
       "chapter": "b6c8",
       "type": "abduction",
       "description": "Toranosuke's group abducts Osugi to lure Kojirō.",
@@ -1939,23 +2491,51 @@
         "kojiro"
       ],
       "groups": [
-        "hangawara_gang"
+        "ono_students"
       ],
       "referenced_groups": [],
       "location": "hamacho_house",
-      "source_ref": "chapter8-tadaakis-madness.txt:L1-L165",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L1-L165",
       "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 87,
+      "origin": "hamacho_house",
+      "destination_label": "the Ono students' custody"
     },
     {
-      "id": "b6c8_e2",
+      "id": "b6c8-audit-route",
+      "chapter": "b6c8",
+      "section": 87,
+      "type": "journey",
+      "characters": [
+        "kojiro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Kojirō follows news of Osugi’s kidnapping from Takanawa via Yajibei’s house and Kanda toward the Ono residence at Saikachi Slope.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L138-L174",
+      "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
+      "movement_status": "confirmed_route",
+      "origin": "takanawa_highroad",
+      "via": [
+        "yajibei_route_house",
+        "kanda_hill",
+        "saikachi_slope"
+      ],
+      "destination": "ono_dojo"
+    },
+    {
+      "id": "b6c8-e02",
       "chapter": "b6c8",
       "type": "dojo_confrontation",
-      "description": "After Tadaaki concedes responsibility for his students, Kojirō attacks and cuts his topknot while Tadaaki cuts Kojirō's sleeve.",
+      "description": "Tadaaki first concedes defeat as a fighter. Kojirō nevertheless attacks and cuts his topknot while Tadaaki cuts Kojirō’s sleeve. Tadaaki accepts responsibility for his students later.",
       "characters": [
         "kojiro",
         "mikogami_tenzen"
@@ -1966,19 +2546,20 @@
       ],
       "referenced_groups": [],
       "location": "ono_dojo",
-      "source_ref": "chapter8-tadaakis-madness.txt:L166-L420",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L166-L420",
       "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 87
     },
     {
-      "id": "b6c8_e3",
+      "id": "b6c8-e03",
       "chapter": "b6c8",
-      "type": "retirement",
-      "description": "Tadaaki announces retirement and tonsure, expels Toranosuke, and releases Osugi; he later leaves Edo.",
+      "type": "retirement_and_release",
+      "description": "After accepting responsibility, Tadaaki announces retirement, expels Toranosuke, orders the students to train elsewhere and releases Osugi. Later public talk of madness is not a medical fact.",
       "characters": [
         "mikogami_tenzen",
         "hamada_toranosuke",
@@ -1988,16 +2569,58 @@
       "groups": [],
       "referenced_groups": [],
       "location": "ono_dojo",
-      "source_ref": "chapter8-tadaakis-madness.txt:L421-L496",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L421-L496",
       "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 87
     },
     {
-      "id": "b6c9_e1",
+      "id": "b6c8-e04",
+      "chapter": "b6c8",
+      "section": 87,
+      "type": "departure",
+      "description": "Not many days after the confrontation, Tadaaki leaves Edo for an unstated destination.",
+      "characters": [
+        "mikogami_tenzen"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "ono_dojo",
+      "destination_label": "outside Edo",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L489-L496",
+      "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route"
+    },
+    {
+      "id": "b6c8-audit-references",
+      "chapter": "b6c8",
+      "section": 87,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "ito_ittosai",
+        "matahachi",
+        "munenori",
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt",
+      "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c9-e01",
       "chapter": "b6c9",
       "type": "storm_damage",
       "description": "A typhoon destroys the cabin; Musashi helps neighboring farmers before departing with Iori.",
@@ -2011,16 +2634,19 @@
       ],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter9-the-poignancy-of-things.txt:L1-L111",
+      "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt:L1-L111",
       "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 88,
+      "origin": "musashino_cabin",
+      "destination": "tanashi"
     },
     {
-      "id": "b6c9_e2",
+      "id": "b6c9-e02",
       "chapter": "b6c9",
       "type": "journey",
       "description": "After an overnight stop at Tanashi, they are delayed at the Iruma River; Iori finds and buries old battle bones.",
@@ -2032,16 +2658,56 @@
       "groups": [],
       "referenced_groups": [],
       "location": "kotesashigahara",
-      "source_ref": "chapter9-the-poignancy-of-things.txt:L112-L198",
+      "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt:L112-L198",
       "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 88,
+      "origin": "tanashi",
+      "destination": "kotesashigahara"
     },
     {
-      "id": "b6c10_e1",
+      "id": "b6c9-audit-s08",
+      "chapter": "b6c9",
+      "section": 88,
+      "type": "compassion_doctrine",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Pressed by Iori's questions about loyal and rebel dead, Musashi concludes that a genuine samurai and swordsman must possess compassion and an appreciation of life's poignancy, not merely destructive skill.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt",
+      "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c9-audit-references",
+      "chapter": "b6c9",
+      "section": 88,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "jotaro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt",
+      "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c10-e01",
       "chapter": "b6c10",
       "type": "investigation",
       "description": "Musashi searches donor records for Daizō without finding him.",
@@ -2054,13 +2720,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mitsumine_shrine",
-      "source_ref": "chapter10-two-drumsticks.txt:L1-L97",
+      "source_ref": "data/source/book6/chapter10-two-drumsticks.txt:L1-L97",
       "source_file": "data/source/book6/chapter10-two-drumsticks.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 89
     },
     {
-      "id": "b6c10_e2",
+      "id": "b6c10-e02",
       "chapter": "b6c10",
       "type": "technical_insight",
       "description": "Watching a drummer use two sticks gives Musashi a new formulation of his two-sword principle.",
@@ -2074,16 +2741,37 @@
       ],
       "referenced_groups": [],
       "location": "mitsumine_shrine",
-      "source_ref": "chapter10-two-drumsticks.txt:L98-L193",
+      "source_ref": "data/source/book6/chapter10-two-drumsticks.txt:L98-L193",
       "source_file": "data/source/book6/chapter10-two-drumsticks.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 89
     },
     {
-      "id": "b6c11_e1",
+      "id": "b6c10-audit-references",
+      "chapter": "b6c10",
+      "section": 89,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gonroku",
+        "matahachi",
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter10-two-drumsticks.txt",
+      "source_file": "data/source/book6/chapter10-two-drumsticks.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c11-e01",
       "chapter": "b6c11",
       "type": "ambush",
       "description": "Baiken's group ambushes Musashi; Musashi kills five and Gonnosuke kills seven with his staff, leaving one lancer-priest survivor.",
@@ -2099,17 +2787,18 @@
         "baiken_ambush_group"
       ],
       "referenced_groups": [],
-      "location": "kosaruzawa_bridge",
-      "source_ref": "chapter11-the-demons-attendant.txt:L125-L367",
+      "location": "mitsumine_inner_approach",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L125-L367",
       "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 90
     },
     {
-      "id": "b6c11_e2",
+      "id": "b6c11-e02",
       "chapter": "b6c11",
       "type": "arrest",
       "description": "When Musashi reports the attack, officials bind him as the suspected shrine-treasure thief.",
@@ -2121,20 +2810,41 @@
         "chichibu_officials"
       ],
       "referenced_groups": [],
-      "location": "mitsumine_shrine",
-      "source_ref": "chapter11-the-demons-attendant.txt:L368-L437",
+      "location": "kosaruzawa_bridge",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L368-L437",
       "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 90,
+      "origin": "mitsumine_shrine",
+      "destination_label": "town detention"
     },
     {
-      "id": "b6c12_e1",
+      "id": "b6c11-audit-references",
+      "chapter": "b6c11",
+      "section": 90,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "temma"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt",
+      "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c12-e01",
       "chapter": "b6c12",
       "type": "violent_death",
-      "description": "Oko attacks Gonnosuke and he kills her with her own dagger before escaping the pursuing villagers with Iori.",
+      "description": "Oko attacks Gonnosuke and he kills her with her own dagger.",
       "characters": [
         "gonnosuke",
         "oko"
@@ -2143,16 +2853,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "oinu_teahouse",
-      "source_ref": "chapter12-brother-disciples.txt:L1-L157",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L1-L157",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 91
     },
     {
-      "id": "b6c12_e2",
+      "id": "b6c12-e02",
       "chapter": "b6c12",
       "type": "theft_discovery",
       "description": "Iori follows Daizō and Jōtarō and witnesses the transfer and caching of Mitsumine's stolen treasure.",
@@ -2167,19 +2878,40 @@
       ],
       "referenced_groups": [],
       "location": "head_burying_mound",
-      "source_ref": "chapter12-brother-disciples.txt:L158-L338",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L158-L338",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 91
     },
     {
-      "id": "b6c12_e3",
+      "id": "b6c12-e03",
       "chapter": "b6c12",
       "type": "near_reunion",
       "description": "Takuan sends Tanzaemon toward Shōjuan before finding the unconscious boys; father and son narrowly miss one another.",
       "characters": [
-        "takuan",
-        "aoki_tanzaemon",
+        "aoki_tanzaemon"
+      ],
+      "referenced_characters": [
+        "jotaro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L339-L504",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "certainty": "explicit",
+      "movement_status": "intended_destination",
+      "section": 91,
+      "origin_label": "Takuan's eastbound route",
+      "destination": "shojuan"
+    },
+    {
+      "id": "b6c12-audit-s08",
+      "chapter": "b6c12",
+      "section": 91,
+      "type": "pursuit_and_duel",
+      "characters": [
         "iori",
         "jotaro"
       ],
@@ -2187,15 +2919,76 @@
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter12-brother-disciples.txt:L339-L504",
-      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "description": "Iori follows Jōtarō, denounces him as a thief and eventually fights him near the Musashino cabin, using Musashi's eye-training lesson.",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "movement_status": null
     },
     {
-      "id": "b6c12_e4",
+      "id": "b6c12-audit-s09",
       "chapter": "b6c12",
-      "type": "confession",
+      "section": 91,
+      "type": "brother_disciple_reveal",
+      "characters": [
+        "iori",
+        "jotaro"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "musashino_cabin",
+      "description": "The boys discover that both regard Musashi as their teacher; their hostility gives way to shocked recognition even though mistrust remains.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c12-audit-s10",
+      "chapter": "b6c12",
+      "section": 91,
+      "type": "mutual_injury",
+      "characters": [
+        "iori",
+        "jotaro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Still struggling in a tree, Iori and Jōtarō fall together and are knocked unconscious.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c12-audit-s14",
+      "chapter": "b6c12",
+      "section": 91,
+      "type": "ideological_confrontation",
+      "characters": [
+        "takuan",
+        "jotaro",
+        "daizo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Jōtarō admits helping Daizō rob the treasure house while claiming the theft serves the public; Takuan attacks the logic of a half-educated do-gooder imposing his own idea of social good.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c12-e04",
+      "chapter": "b6c12",
+      "type": "confession_and_instruction",
       "description": "Jōtarō explains Daizō's plot; Takuan tells him to reunite with his father and flee in disguise.",
       "characters": [
         "jotaro",
@@ -2208,13 +3001,74 @@
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter12-brother-disciples.txt:L505-L582",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L505-L582",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 91
+    },
+    {
+      "id": "b6c12-e05",
+      "chapter": "b6c12",
+      "section": 91,
+      "type": "escape",
+      "description": "Gonnosuke and Iori escape the pursuing villagers and shake off the last searchers at Shōmaru Pass.",
+      "characters": [
+        "gonnosuke",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "shomaru_pass",
+      "origin": "oinu_teahouse",
+      "destination": "shomaru_pass",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L54-L70",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route"
+    },
+    {
+      "id": "b6c12-e06",
+      "chapter": "b6c12",
+      "section": 91,
+      "type": "departure_plan",
+      "description": "After Jōtarō's confession, Takuan directs him to seek his father at Shōjuan and flee in disguise.",
+      "characters": [
+        "jotaro"
+      ],
+      "referenced_characters": [
+        "aoki_tanzaemon"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "musashino_cabin",
+      "destination": "shojuan",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L505-L582",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "certainty": "explicit",
       "movement_status": "intended_destination"
     },
     {
-      "id": "b6c13_e1",
+      "id": "b6c12-audit-references",
+      "chapter": "b6c12",
+      "section": 91,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c13-e01",
       "chapter": "b6c13",
       "type": "accusation",
       "description": "Osugi arrives to slander Musashi and his recommendation; Iori pelts her with a pomegranate and manure.",
@@ -2229,16 +3083,57 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hojo_ushigome",
-      "source_ref": "chapter13-the-pomegranate.txt:L20-L89",
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt:L20-L89",
       "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 92
     },
     {
-      "id": "b6c14_e1",
+      "id": "b6c13-audit-s02",
+      "chapter": "b6c13",
+      "section": 92,
+      "type": "slander_campaign",
+      "characters": [
+        "osugi",
+        "hojo_shinzo"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "hojo_ushigome",
+      "description": "Osugi appears at the mansion and gives Shinzō a long denunciation of Musashi, citing Sekigahara, alleged crimes and the Otsū dispute to argue he is unfit to teach the shōgun.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt",
+      "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c13-audit-references",
+      "chapter": "b6c13",
+      "section": 92,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "hojo_ujikatsu",
+        "matahachi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt",
+      "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c14-e01",
       "chapter": "b6c14",
       "type": "abandoned_assassination",
       "description": "Matahachi abandons the assassination, tries to remove the undelivered musket, escapes confinement and is caught digging by Takuan.",
@@ -2255,16 +3150,17 @@
       ],
       "referenced_groups": [],
       "location": "edo_castle",
-      "source_ref": "chapter14-land-of-dreams.txt:L1-L223",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L1-L223",
       "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 93
     },
     {
-      "id": "b6c14_e2",
+      "id": "b6c14-e02",
       "chapter": "b6c14",
       "type": "identity_reveal",
       "description": "Takuan reveals that Daizō is Mizoguchi Shinano and shaves Matahachi's head.",
@@ -2278,44 +3174,107 @@
       "groups": [],
       "referenced_groups": [],
       "location": "edo_castle",
-      "source_ref": "chapter14-land-of-dreams.txt:L224-L292",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L224-L292",
       "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 93
     },
     {
-      "id": "b6c14_e3",
+      "id": "b6c14-e04",
       "chapter": "b6c14",
-      "type": "judgment",
-      "description": "Hidetada approves leniency and Musashi's release; Matahachi and Akemi are lashed and banished from Edo rather than executed.",
-      "characters": [
-        "tokugawa_hidetada",
-        "sakai_tadakatsu",
-        "hojo_ujikatsu",
-        "takuan",
-        "matahachi",
-        "akemi"
-      ],
+      "section": 93,
+      "type": "release_report",
+      "description": "A retainer reports that Musashi has already been released on Lord Sakai’s instructions after the shrine-treasure misunderstanding was cleared, and handed over to Gonnosuke. This is separate from Hidetada’s later judgment.",
+      "characters": [],
       "referenced_characters": [
         "musashi",
         "gonnosuke"
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "otemachi_prison",
-      "source_ref": "chapter14-land-of-dreams.txt:L293-L435",
+      "location": null,
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L245-L254",
       "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
-      "extensions": {
-        "legacy_movement_status": "departure_confirmed"
-      }
+      "movement_status": null
     },
     {
-      "id": "b6c15_e1",
+      "id": "b6c14-e03",
+      "chapter": "b6c14",
+      "type": "judgment",
+      "description": "After Musashi’s separate release has been reported, Hidetada accepts Takuan’s counsel for constructive government, approves lenient penalties for the conspiracy and looks favorably on Musashi as a tutor.",
+      "characters": [
+        "tokugawa_hidetada",
+        "sakai_tadakatsu",
+        "hojo_ujikatsu",
+        "takuan"
+      ],
+      "referenced_characters": [
+        "matahachi",
+        "akemi",
+        "musashi",
+        "gonnosuke"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "edo_castle",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L261-L291",
+      "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      },
+      "section": 93
+    },
+    {
+      "id": "b6c14-e05",
+      "chapter": "b6c14",
+      "section": 93,
+      "type": "punishment_and_banishment",
+      "description": "Matahachi and Akemi are lashed and banished from Edo rather than executed; both remain alive after punishment.",
+      "characters": [
+        "matahachi",
+        "akemi"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "otemachi_prison",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L361-L435",
+      "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
+      "certainty": "explicit",
+      "movement_status": null
+    },
+    {
+      "id": "b6c14-audit-references",
+      "chapter": "b6c14",
+      "section": 93,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "jotaro",
+        "munenori",
+        "oko",
+        "otsu",
+        "sekishusai",
+        "tokugawa_ieyasu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt",
+      "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c15-e01",
       "chapter": "b6c15",
       "type": "challenge_delivery",
       "description": "Iori meets the Hosokawa advance party; Kojirō writes a life-and-death challenge for him to carry to Musashi.",
@@ -2328,16 +3287,19 @@
       "groups": [],
       "referenced_groups": [],
       "location": "nobidome",
-      "source_ref": "chapter15-the-challenge.txt:L1-L175",
+      "source_ref": "data/source/book6/chapter15-the-challenge.txt:L1-L175",
       "source_file": "data/source/book6/chapter15-the-challenge.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 94,
+      "origin_label": "the Hosokawa advance party's route",
+      "destination_label": "its onward journey"
     },
     {
-      "id": "b6c15_e2",
+      "id": "b6c15-e02",
       "chapter": "b6c15",
       "type": "reunion",
       "description": "Iori finds Musashi and Gonnosuke, delivers the challenge, and returns with them to the cabin.",
@@ -2350,13 +3312,14 @@
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter15-the-challenge.txt:L176-L279",
+      "source_ref": "data/source/book6/chapter15-the-challenge.txt:L176-L279",
       "source_file": "data/source/book6/chapter15-the-challenge.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 94
     },
     {
-      "id": "b6c15_e3",
+      "id": "b6c15-e03",
       "chapter": "b6c15",
       "type": "departure",
       "description": "Next morning Iori rides to return the borrowed horse to the Hōjō household.",
@@ -2367,38 +3330,85 @@
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter15-the-challenge.txt:L280-L305",
+      "source_ref": "data/source/book6/chapter15-the-challenge.txt:L280-L305",
       "source_file": "data/source/book6/chapter15-the-challenge.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 94,
+      "origin": "musashino_cabin",
+      "destination": "hojo_ushigome"
     },
     {
-      "id": "b6c16_e1",
+      "id": "b6c15-audit-references",
+      "chapter": "b6c15",
+      "section": 94,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gonroku",
+        "hojo_ujikatsu",
+        "matahachi",
+        "takuan"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter15-the-challenge.txt",
+      "source_file": "data/source/book6/chapter15-the-challenge.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c16-e01",
       "chapter": "b6c16",
       "type": "summons",
-      "description": "Iori returns and Shinzō brings the official summons for Musashi's appointment.",
+      "description": "Shinzō brings the official summons to Musashi and Gonnosuke at the cabin; Iori is at the Hōjō household.",
       "characters": [
         "hojo_shinzo",
         "musashi",
+        "gonnosuke"
+      ],
+      "referenced_characters": [
         "iori"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "musashino_cabin",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L127-L138",
+      "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "extensions": {
+        "legacy_movement_status": "departure_confirmed"
+      },
+      "section": 95
+    },
+    {
+      "id": "b6c16-e04",
+      "chapter": "b6c16",
+      "section": 95,
+      "type": "appointment_journey",
+      "description": "Musashi travels from the Hōjō household at Ushigome to Wadakura in response to the summons; the previous evening’s cabin-to-Hōjō journey is separate.",
+      "characters": [
+        "musashi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "musashino_cabin",
-      "source_ref": "chapter16-the-gateway-to-glory.txt:L1-L124",
+      "location": "wadakura_pavilion",
+      "origin": "hojo_ushigome",
+      "destination": "wadakura_pavilion",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L139-L176",
       "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
-      "extensions": {
-        "legacy_movement_status": "departure_confirmed"
-      }
+      "movement_status": "confirmed_route"
     },
     {
-      "id": "b6c16_e2",
+      "id": "b6c16-e02",
       "chapter": "b6c16",
       "type": "appointment_canceled",
       "description": "Sakai tells Musashi the appointment has been canceled after a sudden change and adverse reports; Musashi expresses relief.",
@@ -2410,19 +3420,20 @@
       "groups": [],
       "referenced_groups": [],
       "location": "wadakura_pavilion",
-      "source_ref": "chapter16-the-gateway-to-glory.txt:L125-L231",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L125-L231",
       "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 95
     },
     {
-      "id": "b6c16_e3",
+      "id": "b6c16-e03",
       "chapter": "b6c16",
       "type": "artwork",
-      "description": "At Sakai's request Musashi paints a Musashino sunrise and departs.",
+      "description": "At Sakai's request Musashi paints a Musashino sunrise as a wordless statement of his character.",
       "characters": [
         "musashi",
         "sakai_tadakatsu"
@@ -2431,18 +3442,62 @@
       "groups": [],
       "referenced_groups": [],
       "location": "wadakura_pavilion",
-      "source_ref": "chapter16-the-gateway-to-glory.txt:L232-L283",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L232-L283",
       "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 95
     },
     {
-      "id": "b6c17_e1",
+      "id": "b6c16-e05",
+      "chapter": "b6c16",
+      "section": 95,
+      "type": "departure",
+      "description": "After finishing the painting, Musashi leaves the pavilion for an unstated destination.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [
+        "sakai_tadakatsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "wadakura_pavilion",
+      "destination_label": "an unstated destination",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L271-L283",
+      "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route"
+    },
+    {
+      "id": "b6c16-audit-references",
+      "chapter": "b6c16",
+      "section": 95,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "kojiro",
+        "obata_kagenori",
+        "obata_yogoro",
+        "osugi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt",
+      "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c17-e01",
       "chapter": "b6c17",
-      "type": "departure_and_guardianship",
+      "type": "guardianship_decision",
       "description": "Musashi chooses further wandering, entrusts Iori and the father's pouch to Gonnosuke, and leaves a letter for Hōjō.",
       "characters": [
         "musashi",
@@ -2453,16 +3508,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter17-the-sound-of-heaven.txt:L1-L93",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L1-L93",
       "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 96
     },
     {
-      "id": "b6c17_e2",
+      "id": "b6c17-e02",
       "chapter": "b6c17",
       "type": "kinship_discovery",
       "description": "Takuan decodes the pouch's clue: Iori's abandoned sister is linked to the single sound of Otsū's flute.",
@@ -2479,16 +3535,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hojo_ushigome",
-      "source_ref": "chapter17-the-sound-of-heaven.txt:L94-L151",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L94-L151",
       "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
       "certainty": "strong_inference",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 96
     },
     {
-      "id": "b6c17_e3",
+      "id": "b6c17-e03",
       "chapter": "b6c17",
       "type": "failed_pursuit",
       "description": "The group hurries to the cabin but finds Musashi already gone.",
@@ -2505,10 +3562,72 @@
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
-      "source_ref": "chapter17-the-sound-of-heaven.txt:L152-L174",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L152-L174",
       "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 96
+    },
+    {
+      "id": "b6c17-e04",
+      "chapter": "b6c17",
+      "section": 96,
+      "type": "departure",
+      "description": "Musashi leaves the cabin alone for an unspecified mountain journey.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [
+        "gonnosuke",
+        "iori"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "musashino_cabin",
+      "destination_label": "unspecified mountains",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L43-L83",
+      "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route"
+    },
+    {
+      "id": "b6c17-audit-s02",
+      "chapter": "b6c17",
+      "section": 96,
+      "type": "government_doctrine_revision",
+      "characters": [
+        "musashi",
+        "gonnosuke"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Musashi says the Way of the Sword and good government should ultimately align, but he now sees that governance requires a perfect blending of military and literary arts and that he still has much to learn from the country itself.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b6c17-audit-references",
+      "chapter": "b6c17",
+      "section": 96,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "osugi",
+        "sanemon"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "movement_status": null
     }
   ],
   "character_states": [
@@ -2516,9 +3635,9 @@
       "id": "b6c1-state-hosokawa_tadatoshi",
       "chapter": "b6c1",
       "character": "hosokawa_tadatoshi",
-      "state": "at the archery range after authorizing both searches",
+      "state": "At the archery range after authorizing both searches.",
       "location": "hosokawa_edo_residence",
-      "source_ref": "chapter1-a-chat-with-the-men.txt:L145-L162",
+      "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt:L145-L162",
       "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2527,9 +3646,9 @@
       "id": "b6c2-state-kojiro",
       "chapter": "b6c2",
       "character": "kojiro",
-      "state": "advancing in a lethal confrontation with Yogorō; outcome unresolved in this chapter",
+      "state": "Advancing in a lethal confrontation with Yogorō; outcome unresolved in this chapter.",
       "location": "isarago_hill",
-      "source_ref": "chapter2-buzzing-insects.txt:L245-L263",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt:L245-L263",
       "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2538,9 +3657,9 @@
       "id": "b6c2-state-obata_yogoro",
       "chapter": "b6c2",
       "character": "obata_yogoro",
-      "state": "engaged with Kojirō; not marked dead until chapter 82 evidence",
+      "state": "Facing Kojirō at Isarago; the chapter ends before his fate is stated.",
       "location": "isarago_hill",
-      "source_ref": "chapter2-buzzing-insects.txt:L245-L263",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt:L245-L263",
       "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2549,9 +3668,9 @@
       "id": "b6c3-state-okatani_goroji",
       "chapter": "b6c3",
       "character": "okatani_goroji",
-      "state": "alive, immobilized by severe pelvic and thigh injuries",
+      "state": "Alive, immobilized by severe pelvic and thigh injuries.",
       "location": "goroji_house",
-      "source_ref": "chapter3-the-eagle.txt:L226-L265",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt:L226-L265",
       "source_file": "data/source/book6/chapter3-the-eagle.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2560,9 +3679,9 @@
       "id": "b6c3-state-kojiro",
       "chapter": "b6c3",
       "character": "kojiro",
-      "state": "making repeated visits to Gorōji",
+      "state": "Making repeated visits to Gorōji.",
       "location": "goroji_house",
-      "source_ref": "chapter3-the-eagle.txt:L246-L265",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt:L246-L265",
       "source_file": "data/source/book6/chapter3-the-eagle.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2571,9 +3690,9 @@
       "id": "b6c4-state-matahachi",
       "chapter": "b6c4",
       "character": "matahachi",
-      "state": "living with Akemi",
+      "state": "Living with Akemi.",
       "location": "matahachi_nishikubo",
-      "source_ref": "chapter4-green-persimmons.txt:L195-L251",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt:L195-L251",
       "source_file": "data/source/book6/chapter4-green-persimmons.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2582,9 +3701,9 @@
       "id": "b6c4-state-kojiro",
       "chapter": "b6c4",
       "character": "kojiro",
-      "state": "walking back toward town after spying on the tenement",
+      "state": "Walking back toward town after spying on the tenement.",
       "location": null,
-      "source_ref": "chapter4-green-persimmons.txt:L234-L251",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt:L234-L251",
       "source_file": "data/source/book6/chapter4-green-persimmons.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2593,9 +3712,9 @@
       "id": "b6c5-state-musashi",
       "chapter": "b6c5",
       "character": "musashi",
-      "state": "riding with Shinzō toward Ushigome",
+      "state": "Riding with Shinzō toward Ushigome.",
       "location": null,
-      "source_ref": "chapter5-eyes.txt:L249-L266",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L249-L266",
       "source_file": "data/source/book6/chapter5-eyes.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2604,9 +3723,9 @@
       "id": "b6c5-state-iori",
       "chapter": "b6c5",
       "character": "iori",
-      "state": "left alone at the new cabin",
+      "state": "Left alone at the new cabin.",
       "location": "musashino_cabin",
-      "source_ref": "chapter5-eyes.txt:L249-L266",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L249-L266",
       "source_file": "data/source/book6/chapter5-eyes.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2615,9 +3734,9 @@
       "id": "b6c6-state-musashi",
       "chapter": "b6c6",
       "character": "musashi",
-      "state": "present while his patrons treat the recommendation as decided",
+      "state": "Present while his patrons treat the recommendation as decided.",
       "location": "hojo_ushigome",
-      "source_ref": "chapter6-four-sages-with-a-single-light.txt:L284-L311",
+      "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt:L284-L311",
       "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2626,9 +3745,9 @@
       "id": "b6c7-state-matahachi",
       "chapter": "b6c7",
       "character": "matahachi",
-      "state": "committed to entering the castle under the well-digger cover",
+      "state": "Committed to entering the castle under the well-digger cover.",
       "location": "matahachi_nishikubo",
-      "source_ref": "chapter7-the-locust-tree.txt:L170-L205",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L170-L205",
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2637,9 +3756,9 @@
       "id": "b6c7-state-akemi",
       "chapter": "b6c7",
       "character": "akemi",
-      "state": "working for and following Daizō",
+      "state": "Working for and following Daizō.",
       "location": "daizo_pawnshop",
-      "source_ref": "chapter7-the-locust-tree.txt:L206-L236",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L206-L236",
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2648,9 +3767,9 @@
       "id": "b6c8-state-ono_tadaaki",
       "chapter": "b6c8",
       "character": "mikogami_tenzen",
-      "state": "has withdrawn from the dojo and disappeared from Edo; rumors of madness are unverified reports",
+      "state": "Has withdrawn from the dojo and disappeared from Edo; rumors of madness are unverified reports.",
       "location": null,
-      "source_ref": "chapter8-tadaakis-madness.txt:L458-L496",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L458-L496",
       "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2659,9 +3778,9 @@
       "id": "b6c8-state-hamada_toranosuke",
       "chapter": "b6c8",
       "character": "hamada_toranosuke",
-      "state": "expelled from the Ono school",
+      "state": "Expelled from the Ono school.",
       "location": null,
-      "source_ref": "chapter8-tadaakis-madness.txt:L421-L457",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L421-L457",
       "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2670,9 +3789,9 @@
       "id": "b6c9-state-musashi",
       "chapter": "b6c9",
       "character": "musashi",
-      "state": "continuing with Iori toward Mitsumine",
+      "state": "Continuing with Iori toward Mitsumine.",
       "location": "kotesashigahara",
-      "source_ref": "chapter9-the-poignancy-of-things.txt:L180-L198",
+      "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt:L180-L198",
       "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2681,9 +3800,9 @@
       "id": "b6c10-state-musashi",
       "chapter": "b6c10",
       "character": "musashi",
-      "state": "lodged at Kannon'in and planning to climb to the inner shrine next day",
+      "state": "Lodged at Kannon'in and planning to climb to the inner shrine next day.",
       "location": "mitsumine_shrine",
-      "source_ref": "chapter10-two-drumsticks.txt:L173-L193",
+      "source_ref": "data/source/book6/chapter10-two-drumsticks.txt:L173-L193",
       "source_file": "data/source/book6/chapter10-two-drumsticks.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2692,9 +3811,9 @@
       "id": "b6c11-state-musashi",
       "chapter": "b6c11",
       "character": "musashi",
-      "state": "bound and escorted toward town by officials",
+      "state": "Bound and escorted toward town by officials.",
       "location": null,
-      "source_ref": "chapter11-the-demons-attendant.txt:L408-L437",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L408-L437",
       "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2703,9 +3822,9 @@
       "id": "b6c11-state-baiken",
       "chapter": "b6c11",
       "character": "kohei",
-      "state": "dead",
-      "location": "kosaruzawa_bridge",
-      "source_ref": "chapter11-the-demons-attendant.txt:L300-L367",
+      "state": "Dead.",
+      "location": "mitsumine_inner_approach",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L300-L367",
       "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2714,9 +3833,9 @@
       "id": "b6c11-state-oko",
       "chapter": "b6c11",
       "character": "oko",
-      "state": "escaped the ambush site",
+      "state": "Escaped the ambush site.",
       "location": null,
-      "source_ref": "chapter11-the-demons-attendant.txt:L350-L390",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L350-L390",
       "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2725,9 +3844,9 @@
       "id": "b6c11-state-gion_toji",
       "chapter": "b6c11",
       "character": "gion_toji",
-      "state": "dead among Gonnosuke's victims; chapter 12 confirms Oko's husband was killed by him",
-      "location": "kosaruzawa_bridge",
-      "source_ref": "chapter11-the-demons-attendant.txt:L300-L367",
+      "state": "Dead among Gonnosuke's victims; chapter 12 confirms Oko's husband was killed by him.",
+      "location": "mitsumine_inner_approach",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L300-L367",
       "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
       "certainty": "strong_inference",
       "scope": "chapter_end"
@@ -2736,9 +3855,9 @@
       "id": "b6c12-state-iori",
       "chapter": "b6c12",
       "character": "iori",
-      "state": "with Takuan after recovering consciousness",
+      "state": "With Takuan after recovering consciousness.",
       "location": "musashino_cabin",
-      "source_ref": "chapter12-brother-disciples.txt:L505-L582",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L505-L582",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2747,9 +3866,9 @@
       "id": "b6c12-state-jotaro",
       "chapter": "b6c12",
       "character": "jotaro",
-      "state": "instructed to seek his father at Shōjuan and flee",
+      "state": "Instructed to seek his father at Shōjuan and flee.",
       "location": "musashino_cabin",
-      "source_ref": "chapter12-brother-disciples.txt:L545-L582",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L545-L582",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2758,9 +3877,9 @@
       "id": "b6c12-state-aoki_tanzaemon",
       "chapter": "b6c12",
       "character": "aoki_tanzaemon",
-      "state": "traveling toward Shōjuan",
+      "state": "Traveling toward Shōjuan.",
       "location": null,
-      "source_ref": "chapter12-brother-disciples.txt:L430-L474",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L430-L474",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2769,9 +3888,9 @@
       "id": "b6c12-state-gonnosuke",
       "chapter": "b6c12",
       "character": "gonnosuke",
-      "state": "traveling back toward Chichibu",
+      "state": "Traveling back toward Chichibu.",
       "location": null,
-      "source_ref": "chapter12-brother-disciples.txt:L130-L157",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L130-L157",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2780,9 +3899,9 @@
       "id": "b6c13-state-iori",
       "chapter": "b6c13",
       "character": "iori",
-      "state": "ashamed after attacking Osugi, remaining with Shinzō",
+      "state": "Ashamed after attacking Osugi, remaining with Shinzō.",
       "location": "hojo_ushigome",
-      "source_ref": "chapter13-the-pomegranate.txt:L80-L100",
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt:L80-L100",
       "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2791,9 +3910,9 @@
       "id": "b6c13-state-takuan",
       "chapter": "b6c13",
       "character": "takuan",
-      "state": "has left for Edo Castle",
+      "state": "Has left for Edo Castle.",
       "location": null,
-      "source_ref": "chapter13-the-pomegranate.txt:L1-L20",
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt:L1-L20",
       "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2802,9 +3921,9 @@
       "id": "b6c14-state-matahachi",
       "chapter": "b6c14",
       "character": "matahachi",
-      "state": "alive, shaven and running away after public lashing and banishment",
+      "state": "Alive, shaven and running away after public lashing and banishment.",
       "location": null,
-      "source_ref": "chapter14-land-of-dreams.txt:L389-L435",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L389-L435",
       "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2813,9 +3932,9 @@
       "id": "b6c14-state-akemi",
       "chapter": "b6c14",
       "character": "akemi",
-      "state": "alive at the punishment site after lashing and banishment sentence",
+      "state": "Alive at the punishment site after lashing and banishment sentence.",
       "location": "otemachi_prison",
-      "source_ref": "chapter14-land-of-dreams.txt:L389-L435",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L389-L435",
       "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2824,9 +3943,9 @@
       "id": "b6c14-state-musashi",
       "chapter": "b6c14",
       "character": "musashi",
-      "state": "released into Gonnosuke's custody off page",
+      "state": "Released into Gonnosuke's custody off page.",
       "location": null,
-      "source_ref": "chapter14-land-of-dreams.txt:L330-L388",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L330-L388",
       "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2835,9 +3954,9 @@
       "id": "b6c15-state-iori",
       "chapter": "b6c15",
       "character": "iori",
-      "state": "riding toward the Hōjō residence",
+      "state": "Riding toward the Hōjō residence.",
       "location": null,
-      "source_ref": "chapter15-the-challenge.txt:L280-L305",
+      "source_ref": "data/source/book6/chapter15-the-challenge.txt:L280-L305",
       "source_file": "data/source/book6/chapter15-the-challenge.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2846,9 +3965,9 @@
       "id": "b6c15-state-musashi",
       "chapter": "b6c15",
       "character": "musashi",
-      "state": "with Gonnosuke after receiving Kojirō's challenge",
+      "state": "With Gonnosuke after receiving Kojirō's challenge.",
       "location": "musashino_cabin",
-      "source_ref": "chapter15-the-challenge.txt:L270-L305",
+      "source_ref": "data/source/book6/chapter15-the-challenge.txt:L270-L305",
       "source_file": "data/source/book6/chapter15-the-challenge.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2857,9 +3976,9 @@
       "id": "b6c16-state-musashi",
       "chapter": "b6c16",
       "character": "musashi",
-      "state": "departed the pavilion after the appointment's cancellation",
+      "state": "Departed the pavilion after the appointment's cancellation.",
       "location": null,
-      "source_ref": "chapter16-the-gateway-to-glory.txt:L270-L283",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L270-L283",
       "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2868,9 +3987,9 @@
       "id": "b6c16-state-sakai_tadakatsu",
       "chapter": "b6c16",
       "character": "sakai_tadakatsu",
-      "state": "examining Musashi's painting",
+      "state": "Examining Musashi's painting.",
       "location": "wadakura_pavilion",
-      "source_ref": "chapter16-the-gateway-to-glory.txt:L270-L283",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L270-L283",
       "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2879,9 +3998,9 @@
       "id": "b6c17-state-musashi",
       "chapter": "b6c17",
       "character": "musashi",
-      "state": "departed alone for an unspecified mountain journey",
+      "state": "Departed alone for an unspecified mountain journey.",
       "location": null,
-      "source_ref": "chapter17-the-sound-of-heaven.txt:L72-L93",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L72-L93",
       "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
@@ -2890,10 +4009,32 @@
       "id": "b6c17-state-iori",
       "chapter": "b6c17",
       "character": "iori",
-      "state": "with Gonnosuke, Takuan and the Hōjō party; aware his sister may be found",
+      "state": "With Gonnosuke, Takuan and the Hōjō party; aware his sister may be found.",
       "location": "musashino_cabin",
-      "source_ref": "chapter17-the-sound-of-heaven.txt:L152-L174",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L152-L174",
       "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b6c3-state-obata_yogoro",
+      "chapter": "b6c3",
+      "character": "obata_yogoro",
+      "state": "His corpse is directly seen near the temple; this chapter confirms his death.",
+      "location": "isarago_hill",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt:L49-L76",
+      "source_file": "data/source/book6/chapter3-the-eagle.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end"
+    },
+    {
+      "id": "b6c5-state-obata_kagenori",
+      "chapter": "b6c5",
+      "character": "obata_kagenori",
+      "state": "Shinzō reports Kagenori’s death; adoption and succession are still in preparation.",
+      "location": null,
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L170-L185",
+      "source_file": "data/source/book6/chapter5-eyes.txt",
       "certainty": "explicit",
       "scope": "chapter_end"
     }
@@ -3267,13 +4408,13 @@
   "historical_context": [
     {
       "id": "b6-historical-01",
-      "topic": "yagyu_munenori",
+      "topic": "munenori",
       "chapter_ids": [],
       "source_refs": [],
       "summary": "National Diet Library authority record identifies Yagyū Munenori (1571–1646) and his association with Yamato Yagyū.",
       "extensions": {
         "original": {
-          "entity": "yagyu_munenori",
+          "entity": "munenori",
           "claim": "National Diet Library authority record identifies Yagyū Munenori (1571–1646) and his association with Yamato Yagyū.",
           "scope": "historicity_only",
           "url": "https://id.ndl.go.jp/auth/ndlna/00272515"
