@@ -59,19 +59,19 @@
   },
   "book2_expected": {
     "b2c1": [
+      "matahachi",
+      "akemi",
+      "oko",
       "yoshioka_seijuro",
       "gion_toji",
-      "ueda_ryohei",
-      "oko",
-      "akemi",
-      "matahachi"
+      "ueda_ryohei"
     ],
     "b2c2": [
       "musashi",
+      "matahachi",
       "yoshioka_seijuro",
       "gion_toji",
-      "ueda_ryohei",
-      "matahachi"
+      "ueda_ryohei"
     ],
     "b2c3": [
       "musashi",
@@ -80,20 +80,20 @@
     ],
     "b2c4": [
       "musashi",
-      "jotaro",
-      "matahachi"
+      "matahachi",
+      "jotaro"
     ],
     "b2c5": [
+      "otsu",
       "jotaro",
       "akemi",
-      "otsu",
       "shoda_kizaemon"
     ],
     "b2c6": [
       "musashi",
+      "jotaro",
       "nikkan",
       "agon",
-      "jotaro",
       "yamazoe_dampachi",
       "otomo_banryu",
       "yasukawa_yasubei"
@@ -101,66 +101,51 @@
     "b2c7": [
       "musashi",
       "jotaro",
-      "yamazoe_dampachi",
-      "yasukawa_yasubei",
-      "otomo_banryu",
       "inshun",
-      "nikkan"
+      "nikkan",
+      "yamazoe_dampachi",
+      "otomo_banryu",
+      "yasukawa_yasubei"
     ],
     "b2c8": [
       "musashi",
       "jotaro",
-      "kocha",
-      "yoshioka_denshichiro"
+      "yoshioka_denshichiro",
+      "kocha"
     ],
     "b2c9": [
-      "sekishusai",
-      "otsu",
-      "shoda_kizaemon",
-      "yoshioka_denshichiro",
-      "kocha",
       "musashi",
+      "otsu",
       "jotaro",
+      "yoshioka_denshichiro",
+      "shoda_kizaemon",
+      "sekishusai",
       "kimura_sukekuro",
+      "debuchi_magobei",
       "murata_yozo",
-      "debuchi_magobei"
+      "kocha"
     ],
     "b2c10": [
       "musashi",
       "jotaro",
-      "kocha",
       "shoda_kizaemon",
       "kimura_sukekuro",
+      "debuchi_magobei",
       "murata_yozo",
-      "debuchi_magobei"
+      "kocha"
     ],
     "b2c11": [
       "musashi",
       "otsu",
-      "jotaro",
       "takuan",
-      "sekishusai"
+      "jotaro"
     ]
   },
   "manifest_id_maps": {
     "3": {},
-    "4": {
-      "denshichiro": "yoshioka_denshichiro",
-      "sasaki_kojiro": "kojiro",
-      "seijuro": "yoshioka_seijuro"
-    },
-    "5": {
-      "yagyu_munenori": "munenori"
-    },
-    "6": {
-      "baiken": "kohei",
-      "ono_tadaaki": "mikogami_tenzen",
-      "yagyu_munenori": "munenori"
-    },
-    "7": {
-      "honami_koetsu": "koetsu",
-      "toranosuke": "hamada_toranosuke",
-      "yoshino_dayu": "yoshino_tayu"
-    }
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {}
   }
 }

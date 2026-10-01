@@ -142,15 +142,15 @@
         "fushimi_inspector"
       ],
       "referenced_characters": [
-        "musashi",
-        "otsu",
-        "jotaro",
-        "oko",
-        "lord_ikeda",
-        "kanemaki_jisai",
-        "toda_seigen",
         "ito_ittosai",
-        "kojiro"
+        "jotaro",
+        "kanemaki_jisai",
+        "kojiro",
+        "lord_ikeda",
+        "musashi",
+        "oko",
+        "otsu",
+        "toda_seigen"
       ],
       "groups": [
         "fushimi_workers"
@@ -167,7 +167,9 @@
         "b3c1_e02",
         "b3c1_e03",
         "b3c1_e04",
-        "b3c1_e05"
+        "b3c1-audit-s07",
+        "b3c1_e05",
+        "b3c1-audit-references"
       ],
       "character_state_ids": [
         "b3c1-state-matahachi",
@@ -183,20 +185,19 @@
       "source_file": "data/source/book3/chapter2-reunion-in-osaka.txt",
       "characters": [
         "matahachi",
-        "aoki_tanzaemon",
-        "akakabe_yasoma",
         "osugi",
-        "gonroku"
+        "gonroku",
+        "aoki_tanzaemon",
+        "akakabe_yasoma"
       ],
       "referenced_characters": [
-        "musashi",
-        "otsu",
-        "oko",
-        "akemi",
-        "kojiro",
+        "ito_ittosai",
         "kanemaki_jisai",
-        "toda_seigen",
-        "ito_ittosai"
+        "kojiro",
+        "musashi",
+        "oko",
+        "otsu",
+        "toda_seigen"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -212,7 +213,8 @@
         "b3c2_e02",
         "b3c2_e03",
         "b3c2_e04",
-        "b3c2_e05"
+        "b3c2_e05",
+        "b3c2-audit-references"
       ],
       "character_state_ids": [
         "b3c2-state-matahachi",
@@ -233,14 +235,14 @@
         "ship_captain"
       ],
       "referenced_characters": [
+        "ito_ittosai",
+        "kanemaki_jisai",
+        "kusanagi_tenki",
         "oko",
-        "yoshioka_seijuro",
+        "toda_seigen",
         "yoshioka_denshichiro",
         "yoshioka_kempo",
-        "kanemaki_jisai",
-        "toda_seigen",
-        "ito_ittosai",
-        "kusanagi_tenki"
+        "yoshioka_seijuro"
       ],
       "groups": [
         "ship_passengers"
@@ -254,7 +256,8 @@
         "b3c3_e01",
         "b3c3_e02",
         "b3c3_e03",
-        "b3c3_e04"
+        "b3c3_e04",
+        "b3c3-audit-references"
       ],
       "character_state_ids": [
         "b3c3-state-kojiro",
@@ -269,14 +272,15 @@
       "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
       "characters": [
         "kojiro",
-        "gion_toji",
-        "oko",
         "akemi",
+        "oko",
         "yoshioka_seijuro",
-        "ship_captain"
+        "gion_toji",
+        "monkey"
       ],
       "referenced_characters": [
-        "monkey"
+        "matahachi",
+        "musashi"
       ],
       "groups": [
         "yoshioka_disciples",
@@ -294,7 +298,8 @@
         "b3c4_e01",
         "b3c4_e02",
         "b3c4_e03",
-        "b3c4_e04"
+        "b3c4_e04",
+        "b3c4-audit-references"
       ],
       "character_state_ids": [
         "b3c4-state-akemi",
@@ -309,10 +314,10 @@
       "source_ref": "data/source/book3/chapter5-a-heros-passing.txt",
       "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
       "characters": [
-        "osugi",
         "matahachi",
-        "gonroku",
+        "osugi",
         "akemi",
+        "gonroku",
         "yoshioka_seijuro",
         "ueda_ryohei"
       ],
@@ -333,7 +338,9 @@
         "b3c5_e01",
         "b3c5_e02",
         "b3c5_e03",
-        "b3c5_e04"
+        "b3c5_e04",
+        "b3c5-audit-s06",
+        "b3c5-audit-references"
       ],
       "character_state_ids": [
         "b3c5-state-gonroku",
@@ -350,16 +357,16 @@
       "source_file": "data/source/book3/chapter6-the-drying-pole.txt",
       "characters": [
         "kojiro",
-        "monkey",
         "yoshioka_seijuro",
-        "ueda_ryohei"
+        "ueda_ryohei",
+        "monkey"
       ],
       "referenced_characters": [
         "gion_toji",
-        "musashi",
+        "ito_ittosai",
         "kanemaki_jisai",
-        "toda_seigen",
-        "ito_ittosai"
+        "musashi",
+        "toda_seigen"
       ],
       "groups": [
         "yoshioka_disciples"
@@ -376,7 +383,8 @@
         "b3c6_e01",
         "b3c6_e02",
         "b3c6_e03",
-        "b3c6_e04"
+        "b3c6_e04",
+        "b3c6-audit-references"
       ],
       "character_state_ids": [
         "b3c6-state-kojiro",
@@ -399,11 +407,13 @@
       ],
       "referenced_characters": [
         "kohei",
-        "takuan",
+        "matahachi",
         "mikogami_tenzen",
-        "tsukahara_bokuden",
+        "nikkan",
+        "otsu",
         "sekishusai",
-        "yoshioka_kempo"
+        "takuan",
+        "yoshioka_seijuro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -419,7 +429,8 @@
         "b3c7_e01",
         "b3c7_e02",
         "b3c7_e03",
-        "b3c7_e04"
+        "b3c7_e04",
+        "b3c7-audit-references"
       ],
       "character_state_ids": [
         "b3c7-state-musashi",
@@ -438,10 +449,8 @@
         "arakida_ujitomi"
       ],
       "referenced_characters": [
-        "musashi",
-        "takuan",
         "karasumaru_mitsuhiro",
-        "arakida_ujitsune"
+        "musashi"
       ],
       "groups": [
         "ise_shrine_maidens"
@@ -480,10 +489,10 @@
         "baiken_infant"
       ],
       "referenced_characters": [
-        "takuan",
-        "mikogami_tenzen",
         "matahachi",
+        "mikogami_tenzen",
         "oko",
+        "takuan",
         "temma"
       ],
       "groups": [
@@ -499,7 +508,9 @@
         "b3c9_e01",
         "b3c9_e02",
         "b3c9_e03",
-        "b3c9_e04"
+        "b3c9_e04",
+        "b3c9-audit-s08",
+        "b3c9-audit-references"
       ],
       "character_state_ids": [
         "b3c9-state-musashi",
@@ -520,8 +531,9 @@
         "tsuge_sannojo"
       ],
       "referenced_characters": [
-        "musashi",
         "karasumaru_mitsuhiro",
+        "matahachi",
+        "musashi",
         "watanabe_hanzo"
       ],
       "groups": [
@@ -531,14 +543,26 @@
       "locations": [
         "tokaido_omi_corridor",
         "koji_hill",
-        "karasumaru_house"
+        "karasumaru_house",
+        "mount_fudesute",
+        "yonkenjaya",
+        "yasugawa",
+        "kaga_village",
+        "seto_otsu",
+        "makado_pass",
+        "omi_lakeside",
+        "seta_karahashi",
+        "keage"
       ],
       "event_ids": [
         "b3c10_e01",
         "b3c10_e02",
+        "b3c10-audit-captive-route",
         "b3c10_e03",
         "b3c10_e04",
-        "b3c10_e05"
+        "b3c10-audit-s08",
+        "b3c10_e05",
+        "b3c10-audit-references"
       ],
       "character_state_ids": [
         "b3c10-state-otsu",
@@ -553,18 +577,17 @@
       "source_ref": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
       "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
       "characters": [
-        "akemi",
-        "akakabe_yasoma",
-        "aoki_tanzaemon",
         "kojiro",
+        "akemi",
+        "aoki_tanzaemon",
         "yoshioka_seijuro",
+        "akakabe_yasoma",
         "monkey"
       ],
       "referenced_characters": [
-        "musashi",
-        "oko",
-        "otsu",
         "jotaro",
+        "musashi",
+        "otsu",
         "yoshioka_denshichiro"
       ],
       "groups": [],
@@ -578,7 +601,8 @@
         "b3c11_e01",
         "b3c11_e02",
         "b3c11_e03",
-        "b3c11_e04"
+        "b3c11_e04",
+        "b3c11-audit-references"
       ],
       "character_state_ids": [
         "b3c11-state-akemi",
@@ -593,22 +617,23 @@
       "source_ref": "data/source/book3/chapter12-the-announcement.txt",
       "source_file": "data/source/book3/chapter12-the-announcement.txt",
       "characters": [
+        "musashi",
+        "osugi",
         "yoshioka_seijuro",
         "ueda_ryohei",
-        "musashi",
         "matsuo_kaname",
-        "musashi_aunt",
-        "osugi"
+        "musashi_aunt"
       ],
       "referenced_characters": [
-        "kojiro",
         "gion_toji",
-        "oko",
-        "yoshioka_denshichiro",
-        "yoshioka_kempo",
-        "matahachi",
         "gonroku",
-        "ogin"
+        "kojiro",
+        "matahachi",
+        "ogin",
+        "oko",
+        "otsu",
+        "yoshioka_denshichiro",
+        "yoshioka_kempo"
       ],
       "groups": [
         "yoshioka_disciples"
@@ -622,9 +647,11 @@
       ],
       "event_ids": [
         "b3c12_e01",
+        "b3c12-audit-s01",
         "b3c12_e02",
         "b3c12_e03",
-        "b3c12_e04"
+        "b3c12_e04",
+        "b3c12-audit-references"
       ],
       "character_state_ids": [
         "b3c12-state-musashi",
@@ -640,17 +667,17 @@
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "characters": [
         "musashi",
-        "akemi",
-        "kojiro",
-        "jotaro",
         "otsu",
+        "kojiro",
         "osugi",
-        "monkey"
+        "jotaro",
+        "akemi"
       ],
       "referenced_characters": [
+        "aoki_tanzaemon",
         "matahachi",
-        "yoshioka_seijuro",
-        "karasumaru_mitsuhiro"
+        "oko",
+        "yoshioka_seijuro"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -666,7 +693,8 @@
         "b3c13_e02",
         "b3c13_e03",
         "b3c13_e04",
-        "b3c13_e05"
+        "b3c13_e05",
+        "b3c13-audit-references"
       ],
       "character_state_ids": [
         "b3c13-state-musashi",
@@ -695,6 +723,7 @@
       "mentioned_in": [
         "b3c1",
         "b3c2",
+        "b3c4",
         "b3c5",
         "b3c6",
         "b3c8",
@@ -715,7 +744,10 @@
         "b3c5"
       ],
       "mentioned_in": [
+        "b3c4",
+        "b3c7",
         "b3c9",
+        "b3c10",
         "b3c12",
         "b3c13"
       ]
@@ -734,7 +766,9 @@
         "b3c1",
         "b3c2",
         "b3c5",
-        "b3c11"
+        "b3c7",
+        "b3c11",
+        "b3c12"
       ]
     },
     {
@@ -796,8 +830,8 @@
         "b3c2",
         "b3c3",
         "b3c9",
-        "b3c11",
-        "b3c12"
+        "b3c12",
+        "b3c13"
       ]
     },
     {
@@ -811,9 +845,7 @@
         "b3c11",
         "b3c13"
       ],
-      "mentioned_in": [
-        "b3c2"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "aoki_tanzaemon",
@@ -828,7 +860,9 @@
         "b3c2",
         "b3c11"
       ],
-      "mentioned_in": []
+      "mentioned_in": [
+        "b3c13"
+      ]
     },
     {
       "id": "unknown_certificate_bearer",
@@ -841,9 +875,7 @@
       "physical_presence": [
         "b3c1"
       ],
-      "mentioned_in": [
-        "b3c2"
-      ],
+      "mentioned_in": [],
       "identity_note": "Explicitly not equated with the later living Sasaki Kojirō; the certificate is evidence carried by him, not proof of identity."
     },
     {
@@ -898,6 +930,7 @@
       ],
       "mentioned_in": [
         "b3c3",
+        "b3c7",
         "b3c13"
       ]
     },
@@ -1027,13 +1060,11 @@
       "kind": "animal",
       "physical_presence": [
         "b3c3",
+        "b3c4",
         "b3c6",
-        "b3c11",
-        "b3c13"
+        "b3c11"
       ],
-      "mentioned_in": [
-        "b3c4"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "takuan",
@@ -1045,7 +1076,6 @@
       "physical_presence": [],
       "mentioned_in": [
         "b3c7",
-        "b3c8",
         "b3c9"
       ]
     },
@@ -1069,7 +1099,6 @@
       "physical_presence": [],
       "mentioned_in": [
         "b3c3",
-        "b3c7",
         "b3c12"
       ]
     },
@@ -1119,8 +1148,7 @@
       "aliases": [],
       "kind": "narrative_unidentified",
       "physical_presence": [
-        "b3c3",
-        "b3c4"
+        "b3c3"
       ],
       "mentioned_in": []
     },
@@ -1206,8 +1234,7 @@
       "physical_presence": [],
       "mentioned_in": [
         "b3c8",
-        "b3c10",
-        "b3c13"
+        "b3c10"
       ]
     },
     {
@@ -1216,9 +1243,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b3c8"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "tsukahara_bokuden",
@@ -1226,9 +1251,7 @@
       "aliases": [],
       "kind": "historical_context",
       "physical_presence": [],
-      "mentioned_in": [
-        "b3c7"
-      ]
+      "mentioned_in": []
     },
     {
       "id": "sekishusai",
@@ -1253,6 +1276,19 @@
       "physical_presence": [],
       "mentioned_in": [
         "b3c1"
+      ]
+    },
+    {
+      "id": "nikkan",
+      "name": "Nikkan",
+      "aliases": [
+        "Nikkan",
+        "Hōzōin Nikkan"
+      ],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b3c7"
       ]
     }
   ],
@@ -1676,6 +1712,133 @@
       "chapters": [
         "b3c13"
       ]
+    },
+    {
+      "id": "kaga_village",
+      "name": "Kaga Village",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "keage",
+      "name": "Keage",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "makado_pass",
+      "name": "Makado Pass",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "mount_fudesute",
+      "name": "Mount Fudesute",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "omi_lakeside",
+      "name": "Ōmi lakeside",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "seta_karahashi",
+      "name": "Seta no Karahashi",
+      "type": "bridge",
+      "introduced_section": 51,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "officially_validated_name_and_locality",
+      "historical_match": "unresolved",
+      "map_note": "Book IV staging status: officially validated name and locality.",
+      "source_chapters": [
+        "b4c19",
+        "b4c20"
+      ]
+    },
+    {
+      "id": "seto_otsu",
+      "name": "Seto in Ōtsu",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "yasugawa",
+      "name": "Yasugawa",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
+    },
+    {
+      "id": "yonkenjaya",
+      "name": "Yonkenjaya",
+      "type": "route_waypoint",
+      "introduced_section": 29,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "Narrative scene or waypoint attested in local text; no modern coordinates inferred.",
+      "source_chapters": [
+        "b3c10"
+      ]
     }
   ],
   "events": [
@@ -1694,7 +1857,8 @@
       "source_ref": "chapter1-sasaki-kojiro.txt:L68-L151",
       "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 20
     },
     {
       "id": "b3c1_e02",
@@ -1717,7 +1881,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 20
     },
     {
       "id": "b3c1_e03",
@@ -1738,7 +1903,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 20
     },
     {
       "id": "b3c1_e04",
@@ -1757,7 +1923,26 @@
       "source_ref": "chapter1-sasaki-kojiro.txt:L485-L565",
       "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 20
+    },
+    {
+      "id": "b3c1-audit-s07",
+      "chapter": "b3c1",
+      "section": 20,
+      "type": "biographical_revelation",
+      "characters": [
+        "aoki_tanzaemon"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "A mendicant priest laments his lost samurai status, his conduct involving Otsū and the harm done to his only son Jōtarō.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter1-sasaki-kojiro.txt",
+      "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt",
+      "movement_status": null
     },
     {
       "id": "b3c1_e05",
@@ -1779,7 +1964,33 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 20
+    },
+    {
+      "id": "b3c1-audit-references",
+      "chapter": "b3c1",
+      "section": 20,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "ito_ittosai",
+        "jotaro",
+        "kanemaki_jisai",
+        "lord_ikeda",
+        "musashi",
+        "oko",
+        "otsu",
+        "toda_seigen"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter1-sasaki-kojiro.txt",
+      "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt",
+      "movement_status": null
     },
     {
       "id": "b3c2_e01",
@@ -1800,7 +2011,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 21
     },
     {
       "id": "b3c2_e02",
@@ -1819,7 +2031,8 @@
       "source_ref": "chapter2-reunion-in-osaka.txt:L165-L264",
       "source_file": "data/source/book3/chapter2-reunion-in-osaka.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 21
     },
     {
       "id": "b3c2_e03",
@@ -1842,7 +2055,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 21
     },
     {
       "id": "b3c2_e04",
@@ -1861,7 +2075,8 @@
       "source_ref": "chapter2-reunion-in-osaka.txt:L520-L694",
       "source_file": "data/source/book3/chapter2-reunion-in-osaka.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 21
     },
     {
       "id": "b3c2_e05",
@@ -1883,7 +2098,29 @@
       "source_ref": "chapter2-reunion-in-osaka.txt:L695-L837",
       "source_file": "data/source/book3/chapter2-reunion-in-osaka.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": null,
+      "section": 21
+    },
+    {
+      "id": "b3c2-audit-references",
+      "chapter": "b3c2",
+      "section": 21,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "ito_ittosai",
+        "kanemaki_jisai",
+        "oko",
+        "toda_seigen"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter2-reunion-in-osaka.txt",
+      "source_file": "data/source/book3/chapter2-reunion-in-osaka.txt",
+      "movement_status": null
     },
     {
       "id": "b3c3_e01",
@@ -1910,13 +2147,14 @@
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
-      "origin_label": "Awa/Shikoku"
+      "origin_label": "Awa/Shikoku",
+      "section": 22
     },
     {
       "id": "b3c3_e02",
       "chapter": "b3c3",
       "type": "biographical_disclosure",
-      "description": "Kojirō describes his training lineage, Iwakuni home, Drying Pole and intended equinox meeting with Tenki.",
+      "description": "The handsome young man describes his training lineage, Iwakuni home, Drying Pole and intended equinox meeting with Tenki; his canonical identity is not yet disclosed.",
       "characters": [
         "kojiro",
         "gion_toji"
@@ -1933,13 +2171,14 @@
       "source_ref": "chapter3-the-handsome-young-man.txt:L136-L247",
       "source_file": "data/source/book3/chapter3-the-handsome-young-man.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": null,
+      "section": 22
     },
     {
       "id": "b3c3_e03",
       "chapter": "b3c3",
       "type": "assault",
-      "description": "Kojirō cuts off Tōji's topknot during their confrontation.",
+      "description": "The handsome young man cuts off Tōji's topknot during their confrontation.",
       "characters": [
         "kojiro",
         "gion_toji"
@@ -1954,13 +2193,14 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 22
     },
     {
       "id": "b3c3_e04",
       "chapter": "b3c3",
       "type": "weapon_intervention",
-      "description": "After the monkey steals playing cards, Kojirō deflects the captain's musket barrel and prevents the shot from striking it.",
+      "description": "After the monkey steals playing cards, the handsome young man deflects the captain's musket barrel and prevents the shot from striking it.",
       "characters": [
         "kojiro",
         "monkey",
@@ -1976,16 +2216,39 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 22
+    },
+    {
+      "id": "b3c3-audit-references",
+      "chapter": "b3c3",
+      "section": 22,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "oko",
+        "yoshioka_denshichiro",
+        "yoshioka_kempo",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter3-the-handsome-young-man.txt",
+      "source_file": "data/source/book3/chapter3-the-handsome-young-man.txt",
+      "movement_status": null
     },
     {
       "id": "b3c4_e01",
       "chapter": "b3c4",
       "type": "arrival",
-      "description": "The ship reaches Kizugawa harbor and Kojirō disembarks separately.",
+      "description": "The ship reaches Kizugawa harbor and the handsome young man disembarks separately.",
       "characters": [
         "kojiro",
-        "gion_toji"
+        "gion_toji",
+        "monkey"
       ],
       "referenced_characters": [],
       "groups": [
@@ -1998,7 +2261,8 @@
       "source_ref": "chapter4-the-seashell-of-forgetfulness.txt:L1-L58",
       "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 23
     },
     {
       "id": "b3c4_e02",
@@ -2020,7 +2284,8 @@
       "source_ref": "chapter4-the-seashell-of-forgetfulness.txt:L59-L185",
       "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 23
     },
     {
       "id": "b3c4_e03",
@@ -2040,7 +2305,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 23
     },
     {
       "id": "b3c4_e04",
@@ -2058,10 +2324,30 @@
       "source_ref": "chapter4-the-seashell-of-forgetfulness.txt:L269-L356",
       "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 23
+    },
+    {
+      "id": "b3c4-audit-references",
+      "chapter": "b3c4",
+      "section": 23,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "matahachi",
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+      "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+      "movement_status": null
     },
     {
       "id": "b3c5_e01",
@@ -2080,10 +2366,11 @@
       "source_ref": "chapter5-a-heros-passing.txt:L1-L107",
       "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 24
     },
     {
       "id": "b3c5_e02",
@@ -2104,7 +2391,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 24
     },
     {
       "id": "b3c5_e03",
@@ -2124,7 +2412,8 @@
       "source_ref": "chapter5-a-heros-passing.txt:L219-L278",
       "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 24
     },
     {
       "id": "b3c5_e04",
@@ -2144,7 +2433,46 @@
       "source_ref": "chapter5-a-heros-passing.txt:L279-L344",
       "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
       "certainty": "explicit",
-      "movement_status": "direction_only"
+      "movement_status": "direction_only",
+      "destination_label": "Kyoto",
+      "section": 24
+    },
+    {
+      "id": "b3c5-audit-s06",
+      "chapter": "b3c5",
+      "section": 24,
+      "type": "involuntary_revelation",
+      "characters": [
+        "akemi",
+        "yoshioka_seijuro"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "In delirium Akemi mentions Musashi, New Year's and Gojō Bridge, revealing the expected meeting.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter5-a-heros-passing.txt",
+      "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b3c5-audit-references",
+      "chapter": "b3c5",
+      "section": 24,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter5-a-heros-passing.txt",
+      "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
+      "movement_status": null
     },
     {
       "id": "b3c6_e01",
@@ -2169,7 +2497,8 @@
       "movement_status": "confirmed_route",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 25
     },
     {
       "id": "b3c6_e02",
@@ -2191,7 +2520,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 25
     },
     {
       "id": "b3c6_e03",
@@ -2213,7 +2543,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 25
     },
     {
       "id": "b3c6_e04",
@@ -2237,7 +2568,30 @@
       "source_ref": "chapter6-the-drying-pole.txt:L274-L310",
       "source_file": "data/source/book3/chapter6-the-drying-pole.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 25
+    },
+    {
+      "id": "b3c6-audit-references",
+      "chapter": "b3c6",
+      "section": 25,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gion_toji",
+        "ito_ittosai",
+        "kanemaki_jisai",
+        "musashi",
+        "toda_seigen"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter6-the-drying-pole.txt",
+      "source_file": "data/source/book3/chapter6-the-drying-pole.txt",
+      "movement_status": null
     },
     {
       "id": "b3c7_e01",
@@ -2245,7 +2599,8 @@
       "type": "movement",
       "description": "Musashi travels through Yokkaichi toward Kameyama/Ujii while a foot injury worsens.",
       "characters": [
-        "musashi"
+        "musashi",
+        "unnamed_groom"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2260,7 +2615,8 @@
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
-      "origin_label": "Kuwana"
+      "origin_label": "Kuwana",
+      "section": 26
     },
     {
       "id": "b3c7_e02",
@@ -2271,7 +2627,8 @@
         "musashi",
         "baiken_wife",
         "iwa",
-        "baiken_infant"
+        "baiken_infant",
+        "unnamed_groom"
       ],
       "referenced_characters": [
         "kohei"
@@ -2282,7 +2639,8 @@
       "source_ref": "chapter7-eagle-mountain.txt:L246-L363",
       "source_file": "data/source/book3/chapter7-eagle-mountain.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 26
     },
     {
       "id": "b3c7_e03",
@@ -2290,18 +2648,23 @@
       "type": "movement",
       "description": "Musashi reaches Yamada, seeks Baiken again and approaches the Inner Shrine as infection worsens.",
       "characters": [
-        "musashi"
+        "musashi",
+        "unnamed_groom"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "ise_naiku",
       "origin": "baiken_smithy",
-      "destination": "yamada_ise",
+      "destination": "ise_naiku",
       "source_ref": "chapter7-eagle-mountain.txt:L364-L448",
       "source_file": "data/source/book3/chapter7-eagle-mountain.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "via": [
+        "yamada_ise"
+      ],
+      "section": 26
     },
     {
       "id": "b3c7_e04",
@@ -2320,7 +2683,32 @@
       "source_ref": "chapter7-eagle-mountain.txt:L449-L550",
       "source_file": "data/source/book3/chapter7-eagle-mountain.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 26
+    },
+    {
+      "id": "b3c7-audit-references",
+      "chapter": "b3c7",
+      "section": 26,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "matahachi",
+        "mikogami_tenzen",
+        "nikkan",
+        "otsu",
+        "sekishusai",
+        "takuan",
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter7-eagle-mountain.txt",
+      "source_file": "data/source/book3/chapter7-eagle-mountain.txt",
+      "movement_status": null
     },
     {
       "id": "b3c8_e01",
@@ -2343,7 +2731,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 27
     },
     {
       "id": "b3c8_e02",
@@ -2361,10 +2750,11 @@
       "source_ref": "chapter8-the-mayfly-in-winter.txt:L188-L262",
       "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 27
     },
     {
       "id": "b3c8_e03",
@@ -2385,7 +2775,8 @@
       "source_ref": "chapter8-the-mayfly-in-winter.txt:L263-L319",
       "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 27
     },
     {
       "id": "b3c8_e04",
@@ -2408,13 +2799,14 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 27
     },
     {
       "id": "b3c8_e05",
       "chapter": "b3c8",
       "type": "departure",
-      "description": "Otsū and Jōtarō pay respects and depart Ise for Kyoto with the scroll box.",
+      "description": "Otsū and Jōtarō pay respects and depart Ise for Kyoto with the scroll box; the Karasumaru residence remains an intended destination.",
       "characters": [
         "otsu",
         "jotaro"
@@ -2428,16 +2820,17 @@
       "source_ref": "chapter8-the-mayfly-in-winter.txt:L355-L410",
       "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 27
     },
     {
       "id": "b3c9_e01",
       "chapter": "b3c9",
       "type": "movement",
-      "description": "With his foot healed, Musashi ferries to Ōminato and boards a boat to Tsu.",
+      "description": "With his foot healed, Musashi ferries to Ōminato and boards a boat to Tsu; arrival at Tsu is not shown in this event.",
       "characters": [
         "musashi"
       ],
@@ -2450,14 +2843,15 @@
       "source_ref": "chapter9-the-pinwheel.txt:L1-L102",
       "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed",
-      "origin_label": "Ise coast"
+      "movement_status": "intended_destination",
+      "origin_label": "Ise coast",
+      "section": 28
     },
     {
       "id": "b3c9_e02",
       "chapter": "b3c9",
       "type": "identity_reveal",
-      "description": "Musashi follows Baiken to the smithy; the narration explicitly identifies Baiken as Tsujikaze Kōhei.",
+      "description": "At Tsu Musashi follows the chain-sickle-carrying blacksmith and identifies him as Shishido Baiken; the narrator’s later reconciliation with Kōhei is separate.",
       "characters": [
         "musashi",
         "kohei"
@@ -2469,7 +2863,8 @@
       "source_ref": "chapter9-the-pinwheel.txt:L103-L255",
       "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 28
     },
     {
       "id": "b3c9_e03",
@@ -2492,13 +2887,14 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 28
     },
     {
       "id": "b3c9_e04",
       "chapter": "b3c9",
       "type": "mercy",
-      "description": "Musashi leaves the wrapped chain-and-sickle at Kōhei's neck instead of killing him, then departs.",
+      "description": "Musashi leaves the wrapped chain-and-sickle at Kōhei's neck instead of killing him, then departs for an unstated destination.",
       "characters": [
         "musashi",
         "kohei"
@@ -2510,16 +2906,59 @@
       "source_ref": "chapter9-the-pinwheel.txt:L409-L464",
       "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "uncertain_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "origin": "baiken_smithy",
+      "destination": "unknown",
+      "section": 28
+    },
+    {
+      "id": "b3c9-audit-s08",
+      "chapter": "b3c9",
+      "section": 28,
+      "type": "identity_reveal",
+      "characters": [],
+      "referenced_characters": [
+        "kohei"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "The narration explicitly identifies Shishido Baiken as Tsujikaze Kōhei and confirms Tsujikaze Temma was his brother.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter9-the-pinwheel.txt:L415-L419",
+      "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
+      "movement_status": null
+    },
+    {
+      "id": "b3c9-audit-references",
+      "chapter": "b3c9",
+      "section": 28,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "matahachi",
+        "mikogami_tenzen",
+        "oko",
+        "takuan",
+        "temma"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter9-the-pinwheel.txt",
+      "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
+      "movement_status": null
     },
     {
       "id": "b3c10_e01",
       "chapter": "b3c10",
       "type": "movement",
-      "description": "Otsū and Jōtarō rent a horse and continue toward Kyoto through the Suzuka–Ōmi corridor.",
+      "description": "Otsū and Jōtarō pass Mount Fudesute and reach Yonkenjaya; their longer journey toward Kyoto continues.",
       "characters": [
         "otsu",
         "jotaro"
@@ -2528,8 +2967,8 @@
       "groups": [],
       "referenced_groups": [],
       "location": "tokaido_omi_corridor",
-      "origin": null,
-      "destination": "karasumaru_house",
+      "origin": "mount_fudesute",
+      "destination": "unknown",
       "source_ref": "chapter10-the-flying-horse.txt:L1-L100",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
@@ -2537,13 +2976,17 @@
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
-      "origin_label": "Ise"
+      "origin_label": "Ise",
+      "section": 29,
+      "via": [
+        "yonkenjaya"
+      ]
     },
     {
       "id": "b3c10_e02",
       "chapter": "b3c10",
       "type": "abduction",
-      "description": "Baiken tries to seize the horse; Otsū cuts two fingertips while drawing his sword, the wounded horse bolts with Jōtarō, and Baiken's men bind and take Otsū.",
+      "description": "Baiken tries to seize the horse; the wounded horse bolts with Jōtarō, while his men bind Otsū and take her toward Yasugawa. Arrival there is not established.",
       "characters": [
         "otsu",
         "jotaro",
@@ -2558,10 +3001,34 @@
       "source_ref": "chapter10-the-flying-horse.txt:L101-L284",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "origin": null,
+      "destination": null,
+      "section": 29
+    },
+    {
+      "id": "b3c10-audit-captive-route",
+      "chapter": "b3c10",
+      "section": 29,
+      "type": "coerced_journey",
+      "characters": [
+        "otsu"
+      ],
+      "referenced_characters": [
+        "kohei"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "destination": "yasugawa",
+      "movement_status": "intended_destination",
+      "description": "Baiken’s associates take Otsū toward Yasugawa; Jōtarō has escaped on the bolting horse and does not share this route. Arrival at Yasugawa is not established.",
+      "source_ref": "data/source/book3/chapter10-the-flying-horse.txt:L403-L414",
+      "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
+      "certainty": "explicit"
     },
     {
       "id": "b3c10_e03",
@@ -2578,10 +3045,11 @@
       "source_ref": "chapter10-the-flying-horse.txt:L285-L338",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 29
     },
     {
       "id": "b3c10_e04",
@@ -2602,16 +3070,42 @@
       "source_ref": "chapter10-the-flying-horse.txt:L339-L566",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "route_confirmed"
-      }
+      },
+      "section": 29
+    },
+    {
+      "id": "b3c10-audit-s08",
+      "chapter": "b3c10",
+      "section": 29,
+      "type": "route_guidance",
+      "characters": [
+        "otsu",
+        "jotaro",
+        "tsuge_sannojo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Sannojō guides them above Kaga Village to Makado Pass and directs them toward Seto in Otsu.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter10-the-flying-horse.txt",
+      "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
+      "movement_status": "direction_only",
+      "origin": "kaga_village",
+      "via": [
+        "makado_pass"
+      ],
+      "destination": "seto_otsu"
     },
     {
       "id": "b3c10_e05",
       "chapter": "b3c10",
-      "type": "arrival",
-      "description": "They reach Kyoto and continue toward the Karasumaru residence to deliver the scrolls.",
+      "type": "movement",
+      "description": "They reach Kyoto and continue toward the Karasumaru residence to deliver the scrolls; arrival at the residence is not shown.",
       "characters": [
         "otsu",
         "jotaro"
@@ -2619,13 +3113,40 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "karasumaru_house",
-      "origin": "tokaido_omi_corridor",
+      "location": null,
+      "origin": "seto_otsu",
       "destination": "karasumaru_house",
       "source_ref": "chapter10-the-flying-horse.txt:L567-L623",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 29,
+      "via": [
+        "omi_lakeside",
+        "seta_karahashi",
+        "keage"
+      ]
+    },
+    {
+      "id": "b3c10-audit-references",
+      "chapter": "b3c10",
+      "section": 29,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "karasumaru_mitsuhiro",
+        "matahachi",
+        "musashi",
+        "watanabe_hanzo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter10-the-flying-horse.txt",
+      "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
+      "movement_status": null
     },
     {
       "id": "b3c11_e01",
@@ -2644,8 +3165,9 @@
       "source_ref": "chapter11-the-butterfly-in-winter.txt:L1-L78",
       "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed",
-      "destination_label": "Kyoto"
+      "movement_status": "confirmed_route",
+      "destination_label": "Kyoto",
+      "section": 30
     },
     {
       "id": "b3c11_e02",
@@ -2664,7 +3186,8 @@
       "source_ref": "chapter11-the-butterfly-in-winter.txt:L79-L216",
       "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 30
     },
     {
       "id": "b3c11_e03",
@@ -2687,13 +3210,14 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 30
     },
     {
       "id": "b3c11_e04",
       "chapter": "b3c11",
       "type": "rescue",
-      "description": "During a falcon hunt, Kojirō tracks a dog to the temple, kills it after it bites Akemi, treats her wound and carries her away.",
+      "description": "During a falcon hunt, Kojirō tracks a dog to the temple, kills it after it bites Akemi, treats her wound and carries her away toward an unstated destination.",
       "characters": [
         "akemi",
         "kojiro",
@@ -2707,10 +3231,34 @@
       "source_ref": "chapter11-the-butterfly-in-winter.txt:L319-L512",
       "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "uncertain_route",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "origin": "toribe_ruined_temple",
+      "destination": "unknown",
+      "section": 30
+    },
+    {
+      "id": "b3c11-audit-references",
+      "chapter": "b3c11",
+      "section": 30,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "jotaro",
+        "musashi",
+        "otsu",
+        "yoshioka_denshichiro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
+      "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
+      "movement_status": null
     },
     {
       "id": "b3c12_e01",
@@ -2733,7 +3281,27 @@
       "source_ref": "chapter12-the-announcement.txt:L1-L165",
       "source_file": "data/source/book3/chapter12-the-announcement.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 31
+    },
+    {
+      "id": "b3c12-audit-s01",
+      "chapter": "b3c12",
+      "section": 31,
+      "type": "financial_crisis",
+      "characters": [
+        "yoshioka_seijuro",
+        "ueda_ryohei"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "yoshioka_school",
+      "description": "Creditors crowd the Yoshioka school while Seijūrō hides and Ryōhei drives them out by intimidation.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter12-the-announcement.txt",
+      "source_file": "data/source/book3/chapter12-the-announcement.txt",
+      "movement_status": null
     },
     {
       "id": "b3c12_e02",
@@ -2752,7 +3320,8 @@
       "source_ref": "chapter12-the-announcement.txt:L166-L326",
       "source_file": "data/source/book3/chapter12-the-announcement.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 31
     },
     {
       "id": "b3c12_e03",
@@ -2772,7 +3341,8 @@
       "source_ref": "chapter12-the-announcement.txt:L327-L421",
       "source_file": "data/source/book3/chapter12-the-announcement.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed"
+      "movement_status": "arrival_confirmed",
+      "section": 31
     },
     {
       "id": "b3c12_e04",
@@ -2793,7 +3363,34 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 31
+    },
+    {
+      "id": "b3c12-audit-references",
+      "chapter": "b3c12",
+      "section": 31,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "gion_toji",
+        "gonroku",
+        "kojiro",
+        "matahachi",
+        "ogin",
+        "oko",
+        "otsu",
+        "yoshioka_denshichiro",
+        "yoshioka_kempo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter12-the-announcement.txt",
+      "source_file": "data/source/book3/chapter12-the-announcement.txt",
+      "movement_status": null
     },
     {
       "id": "b3c13_e01",
@@ -2811,7 +3408,8 @@
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L1-L58",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 32
     },
     {
       "id": "b3c13_e02",
@@ -2836,7 +3434,8 @@
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
-      }
+      },
+      "section": 32
     },
     {
       "id": "b3c13_e03",
@@ -2846,8 +3445,7 @@
       "characters": [
         "musashi",
         "kojiro",
-        "akemi",
-        "monkey"
+        "akemi"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2857,7 +3455,8 @@
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L182-L270",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": "intended_destination",
+      "section": 32
     },
     {
       "id": "b3c13_e04",
@@ -2877,10 +3476,11 @@
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L271-L438",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
-      }
+      },
+      "section": 32
     },
     {
       "id": "b3c13_e05",
@@ -2901,7 +3501,27 @@
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L439-L557",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination"
+      "movement_status": null,
+      "section": 32
+    },
+    {
+      "id": "b3c13-audit-references",
+      "chapter": "b3c13",
+      "section": 32,
+      "type": "chapter_references",
+      "characters": [],
+      "referenced_characters": [
+        "aoki_tanzaemon",
+        "oko"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
+      "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
+      "movement_status": null
     }
   ],
   "character_states": [
@@ -2921,7 +3541,7 @@
       "chapter": "b3c1",
       "character": "aoki_tanzaemon",
       "state": "wandering nearby and lamenting Jōtarō; precise final position unresolved",
-      "location": "fushimi_deserted_house",
+      "location": null,
       "source_ref": "chapter1-sasaki-kojiro.txt:L532-L600",
       "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt",
       "certainty": "strong_inference",
@@ -3020,7 +3640,7 @@
       "chapter": "b3c4",
       "character": "kojiro",
       "state": "last seen leaving the harbor; destination not stated",
-      "location": "kizugawa_harbor",
+      "location": null,
       "source_ref": "chapter4-the-seashell-of-forgetfulness.txt:L36-L58",
       "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
       "certainty": "explicit",
@@ -3053,7 +3673,7 @@
       "chapter": "b3c5",
       "character": "yoshioka_seijuro",
       "state": "departed on Ryōhei's horse toward Kyoto",
-      "location": "sumiyoshi_inn",
+      "location": null,
       "source_ref": "chapter5-a-heros-passing.txt:L318-L344",
       "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
       "certainty": "explicit",
@@ -3064,7 +3684,7 @@
       "chapter": "b3c5",
       "character": "ueda_ryohei",
       "state": "following Seijūrō on foot",
-      "location": "sumiyoshi_inn",
+      "location": null,
       "source_ref": "chapter5-a-heros-passing.txt:L330-L344",
       "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
       "certainty": "explicit",
@@ -3130,7 +3750,7 @@
       "chapter": "b3c8",
       "character": "otsu",
       "state": "departing for Kyoto with scrolls and Jōtarō",
-      "location": "ise_naiku",
+      "location": null,
       "source_ref": "chapter8-the-mayfly-in-winter.txt:L355-L410",
       "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt",
       "certainty": "explicit",
@@ -3141,7 +3761,7 @@
       "chapter": "b3c8",
       "character": "jotaro",
       "state": "departing for Kyoto with Otsū",
-      "location": "ise_naiku",
+      "location": null,
       "source_ref": "chapter8-the-mayfly-in-winter.txt:L355-L410",
       "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt",
       "certainty": "explicit",
@@ -3163,7 +3783,7 @@
       "chapter": "b3c9",
       "character": "musashi",
       "state": "departed alive; next destination unstated",
-      "location": "baiken_smithy",
+      "location": null,
       "source_ref": "chapter9-the-pinwheel.txt:L448-L464",
       "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
       "certainty": "explicit",
@@ -3195,8 +3815,8 @@
       "id": "b3c10-state-otsu",
       "chapter": "b3c10",
       "character": "otsu",
-      "state": "in Kyoto, heading to the Karasumaru residence with Jōtarō",
-      "location": "karasumaru_house",
+      "state": "in Kyoto, heading to the Karasumaru residence with Jōtarō; arrival at the residence is not shown",
+      "location": null,
       "source_ref": "chapter10-the-flying-horse.txt:L603-L623",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
@@ -3206,8 +3826,8 @@
       "id": "b3c10-state-jotaro",
       "chapter": "b3c10",
       "character": "jotaro",
-      "state": "in Kyoto, accompanying Otsū",
-      "location": "karasumaru_house",
+      "state": "in Kyoto, accompanying Otsū toward the Karasumaru residence; arrival at the residence is not shown",
+      "location": null,
       "source_ref": "chapter10-the-flying-horse.txt:L603-L623",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
@@ -3218,7 +3838,7 @@
       "chapter": "b3c10",
       "character": "kohei",
       "state": "last seen injured after pursuit; exact final position not stated",
-      "location": "tokaido_omi_corridor",
+      "location": null,
       "source_ref": "chapter10-the-flying-horse.txt:L210-L284",
       "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
       "certainty": "explicit",
@@ -3229,7 +3849,7 @@
       "chapter": "b3c11",
       "character": "akemi",
       "state": "carried away from the temple by Kojirō; destination unstated in this chapter",
-      "location": "toribe_ruined_temple",
+      "location": null,
       "source_ref": "chapter11-the-butterfly-in-winter.txt:L480-L512",
       "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
       "certainty": "explicit",
@@ -3240,7 +3860,7 @@
       "chapter": "b3c11",
       "character": "kojiro",
       "state": "departing while carrying Akemi, with monkey nearby",
-      "location": "toribe_ruined_temple",
+      "location": null,
       "source_ref": "chapter11-the-butterfly-in-winter.txt:L480-L512",
       "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
       "certainty": "explicit",
@@ -3284,7 +3904,7 @@
       "chapter": "b3c12",
       "character": "yoshioka_seijuro",
       "state": "duel announced for Rendaiji; remains associated with school, exact final room unstated",
-      "location": "yoshioka_school",
+      "location": null,
       "source_ref": "chapter12-the-announcement.txt:L145-L165",
       "source_file": "data/source/book3/chapter12-the-announcement.txt",
       "certainty": "strong_inference",
@@ -3295,7 +3915,7 @@
       "chapter": "b3c13",
       "character": "musashi",
       "state": "departed across the river; onward destination not stated",
-      "location": "kamo_river_gojo",
+      "location": null,
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L350-L438",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
@@ -3306,7 +3926,7 @@
       "chapter": "b3c13",
       "character": "otsu",
       "state": "with Osugi, intending to go to her Sannen Hill inn and seek Matahachi",
-      "location": "kamo_river_gojo",
+      "location": null,
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
@@ -3317,7 +3937,7 @@
       "chapter": "b3c13",
       "character": "osugi",
       "state": "with Otsū, directing her toward the Sannen Hill inn",
-      "location": "kamo_river_gojo",
+      "location": null,
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
@@ -3328,7 +3948,7 @@
       "chapter": "b3c13",
       "character": "jotaro",
       "state": "intending to return to the Karasumaru house",
-      "location": "kamo_river_gojo",
+      "location": null,
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L520-L557",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
@@ -3339,7 +3959,7 @@
       "chapter": "b3c13",
       "character": "akemi",
       "state": "sent back with Kojirō; arrival at the inn is not shown",
-      "location": "zuzuya_inn",
+      "location": null,
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L238-L270",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
@@ -3350,7 +3970,7 @@
       "chapter": "b3c13",
       "character": "kojiro",
       "state": "escorting Akemi toward the inn; arrival not shown",
-      "location": "zuzuya_inn",
+      "location": null,
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L238-L270",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",

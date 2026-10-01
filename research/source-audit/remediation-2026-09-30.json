@@ -1,0 +1,2383 @@
+{
+  "date": "2026-09-30",
+  "recovered": "2026-10-01",
+  "base_commit": "6563aa681cbd342403d8ec3ad896ef3b0e912db4",
+  "fixes": [
+    {
+      "id": "R001",
+      "chapter": "b2c11",
+      "category": "physical_presence",
+      "subject": "sekishusai",
+      "description": "Unsupported physical presence removed.",
+      "source_ref": "data/source/book2/chapter11-the-nightingales.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R002",
+      "chapter": "b3c4",
+      "category": "physical_presence",
+      "subject": "monkey",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R003",
+      "chapter": "b3c4",
+      "category": "physical_presence",
+      "subject": "ship_captain",
+      "description": "Unsupported physical presence removed.",
+      "source_ref": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R004",
+      "chapter": "b3c13",
+      "category": "physical_presence",
+      "subject": "monkey",
+      "description": "Unsupported physical presence removed.",
+      "source_ref": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R005",
+      "chapter": "b4c1",
+      "category": "physical_presence",
+      "subject": "monkey",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R006",
+      "chapter": "b4c6",
+      "category": "physical_presence",
+      "subject": "rinya",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R007",
+      "chapter": "b4c7",
+      "category": "physical_presence",
+      "subject": "rinya",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R008",
+      "chapter": "b4c7",
+      "category": "physical_presence",
+      "subject": "ueda_ryohei",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R009",
+      "chapter": "b4c7",
+      "category": "physical_presence",
+      "subject": "miike_jurozaemon",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R010",
+      "chapter": "b4c9",
+      "category": "physical_presence",
+      "subject": "konoe_nobutada",
+      "description": "Unsupported physical presence removed.",
+      "source_ref": "data/source/book4/chapter9-the-broken-lute.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R011",
+      "chapter": "b4c14",
+      "category": "physical_presence",
+      "subject": "kobashi_kurando",
+      "description": "Unsupported physical presence removed.",
+      "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R012",
+      "chapter": "b6c3",
+      "category": "physical_presence",
+      "subject": "obata_yogoro",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R013",
+      "chapter": "b7c11",
+      "category": "physical_presence",
+      "subject": "musashi",
+      "description": "Unsupported physical presence removed.",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R014",
+      "chapter": "b7c11",
+      "category": "physical_presence",
+      "subject": "aoki_tanzaemon",
+      "description": "Direct on-page presence added.",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R015",
+      "chapter": "b6c3",
+      "category": "event",
+      "subject": "b6c3-e01",
+      "description": "Corrected characters, referenced_characters.",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt:L1-L63",
+      "status": "corrected"
+    },
+    {
+      "id": "R016",
+      "chapter": "b2c11",
+      "category": "end_state",
+      "subject": "sekishusai",
+      "description": "Correct physical, reported, unresolved or death timing semantics.",
+      "source_ref": "data/source/book2/chapter11-the-nightingales.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R017",
+      "chapter": "b1c7",
+      "category": "end_state",
+      "subject": "musashi",
+      "description": "Correct physical, reported, unresolved or death timing semantics.",
+      "source_ref": "data/source/book1/chapter7-the-rock-and-the-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R018",
+      "chapter": "b7c11",
+      "category": "end_state",
+      "subject": "musashi",
+      "description": "Correct physical, reported, unresolved or death timing semantics.",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R019",
+      "chapter": "b6c2",
+      "category": "end_state",
+      "subject": "obata_yogoro",
+      "description": "Correct physical, reported, unresolved or death timing semantics.",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R020",
+      "chapter": "b6c3",
+      "category": "end_state",
+      "subject": "obata_yogoro",
+      "description": "Correct physical, reported, unresolved or death timing semantics.",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R021",
+      "chapter": "b6c5",
+      "category": "end_state",
+      "subject": "obata_kagenori",
+      "description": "Correct physical, reported, unresolved or death timing semantics.",
+      "source_ref": "data/source/book6/chapter5-eyes.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R022",
+      "chapter": "b1c7",
+      "category": "event",
+      "subject": "b1c7-04",
+      "description": "Corrected location.",
+      "source_ref": "book1/chapter7",
+      "status": "corrected"
+    },
+    {
+      "id": "R023",
+      "chapter": "b1c7",
+      "category": "event",
+      "subject": "b1c7-07",
+      "description": "Corrected destination, movement_status, description.",
+      "source_ref": "book1/chapter7",
+      "status": "corrected"
+    },
+    {
+      "id": "R024",
+      "chapter": "b4c6",
+      "category": "event",
+      "subject": "b4c6-e04",
+      "description": "Corrected description, source_ref.",
+      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt:L468-L535",
+      "status": "corrected"
+    },
+    {
+      "id": "R025",
+      "chapter": "b4c12",
+      "category": "event",
+      "subject": "b4c12-e01",
+      "description": "Corrected characters, referenced_characters, description, source_ref.",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt:L291-L328",
+      "status": "corrected"
+    },
+    {
+      "id": "R026",
+      "chapter": "b4c12",
+      "category": "event",
+      "subject": "b4c12-e04",
+      "description": "Corrected description, type, source_ref.",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt:L291-L328",
+      "status": "corrected"
+    },
+    {
+      "id": "R027",
+      "chapter": "b5c1",
+      "category": "event",
+      "subject": "b5c1-e02",
+      "description": "Corrected characters, referenced_characters, description.",
+      "source_ref": "book5/chapter1",
+      "status": "corrected"
+    },
+    {
+      "id": "R028",
+      "chapter": "b5c13",
+      "category": "event",
+      "subject": "b5c13-e01",
+      "description": "Corrected location, description.",
+      "source_ref": "book5/chapter13",
+      "status": "corrected"
+    },
+    {
+      "id": "R029",
+      "chapter": "b5c18",
+      "category": "event",
+      "subject": "b5c18-e03",
+      "description": "Corrected location.",
+      "source_ref": "book5/chapter18",
+      "status": "corrected"
+    },
+    {
+      "id": "R030",
+      "chapter": "b5c24",
+      "category": "event",
+      "subject": "b5c24-e04",
+      "description": "Corrected location, destination, movement_status.",
+      "source_ref": "book5/chapter24",
+      "status": "corrected"
+    },
+    {
+      "id": "R031",
+      "chapter": "b5c25",
+      "category": "event",
+      "subject": "b5c25-e03",
+      "description": "Corrected location.",
+      "source_ref": "book5/chapter25",
+      "status": "corrected"
+    },
+    {
+      "id": "R032",
+      "chapter": "b5c25",
+      "category": "event",
+      "subject": "b5c25-e04",
+      "description": "Corrected location.",
+      "source_ref": "data/source/book5/chapter25-the-deserted-prophet.txt:L158-L175",
+      "status": "corrected"
+    },
+    {
+      "id": "R033",
+      "chapter": "b6c8",
+      "category": "event",
+      "subject": "b6c8-e01",
+      "description": "Corrected groups.",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L1-L165",
+      "status": "corrected"
+    },
+    {
+      "id": "R034",
+      "chapter": "b6c8",
+      "category": "event",
+      "subject": "b6c8-e02",
+      "description": "Corrected description.",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L166-L420",
+      "status": "corrected"
+    },
+    {
+      "id": "R035",
+      "chapter": "b6c8",
+      "category": "event",
+      "subject": "b6c8-e03",
+      "description": "Corrected description.",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L421-L496",
+      "status": "corrected"
+    },
+    {
+      "id": "R036",
+      "chapter": "b6c11",
+      "category": "event",
+      "subject": "b6c11-e01",
+      "description": "Corrected location.",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L125-L367",
+      "status": "corrected"
+    },
+    {
+      "id": "R037",
+      "chapter": "b6c11",
+      "category": "event",
+      "subject": "b6c11-e02",
+      "description": "Corrected location.",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L368-L437",
+      "status": "corrected"
+    },
+    {
+      "id": "R038",
+      "chapter": "b6c14",
+      "category": "event",
+      "subject": "b6c14-e03",
+      "description": "Corrected description, source_ref.",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L261-L291",
+      "status": "corrected"
+    },
+    {
+      "id": "R039",
+      "chapter": "b6c14",
+      "category": "event",
+      "subject": "b6c14-e04",
+      "description": "Corrected description.",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L245-L254",
+      "status": "corrected"
+    },
+    {
+      "id": "R040",
+      "chapter": "b6c16",
+      "category": "event",
+      "subject": "b6c16-e01",
+      "description": "Corrected characters, referenced_characters, description, source_ref.",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L127-L138",
+      "status": "corrected"
+    },
+    {
+      "id": "R041",
+      "chapter": "b6c16",
+      "category": "event",
+      "subject": "b6c16-e04",
+      "description": "Corrected origin, description, source_ref.",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L139-L176",
+      "status": "corrected"
+    },
+    {
+      "id": "R042",
+      "chapter": "b7c6",
+      "category": "event",
+      "subject": "b7c6-e02",
+      "description": "Corrected location.",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R043",
+      "chapter": "b7c16",
+      "category": "event",
+      "subject": "b7c16-e01",
+      "description": "Corrected location.",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R044",
+      "chapter": "b7c11",
+      "category": "event",
+      "subject": "b7c11-e03",
+      "description": "Corrected characters, referenced_characters, description, source_ref.",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt:L175-L190",
+      "status": "corrected"
+    },
+    {
+      "id": "R045",
+      "chapter": "b3c9",
+      "category": "event",
+      "subject": "b3c9_e02",
+      "description": "Corrected description.",
+      "source_ref": "chapter9-the-pinwheel.txt:L103-L255",
+      "status": "corrected"
+    },
+    {
+      "id": "R046",
+      "chapter": "b4c7",
+      "category": "event",
+      "subject": "b4c7-e02",
+      "description": "Corrected characters, description.",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R047",
+      "chapter": "b2c6",
+      "category": "event",
+      "subject": "b2c6-e09",
+      "description": "Corrected location, destination, movement_status.",
+      "source_ref": "book2/chapter6",
+      "status": "corrected"
+    },
+    {
+      "id": "R048",
+      "chapter": "b2c6",
+      "category": "event",
+      "subject": "b2c6-e10",
+      "description": "Corrected location.",
+      "source_ref": "book2/chapter6",
+      "status": "corrected"
+    },
+    {
+      "id": "R049",
+      "chapter": "b2c6",
+      "category": "event",
+      "subject": "b2c6-e11",
+      "description": "Corrected location, type, origin, destination, movement_status.",
+      "source_ref": "book2/chapter6",
+      "status": "corrected"
+    },
+    {
+      "id": "R050",
+      "chapter": "b2c7",
+      "category": "relationship",
+      "subject": "musashi/inshun",
+      "description": "Encounter without a personal duel, not a rivalry.",
+      "source_ref": "data/source/book2/chapter7-hannya-plain.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R051",
+      "chapter": "b7c10",
+      "category": "identity_relationship_or_state",
+      "subject": "yoshino_second",
+      "description": "Distinct second Yoshino, wife of Shōeki; the first woman’s fate remains unknown.",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R052",
+      "chapter": "b6c5",
+      "category": "identity_relationship_or_state",
+      "subject": "obata_kagenori/hojo_shinzo",
+      "description": "Reported death and planned, not completed, adoption.",
+      "source_ref": "data/source/book6/chapter5-eyes.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R053",
+      "chapter": "b1c1",
+      "category": "temporal_identity",
+      "subject": "ogin",
+      "description": "Role label until the explicit name is given.",
+      "source_ref": "data/source/book1/chapter1-the-little-bell.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R054",
+      "chapter": "b1c1",
+      "category": "temporal_identity",
+      "subject": "osugi",
+      "description": "Role label until the explicit name is given.",
+      "source_ref": "data/source/book1/chapter1-the-little-bell.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R055",
+      "chapter": "b2c4",
+      "category": "temporal_identity",
+      "subject": "munenori",
+      "description": "Role label until the explicit name is given.",
+      "source_ref": "data/source/book2/chapter4-the-water-sprite.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R056",
+      "chapter": "b1c1",
+      "category": "restored_event",
+      "subject": "b1c1-audit-s03",
+      "description": "They play dead while mounted troops pass directly through the battlefield.",
+      "source_ref": "data/source/book1/chapter1-the-little-bell.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R057",
+      "chapter": "b1c1",
+      "category": "restored_event",
+      "subject": "b1c1-audit-s06",
+      "description": "They physically encounter Akemi among battlefield corpses before reaching her home.",
+      "source_ref": "data/source/book1/chapter1-the-little-bell.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R058",
+      "chapter": "b1c1",
+      "category": "restored_event",
+      "subject": "b1c1-audit-s08",
+      "description": "Matahachi is treated for illness and Takezo tends his bullet wounds during an extended stay.",
+      "source_ref": "data/source/book1/chapter1-the-little-bell.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R059",
+      "chapter": "b1c2",
+      "category": "restored_event",
+      "subject": "b1c2-audit-s04",
+      "description": "Oko gives Takezo a heavy black-oak practice sword taken from battlefield plunder.",
+      "source_ref": "data/source/book1/chapter2-the-comb.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R060",
+      "chapter": "b1c2",
+      "category": "restored_event",
+      "subject": "b1c2-audit-s05",
+      "description": "Oko enters Takezo's sleeping space at night and makes a sexual advance that he rejects.",
+      "source_ref": "data/source/book1/chapter2-the-comb.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R061",
+      "chapter": "b1c2",
+      "category": "restored_event",
+      "subject": "b1c2-audit-s08",
+      "description": "Matahachi kills one unnamed member of Temma's group during the fighting.",
+      "source_ref": "data/source/book1/chapter2-the-comb.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R062",
+      "chapter": "b1c2",
+      "category": "restored_event",
+      "subject": "b1c2-audit-s09",
+      "description": "The household warns that Temma's younger brother Kohei is more dangerous and may retaliate.",
+      "source_ref": "data/source/book1/chapter2-the-comb.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R063",
+      "chapter": "b1c2",
+      "category": "restored_event",
+      "subject": "b1c2-audit-s10",
+      "description": "Matahachi and Oko become increasingly intimate during the final night at the house.",
+      "source_ref": "data/source/book1/chapter2-the-comb.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R064",
+      "chapter": "b1c2",
+      "category": "restored_event",
+      "subject": "b1c2-audit-s12",
+      "description": "Takezo wakes to the empty house, finds Oko's red comb and thinks of Otsu.",
+      "source_ref": "data/source/book1/chapter2-the-comb.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R065",
+      "chapter": "b1c3",
+      "category": "restored_event",
+      "subject": "b1c3-audit-s05",
+      "description": "Otsu reacts emotionally to memorial inscriptions treating Takezo and Matahachi as dead.",
+      "source_ref": "data/source/book1/chapter3-the-flower-festival.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R066",
+      "chapter": "b1c4",
+      "category": "restored_event",
+      "subject": "b1c4-audit-s01",
+      "description": "Heita tells Osugi that Otsu saw Takezo at the festival.",
+      "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R067",
+      "chapter": "b1c4",
+      "category": "restored_event",
+      "subject": "b1c4-audit-s02",
+      "description": "Osugi and Otsu go to Ogin's house seeking Takezo and information about Matahachi.",
+      "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R068",
+      "chapter": "b1c4",
+      "category": "restored_event",
+      "subject": "b1c4-audit-s04",
+      "description": "Otsu reaches Takuan at Shippoji and reports Ogin's arrest.",
+      "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R069",
+      "chapter": "b1c4",
+      "category": "restored_event",
+      "subject": "b1c4-audit-s06",
+      "description": "Takezo questions a charcoal maker and learns Ogin was arrested and is rumored to be at Hinagura.",
+      "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R070",
+      "chapter": "b1c4",
+      "category": "restored_event",
+      "subject": "b1c4-audit-s07",
+      "description": "Takezo returns physically to Shippoji, sees the Himeji officer assaulting Otsu, strikes him and escapes as the alarm is raised.",
+      "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R071",
+      "chapter": "b1c5",
+      "category": "restored_event",
+      "subject": "b1c5-audit-s02",
+      "description": "The letters trigger a severe emotional crisis before Takuan intervenes.",
+      "source_ref": "data/source/book1/chapter5-the-art-of-war.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R072",
+      "chapter": "b1c5",
+      "category": "restored_event",
+      "subject": "b1c5-audit-s03",
+      "description": "Takuan confronts the Himeji officer over the failed manhunt and establishes his personal connection to Ikeda Terumasa.",
+      "source_ref": "data/source/book1/chapter5-the-art-of-war.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R073",
+      "chapter": "b1c5",
+      "category": "restored_event",
+      "subject": "b1c5-audit-s04",
+      "description": "The officer agrees that Takuan may decide Takezo's fate if he captures him within three days; Takuan stakes his own life on failure.",
+      "source_ref": "data/source/book1/chapter5-the-art-of-war.txt:L299-L360",
+      "status": "corrected"
+    },
+    {
+      "id": "R074",
+      "chapter": "b1c5",
+      "category": "restored_event",
+      "subject": "b1c5-audit-s06",
+      "description": "They remain in the mountain area for three days waiting for Takezo; Otsu's flute becomes part of the encounter that draws him near.",
+      "source_ref": "data/source/book1/chapter5-the-art-of-war.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R075",
+      "chapter": "b1c6",
+      "category": "restored_event",
+      "subject": "b1c6-audit-s02",
+      "description": "Villagers debate Takezo's fate; Osugi demands harsh punishment and the Himeji officer tries to reclaim official authority.",
+      "source_ref": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R076",
+      "chapter": "b1c6",
+      "category": "restored_event",
+      "subject": "b1c6-audit-s03",
+      "description": "Takuan invokes the prior bargain and prevents the officer from taking custody.",
+      "source_ref": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R077",
+      "chapter": "b1c6",
+      "category": "restored_event",
+      "subject": "b1c6-audit-s05",
+      "description": "Osugi pressures Otsu to enter the Hon'iden household as Matahachi's bride before his return.",
+      "source_ref": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R078",
+      "chapter": "b1c6",
+      "category": "restored_event",
+      "subject": "b1c6-audit-s06",
+      "description": "Takuan challenges Takezo's ideas of strength, courage and the samurai way while he is bound in the tree.",
+      "source_ref": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R079",
+      "chapter": "b1c6",
+      "category": "restored_event",
+      "subject": "b1c6-audit-s08",
+      "description": "During the storm Otsu repeatedly begs Takuan to release Takezo; he refuses.",
+      "source_ref": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R080",
+      "chapter": "b1c7",
+      "category": "restored_event",
+      "subject": "b1c7-audit-s01",
+      "description": "Takuan continues the confrontation over courage and human purpose until Takezo explicitly asks to live and change.",
+      "source_ref": "data/source/book1/chapter7-the-rock-and-the-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R081",
+      "chapter": "b1c7",
+      "category": "restored_event",
+      "subject": "b1c7-audit-s05",
+      "description": "Heita reports the escape; Osugi mobilizes relatives and tenants and begins pursuit with Gonroku.",
+      "source_ref": "data/source/book1/chapter7-the-rock-and-the-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R082",
+      "chapter": "b1c7",
+      "category": "restored_event",
+      "subject": "b1c7-audit-s06",
+      "description": "A border official refuses the large pursuit party; only Osugi and Gonroku continue across.",
+      "source_ref": "data/source/book1/chapter7-the-rock-and-the-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R083",
+      "chapter": "b1c8",
+      "category": "restored_event",
+      "subject": "b1c8-audit-s04",
+      "description": "The text retrospectively identifies the officer who made the capture bargain as Aoki Tanzaemon; earlier 'Himeji captain/Scraggly Beard' scenes belong to this same person.",
+      "source_ref": "data/source/book1/chapter8-the-birth-of-musashi.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R084",
+      "chapter": "b1c8",
+      "category": "restored_event",
+      "subject": "b1c8-audit-s11",
+      "description": "Otsu explains that Takuan rescued her from the ravine near Mikazuki and arranged her work near Hanada Bridge.",
+      "source_ref": "data/source/book1/chapter8-the-birth-of-musashi.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R085",
+      "chapter": "b2c1",
+      "category": "restored_event",
+      "subject": "b2c1-audit-s07",
+      "description": "Matahachi remembers Otsu, his mother and Miyamoto, recognizes his decline and resolves to leave Oko.",
+      "source_ref": "data/source/book2/chapter1-the-yoshioka-school.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R086",
+      "chapter": "b2c1",
+      "category": "restored_event",
+      "subject": "b2c1-audit-s08",
+      "description": "Matahachi leaves by the kitchen door, returns for money, searches Oko's belongings and remains trapped by indecision.",
+      "source_ref": "data/source/book2/chapter1-the-yoshioka-school.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R087",
+      "chapter": "b2c4",
+      "category": "restored_event",
+      "subject": "b2c4-audit-s02",
+      "description": "Jotaro states that his father is Aoki Tanzaemon, a former 2,500-koku samurai who lost his status; Musashi explicitly reflects on his own role in Tanzaemon's misfortune.",
+      "source_ref": "data/source/book2/chapter4-the-water-sprite.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R088",
+      "chapter": "b2c4",
+      "category": "restored_event",
+      "subject": "b2c4-audit-s03",
+      "description": "Jotaro asks to become Musashi's follower and Musashi conditionally agrees if the boy obtains his master's consent.",
+      "source_ref": "data/source/book2/chapter4-the-water-sprite.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R089",
+      "chapter": "b2c5",
+      "category": "restored_event",
+      "subject": "b2c5-audit-s02",
+      "description": "From the written name and Jotaro's description, Akemi realizes Miyamoto Musashi is Takezo and revives her long-held hope of seeing him again.",
+      "source_ref": "data/source/book2/chapter5-a-spring-breeze.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R090",
+      "chapter": "b2c5",
+      "category": "restored_event",
+      "subject": "b2c5-audit-s08",
+      "description": "Otsu accepts largely because the Yagyu household may have records or visitors who can lead her to Musashi.",
+      "source_ref": "data/source/book2/chapter5-a-spring-breeze.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R091",
+      "chapter": "b2c6",
+      "category": "restored_event",
+      "subject": "b2c6-audit-s07",
+      "description": "Although Musashi won physically against Agon, he leaves feeling spiritually outclassed by Nikkan.",
+      "source_ref": "data/source/book2/chapter6-the-hozoin.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R092",
+      "chapter": "b2c6",
+      "category": "restored_event",
+      "subject": "b2c6-audit-s12",
+      "description": "The widow gives Musashi clothing and permits Jotaro to keep an old Noh mask before they prepare to leave.",
+      "source_ref": "data/source/book2/chapter6-the-hozoin.txt:L646-L723",
+      "status": "corrected"
+    },
+    {
+      "id": "R093",
+      "chapter": "b2c6",
+      "category": "restored_event",
+      "subject": "b2c6-audit-s13",
+      "description": "The dumpling-maker's wife warns that Hozoin priests and ronin are waiting toward Hannya Plain because forged insults have been attributed to Musashi; he chooses to leave anyway.",
+      "source_ref": "data/source/book2/chapter6-the-hozoin.txt:L724-L767",
+      "status": "corrected"
+    },
+    {
+      "id": "R094",
+      "chapter": "b2c8",
+      "category": "restored_event",
+      "subject": "b2c8-audit-s02",
+      "description": "Musashi explains that serious martial study includes geography, agriculture, customs, governance and the condition of a lord's territory, not just fighting.",
+      "source_ref": "data/source/book2/chapter8-the-koyagyu-fief.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R095",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-s05",
+      "description": "Otsu gives the rejected peony to Kocha rather than taking it back to the castle.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R096",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-s09",
+      "description": "Sekishusai learns Denshichiro failed even to notice the peony's cut and judges that the Yoshioka house effectively ended with Kempo.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R097",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-s10",
+      "description": "At the Yagyu dojo Kizaemon drives students through severe Shinkage-style training, illustrating the household's standard.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R098",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-s11",
+      "description": "Jotaro enters the castle and forces Kizaemon to read Musashi's unusual letter asking who made the peony cut.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt:L497-L579",
+      "status": "corrected"
+    },
+    {
+      "id": "R099",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-s12",
+      "description": "The Yagyu retainers compare the two cuts, learn Sekishusai made the original and infer that Musashi has unusual perception.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt:L580-L603",
+      "status": "corrected"
+    },
+    {
+      "id": "R100",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-s13",
+      "description": "The retainers decide to invite Musashi informally to the Shin'indo for food, sake and martial conversation.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R101",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-s14",
+      "description": "While waiting, Jotaro provokes and strikes the large black dog Taro; the dog attacks and injures him.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R102",
+      "chapter": "b2c10",
+      "category": "restored_event",
+      "subject": "b2c10-audit-s07",
+      "description": "Jotaro finds Taro and kills the dog as revenge for the earlier attack.",
+      "source_ref": "data/source/book2/chapter10-jotaros-revenge.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R103",
+      "chapter": "b2c11",
+      "category": "restored_event",
+      "subject": "b2c11-audit-s06",
+      "description": "Otsu and Jotaro chase Musashi onto the Tsukigase-Iga back road until he disappears into wooded foothills.",
+      "source_ref": "data/source/book2/chapter11-the-nightingales.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R104",
+      "chapter": "b2c11",
+      "category": "restored_event",
+      "subject": "b2c11-audit-s09",
+      "description": "Otsu tells Takuan she remains determined to find Musashi; Takuan warns that her fixation may lead her toward self-destruction.",
+      "source_ref": "data/source/book2/chapter11-the-nightingales.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R105",
+      "chapter": "b2c11",
+      "category": "restored_event",
+      "subject": "b2c11-audit-s10",
+      "description": "Otsu refuses to remain peacefully at Koyagyu; Jotaro chooses to continue with her after retrieving his mask, while Takuan accepts that he cannot stop them.",
+      "source_ref": "data/source/book2/chapter11-the-nightingales.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R106",
+      "chapter": "b3c1",
+      "category": "restored_event",
+      "subject": "b3c1-audit-s07",
+      "description": "A mendicant priest laments his lost samurai status, his conduct involving Otsū and the harm done to his only son Jōtarō.",
+      "source_ref": "data/source/book3/chapter1-sasaki-kojiro.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R107",
+      "chapter": "b3c5",
+      "category": "restored_event",
+      "subject": "b3c5-audit-s06",
+      "description": "In delirium Akemi mentions Musashi, New Year's and Gojō Bridge, revealing the expected meeting.",
+      "source_ref": "data/source/book3/chapter5-a-heros-passing.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R108",
+      "chapter": "b3c9",
+      "category": "restored_event",
+      "subject": "b3c9-audit-s08",
+      "description": "The narration explicitly identifies Shishido Baiken as Tsujikaze Kōhei and confirms Tsujikaze Temma was his brother.",
+      "source_ref": "data/source/book3/chapter9-the-pinwheel.txt:L415-L419",
+      "status": "corrected"
+    },
+    {
+      "id": "R109",
+      "chapter": "b3c10",
+      "category": "restored_event",
+      "subject": "b3c10-audit-s08",
+      "description": "Sannojō guides them above Kaga Village to Makado Pass and directs them toward Seto in Otsu.",
+      "source_ref": "data/source/book3/chapter10-the-flying-horse.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R110",
+      "chapter": "b3c12",
+      "category": "restored_event",
+      "subject": "b3c12-audit-s01",
+      "description": "Creditors crowd the Yoshioka school while Seijūrō hides and Ryōhei drives them out by intimidation.",
+      "source_ref": "data/source/book3/chapter12-the-announcement.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R111",
+      "chapter": "b4c1",
+      "category": "restored_event",
+      "subject": "b4c1-audit-s09",
+      "description": "Kojirō continues to control and taunt Akemi while she fears his cruelty but remains in his company.",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R112",
+      "chapter": "b4c4",
+      "category": "restored_event",
+      "subject": "b4c4-audit-s03",
+      "description": "Matahachi gives Denshichirō a distorted story portraying Musashi as the abductor of his fiancée and himself as a revenge-seeker.",
+      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R113",
+      "chapter": "b4c17",
+      "category": "restored_event",
+      "subject": "b4c17-audit-s03",
+      "description": "At Hachidai Shrine Musashi nearly prays for supernatural protection, stops himself and reframes the episode as a warning against hidden attachment to life.",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R114",
+      "chapter": "b5c18",
+      "category": "restored_event",
+      "subject": "b5c18-audit-s04",
+      "description": "Musashi uses the incident to teach Iori that etiquette restrains people's bad side and is essential in crowded civic life.",
+      "source_ref": "data/source/book5/chapter18-the-flies.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R115",
+      "chapter": "b5c18",
+      "category": "restored_event",
+      "subject": "b5c18-audit-s07",
+      "description": "When horse trader Kumagorō threatens him over noise complaints, Musashi silently plucks live flies from his soba with chopsticks, causing the traders to retreat.",
+      "source_ref": "data/source/book5/chapter18-the-flies.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R116",
+      "chapter": "b5c19",
+      "category": "restored_event",
+      "subject": "b5c19-audit-s02",
+      "description": "Kōsuke explains Kōetsu's teaching that the craftsman's real work is polishing the samurai's soul and that a sword exists to preserve integrity and order, not delight in killing.",
+      "source_ref": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R117",
+      "chapter": "b5c19",
+      "category": "restored_event",
+      "subject": "b5c19-audit-s03",
+      "description": "Musashi accepts the criticism and recognizes that he has not adequately considered the moral spirit of the sword he carries.",
+      "source_ref": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R118",
+      "chapter": "b5c22",
+      "category": "restored_event",
+      "subject": "b5c22-audit-s05",
+      "description": "Jūrō and the Hangawara men initially mock Osugi's sutra but become emotionally overwhelmed by its description of parental sacrifice and filial neglect.",
+      "source_ref": "data/source/book5/chapter22-filial-piety.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R119",
+      "chapter": "b5c24",
+      "category": "restored_event",
+      "subject": "b5c24-audit-s07",
+      "description": "Iori blames his long delay on a fox; Musashi reframes the punishment as Iori's own invisible conscience reacting to his choices.",
+      "source_ref": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R120",
+      "chapter": "b5c25",
+      "category": "restored_event",
+      "subject": "b5c25-audit-s05",
+      "description": "Kagenori tells Yogorō that his military science is now aimed at peace and stability and that he needs the right mature man to receive it because Yogorō is not ready.",
+      "source_ref": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R121",
+      "chapter": "b6c4",
+      "category": "restored_event",
+      "subject": "b6c4-audit-s06",
+      "description": "Umpei, an experienced well-digger boss working for the shōgun's castle project, again offers Matahachi higher-paid work inside the castle grounds.",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R122",
+      "chapter": "b6c5",
+      "category": "restored_event",
+      "subject": "b6c5-audit-s05",
+      "description": "Shinzō reports that Kagenori has died and that Yogorō also died after going alone to seek revenge on Kojirō.",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L170-L185",
+      "status": "corrected"
+    },
+    {
+      "id": "R123",
+      "chapter": "b6c5",
+      "category": "restored_event",
+      "subject": "b6c5-audit-s06",
+      "description": "With Yogorō dead, Shinzō says adoption proceedings arranged through his father and Munenori will make him Kagenori's heir and successor to the Obata name.",
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L170-L185",
+      "status": "corrected"
+    },
+    {
+      "id": "R124",
+      "chapter": "b6c6",
+      "category": "restored_event",
+      "subject": "b6c6-audit-s09",
+      "description": "Musashi internally rejects the sword of conquest and mere technical instruction, defining the Way instead as a means to establish order, protect and refine the spirit and ultimately contribute to peace and good government.",
+      "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R125",
+      "chapter": "b6c9",
+      "category": "restored_event",
+      "subject": "b6c9-audit-s08",
+      "description": "Pressed by Iori's questions about loyal and rebel dead, Musashi concludes that a genuine samurai and swordsman must possess compassion and an appreciation of life's poignancy, not merely destructive skill.",
+      "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R126",
+      "chapter": "b6c12",
+      "category": "restored_event",
+      "subject": "b6c12-audit-s08",
+      "description": "Iori follows Jōtarō, denounces him as a thief and eventually fights him near the Musashino cabin, using Musashi's eye-training lesson.",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R127",
+      "chapter": "b6c12",
+      "category": "restored_event",
+      "subject": "b6c12-audit-s09",
+      "description": "The boys discover that both regard Musashi as their teacher; their hostility gives way to shocked recognition even though mistrust remains.",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R128",
+      "chapter": "b6c12",
+      "category": "restored_event",
+      "subject": "b6c12-audit-s10",
+      "description": "Still struggling in a tree, Iori and Jōtarō fall together and are knocked unconscious.",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R129",
+      "chapter": "b6c12",
+      "category": "restored_event",
+      "subject": "b6c12-audit-s14",
+      "description": "Jōtarō admits helping Daizō rob the treasure house while claiming the theft serves the public; Takuan attacks the logic of a half-educated do-gooder imposing his own idea of social good.",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R130",
+      "chapter": "b6c13",
+      "category": "restored_event",
+      "subject": "b6c13-audit-s02",
+      "description": "Osugi appears at the mansion and gives Shinzō a long denunciation of Musashi, citing Sekigahara, alleged crimes and the Otsū dispute to argue he is unfit to teach the shōgun.",
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R131",
+      "chapter": "b6c17",
+      "category": "restored_event",
+      "subject": "b6c17-audit-s02",
+      "description": "Musashi says the Way of the Sword and good government should ultimately align, but he now sees that governance requires a perfect blending of military and literary arts and that he still has much to learn from the country itself.",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R132",
+      "chapter": "b7c12",
+      "category": "restored_event",
+      "subject": "b7c12-audit-s02",
+      "description": "Praise of Musashi provokes Kojirō into repeated public attacks on Musashi's character and Ichijōji conduct, helping turn rivalry into expected confrontation.",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R133",
+      "chapter": "b7c12",
+      "category": "restored_event",
+      "subject": "b7c12-audit-s09",
+      "description": "Despite outward confidence, Kojirō increasingly thinks about Omitsu, his dead mother and the possibility of his own death.",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R134",
+      "chapter": "b7c13",
+      "category": "restored_event",
+      "subject": "b7c13-audit-s03",
+      "description": "Gempachi recognizes Matahachi from the period when he falsely called himself Sasaki Kojirō; Matahachi now looks back on that impersonation with shame rather than pride.",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R135",
+      "chapter": "b7c13",
+      "category": "restored_event",
+      "subject": "b7c13-audit-s07",
+      "description": "Surrounded by admirers and gifts, Kojirō becomes psychologically burdened by the repeated inner command that he must win.",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R136",
+      "chapter": "b4c7",
+      "category": "restored_event",
+      "subject": "b4c7-audit-arrival",
+      "description": "Musashi reaches Rengeōin, warms himself in the temple and takes the veranda position before revealing himself.",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R137",
+      "chapter": "b2c6",
+      "category": "restored_event",
+      "subject": "b2c6-audit-jotaro-arrival",
+      "description": "Jōtarō reaches the boardinghouse where Musashi is already lodging; only the boy makes this arrival.",
+      "source_ref": "data/source/book2/chapter6-the-hozoin.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R138",
+      "chapter": "b7c11",
+      "category": "restored_event",
+      "subject": "b7c11-audit-aoki",
+      "description": "The directly narrated flashback stages Aoki in Himeji helping plan the attempt to contact Musashi’s ship.",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt:L88-L96",
+      "status": "corrected"
+    },
+    {
+      "id": "R139",
+      "chapter": "b1c4",
+      "category": "restored_event",
+      "subject": "b1c4-audit-summons",
+      "description": "Osugi sends her daughter-in-law to summon armed help while Takezō is bathing.",
+      "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R140",
+      "chapter": "b2c1",
+      "category": "restored_event",
+      "subject": "b2c1-audit-messenger",
+      "description": "A Yoshioka messenger reports that Musashi is at the school defeating its men and waiting for Seijūrō.",
+      "source_ref": "data/source/book2/chapter1-the-yoshioka-school.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R141",
+      "chapter": "b3c7",
+      "category": "event",
+      "subject": "b3c7_e01",
+      "description": "Corrected characters.",
+      "source_ref": "chapter7-eagle-mountain.txt:L94-L245",
+      "status": "corrected"
+    },
+    {
+      "id": "R142",
+      "chapter": "b3c7",
+      "category": "event",
+      "subject": "b3c7_e02",
+      "description": "Corrected characters.",
+      "source_ref": "chapter7-eagle-mountain.txt:L246-L363",
+      "status": "corrected"
+    },
+    {
+      "id": "R143",
+      "chapter": "b3c7",
+      "category": "event",
+      "subject": "b3c7_e03",
+      "description": "Corrected characters.",
+      "source_ref": "chapter7-eagle-mountain.txt:L364-L448",
+      "status": "corrected"
+    },
+    {
+      "id": "R144",
+      "chapter": "b6c12",
+      "category": "event",
+      "subject": "b6c12-e06",
+      "description": "Corrected source_ref.",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L505-L582",
+      "status": "corrected"
+    },
+    {
+      "id": "R145",
+      "chapter": "b3c10",
+      "category": "event",
+      "subject": "b3c10_e01",
+      "description": "Corrected origin, via, destination, movement_status, description.",
+      "source_ref": "chapter10-the-flying-horse.txt:L1-L100",
+      "status": "corrected"
+    },
+    {
+      "id": "R146",
+      "chapter": "b3c10",
+      "category": "event",
+      "subject": "b3c10_e02",
+      "description": "Corrected destination, movement_status, description.",
+      "source_ref": "chapter10-the-flying-horse.txt:L101-L284",
+      "status": "corrected"
+    },
+    {
+      "id": "R147",
+      "chapter": "b3c10",
+      "category": "event",
+      "subject": "b3c10_e05",
+      "description": "Corrected origin, via, movement_status.",
+      "source_ref": "chapter10-the-flying-horse.txt:L567-L623",
+      "status": "corrected"
+    },
+    {
+      "id": "R148",
+      "chapter": "b4c20",
+      "category": "event",
+      "subject": "b4c20-e07",
+      "description": "Corrected origin, via, movement_status.",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R149",
+      "chapter": "b6c8",
+      "category": "restored_event",
+      "subject": "b6c8-audit-route",
+      "description": "Kojirō follows news of Osugi’s kidnapping from Takanawa via Yajibei’s house and Kanda toward the Ono residence at Saikachi Slope.",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L138-L174",
+      "status": "corrected"
+    },
+    {
+      "id": "R150",
+      "chapter": "b1c1",
+      "category": "restored_event",
+      "subject": "b1c1-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter1-the-little-bell.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R151",
+      "chapter": "b1c2",
+      "category": "restored_event",
+      "subject": "b1c2-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter2-the-comb.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R152",
+      "chapter": "b1c3",
+      "category": "restored_event",
+      "subject": "b1c3-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter3-the-flower-festival.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R153",
+      "chapter": "b1c4",
+      "category": "restored_event",
+      "subject": "b1c4-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R154",
+      "chapter": "b1c5",
+      "category": "restored_event",
+      "subject": "b1c5-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter5-the-art-of-war.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R155",
+      "chapter": "b1c6",
+      "category": "restored_event",
+      "subject": "b1c6-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R156",
+      "chapter": "b1c7",
+      "category": "restored_event",
+      "subject": "b1c7-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter7-the-rock-and-the-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R157",
+      "chapter": "b1c8",
+      "category": "restored_event",
+      "subject": "b1c8-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book1/chapter8-the-birth-of-musashi.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R158",
+      "chapter": "b2c1",
+      "category": "restored_event",
+      "subject": "b2c1-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter1-the-yoshioka-school.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R159",
+      "chapter": "b2c2",
+      "category": "restored_event",
+      "subject": "b2c2-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter2-the-wheel-of-fortune.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R160",
+      "chapter": "b2c3",
+      "category": "restored_event",
+      "subject": "b2c3-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter3-encounter-and-retreat.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R161",
+      "chapter": "b2c4",
+      "category": "restored_event",
+      "subject": "b2c4-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter4-the-water-sprite.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R162",
+      "chapter": "b2c5",
+      "category": "restored_event",
+      "subject": "b2c5-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter5-a-spring-breeze.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R163",
+      "chapter": "b2c6",
+      "category": "restored_event",
+      "subject": "b2c6-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter6-the-hozoin.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R164",
+      "chapter": "b2c7",
+      "category": "restored_event",
+      "subject": "b2c7-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter7-hannya-plain.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R165",
+      "chapter": "b2c8",
+      "category": "restored_event",
+      "subject": "b2c8-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter8-the-koyagyu-fief.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R166",
+      "chapter": "b2c9",
+      "category": "restored_event",
+      "subject": "b2c9-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R167",
+      "chapter": "b2c10",
+      "category": "restored_event",
+      "subject": "b2c10-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter10-jotaros-revenge.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R168",
+      "chapter": "b2c11",
+      "category": "restored_event",
+      "subject": "b2c11-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book2/chapter11-the-nightingales.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R169",
+      "chapter": "b3c1",
+      "category": "restored_event",
+      "subject": "b3c1-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter1-sasaki-kojiro.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R170",
+      "chapter": "b3c2",
+      "category": "restored_event",
+      "subject": "b3c2-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter2-reunion-in-osaka.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R171",
+      "chapter": "b3c3",
+      "category": "restored_event",
+      "subject": "b3c3-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter3-the-handsome-young-man.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R172",
+      "chapter": "b3c4",
+      "category": "restored_event",
+      "subject": "b3c4-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R173",
+      "chapter": "b3c5",
+      "category": "restored_event",
+      "subject": "b3c5-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter5-a-heros-passing.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R174",
+      "chapter": "b3c6",
+      "category": "restored_event",
+      "subject": "b3c6-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter6-the-drying-pole.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R175",
+      "chapter": "b3c7",
+      "category": "restored_event",
+      "subject": "b3c7-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter7-eagle-mountain.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R176",
+      "chapter": "b3c9",
+      "category": "restored_event",
+      "subject": "b3c9-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter9-the-pinwheel.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R177",
+      "chapter": "b3c10",
+      "category": "restored_event",
+      "subject": "b3c10-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter10-the-flying-horse.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R178",
+      "chapter": "b3c11",
+      "category": "restored_event",
+      "subject": "b3c11-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R179",
+      "chapter": "b3c12",
+      "category": "restored_event",
+      "subject": "b3c12-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter12-the-announcement.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R180",
+      "chapter": "b3c13",
+      "category": "restored_event",
+      "subject": "b3c13-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R181",
+      "chapter": "b4c1",
+      "category": "restored_event",
+      "subject": "b4c1-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R182",
+      "chapter": "b4c2",
+      "category": "restored_event",
+      "subject": "b4c2-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter2-a-man-of-parts.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R183",
+      "chapter": "b4c4",
+      "category": "restored_event",
+      "subject": "b4c4-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R184",
+      "chapter": "b4c5",
+      "category": "restored_event",
+      "subject": "b4c5-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R185",
+      "chapter": "b4c7",
+      "category": "restored_event",
+      "subject": "b4c7-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R186",
+      "chapter": "b4c8",
+      "category": "restored_event",
+      "subject": "b4c8-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter8-the-elegant-people.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R187",
+      "chapter": "b4c9",
+      "category": "restored_event",
+      "subject": "b4c9-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter9-the-broken-lute.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R188",
+      "chapter": "b4c10",
+      "category": "restored_event",
+      "subject": "b4c10-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R189",
+      "chapter": "b4c11",
+      "category": "restored_event",
+      "subject": "b4c11-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R190",
+      "chapter": "b4c12",
+      "category": "restored_event",
+      "subject": "b4c12-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R191",
+      "chapter": "b4c13",
+      "category": "restored_event",
+      "subject": "b4c13-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R192",
+      "chapter": "b4c14",
+      "category": "restored_event",
+      "subject": "b4c14-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R193",
+      "chapter": "b4c15",
+      "category": "restored_event",
+      "subject": "b4c15-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R194",
+      "chapter": "b4c16",
+      "category": "restored_event",
+      "subject": "b4c16-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter16-stray-geese.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R195",
+      "chapter": "b4c17",
+      "category": "restored_event",
+      "subject": "b4c17-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R196",
+      "chapter": "b4c18",
+      "category": "restored_event",
+      "subject": "b4c18-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R197",
+      "chapter": "b4c19",
+      "category": "restored_event",
+      "subject": "b4c19-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter19-a-drink-of-milk.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R198",
+      "chapter": "b4c20",
+      "category": "restored_event",
+      "subject": "b4c20-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter20-entwining-branches.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R199",
+      "chapter": "b4c21",
+      "category": "restored_event",
+      "subject": "b4c21-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book4/chapter21-the-male-and-female-waterfalls.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R200",
+      "chapter": "b5c2",
+      "category": "restored_event",
+      "subject": "b5c2-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R201",
+      "chapter": "b5c3",
+      "category": "restored_event",
+      "subject": "b5c3-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter3-poisonous-fangs.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R202",
+      "chapter": "b5c4",
+      "category": "restored_event",
+      "subject": "b5c4-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter4-a-maternal-warning.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R203",
+      "chapter": "b5c5",
+      "category": "restored_event",
+      "subject": "b5c5-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter5-a-one-night-love-affair.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R204",
+      "chapter": "b5c6",
+      "category": "restored_event",
+      "subject": "b5c6-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter6-a-gift-of-money.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R205",
+      "chapter": "b5c7",
+      "category": "restored_event",
+      "subject": "b5c7-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter7-a-cleansing-fire.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R206",
+      "chapter": "b5c8",
+      "category": "restored_event",
+      "subject": "b5c8-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter8-playing-with-fire.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R207",
+      "chapter": "b5c11",
+      "category": "restored_event",
+      "subject": "b5c11-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R208",
+      "chapter": "b5c12",
+      "category": "restored_event",
+      "subject": "b5c12-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter12-shavings.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R209",
+      "chapter": "b5c14",
+      "category": "restored_event",
+      "subject": "b5c14-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter14-a-plate-of-loaches.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R210",
+      "chapter": "b5c15",
+      "category": "restored_event",
+      "subject": "b5c15-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter15-like-teacher-like-pupil.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R211",
+      "chapter": "b5c18",
+      "category": "restored_event",
+      "subject": "b5c18-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter18-the-flies.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R212",
+      "chapter": "b5c19",
+      "category": "restored_event",
+      "subject": "b5c19-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter19-the-soul-polisher.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R213",
+      "chapter": "b5c20",
+      "category": "restored_event",
+      "subject": "b5c20-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter20-the-fox.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R214",
+      "chapter": "b5c21",
+      "category": "restored_event",
+      "subject": "b5c21-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter21-an-urgent-letter.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R215",
+      "chapter": "b5c22",
+      "category": "restored_event",
+      "subject": "b5c22-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter22-filial-piety.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R216",
+      "chapter": "b5c23",
+      "category": "restored_event",
+      "subject": "b5c23-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter23-spring-shower-in-red.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R217",
+      "chapter": "b5c24",
+      "category": "restored_event",
+      "subject": "b5c24-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter24-a-block-of-wood.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R218",
+      "chapter": "b5c25",
+      "category": "restored_event",
+      "subject": "b5c25-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter25-the-deserted-prophet.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R219",
+      "chapter": "b5c26",
+      "category": "restored_event",
+      "subject": "b5c26-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book5/chapter26-the-talk-of-the-town.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R220",
+      "chapter": "b6c1",
+      "category": "restored_event",
+      "subject": "b6c1-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R221",
+      "chapter": "b6c2",
+      "category": "restored_event",
+      "subject": "b6c2-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R222",
+      "chapter": "b6c3",
+      "category": "restored_event",
+      "subject": "b6c3-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter3-the-eagle.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R223",
+      "chapter": "b6c4",
+      "category": "restored_event",
+      "subject": "b6c4-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter4-green-persimmons.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R224",
+      "chapter": "b6c5",
+      "category": "restored_event",
+      "subject": "b6c5-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter5-eyes.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R225",
+      "chapter": "b6c6",
+      "category": "restored_event",
+      "subject": "b6c6-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R226",
+      "chapter": "b6c7",
+      "category": "restored_event",
+      "subject": "b6c7-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R227",
+      "chapter": "b6c8",
+      "category": "restored_event",
+      "subject": "b6c8-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R228",
+      "chapter": "b6c9",
+      "category": "restored_event",
+      "subject": "b6c9-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R229",
+      "chapter": "b6c10",
+      "category": "restored_event",
+      "subject": "b6c10-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter10-two-drumsticks.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R230",
+      "chapter": "b6c11",
+      "category": "restored_event",
+      "subject": "b6c11-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R231",
+      "chapter": "b6c12",
+      "category": "restored_event",
+      "subject": "b6c12-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R232",
+      "chapter": "b6c13",
+      "category": "restored_event",
+      "subject": "b6c13-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R233",
+      "chapter": "b6c14",
+      "category": "restored_event",
+      "subject": "b6c14-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter14-land-of-dreams.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R234",
+      "chapter": "b6c15",
+      "category": "restored_event",
+      "subject": "b6c15-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter15-the-challenge.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R235",
+      "chapter": "b6c16",
+      "category": "restored_event",
+      "subject": "b6c16-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R236",
+      "chapter": "b6c17",
+      "category": "restored_event",
+      "subject": "b6c17-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R237",
+      "chapter": "b7c1",
+      "category": "restored_event",
+      "subject": "b7c1-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R238",
+      "chapter": "b7c2",
+      "category": "restored_event",
+      "subject": "b7c2-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R239",
+      "chapter": "b7c3",
+      "category": "restored_event",
+      "subject": "b7c3-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R240",
+      "chapter": "b7c4",
+      "category": "restored_event",
+      "subject": "b7c4-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter4-a-pear-blossom.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R241",
+      "chapter": "b7c5",
+      "category": "restored_event",
+      "subject": "b7c5-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter5-the-port.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R242",
+      "chapter": "b7c6",
+      "category": "restored_event",
+      "subject": "b7c6-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter6-the-writing-teacher.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R243",
+      "chapter": "b7c7",
+      "category": "restored_event",
+      "subject": "b7c7-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter7-the-circle.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R244",
+      "chapter": "b7c8",
+      "category": "restored_event",
+      "subject": "b7c8-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter8-shikama-blue.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R245",
+      "chapter": "b7c9",
+      "category": "restored_event",
+      "subject": "b7c9-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter9-the-mercy-of-kannon.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R246",
+      "chapter": "b7c10",
+      "category": "restored_event",
+      "subject": "b7c10-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R247",
+      "chapter": "b7c11",
+      "category": "restored_event",
+      "subject": "b7c11-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter11-the-evening-boat.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R248",
+      "chapter": "b7c12",
+      "category": "restored_event",
+      "subject": "b7c12-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter12-a-falcon-and-a-woman.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R249",
+      "chapter": "b7c13",
+      "category": "restored_event",
+      "subject": "b7c13-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R250",
+      "chapter": "b7c14",
+      "category": "restored_event",
+      "subject": "b7c14-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter14-at-daybreak.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R251",
+      "chapter": "b7c15",
+      "category": "restored_event",
+      "subject": "b7c15-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter15-the-marriage.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R252",
+      "chapter": "b7c16",
+      "category": "restored_event",
+      "subject": "b7c16-audit-references",
+      "description": "Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted.",
+      "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R253",
+      "chapter": "b3c10",
+      "category": "movement_participants",
+      "subject": "b3c10-audit-captive-route",
+      "description": "Split Otsū’s coerced intended route from Jōtarō’s separate escape; witnesses do not share travel.",
+      "source_ref": "data/source/book3/chapter10-the-flying-horse.txt:L403-L414",
+      "status": "corrected"
+    },
+    {
+      "id": "R254",
+      "chapter": "b3c13",
+      "category": "unsupported_reference",
+      "subject": "monkey",
+      "description": "Remove unsupported carried-forward reference; absence is not automatically reclassified as a mention.",
+      "source_ref": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R255",
+      "chapter": "b4c9",
+      "category": "unsupported_reference",
+      "subject": "konoe_nobutada",
+      "description": "Remove unsupported carried-forward reference; absence is not automatically reclassified as a mention.",
+      "source_ref": "data/source/book4/chapter9-the-broken-lute.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R256",
+      "chapter": "b4c14",
+      "category": "unsupported_reference",
+      "subject": "kobashi_kurando",
+      "description": "Remove unsupported carried-forward reference; absence is not automatically reclassified as a mention.",
+      "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R257",
+      "chapter": "b2c6",
+      "category": "canonical_reference_normalization",
+      "subject": "b2c6-audit-references",
+      "description": "Restore named references using existing canonical IDs: in_ei.",
+      "source_ref": "data/source/book2/chapter6-the-hozoin.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R258",
+      "chapter": "b2c9",
+      "category": "canonical_reference_normalization",
+      "subject": "b2c9-audit-references",
+      "description": "Restore named references using existing canonical IDs: in_ei.",
+      "source_ref": "data/source/book2/chapter9-the-peony.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R259",
+      "chapter": "b3c1",
+      "category": "canonical_reference_normalization",
+      "subject": "b3c1-audit-references",
+      "description": "Restore named references using existing canonical IDs: ito_ittosai, kanemaki_jisai, toda_seigen.",
+      "source_ref": "data/source/book3/chapter1-sasaki-kojiro.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R260",
+      "chapter": "b3c2",
+      "category": "canonical_reference_normalization",
+      "subject": "b3c2-audit-references",
+      "description": "Restore named references using existing canonical IDs: ito_ittosai, kanemaki_jisai, toda_seigen.",
+      "source_ref": "data/source/book3/chapter2-reunion-in-osaka.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R261",
+      "chapter": "b3c6",
+      "category": "canonical_reference_normalization",
+      "subject": "b3c6-audit-references",
+      "description": "Restore named references using existing canonical IDs: ito_ittosai.",
+      "source_ref": "data/source/book3/chapter6-the-drying-pole.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R262",
+      "chapter": "b3c10",
+      "category": "canonical_reference_normalization",
+      "subject": "b3c10-audit-references",
+      "description": "Restore named references using existing canonical IDs: watanabe_hanzo.",
+      "source_ref": "data/source/book3/chapter10-the-flying-horse.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R263",
+      "chapter": "b6c8",
+      "category": "canonical_reference_normalization",
+      "subject": "b6c8-audit-references",
+      "description": "Restore named references using existing canonical IDs: ito_ittosai.",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt",
+      "status": "corrected"
+    },
+    {
+      "id": "R264",
+      "chapter": "b7c1",
+      "category": "canonical_reference_normalization",
+      "subject": "b7c1-audit-references",
+      "description": "Restore named references using existing canonical IDs: in_ei.",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "status": "corrected"
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { getDisplayCharacterName } from "../js/reader-progress.js";
 
 const root = resolve(new URL("..", import.meta.url).pathname);
 const readJson = relative => JSON.parse(readFileSync(resolve(root, relative), "utf8"));
@@ -15,6 +16,7 @@ const characters = readJson("data/characters.json").characters;
 const events = readJson("data/events.json").events;
 const states = readJson("data/character-states.json").character_states;
 const relationships = readJson("data/relationships.json").relationships;
+const identities = readJson("data/identities.json").identities;
 const auditConfig = readJson("research/character-audit-config.json");
 const book1Expected = auditConfig.book1_expected;
 const book2Expected = auditConfig.book2_expected;
@@ -23,7 +25,7 @@ if (!book1Expected || !book2Expected || !manifestIdMaps) throw new Error("Invali
 
 const characterById = new Map(characters.map(character => [character.id, character]));
 const chapterById = new Map(chapters.map(chapter => [chapter.chapter_id, chapter]));
-const name = id => characterById.get(id)?.name ?? `ID sconosciuto: ${id}`;
+const name = (id, section) => characterById.has(id) ? getDisplayCharacterName(characterById.get(id), section, identities) : `ID sconosciuto: ${id}`;
 const bookNumbers = unique(chapters.map(chapter => chapter.book_number)).sort((a, b) => a - b);
 const manifestBooks = Object.keys(manifestIdMaps).map(Number).sort((a, b) => a - b);
 const maximumSection = Math.max(...chapters.map(chapter => chapter.number));
@@ -93,19 +95,21 @@ for (const relation of relationships) {
 }
 
 const lines = [
-  "# Audit globale personaggi per capitolo",
+  "# Coerenza dei dati personaggio per capitolo",
   "",
   "> Generato da `node tools/generate-character-chapter-audit.mjs`. Le fonti narrative locali, non il web, sono l'autorità per presenza, azioni e relazioni.",
   "",
   "## Esito e metodo",
   "",
-  `- Capitoli verificati: **${chapters.length}/${maximumSection}**.`,
+  `- Capitoli confrontati con i dossier di produzione: **${chapters.length}/${maximumSection}**.`,
   `- Personaggi censiti: **${characters.length}**.`,
   `- Eventi/azioni verificati: **${events.length}**.`,
   `- Stati/posizioni finali verificati: **${states.length}**.`,
   `- Relazioni canoniche verificate alla soglia d'introduzione: **${relationships.length}**.`,
   `- Errori bloccanti: **${errors.length}**.`,
   `- Presenze sceniche senza evento o stato dedicato (controllate contro i dossier indipendenti): **${notices.length}**.`,
+  "",
+  "Questo rapporto verifica la coerenza dei record esistenti con i dossier di produzione. Non certifica che ogni fatto del romanzo sia stato estratto: dossier e dati possono condividere la stessa omissione o lo stesso errore. Per la completezza narrativa consultare `research/source-audit/` e il riesame capitolo per capitolo del 2026-09-30.",
   "",
   "La posizione intra-capitolo deriva esclusivamente dagli eventi con partecipazione fisica; lo stato finale è riportato solo quando esiste un record esplicito. I personaggi nominati, ricordati o riferiti restano separati. Le co-azioni indicano interazione nello stesso evento, non creano automaticamente una relazione canonica.",
   "",
@@ -134,10 +138,13 @@ for (const book of bookNumbers) {
     }
 
     lines.push(`### ${section}. ${chapter.title} (${chapter.chapter_id})`, "", `Fonte: \`${chapter.source_file}\``, "");
-    lines.push("| Personaggio presente | Posizioni/scene fisiche | Stato a fine capitolo | Relazioni/interazioni pertinenti |", "|---|---|---|---|");
+    lines.push("| Personaggio presente | Scene e percorsi (destinazione non equivale ad arrivo) | Stato a fine capitolo | Relazioni/interazioni pertinenti |", "|---|---|---|---|");
     for (const character of present) {
       const characterEvents = chapterEvents.filter(event => event.characters?.includes(character.id));
-      const positions = unique(characterEvents.map(event => event.location).filter(Boolean)).map(location => `\`${location}\``);
+      const positions = unique(characterEvents.flatMap(event => {
+        const route = [event.origin, ...(event.via ?? []), event.destination].filter(Boolean);
+        return [...(event.location ? [`scena: \`${event.location}\``] : []), ...(route.length ? [`percorso (${event.movement_status ?? "non classificato"}): ${route.map(id=>`\`${id}\``).join(" → ")}`] : [])];
+      }));
       const endStates = chapterStates.filter(state => state.character === character.id);
       const stateText = endStates.length
         ? endStates.map(state => `${state.location ? `\`${state.location}\`` : "luogo non risolto"}; ${state.status}; ${state.activity} (${state.certainty}; ${state.source_ref ?? state.source_file ?? chapter.source_file})`).join("<br>")
@@ -147,14 +154,14 @@ for (const book of bookNumbers) {
         && present.some(other => other.id !== character.id && [relation.from, relation.to].includes(other.id))
       ).map(relation => {
         const other = relation.from === character.id ? relation.to : relation.from;
-        return `${name(other)}: ${relation.type}/${relation.subtype}${relation.first_section === section ? " (introdotta qui)" : ""}`;
+        return `${name(other, section)}: ${relation.type}/${relation.subtype}${relation.first_section === section ? " (introdotta qui)" : ""}`;
       }));
-      const interactions = present.filter(other => other.id !== character.id && eventPairs.has(pairKey(character.id, other.id))).map(other => name(other.id));
+      const interactions = present.filter(other => other.id !== character.id && eventPairs.has(pairKey(character.id, other.id))).map(other => name(other.id, section));
       const relationText = [
         canonical.length ? `Canoniche: ${canonical.join("; ")}` : null,
         interactions.length ? `Co-azioni: ${interactions.join(", ")}` : null
       ].filter(Boolean).join("<br>") || "Nessuna relazione/co-azione strutturata nel capitolo";
-      lines.push(`| ${esc(character.name)} (\`${character.id}\`) | ${positions.length ? positions.join(" → ") : "Presenza attestata dal dossier; nessuna tappa evento dedicata"} | ${esc(stateText)} | ${esc(relationText)} |`);
+      lines.push(`| ${esc(name(character.id, section))} (\`${character.id}\`) | ${positions.length ? positions.join("; ") : "Presenza attestata dal dossier; nessuna tappa evento dedicata"} | ${esc(stateText)} | ${esc(relationText)} |`);
     }
     if (!present.length) lines.push("| — | Nessun personaggio fisico registrato | — | — |");
     lines.push("", "Azioni ed evidenza:", "");
@@ -166,10 +173,10 @@ for (const book of bookNumbers) {
     if (!chapterEvents.length) lines.push("- Nessun evento strutturato.");
     if (newRelationships.length) {
       lines.push("", "Relazioni introdotte o rivelate qui:", "");
-      for (const relation of newRelationships) lines.push(`- ${name(relation.from)} → ${name(relation.to)}: **${relation.type}/${relation.subtype}** (soglia ${relation.first_section}).`);
+      for (const relation of newRelationships) lines.push(`- ${name(relation.from, section)} → ${name(relation.to, section)}: **${relation.type}/${relation.subtype}** (soglia ${relation.first_section}).`);
     }
     const mentionedOnly = unique(chapterEvents.flatMap(event => event.referenced_characters ?? [])).filter(id => !present.some(character => character.id === id));
-    if (mentionedOnly.length) lines.push("", `Solo nominati/riferiti, non fisicamente presenti: ${mentionedOnly.map(id => `${name(id)} (\`${id}\`)`).join(", ")}.`);
+    if (mentionedOnly.length) lines.push("", `Riferimenti negli eventi, esclusi i personaggi fisicamente presenti (elenco non esaustivo delle menzioni nel testo): ${mentionedOnly.map(id => `${name(id, section)} (\`${id}\`)`).join(", ")}.`);
     lines.push("");
   }
 }
@@ -177,7 +184,7 @@ for (const book of bookNumbers) {
 lines.push(
   "## Criteri di chiusura",
   "",
-  "L'audit è chiuso soltanto se la diagnostica ha zero errori: roster di produzione uguale ai dossier indipendenti, partecipanti fisici inclusi in `present_in`, sorgenti esistenti, identificativi validi e soglie relazionali agganciate a un capitolo con almeno un endpoint narrativamente attestato. Le note non sono errori: identificano figure fisicamente presenti ma non abbastanza centrali da avere un evento o uno stato autonomo.",
+  "Il controllo di coerenza passa quando la diagnostica ha zero errori: roster di produzione uguale ai dossier, partecipanti fisici inclusi in `present_in`, sorgenti esistenti, identificativi validi e soglie relazionali agganciate a un capitolo con almeno un endpoint registrato. Questo risultato non chiude l'audit di completezza del testo. Le note identificano figure presenti nel dossier senza un evento o uno stato autonomo; non provano che quelle presenze siano semanticamente corrette.",
   ""
 );
 

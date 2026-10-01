@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
@@ -289,6 +289,42 @@
       "reader_knows_canonical_identity": true,
       "status": "concealment_revealed_in_section",
       "change_reason": "recognized_by_sukekuro"
+    },
+    {
+      "character_id": "ogin",
+      "display_name": "Takezō's sister",
+      "alias": null,
+      "valid_from_chapter": "b1c1",
+      "valid_until_chapter": "b1c1",
+      "valid_from_section": 1,
+      "valid_until_section": 1,
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "role_reference_before_explicit_name"
+    },
+    {
+      "character_id": "osugi",
+      "display_name": "Matahachi's mother",
+      "alias": null,
+      "valid_from_chapter": "b1c1",
+      "valid_until_chapter": "b1c3",
+      "valid_from_section": 1,
+      "valid_until_section": 3,
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "role_reference_before_explicit_name"
+    },
+    {
+      "character_id": "munenori",
+      "display_name": "Yagyū sword instructor",
+      "alias": null,
+      "valid_from_chapter": "b2c4",
+      "valid_until_chapter": "b2c4",
+      "valid_from_section": 12,
+      "valid_until_section": 12,
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "role_reference_before_explicit_name"
     }
   ]
 }
