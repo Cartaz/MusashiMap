@@ -15,23 +15,44 @@ export function buildArchive(data, section) {
   const evidence = { states: data.states.character_states, events: data.events.events, characterWiki: wiki };
   const rawCharacters = getVisibleCharacters(data.characters.characters, section, evidence);
   const latest = new Map(getReaderSnapshot({ states: data.states.character_states }, section).latestStates.map(state => [state.character, state]));
-  const characters = rawCharacters.map(character => {
+  const splitIdentities = new Map();
+  const projectCharacter = (character, ceiling, floor = 1, id = character.id) => {
     const entry = wiki[character.id];
-    const activeIdentity = identities.some(identity => identity.character_id === character.id && identity.valid_from_section <= section && (identity.valid_until_section === null || identity.valid_until_section >= section));
-    const name = activeIdentity ? getDisplayCharacterName(character, section, identities)
-      : entry ? getProgressiveDisplayName(entry, section) : getDisplayCharacterName(character, section, identities);
+    const activeIdentity = identities.some(identity => identity.character_id === character.id && identity.valid_from_section <= ceiling && (identity.valid_until_section === null || identity.valid_until_section >= ceiling));
+    const name = activeIdentity ? getDisplayCharacterName(character, ceiling, identities)
+      : entry ? getProgressiveDisplayName(entry, ceiling) : getDisplayCharacterName(character, ceiling, identities);
     const names = [...new Set([name,
-      ...identities.filter(identity => identity.character_id === character.id && identity.valid_from_section <= section).map(identity => identity.display_name),
-      ...Object.entries(entry?.display_name_by_section ?? {}).filter(([at]) => Number(at) <= section).map(([, value]) => value)
+      ...identities.filter(identity => identity.character_id === character.id && identity.valid_from_section >= floor && identity.valid_from_section <= ceiling).map(identity => identity.display_name),
+      ...Object.entries(entry?.display_name_by_section ?? {}).filter(([at]) => Number(at) >= floor && Number(at) <= ceiling).map(([, value]) => value)
     ])];
+    const state = ceiling === section ? latest.get(character.id)
+      : getReaderSnapshot({ states: data.states.character_states }, ceiling).latestStates.find(item => item.character === character.id);
+    const updates = Object.fromEntries(Object.entries(entry?.current_by_section ?? {}).filter(([at]) => Number(at) >= floor && Number(at) <= ceiling));
     return {
-      id: character.id, name, names, main: character.importance === "main",
-      summary: getProgressiveValue(entry?.current_by_section, section) ?? "Personaggio incontrato nel testo. Consulta gli eventi documentati qui sotto.",
-      first: getCharacterIntroductionSection(character, evidence),
-      appearances: (character.present_in ?? []).filter(at => at <= section),
-      state: latest.get(character.id) ?? null
+      id, sourceId: character.id, name, names, main: character.importance === "main", historicalIdentity: id !== character.id,
+      summary: getProgressiveValue(updates, ceiling) ?? "Nome o personaggio incontrato nel testo. Consulta gli eventi documentati qui sotto.",
+      first: Math.max(floor, getCharacterIntroductionSection(character, evidence)),
+      appearances: (character.present_in ?? []).filter(at => at >= floor && at <= ceiling),
+      state: state && state.section >= floor ? state : null
     };
+  };
+  const characters = rawCharacters.flatMap(character => {
+    const identity = identities.filter(identity => identity.character_id === character.id && identity.valid_from_section <= section && (identity.valid_until_section === null || identity.valid_until_section >= section))
+      .sort((a, b) => b.valid_from_section - a.valid_from_section)[0];
+    const first = getCharacterIntroductionSection(character, evidence);
+    if (identity && identity.reader_knows_canonical_identity === false && first < identity.valid_from_section) {
+      // Certificate names and unidentified people remain unlinked; Baiken must
+      // not inherit Kohei's earlier family or biography before the revelation.
+      const before = `${character.id}-before-${identity.valid_from_section}`;
+      splitIdentities.set(character.id, { before, boundary: identity.valid_from_section });
+      return [projectCharacter(character, identity.valid_from_section - 1, 1, before), projectCharacter(character, section, identity.valid_from_section)];
+    }
+    return [projectCharacter(character, section)];
   });
+  const identityForFact = (id, at) => {
+    const split = splitIdentities.get(id);
+    return split && at < split.boundary ? split.before : id;
+  };
   const characterIds = new Set(characters.map(character => character.id));
   const places = data.locations.locations.filter(place => Number.isInteger(place.introduced_section) && place.introduced_section <= section)
     .map(place => ({ id: place.id, name: place.name, first: place.introduced_section,
@@ -39,7 +60,7 @@ export function buildArchive(data, section) {
   const placeIds = new Set(places.map(place => place.id));
   const projectedEvents = events.map(event => ({
     id: event.id, section: event.section, description: event.description ?? "Evento narrativo",
-    characters: eventCharacterIds(event).filter(id => characterIds.has(id)),
+    characters: eventCharacterIds(event).map(id => identityForFact(id, event.section)).filter(id => characterIds.has(id)),
     places: eventPlaceIds(event).filter(id => placeIds.has(id)),
     source: event.source_file ?? event.source_ref ?? null, certainty: event.certainty,
     // The corpus references are deliberately metadata, not exported chapter text.
@@ -47,6 +68,7 @@ export function buildArchive(data, section) {
   }));
   const seen = new Set();
   const relationships = (data.relationships?.relationships ?? [])
+    .map(item => ({ ...item, from: identityForFact(item.from, item.first_section), to: identityForFact(item.to, item.first_section) }))
     .filter(item => Number.isInteger(item.first_section) && item.first_section <= section && characterIds.has(item.from) && characterIds.has(item.to))
     .filter(item => {
       const key = `${[item.from, item.to].sort().join("|")}|${item.type}|${item.subtype}|${item.first_section}`;

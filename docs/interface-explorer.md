@@ -18,6 +18,8 @@ Opening and closing the workspace preserves map camera and protagonist selection
 
 ## Relationships
 
+When an assumed name or unidentified person has not yet been linked to an earlier name, those reader-facing entries remain separate. Their events, biography and relationship endpoints stay separate too. At the recorded revelation they combine into the canonical entry. This is a view projection; no duplicate characters are added to the production JSON. The diary's context uses the same projection rather than static final roles.
+
 Readers choose a known person and optionally a known relationship category. A searchable selector uses only names introduced by the selected chapter. The list is the initial presentation. The graph shows the selected person and at most six neighboring characters; pagination exposes remaining neighbors and selecting a neighbor recenters the graph. Distinct relationship descriptions for the same pair are preserved in the list. Duplicate reciprocal facts are combined.
 
 The interface calls these documented relationships: introduction does not prove that a relationship is still active in later chapters. The labels preserve conditional marriage, planned adoption and uncertain parentage rather than replacing them with stronger assertions.

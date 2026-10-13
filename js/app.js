@@ -1,6 +1,7 @@
 import { mergeNewlyVisibleSelection, updateCharacterSelection } from "./character-selection.js";
 import { loadData } from "./data.js";
 import { installExplorer } from "./explorer.js";
+import { buildArchive } from "./archive-model.js";
 import { getPlaceLegendEntries } from "./place-presentation.js";
 import {
   createReaderProgress,
@@ -189,9 +190,10 @@ function createWikiCard(entry, { character = false, section = 1 } = {}) {
 
 function renderWiki(section) {
   const historicalEntries = getRelevantHistoricalWiki(data.microWiki.entities, section);
-  const characters = Object.values(data.characterWiki?.characters ?? {})
-    .filter(entry => entry.category === "secondary"
-      && Object.keys(entry.current_by_section ?? {}).some(key => Number(key) <= section));
+  const characters = buildArchive(data, section).characters
+    .filter(character => data.characterWiki?.characters?.[character.sourceId]?.category === "secondary")
+    .map(character => ({ display_name: character.name, role: "Personaggio o nome incontrato nel racconto",
+      current_by_section: { [section]: character.summary } }));
   const nodes = [];
   if (characters.length) {
     const heading = document.createElement("h3");

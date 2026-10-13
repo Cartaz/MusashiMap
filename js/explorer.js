@@ -207,7 +207,7 @@ export function installExplorer(data, { applySection }) {
         const row = button("", () => { selected = item.id; renderDetail(); detail.querySelector("h2").focus(); }, "archive-result");
         row.dataset.recordId = item.id;
         row.append(make("strong", item.name ?? item.description));
-        const subtitle = category === "characters" ? `${item.main ? "Protagonista" : "Personaggio"} · dalla sezione ${item.first}`
+        const subtitle = category === "characters" ? `${item.historicalIdentity ? "Nome già incontrato" : item.main ? "Protagonista" : "Personaggio"} · dalla sezione ${item.first}`
           : category === "places" ? item.coordinates ? "Localizzabile sulla mappa" : "Coordinate non determinate"
             : chapterLabel(item.section);
         row.append(make("span", subtitle));

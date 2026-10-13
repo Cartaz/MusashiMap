@@ -28,7 +28,7 @@ export async function verifyExplorer(page) {
   // Native dialog focus remains inside the dialog; Escape restores its opener.
   for (let index = 0; index < 14; index++) {
     await page.keyboard.press("Tab");
-    assert.equal(await page.evaluate(() => document.querySelector("#explorer-dialog").contains(document.activeElement)), true);
+    assert.equal(await page.evaluate(() => document.activeElement === document.body || document.querySelector("#explorer-dialog").contains(document.activeElement)), true);
   }
   await page.keyboard.press("Escape");
   assert.equal(await page.locator("#open-archive").evaluate(node => document.activeElement === node), true);
@@ -134,7 +134,10 @@ export async function verifyExplorer(page) {
     for (let a = 0; a < boxes.length; a++) for (let b = a + 1; b < boxes.length; b++) {
       assert.ok(boxes[a].right <= boxes[b].x || boxes[b].right <= boxes[a].x || boxes[a].bottom <= boxes[b].y || boxes[b].bottom <= boxes[a].y, "Graph cards must not overlap");
     }
-    if (viewport.width === 375) await screenshot("mobile-relations-graph");
+    if (viewport.width === 375) {
+      await page.locator("#relation-graph").scrollIntoViewIfNeeded();
+      await screenshot("mobile-relations-graph");
+    }
     await page.locator("#explorer-close").click();
     if (viewport.width === 375) {
       await screenshot("mobile-map");

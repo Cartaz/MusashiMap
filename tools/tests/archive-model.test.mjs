@@ -58,6 +58,26 @@ test("archive includes events about secondary characters without a main selectio
   assert.ok(secondaryOnly.every(item => archive.events.some(event => event.id === item.id)));
 });
 
+test("unrevealed identity links cannot connect Baiken to Kohei or the young man to the certificate", () => {
+  for (const section of [26, 27]) {
+    const archive = buildArchive(data, section);
+    const baiken = archive.characters.find(character => character.id === "kohei");
+    assert.equal(baiken.name, "Shishido Baiken");
+    assert.doesNotMatch(baiken.summary, /Temma|Kōhei|Kohei/);
+    assert.ok(!archive.events.some(event => event.section < 26 && event.characters.includes(baiken.id)));
+    assert.ok(!archive.relationships.some(relation => relation.first < 26 && [relation.from, relation.to].includes(baiken.id)));
+    assert.ok(searchArchive(archive, "characters", "Kohei").every(character => character.id !== baiken.id));
+    assert.ok(archive.characters.some(character => character.id === "kohei-before-26"));
+  }
+  const revealed = buildArchive(data, 28);
+  assert.ok(!revealed.characters.some(character => character.id === "kohei-before-26"));
+  assert.ok(searchArchive(revealed, "characters", "Baiken").some(character => character.id === "kohei"));
+  const unnamed = buildArchive(data, 22);
+  assert.equal(unnamed.characters.find(character => character.id === "kojiro").name, "Handsome young man");
+  assert.ok(searchArchive(unnamed, "characters", "Sasaki").every(character => character.id !== "kojiro"));
+  assert.ok(unnamed.events.filter(event => event.section < 22).every(event => !event.characters.includes("kojiro")));
+});
+
 test("unknown coordinates remain searchable without a fabricated map target", () => {
   const archive = buildArchive(data, 112);
   const unmapped = archive.places.find(item => item.id === "saikachi_slope");
