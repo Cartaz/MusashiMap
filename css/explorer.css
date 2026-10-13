@@ -133,3 +133,27 @@ button[aria-pressed="true"] { border-color: var(--vermilion); background: var(--
   .app-header h1 { font-size: 18px; }
   .brand-seal { width: 24px; height: 24px; font-size: 14px; }
 }
+
+/* A phone in landscape has desktop-like width but very little height. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .explorer-dialog { inset: 0; margin: 0; width: 100%; height: 100dvh; }
+  .explorer-header { padding: 8px 16px; }
+  .explorer-header h1 { margin: 0; font-size: 20px; }
+  .explorer-header .panel-kicker { display: none; }
+  .explorer-toolbar { flex-wrap: nowrap; padding: 0 16px 8px; gap: 16px; }
+  .explorer-toolbar .explorer-boundary { min-width: 0; margin-left: auto; font-size: 11px; }
+  .archive-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 8px 16px; }
+  .archive-controls label { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+  #archive-search { width: 100%; margin: 0; }
+  #archive-categories { flex-wrap: nowrap; gap: 4px; }
+  #archive-categories button { font-size: 12px; padding-inline: 8px; }
+  .archive-controls .explorer-count { grid-column: 1 / -1; margin: 0; }
+  .archive-columns { display: block; overflow: clip; }
+  .archive-list-pane { height: 100%; }
+  .archive-results { padding: 8px 16px; }
+  .archive-detail { display: none; height: 100%; box-sizing: border-box; padding: 12px 20px; }
+  .archive-panel.has-detail .archive-list-pane, .archive-panel.has-detail .archive-controls { display: none; }
+  .archive-panel.has-detail .archive-detail { display: block; }
+  .explorer-dialog .explorer-back { display: block; }
+  .explorer-pagination { padding: 8px 16px; }
+}

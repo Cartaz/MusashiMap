@@ -136,6 +136,12 @@ export async function verifyExplorer(page) {
     if (viewport.width === 375) await screenshot("mobile-archive-list");
     await page.locator(".archive-result[data-record-id='musashi']").click();
     await noOverflow();
+    if (viewport.height < 500) {
+      assert.equal(await page.locator("#archive-results").isVisible(), false);
+      assert.ok((await page.locator("#archive-detail").boundingBox()).height >= 120);
+      await closeInView();
+      await screenshot("mobile-landscape-detail");
+    }
     if (viewport.width === 375) {
       assert.equal(await page.locator("#archive-results").isVisible(), false);
       await screenshot("mobile-archive-detail");
