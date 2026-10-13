@@ -59,6 +59,7 @@ const eventsDocument = readJson("data/events.json");
 const statesDocument = readJson("data/character-states.json");
 const publishedEvents = (eventsDocument.events ?? []).filter(event => inPublishedRange(event.section));
 const publishedStates = (statesDocument.character_states ?? []).filter(state => inPublishedRange(state.section));
+const relationshipsDocument = readJson("data/relationships.json");
 writeJson("data/events.json", { ...eventsDocument, events: publishedEvents });
 writeJson("data/character-states.json", { ...statesDocument, character_states: publishedStates });
 
@@ -88,6 +89,10 @@ const publishedCharacters = (charactersDocument.characters ?? [])
     || (character.present_in ?? []).some(inPublishedRange))
   .map(character => ({ ...character, present_in: (character.present_in ?? []).filter(inPublishedRange) }));
 const publishedCharacterIds = new Set(publishedCharacters.map(character => character.id));
+const publishedRelationships = (relationshipsDocument.relationships ?? []).filter(relationship =>
+  inPublishedRange(relationship.first_section) && publishedCharacterIds.has(relationship.from) && publishedCharacterIds.has(relationship.to)
+);
+writeJson("data/relationships.json", { ...relationshipsDocument, relationships: publishedRelationships });
 writeJson("data/characters.json", {
   ...charactersDocument,
   characters: publishedCharacters

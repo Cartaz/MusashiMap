@@ -59,6 +59,15 @@ jobs:
       - name: Verify application in Chromium
         run: node tools/browser-smoke.mjs
 
+      - name: Retain interface screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: interface-screenshots
+          path: test-output/screenshots/
+          if-no-files-found: ignore
+          retention-days: 30
+
       - name: Retain validated Pages files for deployment
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4

@@ -21,7 +21,8 @@ test("CSS entrypoint exposes responsibility-based modules in one explicit order"
     "panels.css",
     "surfaces.css",
     "map-unmapped.css",
-    "responsive.css"
+    "responsive.css",
+    "explorer.css"
   ]);
 
   for (const historical of [

@@ -11,6 +11,7 @@ const RUNTIME_DATA = [
   "data/identities.json",
   "data/locations.json",
   "data/reader-progress.json",
+  "data/relationships.json",
   "data/context/character-wiki.json",
   "data/context/micro-wiki.json"
 ];

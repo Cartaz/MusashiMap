@@ -4,6 +4,7 @@ import { createServer } from "node:http";
 import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { verifyExplorer } from "./browser-explorer.mjs";
 
 // Optional development dependency; no browser/test code enters the Pages artifact.
 const require = createRequire(import.meta.url);
@@ -106,6 +107,7 @@ try {
 
   await page.locator(".diary-toggle").click();
   await mapHasCorrectSize(page);
+  await page.locator("#diary-context-button").click();
   const wikiToggle = page.locator(".wiki-card-toggle").first();
   await wikiToggle.click();
   assert.equal(await wikiToggle.getAttribute("aria-expanded"), "true");
@@ -132,6 +134,16 @@ try {
     await page.locator(".legend-heading").click();
   }
   await page.close();
+
+  const explorerPage = await newPage();
+  await loaded(explorerPage);
+  try {
+    await verifyExplorer(explorerPage);
+  } catch (error) {
+    await explorerPage.screenshot({ path: "test-output/screenshots/explorer-failure.png" });
+    throw error;
+  }
+  await explorerPage.close();
 
   const failedData = await newPage();
   await failedData.route("**/data/context/micro-wiki.json*", route => route.fulfill({ status: 500, body: "Injected failure" }));

@@ -33,7 +33,8 @@ test("runtime does not recreate native button semantics", () => {
   const behavior = `${panelToggle}\n${popups}`;
   assert.doesNotMatch(behavior, /setAttribute\(["']role["'],\s*["']button["']\)/);
   assert.doesNotMatch(behavior, /setAttribute\(["']tabindex["'],\s*["']0["']\)/);
-  assert.doesNotMatch(behavior, /addEventListener\(["']keydown["']/);
+  // Escape closes the mobile diary; Enter/Space remain native button behavior.
+  assert.doesNotMatch(behavior, /event\.key\s*===\s*["'](?:Enter| |Space)["']/);
 });
 
 test("collapsible panel behavior has one explicit owner", () => {
@@ -83,11 +84,14 @@ test("panel toggle owner updates only panel state and ARIA state", async () => {
   ]);
 
   const previousDocument = globalThis.document;
+  const previousMatchMedia = globalThis.matchMedia;
   globalThis.document = { querySelector: selector => nodes.get(selector) ?? null };
+  globalThis.matchMedia = () => ({ matches: false, addEventListener() {} });
   try {
     await import(new URL(`../../js/panel-toggle.js?test=${Date.now()}`, import.meta.url));
   } finally {
     globalThis.document = previousDocument;
+    globalThis.matchMedia = previousMatchMedia;
   }
 
   assert.equal(legendButton.getAttribute("aria-expanded"), "false");
