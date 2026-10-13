@@ -21,19 +21,19 @@ button[aria-pressed="true"] { border-color: var(--vermilion); background: var(--
 .explorer-dialog { --panel-surface-image: radial-gradient(ellipse at 15% 10%, rgba(255,250,235,.45), transparent 55%), radial-gradient(ellipse at 90% 90%, rgba(92,67,35,.06), transparent 60%);
   --panel-surface-size: auto; --panel-surface-blend: normal;
   inset: 20px; width: calc(100% - 40px); height: calc(100dvh - 40px);
-  max-width: none; max-height: none; margin: auto; padding: 0; overflow: hidden; }
+  position: fixed; max-width: none; max-height: none; margin: auto; padding: 0; overflow: clip; }
 .explorer-dialog[open] { display: flex; flex-direction: column; }
 .explorer-dialog::backdrop { background: rgba(31, 27, 21, .65); }
 .explorer-dialog :focus-visible { outline: 3px solid var(--vermilion); outline-offset: 3px; }
-.explorer-header { display: flex; gap: 24px; align-items: center; justify-content: space-between; padding: 20px 28px 14px; }
+.explorer-header { display: flex; flex-shrink: 0; gap: 24px; align-items: center; justify-content: space-between; padding: 20px 28px 14px; }
 .explorer-header h1 { margin: 4px 0 0; font-size: clamp(22px, 2vw, 30px); font-weight: 600; }
 .explorer-header .panel-kicker { margin: 0; font-size: 10px; letter-spacing: .1em; }
 .explorer-header > button { flex-shrink: 0; }
-.explorer-toolbar { padding: 0 28px 16px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+.explorer-toolbar { flex-shrink: 0; padding: 0 28px 16px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
 .explorer-boundary { font-size: 13px; line-height: 1.6; margin: 0; color: var(--muted); overflow-wrap: anywhere; }
 .explorer-toolbar .explorer-boundary { margin-left: auto; max-width: 650px; }
 .archive-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; }
-.archive-controls { padding: 18px 28px 12px; }
+.archive-controls { flex-shrink: 0; padding: 18px 28px 12px; }
 .archive-controls label { display: block; margin-bottom: 6px; font-size: 13px; }
 #archive-search { display: block; width: min(640px, 100%); margin-bottom: 12px; }
 .explorer-count { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
@@ -125,7 +125,7 @@ button[aria-pressed="true"] { border-color: var(--vermilion); background: var(--
   .relation-graph { height: 570px; }
   .graph-center, .explorer-dialog .graph-node { width: 31%; padding: 8px; font-size: 13px; }
   .graph-node strong { font-size: 14px; }
-  .graph-node span { font-size: 12px; }
+  .graph-node span { font-size: 11px; }
 }
 @media (max-width: 480px) {
   .brand-lockup { flex: 1 1 auto; }

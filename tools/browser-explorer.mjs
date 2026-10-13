@@ -9,6 +9,10 @@ export async function verifyExplorer(page) {
     await page.screenshot({ path: path.join(folder, `${name}.png`), fullPage: false });
   };
   const noOverflow = async () => assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  const closeInView = async () => assert.equal(await page.locator("#explorer-close").evaluate(node => {
+    const r = node.getBoundingClientRect();
+    return r.top >= 0 && r.left >= 0 && r.bottom <= innerHeight && r.right <= innerWidth;
+  }), true, "The map-return control must remain visible while inner panes scroll");
   const chooseChapter = async section => {
     if (await page.locator("#explorer-dialog").evaluate(dialog => dialog.open)) await page.locator("#explorer-close").click();
     await page.locator("#section-select").selectOption(String(section));
@@ -84,6 +88,7 @@ export async function verifyExplorer(page) {
   await page.locator("[data-category='timeline']").click();
   assert.equal(await count(), 758);
   await page.locator("#archive-results summary").first().click();
+  await closeInView();
   await screenshot("desktop-timeline");
   await page.locator("#archive-results .timeline-event button").first().click();
   assert.ok(await page.locator("#archive-detail").textContent());
@@ -150,6 +155,7 @@ export async function verifyExplorer(page) {
     }
     if (viewport.width === 375) {
       await page.locator("#relation-graph").scrollIntoViewIfNeeded();
+      await closeInView();
       await screenshot("mobile-relations-graph");
     }
     await page.locator("#explorer-close").click();
