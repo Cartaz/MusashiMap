@@ -390,5 +390,16 @@ import { installMarkerCollision } from "./marker-collision.js";
     draw(state.section, state.selectedCharacters);
   });
 
+  window.addEventListener("musashimap:focus-location", event => {
+    const section = getCanonicalReaderState().section;
+    const location = locations.find(item => item.id === event.detail?.id);
+    if (!map || !hasCoords(location) || location.introduced_section > section) return;
+    map.invalidateSize({ animate: false });
+    map.setView(location.coordinates, Math.max(map.getZoom(), 12));
+    markers.eachLayer(marker => {
+      if (marker.options.title === locationLabel(location)) marker.openPopup();
+    });
+  });
+
   boot();
 })();

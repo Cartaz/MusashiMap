@@ -16,6 +16,10 @@ MusashiMap reconstructs the novel chapter by chapter. The reader selects the las
 - Keeps uncertain, fictional or insufficiently documented places unmapped instead of inventing coordinates.
 - Degrades gracefully if the vector basemap is unavailable.
 - Runs as a static site with no backend and is deployable on GitHub Pages.
+- Provides a full-space archive of introduced characters, places and events, with safe name search and a chapter-grouped chronology.
+- Shows documented relationships as a readable list or a focused graph, with up to six neighbors per page.
+- Separates chapter events from context in the diary. All chapter events are visible by default; filtering by selected protagonists is explicit.
+- Returns from archive sheets to the map without changing its camera or character selection. Coordinate-backed places can be focused deliberately.
 
 ## Dataset status
 
@@ -31,7 +35,9 @@ All seven books are published and validated.
 | Chapter-level character states | 420 |
 | Relationships | 83 |
 
-This table describes repository dataset coverage, not browser UI surfaces. Each validated record in `data/relationships.json` carries a `first_section`, but the current browser runtime does not load or render this dataset and the Pages builder does not publish it. Relationships are retained for audit/research and possible future UI work.
+This table describes repository dataset coverage, not what is simultaneously visible. Pages currently publishes 150 evidenced characters, 253 locations and 758 events. Relationship records are published only when their introduction and both endpoints are available; the interface filters them again to the reader's chapter and combines duplicate reciprocal facts. Unknown coordinates remain accessible as archive entries. The interface does not publish raw chapter text; source links open the already-public repository transcription for an eligible chapter.
+
+The [interface guide](docs/interface-explorer.md) describes archive, timeline and relationship navigation, mobile layouts and spoiler boundaries.
 
 The [chapter-by-chapter source review](research/source-audit/chapter-review-2026-09-30.md), recovered and revalidated on 2026-10-01, records all 112 chapter comparisons, source hashes, corrections and first-pass adjudications. It does not certify loss-free extraction: the original master was unavailable, and the local transcription contains a duplicated passage requiring collation. Internal consistency is not proof of semantic completeness.
 

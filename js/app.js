@@ -1,5 +1,7 @@
 import { mergeNewlyVisibleSelection, updateCharacterSelection } from "./character-selection.js";
 import { loadData } from "./data.js";
+import { installExplorer } from "./explorer.js";
+import { buildArchive } from "./archive-model.js";
 import { getPlaceLegendEntries } from "./place-presentation.js";
 import {
   createReaderProgress,
@@ -36,6 +38,11 @@ const selectNone = document.querySelector("#select-none");
 
 let data;
 let reader;
+const eventScope = document.querySelector("#event-scope");
+new ResizeObserver(() => {
+  const height = document.querySelector(".app-header").getBoundingClientRect().height;
+  document.documentElement.style.setProperty("--reader-header-height", `${height}px`);
+}).observe(document.querySelector(".app-header"));
 
 function getVisibleMainCharacters(section) {
   return getVisibleCharacters(data.characters.characters, section, {
@@ -183,9 +190,10 @@ function createWikiCard(entry, { character = false, section = 1 } = {}) {
 
 function renderWiki(section) {
   const historicalEntries = getRelevantHistoricalWiki(data.microWiki.entities, section);
-  const characters = Object.values(data.characterWiki?.characters ?? {})
-    .filter(entry => entry.category === "secondary"
-      && Object.keys(entry.current_by_section ?? {}).some(key => Number(key) <= section));
+  const characters = buildArchive(data, section).characters
+    .filter(character => data.characterWiki?.characters?.[character.sourceId]?.category === "secondary")
+    .map(character => ({ display_name: character.name, role: "Personaggio o nome incontrato nel racconto",
+      current_by_section: { [section]: character.summary } }));
   const nodes = [];
   if (characters.length) {
     const heading = document.createElement("h3");
@@ -231,11 +239,19 @@ function render() {
   const snapshot = getReaderSnapshot({ states: data.states.character_states, events: data.events.events }, section, selectedCharacters);
   characterList.replaceChildren(...snapshot.selectedStates.map(state =>
     createCharacterCard(state, characterById.get(state.character), section, locationById)));
-  eventList.replaceChildren(...snapshot.sectionEvents.map(event => {
+  const chapterEvents = eventScope.value === "all"
+    ? data.events.events.filter(event => event.section === section)
+    : snapshot.sectionEvents;
+  eventList.replaceChildren(...chapterEvents.map(event => {
     const item = document.createElement("li");
     item.textContent = event.description ?? "";
     return item;
   }));
+  if (!chapterEvents.length) {
+    const empty = document.createElement("li");
+    empty.textContent = "Nessun evento con questo filtro. Puoi mostrare tutti gli eventi del capitolo.";
+    eventList.append(empty);
+  }
   renderCharacterFilters(selectedCharacters, section);
   renderWiki(section);
 }
@@ -263,6 +279,7 @@ try {
     ? previousState.selectedCharacters.filter(id => visibleIds.has(id))
     : [...visibleIds];
   initializeCanonicalReaderState({ section: initialSection, selectedCharacters: initialSelected });
+  installExplorer(data, { applySection });
 } catch (error) {
   status.textContent = "Dati non disponibili. Ricarica la pagina per riprovare.";
   dataStatus.textContent = "Errore nel caricamento dei dati";
@@ -278,6 +295,7 @@ if (reader) {
       chapterInput.setCustomValidity(`Inserisci una sezione disponibile da ${reader.min} a ${reader.max}.`);
     }
   });
+  eventScope.addEventListener("change", render);
   chapterInput.addEventListener("keydown", event => {
     if (event.key === "Enter") {
       if (!applySection(chapterInput.value)) chapterInput.reportValidity();
@@ -314,7 +332,16 @@ if (reader) {
     });
   });
 } else {
-  for (const control of [chapterInput, chapterApply, prevButton, nextButton, sectionSelect, selectAll, selectNone]) {
+  for (const control of [chapterInput, chapterApply, prevButton, nextButton, sectionSelect, selectAll, selectNone, eventScope]) {
     control.disabled = true;
   }
+}
+
+for (const name of ["chapter", "context"]) {
+  document.querySelector(`#diary-${name}-button`).addEventListener("click", () => {
+    for (const other of ["chapter", "context"]) {
+      document.querySelector(`#diary-${other}`).hidden = other !== name;
+      document.querySelector(`#diary-${other}-button`).setAttribute("aria-pressed", String(other === name));
+    }
+  });
 }

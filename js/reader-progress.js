@@ -126,7 +126,7 @@ export function getProgressiveDisplayName(entry, section) {
 // A name can be revealed only after at least one project-local narrative
 // record introduces it. Missing evidence is treated conservatively: the
 // character remains hidden instead of falling back to the first section.
-function getCharacterIntroductionSection(character, { states = [], events = [], characterWiki = {} } = {}) {
+export function getCharacterIntroductionSection(character, { states = [], events = [], characterWiki = {} } = {}) {
   if (!character?.id) return null;
   const candidates = [character.introduced_section, ...(character.present_in ?? [])];
 
