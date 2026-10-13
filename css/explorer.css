@@ -89,6 +89,7 @@ button[aria-pressed="true"] { border-color: var(--vermilion); background: var(--
   .view-navigation button { padding-inline: 10px; font-size: 12px; }
   .map-character-panel:not(.is-collapsed) .character-filter-body { max-height: 55svh; overflow-y: auto; }
   .app-header { flex-wrap: wrap; }
+  .map-stage { height: calc(100svh - var(--reader-header-height, 114px)); }
   .brand-lockup { min-width: 0; flex: 1 1 auto; }
   .section-navigation { flex: 0 0 100%; width: 100%; justify-content: center; }
   .app-shell .info-panel:not(.is-collapsed) {
@@ -126,8 +127,7 @@ button[aria-pressed="true"] { border-color: var(--vermilion); background: var(--
 }
 @media (max-width: 480px) {
   .brand-lockup { flex: 1 1 auto; }
-  .app-header { min-height: 114px; }
-  .map-stage { height: calc(100svh - 114px); }
+  .app-header { min-height: 114px; gap: 6px; }
   .app-header h1 { font-size: 18px; }
   .brand-seal { width: 24px; height: 24px; font-size: 14px; }
 }

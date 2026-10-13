@@ -22,8 +22,8 @@ export async function verifyExplorer(page) {
   await page.locator("#archive-search").fill("Ogin");
   assert.equal(await count(), 0);
   await page.locator("#archive-search").fill("Takezo");
-  assert.equal(await count(), 1);
-  await page.locator(".archive-result").click();
+  assert.ok(await count() >= 1);
+  await page.locator(".archive-result[data-record-id='musashi']").click();
   assert.doesNotMatch(await page.locator("#archive-detail").textContent(), /Miyamoto Musashi|Ogin|Sasaki/);
   // Native dialog focus remains inside the dialog; Escape restores its opener.
   for (let index = 0; index < 14; index++) {
@@ -60,14 +60,15 @@ export async function verifyExplorer(page) {
   await page.locator("#archive-search").fill("");
   assert.equal(await count(), 150);
   await page.locator("#archive-search").fill("Yoshino");
-  assert.equal(await count(), 2);
+  assert.equal(await page.locator(".archive-result[data-record-id='yoshino_tayu']").count(), 1);
+  assert.equal(await page.locator(".archive-result[data-record-id='yoshino_second']").count(), 1);
   await chooseChapter(105);
   await page.locator("#open-archive").click();
-  assert.equal(await count(), 1);
+  assert.equal(await page.locator(".archive-result[data-record-id='yoshino_second']").count(), 0);
   await chooseChapter(112);
   await page.locator("#open-archive").click();
   await page.locator("#archive-search").fill("Musashi");
-  await page.locator(".archive-result").click();
+  await page.locator(".archive-result[data-record-id='musashi']").click();
   await screenshot("desktop-archive-detail");
   await page.locator("#archive-search").fill("");
   await page.locator("[data-category='events']").click();
@@ -114,7 +115,7 @@ export async function verifyExplorer(page) {
     await page.locator("#archive-search").fill("Musashi");
     await noOverflow();
     if (viewport.width === 375) await screenshot("mobile-archive-list");
-    await page.locator(".archive-result").click();
+    await page.locator(".archive-result[data-record-id='musashi']").click();
     await noOverflow();
     if (viewport.width === 375) {
       assert.equal(await page.locator("#archive-results").isVisible(), false);

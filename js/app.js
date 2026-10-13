@@ -38,6 +38,10 @@ const selectNone = document.querySelector("#select-none");
 let data;
 let reader;
 const eventScope = document.querySelector("#event-scope");
+new ResizeObserver(() => {
+  const height = document.querySelector(".app-header").getBoundingClientRect().height;
+  document.documentElement.style.setProperty("--reader-header-height", `${height}px`);
+}).observe(document.querySelector(".app-header"));
 
 function getVisibleMainCharacters(section) {
   return getVisibleCharacters(data.characters.characters, section, {

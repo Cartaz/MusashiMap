@@ -137,7 +137,12 @@ try {
 
   const explorerPage = await newPage();
   await loaded(explorerPage);
-  await verifyExplorer(explorerPage);
+  try {
+    await verifyExplorer(explorerPage);
+  } catch (error) {
+    await explorerPage.screenshot({ path: "test-output/screenshots/explorer-failure.png" });
+    throw error;
+  }
   await explorerPage.close();
 
   const failedData = await newPage();
