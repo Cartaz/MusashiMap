@@ -18,7 +18,9 @@ button[aria-pressed="true"] { border-color: var(--vermilion); background: var(--
 #event-scope { width: 100%; max-width: 100%; }
 .info-panel #event-list li { font-size: 14px !important; line-height: 1.65 !important; padding-block: 12px !important; }
 .info-panel .wiki-card-body { font-size: 13px !important; line-height: 1.65 !important; }
-.explorer-dialog { inset: 20px; width: calc(100% - 40px); height: calc(100dvh - 40px);
+.explorer-dialog { --panel-surface-image: radial-gradient(ellipse at 15% 10%, rgba(255,250,235,.45), transparent 55%), radial-gradient(ellipse at 90% 90%, rgba(92,67,35,.06), transparent 60%);
+  --panel-surface-size: auto; --panel-surface-blend: normal;
+  inset: 20px; width: calc(100% - 40px); height: calc(100dvh - 40px);
   max-width: none; max-height: none; margin: auto; padding: 0; overflow: hidden; }
 .explorer-dialog[open] { display: flex; flex-direction: column; }
 .explorer-dialog::backdrop { background: rgba(31, 27, 21, .65); }

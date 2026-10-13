@@ -78,7 +78,7 @@ export async function verifyExplorer(page) {
   await page.locator("[data-category='places']").click();
   assert.equal(await count(), 253);
   await page.locator("#archive-search").fill("Saikachi");
-  await page.locator(".archive-result").click();
+  await page.locator(".archive-result[data-record-id='saikachi_slope']").click();
   assert.equal(await page.locator("#archive-detail").getByRole("button", { name: "Mostra sulla mappa" }).count(), 0);
   await page.locator("#archive-search").fill("");
   await page.locator("[data-category='timeline']").click();
@@ -105,6 +105,20 @@ export async function verifyExplorer(page) {
   assert.equal(await page.locator("#relation-character option").count(), 0);
   assert.equal(await page.locator(".graph-node").count(), 0);
   await page.locator("#relation-search").fill("");
+  await chooseChapter(26);
+  await page.locator("#open-archive").click();
+  await page.locator("[data-category='characters']").click();
+  await page.locator("#archive-search").fill("Baiken");
+  await page.locator(".archive-result[data-record-id='kohei']").click();
+  assert.doesNotMatch(await page.locator("#archive-detail").textContent(), /Temma|Tsujikaze|Kōhei/);
+  await page.locator("#archive-search").fill("Kohei");
+  assert.equal(await page.locator(".archive-result[data-record-id='kohei']").count(), 0);
+  assert.equal(await page.locator(".archive-result[data-record-id='kohei-before-26']").count(), 1);
+  await chooseChapter(28);
+  await page.locator("#open-archive").click();
+  await page.locator("#archive-search").fill("Baiken");
+  assert.equal(await page.locator(".archive-result[data-record-id='kohei']").count(), 1);
+  assert.equal(await page.locator(".archive-result[data-record-id='kohei-before-26']").count(), 0);
   await chooseChapter(112);
 
   for (const viewport of [{ width: 375, height: 812 }, { width: 812, height: 375 }, { width: 768, height: 1024 }, { width: 1440, height: 900 }]) {
