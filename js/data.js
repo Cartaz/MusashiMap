@@ -17,7 +17,7 @@ async function loadJson(path) {
 }
 
 export async function loadData() {
-  const [characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities] = await Promise.all([
+  const [characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities, relationships] = await Promise.all([
     loadJson("data/characters.json"),
     loadJson("data/locations.json"),
     loadJson("data/chapters.json"),
@@ -26,9 +26,10 @@ export async function loadData() {
     loadJson("data/reader-progress.json"),
     loadJson("data/context/micro-wiki.json"),
     loadJson("data/context/character-wiki.json"),
-    loadJson("data/identities.json")
+    loadJson("data/identities.json"),
+    loadJson("data/relationships.json")
   ]);
-  return { characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities };
+  return { characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities, relationships };
 }
 
 export async function loadMapData() {

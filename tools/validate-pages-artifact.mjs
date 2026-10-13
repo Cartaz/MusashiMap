@@ -95,6 +95,7 @@ const locations = readJson("data/locations.json").locations ?? [];
 const microWiki = readJson("data/context/micro-wiki.json").entities ?? [];
 const characterWiki = readJson("data/context/character-wiki.json").characters ?? {};
 const identities = readJson("data/identities.json").identities ?? [];
+const relationships = readJson("data/relationships.json").relationships ?? [];
 
 const expectedSections = Number.isInteger(minimum) && Number.isInteger(maximum)
   ? Array.from({ length: maximum - minimum + 1 }, (_, index) => minimum + index)
@@ -149,6 +150,10 @@ for (const [id, entry] of Object.entries(characterWiki)) {
   }
 }
 const identityRanges = new Map();
+for (const relationship of relationships) {
+  if (!inRange(relationship.first_section, minimum, maximum)) errors.push("Relationship crosses the publication boundary.");
+  assertReferences([relationship.from, relationship.to], characterIds, "Relationship");
+}
 for (const identity of identities) {
   if (!characterIds.has(identity.character_id)) errors.push(`Identity references unavailable character ${identity.character_id}.`);
   if (!inRange(identity.valid_from_section, minimum, maximum) || !inRange(identity.valid_until_section, minimum, maximum) || identity.valid_from_section > identity.valid_until_section) {
