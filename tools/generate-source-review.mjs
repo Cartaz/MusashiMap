@@ -4,6 +4,8 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { openCorpus } from "./lib/source-corpus.mjs";
+
 const root = fileURLToPath(new URL("../", import.meta.url));
 const read = file => JSON.parse(readFileSync(resolve(root, file), "utf8"));
 const sha = value => createHash("sha256").update(value).digest("hex");
@@ -31,6 +33,18 @@ const canon = value => {
   const id = raw.split(":")[0].split("/")[0].trim();
   return adjudications.canonical_id_normalization[id] ?? id;
 };
+// The chapter text is private. With data/source/ present, integrity is scanned
+// from the text; otherwise the previously generated review supplies it, but
+// only for chapters whose fingerprint still matches the corpus manifest.
+const corpus = openCorpus(root);
+if (corpus.errors.length) throw Error(corpus.errors.join("\n"));
+const previousReview = (() => {
+  try {
+    return new Map(read("research/source-audit/chapter-review-2026-09-30.json").chapters.map(row => [row.chapter, row]));
+  } catch {
+    return new Map();
+  }
+})();
 const oracles = new Map();
 const oracleHashes = {};
 for (const book of [1, 2, 3, 4, 5, 6, 7]) {
@@ -43,9 +57,10 @@ for (const book of [1, 2, 3, 4, 5, 6, 7]) {
 }
 if (chapters.length !== 112 || oracles.size !== 112) throw Error("Expected all 112 chapters.");
 const reviews = chapters.map(chapter => {
-  const source = readFileSync(resolve(root, chapter.source_file));
-  const text = source.toString("utf8");
-  const lines = text.split(/\r?\n/);
+  const sourceInfo = corpus.info(chapter.source_file);
+  if (!sourceInfo) throw Error(`Missing source ${chapter.source_file}`);
+  const text = corpus.readText(chapter.source_file);
+  const lines = text?.split(/\r?\n/) ?? [];
   if (lines.at(-1) === "") lines.pop();
   const oracle = oracles.get(chapter.chapter_id);
   if (oracle?.source_file !== chapter.source_file) throw Error(`Source mismatch ${chapter.chapter_id}`);
@@ -61,7 +76,10 @@ const reviews = chapters.map(chapter => {
   const adjudication = adjudications.chapters[chapter.chapter_id] ?? null;
   if ((difference.oracle_only.length || difference.production_only.length) && !adjudication)
     throw Error(`Unadjudicated ${chapter.chapter_id}`);
-  const integrity = [];
+  const previous = previousReview.get(chapter.chapter_id);
+  if (text === null && previous?.source_sha256 !== sourceInfo.sha256)
+    throw Error(`${chapter.chapter_id} changed since the last review; regenerate it from the local corpus.`);
+  const integrity = text === null ? previous.source_integrity : [];
   lines.forEach((line, index) => {
     for (const token of ["Kemp&", "J nottarō", "Kojir/div", "\uFFFD"])
       if (line.includes(token))
@@ -72,7 +90,7 @@ const reviews = chapters.map(chapter => {
           status: "preserved_pending_original_collation"
         });
   });
-  if (chapter.chapter_id === "b2c5") {
+  if (text !== null && chapter.chapter_id === "b2c5") {
     const passage = (start, end) =>
       lines
         .slice(start - 1, end)
@@ -100,9 +118,9 @@ const reviews = chapters.map(chapter => {
     book: chapter.book_number,
     title: chapter.title,
     source_file: chapter.source_file,
-    source_sha256: sha(source),
-    line_count: lines.length,
-    word_count: text.trim().split(/\s+/).length,
+    source_sha256: sourceInfo.sha256,
+    line_count: sourceInfo.line_count,
+    word_count: sourceInfo.word_count,
     status: "comparison_recorded_not_loss_free_certification",
     source_first_inventory: oracle,
     production: {

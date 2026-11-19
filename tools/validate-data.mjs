@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { validateMovementEvent } from "../js/movement-contract.js";
 import { validatePositionState } from "../js/position-contract.js";
 import { auditOverlay, LANGUAGES } from "../js/i18n-overlay.js";
+import { openCorpus } from "./lib/source-corpus.mjs";
 
 const REQUIRED_FILES = [
   "data/chapters.json",
@@ -160,12 +161,13 @@ export function validateRepository(root = process.cwd()) {
 
   // Registered chapters, including staged ones, must resolve to their exact
   // primary source and retain the source's first non-empty header as title.
+  // The corpus is private: without data/source/ the manifest stands in for it.
+  const corpus = openCorpus(root);
+  errors.push(...corpus.errors);
   for (const section of sections) {
-    const sourceDirectory = path.join(root, `data/source/book${section.book_number}`);
     const prefix = `chapter${CHAPTER_ID.exec(section.chapter_id)?.[2]}-`;
-    const matches = fs.existsSync(sourceDirectory)
-      ? fs.readdirSync(sourceDirectory).filter(name => name.startsWith(prefix) && name.endsWith(".txt"))
-      : [];
+    const matches = corpus.list(`data/source/book${section.book_number}`)
+      .filter(name => name.startsWith(prefix) && name.endsWith(".txt"));
     if (matches.length !== 1) errors.push(`Chapter ${section.chapter_id} must have exactly one source file under data/source/book${section.book_number} (found ${matches.length}).`);
     const expectedRelative = matches.length === 1
       ? path.posix.join(`data/source/book${section.book_number}`, matches[0])
@@ -175,9 +177,9 @@ export function validateRepository(root = process.cwd()) {
       continue;
     }
     if (!expectedRelative) continue;
-    const sourceText = fs.readFileSync(path.join(root, expectedRelative), "utf8");
-    sourceLineCounts.set(section.chapter_id, sourceText.split(/\r?\n/).length - (sourceText.endsWith("\n") ? 1 : 0));
-    const sourceTitle = sourceText.split(/\r?\n/).find(line => line.trim())?.trim();
+    const source = corpus.info(expectedRelative);
+    sourceLineCounts.set(section.chapter_id, source.line_count);
+    const sourceTitle = source.title;
     if (section.title !== sourceTitle) {
       errors.push(`Chapter ${section.chapter_id} title must match its first source header ${JSON.stringify(sourceTitle)}, found ${JSON.stringify(section.title)}.`);
     }

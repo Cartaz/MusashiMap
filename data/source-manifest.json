@@ -1,0 +1,909 @@
+{
+  "description": "Fingerprint of the private chapter corpus. The text itself is not published; validators use this file when data/source/ is absent.",
+  "files": {
+    "data/source/book1/chapter1-the-little-bell.txt": {
+      "sha256": "d6baa5287123802ec8d2499984720ff4201605b158c9c593470d42f8cd4354d9",
+      "bytes": 18600,
+      "line_count": 293,
+      "newline_count": 293,
+      "word_count": 3186,
+      "title": "The Little Bell"
+    },
+    "data/source/book1/chapter2-the-comb.txt": {
+      "sha256": "a73d6df4d6a85ea6fc197b39f32738324d4e6a2d92e8594d51c0057447a2ac9a",
+      "bytes": 47487,
+      "line_count": 736,
+      "newline_count": 736,
+      "word_count": 8141,
+      "title": "The Comb"
+    },
+    "data/source/book1/chapter3-the-flower-festival.txt": {
+      "sha256": "25fc3fd1485db044e8ea764edd106ad8a05a702802a8fbcee6540828ab72a08a",
+      "bytes": 24971,
+      "line_count": 406,
+      "newline_count": 406,
+      "word_count": 4241,
+      "title": "The Flower Festival"
+    },
+    "data/source/book1/chapter4-the-dowagers-wrath.txt": {
+      "sha256": "af8c886d48687e621238d41c78b9a1b51ffc12ffa77c98e566499b7c0f8f8266",
+      "bytes": 35548,
+      "line_count": 553,
+      "newline_count": 553,
+      "word_count": 6134,
+      "title": "The Dowager's Wrath"
+    },
+    "data/source/book1/chapter5-the-art-of-war.txt": {
+      "sha256": "2d9776d46c33f055566f8f7108c90972a0e9ad4744ebdf4d8e0cb7ca4d369818",
+      "bytes": 56866,
+      "line_count": 915,
+      "newline_count": 915,
+      "word_count": 9828,
+      "title": "The Art of War"
+    },
+    "data/source/book1/chapter6-the-old-cryptomeria-tree.txt": {
+      "sha256": "6dd3b8ccdfa5f64940ec5f3a223259de5d68d35d8661442601d6f8a0fb20ecc0",
+      "bytes": 31618,
+      "line_count": 508,
+      "newline_count": 508,
+      "word_count": 5513,
+      "title": "The Old Cryptomeria Tree"
+    },
+    "data/source/book1/chapter7-the-rock-and-the-tree.txt": {
+      "sha256": "d2d437a60fb9f73d43ef3249139feedeb03868ae506fbc583790db3ba5936d77",
+      "bytes": 41429,
+      "line_count": 658,
+      "newline_count": 658,
+      "word_count": 7206,
+      "title": "The Rock and the Tree"
+    },
+    "data/source/book1/chapter8-the-birth-of-musashi.txt": {
+      "sha256": "388ce64cea26ee5a1716bef647c416bb462bb2864d492c3eb47d52389c8cd0f9",
+      "bytes": 30806,
+      "line_count": 486,
+      "newline_count": 486,
+      "word_count": 5427,
+      "title": "The Birth of Musashi"
+    },
+    "data/source/book2/chapter1-the-yoshioka-school.txt": {
+      "sha256": "773213e92bc0362ac3dfeb03b5255ec53f69e8292010bbeb7218425289cd22c9",
+      "bytes": 40945,
+      "line_count": 687,
+      "newline_count": 687,
+      "word_count": 6963,
+      "title": "The Yoshioka School"
+    },
+    "data/source/book2/chapter10-jotaros-revenge.txt": {
+      "sha256": "0cd9c2e6fe71e8df9a31e039ff18ce3944471b98e8af5866f73c14d9621605f0",
+      "bytes": 36053,
+      "line_count": 580,
+      "newline_count": 580,
+      "word_count": 6106,
+      "title": "Jōtarō’s Revenge"
+    },
+    "data/source/book2/chapter11-the-nightingales.txt": {
+      "sha256": "9edd76d7de0a121514f2a5e6206680b07e200476e5a3d0def44c9df243907d1f",
+      "bytes": 30313,
+      "line_count": 488,
+      "newline_count": 488,
+      "word_count": 5311,
+      "title": "The Nightingales"
+    },
+    "data/source/book2/chapter2-the-wheel-of-fortune.txt": {
+      "sha256": "66133186e4763d75ae1fab9f93defae800d84d460f89b423fdb6e5874d058756",
+      "bytes": 21791,
+      "line_count": 336,
+      "newline_count": 336,
+      "word_count": 3749,
+      "title": "The Wheel of Fortune"
+    },
+    "data/source/book2/chapter3-encounter-and-retreat.txt": {
+      "sha256": "ce65c06db05449d7e4512e0ce19d7c166c602cb248e985d9c229d2d2b7fa23b7",
+      "bytes": 18461,
+      "line_count": 283,
+      "newline_count": 283,
+      "word_count": 3212,
+      "title": "Encounter and Retreat"
+    },
+    "data/source/book2/chapter4-the-water-sprite.txt": {
+      "sha256": "3ecea1e56ae35e8e53e88df63c8c6b56f8af192a6832062d19f244dda19f4a8b",
+      "bytes": 26418,
+      "line_count": 451,
+      "newline_count": 451,
+      "word_count": 4644,
+      "title": "The Water Sprite"
+    },
+    "data/source/book2/chapter5-a-spring-breeze.txt": {
+      "sha256": "01162596973c1800d4e46581bd444e547272c2701070ca8ac0351378e47ded08",
+      "bytes": 30882,
+      "line_count": 522,
+      "newline_count": 522,
+      "word_count": 5302,
+      "title": "A Spring Breeze"
+    },
+    "data/source/book2/chapter6-the-hozoin.txt": {
+      "sha256": "d4c5ef1f56fe9edc79caf7b04ecbaa27e1eb926299b53837c34984a5aff876f3",
+      "bytes": 50076,
+      "line_count": 775,
+      "newline_count": 775,
+      "word_count": 8691,
+      "title": "The Hōzōin"
+    },
+    "data/source/book2/chapter7-hannya-plain.txt": {
+      "sha256": "58e6c2773f6d70d620c717c29c5161dd50fb3e4ee684b0aab05cab4e3b604f16",
+      "bytes": 28417,
+      "line_count": 462,
+      "newline_count": 462,
+      "word_count": 4792,
+      "title": "Hannya Plain"
+    },
+    "data/source/book2/chapter8-the-koyagyu-fief.txt": {
+      "sha256": "3c90db366c2f6ebaea4e9830a4eb757319afe618e641d15b4738f9cbd400ea9f",
+      "bytes": 14912,
+      "line_count": 229,
+      "newline_count": 229,
+      "word_count": 2546,
+      "title": "The Koyagyū Fief"
+    },
+    "data/source/book2/chapter9-the-peony.txt": {
+      "sha256": "9c58a813710a408af958d5d0f37acf8865a691c1dfdf4baa8de35d23147705fb",
+      "bytes": 39234,
+      "line_count": 641,
+      "newline_count": 641,
+      "word_count": 6751,
+      "title": "The Peony"
+    },
+    "data/source/book3/chapter1-sasaki-kojiro.txt": {
+      "sha256": "eccee19c2272441b54167518c5545926a9643c5b10b7f6a41ab2744cf7add9ff",
+      "bytes": 40652,
+      "line_count": 648,
+      "newline_count": 648,
+      "word_count": 6955,
+      "title": "Sasaki Kojirō"
+    },
+    "data/source/book3/chapter10-the-flying-horse.txt": {
+      "sha256": "258c0b4f6f0226943b592ace8f6e259cc113b0d8e4c591041134ab500a1f1a4c",
+      "bytes": 37799,
+      "line_count": 623,
+      "newline_count": 623,
+      "word_count": 6536,
+      "title": "The Flying Horse"
+    },
+    "data/source/book3/chapter11-the-butterfly-in-winter.txt": {
+      "sha256": "d9af3e1b6955161eaef988a1ddf2e79d70951831a2b190ce2e51dc036694ce8b",
+      "bytes": 33160,
+      "line_count": 512,
+      "newline_count": 512,
+      "word_count": 5792,
+      "title": "The Butterfly in Winter"
+    },
+    "data/source/book3/chapter12-the-announcement.txt": {
+      "sha256": "b50c5bbcb0cb9adb026841e7ca8f6bbddbe316b682d93e8b2a6a91328644bd60",
+      "bytes": 41923,
+      "line_count": 645,
+      "newline_count": 645,
+      "word_count": 7393,
+      "title": "The Announcement"
+    },
+    "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt": {
+      "sha256": "2286ca6f1f3d0a7c5367abb8867e59cc68bced75a26fec1d5a7884293db709ce",
+      "bytes": 35792,
+      "line_count": 557,
+      "newline_count": 557,
+      "word_count": 6265,
+      "title": "The Great Bridge at Gojō Avenue"
+    },
+    "data/source/book3/chapter2-reunion-in-osaka.txt": {
+      "sha256": "42fcf2eb349cfa9420b37a7a6c3a90967caeae3edb58b739193672890ab17e37",
+      "bytes": 52914,
+      "line_count": 837,
+      "newline_count": 837,
+      "word_count": 9133,
+      "title": "Reunion in Osaka"
+    },
+    "data/source/book3/chapter3-the-handsome-young-man.txt": {
+      "sha256": "3ccd7112d7ee0dee141ec2d919d7d844b602fb0c115b2a2a799183c2c5fb8014",
+      "bytes": 29845,
+      "line_count": 471,
+      "newline_count": 471,
+      "word_count": 5151,
+      "title": "The Handsome Young Man"
+    },
+    "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt": {
+      "sha256": "2ab66d551de8260dbee97ecb10e413b6026cdfee1c8d56d4cb502a071eebe7a6",
+      "bytes": 21449,
+      "line_count": 356,
+      "newline_count": 356,
+      "word_count": 3669,
+      "title": "The Seashell of Forgetfulness"
+    },
+    "data/source/book3/chapter5-a-heros-passing.txt": {
+      "sha256": "fe4b365a07343eaf03945b58e69ac08d65b587eaf17b567806e72a48ec019b8e",
+      "bytes": 21070,
+      "line_count": 344,
+      "newline_count": 344,
+      "word_count": 3662,
+      "title": "A Hero’s Passing"
+    },
+    "data/source/book3/chapter6-the-drying-pole.txt": {
+      "sha256": "4f506969cf4b1c4081dcf2ba7876375d1fc2dad4233ebf4a62e3029a5354edc1",
+      "bytes": 19702,
+      "line_count": 310,
+      "newline_count": 310,
+      "word_count": 3366,
+      "title": "The Drying Pole"
+    },
+    "data/source/book3/chapter7-eagle-mountain.txt": {
+      "sha256": "0e4df4ef6a16f9f00fe56386b0dabcafc0028f6a7e963442aa3bb3c11b792ee6",
+      "bytes": 36674,
+      "line_count": 550,
+      "newline_count": 550,
+      "word_count": 6464,
+      "title": "Eagle Mountain"
+    },
+    "data/source/book3/chapter8-the-mayfly-in-winter.txt": {
+      "sha256": "3b5fc7da965521972e6ea4b3151b922a077ae98f61ac3aa4c1b02b73dd449809",
+      "bytes": 26543,
+      "line_count": 410,
+      "newline_count": 410,
+      "word_count": 4564,
+      "title": "The Mayfly in Winter"
+    },
+    "data/source/book3/chapter9-the-pinwheel.txt": {
+      "sha256": "2a3dd17bf1c61aeba609bf50ac910a0d1d42c5afa53ceb7ed6ed906b3463b044",
+      "bytes": 28483,
+      "line_count": 464,
+      "newline_count": 464,
+      "word_count": 4955,
+      "title": "The Pinwheel"
+    },
+    "data/source/book4/chapter1-the-withered-field.txt": {
+      "sha256": "87cbc504c1613e369555f45a08b602a685833b3b6b8f904efb686e3077901a49",
+      "bytes": 24092,
+      "line_count": 398,
+      "newline_count": 398,
+      "word_count": 4080,
+      "title": "The Withered Field"
+    },
+    "data/source/book4/chapter10-a-sickness-of-the-heart.txt": {
+      "sha256": "6e4a798d536e2d9af6fe57410b4de1fd909db778906eb5c4cb5ff0eb0fa15239",
+      "bytes": 13573,
+      "line_count": 237,
+      "newline_count": 237,
+      "word_count": 2299,
+      "title": "A Sickness of the Heart"
+    },
+    "data/source/book4/chapter11-the-scent-of-aloeswood.txt": {
+      "sha256": "85973fa042c8dd62ce549aad0df04549190173c717a46a4c316d9b2bcfa5144b",
+      "bytes": 17101,
+      "line_count": 267,
+      "newline_count": 267,
+      "word_count": 2971,
+      "title": "The Scent of Aloeswood"
+    },
+    "data/source/book4/chapter12-the-gate.txt": {
+      "sha256": "80c13bc39619680226cf3dddc740e2c204b7cd7915644575b60b170bcf6fca36",
+      "bytes": 25932,
+      "line_count": 442,
+      "newline_count": 442,
+      "word_count": 4394,
+      "title": "The Gate"
+    },
+    "data/source/book4/chapter13-a-toast-to-the-morrow.txt": {
+      "sha256": "b62ab430c3d01a209c277a2a80ece2bdff75c3427f0ef4ec7f5fcc2c83d904ee",
+      "bytes": 13371,
+      "line_count": 232,
+      "newline_count": 232,
+      "word_count": 2295,
+      "title": "A Toast to the Morrow"
+    },
+    "data/source/book4/chapter14-the-death-trap.txt": {
+      "sha256": "20a4ad17960e475eee945bd42e1f1160c3db339cda9ca6b67cf916609ab6a0ba",
+      "bytes": 14851,
+      "line_count": 233,
+      "newline_count": 233,
+      "word_count": 2551,
+      "title": "The Death Trap"
+    },
+    "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt": {
+      "sha256": "fa6257d78f13c35f30965e9e5e76f0686ae9a6ae8043ba037db34a367ec20f55",
+      "bytes": 36563,
+      "line_count": 584,
+      "newline_count": 584,
+      "word_count": 6376,
+      "title": "A Meeting in the Moonlight"
+    },
+    "data/source/book4/chapter16-stray-geese.txt": {
+      "sha256": "10eb4eea39167991cc1a67884accfe9346dceaef78ba4974d2edc4483eb8c6f0",
+      "bytes": 11008,
+      "line_count": 180,
+      "newline_count": 180,
+      "word_count": 1960,
+      "title": "Stray Geese"
+    },
+    "data/source/book4/chapter17-the-spreading-pine.txt": {
+      "sha256": "da295395a1a44f69563dfe06839a12a67d4110f7aebc9ab2154633a5fbf28e5f",
+      "bytes": 30763,
+      "line_count": 465,
+      "newline_count": 465,
+      "word_count": 5326,
+      "title": "The Spreading Pine"
+    },
+    "data/source/book4/chapter18-an-offering-for-the-dead.txt": {
+      "sha256": "b1327986a25df866d0ccc1f832db2301fa41927925b391126551c5b2d6900c97",
+      "bytes": 21554,
+      "line_count": 344,
+      "newline_count": 344,
+      "word_count": 3694,
+      "title": "An Offering for the Dead"
+    },
+    "data/source/book4/chapter19-a-drink-of-milk.txt": {
+      "sha256": "59d758fdf701090a64de4c0378befaca16c44df5f28d9fd29491f6d1fcd39459",
+      "bytes": 31956,
+      "line_count": 500,
+      "newline_count": 500,
+      "word_count": 5556,
+      "title": "A Drink of Milk"
+    },
+    "data/source/book4/chapter2-a-man-of-parts.txt": {
+      "sha256": "abe9c4a43e1407c11da6687edc82b1169d2577682aff8a443271458571753425",
+      "bytes": 26674,
+      "line_count": 406,
+      "newline_count": 406,
+      "word_count": 4622,
+      "title": "A Man of Parts"
+    },
+    "data/source/book4/chapter20-entwining-branches.txt": {
+      "sha256": "4d6e6b6b48d480ac56b84e8135bb6ffabc012a08bb285066177980953d561b2a",
+      "bytes": 23193,
+      "line_count": 365,
+      "newline_count": 365,
+      "word_count": 4058,
+      "title": "Entwining Branches"
+    },
+    "data/source/book4/chapter21-the-male-and-female-waterfalls.txt": {
+      "sha256": "b6a51de2852eb241981dff4dc5e3324db605726d99dce072998b72ebc3febfc7",
+      "bytes": 11193,
+      "line_count": 174,
+      "newline_count": 174,
+      "word_count": 1895,
+      "title": "The Male and Female Waterfalls"
+    },
+    "data/source/book4/chapter3-too-many-kojiros.txt": {
+      "sha256": "97294a5061934b2dbdc933385c16ad1e6915ebbf05227d788ec4269934344599",
+      "bytes": 41393,
+      "line_count": 672,
+      "newline_count": 672,
+      "word_count": 7140,
+      "title": "Too Many Kojirōs"
+    },
+    "data/source/book4/chapter4-the-younger-brother.txt": {
+      "sha256": "88130eb0d68d12875120e4467c3af1ec85af9d84fe509862363ec5c471fbdacb",
+      "bytes": 25126,
+      "line_count": 419,
+      "newline_count": 419,
+      "word_count": 4308,
+      "title": "The Younger Brother"
+    },
+    "data/source/book4/chapter5-a-mothers-love.txt": {
+      "sha256": "da7e9bba254adc58acdb30c47fc7c1e01dd34259337c53b8bc6645d1aaec5635",
+      "bytes": 48202,
+      "line_count": 821,
+      "newline_count": 821,
+      "word_count": 8332,
+      "title": "A Mother’s Love"
+    },
+    "data/source/book4/chapter6-the-urbane-craftsman.txt": {
+      "sha256": "c588915d9ca1c5e5480341fdfb70a20fe1f7588d2f366db47f33d626f977aaa2",
+      "bytes": 34588,
+      "line_count": 545,
+      "newline_count": 545,
+      "word_count": 5880,
+      "title": "The Urbane Craftsman"
+    },
+    "data/source/book4/chapter7-reverberations-in-the-snow.txt": {
+      "sha256": "c449d692ae134cc1163318eb6fcf096217f1f81585c383f543f4c1bc363840f7",
+      "bytes": 28050,
+      "line_count": 449,
+      "newline_count": 449,
+      "word_count": 4788,
+      "title": "Reverberations in the Snow"
+    },
+    "data/source/book4/chapter8-the-elegant-people.txt": {
+      "sha256": "9d246cdb23f01c069b394f1ee87461d6bb631ec2ebd70c100e711575059b21db",
+      "bytes": 24396,
+      "line_count": 385,
+      "newline_count": 385,
+      "word_count": 4111,
+      "title": "The Elegant People"
+    },
+    "data/source/book4/chapter9-the-broken-lute.txt": {
+      "sha256": "2f0f4be5556c46f31d65160e8161623d53fc4e1a1ee9cdfdbfb0d9a1b09529de",
+      "bytes": 18270,
+      "line_count": 308,
+      "newline_count": 308,
+      "word_count": 3158,
+      "title": "The Broken Lute"
+    },
+    "data/source/book5/chapter1-the-abduction.txt": {
+      "sha256": "845bd2662619a0737906fe78ac41f929ace0f061399ee2bbed698ca32c760414",
+      "bytes": 10924,
+      "line_count": 182,
+      "newline_count": 182,
+      "word_count": 1846,
+      "title": "The Abduction"
+    },
+    "data/source/book5/chapter10-the-pioneers.txt": {
+      "sha256": "46ad15fa47f061eee50af876fd176e73cb118bc26c6d3bd97e2131180c911987",
+      "bytes": 15223,
+      "line_count": 237,
+      "newline_count": 237,
+      "word_count": 2581,
+      "title": "The Pioneers"
+    },
+    "data/source/book5/chapter11-slaughter-by-the-riverside.txt": {
+      "sha256": "720d188f6f12a05cc05f999b7e3c3c09ac0b4cc299fc71cb0d09009d54d4fc24",
+      "bytes": 18673,
+      "line_count": 313,
+      "newline_count": 313,
+      "word_count": 3175,
+      "title": "Slaughter by the Riverside"
+    },
+    "data/source/book5/chapter12-shavings.txt": {
+      "sha256": "81110ce398d4c2f60bb594b28406175758912dbf82c16009abd623f864b704eb",
+      "bytes": 17948,
+      "line_count": 283,
+      "newline_count": 283,
+      "word_count": 3064,
+      "title": "Shavings"
+    },
+    "data/source/book5/chapter13-the-owl.txt": {
+      "sha256": "489dbec83809a07b2b7ac6dff3f66a6d6cb7408c5a3b4a96578a163c1b831418",
+      "bytes": 20301,
+      "line_count": 319,
+      "newline_count": 319,
+      "word_count": 3510,
+      "title": "The Owl"
+    },
+    "data/source/book5/chapter14-a-plate-of-loaches.txt": {
+      "sha256": "214301e1ddf5b6416c2658e12ccf190159ac107d71bb872948d576511fa129e1",
+      "bytes": 17504,
+      "line_count": 289,
+      "newline_count": 289,
+      "word_count": 3051,
+      "title": "A Plate of Loaches"
+    },
+    "data/source/book5/chapter15-like-teacher-like-pupil.txt": {
+      "sha256": "715fa3bf814d8fc013d0e9a63f04cf6f799cafacc78edcb56f1410849fe23915",
+      "bytes": 25486,
+      "line_count": 421,
+      "newline_count": 421,
+      "word_count": 4376,
+      "title": "Like Teacher, Like Pupil"
+    },
+    "data/source/book5/chapter16-mountain-devils.txt": {
+      "sha256": "5209257fbc2682532ec8a83212f9a16ba9f131e85b9000b141ed7c1d30778f21",
+      "bytes": 30512,
+      "line_count": 500,
+      "newline_count": 500,
+      "word_count": 5163,
+      "title": "Mountain Devils"
+    },
+    "data/source/book5/chapter17-first-planting.txt": {
+      "sha256": "6289565075f44d5e7006c744c1f3b99c55b20ea5ddf0f96cafd3c2ea5d403bb4",
+      "bytes": 11192,
+      "line_count": 181,
+      "newline_count": 181,
+      "word_count": 1907,
+      "title": "First Planting"
+    },
+    "data/source/book5/chapter18-the-flies.txt": {
+      "sha256": "7097bee99a03cdd73f95a8f4e2d0fe1e81e8142d6d75d63676cd3cb29f466d3b",
+      "bytes": 23091,
+      "line_count": 389,
+      "newline_count": 389,
+      "word_count": 3912,
+      "title": "The Flies"
+    },
+    "data/source/book5/chapter19-the-soul-polisher.txt": {
+      "sha256": "f731138c4eeba412cea6f7657ee3e9cd0fa77dcf6c5a851f9f82553751972577",
+      "bytes": 17855,
+      "line_count": 282,
+      "newline_count": 282,
+      "word_count": 3070,
+      "title": "The Soul Polisher"
+    },
+    "data/source/book5/chapter2-the-warrior-of-kiso.txt": {
+      "sha256": "49b012294c4730ea4927df8f158e107e9e370ec4470467ca9212dfa032c0b0a1",
+      "bytes": 19456,
+      "line_count": 300,
+      "newline_count": 300,
+      "word_count": 3432,
+      "title": "The Warrior of Kiso"
+    },
+    "data/source/book5/chapter20-the-fox.txt": {
+      "sha256": "b3052f59da611047bdd024aedc1c576c69a89c1b1c80df645c1638225c0111d4",
+      "bytes": 20163,
+      "line_count": 327,
+      "newline_count": 327,
+      "word_count": 3476,
+      "title": "The Fox"
+    },
+    "data/source/book5/chapter21-an-urgent-letter.txt": {
+      "sha256": "3398c10a342f57c0f135c509d5f3dbe07744cb32c461ee4d03e69a2788664216",
+      "bytes": 15723,
+      "line_count": 246,
+      "newline_count": 246,
+      "word_count": 2648,
+      "title": "An Urgent Letter"
+    },
+    "data/source/book5/chapter22-filial-piety.txt": {
+      "sha256": "0dfaa168a6da3272a12ee763744d2a24ef53e5ef8e471534e938fafd1a2004a1",
+      "bytes": 16767,
+      "line_count": 355,
+      "newline_count": 355,
+      "word_count": 2831,
+      "title": "Filial Piety"
+    },
+    "data/source/book5/chapter23-spring-shower-in-red.txt": {
+      "sha256": "50feb74c5acd6b0aad7864a12fcc76efb5d96c7f3f1866366e3c1001a3cd8c3c",
+      "bytes": 16578,
+      "line_count": 277,
+      "newline_count": 277,
+      "word_count": 2795,
+      "title": "Spring Shower in Red"
+    },
+    "data/source/book5/chapter24-a-block-of-wood.txt": {
+      "sha256": "8a16e586b59210c5a0f3daea724f3dfd8cdc2cc179a7c48b5c18ac09e0362f23",
+      "bytes": 13642,
+      "line_count": 233,
+      "newline_count": 233,
+      "word_count": 2345,
+      "title": "A Block of Wood"
+    },
+    "data/source/book5/chapter25-the-deserted-prophet.txt": {
+      "sha256": "d489e00e34743c15bc3e3166c3a037898d734379aa5224f9b66bc129fb7143c7",
+      "bytes": 11220,
+      "line_count": 175,
+      "newline_count": 175,
+      "word_count": 1919,
+      "title": "The Deserted Prophet"
+    },
+    "data/source/book5/chapter26-the-talk-of-the-town.txt": {
+      "sha256": "35484f8dbb44d41d0d0d1657df79be67d497b894076f5ef9404c00c09f8583cd",
+      "bytes": 12186,
+      "line_count": 208,
+      "newline_count": 208,
+      "word_count": 2043,
+      "title": "The Talk of the Town"
+    },
+    "data/source/book5/chapter3-poisonous-fangs.txt": {
+      "sha256": "c6b5de7790d8fa970278c7e21ec9b5a2cc58329b131969a6f3ae8d14c79505ce",
+      "bytes": 9289,
+      "line_count": 147,
+      "newline_count": 147,
+      "word_count": 1640,
+      "title": "Poisonous Fangs"
+    },
+    "data/source/book5/chapter4-a-maternal-warning.txt": {
+      "sha256": "11f9e615177b9f8efda61a2d6fc92bea7772d140da217c7a0d6517e3f3d098cc",
+      "bytes": 30835,
+      "line_count": 473,
+      "newline_count": 473,
+      "word_count": 5390,
+      "title": "A Maternal Warning"
+    },
+    "data/source/book5/chapter5-a-one-night-love-affair.txt": {
+      "sha256": "4de4795b26930e9544c334a5bf722cdd45ef8be7754305e9f35a1b8d8e627e79",
+      "bytes": 17974,
+      "line_count": 268,
+      "newline_count": 268,
+      "word_count": 3102,
+      "title": "A One-Night Love Affair"
+    },
+    "data/source/book5/chapter6-a-gift-of-money.txt": {
+      "sha256": "5931455b0c617034fc49f8ef5293cd3d53c8a729c18a1e007e54c9365127776c",
+      "bytes": 22161,
+      "line_count": 335,
+      "newline_count": 335,
+      "word_count": 3853,
+      "title": "A Gift of Money"
+    },
+    "data/source/book5/chapter7-a-cleansing-fire.txt": {
+      "sha256": "77805e94ed0aef5356bacdc8dda39be0c54ceda0ebd83380725cc2b7412ba86c",
+      "bytes": 14959,
+      "line_count": 238,
+      "newline_count": 238,
+      "word_count": 2591,
+      "title": "A Cleansing Fire"
+    },
+    "data/source/book5/chapter8-playing-with-fire.txt": {
+      "sha256": "507de3ecaa3b1d5e07b5d3201b990c991ba6b6ee8ac5097fb7522e8df6592b57",
+      "bytes": 27956,
+      "line_count": 467,
+      "newline_count": 467,
+      "word_count": 4691,
+      "title": "Playing with Fire"
+    },
+    "data/source/book5/chapter9-a-cricket-in-the-grass.txt": {
+      "sha256": "cd81442980d4b821ba065b8b83dd74d7cf79fd158cd3fd0f074a15ecb4b9cb51",
+      "bytes": 13649,
+      "line_count": 218,
+      "newline_count": 218,
+      "word_count": 2341,
+      "title": "A Cricket in the Grass"
+    },
+    "data/source/book6/chapter1-a-chat-with-the-men.txt": {
+      "sha256": "59bd8fca76d6030814a694273b3f43652cbd981edfad357ee019ef3b3e4e94a9",
+      "bytes": 10014,
+      "line_count": 162,
+      "newline_count": 162,
+      "word_count": 1693,
+      "title": "A Chat with the Men"
+    },
+    "data/source/book6/chapter10-two-drumsticks.txt": {
+      "sha256": "badfe14963a61acef3725c22dbb91b8ba6fb90a539699e242b8de7ecd4da11f7",
+      "bytes": 11443,
+      "line_count": 193,
+      "newline_count": 193,
+      "word_count": 1892,
+      "title": "Two Drumsticks"
+    },
+    "data/source/book6/chapter11-the-demons-attendant.txt": {
+      "sha256": "43ec4d5e776766c6e152611c7a276379dcd7fed3b10075106ee9e2b37da5a42c",
+      "bytes": 26377,
+      "line_count": 437,
+      "newline_count": 437,
+      "word_count": 4499,
+      "title": "The Demon’s Attendant"
+    },
+    "data/source/book6/chapter12-brother-disciples.txt": {
+      "sha256": "4b19486568131ee1977e88a25e7ed66d7c525d20819bf134c079e2bbc60ade91",
+      "bytes": 35911,
+      "line_count": 582,
+      "newline_count": 582,
+      "word_count": 6096,
+      "title": "Brother Disciples"
+    },
+    "data/source/book6/chapter13-the-pomegranate.txt": {
+      "sha256": "f0d9b75d6d12aed7ac0fcc4b39058cb03354102c4149a39806ef6df14805ea96",
+      "bytes": 6229,
+      "line_count": 100,
+      "newline_count": 100,
+      "word_count": 1092,
+      "title": "The Pomegranate"
+    },
+    "data/source/book6/chapter14-land-of-dreams.txt": {
+      "sha256": "cb56ee30c87f91a6d82987de86f9135bc6ed9bae24eb4970f923cd3c6d560d7f",
+      "bytes": 26625,
+      "line_count": 435,
+      "newline_count": 435,
+      "word_count": 4506,
+      "title": "Land of Dreams"
+    },
+    "data/source/book6/chapter15-the-challenge.txt": {
+      "sha256": "ece0085f39c0972436e4117cdee326726aa6e6e3d234080025788dbabd7e6224",
+      "bytes": 18377,
+      "line_count": 305,
+      "newline_count": 305,
+      "word_count": 3158,
+      "title": "The Challenge"
+    },
+    "data/source/book6/chapter16-the-gateway-to-glory.txt": {
+      "sha256": "08d67c65dd75c1e91420f2a8532213ceecf26930ce31dabf1e6655d130b1e6f9",
+      "bytes": 17545,
+      "line_count": 283,
+      "newline_count": 283,
+      "word_count": 2995,
+      "title": "The Gateway to Glory"
+    },
+    "data/source/book6/chapter17-the-sound-of-heaven.txt": {
+      "sha256": "c2f48cffda9f13cad8893ceb09ee7fb52bbb199c8fa75c1aa920cc848a99dd00",
+      "bytes": 9670,
+      "line_count": 174,
+      "newline_count": 174,
+      "word_count": 1661,
+      "title": "The Sound of Heaven"
+    },
+    "data/source/book6/chapter2-buzzing-insects.txt": {
+      "sha256": "a3a8912847d9a80c326588727194771e0914955251fb4102845909650ef62a45",
+      "bytes": 16986,
+      "line_count": 263,
+      "newline_count": 263,
+      "word_count": 2932,
+      "title": "Buzzing Insects"
+    },
+    "data/source/book6/chapter3-the-eagle.txt": {
+      "sha256": "881a6fae227d14ae834b3ad1985c51965571b8d48a1e309b1290a0b788ce172b",
+      "bytes": 16292,
+      "line_count": 265,
+      "newline_count": 265,
+      "word_count": 2776,
+      "title": "The Eagle"
+    },
+    "data/source/book6/chapter4-green-persimmons.txt": {
+      "sha256": "2cfeafd81be811b9b83d36b208a31b47a34cc56bd436b07c872fc3cc752ef9a6",
+      "bytes": 15611,
+      "line_count": 251,
+      "newline_count": 251,
+      "word_count": 2629,
+      "title": "Green Persimmons"
+    },
+    "data/source/book6/chapter5-eyes.txt": {
+      "sha256": "f055c74901614e08e98cf2b68a009266c2cd1c243a3759049c265e9fb2714a8f",
+      "bytes": 16096,
+      "line_count": 266,
+      "newline_count": 266,
+      "word_count": 2739,
+      "title": "Eyes"
+    },
+    "data/source/book6/chapter6-four-sages-with-a-single-light.txt": {
+      "sha256": "5765ec5c7984493e32380e1826d1ba5613cd3c8e4bd260f73c59cc65f192b594",
+      "bytes": 20228,
+      "line_count": 311,
+      "newline_count": 311,
+      "word_count": 3452,
+      "title": "Four Sages with a Single Light"
+    },
+    "data/source/book6/chapter7-the-locust-tree.txt": {
+      "sha256": "a8ab29f9b49d1beff149ecb3d7d201a8c4d3b19355d5eedd1580e2f553ff9a71",
+      "bytes": 13543,
+      "line_count": 236,
+      "newline_count": 236,
+      "word_count": 2271,
+      "title": "The Locust Tree"
+    },
+    "data/source/book6/chapter8-tadaakis-madness.txt": {
+      "sha256": "32f051c0e8ef2a272979dd89a36db36f240a81eec4d1b6112b73ec816dc0a79c",
+      "bytes": 30826,
+      "line_count": 496,
+      "newline_count": 496,
+      "word_count": 5187,
+      "title": "Tadaaki’s Madness"
+    },
+    "data/source/book6/chapter9-the-poignancy-of-things.txt": {
+      "sha256": "7b84f2ddbcd093814cc0348ee5831a75dc5be22301aeed250e1c2b78a4d77a21",
+      "bytes": 11352,
+      "line_count": 198,
+      "newline_count": 198,
+      "word_count": 1889,
+      "title": "The Poignancy of Things"
+    },
+    "data/source/book7/chapter1-the-runaway-ox.txt": {
+      "sha256": "054826e5cb3be841f4629f1a03368b4291fe017e13730409ce672d622dfbcfc1",
+      "bytes": 22349,
+      "line_count": 377,
+      "newline_count": 377,
+      "word_count": 3741,
+      "title": "The Runaway Ox"
+    },
+    "data/source/book7/chapter10-the-tides-of-life.txt": {
+      "sha256": "5d912a9590228a239d99f6c414462c98c48ed8945e5dd06514e1353dafa98cd8",
+      "bytes": 14965,
+      "line_count": 242,
+      "newline_count": 242,
+      "word_count": 2540,
+      "title": "The Tides of Life"
+    },
+    "data/source/book7/chapter11-the-evening-boat.txt": {
+      "sha256": "7ba15047e3477e0cd6af2cd26c90b3a793b83d84b3dff96e33d6066864f8595f",
+      "bytes": 14520,
+      "line_count": 231,
+      "newline_count": 231,
+      "word_count": 2522,
+      "title": "The Evening Boat"
+    },
+    "data/source/book7/chapter12-a-falcon-and-a-woman.txt": {
+      "sha256": "983d235557ab4819174ae0241153173a6e5877c9ce34cbf45e7cf056a8fc66df",
+      "bytes": 14500,
+      "line_count": 220,
+      "newline_count": 220,
+      "word_count": 2517,
+      "title": "A Falcon and a Woman"
+    },
+    "data/source/book7/chapter13-before-the-thirteenth-day.txt": {
+      "sha256": "0aa0f281963b1b55331497fdc7f269f2b0cc111a44b02d02bec7b93f158f11e9",
+      "bytes": 14854,
+      "line_count": 246,
+      "newline_count": 246,
+      "word_count": 2515,
+      "title": "Before the Thirteenth Day"
+    },
+    "data/source/book7/chapter14-at-daybreak.txt": {
+      "sha256": "5cd723fee352e88a42b1f57e5a54a92f382806b7d9c103c73ff78d178509a1dc",
+      "bytes": 28913,
+      "line_count": 480,
+      "newline_count": 480,
+      "word_count": 4900,
+      "title": "At Daybreak"
+    },
+    "data/source/book7/chapter15-the-marriage.txt": {
+      "sha256": "5890dae22de2fc9eafd0a23ff162793f0fa7878fb94799f015f979bde206cc2e",
+      "bytes": 24041,
+      "line_count": 394,
+      "newline_count": 394,
+      "word_count": 4037,
+      "title": "The Marriage"
+    },
+    "data/source/book7/chapter16-the-soul-of-the-deep.txt": {
+      "sha256": "237abe47aa4d164f830453d9a92519edf11a90b8ec93dfa92fc12da0f5355cec",
+      "bytes": 22445,
+      "line_count": 361,
+      "newline_count": 361,
+      "word_count": 3805,
+      "title": "The Soul of the Deep"
+    },
+    "data/source/book7/chapter2-hemp-seed.txt": {
+      "sha256": "8a12641553d66ef963d7a7a686de5ee4e3ccc1b844a3108a304be9d5be302f9e",
+      "bytes": 29439,
+      "line_count": 482,
+      "newline_count": 482,
+      "word_count": 4993,
+      "title": "Hemp Seed"
+    },
+    "data/source/book7/chapter3-sweepers-and-salesmen.txt": {
+      "sha256": "afb9ca695e33b0e4a30b06446f85ae1add5d0690537d89ed5f985eb6116eb2a5",
+      "bytes": 24551,
+      "line_count": 401,
+      "newline_count": 401,
+      "word_count": 4125,
+      "title": "Sweepers and Salesmen"
+    },
+    "data/source/book7/chapter4-a-pear-blossom.txt": {
+      "sha256": "698d98bda67575ea3093368fa2e4a9c23414778565739a4069ee34dca28b0a11",
+      "bytes": 21788,
+      "line_count": 337,
+      "newline_count": 337,
+      "word_count": 3752,
+      "title": "A Pear Blossom"
+    },
+    "data/source/book7/chapter5-the-port.txt": {
+      "sha256": "dc3f28518b0db5edd44aecb85262cb7240980bf9467ea9d929173743d0d2d4d8",
+      "bytes": 26444,
+      "line_count": 436,
+      "newline_count": 436,
+      "word_count": 4541,
+      "title": "The Port"
+    },
+    "data/source/book7/chapter6-the-writing-teacher.txt": {
+      "sha256": "7f956e76f79210b85219112275f88e60dd79b948a5bf063adb8eb4fff3a1781f",
+      "bytes": 33926,
+      "line_count": 536,
+      "newline_count": 536,
+      "word_count": 5885,
+      "title": "The Writing Teacher"
+    },
+    "data/source/book7/chapter7-the-circle.txt": {
+      "sha256": "9caa0db014ed268e32b055875b62ee682596a2074b8d1ddd4dd980052cae9bd3",
+      "bytes": 10173,
+      "line_count": 166,
+      "newline_count": 166,
+      "word_count": 1767,
+      "title": "The Circle"
+    },
+    "data/source/book7/chapter8-shikama-blue.txt": {
+      "sha256": "53956efb8c64229c51809466f3dba0803177056e244ce352af509f5178527f84",
+      "bytes": 29380,
+      "line_count": 496,
+      "newline_count": 496,
+      "word_count": 5065,
+      "title": "Shikama Blue"
+    },
+    "data/source/book7/chapter9-the-mercy-of-kannon.txt": {
+      "sha256": "7dc8353427a974be03f726dc86501790c933746a81c1bf88bb82e87843649a08",
+      "bytes": 16267,
+      "line_count": 259,
+      "newline_count": 259,
+      "word_count": 2851,
+      "title": "The Mercy of Kannon"
+    },
+    "data/source/musashi-index.txt": {
+      "sha256": "6d75ddfca5944c2665d8e42fa8f4202f4025d07dd23253aff463f1fef0be1427",
+      "bytes": 9882,
+      "line_count": 255,
+      "newline_count": 255,
+      "word_count": 790,
+      "title": "Musashi — Complete Source Index"
+    }
+  }
+}

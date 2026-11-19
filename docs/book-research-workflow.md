@@ -15,7 +15,7 @@ Questo documento è il workflow operativo di riferimento per estendere MusashiMa
 
 ## 1. Preparazione della fonte
 
-1. Usare il corpus presente in `data/source/` come fonte narrativa canonica.
+1. Usare il corpus presente in `data/source/` come fonte narrativa canonica. Il corpus è privato e solo locale (ignorato da git); dopo ogni modifica rigenerare `data/source-manifest.json` con `node tools/generate-source-manifest.mjs`.
 2. Verificare che l'estrazione abbia testo sensato e non pagine vuote.
 3. Individuare l'indice del romanzo e i confini dei libri.
 4. Verificare che il libro da analizzare sia separato in file per capitolo:

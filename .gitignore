@@ -3,3 +3,11 @@ node_modules/
 __pycache__/
 *.pyc
 test-output/
+
+# The novel's full text is a private, local-only development corpus.
+# Its fingerprint is published in data/source-manifest.json.
+data/source/
+*.pdf
+/Musashi.txt
+/chapter*.txt
+/musashi-index.txt
