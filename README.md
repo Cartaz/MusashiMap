@@ -107,7 +107,7 @@ The canonical research index is [research/README.md](research/README.md). The re
 
 The local chapter files under `data/source/book1/` through `data/source/book7/` are the authority for plot, chronology, presence and movement. Institutional, municipal and academic web sources are used only to verify modern geography, topography and historical context. A modern match never justifies a precise coordinate for a private residence, fictional place or indeterminate route.
 
-Two generated, repository-wide reports make the current audit reproducible:
+Three generated, repository-wide reports make the current audit reproducible:
 
 ```bash
 node tools/generate-character-chapter-audit.mjs

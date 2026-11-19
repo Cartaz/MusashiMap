@@ -6,9 +6,23 @@ export const eventCharacterIds = event => [...new Set([...(event.characters ?? [
 export const eventPlaceIds = event => [...new Set([event.location, event.origin, event.destination, ...(event.via ?? [])].filter(id => id && id !== "unknown"))];
 export const hasCoordinates = place => Array.isArray(place?.coordinates) && place.coordinates.length === 2 && place.coordinates.every(Number.isFinite);
 
+// The projection depends only on the immutable loaded data and the section;
+// the diary and the explorer both ask for it on every reader-state change.
+const archiveCache = new WeakMap();
+
+export function buildArchive(data, section) {
+  let bySection = archiveCache.get(data);
+  if (!bySection) {
+    bySection = new Map();
+    archiveCache.set(data, bySection);
+  }
+  if (!bySection.has(section)) bySection.set(section, projectArchive(data, section));
+  return bySection.get(section);
+}
+
 // Only this projection is searched or rendered. Canonical aliases, final roles,
 // future appearances, and later wiki values never enter the public view model.
-export function buildArchive(data, section) {
+function projectArchive(data, section) {
   const events = data.events.events.filter(event => Number.isInteger(event.section) && event.section <= section);
   const wiki = data.characterWiki?.characters ?? {};
   const identities = data.identities?.identities ?? [];

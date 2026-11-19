@@ -206,7 +206,7 @@ const knownDynamicClasses = new Set([
   // Explorer DOM factories receive these classes as function arguments.
   "archive-result", "detail-relation", "detail-summary", "explorer-back",
   "explorer-chapter-link", "explorer-empty", "explorer-text-button", "graph-center",
-  "graph-node", "relation-card", "timeline-book", "timeline-chapter", "timeline-event", "explorer-source-link",
+  "graph-node", "relation-card", "timeline-book", "timeline-chapter", "timeline-event",
   // Leaflet owns these classes; popup class names are passed through its API.
   "leaflet-bottom", "leaflet-container", "leaflet-control-attribution",
   "leaflet-control-zoom", "leaflet-marker-icon", "leaflet-popup-content",

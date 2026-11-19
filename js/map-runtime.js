@@ -1,4 +1,4 @@
-import { loadMapData } from "./data.js";
+import { loadData } from "./data.js";
 import { getMovementRouteCoordinates, getMovementRouteMode } from "./movement-contract.js";
 import { getPlacePresentation, isApproximateLocation } from "./place-presentation.js";
 import { popups } from "./popups.js";
@@ -8,7 +8,9 @@ import { installMarkerCollision } from "./marker-collision.js";
 
 (() => {
   let map, markers, routes, characterMarkers;
-  let locations = [], events = [], characterStates = [], characters = [], identities = [];
+  let locations = [], events = [], characterStates = [], characters = [], identities = [], characterWiki = {};
+  let groupNames = new Map();
+  let lastFramedSection = null;
   let unmappedPopupOpen = false;
 
   const hasCoords = location => Array.isArray(location?.coordinates) && location.coordinates.length === 2;
@@ -98,7 +100,7 @@ import { installMarkerCollision } from "./marker-collision.js";
       const meta = document.createElement("span");
       meta.className = "map-unmapped-meta";
       if (state.location_status === "departed_with_group" && state.group) {
-        meta.textContent = `Ha lasciato ${location ? locationLabel(location) : "la posizione precedente"} con il gruppo ${state.group.replaceAll("_", " ")}. La nuova posizione non è ancora determinata.`;
+        meta.textContent = `Ha lasciato ${location ? locationLabel(location) : "la posizione precedente"} con il gruppo ${groupNames.get(state.group) ?? state.group.replaceAll("_", " ")}. La nuova posizione non è ancora determinata.`;
       } else {
         meta.textContent = `${location ? `Ultima area nota: ${locationLabel(location)}. ` : ""}La posizione attuale non è ancora determinata.`;
       }
@@ -116,7 +118,7 @@ import { installMarkerCollision } from "./marker-collision.js";
     characterMarkers.clearLayers();
 
     const byId = new Map(locations.map(location => [location.id, location]));
-    const visibleCharacterIds = new Set(getVisibleCharacters(characters, section, { states: characterStates, events }).map(character => character.id));
+    const visibleCharacterIds = new Set(getVisibleCharacters(characters, section, { states: characterStates, events, characterWiki }).map(character => character.id));
     const spoilerSafeSelection = selectedCharacterIds.filter(id => visibleCharacterIds.has(id));
     const { selectedStates, sectionEvents } = getReaderSnapshot({ states: characterStates, events }, section, spoilerSafeSelection);
     const visibleCharacters = [];
@@ -208,7 +210,12 @@ import { installMarkerCollision } from "./marker-collision.js";
           ...visibleCharacters.filter(item => item.mode === "current").map(item => item.location.coordinates),
           ...visiblePlaces.map(location => location.coordinates)
         ];
-    if (plotted.length) map.fitBounds(L.latLngBounds(plotted).pad(.18), { maxZoom: 10, animate: false });
+    // Reframe only when the reading position changes: toggling a character
+    // must not throw away the pan/zoom the reader chose for this section.
+    if (plotted.length && section !== lastFramedSection) {
+      map.fitBounds(L.latLngBounds(plotted).pad(.18), { maxZoom: 10, animate: false });
+      lastFramedSection = section;
+    }
   }
 
   function romanizedLabelExpression() {
@@ -350,12 +357,14 @@ import { installMarkerCollision } from "./marker-collision.js";
       markers = L.layerGroup().addTo(map);
       routes = L.layerGroup().addTo(map);
       characterMarkers = L.layerGroup().addTo(map);
-      const mapData = await loadMapData();
+      const mapData = await loadData();
       locations = mapData.locations.locations;
       events = mapData.events.events;
       characterStates = mapData.states.character_states;
       characters = mapData.characters.characters;
       identities = mapData.identities.identities;
+      characterWiki = mapData.characterWiki?.characters ?? {};
+      groupNames = new Map((mapData.groups?.groups ?? []).map(group => [group.id, group.name]));
 
       const basemapReady = initializeBasemap();
       const state = getCanonicalReaderState();
@@ -378,7 +387,7 @@ import { installMarkerCollision } from "./marker-collision.js";
 
     if (sectionChanged) unmappedPopupOpen = false;
     if (selectionChanged) {
-      const visibleCharacterIds = new Set(getVisibleCharacters(characters, state.section, { states: characterStates, events }).map(character => character.id));
+      const visibleCharacterIds = new Set(getVisibleCharacters(characters, state.section, { states: characterStates, events, characterWiki }).map(character => character.id));
       const spoilerSafeSelection = [...nextSelected].filter(id => visibleCharacterIds.has(id));
       const { selectedStates } = getReaderSnapshot({ states: characterStates, events }, state.section, spoilerSafeSelection);
       unmappedPopupOpen = spoilerSafeSelection.some(id => {
