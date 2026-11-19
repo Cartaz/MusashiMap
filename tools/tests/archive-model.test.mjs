@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
 import { buildArchive, searchArchive, getRelationNeighbors, hasCoordinates } from "../../js/archive-model.js";
-import { describeRelationship, relationshipTypes } from "../../js/relationship-labels.js";
+import { describeRelationship, relationshipCategory } from "../../js/relationship-labels.js";
 
 const read = name => JSON.parse(fs.readFileSync(new URL(`../../data/${name}.json`, import.meta.url)));
 const data = { characters: read("characters"), locations: read("locations"), events: read("events"),
@@ -95,12 +95,24 @@ test("neighbor grouping deduplicates reciprocal facts but preserves distinct rel
   assert.ok(getRelationNeighbors(archive, "musashi", "family").every(item => item.relations.every(relation => relation.type === "family")));
 });
 
-test("every recorded relationship has a readable Italian description", () => {
-  for (const relationship of data.relationships.relationships) {
-    assert.ok(relationshipTypes[relationship.type]);
-    assert.notEqual(describeRelationship(relationship), relationshipTypes[relationship.type], relationship.subtype);
-    assert.doesNotMatch(describeRelationship(relationship), /_/);
+test("every recorded relationship has its own description in both languages", () => {
+  const document = data.relationships;
+  for (const relationship of document.relationships) {
+    for (const language of ["it", "en"]) {
+      const category = relationshipCategory(document, relationship.type, language);
+      const description = describeRelationship(document, relationship, language);
+      assert.equal(category, document.relationship_types[relationship.type][language]);
+      assert.equal(description, document.subtype_labels[relationship.subtype][language], relationship.subtype);
+      assert.notEqual(description, category, relationship.subtype);
+    }
   }
+});
+
+test("relationship labels fall back without exposing raw ids", () => {
+  const document = { relationship_types: { family: { it: "Famiglia", en: "Family" } }, subtype_labels: {} };
+  assert.equal(describeRelationship(document, { type: "family", subtype: "new_subtype" }, "en"), "Family");
+  assert.equal(describeRelationship(document, { type: "unknown", subtype: "x" }, "it"), "Legame documentato");
+  assert.equal(relationshipCategory(document, "unknown", "en"), "Relationship");
 });
 
 test("archive projection is memoized per loaded data and section", () => {

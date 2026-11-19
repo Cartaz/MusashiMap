@@ -15,7 +15,7 @@ MusashiMap reconstructs the novel chapter by chapter. The reader selects the las
 - Reveals aliases and identities only when the novel does.
 - Keeps uncertain, fictional or insufficiently documented places unmapped instead of inventing coordinates.
 - Degrades gracefully if the vector basemap is unavailable.
-- Runs as a static site with no backend and is deployable on GitHub Pages.
+- Runs as a static site with no backend and is deployable on GitHub Pages. Leaflet 1.9.4, MapLibre GL 4.7.1 and the MapLibre–Leaflet adapter 0.1.3 are vendored unmodified, with their licenses, in `assets/vendor/`; only the basemap style and tiles come from third parties.
 - Provides a full-space archive of introduced characters, places and events, with safe name search and a chapter-grouped chronology.
 - Shows documented relationships as a readable list or a focused graph, with up to six neighbors per page.
 - Separates chapter events from context in the diary. All chapter events are visible by default; filtering by selected protagonists is explicit.
@@ -35,7 +35,7 @@ All seven books are published and validated.
 | Chapter-level character states | 420 |
 | Relationships | 83 |
 
-This table describes repository dataset coverage, not what is simultaneously visible. Pages currently publishes 150 evidenced characters, 253 locations and 758 events. Relationship records are published only when their introduction and both endpoints are available; the interface filters them again to the reader's chapter and combines duplicate reciprocal facts. Unknown coordinates remain accessible as archive entries. The interface does not publish raw chapter text; source links open the already-public repository transcription for an eligible chapter.
+This table describes repository dataset coverage, not what is simultaneously visible. Pages currently publishes 150 evidenced characters, 253 locations and 758 events. Relationship records are published only when their introduction and both endpoints are available; the interface filters them again to the reader's chapter and combines duplicate reciprocal facts. Unknown coordinates remain accessible as archive entries. The interface does not publish or link to chapter text; records show only their dataset reference.
 
 The [interface guide](docs/interface-explorer.md) describes archive, timeline and relationship navigation, mobile layouts and spoiler boundaries.
 
@@ -77,7 +77,7 @@ node tools/validate-pages-artifact.mjs
 
 CI also starts the built application in Chromium and checks all 112 chapters,
 progressive names, character selection across rewinds, input recovery, panel
-resizing, mobile portrait/landscape and simulated data/CDN/basemap failures.
+resizing, mobile portrait/landscape and simulated data/library/basemap failures.
 To run the same browser gate locally after building `_site/`:
 
 ```bash
