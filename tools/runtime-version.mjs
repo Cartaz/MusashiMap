@@ -13,7 +13,9 @@ const RUNTIME_DATA = [
   "data/reader-progress.json",
   "data/relationships.json",
   "data/context/character-wiki.json",
-  "data/context/micro-wiki.json"
+  "data/context/micro-wiki.json",
+  "data/i18n/en.json",
+  "data/i18n/it.json"
 ];
 
 const walkFiles = (root, relative, include = () => true) => {

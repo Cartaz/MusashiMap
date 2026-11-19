@@ -1,4 +1,5 @@
 import { buildArchive, getCharacterRelations, getRelationNeighbors, normalizeSearch, searchArchive } from "./archive-model.js";
+import { t } from "./i18n.js";
 import { getCanonicalReaderState, resolveCharacterPosition, getPositionStatusLabel, subscribeCanonicalReaderState } from "./reader-progress.js";
 
 const make = (tag, text = "", className = "") => {
@@ -35,14 +36,14 @@ export function installExplorer(data, { applySection }) {
 
   const chapterLabel = section => {
     const chapter = model.chapters.find(item => item.number === section);
-    return chapter ? `${chapter.book} · ${chapter.title} · sezione ${section}` : `Sezione ${section}`;
+    return chapter ? t("explorer.chapterLabel", { book: chapter.book, title: chapter.title, section }) : t("explorer.sectionLabel", { section });
   };
-  const currentLabel = () => `Informazioni fino a ${chapterLabel(model.section)}`;
+  const currentLabel = () => t("explorer.boundary", { chapter: chapterLabel(model.section) });
   const chapterButton = section => button(chapterLabel(section), () => {
     // A link may only move within the already visible chapter interval.
     if (section <= model.section) applySection(section);
   }, "explorer-chapter-link");
-  const mapButton = id => button("Mostra sulla mappa", () => {
+  const mapButton = id => button(t("explorer.showOnMap"), () => {
     close();
     window.dispatchEvent(new CustomEvent("musashimap:focus-location", { detail: { id } }));
   });
@@ -60,7 +61,7 @@ export function installExplorer(data, { applySection }) {
   }
 
   function renderView() {
-    document.querySelector("#explorer-title").textContent = view === "archive" ? "Archivio del viaggio" : "Relazioni";
+    document.querySelector("#explorer-title").textContent = t(view === "archive" ? "explorer.archiveTitle" : "nav.relations");
     document.querySelector("#explorer-boundary").textContent = currentLabel();
     archivePanel.hidden = view !== "archive";
     relationPanel.hidden = view !== "relations";
@@ -69,8 +70,8 @@ export function installExplorer(data, { applySection }) {
 
   function relatedEvents(items) {
     const container = make("div", "", "detail-events");
-    container.append(make("h3", "Eventi documentati"));
-    if (!items.length) container.append(empty("Nessun evento registrato fino a questo capitolo."));
+    container.append(make("h3", t("explorer.documentedEvents")));
+    if (!items.length) container.append(empty(t("explorer.noEventsYet")));
     // Group long histories by chapter, opening text only on demand.
     const grouped = new Map();
     for (const event of items) {
@@ -79,7 +80,7 @@ export function installExplorer(data, { applySection }) {
     }
     for (const [section, events] of grouped) {
       const group = make("details", "", "timeline-chapter");
-      group.append(make("summary", `${chapterLabel(section)} · ${events.length} eventi`));
+      group.append(make("summary", t("explorer.chapterEvents", { chapter: chapterLabel(section), count: events.length })));
       const list = make("ul");
       events.forEach(event => list.append(make("li", event.description)));
       group.append(list, chapterButton(section));
@@ -92,52 +93,52 @@ export function installExplorer(data, { applySection }) {
     detail.replaceChildren();
     archivePanel.classList.toggle("has-detail", Boolean(selected));
     if (!selected) {
-      detail.append(empty("Apri una scheda per leggere i dettagli e i capitoli collegati."));
+      detail.append(empty(t("explorer.openDetail")));
       return;
     }
     const collection = category === "characters" ? model.characters : category === "places" ? model.places : model.events;
     const item = collection.find(item => item.id === selected);
     if (!item) { selected = null; renderDetail(); return; }
-    const back = button("← Torna ai risultati", () => { selected = null; renderDetail(); results.querySelector("button")?.focus(); }, "explorer-back");
-    const heading = make("h2", item.name ?? "Evento narrativo");
+    const back = button(t("explorer.backToResults"), () => { selected = null; renderDetail(); results.querySelector("button")?.focus(); }, "explorer-back");
+    const heading = make("h2", item.name ?? t("archive.event"));
     heading.tabIndex = -1;
     detail.append(back, heading);
     if (category === "characters") {
       detail.append(make("p", item.summary, "detail-summary"));
-      if (item.names.length > 1) detail.append(make("p", `Nomi già incontrati: ${item.names.join(" · ")}`));
-      detail.append(make("h3", "Prima introduzione"), chapterButton(item.first));
+      if (item.names.length > 1) detail.append(make("p", t("explorer.namesMet", { names: item.names.join(" · ") })));
+      detail.append(make("h3", t("explorer.firstIntroduction")), chapterButton(item.first));
       if (item.state) {
         const placeMap = new Map(model.places.map(place => [place.id, place]));
         const position = resolveCharacterPosition(item.state, placeMap);
-        detail.append(make("h3", "Ultima informazione sulla posizione"));
-        detail.append(make("p", `${getPositionStatusLabel(position.mode)} · ${position.referencedLocation?.name ?? "Località non determinata"}`));
+        detail.append(make("h3", t("explorer.lastPosition")));
+        detail.append(make("p", `${getPositionStatusLabel(position.mode)} · ${position.referencedLocation?.name ?? t("place.unknown")}`));
         if (item.state.activity) detail.append(make("p", item.state.activity));
         if (position.location) detail.append(mapButton(position.location.id));
       }
       const relations = getCharacterRelations(model, item.id);
-      detail.append(make("h3", "Relazioni documentate"));
-      if (!relations.length) detail.append(empty("Nessun legame registrato fino a questo capitolo."));
+      detail.append(make("h3", t("explorer.documentedRelations")));
+      if (!relations.length) detail.append(empty(t("explorer.noRelationsYet")));
       for (const neighbor of getRelationNeighbors(model, item.id)) {
         const row = make("div", "", "detail-relation");
         row.append(button(neighbor.character.name, () => { selected = neighbor.character.id; renderDetail(); detail.querySelector("h2").focus(); }, "explorer-text-button"));
-        neighbor.relations.forEach(relation => row.append(make("p", `${relation.description} · dalla sezione ${relation.first}`)));
+        neighbor.relations.forEach(relation => row.append(make("p", t("explorer.relationSince", { description: relation.description, section: relation.first }))));
         detail.append(row);
       }
-      if (relations.length) detail.append(button("Esplora questi legami", () => {
+      if (relations.length) detail.append(button(t("explorer.exploreRelations"), () => {
         relationCharacter = item.id; graphPage = 0; view = "relations"; refresh(); characterSelect.focus();
       }));
       detail.append(relatedEvents(model.events.filter(event => event.characters.includes(item.id))));
     } else if (category === "places") {
       detail.append(make("p", item.coordinates
-        ? item.precision === "exact" ? "Localizzazione moderna precisa." : "Localizzazione moderna indicativa; non identifica necessariamente il punto esatto della scena."
-        : "Luogo documentato nel racconto. Coordinate attendibili non disponibili."));
-      detail.append(make("h3", "Introduzione nel racconto"), chapterButton(item.first));
+        ? t(item.precision === "exact" ? "explorer.placePrecise" : "explorer.placeApproximate")
+        : t("explorer.placeUnmapped")));
+      detail.append(make("h3", t("explorer.placeIntroduction")), chapterButton(item.first));
       if (item.coordinates) detail.append(mapButton(item.id));
       detail.append(relatedEvents(model.events.filter(event => event.places.includes(item.id))));
     } else {
       detail.append(make("p", item.description, "detail-summary"), chapterButton(item.section));
       if (item.characters.length) {
-        detail.append(make("h3", "Personaggi presenti o citati"));
+        detail.append(make("h3", t("explorer.eventCharacters")));
         item.characters.forEach(id => {
           const character = model.characters.find(character => character.id === id);
           detail.append(button(character.name, () => { category = "characters"; selected = id; query.value = ""; page = 0; renderArchive(); detail.querySelector("h2").focus(); }, "explorer-text-button"));
@@ -148,10 +149,10 @@ export function installExplorer(data, { applySection }) {
         detail.append(make("p", place.name));
         if (place.coordinates) detail.append(mapButton(id));
       });
-      detail.append(make("h3", "Riferimento"), make("p", item.source
-        ? `Riferimento registrato nel dataset: ${chapterLabel(item.section)}.`
-        : "Evento registrato nel dataset; riferimento puntuale non disponibile."));
-      if (item.source) detail.append(make("p", `Riferimento del record: ${item.source}`));
+      detail.append(make("h3", t("explorer.reference")), make("p", item.source
+        ? t("explorer.referenceChapter", { chapter: chapterLabel(item.section) })
+        : t("explorer.referenceMissing")));
+      if (item.source) detail.append(make("p", t("explorer.recordReference", { source: item.source })));
     }
   }
 
@@ -170,7 +171,7 @@ export function installExplorer(data, { applySection }) {
       }
       const group = make("details", "", "timeline-chapter");
       const events = items.filter(event => event.section === chapter.number);
-      group.append(make("summary", `${chapter.title} · sezione ${chapter.number} · ${events.length} eventi`));
+      group.append(make("summary", t("explorer.timelineChapter", { title: chapter.title, section: chapter.number, count: events.length })));
       const list = make("ol");
       events.forEach(event => list.append(make("li", "", "timeline-event")));
       [...list.children].forEach((node, index) => node.append(button(events[index].description, () => {
@@ -195,16 +196,17 @@ export function installExplorer(data, { applySection }) {
         const row = button("", () => { selected = item.id; renderDetail(); detail.querySelector("h2").focus(); }, "archive-result");
         row.dataset.recordId = item.id;
         row.append(make("strong", item.name ?? item.description));
-        const subtitle = category === "characters" ? `${item.historicalIdentity ? "Nome già incontrato" : item.main ? "Protagonista" : "Personaggio"} · dalla sezione ${item.first}`
-          : category === "places" ? item.coordinates ? "Localizzabile sulla mappa" : "Coordinate non determinate"
+        const subtitle = category === "characters"
+          ? t("explorer.characterSince", { kind: t(item.historicalIdentity ? "explorer.knownName" : item.main ? "explorer.protagonist" : "explorer.character"), section: item.first })
+          : category === "places" ? t(item.coordinates ? "explorer.mappable" : "explorer.notMappable")
             : chapterLabel(item.section);
         row.append(make("span", subtitle));
         results.append(row);
       }
     }
-    if (!items.length) results.append(empty("Nessun risultato nelle informazioni già disponibili. Prova un'altra ricerca."));
-    document.querySelector("#archive-count").textContent = `${items.length} risultati · fino alla sezione ${model.section}`;
-    document.querySelector("#archive-page-label").textContent = `Pagina ${page + 1} di ${pages}`;
+    if (!items.length) results.append(empty(t("explorer.noResults")));
+    document.querySelector("#archive-count").textContent = t("explorer.resultCount", { count: items.length, section: model.section });
+    document.querySelector("#archive-page-label").textContent = t("explorer.page", { page: page + 1, pages });
     document.querySelector("#archive-prev").disabled = page === 0;
     document.querySelector("#archive-next").disabled = page + 1 >= pages;
     renderDetail();
@@ -214,7 +216,7 @@ export function installExplorer(data, { applySection }) {
     graph.replaceChildren();
     const pages = Math.max(1, Math.ceil(neighbors.length / 6));
     graphPage = Math.min(graphPage, pages - 1);
-    graphPageLabel.textContent = `Collegamenti ${graphPage + 1} di ${pages}`;
+    graphPageLabel.textContent = t("explorer.graphPage", { page: graphPage + 1, pages });
     document.querySelector("#graph-prev").disabled = graphPage === 0;
     document.querySelector("#graph-next").disabled = graphPage + 1 >= pages;
     if (!relationCharacter) return;
@@ -239,7 +241,7 @@ export function installExplorer(data, { applySection }) {
       node.append(make("strong", neighbor.character.name), make("span", [...new Set(neighbor.relations.map(item => item.category))].join(" · ")));
       graph.append(node);
     });
-    if (!neighbors.length) graph.append(empty("Nessun collegamento documentato con questo filtro."));
+    if (!neighbors.length) graph.append(empty(t("explorer.noGraphLinks")));
   }
 
   function renderRelations() {
@@ -253,13 +255,13 @@ export function installExplorer(data, { applySection }) {
     if (relationCharacter) characterSelect.value = relationCharacter;
     const availableTypes = [...new Map(model.relationships.map(item => [item.type, item.category]))];
     if (relationFilter !== "all" && !availableTypes.some(([type]) => type === relationFilter)) relationFilter = "all";
-    relationType.replaceChildren(...[["all", "Tutti i legami"], ...availableTypes].map(([type, label]) => {
+    relationType.replaceChildren(...[["all", t("explorer.allRelations")], ...availableTypes].map(([type, label]) => {
       const option = make("option", label); option.value = type; return option;
     }));
     relationType.value = relationFilter;
     const neighbors = getRelationNeighbors(model, relationCharacter, relationFilter);
     relationResults.replaceChildren();
-    if (!neighbors.length) relationResults.append(empty("Nessun legame documentato con questa selezione."));
+    if (!neighbors.length) relationResults.append(empty(t("explorer.noRelations")));
     for (const neighbor of neighbors) {
       const row = make("article", "", "relation-card");
       row.append(button(neighbor.character.name, () => { relationCharacter = neighbor.character.id; graphPage = 0; renderRelations(); characterSelect.focus(); }, "explorer-text-button"));
@@ -271,7 +273,7 @@ export function installExplorer(data, { applySection }) {
       }
       relationResults.append(row);
     }
-    document.querySelector("#relations-note").textContent = "Legami documentati fino al capitolo scelto. L'introduzione di un legame non ne certifica la durata successiva. Scegli un collegamento per esplorare un altro personaggio.";
+    document.querySelector("#relations-note").textContent = t("explorer.relationsNote");
     document.querySelectorAll("[data-relation-mode]").forEach(node => node.setAttribute("aria-pressed", String(node.dataset.relationMode === mode)));
     document.querySelector("#graph-panel").hidden = mode !== "graph";
     relationResults.hidden = mode !== "list";
@@ -304,5 +306,10 @@ export function installExplorer(data, { applySection }) {
   document.querySelector("#graph-prev").addEventListener("click", () => { graphPage--; renderRelations(); });
   document.querySelector("#graph-next").addEventListener("click", () => { graphPage++; renderRelations(); });
   subscribeCanonicalReaderState(() => { if (dialog.open) refresh(); });
-  return { open };
+  // The app hands over the localized data view after a language switch.
+  const setData = next => {
+    data = next;
+    if (dialog.open) refresh();
+  };
+  return { open, setData };
 }

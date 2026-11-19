@@ -94,14 +94,24 @@ reproducibility while running the actual mapping libraries and application modul
 
 ```text
 css/        responsive presentation and map UI
-data/       production data, publication state and local source corpus
+data/       production data, translations (data/i18n), publication state and local source corpus
 docs/       research workflow, provenance format and movement semantics
-js/         application runtime and safety tests
+js/         application runtime, interface dictionaries and safety tests
 research/   canonical book manifests and consolidated audits
 tools/      validators, audit generators and Pages builder
 ```
 
 The canonical research index is [research/README.md](research/README.md). The reusable extraction procedure is documented in [docs/book-research-workflow.md](docs/book-research-workflow.md), the retained Books III–VII provenance format in [docs/book-staging-contract.md](docs/book-staging-contract.md), and route semantics in [docs/movement-semantics.md](docs/movement-semantics.md).
+
+## Languages
+
+The interface and every reader-facing text are available in Italian and English. The page starts in the language chosen earlier on the same device, otherwise in the browser's preferred language (Italian when neither applies), and the header button switches language in place without changing the reading position, selection or map view.
+
+- Interface strings live in `js/i18n.js`; both dictionaries must define the same keys.
+- Canonical data keeps each narrative field in the language it was researched in (English for events, states, places, chapters, groups, identities and the micro-wiki; Italian for the character wiki). The other language lives in `data/i18n/it.json` and `data/i18n/en.json`, keyed by record.
+- `js/i18n-overlay.js` lists the translatable fields. `tools/validate-data.mjs` fails when a translation is missing or refers to a record that does not exist, and the Pages build ships translations only for published records.
+
+When a record is added or reworded, add or update its translation in the matching overlay file.
 
 ## Evidence policy
 

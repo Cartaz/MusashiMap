@@ -1,3 +1,4 @@
+import { t } from "./i18n.js";
 import { getPositionReference } from "./position-contract.js";
 
 const canonicalState = {
@@ -100,10 +101,10 @@ export function getDisplayCharacterName(character, section, identities = []) {
       && (entry.valid_until_section === null || asInteger(entry.valid_until_section) >= currentSection))
     .sort((a, b) => b.valid_from_section - a.valid_from_section)[0];
   if (identity?.status === "impersonated_name" && identity.reader_knows_canonical_identity && identity.display_name !== character?.name) {
-    return `${character?.name ?? "Personaggio sconosciuto"} (come ${identity.display_name})`;
+    return t("character.as", { name: character?.name ?? t("character.unknown"), alias: identity.display_name });
   }
   if (identity?.display_name) return identity.display_name;
-  return character?.name ?? "Personaggio sconosciuto";
+  return character?.name ?? t("character.unknown");
 }
 
 export function getProgressiveValue(values, section) {
@@ -119,7 +120,7 @@ export function getProgressiveValue(values, section) {
 export function getProgressiveDisplayName(entry, section) {
   return getProgressiveValue(entry?.display_name_by_section, section)
     ?? entry?.display_name
-    ?? "Personaggio sconosciuto";
+    ?? t("character.unknown");
 }
 
 // Earliest state/event section per character, built once per evidence arrays.
@@ -213,10 +214,7 @@ export function resolveCharacterPosition(state, locations) {
 }
 
 export function getPositionStatusLabel(mode) {
-  if (mode === "current") return "Presenza fisica";
-  if (mode === "reported") return "Posizione riferita";
-  if (mode === "last_known") return "Ultima posizione nota";
-  return "Posizione non determinata";
+  return t(["current", "reported", "last_known"].includes(mode) ? `position.${mode}` : "position.unmapped");
 }
 
 export function createReaderProgress(chapters, progress) {

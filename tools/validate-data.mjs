@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 import { validateMovementEvent } from "../js/movement-contract.js";
 import { validatePositionState } from "../js/position-contract.js";
+import { auditOverlay, LANGUAGES } from "../js/i18n-overlay.js";
 
 const REQUIRED_FILES = [
   "data/chapters.json",
@@ -16,11 +17,12 @@ const REQUIRED_FILES = [
   "data/relationships.json",
   "data/identities.json",
   "data/context/character-wiki.json",
-  "data/context/micro-wiki.json"
+  "data/context/micro-wiki.json",
+  "data/i18n/it.json",
+  "data/i18n/en.json"
 ];
 
 const CERTAINTIES = new Set(["explicit", "strong_inference", "weak_inference"]);
-const LANGUAGES = ["it", "en"];
 const CHAPTER_ID = /^b([1-7])c([1-9]\d*)$/;
 
 const isObject = value => value !== null && typeof value === "object" && !Array.isArray(value);
@@ -425,6 +427,22 @@ export function validateRepository(root = process.cwd()) {
     if (publishedSections.some(section => section.number === state.section) && location && location.introduced_section > state.section) {
       errors.push(`State ${state.character}@${state.section} uses ${location.id} before its introduction.`);
     }
+  }
+
+  // Every reader-facing field needs both languages; an overlay may not carry
+  // text for records or fields that do not exist in the canonical data.
+  const canonicalDocuments = Object.fromEntries(documents);
+  for (const language of LANGUAGES) {
+    const overlay = documents.get(`data/i18n/${language}.json`);
+    if (overlay?.language !== language) errors.push(`data/i18n/${language}.json must declare "language": "${language}".`);
+    const { missing, unknown } = auditOverlay(language, canonicalDocuments, overlay);
+    const report = (kind, list) => {
+      if (!list.length) return;
+      const shown = list.slice(0, 15).join(", ");
+      errors.push(`data/i18n/${language}.json ${kind} ${list.length} entr${list.length === 1 ? "y" : "ies"}: ${shown}${list.length > 15 ? ", …" : ""}`);
+    };
+    report("is missing", missing);
+    report("has unknown", unknown);
   }
 
   const publishedBooks = [...new Set(publishedSections.map(section => section.book))];

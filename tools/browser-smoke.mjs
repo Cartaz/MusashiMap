@@ -33,8 +33,9 @@ const allowedRemoteHosts = new Set(["fonts.googleapis.com", "fonts.gstatic.com",
 const unexpectedRequests = new Set();
 const blankStyle = { version: 8, sources: {}, layers: [] };
 const png = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a2ioAAAAASUVORK5CYII=", "base64");
-const newPage = async (testBrowser = browser) => {
-  const page = await testBrowser.newPage({ viewport: { width: 1440, height: 900 }, ignoreHTTPSErrors: process.env.BROWSER_IGNORE_HTTPS_ERRORS === "1" });
+const newPage = async (testBrowser = browser, locale = "it-IT") => {
+  // Italian is the project's original language; English has its own checks below.
+  const page = await testBrowser.newPage({ locale, viewport: { width: 1440, height: 900 }, ignoreHTTPSErrors: process.env.BROWSER_IGNORE_HTTPS_ERRORS === "1" });
   page.on("pageerror", error => pageErrors.push(error.message));
   page.on("request", request => {
     const { protocol, hostname } = new URL(request.url());
@@ -165,6 +166,34 @@ try {
   await loaded(persisted);
   assert.equal(await persisted.locator("#chapter").inputValue(), "1");
   await persisted.close();
+
+  // English: chosen from the browser language, switchable in place without
+  // losing the reading position or the map view, and remembered on reload.
+  const english = await newPage(browser, "en-US");
+  await loaded(english);
+  assert.equal(await english.evaluate(() => document.documentElement.lang), "en");
+  assert.equal(await english.locator("#open-archive").textContent(), "Archive");
+  assert.equal(await english.locator("#book-label").textContent(), "Earth");
+  await english.locator("#section-select").selectOption("40");
+  assert.match(await english.locator("#status").textContent(), /^Section 40 · information visible/);
+  assert.match(await english.locator("#event-list li").first().textContent(), /[A-Za-z]/);
+  const englishEvent = await english.locator("#event-list li").first().textContent();
+  await english.evaluate(() => window.auditMap.setView([34.9, 135.7], 12, { animate: false }));
+  await english.locator("#language-toggle").click();
+  await english.waitForFunction(() => document.querySelector("#open-archive").textContent === "Archivio");
+  assert.equal(await english.evaluate(() => document.documentElement.lang), "it");
+  assert.equal(await english.locator("#chapter").inputValue(), "40");
+  await english.waitForFunction(previous => document.querySelector("#event-list li")?.textContent !== previous, englishEvent);
+  assert.match(await english.locator("#status").textContent(), /^Sezione 40 · informazioni visibili/);
+  assert.equal(await english.evaluate(() => window.auditMap.getZoom()), 12);
+  assert.equal(await english.locator(".legend-heading").getAttribute("aria-label"), "Apri legenda");
+  await english.locator("#open-archive").click();
+  assert.equal(await english.locator("#explorer-title").textContent(), "Archivio del viaggio");
+  await english.locator("#explorer-close").click();
+  await loaded(english);
+  assert.equal(await english.evaluate(() => document.documentElement.lang), "it");
+  assert.equal(await english.locator("#chapter").inputValue(), "40");
+  await english.close();
 
   const explorerPage = await newPage();
   await loaded(explorerPage);
