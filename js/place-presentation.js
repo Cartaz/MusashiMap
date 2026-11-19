@@ -1,12 +1,14 @@
+import { t } from "./i18n.js";
+
 const PRESENTATIONS = new Map([
-  ["city", Object.freeze({ id: "city", iconPath: "assets/icons/places/city.svg", markerColor: "#c9d1d9", legendLabel: "Città / insediamento" })],
-  ["village", Object.freeze({ id: "village", iconPath: "assets/icons/places/village.svg", markerColor: "#c9d1d9", legendLabel: "Villaggio" })],
-  ["area", Object.freeze({ id: "area", iconPath: "assets/icons/places/area.svg", markerColor: "#8fb3c9", legendLabel: "Area / regione" })],
-  ["river", Object.freeze({ id: "river", iconPath: "assets/icons/places/river.svg", markerColor: "#8fb3c9", legendLabel: "Acqua / fiume" })],
-  ["route", Object.freeze({ id: "route", iconPath: "assets/icons/places/route.svg", markerColor: "#b99ad6", legendLabel: "Percorso / attraversamento" })],
-  ["temple", Object.freeze({ id: "temple", iconPath: "assets/icons/places/temple.svg", markerColor: "#b8c7a4", legendLabel: "Tempio / santuario" })],
-  ["castle", Object.freeze({ id: "castle", iconPath: "assets/icons/places/castle.svg", markerColor: "#b8c7a4", legendLabel: "Castello / fortificazione" })],
-  ["literary_landmark", Object.freeze({ id: "literary_landmark", iconPath: "assets/icons/places/landmark.svg", markerColor: "#d9a0b7", legendLabel: "Luogo narrativo" })]
+  ["city", Object.freeze({ id: "city", iconPath: "assets/icons/places/city.svg", markerColor: "#c9d1d9" })],
+  ["village", Object.freeze({ id: "village", iconPath: "assets/icons/places/village.svg", markerColor: "#c9d1d9" })],
+  ["area", Object.freeze({ id: "area", iconPath: "assets/icons/places/area.svg", markerColor: "#8fb3c9" })],
+  ["river", Object.freeze({ id: "river", iconPath: "assets/icons/places/river.svg", markerColor: "#8fb3c9" })],
+  ["route", Object.freeze({ id: "route", iconPath: "assets/icons/places/route.svg", markerColor: "#b99ad6" })],
+  ["temple", Object.freeze({ id: "temple", iconPath: "assets/icons/places/temple.svg", markerColor: "#b8c7a4" })],
+  ["castle", Object.freeze({ id: "castle", iconPath: "assets/icons/places/castle.svg", markerColor: "#b8c7a4" })],
+  ["literary_landmark", Object.freeze({ id: "literary_landmark", iconPath: "assets/icons/places/landmark.svg", markerColor: "#d9a0b7" })]
 ]);
 
 const TYPE_PRESENTATIONS = new Map([
@@ -46,5 +48,7 @@ export function getPlaceLegendEntries(types) {
     const presentation = getPlacePresentation(type);
     if (presentation) used.add(presentation.id);
   }
-  return [...PRESENTATIONS.values()].filter(presentation => used.has(presentation.id));
+  return [...PRESENTATIONS.values()]
+    .filter(presentation => used.has(presentation.id))
+    .map(presentation => ({ ...presentation, legendLabel: t(`legend.${presentation.id}`) }));
 }

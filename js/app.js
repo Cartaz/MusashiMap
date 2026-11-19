@@ -1,5 +1,6 @@
 import { mergeNewlyVisibleSelection, updateCharacterSelection } from "./character-selection.js";
 import { loadData } from "./data.js";
+import { getLanguage, subscribeLanguage, t } from "./i18n.js";
 import { installExplorer } from "./explorer.js";
 import { buildArchive } from "./archive-model.js";
 import { getPlaceLegendEntries } from "./place-presentation.js";
@@ -38,12 +39,9 @@ const selectNone = document.querySelector("#select-none");
 
 let data;
 let reader;
+let explorer;
 const READER_STATE_KEY = "musashimap:reader-state";
-const certaintyLabels = {
-  explicit: "esplicita nel testo",
-  strong_inference: "deduzione forte",
-  weak_inference: "deduzione debole"
-};
+const CERTAINTIES = new Set(["explicit", "strong_inference", "weak_inference"]);
 
 // Reading position is a per-device convenience. Storage can be unavailable
 // (private windows, blocked site data), so every access is best effort.
@@ -131,7 +129,7 @@ function renderCharacterFilters(selectedCharacters, section) {
     input.type = "checkbox";
     input.checked = selectedCharacters.has(character.id);
     const displayName = getDisplayCharacterName(character, section, data.identities?.identities);
-    input.setAttribute("aria-label", `Segui ${displayName}`);
+    input.setAttribute("aria-label", t("tracks.follow", { name: displayName }));
     input.addEventListener("change", () => {
       const state = getCanonicalReaderState();
       setCanonicalReaderState({
@@ -150,8 +148,8 @@ function getStateLocationPresentation(state, locationById) {
   const resolved = resolveCharacterPosition(state, locationById);
   const location = resolved.referencedLocation;
   return {
-    label: location?.name ?? "Posizione non determinata",
-    meta: location ? getPositionStatusLabel(resolved.mode) : "Posizione non determinata"
+    label: location?.name ?? t("position.unmapped"),
+    meta: location ? getPositionStatusLabel(resolved.mode) : t("position.unmapped")
   };
 }
 
@@ -167,8 +165,8 @@ function createCharacterCard(state, character, section, locations) {
   const activity = document.createElement("p");
   activity.textContent = state.activity ?? "";
   const metadata = document.createElement("small");
-  const certainty = certaintyLabels[state.certainty] ?? "non indicata";
-  metadata.textContent = `Stato: ${presentation.meta} · certezza: ${certainty}`;
+  const certainty = t(CERTAINTIES.has(state.certainty) ? `certainty.${state.certainty}` : "certainty.unknown");
+  metadata.textContent = t("card.state", { position: presentation.meta, certainty });
   card.append(heading, locationParagraph, activity, metadata);
   return card;
 }
@@ -193,10 +191,10 @@ function createWikiCard(entry, { character = false, section = 1 } = {}) {
   body.hidden = true;
   const role = document.createElement("p");
   role.className = "wiki-trigger";
-  role.textContent = character ? entry.role : (entry.novel_trigger?.context ?? "Riferimento incontrato nel romanzo.");
+  role.textContent = character ? entry.role : (entry.novel_trigger?.context ?? t("wiki.trigger"));
   const summary = document.createElement("p");
   const progressiveText = character ? getProgressiveValue(entry.current_by_section, section) : null;
-  summary.textContent = progressiveText ?? (character ? entry.role : (entry.wiki?.summary ?? "Contesto storico non disponibile."));
+  summary.textContent = progressiveText ?? (character ? entry.role : (entry.wiki?.summary ?? t("wiki.unavailable")));
   body.append(role, summary);
   if (!character && entry.source?.url && entry.source?.status !== "needs_authoritative_source_record") {
     const source = document.createElement("a");
@@ -204,7 +202,7 @@ function createWikiCard(entry, { character = false, section = 1 } = {}) {
     source.href = entry.source.url;
     source.target = "_blank";
     source.rel = "noopener noreferrer";
-    source.textContent = `${entry.source.publisher ?? "Fonte"} · fonte storica`;
+    source.textContent = t("wiki.source", { publisher: entry.source.publisher });
     body.append(source);
   }
   button.addEventListener("click", () => {
@@ -221,26 +219,26 @@ function renderWiki(section) {
   const historicalEntries = getRelevantHistoricalWiki(data.microWiki.entities, section);
   const characters = buildArchive(data, section).characters
     .filter(character => data.characterWiki?.characters?.[character.sourceId]?.category === "secondary")
-    .map(character => ({ display_name: character.name, role: "Personaggio o nome incontrato nel racconto",
+    .map(character => ({ display_name: character.name, role: t("wiki.characterRole"),
       current_by_section: { [section]: character.summary } }));
   const nodes = [];
   if (characters.length) {
     const heading = document.createElement("h3");
     heading.className = "wiki-subheading character-wiki-heading";
-    heading.textContent = "Personaggi secondari";
+    heading.textContent = t("wiki.secondaryCharacters");
     nodes.push(heading, ...characters.map(entry => createWikiCard(entry, { character: true, section })));
   }
   if (historicalEntries.length || nodes.length) {
     const heading = document.createElement("h3");
     heading.className = "wiki-subheading";
-    heading.textContent = "Contesto storico";
+    heading.textContent = t("wiki.historicalContext");
     nodes.push(heading);
   }
   nodes.push(...historicalEntries.map(entry => createWikiCard(entry, { section })));
   if (!nodes.length) {
     const empty = document.createElement("p");
     empty.className = "wiki-empty";
-    empty.textContent = "Nessun personaggio secondario o riferimento storico rilevante nelle sezioni già lette.";
+    empty.textContent = t("wiki.empty");
     nodes.push(empty);
   }
   wikiList.replaceChildren(...nodes);
@@ -257,7 +255,7 @@ function render() {
   if (!sectionData) return;
   bookLabel.textContent = sectionData.book_title;
   title.textContent = sectionData.title;
-  status.textContent = `Sezione ${section} · informazioni visibili fino a questo punto della storia`;
+  status.textContent = t("diary.sectionStatus", { section });
   sectionSelect.value = String(section);
   chapterInput.value = String(section);
   chapterInput.setCustomValidity("");
@@ -278,7 +276,7 @@ function render() {
   }));
   if (!chapterEvents.length) {
     const empty = document.createElement("li");
-    empty.textContent = "Nessun evento con questo filtro. Puoi mostrare tutti gli eventi del capitolo.";
+    empty.textContent = t("diary.noEvents");
     eventList.append(empty);
   }
   renderCharacterFilters(selectedCharacters, section);
@@ -290,19 +288,28 @@ subscribeCanonicalReaderState(state => {
   if (reader) storeReaderState(state);
 });
 
-try {
-  data = await loadData();
-  reader = createReaderProgress(data.chapters, data.readerProgress);
-  dataStatus.textContent = "Dati caricati";
-  dataStatus.dataset.state = "ok";
-  chapterInput.min = String(reader.min);
-  chapterInput.max = String(reader.max);
+function renderSectionOptions() {
   sectionSelect.replaceChildren(...reader.sections.map(section => {
     const option = document.createElement("option");
     option.value = String(section.number);
     option.textContent = `${section.book} — ${section.title}`;
     return option;
   }));
+  sectionSelect.value = String(getCanonicalReaderState().section ?? reader.initialSection);
+}
+
+function showDataStatus(state) {
+  dataStatus.dataset.state = state;
+  dataStatus.textContent = t(state === "ok" ? "diary.dataLoaded" : "diary.dataError");
+}
+
+try {
+  data = await loadData(getLanguage());
+  reader = createReaderProgress(data.chapters, data.readerProgress);
+  showDataStatus("ok");
+  chapterInput.min = String(reader.min);
+  chapterInput.max = String(reader.max);
+  renderSectionOptions();
   renderPlaceLegend();
   const storedState = readStoredReaderState();
   const storedSection = Number(storedState?.section);
@@ -312,20 +319,42 @@ try {
     ? storedState.selectedCharacters.filter(id => visibleIds.has(id))
     : [...visibleIds];
   initializeCanonicalReaderState({ section: initialSection, selectedCharacters: initialSelected });
-  installExplorer(data, { applySection });
+  explorer = installExplorer(data, { applySection });
 } catch (error) {
-  status.textContent = "Dati non disponibili. Ricarica la pagina per riprovare.";
-  dataStatus.textContent = "Errore nel caricamento dei dati";
-  dataStatus.dataset.state = "error";
+  status.textContent = t("diary.dataUnavailable");
+  showDataStatus("error");
   console.error(error);
 }
+
+// A language switch swaps the localized data view and re-renders everything
+// derived from it; reading position and selection are language-independent.
+subscribeLanguage(async language => {
+  if (!reader) {
+    status.textContent = t("diary.dataUnavailable");
+    showDataStatus("error");
+    return;
+  }
+  try {
+    const next = await loadData(language);
+    if (language !== getLanguage()) return;
+    data = next;
+    reader = createReaderProgress(data.chapters, data.readerProgress);
+    showDataStatus("ok");
+    renderSectionOptions();
+    renderPlaceLegend();
+    explorer?.setData(data);
+    render();
+  } catch (error) {
+    console.error("Localized data unavailable", error);
+  }
+});
 
 // Controls that need reader metadata are installed only after initialization succeeds.
 if (reader) {
   chapterInput.addEventListener("input", () => {
     chapterInput.setCustomValidity("");
     if (chapterInput.value !== "" && !reader.hasSection(chapterInput.value)) {
-      chapterInput.setCustomValidity(`Inserisci una sezione disponibile da ${reader.min} a ${reader.max}.`);
+      chapterInput.setCustomValidity(t("diary.sectionRange", { min: reader.min, max: reader.max }));
     }
   });
   eventScope.addEventListener("change", render);

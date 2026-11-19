@@ -1,4 +1,5 @@
 import { loadData } from "./data.js";
+import { getLanguage, subscribeLanguage, t } from "./i18n.js";
 import { getMovementRouteCoordinates, getMovementRouteMode } from "./movement-contract.js";
 import { getPlacePresentation, isApproximateLocation } from "./place-presentation.js";
 import { popups } from "./popups.js";
@@ -14,12 +15,12 @@ import { installMarkerCollision } from "./marker-collision.js";
   let unmappedPopupOpen = false;
 
   const hasCoords = location => Array.isArray(location?.coordinates) && location.coordinates.length === 2;
-  const locationLabel = location => location?.name || location?.modern_name_romaji || "Località non determinata";
+  const locationLabel = location => location?.name || location?.modern_name_romaji || t("place.unknown");
   const precisionLabel = location => {
-    if (!location?.coordinate_precision || location.coordinate_precision === "exact") return "Posizione moderna precisa";
-    if (location.coordinate_precision === "modern_match") return "Corrispondenza moderna ad alta confidence";
-    if (location.coordinate_precision === "modern_literary_reference") return "Riferimento letterario moderno";
-    return "Posizione indicativa dell'area";
+    if (!location?.coordinate_precision || location.coordinate_precision === "exact") return t("place.precise");
+    if (location.coordinate_precision === "modern_match") return t("place.modernMatch");
+    if (location.coordinate_precision === "modern_literary_reference") return t("place.literaryReference");
+    return t("place.areaIndication");
   };
 
   const icon = location => {
@@ -44,12 +45,16 @@ import { installMarkerCollision } from "./marker-collision.js";
     ? { color: "#b99ad6", weight: 2, opacity: .68, dashArray: "6 8", interactive: true }
     : { color: "#d97706", weight: 3, opacity: .78, interactive: true };
 
-  function showMapNotice(message) {
+  // Notices are kept as message keys so a language switch can re-render them.
+  let noticeKey = "";
+  function showMapNotice(key) {
+    noticeKey = key;
     const note = document.querySelector("#map-note");
     if (!note) return;
-    note.textContent = message;
-    note.hidden = !message;
+    note.textContent = key ? t(key) : "";
+    note.hidden = !key;
   }
+  subscribeLanguage(() => showMapNotice(noticeKey));
 
   const bindPopupIfAvailable = (layer, popup) => {
     if (popup?.content) layer.bindPopup(popup.content, popup.options);
@@ -77,15 +82,15 @@ import { installMarkerCollision } from "./marker-collision.js";
     const heading = document.createElement("div");
     const kicker = document.createElement("p");
     kicker.className = "map-unmapped-kicker";
-    kicker.textContent = "TRACCIA NARRATIVA";
+    kicker.textContent = t("unmapped.kicker");
     const title = document.createElement("h3");
     title.className = "map-unmapped-title";
-    title.textContent = "Posizione non ancora determinata";
+    title.textContent = t("unmapped.title");
     heading.append(kicker, title);
     const close = document.createElement("button");
     close.className = "map-unmapped-close";
     close.type = "button";
-    close.setAttribute("aria-label", "Chiudi");
+    close.setAttribute("aria-label", t("unmapped.close"));
     close.textContent = "×";
     close.addEventListener("click", closeUnmappedPopup);
     header.append(heading, close);
@@ -100,9 +105,12 @@ import { installMarkerCollision } from "./marker-collision.js";
       const meta = document.createElement("span");
       meta.className = "map-unmapped-meta";
       if (state.location_status === "departed_with_group" && state.group) {
-        meta.textContent = `Ha lasciato ${location ? locationLabel(location) : "la posizione precedente"} con il gruppo ${groupNames.get(state.group) ?? state.group.replaceAll("_", " ")}. La nuova posizione non è ancora determinata.`;
+        meta.textContent = t("unmapped.departedWithGroup", {
+          place: location ? locationLabel(location) : t("unmapped.previousPlace"),
+          group: groupNames.get(state.group) ?? state.group.replaceAll("_", " ")
+        });
       } else {
-        meta.textContent = `${location ? `Ultima area nota: ${locationLabel(location)}. ` : ""}La posizione attuale non è ancora determinata.`;
+        meta.textContent = `${location ? t("unmapped.lastArea", { place: locationLabel(location) }) : ""}${t("unmapped.undetermined")}`;
       }
       item.append(name, meta);
       list.append(item);
@@ -147,13 +155,10 @@ import { installMarkerCollision } from "./marker-collision.js";
       const name = getDisplayCharacterName(item.character, section, identities);
       const status = getPositionStatusLabel(item.mode);
       const label = locationLabel(item.location);
-      const detail = item.mode === "current"
-        ? "Il testo colloca fisicamente il personaggio qui."
-        : item.mode === "reported"
-          ? "Il testo riferisce questo luogo, ma non stabilisce la presenza fisica del personaggio qui."
-          : item.mode === "last_known"
-            ? "Questo è il luogo più recente che possiamo mantenere come posizione nota; non è una presenza fisica accertata nel capitolo corrente."
-            : "La posizione attuale non è determinata.";
+      const detail = t(item.mode === "current" ? "popup.current"
+        : item.mode === "reported" ? "popup.reported"
+          : item.mode === "last_known" ? "popup.lastKnown"
+            : "popup.undetermined");
       const popup = popups.character({
         name,
         location: `${status} · ${label}`,
@@ -169,7 +174,7 @@ import { installMarkerCollision } from "./marker-collision.js";
       const popup = popups.place({
         name: locationLabel(location),
         secondary: precisionLabel(location),
-        description: location.map_note ?? "Localizzazione moderna"
+        description: location.map_note ?? t("place.modernLocation")
       });
       bindPopupIfAvailable(L.marker(location.coordinates, { icon: icon(location), title: locationLabel(location) }), popup)
         .addTo(markers);
@@ -184,10 +189,10 @@ import { installMarkerCollision } from "./marker-collision.js";
         if (!coordinates) return;
         const mode = getMovementRouteMode(event);
         if (!mode) return;
-        const title = mode === "confirmed" ? "Spostamento confermato" : "Direzione / destinazione intenzionale";
+        const title = t(mode === "confirmed" ? "route.confirmed" : "route.intended");
         const via = (event.via ?? []).map(id => locationLabel(byId.get(id)));
         const route = [locationLabel(origin), ...via, locationLabel(destination)].join(" → ");
-        const note = "Collegamenti schematici tra luoghi documentati; il tracciato storico esatto non è ricostruito.";
+        const note = t("route.note");
         const popup = popups.movement({
           title,
           route,
@@ -217,6 +222,31 @@ import { installMarkerCollision } from "./marker-collision.js";
       lastFramedSection = section;
     }
   }
+
+  function useMapData(mapData) {
+    locations = mapData.locations.locations;
+    events = mapData.events.events;
+    characterStates = mapData.states.character_states;
+    characters = mapData.characters.characters;
+    identities = mapData.identities.identities;
+    characterWiki = mapData.characterWiki?.characters ?? {};
+    groupNames = new Map((mapData.groups?.groups ?? []).map(group => [group.id, group.name]));
+  }
+
+  // Switching language swaps the localized records and redraws in place; the
+  // section is unchanged, so the reader's pan and zoom are kept.
+  subscribeLanguage(async language => {
+    if (!map || !locations.length) return;
+    try {
+      const mapData = await loadData(language);
+      if (language !== getLanguage()) return;
+      useMapData(mapData);
+      const state = getCanonicalReaderState();
+      if (state.section !== null) draw(state.section, state.selectedCharacters);
+    } catch (error) {
+      console.error("Localized map data unavailable", error);
+    }
+  });
 
   function romanizedLabelExpression() {
     return ["coalesce", ["get", "name:ja-Latn"], ["get", "name:ja_rm"], ["get", "name:latin"], ["get", "name_en"], ["get", "name"], ""];
@@ -251,7 +281,7 @@ import { installMarkerCollision } from "./marker-collision.js";
 
   function addRasterBasemap() {
     if (typeof L.tileLayer !== "function") {
-      showMapNotice("Cartografia di base non disponibile; le tracce narrative restano consultabili.");
+      showMapNotice("map.basemapMissing");
       return;
     }
     let tileFailureReported = false;
@@ -262,10 +292,10 @@ import { installMarkerCollision } from "./marker-collision.js";
     fallback.on("tileerror", () => {
       if (tileFailureReported) return;
       tileFailureReported = true;
-      showMapNotice("Cartografia di base non raggiungibile; marker e percorsi restano disponibili.");
+      showMapNotice("map.basemapUnreachable");
     });
     fallback.addTo(map);
-    showMapNotice("Cartografia di base semplificata attiva.");
+    showMapNotice("map.basemapSimplified");
   }
 
   async function initializeBasemap() {
@@ -338,7 +368,7 @@ import { installMarkerCollision } from "./marker-collision.js";
 
   async function boot() {
     if (!window.L) {
-      showMapNotice("Mappa interattiva non disponibile. Il diario di lettura resta utilizzabile.");
+      showMapNotice("map.unavailable");
       console.error("Map initialization failed: Leaflet unavailable");
       return;
     }
@@ -360,21 +390,14 @@ import { installMarkerCollision } from "./marker-collision.js";
       markers = L.layerGroup().addTo(map);
       routes = L.layerGroup().addTo(map);
       characterMarkers = L.layerGroup().addTo(map);
-      const mapData = await loadData();
-      locations = mapData.locations.locations;
-      events = mapData.events.events;
-      characterStates = mapData.states.character_states;
-      characters = mapData.characters.characters;
-      identities = mapData.identities.identities;
-      characterWiki = mapData.characterWiki?.characters ?? {};
-      groupNames = new Map((mapData.groups?.groups ?? []).map(group => [group.id, group.name]));
+      useMapData(await loadData(getLanguage()));
 
       const basemapReady = initializeBasemap();
       const state = getCanonicalReaderState();
       if (state.section !== null) draw(state.section, state.selectedCharacters);
       await basemapReady;
     } catch (error) {
-      showMapNotice("Dati cartografici non disponibili. Il diario di lettura resta utilizzabile.");
+      showMapNotice("map.dataUnavailable");
       console.error("Map initialization failed", error);
     }
   }

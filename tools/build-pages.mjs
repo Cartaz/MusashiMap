@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { createRuntimeVersion, versionRuntimeText } from "./runtime-version.mjs";
+import { CHARACTER_WIKI, filterOverlayToPublished, LANGUAGES, TRANSLATABLE_COLLECTIONS } from "../js/i18n-overlay.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "_site");
@@ -159,6 +160,16 @@ const publishedIdentities = (identitiesDocument.identities ?? [])
   });
 writeJson("data/identities.json", { ...identitiesDocument, identities: publishedIdentities });
 writeJson("data/reader-progress.json", readJson("data/reader-progress.json"));
+
+// Translations ship only for records that survived publication filtering.
+const publishedDocuments = Object.fromEntries(
+  [...Object.values(TRANSLATABLE_COLLECTIONS).map(spec => spec.file), CHARACTER_WIKI.file]
+    .map(file => [file, JSON.parse(fs.readFileSync(path.join(output, file), "utf8"))])
+);
+for (const language of LANGUAGES) {
+  const relative = `data/i18n/${language}.json`;
+  writeJson(relative, filterOverlayToPublished(readJson(relative), publishedDocuments));
+}
 
 for (const forbidden of ["research", "tools", "docs", "data/source", "data/audit"]) {
   if (fs.existsSync(path.join(output, forbidden))) throw new Error(`Forbidden Pages path emitted: ${forbidden}.`);
