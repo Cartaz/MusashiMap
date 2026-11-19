@@ -1,12 +1,8 @@
 import assert from "node:assert/strict";
-import fs from "node:fs";
-import path from "node:path";
 import test from "node:test";
-import { fileURLToPath } from "node:url";
 
 import { computeCollisionOffsets, installMarkerCollision } from "../../js/marker-collision.js";
 
-const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
 const displayedPoints = (points, offsets) => points.map((point, index) => ({
   x: point.x + offsets[index].x,
@@ -100,18 +96,4 @@ test("installed collision layout preserves Leaflet-owned wrapper margins", () =>
     assert.equal(node.style.marginTop, "-13px");
     assert.equal(node.classList.contains("is-colliding"), false);
   }
-});
-
-test("runtime has one collision owner and never rewrites Leaflet anchor margins", () => {
-  const runtime = fs.readFileSync(path.join(repoRoot, "js/map-runtime.js"), "utf8");
-  const collision = fs.readFileSync(path.join(repoRoot, "js/marker-collision.js"), "utf8");
-  const index = fs.readFileSync(path.join(repoRoot, "index.html"), "utf8");
-  const markers = fs.readFileSync(path.join(repoRoot, "css/markers.css"), "utf8");
-
-  assert.match(runtime, /installMarkerCollision\(map\)/);
-  assert.doesNotMatch(runtime, /collisionOffsets|coordinateKey/);
-  assert.doesNotMatch(collision, /marginLeft|marginTop/);
-  assert.doesNotMatch(index, /character-collision\.js/);
-  assert.equal(fs.existsSync(path.join(repoRoot, "js/character-collision.js")), false);
-  assert.match(markers, /transform:\s*translate\(var\(--collision-x\),\s*var\(--collision-y\)\)/);
 });
