@@ -18,6 +18,8 @@ const walk = async directory => {
   for (const entry of entries) {
     if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "_site") continue;
     const full = path.join(directory, entry.name);
+    // Third-party libraries are vendored verbatim and are not project source.
+    if (path.relative(root, full) === path.join("assets", "vendor")) continue;
     if (entry.isDirectory()) files.push(...await walk(full));
     else files.push(full);
   }

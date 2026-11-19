@@ -217,7 +217,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Relazione introdotta: `musashi` / `matahachi`; friend_ally/childhood_best_friend.
 - Relazione introdotta: `matahachi` / `musashi`; friend_ally/childhood_best_friend.
 - Relazione introdotta: `matahachi` / `oko`; partner_family/intended_marriage.
-- Relazione introdotta: `akemi` / `oko`; family/daughter_mother.
+- Relazione introdotta: `akemi` / `oko`; family/daughter_and_mother.
 
 ## 2. The Comb (b1c2)
 
@@ -294,7 +294,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Relazione introdotta: `musashi` / `temma`; enemy/direct_combat.
 - Relazione introdotta: `akemi` / `temma`; enemy/territorial_extortion_and_father_death_claim.
 - Relazione introdotta: `oko` / `temma`; enemy/territorial_conflict.
-- Relazione introdotta: `temma` / `kohei`; family/older_brother_younger_brother.
+- Relazione introdotta: `temma` / `kohei`; family/older_brother_and_younger_brother.
 
 ## 3. The Flower Festival (b1c3)
 
@@ -354,7 +354,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `matahachi`; away; posizione non risolta; is discussed as presumed dead at Sekigahara; his actual whereabouts remain unknown (unknown).
 - Stato: `akemi`; away; posizione non risolta; has departed with Oko and Matahachi; no new location is established (unknown).
 - Stato: `oko`; away; posizione non risolta; has departed with Akemi and Matahachi; no new location is established (unknown).
-- Relazione introdotta: `musashi` / `ogin`; family/younger_brother_older_sister.
+- Relazione introdotta: `musashi` / `ogin`; family/younger_brother_and_older_sister.
 - Relazione introdotta: `musashi` / `takuan`; master/spiritual_and_moral_guide.
 - Relazione introdotta: `musashi` / `otsu`; friend_ally/deep_personal_bond.
 - Relazione introdotta: `matahachi` / `otsu`; partner_family/betrothed_at_book_start.
@@ -433,7 +433,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `aoki_tanzaemon`; searching; posizione miyamoto; leads the Himeji search and participates in Ogin's arrest (posizione esplicita/invariata).
 - Stato: `heita`; present; posizione honiden_house; brings Osugi news about Takezo (posizione esplicita/invariata).
 - Relazione introdotta: `musashi` / `osugi`; enemy/family_conflict_and_pursuit.
-- Relazione introdotta: `matahachi` / `osugi`; family/son_mother.
+- Relazione introdotta: `matahachi` / `osugi`; family/son_and_mother.
 - Relazione introdotta: `osugi` / `otsu`; partner_family/future_daughter_in_law.
 
 ## 5. The Art of War (b1c5)
@@ -640,7 +640,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `gonroku`; away; posizione non risolta; pursues Otsu with Osugi after reaching the teahouse (unknown).
 - Stato: `ogin`; away; posizione non risolta; is reported to have been moved from Hinagura toward Himeji before Takezo's attack (reported_position).
 - Stato: `heita`; present; posizione honiden_house; remains in Miyamoto and provides news that triggers Osugi's pursuit (posizione esplicita/invariata).
-- Relazione introdotta: `osugi` / `gonroku`; family/sister_in_law_brother_in_law.
+- Relazione introdotta: `osugi` / `gonroku`; family/sister_in_law_and_brother_in_law.
 
 ## 8. The Birth of Musashi (b1c8)
 
@@ -791,7 +791,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `heita`; away; posizione non risolta; does not appear physically in Book II's opening chapter (unknown).
 - Relazione introdotta: `yoshioka_seijuro` / `gion_toji`; master/school_head_and_senior_follower.
 - Relazione introdotta: `yoshioka_seijuro` / `ueda_ryohei`; master/school_head_and_senior_disciple.
-- Relazione introdotta: `yoshioka_seijuro` / `yoshioka_denshichiro`; family/older_brother_younger_brother.
+- Relazione introdotta: `yoshioka_seijuro` / `yoshioka_denshichiro`; family/older_brother_and_younger_brother.
 
 ## 10. The Wheel of Fortune (b2c2)
 

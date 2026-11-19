@@ -95,7 +95,12 @@ const locations = readJson("data/locations.json").locations ?? [];
 const microWiki = readJson("data/context/micro-wiki.json").entities ?? [];
 const characterWiki = readJson("data/context/character-wiki.json").characters ?? {};
 const identities = readJson("data/identities.json").identities ?? [];
-const relationships = readJson("data/relationships.json").relationships ?? [];
+const relationshipsDocument = readJson("data/relationships.json");
+const relationships = relationshipsDocument.relationships ?? [];
+const publishedSubtypes = new Set(relationships.map(relationship => relationship.subtype));
+for (const subtype of Object.keys(relationshipsDocument.subtype_labels ?? {})) {
+  if (!publishedSubtypes.has(subtype)) errors.push(`Relationship label ${subtype} ships without a published relationship.`);
+}
 
 const expectedSections = Number.isInteger(minimum) && Number.isInteger(maximum)
   ? Array.from({ length: maximum - minimum + 1 }, (_, index) => minimum + index)
@@ -138,9 +143,7 @@ for (const state of states) {
   assertReferences([state.location, state.last_known_location, state.departure_from], locationIds, `State ${state.character}@${state.section}`);
 }
 for (const entry of microWiki) {
-  const first = Number(entry.novel_trigger?.first_section ?? entry.novel_trigger?.first_book1_section);
-  const safe = Number(entry.novel_trigger?.spoiler_safe_until);
-  if (!inRange(first, minimum, maximum) || !inRange(safe, minimum, maximum)) errors.push(`Micro-wiki ${entry.id} crosses the publication boundary.`);
+  if (!inRange(entry.novel_trigger?.first_section, minimum, maximum)) errors.push(`Micro-wiki ${entry.id} crosses the publication boundary.`);
 }
 for (const [id, entry] of Object.entries(characterWiki)) {
   for (const field of ["current_by_section", "display_name_by_section"]) {

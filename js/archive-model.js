@@ -1,5 +1,5 @@
 import { getCharacterIntroductionSection, getDisplayCharacterName, getProgressiveDisplayName, getProgressiveValue, getReaderSnapshot, getVisibleCharacters } from "./reader-progress.js";
-import { describeRelationship, relationshipTypes } from "./relationship-labels.js";
+import { describeRelationship, relationshipCategory } from "./relationship-labels.js";
 
 export const normalizeSearch = value => String(value ?? "").normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase("it").trim();
 export const eventCharacterIds = event => [...new Set([...(event.characters ?? []), ...(event.referenced_characters ?? []), ...(event.witnesses ?? [])])];
@@ -90,7 +90,7 @@ function projectArchive(data, section) {
       seen.add(key);
       return true;
     }).map(item => ({ from: item.from, to: item.to, first: item.first_section,
-      type: item.type, category: relationshipTypes[item.type] ?? "Legame", description: describeRelationship(item) }));
+      type: item.type, category: relationshipCategory(data.relationships, item.type), description: describeRelationship(data.relationships, item) }));
   return { section, characters, places, events: projectedEvents, relationships,
     chapters: data.chapters.sections.filter(chapter => chapter.number <= section) };
 }

@@ -40,7 +40,6 @@ const makeDataFixture = () => {
   writeJson(root, "data/relationships.json", { relationships: [] });
   writeJson(root, "data/identities.json", { identities: [] });
   writeJson(root, "data/context/character-wiki.json", { characters: {} });
-  writeJson(root, "data/context/entities.json", { entities: [] });
   writeJson(root, "data/context/micro-wiki.json", { entities: [] });
   for (const section of sections) {
     const directory = path.join(root, `data/source/book${section.book_number}`);
@@ -156,4 +155,27 @@ test("semantic CLI rejects unknown groups and false physical end positions", t =
   assert.match(result.output, /claims confirmed_route without any route evidence/);
   assert.match(result.output, /Non-present state hero@1 cannot retain a physical location/);
   assert.match(result.output, /non-physical location_status departed_with_group cannot retain a physical location/);
+});
+
+test("semantic CLI rejects retired micro-wiki thresholds and incomplete relationship labels", t => {
+  const root = makeDataFixture();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  writeJson(root, "data/characters.json", {
+    characters: ["hero", "friend"].map(id => ({ id, name: id, aliases: [], importance: "main", entity_type: "character", historical_status: "fictional", present_in: [1, 2] }))
+  });
+  writeJson(root, "data/context/micro-wiki.json", {
+    entities: [{ id: "old", novel_trigger: { first_book1_section: 1, spoiler_safe_until: 1 } }]
+  });
+  writeJson(root, "data/relationships.json", {
+    relationship_types: { rival: { it: "Rivalità", en: "Rivalry" }, faction: { it: "Fazione", en: "Faction" } },
+    subtype_labels: { duel: { it: "Duello" } },
+    relationships: [{ from: "hero", to: "friend", type: "rival", subtype: "duel", first_section: 1 }]
+  });
+  const result = run(root);
+  assert.equal(result.status, 1, result.output);
+  assert.match(result.output, /Micro-wiki old has invalid reveal section undefined/);
+  assert.match(result.output, /retired field novel_trigger\.first_book1_section/);
+  assert.match(result.output, /retired field novel_trigger\.spoiler_safe_until/);
+  assert.match(result.output, /Relationship type faction is declared but never used/);
+  assert.match(result.output, /Relationship subtype duel needs a en label/);
 });
