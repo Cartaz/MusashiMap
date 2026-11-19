@@ -47,3 +47,11 @@ test("CI and documentation expose provenance validation, not a staging workflow"
   assert.doesNotMatch(contract, /validate-staging\.mjs|--normalize/);
   assert.match(contract, /filename `book-staging-contract\.md` is retained as a stable historical contract identifier/);
 });
+
+test("validator accepts both --root forms", () => {
+  for (const args of [["--root", root], [`--root=${root}`]]) {
+    const result = run(args);
+    assert.equal(result.status, 0, result.stderr);
+  }
+  assert.equal(run(["--root"]).status, 2);
+});

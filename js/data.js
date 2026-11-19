@@ -2,7 +2,7 @@ const jsonRequests = new Map();
 
 async function loadJson(path) {
   if (!jsonRequests.has(path)) {
-    const request = fetch(path, { cache: "no-store" })
+    const request = fetch(path)
       .then(response => {
         if (!response.ok) throw new Error(`Failed to load ${path}: HTTP ${response.status}`);
         return response.json();
@@ -17,7 +17,7 @@ async function loadJson(path) {
 }
 
 export async function loadData() {
-  const [characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities, relationships] = await Promise.all([
+  const [characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities, relationships, groups] = await Promise.all([
     loadJson("data/characters.json"),
     loadJson("data/locations.json"),
     loadJson("data/chapters.json"),
@@ -27,18 +27,8 @@ export async function loadData() {
     loadJson("data/context/micro-wiki.json"),
     loadJson("data/context/character-wiki.json"),
     loadJson("data/identities.json"),
-    loadJson("data/relationships.json")
+    loadJson("data/relationships.json"),
+    loadJson("data/groups.json")
   ]);
-  return { characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities, relationships };
-}
-
-export async function loadMapData() {
-  const [locations, events, states, characters, identities] = await Promise.all([
-    loadJson("data/locations.json"),
-    loadJson("data/events.json"),
-    loadJson("data/character-states.json"),
-    loadJson("data/characters.json"),
-    loadJson("data/identities.json")
-  ]);
-  return { locations, events, states, characters, identities };
+  return { characters, locations, chapters, events, states, readerProgress, microWiki, characterWiki, identities, relationships, groups };
 }

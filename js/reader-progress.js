@@ -103,7 +103,6 @@ export function getDisplayCharacterName(character, section, identities = []) {
     return `${character?.name ?? "Personaggio sconosciuto"} (come ${identity.display_name})`;
   }
   if (identity?.display_name) return identity.display_name;
-  if (character?.id === "musashi" && currentSection !== null && currentSection <= 7) return "Shinmen Takezō";
   return character?.name ?? "Personaggio sconosciuto";
 }
 
@@ -123,22 +122,53 @@ export function getProgressiveDisplayName(entry, section) {
     ?? "Personaggio sconosciuto";
 }
 
+// Earliest state/event section per character, built once per evidence arrays.
+// Rendering asks for visibility many times per interaction; rescanning every
+// state and event for every character made each pass O(characters × records).
+const evidenceIndexCache = new WeakMap();
+const NO_RECORDS = Object.freeze([]);
+const recordEarliest = (index, id, value) => {
+  const section = asInteger(value);
+  if (!id || section === null) return;
+  const previous = index.get(id);
+  if (previous === undefined || section < previous) index.set(id, section);
+};
+
+function getEvidenceIndex(states, events) {
+  const stateKey = Array.isArray(states) ? states : NO_RECORDS;
+  const eventKey = Array.isArray(events) ? events : NO_RECORDS;
+  let byEvents = evidenceIndexCache.get(stateKey);
+  if (!byEvents) {
+    byEvents = new WeakMap();
+    evidenceIndexCache.set(stateKey, byEvents);
+  }
+  let cached = byEvents.get(eventKey);
+  // Runtime data is loaded once and never mutated; the length check only
+  // guards callers (tests, generators) that append records after a lookup.
+  if (!cached || cached.stateCount !== stateKey.length || cached.eventCount !== eventKey.length) {
+    const index = new Map();
+    for (const state of stateKey) recordEarliest(index, state.character, state.section);
+    for (const event of eventKey) {
+      for (const id of [...(event.characters ?? []), ...(event.referenced_characters ?? [])]) {
+        recordEarliest(index, id, event.section);
+      }
+    }
+    cached = { stateCount: stateKey.length, eventCount: eventKey.length, index };
+    byEvents.set(eventKey, cached);
+  }
+  return cached.index;
+}
+
 // A name can be revealed only after at least one project-local narrative
 // record introduces it. Missing evidence is treated conservatively: the
 // character remains hidden instead of falling back to the first section.
 export function getCharacterIntroductionSection(character, { states = [], events = [], characterWiki = {} } = {}) {
   if (!character?.id) return null;
-  const candidates = [character.introduced_section, ...(character.present_in ?? [])];
-
-  for (const state of states ?? []) {
-    if (state.character === character.id) candidates.push(state.section);
-  }
-  for (const event of events ?? []) {
-    if ([...(event.characters ?? []), ...(event.referenced_characters ?? [])].includes(character.id)) {
-      candidates.push(event.section);
-    }
-  }
-
+  const candidates = [
+    character.introduced_section,
+    ...(character.present_in ?? []),
+    getEvidenceIndex(states, events).get(character.id)
+  ];
   const wikiEntry = characterWiki?.[character.id];
   if (wikiEntry) candidates.push(...Object.keys(wikiEntry.current_by_section ?? {}));
   return earliestSection(candidates);

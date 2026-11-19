@@ -80,6 +80,12 @@ test("audit config extraction does not change generated reports", t => {
       encoding: "utf8"
     });
     assert.equal(result.status, 0, `${script}\n${result.stdout}\n${result.stderr}`);
-    assert.deepEqual(readFileSync(output), readFileSync(path.join(root, expected)), `${script} changed ${expected}`);
+    // Compare as text and report the first differing line: a deepEqual diff of
+    // two large Buffers takes minutes to render and looks like a hung test.
+    const actualLines = readFileSync(output, "utf8").split("\n");
+    const expectedLines = readFileSync(path.join(root, expected), "utf8").split("\n");
+    const firstDiff = actualLines.findIndex((line, index) => line !== expectedLines[index]);
+    const mismatch = firstDiff !== -1 || actualLines.length !== expectedLines.length;
+    assert.ok(!mismatch, `${script} changed ${expected} at line ${(firstDiff === -1 ? Math.min(actualLines.length, expectedLines.length) : firstDiff) + 1}; regenerate it`);
   }
 });

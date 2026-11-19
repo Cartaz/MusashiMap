@@ -38,6 +38,34 @@ const selectNone = document.querySelector("#select-none");
 
 let data;
 let reader;
+const READER_STATE_KEY = "musashimap:reader-state";
+const certaintyLabels = {
+  explicit: "esplicita nel testo",
+  strong_inference: "deduzione forte",
+  weak_inference: "deduzione debole"
+};
+
+// Reading position is a per-device convenience. Storage can be unavailable
+// (private windows, blocked site data), so every access is best effort.
+function readStoredReaderState() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(READER_STATE_KEY) ?? "null");
+    return stored && typeof stored === "object" ? stored : null;
+  } catch {
+    return null;
+  }
+}
+
+function storeReaderState(state) {
+  try {
+    localStorage.setItem(READER_STATE_KEY, JSON.stringify({
+      section: state.section,
+      selectedCharacters: state.selectedCharacters
+    }));
+  } catch {
+    // Persistence is optional.
+  }
+}
 const eventScope = document.querySelector("#event-scope");
 new ResizeObserver(() => {
   const height = document.querySelector(".app-header").getBoundingClientRect().height;
@@ -139,7 +167,8 @@ function createCharacterCard(state, character, section, locations) {
   const activity = document.createElement("p");
   activity.textContent = state.activity ?? "";
   const metadata = document.createElement("small");
-  metadata.textContent = `Stato: ${presentation.meta} · confidenza: ${state.location_confidence ?? state.certainty}`;
+  const certainty = certaintyLabels[state.certainty] ?? "non indicata";
+  metadata.textContent = `Stato: ${presentation.meta} · certezza: ${certainty}`;
   card.append(heading, locationParagraph, activity, metadata);
   return card;
 }
@@ -256,7 +285,10 @@ function render() {
   renderWiki(section);
 }
 
-subscribeCanonicalReaderState(() => render());
+subscribeCanonicalReaderState(state => {
+  render();
+  if (reader) storeReaderState(state);
+});
 
 try {
   data = await loadData();
@@ -272,11 +304,12 @@ try {
     return option;
   }));
   renderPlaceLegend();
-  const previousState = getCanonicalReaderState();
-  const initialSection = reader.hasSection(previousState.section) ? previousState.section : reader.initialSection;
+  const storedState = readStoredReaderState();
+  const storedSection = Number(storedState?.section);
+  const initialSection = reader.hasSection(storedSection) ? storedSection : reader.initialSection;
   const visibleIds = new Set(getVisibleMainCharacters(initialSection).map(character => character.id));
-  const initialSelected = previousState.selectedCharacters.length
-    ? previousState.selectedCharacters.filter(id => visibleIds.has(id))
+  const initialSelected = Array.isArray(storedState?.selectedCharacters) && reader.hasSection(storedSection)
+    ? storedState.selectedCharacters.filter(id => visibleIds.has(id))
     : [...visibleIds];
   initializeCanonicalReaderState({ section: initialSection, selectedCharacters: initialSelected });
   installExplorer(data, { applySection });
