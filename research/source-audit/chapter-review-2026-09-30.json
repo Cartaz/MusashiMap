@@ -319,7 +319,7 @@
             "from": "akemi",
             "to": "oko",
             "type": "family",
-            "subtype": "daughter_mother",
+            "subtype": "daughter_and_mother",
             "first_section": 1
           }
         ]
@@ -721,7 +721,7 @@
             "from": "temma",
             "to": "kohei",
             "type": "family",
-            "subtype": "older_brother_younger_brother",
+            "subtype": "older_brother_and_younger_brother",
             "first_section": 2
           }
         ]
@@ -1048,7 +1048,7 @@
             "from": "musashi",
             "to": "ogin",
             "type": "family",
-            "subtype": "younger_brother_older_sister",
+            "subtype": "younger_brother_and_older_sister",
             "first_section": 3
           },
           {
@@ -1420,7 +1420,7 @@
             "from": "matahachi",
             "to": "osugi",
             "type": "family",
-            "subtype": "son_mother",
+            "subtype": "son_and_mother",
             "first_section": 4
           },
           {
@@ -2483,7 +2483,7 @@
             "from": "osugi",
             "to": "gonroku",
             "type": "family",
-            "subtype": "sister_in_law_brother_in_law",
+            "subtype": "sister_in_law_and_brother_in_law",
             "first_section": 7
           }
         ]
@@ -3280,7 +3280,7 @@
             "from": "yoshioka_seijuro",
             "to": "yoshioka_denshichiro",
             "type": "family",
-            "subtype": "older_brother_younger_brother",
+            "subtype": "older_brother_and_younger_brother",
             "first_section": 9
           }
         ]

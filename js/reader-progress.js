@@ -284,9 +284,7 @@ export function getRelevantHistoricalWiki(entries, currentSection) {
   if (section === null) return [];
   const previousSection = section - 1;
   return (entries ?? []).filter(entry => {
-    const first = asInteger(entry.novel_trigger?.first_section ?? entry.novel_trigger?.first_book1_section);
-    const spoilerSafeUntil = asInteger(entry.novel_trigger?.spoiler_safe_until);
-    return first !== null && first <= section && (first === section || first === previousSection) &&
-      (spoilerSafeUntil === null || spoilerSafeUntil <= section);
+    const first = asInteger(entry.novel_trigger?.first_section);
+    return first !== null && (first === section || first === previousSection);
   });
 }

@@ -289,10 +289,13 @@ import { installMarkerCollision } from "./marker-collision.js";
       addRasterBasemap();
     };
     try {
-      if (!window.maplibregl) throw new Error("MapLibre CDN unavailable");
-      // The adapter requires both globals; load it only after those prerequisites
-      // are available so a missing CDN cannot cause an uncaught dependency error.
-      await import("https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.3/leaflet-maplibre-gl.js");
+      // Libraries are vendored under assets/vendor; a missing global means a
+      // partial deploy or a blocked script, and the raster basemap takes over.
+      // The adapter extends both globals at evaluation time, so it is loaded
+      // only once they exist.
+      if (!window.maplibregl) throw new Error("MapLibre unavailable");
+      await import("../assets/vendor/maplibre-gl-leaflet-0.1.3/leaflet-maplibre-gl.js");
+      if (typeof L.maplibreGL !== "function") throw new Error("MapLibre adapter unavailable");
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 8000);
       let styleResponse;
@@ -336,7 +339,7 @@ import { installMarkerCollision } from "./marker-collision.js";
   async function boot() {
     if (!window.L) {
       showMapNotice("Mappa interattiva non disponibile. Il diario di lettura resta utilizzabile.");
-      console.error("Map initialization failed: Leaflet CDN unavailable");
+      console.error("Map initialization failed: Leaflet unavailable");
       return;
     }
 

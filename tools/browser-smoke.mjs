@@ -27,11 +27,19 @@ const server = createServer(async (request, response) => {
 await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
 let browser;
 const pageErrors = [];
+// Application code and libraries are same-origin; only fonts and basemap data
+// may come from third parties.
+const allowedRemoteHosts = new Set(["fonts.googleapis.com", "fonts.gstatic.com", "tiles.openfreemap.org", "tile.openstreetmap.org"]);
+const unexpectedRequests = new Set();
 const blankStyle = { version: 8, sources: {}, layers: [] };
 const png = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a2ioAAAAASUVORK5CYII=", "base64");
 const newPage = async (testBrowser = browser) => {
   const page = await testBrowser.newPage({ viewport: { width: 1440, height: 900 }, ignoreHTTPSErrors: process.env.BROWSER_IGNORE_HTTPS_ERRORS === "1" });
   page.on("pageerror", error => pageErrors.push(error.message));
+  page.on("request", request => {
+    const { protocol, hostname } = new URL(request.url());
+    if (/^https?:$/.test(protocol) && hostname !== "127.0.0.1" && !allowedRemoteHosts.has(hostname)) unexpectedRequests.add(hostname);
+  });
   // Only basemap data is controlled: Leaflet, MapLibre and the complete app run.
   await page.route("https://tiles.openfreemap.org/styles/liberty", route => route.fulfill({ json: blankStyle }));
   await page.route("https://tile.openstreetmap.org/**", route => route.fulfill({ contentType: "image/png", body: png }));
@@ -187,7 +195,7 @@ try {
   await failedMapData.close();
 
   const unavailableMap = await newPage();
-  await unavailableMap.route("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js", route => route.abort());
+  await unavailableMap.route("**/assets/vendor/leaflet-1.9.4/leaflet.js*", route => route.abort());
   await unavailableMap.setViewportSize({ width: 375, height: 812 });
   await unavailableMap.goto(url);
   await unavailableMap.waitForFunction(() => document.querySelector("#data-status").dataset.state === "ok");
@@ -217,7 +225,7 @@ try {
   assert.ok(await failedConstructor.locator(".leaflet-tile").count() > 0);
   await failedConstructor.close();
 
-  for (const resource of ["https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js", "https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.3/leaflet-maplibre-gl.js", "https://tiles.openfreemap.org/styles/liberty"]) {
+  for (const resource of ["**/assets/vendor/maplibre-gl-4.7.1/maplibre-gl.js*", "**/assets/vendor/maplibre-gl-leaflet-0.1.3/leaflet-maplibre-gl.js*", "https://tiles.openfreemap.org/styles/liberty"]) {
     const failedBasemap = await newPage();
     await failedBasemap.route(resource, route => route.abort());
     await loaded(failedBasemap);
@@ -263,7 +271,8 @@ try {
     await noWebGLBrowser.close();
   }
   assert.deepEqual(pageErrors, []);
-  console.log("Browser smoke passed: 112 chapters, spoiler names, persistent selections, input recovery, panel resizing, mobile portrait/landscape, data/CDN/WebGL failures and vector fallback.");
+  assert.deepEqual([...unexpectedRequests], []);
+  console.log("Browser smoke passed: 112 chapters, spoiler names, persistent selections, input recovery, panel resizing, mobile portrait/landscape, data/library/WebGL failures and vector fallback.");
 } finally {
   if (browser) await browser.close();
   await new Promise(resolve => server.close(resolve));

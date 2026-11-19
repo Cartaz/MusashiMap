@@ -16,11 +16,11 @@ const REQUIRED_FILES = [
   "data/relationships.json",
   "data/identities.json",
   "data/context/character-wiki.json",
-  "data/context/entities.json",
   "data/context/micro-wiki.json"
 ];
 
 const CERTAINTIES = new Set(["explicit", "strong_inference", "weak_inference"]);
+const LANGUAGES = ["it", "en"];
 const CHAPTER_ID = /^b([1-7])c([1-9]\d*)$/;
 
 const isObject = value => value !== null && typeof value === "object" && !Array.isArray(value);
@@ -81,7 +81,6 @@ export function validateRepository(root = process.cwd()) {
   const relationshipsData = documents.get("data/relationships.json");
   const identitiesData = documents.get("data/identities.json");
   const characterWikiData = documents.get("data/context/character-wiki.json");
-  const contextEntitiesData = documents.get("data/context/entities.json");
   const microWikiData = documents.get("data/context/micro-wiki.json");
 
   const collections = [
@@ -93,7 +92,6 @@ export function validateRepository(root = process.cwd()) {
     [statesData, "character_states", "data/character-states.json"],
     [relationshipsData, "relationships", "data/relationships.json"],
     [identitiesData, "identities", "data/identities.json"],
-    [contextEntitiesData, "entities", "data/context/entities.json"],
     [microWikiData, "entities", "data/context/micro-wiki.json"]
   ];
   for (const [document, key, file] of collections) {
@@ -116,7 +114,6 @@ export function validateRepository(root = process.cwd()) {
   const states = statesData.character_states;
   const relationships = relationshipsData.relationships;
   const identities = identitiesData.identities;
-  const contextEntities = contextEntitiesData.entities;
   const microWiki = microWikiData.entities;
   if (!isObject(characterWikiData?.characters)) errors.push("data/context/character-wiki.json must contain an object named characters.");
   duplicateIds(sections, "section", errors);
@@ -124,7 +121,6 @@ export function validateRepository(root = process.cwd()) {
   duplicateIds(groups, "group", errors);
   duplicateIds(locations, "location", errors);
   duplicateIds(events, "event", errors);
-  duplicateIds(contextEntities, "context entity", errors);
   duplicateIds(microWiki, "micro-wiki entity", errors);
 
   const sectionByNumber = new Map();
@@ -339,13 +335,28 @@ export function validateRepository(root = process.cwd()) {
     latestByCharacter.set(state.character, state);
   }
 
+  const relationshipTypes = relationshipsData.relationship_types ?? {};
+  const subtypeLabels = relationshipsData.subtype_labels ?? {};
   for (const relationship of relationships) {
-    required(relationship, ["from", "to", "type", "first_section"], "Relationship", errors);
+    required(relationship, ["from", "to", "type", "subtype", "first_section"], "Relationship", errors);
     assertCharacter(relationship.from, "Relationship");
     assertCharacter(relationship.to, "Relationship");
     if (relationship.from === relationship.to) errors.push(`Relationship ${relationship.from} → ${relationship.to} is self-referential.`);
     if (!sectionByNumber.has(relationship.first_section)) errors.push(`Relationship ${relationship.from} → ${relationship.to} has unknown first_section ${relationship.first_section}.`);
-    if (!(relationshipsData.relationship_types ?? []).includes(relationship.type)) errors.push(`Relationship ${relationship.from} → ${relationship.to} has undeclared type ${relationship.type}.`);
+    if (!Object.hasOwn(relationshipTypes, relationship.type)) errors.push(`Relationship ${relationship.from} → ${relationship.to} has undeclared type ${relationship.type}.`);
+    if (!Object.hasOwn(subtypeLabels, relationship.subtype)) errors.push(`Relationship ${relationship.from} → ${relationship.to} has unlabeled subtype ${relationship.subtype}.`);
+  }
+  // Labels are reader-facing text in every supported language; declared but
+  // unused entries are dead vocabulary and are rejected so they cannot drift.
+  const usedTypes = new Set(relationships.map(relationship => relationship.type));
+  const usedSubtypes = new Set(relationships.map(relationship => relationship.subtype));
+  for (const [kind, labels, used] of [["type", relationshipTypes, usedTypes], ["subtype", subtypeLabels, usedSubtypes]]) {
+    for (const [id, label] of Object.entries(labels)) {
+      if (!used.has(id)) errors.push(`Relationship ${kind} ${id} is declared but never used.`);
+      for (const language of LANGUAGES) {
+        if (typeof label?.[language] !== "string" || !label[language].trim()) errors.push(`Relationship ${kind} ${id} needs a ${language} label.`);
+      }
+    }
   }
 
   const identityRanges = new Map();
@@ -387,16 +398,12 @@ export function validateRepository(root = process.cwd()) {
     }
   }
 
-  for (const entity of contextEntities) {
-    if (entity.first_section !== undefined && entity.first_section !== null && !sectionByNumber.has(entity.first_section)) errors.push(`Context entity ${entity.id} has unknown first_section ${entity.first_section}.`);
-    if (entity.character_id !== undefined) assertCharacter(entity.character_id, `Context entity ${entity.id}`);
-    for (const url of entity.source_urls ?? []) if (!/^https:\/\//.test(url)) errors.push(`Context entity ${entity.id} has non-HTTPS source URL.`);
-  }
-
   for (const entity of microWiki) {
-    const first = entity.novel_trigger?.first_section ?? entity.novel_trigger?.first_book1_section;
-    const safe = entity.novel_trigger?.spoiler_safe_until;
-    if (!sectionByNumber.has(first) || !sectionByNumber.has(safe) || safe < first) errors.push(`Micro-wiki ${entity.id} has invalid reveal thresholds ${first}/${safe}.`);
+    const first = entity.novel_trigger?.first_section;
+    if (!sectionByNumber.has(first)) errors.push(`Micro-wiki ${entity.id} has invalid reveal section ${first}.`);
+    for (const legacy of ["first_book1_section", "spoiler_safe_until"]) {
+      if (entity.novel_trigger && legacy in entity.novel_trigger) errors.push(`Micro-wiki ${entity.id} uses retired field novel_trigger.${legacy}; use first_section.`);
+    }
     if (entity.source?.url && !/^https:\/\//.test(entity.source.url)) errors.push(`Micro-wiki ${entity.id} has non-HTTPS source URL.`);
   }
 

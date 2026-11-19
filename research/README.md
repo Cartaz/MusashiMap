@@ -39,6 +39,10 @@ node tools/validate-research-manifests.mjs
 
 These files are provenance records, not a second publication authority. The old migration/normalization path is retired; maintenance edits canonical manifests directly and validation never rewrites them. Reader visibility is controlled only by `data/reader-progress.json`.
 
+## Historical context notes
+
+`historical-context-entities.json` keeps the research notes behind the reader-facing micro-wiki: periods, dates, source names and the per-book list of references deliberately left out. The published entries, their reveal sections and their sources live only in `data/context/micro-wiki.json`; this file is not read by the application, the build or the validators.
+
 ## Source hierarchy
 
 1. Local chapter files are authoritative for narrative facts.

@@ -38,7 +38,18 @@ if (!Number.isInteger(progress?.minimum_section) || !Number.isInteger(progress?.
 
 fs.rmSync(output, { recursive: true, force: true });
 writeFile("index.html", versionText("index.html", fs.readFileSync(path.join(root, "index.html"))));
-copyDirectory("css", () => true, versionText);
+// One stylesheet instead of a cascade of render-blocking @imports. Module
+// order, and so the cascade, is the order declared by css/app.css.
+const cssEntry = fs.readFileSync(path.join(root, "css/app.css"), "utf8");
+const cssModules = [...cssEntry.matchAll(/@import\s+url\(["']\.\/([^"')]+)["']\);/g)].map(match => match[1]);
+const cssOnDisk = fs.readdirSync(path.join(root, "css")).filter(name => name.endsWith(".css") && name !== "app.css").sort();
+if (cssModules.length !== cssOnDisk.length || [...cssModules].sort().some((name, index) => name !== cssOnDisk[index])) {
+  throw new Error(`css/app.css must import every stylesheet exactly once (imports: ${cssModules.join(", ")}).`);
+}
+writeFile("css/app.css", cssModules.map(name => {
+  const relative = `css/${name}`;
+  return `/* ${relative} */\n${versionText(relative, fs.readFileSync(path.join(root, relative))).trimEnd()}\n`;
+}).join("\n"));
 copyDirectory("assets");
 // Browser runtime modules use .js; Node-only tests in js/ use .mjs and stay private.
 copyDirectory("js", relative => relative.endsWith(".js"), versionText);
@@ -92,7 +103,15 @@ const publishedCharacterIds = new Set(publishedCharacters.map(character => chara
 const publishedRelationships = (relationshipsDocument.relationships ?? []).filter(relationship =>
   inPublishedRange(relationship.first_section) && publishedCharacterIds.has(relationship.from) && publishedCharacterIds.has(relationship.to)
 );
-writeJson("data/relationships.json", { ...relationshipsDocument, relationships: publishedRelationships });
+// Subtype labels can name later scenes ("duel at Rengeōin"); ship only the
+// labels that published relationships use.
+const labelsFor = (labels, used) => Object.fromEntries(Object.entries(labels ?? {}).filter(([id]) => used.has(id)));
+writeJson("data/relationships.json", {
+  ...relationshipsDocument,
+  relationship_types: labelsFor(relationshipsDocument.relationship_types, new Set(publishedRelationships.map(item => item.type))),
+  subtype_labels: labelsFor(relationshipsDocument.subtype_labels, new Set(publishedRelationships.map(item => item.subtype))),
+  relationships: publishedRelationships
+});
 writeJson("data/characters.json", {
   ...charactersDocument,
   characters: publishedCharacters
@@ -121,11 +140,8 @@ const publishedLocations = (locationsDocument.locations ?? []).filter(location =
 writeJson("data/locations.json", { ...locationsDocument, locations: publishedLocations });
 
 const microWikiDocument = readJson("data/context/micro-wiki.json");
-const publishedMicroWiki = (microWikiDocument.entities ?? []).filter(entry => {
-  const first = entry.novel_trigger?.first_section ?? entry.novel_trigger?.first_book1_section;
-  const safe = entry.novel_trigger?.spoiler_safe_until;
-  return inPublishedRange(Number(first)) && inPublishedRange(Number(safe));
-});
+const publishedMicroWiki = (microWikiDocument.entities ?? [])
+  .filter(entry => inPublishedRange(entry.novel_trigger?.first_section));
 writeJson("data/context/micro-wiki.json", { ...microWikiDocument, entities: publishedMicroWiki });
 const identitiesDocument = readJson("data/identities.json");
 const chapterBySection = new Map(publishedSections.map(section => [section.number, section.chapter_id]));

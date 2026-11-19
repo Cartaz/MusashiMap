@@ -361,18 +361,18 @@ test("character position semantics are shared by diary and map", () => {
   assert.equal(reported.referencedLocation.name, "Unmapped");
 });
 
-test("micro-wiki entries cannot cross their spoiler-safe threshold", () => {
-  const entries = [{
-    id: "future-context",
-    novel_trigger: { first_book1_section: 3, spoiler_safe_until: 4 }
-  }, {
-    id: "book-aware-context",
-    novel_trigger: { first_section: 9, spoiler_safe_until: 9 }
-  }];
+test("micro-wiki entries appear only in their reveal section and the next one", () => {
+  const entries = [
+    { id: "early", novel_trigger: { first_section: 3 } },
+    { id: "later", novel_trigger: { first_section: 9 } },
+    { id: "untriggered", novel_trigger: {} }
+  ];
 
-  assert.deepEqual(getRelevantHistoricalWiki(entries, 3), []);
-  assert.deepEqual(getRelevantHistoricalWiki(entries, 4).map(entry => entry.id), ["future-context"]);
-  assert.deepEqual(getRelevantHistoricalWiki(entries, 9).map(entry => entry.id), ["book-aware-context"]);
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 2), []);
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 3).map(entry => entry.id), ["early"]);
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 4).map(entry => entry.id), ["early"]);
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 5), []);
+  assert.deepEqual(getRelevantHistoricalWiki(entries, 9).map(entry => entry.id), ["later"]);
 });
 
 test("display names come only from identity records, never from hardcoded ids", () => {
