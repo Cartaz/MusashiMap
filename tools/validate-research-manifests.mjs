@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+
+import { openCorpus } from "./lib/source-corpus.mjs";
 
 const CONTRACT = "docs/book-staging-contract.md";
 const BOOKS = [3, 4, 5, 6, 7];
@@ -47,6 +48,9 @@ const readJson = async file => JSON.parse(await readFile(file, "utf8"));
 const list = value => (Array.isArray(value) ? value : value == null ? [] : [value]);
 const chapterId = (book, index) => `b${book}c${index}`;
 const errors = [];
+// Chapter text is private; the corpus module falls back to its manifest.
+const corpus = openCorpus(root);
+errors.push(...corpus.errors);
 const fail = (book, message) => errors.push(`Book ${book}: ${message}`);
 const uniqueIds = (book, label, values) => {
   if (values.some(value => typeof value !== "string" || !value)) fail(book, `${label} IDs must be non-empty strings`);
@@ -113,7 +117,7 @@ for (const { name, match } of entries) {
     if (typeof value !== "string" || !value) return false;
     const plain = value.replace(/:L\d+(?:-L?\d+)?$/, "");
     const exact = path.resolve(root, plain);
-    if (exact.startsWith(`${root}${path.sep}`) && existsSync(exact)) return true;
+    if (corpus.has(plain) || (exact.startsWith(`${root}${path.sep}`) && existsSync(exact))) return true;
     if ([...sourceByChapter.values()].some(source => path.basename(source.file) === path.basename(plain))) return true;
     const local = plain.match(new RegExp(`^(?:b${book}c|book${book}/chapter)(\\d+)$`, "i"));
     if (local && sourceByChapter.has(chapterId(book, Number(local[1])))) return true;
@@ -124,16 +128,14 @@ for (const { name, match } of entries) {
     const chapter = manifest.chapters.find(item => item.id === source.chapter_id);
     if (chapter && source.global_section !== chapter.global_section)
       fail(book, `${source.chapter_id} source global_section does not match chapter`);
-    const sourcePath = source.file && path.resolve(root, source.file);
-    if (!sourcePath || !existsSync(sourcePath)) {
+    const sourceInfo = source.file ? corpus.info(source.file) : null;
+    if (!sourceInfo) {
       fail(book, `missing source file ${source.file ?? "<undefined>"}`);
       continue;
     }
-    const buffer = await readFile(sourcePath);
-    if (Number.isInteger(source.line_count) && buffer.toString("utf8").split("\n").length - 1 !== source.line_count)
+    if (Number.isInteger(source.line_count) && sourceInfo.newline_count !== source.line_count)
       fail(book, `${source.file} line_count mismatch`);
-    if (source.sha256 && createHash("sha256").update(buffer).digest("hex") !== source.sha256)
-      fail(book, `${source.file} sha256 mismatch`);
+    if (source.sha256 && sourceInfo.sha256 !== source.sha256) fail(book, `${source.file} sha256 mismatch`);
   }
 
   const checkRefs = (owner, values, set, label) => {

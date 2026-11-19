@@ -94,7 +94,7 @@ reproducibility while running the actual mapping libraries and application modul
 
 ```text
 css/        responsive presentation and map UI
-data/       production data, translations (data/i18n), publication state and local source corpus
+data/       production data, translations (data/i18n), publication state and the corpus manifest
 docs/       research workflow, provenance format and movement semantics
 js/         application runtime, interface dictionaries and safety tests
 research/   canonical book manifests and consolidated audits
@@ -115,7 +115,7 @@ When a record is added or reworded, add or update its translation in the matchin
 
 ## Evidence policy
 
-The local chapter files under `data/source/book1/` through `data/source/book7/` are the authority for plot, chronology, presence and movement. Institutional, municipal and academic web sources are used only to verify modern geography, topography and historical context. A modern match never justifies a precise coordinate for a private residence, fictional place or indeterminate route.
+The chapter files under `data/source/book1/` through `data/source/book7/` are the authority for plot, chronology, presence and movement. They are a private, local-only corpus: the novel's text is not in the repository or its history, and `data/source/` is git-ignored. `data/source-manifest.json` publishes only each file's hash, size, line and word counts and chapter heading. The validators read the text when it is present and require it to match the manifest; without it, as in CI, they check chapter titles, source line ranges and research fingerprints against the manifest. After adding or correcting a chapter file, run `node tools/generate-source-manifest.mjs`. Institutional, municipal and academic web sources are used only to verify modern geography, topography and historical context. A modern match never justifies a precise coordinate for a private residence, fictional place or indeterminate route.
 
 Three generated, repository-wide reports make the current audit reproducible:
 

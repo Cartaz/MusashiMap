@@ -1,11 +1,12 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
 import { getDisplayCharacterName } from "../../js/reader-progress.js";
+import { openCorpus } from "../lib/source-corpus.mjs";
 
+const corpus = openCorpus(fileURLToPath(new URL("../../",import.meta.url)));
 const read = file => JSON.parse(readFileSync(new URL(`../../${file}`,import.meta.url),"utf8"));
 const chars = read("data/characters.json").characters;
 const events = read("data/events.json").events;
@@ -21,7 +22,9 @@ test("role-only references retain labels until explicit names",()=>{
     assert.equal(getDisplayCharacterName(character(id),reveal-1,identities),role);
     assert.equal(getDisplayCharacterName(character(id),reveal,identities),character(id).name);
   }
-  assert.match(readFileSync(new URL("../../data/source/book2/chapter5-a-spring-breeze.txt",import.meta.url),"utf8"),/heir, Munenori/);
+  // The chapter text is private; this check runs only in a local copy that has it.
+  const reveal = corpus.readText("data/source/book2/chapter5-a-spring-breeze.txt");
+  if (reveal !== null) assert.match(reveal,/heir, Munenori/);
 });
 
 test("residence and reported positions do not create physical presence",()=>{
@@ -79,7 +82,7 @@ test("the review conserves 112 inventories and states its actual limits",()=>{
   for (const book of [1,2,3,4,5,6,7]) for (const chapter of read(`research/source-audit/book${book}-source-oracle.json`).chapters) {
     const row = review.chapters.find(row=>row.chapter===chapter.id);
     assert.deepEqual(row.source_first_inventory,chapter);
-    assert.equal(row.source_sha256,createHash("sha256").update(readFileSync(new URL(`../../${chapter.source_file}`,import.meta.url))).digest("hex"));
+    assert.equal(row.source_sha256,corpus.info(chapter.source_file).sha256);
   }
   assert.ok(review.chapters.find(row=>row.chapter==="b2c5").source_integrity.some(issue=>issue.kind==="duplicated_passage"));
   execFileSync(process.execPath,["tools/generate-source-review.mjs","--check"],{cwd:fileURLToPath(new URL("../../",import.meta.url))});

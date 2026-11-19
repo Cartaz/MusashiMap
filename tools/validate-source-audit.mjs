@@ -2,6 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { openCorpus } from "./lib/source-corpus.mjs";
+
 const FORBIDDEN_ORACLE_KEYS = new Set([
   "production_status",
   "production_links",
@@ -30,11 +32,7 @@ function findForbiddenKeys(value, context, errors) {
   }
 }
 
-function firstContentLine(text) {
-  return text.split(/\r?\n/).map(line => line.trim()).find(Boolean) ?? "";
-}
-
-export function validateSourceOracle(root, oraclePath) {
+export function validateSourceOracle(root, oraclePath, corpus = openCorpus(root)) {
   const errors = [];
   const absoluteOracle = path.join(root, oraclePath);
   let oracle;
@@ -80,13 +78,12 @@ export function validateSourceOracle(root, oraclePath) {
     if (typeof chapter.source_file === "string" && !chapter.source_file.startsWith(expectedPrefix)) {
       errors.push(`${oraclePath} ${chapter.id} source_file must stay inside ${expectedPrefix}.`);
     } else if (typeof chapter.source_file === "string") {
-      const sourcePath = path.join(root, chapter.source_file);
-      if (!fs.existsSync(sourcePath)) {
+      const source = corpus.info(chapter.source_file);
+      if (!source) {
         errors.push(`${oraclePath} ${chapter.id} source file does not exist: ${chapter.source_file}.`);
       } else {
-        const source = fs.readFileSync(sourcePath, "utf8");
-        if (!source.trim()) errors.push(`${oraclePath} ${chapter.id} source file is empty.`);
-        const heading = firstContentLine(source);
+        if (!source.word_count) errors.push(`${oraclePath} ${chapter.id} source file is empty.`);
+        const heading = source.title;
         if (heading && heading !== chapter.title) errors.push(`${oraclePath} ${chapter.id} title ${JSON.stringify(chapter.title)} disagrees with source heading ${JSON.stringify(heading)}.`);
       }
     }
@@ -128,6 +125,7 @@ export function validateSourceOracle(root, oraclePath) {
 }
 
 export function validateSourceAudits(root = process.cwd()) {
+  const corpus = openCorpus(root);
   const directory = path.join(root, "research", "source-audit");
   if (!fs.existsSync(directory)) return { errors: ["research/source-audit directory is missing."], files: 0, chapters: 0, facts: 0 };
 
@@ -140,7 +138,7 @@ export function validateSourceAudits(root = process.cwd()) {
   let facts = 0;
   for (const name of oracleFiles) {
     const relativePath = path.posix.join("research", "source-audit", name);
-    errors.push(...validateSourceOracle(root, relativePath));
+    errors.push(...validateSourceOracle(root, relativePath, corpus));
     try {
       const oracle = JSON.parse(fs.readFileSync(path.join(root, relativePath), "utf8"));
       chapters += oracle.chapters?.length ?? 0;

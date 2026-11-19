@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { getDisplayCharacterName } from "../js/reader-progress.js";
+import { openCorpus } from "./lib/source-corpus.mjs";
 
 const root = resolve(new URL("..", import.meta.url).pathname);
 const readJson = relative => JSON.parse(readFileSync(resolve(root, relative), "utf8"));
@@ -56,9 +57,11 @@ function independentRosters() {
 const expectedByChapter = independentRosters();
 const errors = [];
 const notices = [];
+const corpus = openCorpus(root);
+errors.push(...corpus.errors);
 
 for (const chapter of chapters) {
-  if (!existsSync(resolve(root, chapter.source_file)))
+  if (!corpus.has(chapter.source_file))
     errors.push(`${chapter.chapter_id}: source_file inesistente (${chapter.source_file})`);
   const actual = characters
     .filter(character => character.present_in?.includes(chapter.number))
