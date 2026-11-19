@@ -102,3 +102,8 @@ test("every recorded relationship has a readable Italian description", () => {
     assert.doesNotMatch(describeRelationship(relationship), /_/);
   }
 });
+
+test("archive projection is memoized per loaded data and section", () => {
+  assert.equal(buildArchive(data, 12), buildArchive(data, 12));
+  assert.notEqual(buildArchive(data, 12), buildArchive(data, 13));
+});

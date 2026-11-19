@@ -374,3 +374,23 @@ test("micro-wiki entries cannot cross their spoiler-safe threshold", () => {
   assert.deepEqual(getRelevantHistoricalWiki(entries, 4).map(entry => entry.id), ["future-context"]);
   assert.deepEqual(getRelevantHistoricalWiki(entries, 9).map(entry => entry.id), ["book-aware-context"]);
 });
+
+test("display names come only from identity records, never from hardcoded ids", () => {
+  const character = { id: "musashi", name: "Miyamoto Musashi" };
+  assert.equal(getDisplayCharacterName(character, 3, []), "Miyamoto Musashi");
+  assert.equal(getDisplayCharacterName(character, 3, [{
+    character_id: "musashi", display_name: "Shinmen Takezō", valid_from_section: 1, valid_until_section: 7
+  }]), "Shinmen Takezō");
+});
+
+test("character visibility index follows evidence appended after a lookup", () => {
+  const characters = [{ id: "late" }];
+  const states = [];
+  const events = [{ section: 9, characters: ["late"] }];
+  assert.deepEqual(getVisibleCharacters(characters, 5, { states, events }), []);
+  assert.deepEqual(getVisibleCharacters(characters, 9, { states, events }).map(item => item.id), ["late"]);
+  states.push({ character: "late", section: 4 });
+  assert.deepEqual(getVisibleCharacters(characters, 5, { states, events }).map(item => item.id), ["late"]);
+  events.push({ section: 2, referenced_characters: ["late"] });
+  assert.deepEqual(getVisibleCharacters(characters, 2, { states, events }).map(item => item.id), ["late"]);
+});

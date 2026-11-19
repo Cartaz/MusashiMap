@@ -10,14 +10,21 @@ const CONTRACT = "docs/book-staging-contract.md";
 const BOOKS = [3, 4, 5, 6, 7];
 const REQUIRED_ARRAYS = ["source_files", "chapters", "characters", "groups", "locations", "events", "character_states", "relationships", "historical_context", "external_validation"];
 const MOVEMENT = new Set(["arrival_confirmed", "confirmed_route", "intended_destination", "direction_only", "uncertain_route"]);
-const args = new Set(process.argv.slice(2));
-const rootArg = [...args].find(value => value.startsWith("--root="));
-if (rootArg) args.delete(rootArg);
-if (args.size) {
-  console.error(`Unknown arguments: ${[...args].join(", ")}`);
+// Accept both `--root=dir` and `--root dir`, like the other validators.
+const argv = process.argv.slice(2);
+let rootValue = null;
+const unknown = [];
+for (let index = 0; index < argv.length; index++) {
+  const value = argv[index];
+  if (value.startsWith("--root=")) rootValue = value.slice("--root=".length);
+  else if (value === "--root" && index + 1 < argv.length) rootValue = argv[++index];
+  else unknown.push(value);
+}
+if (unknown.length || rootValue === "") {
+  console.error(`Unknown arguments: ${unknown.join(", ") || "--root requires a directory"}`);
   process.exit(2);
 }
-const root = rootArg ? path.resolve(rootArg.slice(7)) : process.cwd();
+const root = rootValue ? path.resolve(rootValue) : process.cwd();
 const research = path.join(root, "research");
 const readJson = async file => JSON.parse(await readFile(file, "utf8"));
 const list = value => Array.isArray(value) ? value : value == null ? [] : [value];

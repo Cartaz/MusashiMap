@@ -42,14 +42,6 @@ export function installExplorer(data, { applySection }) {
     // A link may only move within the already visible chapter interval.
     if (section <= model.section) applySection(section);
   }, "explorer-chapter-link");
-  const sourceLink = section => {
-    const chapter = model.chapters.find(item => item.number === section);
-    if (!/^data\/source\//.test(chapter?.source_file ?? "")) return null;
-    const link = make("a", "Apri la trascrizione di questo capitolo", "explorer-source-link");
-    link.href = `https://github.com/Cartaz/MusashiMap/blob/main/${chapter.source_file.split("/").map(encodeURIComponent).join("/")}`;
-    link.target = "_blank"; link.rel = "noopener noreferrer";
-    return link;
-  };
   const mapButton = id => button("Mostra sulla mappa", () => {
     close();
     window.dispatchEvent(new CustomEvent("musashimap:focus-location", { detail: { id } }));
@@ -91,8 +83,6 @@ export function installExplorer(data, { applySection }) {
       const list = make("ul");
       events.forEach(event => list.append(make("li", event.description)));
       group.append(list, chapterButton(section));
-      const source = sourceLink(section);
-      if (source) group.append(source);
       container.append(group);
     }
     return container;
@@ -159,11 +149,9 @@ export function installExplorer(data, { applySection }) {
         if (place.coordinates) detail.append(mapButton(id));
       });
       detail.append(make("h3", "Riferimento"), make("p", item.source
-        ? `Trascrizione locale del capitolo: ${chapterLabel(item.section)}. Riferimento registrato nel dataset.`
+        ? `Riferimento registrato nel dataset: ${chapterLabel(item.section)}.`
         : "Evento registrato nel dataset; riferimento puntuale non disponibile."));
       if (item.source) detail.append(make("p", `Riferimento del record: ${item.source}`));
-      const source = sourceLink(item.section);
-      if (source) detail.append(source);
     }
   }
 

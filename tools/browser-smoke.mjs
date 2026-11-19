@@ -135,6 +135,29 @@ try {
   }
   await page.close();
 
+  // Reading position survives a reload on the same device, and following or
+  // unfollowing a character keeps the pan/zoom chosen for the current section.
+  const persisted = await newPage();
+  await loaded(persisted);
+  await persisted.locator("#section-select").selectOption("30");
+  await persisted.locator("#character-toggle").click();
+  await persisted.locator("#select-none").click();
+  await persisted.evaluate(() => window.auditMap.setView([34.2, 133.1], 11, { animate: false }));
+  await persisted.locator("#character-filters label").first().click();
+  const view = await persisted.evaluate(() => ({ center: window.auditMap.getCenter(), zoom: window.auditMap.getZoom() }));
+  assert.equal(view.zoom, 11);
+  assert.ok(Math.abs(view.center.lat - 34.2) < 1e-6 && Math.abs(view.center.lng - 133.1) < 1e-6);
+  const selectedBeforeReload = (await checked(persisted)).filter(item => item.checked).map(item => item.label);
+  assert.equal(selectedBeforeReload.length, 1);
+  await loaded(persisted);
+  assert.equal(await persisted.locator("#chapter").inputValue(), "30");
+  await persisted.locator("#character-toggle").click();
+  assert.deepEqual((await checked(persisted)).filter(item => item.checked).map(item => item.label), selectedBeforeReload);
+  await persisted.evaluate(() => localStorage.setItem("musashimap:reader-state", "{not json"));
+  await loaded(persisted);
+  assert.equal(await persisted.locator("#chapter").inputValue(), "1");
+  await persisted.close();
+
   const explorerPage = await newPage();
   await loaded(explorerPage);
   try {

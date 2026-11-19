@@ -56,7 +56,6 @@ button[aria-pressed="true"] { border-color: var(--vermilion); background: var(--
 .explorer-dialog button:disabled { opacity: .45; cursor: default; }
 .explorer-dialog .explorer-back { display: none; }
 .explorer-empty { font-size: 15px; line-height: 1.7; padding: 18px 0; color: var(--muted); }
-.explorer-source-link { display: block; color: var(--vermilion); font-size: 13px; line-height: 1.6; margin-block: 12px; }
 .explorer-dialog .explorer-text-button, .explorer-dialog .explorer-chapter-link {
   display: block; text-align: left; background: transparent; color: var(--vermilion); border: 0; padding: 7px 0; text-decoration: underline; text-underline-offset: 3px; }
 .timeline-book h2 { font-size: 18px; margin: 8px 0 14px; }
