@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { createRuntimeVersion, listLocalRuntimeUrls } from "./runtime-version.mjs";
+import { auditOverlay, CHARACTER_WIKI, LANGUAGES, TRANSLATABLE_COLLECTIONS } from "../js/i18n-overlay.js";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rootArgument = process.argv.indexOf("--root");
@@ -168,6 +169,16 @@ for (const identity of identities) {
   }
   ranges.push({ from: identity.valid_from_section, until: identity.valid_until_section });
   identityRanges.set(identity.character_id, ranges);
+}
+
+// Published translations must cover published records and nothing else.
+const artifactDocuments = Object.fromEntries(
+  [...Object.values(TRANSLATABLE_COLLECTIONS).map(spec => spec.file), CHARACTER_WIKI.file].map(file => [file, readJson(file)])
+);
+for (const language of LANGUAGES) {
+  const { missing, unknown } = auditOverlay(language, artifactDocuments, readJson(`data/i18n/${language}.json`));
+  if (unknown.length) errors.push(`Artifact ${language} translations leak ${unknown.length} unpublished entries (${unknown.slice(0, 5).join(", ")}).`);
+  if (missing.length) errors.push(`Artifact ${language} translations miss ${missing.length} published entries (${missing.slice(0, 5).join(", ")}).`);
 }
 
 if (errors.length) {

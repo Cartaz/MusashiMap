@@ -1,4 +1,5 @@
 import { getCharacterIntroductionSection, getDisplayCharacterName, getProgressiveDisplayName, getProgressiveValue, getReaderSnapshot, getVisibleCharacters } from "./reader-progress.js";
+import { t } from "./i18n.js";
 import { describeRelationship, relationshipCategory } from "./relationship-labels.js";
 
 export const normalizeSearch = value => String(value ?? "").normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase("it").trim();
@@ -23,6 +24,7 @@ export function buildArchive(data, section) {
 // Only this projection is searched or rendered. Canonical aliases, final roles,
 // future appearances, and later wiki values never enter the public view model.
 function projectArchive(data, section) {
+  const language = data.language ?? "it";
   const events = data.events.events.filter(event => Number.isInteger(event.section) && event.section <= section);
   const wiki = data.characterWiki?.characters ?? {};
   const identities = data.identities?.identities ?? [];
@@ -44,7 +46,7 @@ function projectArchive(data, section) {
     const updates = Object.fromEntries(Object.entries(entry?.current_by_section ?? {}).filter(([at]) => Number(at) >= floor && Number(at) <= ceiling));
     return {
       id, sourceId: character.id, name, names, main: character.importance === "main", historicalIdentity: id !== character.id,
-      summary: getProgressiveValue(updates, ceiling) ?? "Nome o personaggio incontrato nel testo. Consulta gli eventi documentati qui sotto.",
+      summary: getProgressiveValue(updates, ceiling) ?? t("archive.characterSummary", {}, language),
       first: Math.max(floor, getCharacterIntroductionSection(character, evidence)),
       appearances: (character.present_in ?? []).filter(at => at >= floor && at <= ceiling),
       state: state && state.section >= floor ? state : null
@@ -73,7 +75,7 @@ function projectArchive(data, section) {
       coordinates: hasCoordinates(place) ? place.coordinates : null, precision: place.coordinate_precision }));
   const placeIds = new Set(places.map(place => place.id));
   const projectedEvents = events.map(event => ({
-    id: event.id, section: event.section, description: event.description ?? "Evento narrativo",
+    id: event.id, section: event.section, description: event.description ?? t("archive.event", {}, language),
     characters: eventCharacterIds(event).map(id => identityForFact(id, event.section)).filter(id => characterIds.has(id)),
     places: eventPlaceIds(event).filter(id => placeIds.has(id)),
     source: event.source_file ?? event.source_ref ?? null, certainty: event.certainty,
@@ -90,7 +92,7 @@ function projectArchive(data, section) {
       seen.add(key);
       return true;
     }).map(item => ({ from: item.from, to: item.to, first: item.first_section,
-      type: item.type, category: relationshipCategory(data.relationships, item.type), description: describeRelationship(data.relationships, item) }));
+      type: item.type, category: relationshipCategory(data.relationships, item.type, language), description: describeRelationship(data.relationships, item, language) }));
   return { section, characters, places, events: projectedEvents, relationships,
     chapters: data.chapters.sections.filter(chapter => chapter.number <= section) };
 }

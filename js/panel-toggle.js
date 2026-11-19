@@ -1,3 +1,5 @@
+import { subscribeLanguage, t } from "./i18n.js";
+
 const mobileViewport = matchMedia("(max-width: 760px)");
 const installPanelToggle = ({ panel, toggle, openLabel, closeLabel, openClass = null }) => {
   if (!panel || !toggle) return;
@@ -11,7 +13,7 @@ const installPanelToggle = ({ panel, toggle, openLabel, closeLabel, openClass = 
     panel.classList.toggle("is-collapsed", !open);
     if (openClass) panel.classList.toggle(openClass, open);
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? closeLabel : openLabel);
+    toggle.setAttribute("aria-label", t(open ? closeLabel : openLabel));
     if (panel.classList.contains("info-panel")) {
       const overlay = open && mobileViewport.matches;
       document.querySelector(".app-header").inert = overlay;
@@ -29,26 +31,27 @@ const installPanelToggle = ({ panel, toggle, openLabel, closeLabel, openClass = 
     mobileViewport.addEventListener("change", () => setOpen(!panel.classList.contains("is-collapsed")));
   }
   setOpen(false);
+  subscribeLanguage(() => toggle.setAttribute("aria-label", t(panel.classList.contains("is-collapsed") ? openLabel : closeLabel)));
 };
 
 installPanelToggle({
   panel: document.querySelector(".map-legend"),
   toggle: document.querySelector(".legend-heading"),
-  openLabel: "Apri legenda",
-  closeLabel: "Chiudi legenda",
+  openLabel: "legend.open",
+  closeLabel: "legend.close",
   openClass: "is-open"
 });
 
 installPanelToggle({
   panel: document.querySelector(".map-character-panel"),
   toggle: document.querySelector("#character-toggle"),
-  openLabel: "Apri tracce narrative",
-  closeLabel: "Chiudi tracce narrative"
+  openLabel: "tracks.open",
+  closeLabel: "tracks.close"
 });
 
 installPanelToggle({
   panel: document.querySelector(".info-panel"),
   toggle: document.querySelector(".diary-toggle"),
-  openLabel: "Apri il diario del viaggio",
-  closeLabel: "Chiudi il diario del viaggio"
+  openLabel: "diary.open",
+  closeLabel: "diary.close"
 });

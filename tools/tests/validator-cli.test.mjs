@@ -41,6 +41,13 @@ const makeDataFixture = () => {
   writeJson(root, "data/identities.json", { identities: [] });
   writeJson(root, "data/context/character-wiki.json", { characters: {} });
   writeJson(root, "data/context/micro-wiki.json", { entities: [] });
+  writeJson(root, "data/i18n/it.json", {
+    language: "it",
+    events: Object.fromEntries(sections.map(section => [`${section.chapter_id}-01`, { description: "Scena" }])),
+    states: Object.fromEntries(sections.map(section => [`hero@${section.number}`, { activity: "Presente" }])),
+    chapters: { 1: { title: "Uno", book_title: "Terra" }, 2: { title: "Due", book_title: "Acqua" } }
+  });
+  writeJson(root, "data/i18n/en.json", { language: "en" });
   for (const section of sections) {
     const directory = path.join(root, `data/source/book${section.book_number}`);
     fs.mkdirSync(directory, { recursive: true });
