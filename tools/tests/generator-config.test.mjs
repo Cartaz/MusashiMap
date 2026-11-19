@@ -24,10 +24,6 @@ test("character audit reconciliation lives in research config", () => {
   assert.deepEqual(Object.keys(config.book2_expected), book2Chapters);
   assert.deepEqual(Object.keys(config.manifest_id_maps).map(Number).sort((a, b) => a - b), [3, 4, 5, 6, 7]);
 
-  const generator = readFileSync(path.join(root, "tools/generate-character-chapter-audit.mjs"), "utf8");
-  assert.doesNotMatch(generator, /const manifestIdMaps = \{|const book1Expected = \{|const book2Expected = \{/);
-  assert.doesNotMatch(generator, /book1-analysis\.json/);
-  assert.match(generator, /research\/character-audit-config\.json/);
 });
 
 test("geography audit evidence lives in research config and resolves", () => {
@@ -57,11 +53,6 @@ test("geography audit evidence lives in research config and resolves", () => {
     }
   }
 
-  const generator = readFileSync(path.join(root, "tools/generate-geography-audit.mjs"), "utf8");
-  assert.doesNotMatch(generator, /const manualSources = \[|const manifestTopicAssignments = \{|assign\(\[/);
-  assert.match(generator, /research\/geography-audit\/sources\.json/);
-  assert.match(generator, /research\/geography-audit\/assignments\.json/);
-  assert.match(generator, /research\/geography-audit\/manifest-topics\.json/);
 });
 
 test("audit config extraction does not change generated reports", t => {

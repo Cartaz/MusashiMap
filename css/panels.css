@@ -1,49 +1,289 @@
-:root{
-  --pergamena-chiusa-size:50px;
-  --pergamena-chiusa-roll-width:16px;
+:root {
+  --pergamena-chiusa-size: 50px;
+  --pergamena-chiusa-roll-width: 16px;
 }
 
 /* GOLD STANDARD: edit this class to propagate the panel visual language everywhere. */
-.panel-parchment{
-  --panel-surface:rgba(232,221,201,.97);
-  --panel-border:1px solid rgba(75,60,39,.45);
-  --panel-shadow-open:0 8px 22px rgba(43,34,22,.14);
-  --panel-shadow-closed:0 8px 20px rgba(43,34,22,.22);
-  --panel-text:var(--ink);
-  --panel-font:"Cinzel";
-  --panel-kicker:var(--vermilion);
-  --panel-surface-image:radial-gradient(ellipse at 15% 10%,rgba(255,250,235,.34),transparent 42%),radial-gradient(ellipse at 86% 88%,rgba(92,67,35,.08),transparent 46%),var(--paper-noise);
-  --panel-surface-size:auto,auto,512px 512px;
-  --panel-surface-blend:normal,normal,multiply;
-  box-sizing:border-box!important;background-color:var(--panel-surface)!important;background-image:var(--panel-surface-image)!important;background-size:var(--panel-surface-size)!important;background-blend-mode:var(--panel-surface-blend)!important;border:var(--panel-border)!important;border-radius:0!important;box-shadow:var(--panel-shadow-open)!important;color:var(--panel-text)!important;font-family:var(--panel-font)!important;
+.panel-parchment {
+  --panel-surface: rgba(232, 221, 201, 0.97);
+  --panel-border: 1px solid rgba(75, 60, 39, 0.45);
+  --panel-shadow-open: 0 8px 22px rgba(43, 34, 22, 0.14);
+  --panel-shadow-closed: 0 8px 20px rgba(43, 34, 22, 0.22);
+  --panel-text: var(--ink);
+  --panel-font: "Cinzel";
+  --panel-kicker: var(--vermilion);
+  --panel-surface-image: radial-gradient(ellipse at 15% 10%, rgba(255, 250, 235, 0.34), transparent 42%),
+    radial-gradient(ellipse at 86% 88%, rgba(92, 67, 35, 0.08), transparent 46%), var(--paper-noise);
+  --panel-surface-size: auto, auto, 512px 512px;
+  --panel-surface-blend: normal, normal, multiply;
+  box-sizing: border-box;
+  background-color: var(--panel-surface);
+  background-image: var(--panel-surface-image);
+  background-size: var(--panel-surface-size);
+  background-blend-mode: var(--panel-surface-blend);
+  border: var(--panel-border);
+  border-radius: 0;
+  box-shadow: var(--panel-shadow-open);
+  color: var(--panel-text);
+  font-family: var(--panel-font);
 }
-.panel-parchment:not(.is-collapsed)::before,.panel-parchment:not(.is-collapsed)::after{content:none!important}
-.panel-parchment .panel-heading h2,.panel-parchment .sidebar-heading h2,.panel-parchment>h2,.panel-parchment .sidebar-section h2{font-family:var(--panel-font)!important;color:var(--panel-text)!important}
-.panel-parchment .panel-heading p:not(.panel-kicker),.panel-parchment .sidebar-heading p:not(.panel-kicker),.panel-parchment>p,.panel-parchment #event-list,.panel-parchment .wiki-card p{font-family:var(--panel-font)!important}
+.panel-parchment:not(.is-collapsed)::before,
+.panel-parchment:not(.is-collapsed)::after {
+  content: none;
+}
+.panel-parchment .panel-heading h2,
+.panel-parchment .sidebar-heading h2,
+.panel-parchment > h2,
+.panel-parchment .sidebar-section h2 {
+  font-family: var(--panel-font) !important;
+  color: var(--panel-text) !important;
+}
+.panel-parchment .panel-heading p:not(.panel-kicker),
+.panel-parchment .sidebar-heading p:not(.panel-kicker),
+.panel-parchment > p,
+.panel-parchment #event-list,
+.panel-parchment .wiki-card p {
+  font-family: var(--panel-font) !important;
+}
 
-.pergamena-chiusa.is-collapsed{box-sizing:border-box!important;overflow:hidden!important;background-color:var(--panel-surface,var(--paper))!important;background-image:var(--panel-surface-image,none)!important;background-size:var(--panel-surface-size,auto)!important;background-blend-mode:var(--panel-surface-blend,normal)!important;border:var(--panel-border,1px solid rgba(75,60,39,.45))!important;border-radius:0!important;box-shadow:var(--panel-shadow-closed,0 1px 4px rgba(45,34,20,.18))!important;color:var(--panel-text,var(--vermilion))!important;font-family:"Cinzel"!important}
-.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important}.pergamena-chiusa--orizzontale.is-collapsed{height:var(--pergamena-chiusa-size)!important}
-.map-legend.pergamena-chiusa{position:absolute!important;top:10px!important;right:10px!important;bottom:auto!important;left:auto!important;height:172px!important;margin:0!important}.map-character-panel.pergamena-chiusa{position:absolute!important;left:10px!important;right:auto!important;bottom:10px!important;top:auto!important;margin:0!important}.info-panel.pergamena-chiusa{position:relative!important}
-.pergamena-chiusa.is-collapsed::before,.pergamena-chiusa.is-collapsed::after{content:none!important}
-.pergamena-chiusa--verticale.is-collapsed .legend-heading,.pergamena-chiusa--verticale.is-collapsed .panel-heading,.pergamena-chiusa--verticale.is-collapsed .diary-toggle,.pergamena-chiusa--orizzontale.is-collapsed .panel-heading{width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;box-shadow:none!important}
-.pergamena-chiusa--verticale.is-collapsed .panel-heading>div:first-child{width:100%!important;display:flex!important;align-items:center!important;justify-content:center!important}
-.pergamena-chiusa--verticale.is-collapsed .panel-kicker,.pergamena-chiusa--verticale.is-collapsed .diary-collapsed-label{writing-mode:vertical-rl!important;transform:rotate(180deg)!important}
-.pergamena-chiusa.is-collapsed .character-filter-body,.pergamena-chiusa.is-collapsed .filter-actions,.pergamena-chiusa.is-collapsed .panel-heading h2,.pergamena-chiusa.is-collapsed .panel-heading>div:first-child>p:not(.panel-kicker),.pergamena-chiusa.is-collapsed .legend-items,.pergamena-chiusa.is-collapsed .diary-content,.pergamena-chiusa.is-collapsed .sidebar-section,.pergamena-chiusa.is-collapsed>h2,.pergamena-chiusa.is-collapsed>#status,.pergamena-chiusa.is-collapsed>#data-status{display:none!important}
-.map-character-panel.pergamena-chiusa:not(.is-collapsed){max-height:none!important;height:auto!important;min-height:0!important}.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter-body{display:block!important;visibility:visible!important;opacity:1!important;transform:none!important}.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filters{display:grid!important;visibility:visible!important}.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter{display:flex!important;visibility:visible!important}
-.map-legend.pergamena-chiusa:not(.is-collapsed){width:290px!important;padding:12px 13px!important}.map-legend.pergamena-chiusa--verticale.is-collapsed{height:172px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}.map-legend.pergamena-chiusa--verticale.is-collapsed .legend-heading{height:100%!important}.map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:540px!important;padding:0!important}.info-panel.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:100%!important;min-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important}.app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:minmax(0,1fr) var(--pergamena-chiusa-size)!important}
+.pergamena-chiusa.is-collapsed {
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--panel-surface, var(--paper));
+  background-image: var(--panel-surface-image, none);
+  background-size: var(--panel-surface-size, auto);
+  background-blend-mode: var(--panel-surface-blend, normal);
+  border: var(--panel-border, 1px solid rgba(75, 60, 39, 0.45));
+  border-radius: 0;
+  box-shadow: var(--panel-shadow-closed, 0 1px 4px rgba(45, 34, 20, 0.18));
+  color: var(--panel-text, var(--vermilion));
+  font-family: "Cinzel";
+}
+.pergamena-chiusa--verticale.is-collapsed {
+  width: var(--pergamena-chiusa-size);
+}
+.pergamena-chiusa--orizzontale.is-collapsed {
+  height: var(--pergamena-chiusa-size);
+}
+.map-legend.pergamena-chiusa {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: auto;
+  left: auto;
+  height: 172px;
+  margin: 0;
+}
+.map-character-panel.pergamena-chiusa {
+  position: absolute;
+  left: 10px;
+  right: auto;
+  bottom: 10px;
+  top: auto;
+  margin: 0;
+}
+.info-panel.pergamena-chiusa {
+  position: relative;
+}
+.pergamena-chiusa.is-collapsed::before,
+.pergamena-chiusa.is-collapsed::after {
+  content: none;
+}
+.pergamena-chiusa--verticale.is-collapsed .legend-heading,
+.pergamena-chiusa--verticale.is-collapsed .panel-heading,
+.pergamena-chiusa--verticale.is-collapsed .diary-toggle,
+.pergamena-chiusa--orizzontale.is-collapsed .panel-heading {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.pergamena-chiusa--verticale.is-collapsed .panel-heading > div:first-child {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.pergamena-chiusa--verticale.is-collapsed .panel-kicker,
+.pergamena-chiusa--verticale.is-collapsed .diary-collapsed-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.pergamena-chiusa.is-collapsed .character-filter-body,
+.pergamena-chiusa.is-collapsed .filter-actions,
+.pergamena-chiusa.is-collapsed .panel-heading h2,
+.pergamena-chiusa.is-collapsed .panel-heading > div:first-child > p:not(.panel-kicker),
+.pergamena-chiusa.is-collapsed .legend-items,
+.pergamena-chiusa.is-collapsed .diary-content,
+.pergamena-chiusa.is-collapsed .sidebar-section,
+.pergamena-chiusa.is-collapsed > h2,
+.pergamena-chiusa.is-collapsed > #status,
+.pergamena-chiusa.is-collapsed > #data-status {
+  display: none !important;
+}
+
+.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter-body {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filters {
+  display: grid;
+  visibility: visible;
+}
+.map-character-panel.pergamena-chiusa:not(.is-collapsed) .character-filter {
+  display: flex;
+  visibility: visible;
+}
+
+.map-legend.pergamena-chiusa--verticale.is-collapsed {
+  height: 172px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-legend.pergamena-chiusa--verticale.is-collapsed .legend-heading {
+  height: 100%;
+}
+
+.info-panel.pergamena-chiusa--verticale.is-collapsed {
+  width: var(--pergamena-chiusa-size);
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed) {
+  grid-template-columns: minmax(0, 1fr) var(--pergamena-chiusa-size);
+}
 /* Native controls own keyboard/focus semantics; panel CSS owns only their visual integration. */
-.legend-heading,.character-panel-toggle,.info-panel .diary-toggle{appearance:none!important;border:0!important;background:transparent!important;color:inherit!important;font:inherit!important}
-.legend-heading{text-align:left!important}
-.legend-heading:focus-visible,.character-panel-toggle:focus-visible,.info-panel .diary-toggle:focus-visible{outline:2px solid rgba(155,52,41,.35)!important;outline-offset:3px!important}
-.map-character-panel .panel-heading{cursor:default!important;user-select:auto!important}
-.map-character-panel .character-panel-toggle{display:flex!important;align-items:center!important;margin:0!important;padding:0!important;text-align:left!important;cursor:pointer!important;user-select:none!important}
-.map-character-panel.pergamena-chiusa--orizzontale.is-collapsed .character-panel-toggle{width:100%!important;height:100%!important;justify-content:center!important}
-.info-panel .diary-toggle{width:100%!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;text-align:left!important;border-bottom:0!important}.info-panel .diary-toggle .sidebar-rule{display:none!important}.info-panel .diary-toggle .diary-collapsed-label{cursor:pointer!important}
-@media(max-width:760px){.map-legend.pergamena-chiusa{top:10px!important;right:10px!important;height:176px!important}.map-legend.pergamena-chiusa:not(.is-collapsed){width:260px!important;padding:9px 10px!important}.map-legend.pergamena-chiusa--verticale.is-collapsed{width:var(--pergamena-chiusa-size)!important;height:176px!important}.map-character-panel.pergamena-chiusa{left:10px!important;right:auto!important;bottom:max(10px,env(safe-area-inset-bottom))!important}.map-character-panel.pergamena-chiusa--orizzontale.is-collapsed{width:calc(100% - 20px)!important;height:var(--pergamena-chiusa-size)!important}.info-panel.pergamena-chiusa--verticale.is-collapsed{width:100%!important;height:96px!important}.app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed){grid-template-columns:1fr!important}}
-@media(prefers-reduced-motion:reduce){.pergamena-chiusa{transition:none!important}}
+.legend-heading,
+.character-panel-toggle,
+.info-panel .diary-toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+.legend-heading {
+  text-align: left;
+}
+.legend-heading:focus-visible,
+.character-panel-toggle:focus-visible,
+.info-panel .diary-toggle:focus-visible {
+  outline: 2px solid rgba(155, 52, 41, 0.35) !important;
+  outline-offset: 3px !important;
+}
+.map-character-panel .panel-heading {
+  margin: 0;
+  min-height: 38px;
+  cursor: pointer;
+  user-select: none;
+  cursor: default;
+  user-select: auto;
+}
+.map-character-panel .character-panel-toggle {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+}
+.map-character-panel.pergamena-chiusa--orizzontale.is-collapsed .character-panel-toggle {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.info-panel .diary-toggle {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: left;
+  border-bottom: 0;
+}
+.info-panel .diary-toggle .sidebar-rule {
+  display: none;
+}
+.info-panel .diary-toggle .diary-collapsed-label {
+  cursor: pointer;
+}
+@media (max-width: 760px) {
+  .map-legend.pergamena-chiusa {
+    top: 10px;
+    right: 10px;
+    height: 176px;
+  }
+  .map-legend.pergamena-chiusa:not(.is-collapsed) {
+    width: 260px;
+    padding: 9px 10px;
+  }
+  .map-legend.pergamena-chiusa--verticale.is-collapsed {
+    width: var(--pergamena-chiusa-size);
+    height: 176px;
+  }
+  .map-character-panel.pergamena-chiusa {
+    left: 10px;
+    right: auto;
+    bottom: max(10px, env(safe-area-inset-bottom));
+  }
+  .map-character-panel.pergamena-chiusa--orizzontale.is-collapsed {
+    width: calc(100% - 20px);
+    height: var(--pergamena-chiusa-size);
+  }
+  .info-panel.pergamena-chiusa--verticale.is-collapsed {
+    width: 100%;
+    height: 96px;
+  }
+  .app-shell:has(> .info-panel.pergamena-chiusa--verticale.is-collapsed) {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pergamena-chiusa {
+    transition: none !important;
+  }
+}
 
 /* Diary: no horizontal rules. */
-.info-panel .sidebar-section{border-top:0!important;padding-top:0!important}.info-panel #event-list li{border-bottom:0!important}.info-panel .wiki-card{border:0!important}.info-panel .wiki-card:last-child{border-bottom:0!important}
+.info-panel .sidebar-section {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.info-panel .wiki-card {
+  border: 0 !important;
+  border-top: 1px solid rgba(185, 168, 138, 0.55) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+.info-panel .wiki-card:last-child {
+  border-bottom: 1px solid rgba(185, 168, 138, 0.55) !important;
+  border-bottom: 0 !important;
+}
 
 /* Single typography policy: all rendered application text uses Cinzel. */
-html,body,body *,body *::before,body *::after{font-family:"Cinzel"!important}
+html,
+body,
+body *,
+body *::before,
+body *::after {
+  font-family: "Cinzel" !important;
+}

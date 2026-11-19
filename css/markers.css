@@ -1,88 +1,94 @@
 /* Place markers are illustrated SVGs, never circular dots. Character dots remain intentionally circular. */
 .musashi-map-marker-wrapper,
 .musashi-map-marker-wrapper.leaflet-marker-icon {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  padding: 0 !important;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
 }
 
 .musashi-map-marker {
-  display: grid !important;
-  place-items: center !important;
-  width: 32px !important;
-  height: 32px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  color: var(--marker-color) !important;
-  filter: drop-shadow(0 1px 1px rgba(35,29,22,.28));
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--marker-color);
+  filter: drop-shadow(0 1px 1px rgba(35, 29, 22, 0.28));
 }
 
 .musashi-map-marker img {
-  display: block !important;
-  width: 32px !important;
-  height: 32px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  object-fit: contain !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .musashi-map-marker.is-approximate img {
-  opacity: .72;
+  opacity: 0.72;
 }
 
 .musashi-map-marker.is-approximate {
   outline: 1px dashed var(--marker-color);
   outline-offset: 2px;
-  border-radius: 50% !important;
-  opacity: .72;
+  border-radius: 50%;
+  opacity: 0.72;
 }
 
 /* Character markers deliberately remain dots and can coexist with place markers. */
 .musashi-character-marker-wrapper,
 .musashi-character-marker-wrapper.leaflet-marker-icon {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 /* Current physical presence: color -> white -> dark outer ring. */
 .musashi-character-marker {
-  display: block !important;
-  width: 22px !important;
-  height: 22px !important;
-  background: var(--marker-color) !important;
-  border: 3px solid #f4ead8 !important;
-  border-radius: 50% !important;
-  box-shadow: 0 0 0 2px #343434, 0 3px 9px rgba(39,31,20,.4) !important;
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: var(--marker-color);
+  border: 3px solid #f4ead8;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px #343434,
+    0 3px 9px rgba(39, 31, 20, 0.4);
 }
 
 /* Last known physical position: color -> white -> gray outer ring. */
 .musashi-character-marker.is-last-known {
   background: var(--marker-color) !important;
   border: 3px solid #f4ead8 !important;
-  box-shadow: 0 0 0 2px #9ca3af, 0 3px 9px rgba(39,31,20,.32) !important;
+  box-shadow:
+    0 0 0 2px #9ca3af,
+    0 3px 9px rgba(39, 31, 20, 0.32) !important;
 }
 
 /* Reported position: white -> character color -> gray outer ring. */
 .musashi-character-marker.is-reported {
-  background: #ffffff !important;
-  border: 5px solid var(--marker-color) !important;
-  box-shadow: 0 0 0 2px #9ca3af, 0 3px 9px rgba(39,31,20,.32) !important;
+  background: #ffffff;
+  border: 5px solid var(--marker-color);
+  box-shadow:
+    0 0 0 2px #9ca3af,
+    0 3px 9px rgba(39, 31, 20, 0.32);
 }
 
 .musashi-character-marker.is-approximate {
-  opacity: .92;
+  opacity: 0.92;
   outline: 1px dashed var(--marker-color);
   outline-offset: 2px;
 }
@@ -99,16 +105,16 @@
   --collision-y: 0px;
   --collision-distance: 0px;
   --collision-angle: 0deg;
-  overflow: visible !important;
+  overflow: visible;
 }
 
 .musashi-character-marker-wrapper,
 .musashi-character-marker-wrapper.leaflet-marker-icon {
-  display: grid !important;
-  place-items: center !important;
-  width: 26px !important;
-  height: 26px !important;
-  padding: 0 !important;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
 }
 
 .musashi-map-marker,
@@ -127,7 +133,7 @@
   left: 50%;
   width: var(--collision-distance);
   height: 1.5px;
-  background: rgba(52,52,52,.5);
+  background: rgba(52, 52, 52, 0.5);
   transform: rotate(var(--collision-angle));
   transform-origin: 0 50%;
   pointer-events: none;

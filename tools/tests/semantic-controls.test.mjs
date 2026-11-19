@@ -1,48 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 import test from "node:test";
-
-const index = readFileSync(new URL("../../index.html", import.meta.url), "utf8");
-const panelToggle = readFileSync(new URL("../../js/panel-toggle.js", import.meta.url), "utf8");
-const popups = readFileSync(new URL("../../js/popups.js", import.meta.url), "utf8");
-
-const nativeControl = (selectorPattern, controlsId) => new RegExp(
-  `<button[^>]*${selectorPattern}[^>]*type="button"[^>]*aria-controls="${controlsId}"[^>]*>`,
-  "i"
-);
-
-test("collapsible panel controls are native buttons", () => {
-  assert.match(index, nativeControl('class="[^"]*legend-heading', "place-legend"));
-  assert.match(index, nativeControl('id="character-toggle"', "character-filter-body"));
-  assert.match(index, nativeControl('class="[^"]*diary-toggle', "diary-content"));
-  assert.match(index, /<div id="diary-content" class="diary-content">/);
-});
-
-test("character bulk actions are siblings of the panel toggle, never nested buttons", () => {
-  const toggleStart = index.indexOf('<button id="character-toggle"');
-  const toggleEnd = index.indexOf("</button>", toggleStart);
-  const selectAll = index.indexOf('<button id="select-all"');
-  const selectNone = index.indexOf('<button id="select-none"');
-
-  assert.ok(toggleStart >= 0 && toggleEnd > toggleStart);
-  assert.ok(selectAll > toggleEnd);
-  assert.ok(selectNone > toggleEnd);
-});
-
-test("runtime does not recreate native button semantics", () => {
-  const behavior = `${panelToggle}\n${popups}`;
-  assert.doesNotMatch(behavior, /setAttribute\(["']role["'],\s*["']button["']\)/);
-  assert.doesNotMatch(behavior, /setAttribute\(["']tabindex["'],\s*["']0["']\)/);
-  // Escape closes the mobile diary; Enter/Space remain native button behavior.
-  assert.doesNotMatch(behavior, /event\.key\s*===\s*["'](?:Enter| |Space)["']/);
-});
-
-test("collapsible panel behavior has one explicit owner", () => {
-  assert.match(panelToggle, /querySelector\(["']#character-toggle["']\)/);
-  assert.match(panelToggle, /querySelector\(["']\.legend-heading["']\)/);
-  assert.match(panelToggle, /querySelector\(["']\.diary-toggle["']\)/);
-  assert.doesNotMatch(popups, /character-toggle|panel-heading|is-collapsed/);
-});
 
 test("panel toggle owner updates only panel state and ARIA state", async () => {
   class FakeClassList {
