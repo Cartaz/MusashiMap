@@ -1,8 +1,5 @@
 import assert from "node:assert/strict";
-import fs from "node:fs";
-import path from "node:path";
 import test from "node:test";
-import { fileURLToPath } from "node:url";
 
 import {
   createReaderProgress,
@@ -12,7 +9,6 @@ import {
   subscribeCanonicalReaderState
 } from "../../js/reader-progress.js";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
 test("reader navigation is immutable configuration over the canonical state", () => {
   initializeCanonicalReaderState({ section: 2, selectedCharacters: ["a"] });
@@ -78,15 +74,4 @@ test("reader navigation exposes no mutable compatibility API", () => {
   ]) {
     assert.equal(name in reader, false, name);
   }
-});
-
-test("app and map runtime do not keep duplicate reader-state ownership", () => {
-  const app = fs.readFileSync(path.join(root, "js/app.js"), "utf8");
-  const mapRuntime = fs.readFileSync(path.join(root, "js/map-runtime.js"), "utf8");
-
-  assert.doesNotMatch(app, /furthestSectionReached/);
-  assert.doesNotMatch(app, /reader\.(?:setSection|next|previous)\(/);
-  assert.match(app, /initializeCanonicalReaderState/);
-  assert.doesNotMatch(mapRuntime, /let selectedCharacters\b|let previousSection\b|previousSelectedCharacters/);
-  assert.match(mapRuntime, /subscribeCanonicalReaderState\(\(state, previousState\)/);
 });

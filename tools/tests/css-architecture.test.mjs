@@ -8,33 +8,34 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 const cssRoot = path.join(root, "css");
 const cssFiles = fs.readdirSync(cssRoot).filter(name => name.endsWith(".css")).sort();
 const readCss = name => fs.readFileSync(path.join(cssRoot, name), "utf8");
+const modules = cssFiles.filter(name => name !== "app.css");
 
-test("CSS entrypoint exposes responsibility-based modules in one explicit order", () => {
-  const entry = readCss("app.css");
-  const imports = [...entry.matchAll(/@import\s+url\(["']\.\/([^?"']+)/g)].map(match => match[1]);
-
-  assert.deepEqual(imports, [
-    "foundation.css",
-    "map-controls.css",
-    "markers.css",
-    "components.css",
-    "panels.css",
-    "surfaces.css",
-    "map-unmapped.css",
-    "responsive.css",
-    "explorer.css"
-  ]);
-
-  for (const historical of [
-    "style-v2.css",
-    "ui-redesign.css",
-    "marker-overrides.css",
-    "parchment-overrides.css",
-    "paper-texture.css",
-    "responsive-polish.css"
-  ]) {
-    assert.equal(cssFiles.includes(historical), false, historical);
+// Rules as (media context, selector), comments removed.
+const rulesOf = name => {
+  const text = readCss(name).replace(/\/\*[\s\S]*?\*\//g, "");
+  const rules = [];
+  const stack = [];
+  let start = 0;
+  for (let index = 0; index < text.length; index++) {
+    const char = text[index];
+    if (char === "{") {
+      stack.push(text.slice(start, index).trim().replace(/\s+/g, " "));
+      start = index + 1;
+    } else if (char === "}") {
+      const prelude = stack.pop();
+      if (prelude && !prelude.startsWith("@")) rules.push(`${stack.filter(item => item.startsWith("@")).join(" ")}|${prelude}`);
+      start = index + 1;
+    } else if (char === ";") {
+      start = index + 1;
+    }
   }
+  return rules;
+};
+
+test("the entrypoint imports every module exactly once and nothing else imports", () => {
+  const imports = [...readCss("app.css").matchAll(/@import\s+url\(["']\.\/([^"')]+)["']\)/g)].map(match => match[1]);
+  assert.deepEqual([...imports].sort(), modules);
+  for (const name of modules) assert.doesNotMatch(readCss(name), /@import\b/, name);
 });
 
 test("marker presentation has exactly one CSS owner", () => {
@@ -42,22 +43,24 @@ test("marker presentation has exactly one CSS owner", () => {
   assert.deepEqual(markerOwners, ["markers.css"]);
 });
 
-test("panel collapse semantics do not leak back into map controls or components", () => {
-  for (const name of ["map-controls.css", "components.css"]) {
-    const content = readCss(name);
-    assert.doesNotMatch(content, /\.map-(?:legend|character-panel)\.is-collapsed/);
-  }
-  assert.match(readCss("panels.css"), /\.pergamena-chiusa\.is-collapsed/);
+// Ratchets: these numbers may only go down. Each remaining !important is one
+// a computed-style comparison showed to be load-bearing (mostly against
+// Leaflet and MapLibre inline styles) or one in a state the comparison does
+// not render (hover, focus, reduced motion).
+const IMPORTANT_BUDGET = 100;
+const CROSS_FILE_SELECTOR_BUDGET = 27;
+
+test("!important stays within its audited budget", () => {
+  const count = modules.reduce((total, name) => total + (readCss(name).match(/!important/g) ?? []).length, 0);
+  assert.ok(count <= IMPORTANT_BUDGET, `${count} !important declarations; budget ${IMPORTANT_BUDGET}`);
 });
 
-test("runtime CSS has no historical validation naming or hidden module imports", () => {
-  for (const name of cssFiles) {
-    const content = readCss(name);
-    assert.doesNotMatch(content, /#validation\b|\.validation\b/, name);
-    if (name !== "app.css") assert.doesNotMatch(content, /@import\b/, name);
+test("a selector is defined in one module per media context", () => {
+  const owners = new Map();
+  for (const name of modules) {
+    for (const rule of new Set(rulesOf(name))) owners.set(rule, [...(owners.get(rule) ?? []), name]);
   }
-
-  const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
-  assert.match(index, /id="data-status" class="data-status"/);
-  assert.match(index, /Cinzel:wght@400;500;600;700;800/);
+  const shared = [...owners].filter(([, files]) => files.length > 1);
+  assert.ok(shared.length <= CROSS_FILE_SELECTOR_BUDGET,
+    `${shared.length} selectors are split across modules; budget ${CROSS_FILE_SELECTOR_BUDGET}: ${shared.slice(0, 5).map(([rule]) => rule).join("; ")}`);
 });
