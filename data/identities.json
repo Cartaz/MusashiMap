@@ -7,9 +7,9 @@
       "display_name": "Himeji garrison captain",
       "alias": null,
       "valid_from_chapter": "b1c4",
-      "valid_until_chapter": "b1c7",
+      "valid_until_chapter": "b1c5",
       "valid_from_section": 4,
-      "valid_until_section": 7,
+      "valid_until_section": 5,
       "reader_knows_canonical_identity": false,
       "status": "unidentified_person",
       "change_reason": "introduced_by_role_before_name_reveal"
@@ -18,9 +18,9 @@
       "character_id": "aoki_tanzaemon",
       "display_name": "Aoki Tanzaemon",
       "alias": null,
-      "valid_from_chapter": "b1c8",
+      "valid_from_chapter": "b1c6",
       "valid_until_chapter": null,
-      "valid_from_section": 8,
+      "valid_from_section": 6,
       "valid_until_section": null,
       "reader_knows_canonical_identity": true,
       "status": "canonical_name",
@@ -325,6 +325,30 @@
       "reader_knows_canonical_identity": false,
       "status": "unidentified_person",
       "change_reason": "role_reference_before_explicit_name"
+    },
+    {
+      "character_id": "hamada_elder_brother",
+      "display_name": "Hamada",
+      "alias": null,
+      "valid_from_chapter": "b6c4",
+      "valid_until_chapter": "b6c7",
+      "valid_from_section": 83,
+      "valid_until_section": 86,
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "identity_not_yet_revealed"
+    },
+    {
+      "character_id": "hamada_elder_brother",
+      "display_name": "Hamada Toranosuke's elder brother",
+      "alias": "Hamada",
+      "valid_from_chapter": "b6c8",
+      "valid_until_chapter": null,
+      "valid_from_section": 87,
+      "valid_until_section": null,
+      "reader_knows_canonical_identity": true,
+      "status": "revealed_identity",
+      "change_reason": "chapter_explicitly_links_the_brothers"
     }
   ]
 }

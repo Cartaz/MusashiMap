@@ -100,7 +100,6 @@
         2,
         9,
         10,
-        12,
         20,
         21,
         24,
@@ -1202,9 +1201,7 @@
       "historical_status": "unknown",
       "map_relevance": "mapped",
       "color": "#92400e",
-      "present_in": [
-        99
-      ]
+      "present_in": []
     },
     {
       "id": "toroku",

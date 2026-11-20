@@ -299,7 +299,8 @@
         "b3c4_e02",
         "b3c4_e03",
         "b3c4_e04",
-        "b3c4-audit-references"
+        "b3c4-audit-references",
+        "b3c4-fc-01"
       ],
       "character_state_ids": [
         "b3c4-state-akemi",
@@ -694,7 +695,8 @@
         "b3c13_e03",
         "b3c13_e04",
         "b3c13_e05",
-        "b3c13-audit-references"
+        "b3c13-audit-references",
+        "b3c13-fc-01"
       ],
       "character_state_ids": [
         "b3c13-state-musashi",
@@ -1839,6 +1841,19 @@
       "source_chapters": [
         "b3c10"
       ]
+    },
+    {
+      "id": "kiyomizudera",
+      "name": "Kiyomizudera",
+      "type": "temple",
+      "coordinates": [
+        34.99442,
+        135.78448
+      ],
+      "mapping_status": "exact",
+      "chapters": [
+        "b3c13"
+      ]
     }
   ],
   "events": [
@@ -1867,7 +1882,8 @@
       "description": "The traveler kills an inspector and is then fatally attacked by the laborers and guards.",
       "characters": [
         "unknown_certificate_bearer",
-        "fushimi_inspector"
+        "fushimi_inspector",
+        "matahachi"
       ],
       "referenced_characters": [],
       "groups": [
@@ -1937,7 +1953,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": null,
+      "location": "fushimi_deserted_house",
       "description": "A mendicant priest laments his lost samurai status, his conduct involving Otsū and the harm done to his only son Jōtarō.",
       "certainty": "explicit",
       "source_ref": "data/source/book3/chapter1-sasaki-kojiro.txt",
@@ -2048,8 +2064,8 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "osaka_town_of_priestesses",
-      "source_ref": "chapter2-reunion-in-osaka.txt:L332-L465",
+      "location": "osaka",
+      "source_ref": "chapter2-reunion-in-osaka.txt:L277-L519",
       "source_file": "data/source/book3/chapter2-reunion-in-osaka.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2244,11 +2260,12 @@
       "id": "b3c4_e01",
       "chapter": "b3c4",
       "type": "arrival",
-      "description": "The ship reaches Kizugawa harbor and the handsome young man disembarks separately.",
+      "description": "The ship reaches Kizugawa harbor; the handsome young man disembarks separately, and Okō meets Tōji on the dock.",
       "characters": [
         "kojiro",
         "gion_toji",
-        "monkey"
+        "monkey",
+        "oko"
       ],
       "referenced_characters": [],
       "groups": [
@@ -2350,6 +2367,32 @@
       "movement_status": null
     },
     {
+      "id": "b3c4-fc-01",
+      "chapter": "b3c4",
+      "section": 23,
+      "type": "departure",
+      "description": "After a word with Seijūrō, Tōji leaves the Sumiyoshi inn for Kyoto with Okō right after breakfast, before the disciples can question him about his topknot.",
+      "characters": [
+        "gion_toji",
+        "oko"
+      ],
+      "referenced_characters": [
+        "yoshioka_seijuro"
+      ],
+      "groups": [],
+      "referenced_groups": [
+        "yoshioka_disciples"
+      ],
+      "location": "sumiyoshi_inn",
+      "origin": "sumiyoshi_inn",
+      "destination": null,
+      "destination_label": "Kyoto",
+      "movement_status": "direction_only",
+      "certainty": "explicit",
+      "source_ref": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt:L195-L200",
+      "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt"
+    },
+    {
       "id": "b3c5_e01",
       "chapter": "b3c5",
       "type": "visit",
@@ -2379,7 +2422,9 @@
       "description": "Akemi walks into the sea intending to die; Gonroku rescues her but drowns.",
       "characters": [
         "akemi",
-        "gonroku"
+        "gonroku",
+        "osugi",
+        "yoshioka_seijuro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2449,7 +2494,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": null,
+      "location": "sumiyoshi_inn",
       "description": "In delirium Akemi mentions Musashi, New Year's and Gojō Bridge, revealing the expected meeting.",
       "certainty": "explicit",
       "source_ref": "data/source/book3/chapter5-a-heros-passing.txt",
@@ -2506,7 +2551,8 @@
       "type": "combat",
       "description": "Kojirō lands to meet the challenge and kills multiple disciples; three survivors later bury the dead.",
       "characters": [
-        "kojiro"
+        "kojiro",
+        "monkey"
       ],
       "referenced_characters": [],
       "groups": [
@@ -2597,7 +2643,7 @@
       "id": "b3c7_e01",
       "chapter": "b3c7",
       "type": "movement",
-      "description": "Musashi travels through Yokkaichi toward Kameyama/Ujii while a foot injury worsens.",
+      "description": "Musashi rides from Kuwana through Yokkaichi toward Kameyama and Ujii while a foot injury worsens, reaching the smithy late at night.",
       "characters": [
         "musashi",
         "unnamed_groom"
@@ -2608,7 +2654,7 @@
       "location": "yokkaichi",
       "origin": null,
       "destination": "baiken_smithy",
-      "source_ref": "chapter7-eagle-mountain.txt:L94-L245",
+      "source_ref": "chapter7-eagle-mountain.txt:L35-L187",
       "source_file": "data/source/book3/chapter7-eagle-mountain.txt",
       "certainty": "explicit",
       "movement_status": "confirmed_route",
@@ -2670,7 +2716,7 @@
       "id": "b3c7_e04",
       "chapter": "b3c7",
       "type": "pilgrimage_climb",
-      "description": "After purification in the Isuzu River and leaving his swords at the House of Virgins, Musashi climbs Eagle Mountain; the abscess drains at the summit.",
+      "description": "After leaving his swords and pack at the House of Virgins and purifying himself in the icy Isuzu River, Musashi climbs Eagle Mountain; the abscess drains at the summit.",
       "characters": [
         "musashi"
       ],
@@ -2741,7 +2787,8 @@
       "description": "After gossip about Otsū's chastity, Ujitomi dismisses her from the House of Virgins.",
       "characters": [
         "otsu",
-        "arakida_ujitomi"
+        "arakida_ujitomi",
+        "jotaro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2763,7 +2810,8 @@
       "description": "Ujitomi entrusts painted scrolls to Otsū for delivery to Karasumaru Mitsuhiro in Kyoto.",
       "characters": [
         "otsu",
-        "arakida_ujitomi"
+        "arakida_ujitomi",
+        "jotaro"
       ],
       "referenced_characters": [
         "karasumaru_mitsuhiro"
@@ -2782,18 +2830,19 @@
       "id": "b3c8_e04",
       "chapter": "b3c8",
       "type": "object_transfer",
-      "description": "A servant reports that Musashi's belongings were released to an unidentified claimant against a receipt.",
+      "description": "During the scroll viewing, Arakida gives a servant the pack and two swords Otsū found, to be released against a receipt to a man who has come for them.",
       "characters": [
         "otsu",
-        "jotaro"
+        "jotaro",
+        "arakida_ujitomi"
       ],
       "referenced_characters": [
         "musashi"
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "house_of_virgins",
-      "source_ref": "chapter8-the-mayfly-in-winter.txt:L320-L354",
+      "location": "arakida_house",
+      "source_ref": "chapter8-the-mayfly-in-winter.txt:L301-L305",
       "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2830,41 +2879,49 @@
       "id": "b3c9_e01",
       "chapter": "b3c9",
       "type": "movement",
-      "description": "With his foot healed, Musashi ferries to Ōminato and boards a boat to Tsu; arrival at Tsu is not shown in this event.",
+      "description": "With his foot healed, Musashi takes the ferry to Ōminato, changes to a bigger boat across Ise Bay and disembarks at Tsu.",
       "characters": [
         "musashi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "ominato",
+      "location": "tsu",
       "origin": null,
       "destination": "tsu",
-      "source_ref": "chapter9-the-pinwheel.txt:L1-L102",
+      "source_ref": "chapter9-the-pinwheel.txt:L1-L40",
       "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination",
+      "movement_status": "arrival_confirmed",
       "origin_label": "Ise coast",
-      "section": 28
+      "section": 28,
+      "via": [
+        "ominato"
+      ]
     },
     {
       "id": "b3c9_e02",
       "chapter": "b3c9",
       "type": "identity_reveal",
-      "description": "At Tsu Musashi follows the chain-sickle-carrying blacksmith and identifies him as Shishido Baiken; the narrator’s later reconciliation with Kōhei is separate.",
+      "description": "Just off the boat at Tsu, Musashi follows a blacksmith carrying a chain-and-sickle and his apprentice Iwa, identifies him on the road as Shishido Baiken, and goes home with them to the smithy, where Baiken's wife waits with the baby.",
       "characters": [
         "musashi",
-        "kohei"
+        "kohei",
+        "iwa",
+        "baiken_wife",
+        "baiken_infant"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "baiken_smithy",
-      "source_ref": "chapter9-the-pinwheel.txt:L103-L255",
+      "location": "tsu",
+      "source_ref": "chapter9-the-pinwheel.txt:L41-L140",
       "source_file": "data/source/book3/chapter9-the-pinwheel.txt",
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
-      "section": 28
+      "section": 28,
+      "origin": "tsu",
+      "destination": "baiken_smithy"
     },
     {
       "id": "b3c9_e03",
@@ -2873,7 +2930,9 @@
       "description": "Kōhei plies Musashi with drink and stages a night ambush; Musashi hides inside the house while attackers search the roads.",
       "characters": [
         "musashi",
-        "kohei"
+        "kohei",
+        "baiken_wife",
+        "iwa"
       ],
       "referenced_characters": [],
       "groups": [
@@ -3222,7 +3281,8 @@
         "akemi",
         "kojiro",
         "yoshioka_seijuro",
-        "monkey"
+        "monkey",
+        "aoki_tanzaemon"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -3327,10 +3387,12 @@
       "id": "b3c12_e03",
       "chapter": "b3c12",
       "type": "departure",
-      "description": "Musashi leaves around midnight/New Year and reaches the Kamo River, where he eats rice cakes and bathes.",
+      "description": "When Osugi comes to the Matsuo door at midnight and Kaname holds her off, Musashi slips out the back and reaches the Kamo River, where he eats rice cakes and bathes.",
       "characters": [
         "musashi",
-        "musashi_aunt"
+        "musashi_aunt",
+        "matsuo_kaname",
+        "osugi"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -3348,7 +3410,7 @@
       "id": "b3c12_e04",
       "chapter": "b3c12",
       "type": "attack_and_restraint",
-      "description": "Osugi attacks with sword and blow needles; Musashi disarms her, carries her to a boat and ties her there to await Matahachi.",
+      "description": "Osugi attacks with her sword and spits at Musashi, leaving one eye burning; Musashi disarms her, carries her to a boat and ties her there to await Matahachi.",
       "characters": [
         "osugi",
         "musashi"
@@ -3522,6 +3584,31 @@
       "source_ref": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "movement_status": null
+    },
+    {
+      "id": "b3c13-fc-01",
+      "chapter": "b3c13",
+      "section": 32,
+      "type": "movement",
+      "description": "Before dawn Otsū leaves the Karasumaru residence, where she and Jōtarō have been staying, in a kimono given her by the family, and goes by way of Gion Shrine and Kiyomizudera to the Gojō Avenue bridge.",
+      "characters": [
+        "otsu"
+      ],
+      "referenced_characters": [
+        "jotaro"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "karasumaru_house",
+      "origin": "karasumaru_house",
+      "via": [
+        "kiyomizudera"
+      ],
+      "destination": "kamo_river_gojo",
+      "movement_status": "arrival_confirmed",
+      "certainty": "strong_inference",
+      "source_ref": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt:L109-L119",
+      "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt"
     }
   ],
   "character_states": [

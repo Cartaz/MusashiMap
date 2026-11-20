@@ -135,11 +135,13 @@ test("Himeji officer keeps one history across the Book I name reveal", () => {
   assert.equal(getVisibleCharacters([officer], 3, { states, events }).length, 0);
   assert.deepEqual(getVisibleCharacters([officer], 4, { states, events }), [officer]);
   assert.deepEqual(officer.present_in, [4, 5, 6, 20, 21, 30, 91, 107]);
-  for (let section = 4; section <= 7; section += 1) {
+  // Chapter 6 reveals the name: his letter to Otsu is signed "Aoki Tanzaemon".
+  for (let section = 4; section <= 5; section += 1) {
     assert.equal(getDisplayCharacterName(officer, section, identities), "Himeji garrison captain");
   }
-  assert.equal(getDisplayCharacterName(officer, 8, identities), "Aoki Tanzaemon");
-  for (const id of ["b1c4-01", "b1c4-03", "b1c4-05"]) {
+  assert.equal(getDisplayCharacterName(officer, 6, identities), "Aoki Tanzaemon");
+  // The bath trap (b1c4-05) is sprung by unnamed samurai and vigilantes; the captain is not there.
+  for (const id of ["b1c4-01", "b1c4-03"]) {
     assert.ok(events.find(event => event.id === id).characters.includes(officer.id));
   }
   const snapshot = getReaderSnapshot({ states, events }, 9, [officer.id]);
@@ -154,12 +156,12 @@ test("Himeji officer wiki reveals the name and family at their separate threshol
 
   assert.equal(getProgressiveValue(wiki.current_by_section, 3), null);
   assert.ok(getProgressiveValue(wiki.current_by_section, 4));
-  assert.equal(getProgressiveDisplayName(wiki, 7), "Capitano della guarnigione di Himeji");
-  assert.equal(getProgressiveDisplayName(wiki, 8), "Aoki Tanzaemon");
+  assert.equal(getProgressiveDisplayName(wiki, 5), "Capitano della guarnigione di Himeji");
+  assert.equal(getProgressiveDisplayName(wiki, 6), "Aoki Tanzaemon");
   for (let section = 4; section < 12; section += 1) {
     const visible = `${getProgressiveDisplayName(wiki, section)} ${wiki.role} ${getProgressiveValue(wiki.current_by_section, section)}`;
     assert.doesNotMatch(visible, /padre|figlio|Jōtarō|Jotaro/i);
-    if (section < 8) assert.doesNotMatch(visible, /Aoki|Tanzaemon/i);
+    if (section < 6) assert.doesNotMatch(visible, /Aoki|Tanzaemon/i);
   }
   assert.match(getProgressiveValue(wiki.current_by_section, 12), /Jōtarō/);
 });
@@ -253,7 +255,7 @@ test("relationship reveal thresholds follow the first explicit narrative evidenc
   assert.equal(find("takuan", "lord_ikeda").first_section, 5);
   assert.equal(find("yoshioka_seijuro", "yoshioka_denshichiro").first_section, 9);
   assert.equal(find("kojiro", "obata_kagenori").first_section, 66);
-  assert.equal(find("munenori", "yagyu_hyogo").first_section, 74);
+  assert.equal(find("munenori", "yagyu_hyogo").first_section, 73);
   assert.equal(find("iwama_kakubei", "kojiro").subtype, "recruitment_sponsor");
 });
 

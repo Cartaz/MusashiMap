@@ -223,7 +223,8 @@
       "event_ids": [
         "b6c2-e01",
         "b6c2-e02",
-        "b6c2-audit-references"
+        "b6c2-audit-references",
+        "b6c2-fc-01"
       ],
       "character_state_ids": [
         "b6c2-state-kojiro",
@@ -335,6 +336,7 @@
         "hojo_ushigome"
       ],
       "event_ids": [
+        "b6c5-fc-01",
         "b6c5-e01",
         "b6c5-e02",
         "b6c5-audit-s05",
@@ -456,6 +458,7 @@
         "saikachi_slope"
       ],
       "event_ids": [
+        "b6c8-fc-01",
         "b6c8-e01",
         "b6c8-audit-route",
         "b6c8-e02",
@@ -609,6 +612,7 @@
       "event_ids": [
         "b6c12-e01",
         "b6c12-e02",
+        "b6c12-fc-01",
         "b6c12-e03",
         "b6c12-audit-s08",
         "b6c12-audit-s09",
@@ -649,6 +653,8 @@
         "hojo_ushigome"
       ],
       "event_ids": [
+        "b6c13-fc-01",
+        "b6c13-fc-02",
         "b6c13-e01",
         "b6c13-audit-s02",
         "b6c13-audit-references"
@@ -776,6 +782,7 @@
       ],
       "event_ids": [
         "b6c16-e01",
+        "b6c16-fc-01",
         "b6c16-e04",
         "b6c16-e02",
         "b6c16-e03",
@@ -814,6 +821,7 @@
       ],
       "event_ids": [
         "b6c17-e01",
+        "b6c17-fc-01",
         "b6c17-e02",
         "b6c17-e03",
         "b6c17-e04",
@@ -1560,6 +1568,16 @@
       ],
       "aliases": [],
       "mentioned_in": []
+    },
+    {
+      "id": "hangawara_group",
+      "name": "Hangawara Association men",
+      "physical_presence": [
+        "b6c2",
+        "b6c8"
+      ],
+      "aliases": [],
+      "mentioned_in": []
     }
   ],
   "locations": [
@@ -1886,6 +1904,27 @@
       "source_chapters": [
         "b6c8"
       ]
+    },
+    {
+      "id": "hosokawa_edo",
+      "name": "Hosokawa residence in Edo",
+      "type": "private_residence",
+      "coordinates": null,
+      "mapping_status": "exact_site_unresolved",
+      "chapters": [
+        "b6c1",
+        "b6c3"
+      ]
+    },
+    {
+      "id": "edo",
+      "name": "Edo",
+      "type": "city",
+      "coordinates": null,
+      "mapping_status": "intended_destination_only",
+      "chapters": [
+        "b6c5"
+      ]
     }
   ],
   "events": [
@@ -1900,10 +1939,14 @@
         "matsushita_mainosuke",
         "mori_retainer"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "kojiro",
+        "musashi",
+        "nagaoka_sado"
+      ],
       "groups": [],
       "referenced_groups": [],
-      "location": "hosokawa_edo_residence",
+      "location": "hosokawa_edo",
       "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt:L1-L118",
       "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
       "certainty": "explicit",
@@ -1929,7 +1972,7 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "hosokawa_edo_residence",
+      "location": "hosokawa_edo",
       "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt:L119-L162",
       "source_file": "data/source/book6/chapter1-a-chat-with-the-men.txt",
       "certainty": "explicit",
@@ -1969,7 +2012,7 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "tsukinomisaki",
+      "location": "isarago_hill",
       "source_ref": "data/source/book6/chapter2-buzzing-insects.txt:L65-L184",
       "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
       "certainty": "explicit",
@@ -2024,6 +2067,31 @@
       "movement_status": null
     },
     {
+      "id": "b6c2-fc-01",
+      "chapter": "b6c2",
+      "type": "visit",
+      "description": "Guided by a Hangawara man, Osugi visits Kojirō at Isarago, gloats over the signs challenging Musashi and says she will leave Yajibei's house for a rented place near Yoroi Ferry.",
+      "characters": [
+        "osugi",
+        "kojiro"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "matahachi",
+        "yajibei"
+      ],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "isarago_hill",
+      "source_ref": "data/source/book6/chapter2-buzzing-insects.txt:L24-L80",
+      "source_file": "data/source/book6/chapter2-buzzing-insects.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 81
+    },
+    {
       "id": "b6c3-e01",
       "chapter": "b6c3",
       "type": "death_discovery",
@@ -2055,12 +2123,13 @@
       "characters": [
         "kojiro",
         "okatani_goroji",
-        "hosokawa_tadatoshi"
+        "hosokawa_tadatoshi",
+        "iwama_kakubei"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "hosokawa_edo_residence",
+      "location": "hosokawa_edo",
       "source_ref": "data/source/book6/chapter3-the-eagle.txt:L93-L225",
       "source_file": "data/source/book6/chapter3-the-eagle.txt",
       "certainty": "explicit",
@@ -2096,8 +2165,7 @@
       "type": "chapter_references",
       "characters": [],
       "referenced_characters": [
-        "hosokawa_tadaoki",
-        "kanemaki_jisai"
+        "hosokawa_tadaoki"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -2115,7 +2183,8 @@
       "description": "Kojirō kills two samurai attacking Matahachi and publicly assumes responsibility.",
       "characters": [
         "kojiro",
-        "hamada_elder_brother"
+        "hamada_elder_brother",
+        "matahachi"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2191,6 +2260,27 @@
       "movement_status": null
     },
     {
+      "id": "b6c5-fc-01",
+      "chapter": "b6c5",
+      "type": "journey",
+      "description": "Leaving Edo after the insulting signs, Musashi and Iori enter Musashino Plain at Kashiwagi, come down the slope from Jūnisho Gongen and settle on a pine-covered knoll.",
+      "characters": [
+        "musashi",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "source_ref": "data/source/book6/chapter5-eyes.txt:L4-L53",
+      "source_file": "data/source/book6/chapter5-eyes.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed",
+      "section": 84,
+      "origin": "edo",
+      "destination": "musashino_cabin"
+    },
+    {
       "id": "b6c5-e01",
       "chapter": "b6c5",
       "type": "construction",
@@ -2218,7 +2308,7 @@
       "id": "b6c5-e02",
       "chapter": "b6c5",
       "type": "news_and_departure",
-      "description": "Shinzō reports Yogorō's death and invites Musashi to Ujikatsu's residence; they ride away together.",
+      "description": "Shinzō reports Yogorō's death and invites Musashi to Ujikatsu's residence; they leave together, Musashi riding Shinzō's horse.",
       "characters": [
         "hojo_shinzo",
         "musashi"
@@ -2312,7 +2402,9 @@
       "characters": [
         "musashi",
         "hojo_ujikatsu",
-        "munenori"
+        "munenori",
+        "takuan",
+        "hojo_shinzo"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2377,7 +2469,6 @@
       "referenced_characters": [
         "karasumaru_mitsuhiro",
         "kimura_sukekuro",
-        "mikogami_tenzen",
         "sekishusai",
         "tokugawa_hidetada",
         "tokugawa_ieyasu",
@@ -2396,7 +2487,7 @@
       "id": "b6c7-e01",
       "chapter": "b6c7",
       "type": "departure",
-      "description": "Akemi leaves Matahachi.",
+      "description": "Akemi leaves Matahachi early in the morning, telling a neighbour she is visiting relatives in Shinagawa, and goes to Daizō's house to run it.",
       "characters": [
         "akemi"
       ],
@@ -2406,16 +2497,17 @@
       "groups": [],
       "referenced_groups": [],
       "location": "matahachi_nishikubo",
-      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L1-L51",
+      "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L1-L227",
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "arrival_confirmed",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
       },
       "section": 86,
       "origin": "matahachi_nishikubo",
-      "destination_label": "an unstated destination"
+      "destination_label": "Daizō's house",
+      "destination": "daizo_pawnshop"
     },
     {
       "id": "b6c7-e02",
@@ -2443,14 +2535,16 @@
       "id": "b6c7-e03",
       "chapter": "b6c7",
       "type": "funds_audit",
-      "description": "Daizō retrieves the cached advance and finds twenty-eight of thirty gold pieces remaining.",
+      "description": "Akemi follows Matahachi as he buries the advance on Nishikubo Hill behind his house; Daizō digs it up and, back at his storehouse, finds only twenty-eight of the thirty gold pieces.",
       "characters": [
-        "daizo"
+        "daizo",
+        "akemi",
+        "matahachi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "daizo_pawnshop",
+      "location": "matahachi_nishikubo",
       "source_ref": "data/source/book6/chapter7-the-locust-tree.txt:L206-L236",
       "source_file": "data/source/book6/chapter7-the-locust-tree.txt",
       "certainty": "explicit",
@@ -2479,6 +2573,29 @@
       "movement_status": null
     },
     {
+      "id": "b6c8-fc-01",
+      "chapter": "b6c8",
+      "type": "message",
+      "description": "At her rented house in Hamachō, Osugi finds two gold pieces left at her back door, wrapped in a note in which Matahachi apologizes for not yet daring to face her.",
+      "characters": [
+        "osugi"
+      ],
+      "referenced_characters": [
+        "matahachi",
+        "yajibei"
+      ],
+      "groups": [
+        "hangawara_group"
+      ],
+      "referenced_groups": [],
+      "location": "hamacho_house",
+      "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L4-L53",
+      "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 87
+    },
+    {
       "id": "b6c8-e01",
       "chapter": "b6c8",
       "type": "abduction",
@@ -2498,13 +2615,14 @@
       "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L1-L165",
       "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "arrival_confirmed",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
       },
       "section": 87,
       "origin": "hamacho_house",
-      "destination_label": "the Ono students' custody"
+      "destination_label": "the Ono residence on Saikachi Slope",
+      "destination": "ono_dojo"
     },
     {
       "id": "b6c8-audit-route",
@@ -2538,7 +2656,13 @@
       "description": "Tadaaki first concedes defeat as a fighter. Kojirō nevertheless attacks and cuts his topknot while Tadaaki cuts Kojirō’s sleeve. Tadaaki accepts responsibility for his students later.",
       "characters": [
         "kojiro",
-        "mikogami_tenzen"
+        "mikogami_tenzen",
+        "omitsu",
+        "hamada_toranosuke",
+        "numata_kajuro",
+        "kamei_hyosuke",
+        "negoro_hachikuro",
+        "ito_magobei"
       ],
       "referenced_characters": [],
       "groups": [
@@ -2710,7 +2834,7 @@
       "id": "b6c10-e01",
       "chapter": "b6c10",
       "type": "investigation",
-      "description": "Musashi searches donor records for Daizō without finding him.",
+      "description": "Musashi spots Daizō's large donor plaque at Mitsumine and questions the priests, but the register only shows that Daizō came several times.",
       "characters": [
         "musashi"
       ],
@@ -2780,7 +2904,9 @@
         "oko",
         "gion_toji",
         "musashi",
-        "gonnosuke"
+        "gonnosuke",
+        "iori",
+        "kuro"
       ],
       "referenced_characters": [],
       "groups": [
@@ -2803,7 +2929,9 @@
       "type": "arrest",
       "description": "When Musashi reports the attack, officials bind him as the suspected shrine-treasure thief.",
       "characters": [
-        "musashi"
+        "musashi",
+        "gonnosuke",
+        "iori"
       ],
       "referenced_characters": [],
       "groups": [
@@ -2819,7 +2947,7 @@
         "legacy_movement_status": "departure_confirmed"
       },
       "section": 90,
-      "origin": "mitsumine_shrine",
+      "origin": "mitsumine_inner_approach",
       "destination_label": "town detention"
     },
     {
@@ -2847,7 +2975,9 @@
       "description": "Oko attacks Gonnosuke and he kills her with her own dagger.",
       "characters": [
         "gonnosuke",
-        "oko"
+        "oko",
+        "iori",
+        "kuro"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -2883,6 +3013,30 @@
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
       "section": 91
+    },
+    {
+      "id": "b6c12-fc-01",
+      "chapter": "b6c12",
+      "type": "departure",
+      "description": "Just before sunup Daizō and his three Kiso confederates leave the Head-burying Mound down the Kōshū highroad toward Kiso with the treasure, while Jōtarō sets off on foot the other way.",
+      "characters": [
+        "daizo"
+      ],
+      "referenced_characters": [
+        "jotaro"
+      ],
+      "groups": [
+        "daizo_confederates"
+      ],
+      "referenced_groups": [],
+      "location": null,
+      "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L199-L211",
+      "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+      "certainty": "explicit",
+      "movement_status": "intended_destination",
+      "section": 91,
+      "origin": "head_burying_mound",
+      "destination_label": "Kiso, by the Kōshū highroad"
     },
     {
       "id": "b6c12-e03",
@@ -2973,9 +3127,11 @@
       "characters": [
         "takuan",
         "jotaro",
+        "iori"
+      ],
+      "referenced_characters": [
         "daizo"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": null,
@@ -3066,6 +3222,49 @@
       "source_ref": "data/source/book6/chapter12-brother-disciples.txt",
       "source_file": "data/source/book6/chapter12-brother-disciples.txt",
       "movement_status": null
+    },
+    {
+      "id": "b6c13-fc-01",
+      "chapter": "b6c13",
+      "type": "journey",
+      "description": "Takuan and Iori go from Musashino to Lord Hōjō Ujikatsu's mansion in Ushigome.",
+      "characters": [
+        "takuan",
+        "iori"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt:L4-L6",
+      "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed",
+      "section": 92,
+      "origin": "musashino_cabin",
+      "destination": "hojo_ushigome"
+    },
+    {
+      "id": "b6c13-fc-02",
+      "chapter": "b6c13",
+      "type": "departure",
+      "description": "Finding Ujikatsu at the castle, Takuan leaves Iori with Shinzō and goes on to Edo Castle in a palanquin.",
+      "characters": [
+        "takuan"
+      ],
+      "referenced_characters": [
+        "hojo_ujikatsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "source_ref": "data/source/book6/chapter13-the-pomegranate.txt:L7-L13",
+      "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
+      "certainty": "explicit",
+      "movement_status": "intended_destination",
+      "section": 92,
+      "origin": "hojo_ushigome",
+      "destination": "edo_castle"
     },
     {
       "id": "b6c13-e01",
@@ -3209,15 +3408,15 @@
       "description": "After Musashi’s separate release has been reported, Hidetada accepts Takuan’s counsel for constructive government, approves lenient penalties for the conspiracy and looks favorably on Musashi as a tutor.",
       "characters": [
         "tokugawa_hidetada",
-        "sakai_tadakatsu",
-        "hojo_ujikatsu",
         "takuan"
       ],
       "referenced_characters": [
         "matahachi",
         "akemi",
         "musashi",
-        "gonnosuke"
+        "gonnosuke",
+        "sakai_tadakatsu",
+        "hojo_ujikatsu"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -3239,7 +3438,8 @@
       "description": "Matahachi and Akemi are lashed and banished from Edo rather than executed; both remain alive after punishment.",
       "characters": [
         "matahachi",
-        "akemi"
+        "akemi",
+        "takuan"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -3302,7 +3502,7 @@
       "id": "b6c15-e02",
       "chapter": "b6c15",
       "type": "reunion",
-      "description": "Iori finds Musashi and Gonnosuke, delivers the challenge, and returns with them to the cabin.",
+      "description": "Musashi and Gonnosuke come upon Iori on the plain; he delivers the challenge and returns with them to the cabin.",
       "characters": [
         "iori",
         "musashi",
@@ -3388,6 +3588,27 @@
       "section": 95
     },
     {
+      "id": "b6c16-fc-01",
+      "chapter": "b6c16",
+      "type": "journey",
+      "description": "Musashi mounts the horse Shinzō has brought and rides back with him from the Musashino house to the Hōjō residence in Ushigome.",
+      "characters": [
+        "musashi",
+        "hojo_shinzo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L131-L140",
+      "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed",
+      "section": 95,
+      "origin": "musashino_cabin",
+      "destination": "hojo_ushigome"
+    },
+    {
       "id": "b6c16-e04",
       "chapter": "b6c16",
       "section": 95,
@@ -3420,7 +3641,7 @@
       "groups": [],
       "referenced_groups": [],
       "location": "wadakura_pavilion",
-      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L125-L231",
+      "source_ref": "data/source/book6/chapter16-the-gateway-to-glory.txt:L168-L231",
       "source_file": "data/source/book6/chapter16-the-gateway-to-glory.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -3501,10 +3722,11 @@
       "description": "Musashi chooses further wandering, entrusts Iori and the father's pouch to Gonnosuke, and leaves a letter for Hōjō.",
       "characters": [
         "musashi",
-        "gonnosuke",
+        "gonnosuke"
+      ],
+      "referenced_characters": [
         "iori"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "musashino_cabin",
@@ -3516,6 +3738,29 @@
         "legacy_movement_status": "departure_confirmed"
       },
       "section": 96
+    },
+    {
+      "id": "b6c17-fc-01",
+      "chapter": "b6c17",
+      "type": "journey",
+      "description": "At sunset Gonnosuke leads the borrowed horse from the cabin to Ushigome, about two hours away, with Musashi's letter and Iori's pouch.",
+      "characters": [
+        "gonnosuke"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "iori"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L71-L89",
+      "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed",
+      "section": 96,
+      "origin": "musashino_cabin",
+      "destination": "hojo_ushigome"
     },
     {
       "id": "b6c17-e02",
@@ -3537,7 +3782,7 @@
       "location": "hojo_ushigome",
       "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L94-L151",
       "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
-      "certainty": "strong_inference",
+      "certainty": "explicit",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"

@@ -15,7 +15,7 @@
     {"id":"ichijoji_spectators","name":"Ichijōji spectators, farmers and clerics","aliases":[],"introduced_section":49,"present_in":[49],"mentioned_in":[]},
     {"id":"toji_band","name":"Tōji's bandits","aliases":[],"introduced_section":60,"present_in":[60],"mentioned_in":[]},
     {"id":"jinnai_troupe","name":"Jinnai's troupe and staff","aliases":[],"introduced_section":61,"present_in":[61,62],"mentioned_in":[]},
-    {"id":"obata_students","name":"Obata School students","aliases":[],"introduced_section":64,"present_in":[64,66],"mentioned_in":[]},
+    {"id":"obata_students","name":"Obata School students","aliases":[],"introduced_section":65,"present_in":[66],"mentioned_in":[65]},
     {
       "id": "hangawara_group",
       "name": "Hangawara Association men",

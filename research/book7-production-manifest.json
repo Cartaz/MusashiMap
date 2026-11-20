@@ -252,7 +252,8 @@
         "b7c2-e03",
         "b7c2-e04",
         "b7c2-e05",
-        "b7c2-audit-references"
+        "b7c2-audit-references",
+        "b7c2-fc-01"
       ],
       "character_state_ids": [
         "b7-final-state-yagyu_hyogo",
@@ -274,7 +275,6 @@
         "gonnosuke",
         "iori",
         "toriumi_benzo",
-        "oan",
         "toroku",
         "sugizo",
         "gensuke"
@@ -285,7 +285,8 @@
         "musashi",
         "otsu",
         "toyotomi_hideyoshi",
-        "yagyu_hyogo"
+        "yagyu_hyogo",
+        "oan"
       ],
       "groups": [
         "kongoji_clergy",
@@ -2240,9 +2241,11 @@
       "characters": [
         "inshun",
         "kimura_sukekuro",
+        "otsu"
+      ],
+      "referenced_characters": [
         "yagyu_hyogo"
       ],
-      "referenced_characters": [],
       "groups": [
         "hozo_in_party"
       ],
@@ -2328,12 +2331,14 @@
       "id": "b7c1-e05",
       "chapter": "b7c1",
       "type": "identity_disclosure",
-      "description": "Sukekurō recognizes Torazō as Hamada Toranosuke; Toranosuke explains the rōnin are expelled men, not Tōdō troops, and conceals himself because of Ono Tadaaki's disgrace.",
+      "description": "Sukekurō recognizes Torazō as Hamada Toranosuke; Toranosuke delivers Inshun's letter stating the rōnin are expelled men, not Tōdō troops, and conceals himself because of Ono Tadaaki's disgrace.",
       "characters": [
         "hamada_toranosuke",
         "kimura_sukekuro"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "inshun"
+      ],
       "groups": [],
       "referenced_groups": [],
       "location": "hannya_plain",
@@ -2397,7 +2402,7 @@
       "id": "b7c2-e02",
       "chapter": "b7c2",
       "type": "training_test",
-      "description": "Hyōgo tests Ushinosuke and accepts his request for training, using hemp-seed jumping to explain gradual skill.",
+      "description": "Hyōgo tests Ushinosuke in the Yagyū dōjō, including a mock execution to gauge his spirit; the boy explains he learned his leap by jumping every day over growing hemp, after watching ninja train.",
       "characters": [
         "yagyu_hyogo",
         "ushinosuke"
@@ -2514,17 +2519,43 @@
       "movement_status": null
     },
     {
-      "id": "b7c3-e01",
-      "chapter": "b7c3",
-      "type": "memorial_visit",
-      "description": "Gonnosuke visits Kongōji through Oan and Tōroku and commissions a memorial service for his deceased mother.",
+      "id": "b7c2-fc-01",
+      "chapter": "b7c2",
+      "type": "meeting",
+      "description": "Outside the Kōfukuji, Gonnosuke asks the way to Koyagyū; Hyōgo learns that he and Iori came looking for Otsū, who left three weeks earlier, hears that Musashi has vanished from Edo, and invites them to the castle, but Gonnosuke prefers to continue his journey.",
       "characters": [
         "gonnosuke",
         "iori",
-        "oan",
+        "yagyu_hyogo",
+        "kimura_sukekuro",
+        "ushinosuke"
+      ],
+      "referenced_characters": [
+        "musashi",
+        "otsu"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kofukuji",
+      "source_ref": "data/source/book7/chapter2-hemp-seed.txt:L429-L459",
+      "source_file": "data/source/book7/chapter2-hemp-seed.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 98
+    },
+    {
+      "id": "b7c3-e01",
+      "chapter": "b7c3",
+      "type": "memorial_visit",
+      "description": "Gonnosuke seeks out his childhood acquaintance Oan, wife of the brewer Tōroku; Tōroku hosts him and Iori and arranges with the abbot a memorial service at the Kongōji for Gonnosuke's deceased mother.",
+      "characters": [
+        "gonnosuke",
+        "iori",
         "toroku"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "oan"
+      ],
       "groups": [
         "kongoji_clergy"
       ],
@@ -2573,7 +2604,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "amami_plateau",
+      "location": "kongoji",
       "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "certainty": "explicit",
@@ -2587,12 +2618,13 @@
       "id": "b7c3-e04",
       "chapter": "b7c3",
       "type": "ambush_and_capture",
-      "description": "False cord merchants rig a log bridge and ambush Gonnosuke as an alleged Hōjō spy; Iori drops into the gully and Gonnosuke is bound.",
+      "description": "False cord merchants rig a log bridge and, directed by the mountain priest, ambush Gonnosuke as an alleged Hōjō spy; Iori drops into the gully and the bound Gonnosuke is to be taken to Mount Kudo.",
       "characters": [
         "gonnosuke",
         "iori",
         "sugizo",
-        "gensuke"
+        "gensuke",
+        "toriumi_benzo"
       ],
       "referenced_characters": [],
       "groups": [
@@ -2603,13 +2635,13 @@
       "source_ref": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
       "certainty": "explicit",
-      "movement_status": "uncertain_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "uncertain"
       },
       "section": 99,
       "origin": "amami_plateau",
-      "destination_label": "separated unknown outcomes"
+      "destination_label": "Mount Kudo"
     },
     {
       "id": "b7c3-audit-references",
@@ -2751,7 +2783,7 @@
       "id": "b7c5-e01",
       "chapter": "b7c5",
       "type": "rescue_and_travel",
-      "description": "Injured and separated from Gonnosuke, Iori meets Osei and Otsuru, descends to Kishiwada and crosses Osaka Bay with them.",
+      "description": "Injured and separated from Gonnosuke, Iori meets Osei and Otsuru, walks down with them to Kishiwada pier and sails up Osaka Bay to Sakai.",
       "characters": [
         "iori",
         "osei",
@@ -2764,13 +2796,16 @@
       "source_ref": "data/source/book7/chapter5-the-port.txt",
       "source_file": "data/source/book7/chapter5-the-port.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "arrival_confirmed",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
       "section": 101,
       "origin_label": "the gully near Amami Plateau",
-      "destination": "kishiwada"
+      "destination": "sakai_port",
+      "via": [
+        "kishiwada"
+      ]
     },
     {
       "id": "b7c5-e02",
@@ -2822,12 +2857,13 @@
       "id": "b7c5-e04",
       "chapter": "b7c5",
       "type": "assault_interrupted",
-      "description": "Months later Iori recognizes and attacks Kojirō; Kojirō orders a boiling-water punishment before Sado's arrival halts the danger.",
+      "description": "Months later Iori recognizes and attacks Kojirō; Kojirō suggests pouring boiling water on him and Sahei is about to do it when Sado arrives, and Kojirō calls off the punishment.",
       "characters": [
         "iori",
         "kojiro",
         "nagaoka_sado",
-        "nuinosuke"
+        "nuinosuke",
+        "sahei"
       ],
       "referenced_characters": [],
       "groups": [
@@ -3940,12 +3976,14 @@
       "characters": [
         "matahachi",
         "ichinomiya_gempachi",
+        "akemi_baby"
+      ],
+      "referenced_characters": [
         "kojiro"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": null,
+      "location": "kokura",
       "description": "Gempachi recognizes Matahachi from the period when he falsely called himself Sasaki Kojirō; Matahachi now looks back on that impersonation with shame rather than pride.",
       "certainty": "explicit",
       "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
@@ -4106,12 +4144,14 @@
       "type": "search_and_discovery",
       "description": "After fears that Musashi has vanished, Iori suggests Tarōzaemon's house; Nuinosuke and Iori find Musashi sleeping there.",
       "characters": [
-        "nagaoka_sado",
         "nuinosuke",
         "iori",
-        "kobayashi_tarozaemon"
+        "kobayashi_tarozaemon",
+        "musashi"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "nagaoka_sado"
+      ],
       "groups": [],
       "referenced_groups": [],
       "location": "tarozaemon_house",
@@ -4330,7 +4370,7 @@
       "id": "b7c15-e06",
       "chapter": "b7c15",
       "type": "farewell",
-      "description": "Musashi takes leave of Otsū, Jōtarō, Osugi and Gonnosuke at the shore before boarding Sasuke's boat.",
+      "description": "Musashi takes leave of Osugi, Gonnosuke and Otsū at the shore and boards Sasuke's boat; Jōtarō arrives too late to speak to him.",
       "characters": [
         "musashi",
         "sasuke",
@@ -4420,7 +4460,7 @@
       "id": "b7c16-e02",
       "chapter": "b7c16",
       "type": "revenge_ambush_prepared",
-      "description": "Officials expel roughly forty unauthorized Kojirō supporters from Funashima to Hikojima, where they wait in armed boats for possible revenge.",
+      "description": "Arriving on Funashima, Sado, Kakubei and the officials find some forty unauthorized Kojirō supporters and order them off to Hikojima, where they wait at Teshimachi Inlet in armed boats for possible revenge.",
       "characters": [
         "nagaoka_sado",
         "iwama_kakubei"
@@ -4431,7 +4471,7 @@
         "funashima_officials"
       ],
       "referenced_groups": [],
-      "location": "hikojima",
+      "location": "funashima",
       "source_ref": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "source_file": "data/source/book7/chapter16-the-soul-of-the-deep.txt",
       "certainty": "explicit",

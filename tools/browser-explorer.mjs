@@ -1,6 +1,11 @@
+import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
+
+// The timeline must list every published event; the count follows the data.
+const publishedEventCount = JSON.parse(readFileSync(new URL("../_site/data/events.json", import.meta.url), "utf8")).events.length;
+const publishedPlaceCount = JSON.parse(readFileSync(new URL("../_site/data/locations.json", import.meta.url), "utf8")).locations.length;
 
 export async function verifyExplorer(page) {
   const folder = path.resolve("test-output/screenshots");
@@ -76,17 +81,17 @@ export async function verifyExplorer(page) {
   await screenshot("desktop-archive-detail");
   await page.locator("#archive-search").fill("");
   await page.locator("[data-category='events']").click();
-  assert.equal(await count(), 758);
+  assert.equal(await count(), publishedEventCount);
   await page.locator("#archive-next").click();
   assert.match(await page.locator("#archive-page-label").textContent(), /Pagina 2/);
   await page.locator("[data-category='places']").click();
-  assert.equal(await count(), 253);
+  assert.equal(await count(), publishedPlaceCount);
   await page.locator("#archive-search").fill("Saikachi");
   await page.locator(".archive-result[data-record-id='saikachi_slope']").click();
   assert.equal(await page.locator("#archive-detail").getByRole("button", { name: "Mostra sulla mappa" }).count(), 0);
   await page.locator("#archive-search").fill("");
   await page.locator("[data-category='timeline']").click();
-  assert.equal(await count(), 758);
+  assert.equal(await count(), publishedEventCount);
   await page.locator("#archive-results summary").first().click();
   await closeInView();
   await screenshot("desktop-timeline");

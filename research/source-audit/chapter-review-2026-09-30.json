@@ -22,10 +22,10 @@
   ],
   "production_counts": {
     "characters": 155,
-    "events": 758,
-    "states": 420,
+    "events": 781,
+    "states": 457,
     "groups": 39,
-    "locations": 253,
+    "locations": 254,
     "relationships": 83
   },
   "correction_actions": 264,
@@ -296,9 +296,23 @@
         "relationships_introduced": [
           {
             "from": "musashi",
+            "to": "ogin",
+            "type": "family",
+            "subtype": "younger_brother_and_older_sister",
+            "first_section": 1
+          },
+          {
+            "from": "musashi",
             "to": "matahachi",
             "type": "friend_ally",
             "subtype": "childhood_best_friend",
+            "first_section": 1
+          },
+          {
+            "from": "matahachi",
+            "to": "osugi",
+            "type": "family",
+            "subtype": "son_and_mother",
             "first_section": 1
           },
           {
@@ -310,9 +324,9 @@
           },
           {
             "from": "matahachi",
-            "to": "oko",
+            "to": "otsu",
             "type": "partner_family",
-            "subtype": "intended_marriage",
+            "subtype": "betrothed_at_book_start",
             "first_section": 1
           },
           {
@@ -637,7 +651,7 @@
             "character": "musashi",
             "location": "oko_akemi_house",
             "status": "present",
-            "activity": "returns from the mountain after the confrontation with Temma and finds the house empty",
+            "activity": "wakes after the last night of drinking and finds that Oko, Akemi and Matahachi have abandoned the house",
             "certainty": "explicit"
           },
           {
@@ -689,9 +703,9 @@
             "chapter": "b1c2",
             "section": 2,
             "character": "temma",
-            "location": "mount_ibuki_area",
+            "location": "oko_akemi_house",
             "status": "dead",
-            "activity": "is killed by Takezo on Mount Ibuki",
+            "activity": "is killed by Takezo in a field near the house after fleeing the failed raid",
             "certainty": "explicit"
           }
         ],
@@ -1045,34 +1059,6 @@
         ],
         "relationships_introduced": [
           {
-            "from": "musashi",
-            "to": "ogin",
-            "type": "family",
-            "subtype": "younger_brother_and_older_sister",
-            "first_section": 3
-          },
-          {
-            "from": "musashi",
-            "to": "takuan",
-            "type": "master",
-            "subtype": "spiritual_and_moral_guide",
-            "first_section": 3
-          },
-          {
-            "from": "musashi",
-            "to": "otsu",
-            "type": "friend_ally",
-            "subtype": "deep_personal_bond",
-            "first_section": 3
-          },
-          {
-            "from": "matahachi",
-            "to": "otsu",
-            "type": "partner_family",
-            "subtype": "betrothed_at_book_start",
-            "first_section": 3
-          },
-          {
             "from": "otsu",
             "to": "takuan",
             "type": "acquaintance",
@@ -1339,17 +1325,19 @@
           "b1c4-04",
           "b1c4-audit-summons",
           "b1c4-05",
-          "b1c4-audit-references"
+          "b1c4-audit-references",
+          "b1c4-fc-01"
         ],
         "states": [
           {
             "chapter": "b1c4",
             "section": 4,
             "character": "musashi",
-            "location": "sanumo_mountains",
-            "status": "hiding",
-            "activity": "evades the search and moves between the mountains and the village outskirts",
-            "certainty": "explicit"
+            "location": "honiden_house",
+            "status": "fled",
+            "activity": "escapes Osugi's bath trap and ends the chapter standing on the roof of the Hon'iden house",
+            "certainty": "explicit",
+            "source_ref": "data/source/book1/chapter4-the-dowagers-wrath.txt:L536-L553"
           },
           {
             "chapter": "b1c4",
@@ -1414,13 +1402,6 @@
             "to": "osugi",
             "type": "enemy",
             "subtype": "family_conflict_and_pursuit",
-            "first_section": 4
-          },
-          {
-            "from": "matahachi",
-            "to": "osugi",
-            "type": "family",
-            "subtype": "son_and_mother",
             "first_section": 4
           },
           {
@@ -1682,6 +1663,7 @@
         "referenced_characters": [
           "lord_ikeda",
           "matahachi",
+          "musashi",
           "ogin",
           "oko"
         ],
@@ -1694,7 +1676,8 @@
           "b1c5-audit-s06",
           "b1c5-03",
           "b1c5-04",
-          "b1c5-audit-references"
+          "b1c5-audit-references",
+          "b1c5-fc-01"
         ],
         "states": [
           {
@@ -1777,6 +1760,20 @@
           }
         ],
         "relationships_introduced": [
+          {
+            "from": "musashi",
+            "to": "takuan",
+            "type": "master",
+            "subtype": "spiritual_and_moral_guide",
+            "first_section": 5
+          },
+          {
+            "from": "matahachi",
+            "to": "oko",
+            "type": "partner_family",
+            "subtype": "intended_marriage",
+            "first_section": 5
+          },
           {
             "from": "takuan",
             "to": "lord_ikeda",
@@ -2002,6 +1999,7 @@
         ],
         "referenced_characters": [
           "matahachi",
+          "musashi",
           "ogin"
         ],
         "event_ids": [
@@ -2013,7 +2011,8 @@
           "b1c6-audit-s06",
           "b1c6-03",
           "b1c6-audit-s08",
-          "b1c6-audit-references"
+          "b1c6-audit-references",
+          "b1c6-fc-01"
         ],
         "states": [
           {
@@ -2047,10 +2046,12 @@
             "chapter": "b1c6",
             "section": 6,
             "character": "osugi",
-            "location": "old_cryptomeria_shippoji",
-            "status": "present",
-            "activity": "confronts Takezo at the punishment scene",
-            "certainty": "explicit"
+            "location": null,
+            "status": "away",
+            "activity": "whips Takezo at the tree and presses Otsu to join the Hon'iden household, then storms out of Otsu's room at the temple; her position at chapter end is not given",
+            "certainty": "explicit",
+            "last_known_location": "shippoji",
+            "location_status": "unknown"
           },
           {
             "chapter": "b1c6",
@@ -2073,6 +2074,23 @@
             "activity": "remains absent and is discussed as the lost Hon'den heir",
             "certainty": "explicit",
             "location_status": "unknown"
+          },
+          {
+            "chapter": "b1c6",
+            "section": 6,
+            "character": "aoki_tanzaemon",
+            "location": null,
+            "last_known_location": "shippoji",
+            "status": "departed",
+            "location_status": "unknown",
+            "departure_from": "shippoji",
+            "departure_chapter": "b1c6",
+            "departure_section": 6,
+            "activity": "is recalled to Himeji and hurries away from Shippoji after giving Otsu his bribe letter",
+            "certainty": "explicit",
+            "source_ref": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt:L262-L276",
+            "source_file": "data/source/book1/chapter6-the-old-cryptomeria-tree.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": []
@@ -2430,10 +2448,12 @@
             "chapter": "b1c7",
             "section": 7,
             "character": "takuan",
-            "location": "shippoji",
-            "status": "present",
-            "activity": "remains at Shippoji while Takezo and Otsu escape",
-            "certainty": "explicit"
+            "location": null,
+            "status": "away",
+            "activity": "is reported missing along with Otsu after Takezo's escape; his whereabouts are not given",
+            "certainty": "explicit",
+            "last_known_location": "shippoji",
+            "location_status": "unknown"
           },
           {
             "chapter": "b1c7",
@@ -2479,6 +2499,13 @@
           }
         ],
         "relationships_introduced": [
+          {
+            "from": "musashi",
+            "to": "otsu",
+            "type": "friend_ally",
+            "subtype": "deep_personal_bond",
+            "first_section": 7
+          },
           {
             "from": "osugi",
             "to": "gonroku",
@@ -2785,7 +2812,8 @@
           "gonroku",
           "matahachi",
           "ogin",
-          "osugi"
+          "osugi",
+          "takuan"
         ],
         "event_ids": [
           "b1c8-01",
@@ -2838,7 +2866,7 @@
             "section": 8,
             "character": "osugi",
             "location": null,
-            "last_known_location": "miyamoto",
+            "last_known_location": "mikazuki_teahouse",
             "status": "searching",
             "activity": "has spent the previous three years searching for Musashi and Otsu with Gonroku",
             "certainty": "explicit",
@@ -2849,7 +2877,7 @@
             "section": 8,
             "character": "gonroku",
             "location": null,
-            "last_known_location": "miyamoto",
+            "last_known_location": "mikazuki_teahouse",
             "status": "searching",
             "activity": "has spent the previous three years searching with Osugi",
             "certainty": "explicit",
@@ -3170,26 +3198,27 @@
           "b2c1-audit-s08",
           "b2c1-e09",
           "b2c1-audit-messenger",
-          "b2c1-audit-references"
+          "b2c1-audit-references",
+          "b2c1-fc-01"
         ],
         "states": [
           {
             "chapter": "b2c1",
             "section": 9,
             "character": "yoshioka_seijuro",
-            "location": "yomogi",
+            "location": "kamo_river_pleasure_district",
             "status": "present",
-            "activity": "remains at Yomogi after leaving the first pleasure-district house",
-            "certainty": "explicit"
+            "activity": "leaves Yomogi with Toji, Oko and Akemi to see the Okuni Kabuki on the riverbank at Shijo",
+            "certainty": "strong_inference"
           },
           {
             "chapter": "b2c1",
             "section": 9,
             "character": "gion_toji",
-            "location": "yomogi",
+            "location": "kamo_river_pleasure_district",
             "status": "present",
-            "activity": "stays overnight at Yomogi after negotiating with Oko",
-            "certainty": "explicit"
+            "activity": "after a night at Yomogi, goes with Seijuro, Oko and Akemi to the Okuni Kabuki by the river",
+            "certainty": "strong_inference"
           },
           {
             "chapter": "b2c1",
@@ -3198,25 +3227,25 @@
             "location": "kamo_river_pleasure_district",
             "status": "present",
             "activity": "remains with the Yoshioka students when Seijuro and Toji leave",
-            "certainty": "explicit"
+            "certainty": "weak_inference"
           },
           {
             "chapter": "b2c1",
             "section": 9,
             "character": "oko",
-            "location": "yomogi",
+            "location": "kamo_river_pleasure_district",
             "status": "present",
-            "activity": "receives the Yoshioka visitors and remains at her establishment",
-            "certainty": "explicit"
+            "activity": "after receiving the Yoshioka visitors, goes out with Akemi, Seijuro and Toji to the Okuni Kabuki by the river",
+            "certainty": "strong_inference"
           },
           {
             "chapter": "b2c1",
             "section": 9,
             "character": "akemi",
-            "location": "yomogi",
+            "location": "kamo_river_pleasure_district",
             "status": "present",
-            "activity": "remains at Yomogi after entertaining Seijuro",
-            "certainty": "explicit"
+            "activity": "goes with her mother, Seijuro and Toji to the Okuni Kabuki by the river",
+            "certainty": "strong_inference"
           },
           {
             "chapter": "b2c1",
@@ -3559,7 +3588,8 @@
           "b2c2-e09",
           "b2c2-e10",
           "b2c2-e11",
-          "b2c2-audit-references"
+          "b2c2-audit-references",
+          "b2c2-fc-01"
         ],
         "states": [
           {
@@ -3586,10 +3616,12 @@
             "chapter": "b2c2",
             "section": 10,
             "character": "gion_toji",
-            "location": "yoshioka_school",
-            "status": "present",
-            "activity": "returns with Seijuro and coordinates the response to Musashi",
-            "certainty": "explicit"
+            "location": null,
+            "status": "searching",
+            "activity": "leads the hunt for Musashi; after releasing Matahachi near the Honnoji, splits the pursuers up to search the city",
+            "certainty": "explicit",
+            "last_known_location": "honnoji_ruins",
+            "location_status": "unknown"
           },
           {
             "chapter": "b2c2",
@@ -3597,7 +3629,7 @@
             "character": "ueda_ryohei",
             "location": "yoshioka_school",
             "status": "present",
-            "activity": "participates in consultation, guard activity and the pursuit",
+            "activity": "takes part in the senior disciples' consultation",
             "certainty": "explicit"
           },
           {
@@ -3614,7 +3646,7 @@
             "section": 10,
             "character": "oko",
             "location": null,
-            "last_known_location": "yomogi",
+            "last_known_location": "kamo_river_pleasure_district",
             "status": "away",
             "activity": "does not appear physically in the Yoshioka School sequence",
             "certainty": "explicit",
@@ -3625,7 +3657,7 @@
             "section": 10,
             "character": "akemi",
             "location": null,
-            "last_known_location": "yomogi",
+            "last_known_location": "kamo_river_pleasure_district",
             "status": "away",
             "activity": "does not appear physically in the Yoshioka School sequence",
             "certainty": "explicit",
@@ -3896,7 +3928,7 @@
             "section": 11,
             "character": "gion_toji",
             "location": null,
-            "last_known_location": "yoshioka_school",
+            "last_known_location": "honnoji_ruins",
             "status": "away",
             "activity": "does not appear physically in the Kiyomizudera sequence",
             "certainty": "explicit",
@@ -4158,14 +4190,12 @@
       "production": {
         "physical_characters": [
           "jotaro",
-          "matahachi",
           "musashi"
         ],
         "referenced_characters": [
           "aoki_tanzaemon",
           "matahachi",
           "munenori",
-          "musashi",
           "takuan",
           "tsukahara_bokuden",
           "yoshioka_kempo",
@@ -4184,7 +4214,8 @@
           "b2c4-e08",
           "b2c4-e09",
           "b2c4-e10",
-          "b2c4-audit-references"
+          "b2c4-audit-references",
+          "b2c4-fc-01"
         ],
         "states": [
           {
@@ -4219,10 +4250,12 @@
             "chapter": "b2c4",
             "section": 12,
             "character": "matahachi",
-            "location": "sake_shop",
-            "status": "present",
-            "activity": "writes a letter to Musashi and entrusts it to Jotaro",
-            "certainty": "explicit"
+            "location": null,
+            "status": "away",
+            "activity": "last reported drinking at the sake shop, where he wrote Musashi a letter; his whereabouts are unknown",
+            "certainty": "explicit",
+            "last_known_location": "sake_shop",
+            "location_status": "unknown"
           },
           {
             "chapter": "b2c4",
@@ -4265,10 +4298,12 @@
         ]
       },
       "normalized_physical_difference": {
-        "oracle_only": [],
+        "oracle_only": [
+          "matahachi"
+        ],
         "production_only": []
       },
-      "adjudication": null,
+      "adjudication": "Matahachi is present only through the letter Jōtarō delivers and Musashi's memories; he is not on-page (full-text fact-check, 2026-11-20).",
       "corrections": [
         {
           "id": "R055",
@@ -4544,8 +4579,10 @@
           "matahachi",
           "munenori",
           "musashi",
+          "sanada_yukimura",
           "sekishusai",
-          "yoshioka_kempo"
+          "yoshioka_kempo",
+          "yoshioka_seijuro"
         ],
         "event_ids": [
           "b2c5-e01",
@@ -4559,7 +4596,8 @@
           "b2c5-audit-s08",
           "b2c5-e08",
           "b2c5-e09",
-          "b2c5-audit-references"
+          "b2c5-audit-references",
+          "b2c5-fc-01"
         ],
         "states": [
           {
@@ -5023,7 +5061,7 @@
             "character": "musashi",
             "location": "sarusawa_pond",
             "status": "present",
-            "activity": "lodges at the boardinghouse near Sarusawa Pond after the Hozoin encounter",
+            "activity": "leaves the Sarusawa boardinghouse with Jotaro despite the warning of an ambush toward Hannya Plain",
             "certainty": "explicit"
           },
           {
@@ -5468,19 +5506,23 @@
             "chapter": "b2c7",
             "section": 15,
             "character": "inshun",
-            "location": "hannya_plain",
-            "status": "present",
-            "activity": "leads the Hozoin charge and remains for the aftermath",
-            "certainty": "explicit"
+            "location": null,
+            "status": "departed",
+            "activity": "leads the Hozoin charge that wipes out the ronin, then takes his leave with the priests",
+            "certainty": "explicit",
+            "last_known_location": "hannya_plain",
+            "location_status": "unknown"
           },
           {
             "chapter": "b2c7",
             "section": 15,
             "character": "nikkan",
-            "location": "hannya_plain",
-            "status": "present",
-            "activity": "arrives with officials, explains the purge and advises Musashi",
-            "certainty": "explicit"
+            "location": null,
+            "status": "departed",
+            "activity": "arrives with the officials, explains the purge, advises Musashi and leaves on foot to return to Nara",
+            "certainty": "explicit",
+            "last_known_location": "hannya_plain",
+            "location_status": "unknown"
           },
           {
             "chapter": "b2c7",
@@ -5497,8 +5539,8 @@
             "character": "otomo_banryu",
             "location": "hannya_plain",
             "status": "dead",
-            "activity": "is killed during the Hozoin purge of the ronin",
-            "certainty": "explicit"
+            "activity": "dies on Hannya Plain, where every ronin is killed by Musashi or the Hozoin priests",
+            "certainty": "strong_inference"
           },
           {
             "chapter": "b2c7",
@@ -5506,8 +5548,8 @@
             "character": "yasukawa_yasubei",
             "location": "hannya_plain",
             "status": "dead",
-            "activity": "is killed during the Hozoin purge of the ronin",
-            "certainty": "explicit"
+            "activity": "dies on Hannya Plain, where every ronin is killed by Musashi or the Hozoin priests",
+            "certainty": "strong_inference"
           }
         ],
         "relationships_introduced": [
@@ -6118,6 +6160,7 @@
         ],
         "referenced_characters": [
           "in_ei",
+          "jotaro",
           "munenori",
           "sekishusai",
           "yagyu_hyogo",
@@ -6166,12 +6209,10 @@
             "chapter": "b2c9",
             "section": 17,
             "character": "otsu",
-            "location": null,
-            "last_known_location": "koyagyu_castle",
-            "status": "departed",
-            "activity": "returns from Wataya toward Koyagyu after delivering Sekishusai's message",
-            "certainty": "explicit",
-            "location_status": "unknown"
+            "location": "sekishusai_mountain_house",
+            "status": "present",
+            "activity": "rides back through the castle gate, returns the horse and reports to Sekishusai that Denshichiro ignored the peony",
+            "certainty": "explicit"
           },
           {
             "chapter": "b2c9",
@@ -6186,7 +6227,7 @@
             "chapter": "b2c9",
             "section": 17,
             "character": "shoda_kizaemon",
-            "location": "shinindo",
+            "location": "koyagyu_castle",
             "status": "present",
             "activity": "examines the peony stem with the senior Yagyu retainers",
             "certainty": "explicit"
@@ -6195,7 +6236,7 @@
             "chapter": "b2c9",
             "section": 17,
             "character": "kimura_sukekuro",
-            "location": "shinindo",
+            "location": "koyagyu_castle",
             "status": "present",
             "activity": "examines the peony stem with Kizaemon, Debuchi and Murata",
             "certainty": "explicit"
@@ -6204,7 +6245,7 @@
             "chapter": "b2c9",
             "section": 17,
             "character": "debuchi_magobei",
-            "location": "shinindo",
+            "location": "koyagyu_castle",
             "status": "present",
             "activity": "examines the peony stem with the other senior retainers",
             "certainty": "explicit"
@@ -6213,7 +6254,7 @@
             "chapter": "b2c9",
             "section": 17,
             "character": "murata_yozo",
-            "location": "shinindo",
+            "location": "koyagyu_castle",
             "status": "present",
             "activity": "examines the peony stem with the other senior retainers",
             "certainty": "explicit"
@@ -6611,6 +6652,7 @@
           "shoda_kizaemon"
         ],
         "referenced_characters": [
+          "kocha",
           "munenori",
           "otsu",
           "sekishusai",
@@ -6661,10 +6703,12 @@
             "chapter": "b2c10",
             "section": 18,
             "character": "jotaro",
-            "location": "koyagyu_castle",
-            "status": "present",
-            "activity": "remains on the castle grounds after the dog incident and fight sequence; he is not assumed to escape with Musashi",
-            "certainty": "explicit"
+            "location": null,
+            "status": "unknown",
+            "activity": "throws sand to help Musashi against Kimura, then disappears from the castle grounds",
+            "certainty": "explicit",
+            "last_known_location": "koyagyu_castle",
+            "location_status": "unknown"
           },
           {
             "chapter": "b2c10",
@@ -6716,7 +6760,7 @@
             "section": 18,
             "character": "otsu",
             "location": null,
-            "last_known_location": "koyagyu_castle",
+            "last_known_location": "sekishusai_mountain_house",
             "status": "away",
             "activity": "her flute is heard from a distance, but she is not physically present in the castle confrontation",
             "certainty": "explicit",
@@ -6991,9 +7035,11 @@
           "takuan"
         ],
         "referenced_characters": [
+          "jotaro",
           "matahachi",
           "munenori",
           "musashi",
+          "otsu",
           "sekishusai",
           "yagyu_hyogo"
         ],
@@ -7006,7 +7052,9 @@
           "b2c11-audit-s06",
           "b2c11-audit-s09",
           "b2c11-audit-s10",
-          "b2c11-audit-references"
+          "b2c11-audit-references",
+          "b2c11-fc-01",
+          "b2c11-fc-02"
         ],
         "states": [
           {
@@ -7022,19 +7070,31 @@
             "chapter": "b2c11",
             "section": 19,
             "character": "otsu",
-            "location": "tsukigase_iga_back_road",
-            "status": "travelling",
-            "activity": "searches for Musashi with Jotaro, meets Takuan and later parts from him on the road",
-            "certainty": "explicit"
+            "location": null,
+            "status": "departed",
+            "activity": "refuses Takuan's plea to stay at Koyagyu and sets out with Jotaro on her own search for Musashi",
+            "certainty": "explicit",
+            "last_known_location": "tsukigase_iga_back_road",
+            "location_status": "departed_with_group",
+            "departure_from": "tsukigase_iga_back_road",
+            "departure_chapter": "b2c11",
+            "departure_section": 19,
+            "group": "otsu_jotaro"
           },
           {
             "chapter": "b2c11",
             "section": 19,
             "character": "jotaro",
-            "location": "koyagyu_castle",
-            "status": "returning",
-            "activity": "turns back toward Koyagyu Castle to retrieve his mask before following Musashi",
-            "certainty": "explicit"
+            "location": null,
+            "status": "departed",
+            "activity": "comes back from the castle wearing his mask and sets out with Otsu after Musashi",
+            "certainty": "explicit",
+            "last_known_location": "tsukigase_iga_back_road",
+            "location_status": "departed_with_group",
+            "departure_from": "tsukigase_iga_back_road",
+            "departure_chapter": "b2c11",
+            "departure_section": 19,
+            "group": "otsu_jotaro"
           },
           {
             "chapter": "b2c11",
@@ -7376,6 +7436,18 @@
             "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt",
             "scope": "chapter_end",
             "staging_id": "b3c1-state-unknown_certificate_bearer"
+          },
+          {
+            "chapter": "b3c1",
+            "character": "fushimi_inspector",
+            "location": "fushimi_castle_works",
+            "source_ref": "chapter1-sasaki-kojiro.txt:L298-L303",
+            "certainty": "explicit",
+            "section": 20,
+            "status": "dead",
+            "activity": "dead",
+            "source_file": "data/source/book3/chapter1-sasaki-kojiro.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": []
@@ -7958,14 +8030,16 @@
         ],
         "referenced_characters": [
           "matahachi",
-          "musashi"
+          "musashi",
+          "yoshioka_seijuro"
         ],
         "event_ids": [
           "b3c4_e01",
           "b3c4_e02",
           "b3c4_e03",
           "b3c4_e04",
-          "b3c4-audit-references"
+          "b3c4-audit-references",
+          "b3c4-fc-01"
         ],
         "states": [
           {
@@ -8009,6 +8083,36 @@
             "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
             "scope": "chapter_end",
             "staging_id": "b3c4-state-kojiro"
+          },
+          {
+            "chapter": "b3c4",
+            "character": "gion_toji",
+            "section": 23,
+            "location": null,
+            "status": "departed",
+            "location_status": "unknown",
+            "last_known_location": "sumiyoshi_inn",
+            "departure_from": "sumiyoshi_inn",
+            "activity": "left Sumiyoshi for Kyoto with Okō after breakfast",
+            "certainty": "explicit",
+            "source_ref": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt:L195-L198",
+            "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b3c4",
+            "character": "oko",
+            "section": 23,
+            "location": null,
+            "status": "departed",
+            "location_status": "unknown",
+            "last_known_location": "sumiyoshi_inn",
+            "departure_from": "sumiyoshi_inn",
+            "activity": "returned toward Kyoto with Tōji, leaving Akemi at Sumiyoshi",
+            "certainty": "explicit",
+            "source_ref": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt:L195-L310",
+            "source_file": "data/source/book3/chapter4-the-seashell-of-forgetfulness.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
@@ -8254,6 +8358,33 @@
             "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
             "scope": "chapter_end",
             "staging_id": "b3c5-state-ueda_ryohei"
+          },
+          {
+            "chapter": "b3c5",
+            "character": "osugi",
+            "section": 24,
+            "location": "sumiyoshi_shore",
+            "status": "present",
+            "activity": "alone by a fire on the shore, holding Gonroku's body and trying to revive him",
+            "certainty": "explicit",
+            "source_ref": "data/source/book3/chapter5-a-heros-passing.txt:L191-L202",
+            "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b3c5",
+            "character": "matahachi",
+            "section": 24,
+            "location": null,
+            "status": "departed",
+            "location_status": "unknown",
+            "last_known_location": "sumiyoshi_taisha",
+            "departure_from": "sumiyoshi_taisha",
+            "activity": "stormed off after quarrelling with Osugi; whereabouts unknown",
+            "certainty": "explicit",
+            "source_ref": "data/source/book3/chapter5-a-heros-passing.txt:L102-L108",
+            "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": []
@@ -8930,7 +9061,8 @@
             "location_status": "unknown",
             "source_file": "data/source/book3/chapter8-the-mayfly-in-winter.txt",
             "scope": "chapter_end",
-            "staging_id": "b3c8-state-musashi"
+            "staging_id": "b3c8-state-musashi",
+            "last_known_location": "eagle_mountain"
           }
         ],
         "relationships_introduced": []
@@ -9366,7 +9498,8 @@
             "intended_destination": "karasumaru_house",
             "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
             "scope": "chapter_end",
-            "staging_id": "b3c10-state-otsu"
+            "staging_id": "b3c10-state-otsu",
+            "last_known_location": "sanjo_checkpoint"
           },
           {
             "chapter": "b3c10",
@@ -9381,22 +9514,24 @@
             "intended_destination": "karasumaru_house",
             "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
             "scope": "chapter_end",
-            "staging_id": "b3c10-state-jotaro"
+            "staging_id": "b3c10-state-jotaro",
+            "last_known_location": "sanjo_checkpoint"
           },
           {
             "chapter": "b3c10",
             "character": "kohei",
             "location": null,
-            "source_ref": "chapter10-the-flying-horse.txt:L210-L284",
+            "source_ref": "chapter10-the-flying-horse.txt:L186-L270",
             "certainty": "explicit",
             "section": 29,
             "status": "departed",
-            "activity": "last seen injured after pursuit; exact final position not stated",
+            "activity": "two fingertips of his right hand cut off; running through Kaga Valley on a shortcut to Yasugawa to meet his men and cut off Musashi",
             "last_known_location": "tokaido_omi_corridor",
             "location_status": "unknown",
             "source_file": "data/source/book3/chapter10-the-flying-horse.txt",
             "scope": "chapter_end",
-            "staging_id": "b3c10-state-kohei"
+            "staging_id": "b3c10-state-kohei",
+            "intended_destination": "yasugawa"
           }
         ],
         "relationships_introduced": []
@@ -9674,6 +9809,21 @@
             "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
             "scope": "chapter_end",
             "staging_id": "b3c11-state-aoki_tanzaemon"
+          },
+          {
+            "chapter": "b3c11",
+            "character": "yoshioka_seijuro",
+            "section": 30,
+            "location": null,
+            "status": "away",
+            "location_status": "unknown",
+            "last_known_location": "toribe_ruined_temple",
+            "intended_destination": "yoshioka_school",
+            "activity": "back in Kyoto and lodging Kojirō at his house; last seen falcon hunting in the hills near the ruined temple, wanting to go home and practise for the Musashi bout",
+            "certainty": "explicit",
+            "source_ref": "data/source/book3/chapter11-the-butterfly-in-winter.txt:L347-L421",
+            "source_file": "data/source/book3/chapter11-the-butterfly-in-winter.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
@@ -9900,14 +10050,12 @@
           {
             "chapter": "b3c12",
             "character": "yoshioka_seijuro",
-            "location": null,
-            "source_ref": "chapter12-the-announcement.txt:L145-L165",
-            "certainty": "strong_inference",
+            "location": "yoshioka_school",
+            "source_ref": "chapter12-the-announcement.txt:L4-L157",
+            "certainty": "explicit",
             "section": 31,
-            "status": "away",
-            "activity": "duel announced for Rendaiji; remains associated with school, exact final room unstated",
-            "last_known_location": "yoshioka_school",
-            "location_status": "reported_position",
+            "status": "present",
+            "activity": "at the school, hiding from creditors in the back room; approves the announcement of the Rendaiji duel",
             "source_file": "data/source/book3/chapter12-the-announcement.txt",
             "scope": "chapter_end",
             "staging_id": "b3c12-state-yoshioka_seijuro"
@@ -10124,6 +10272,7 @@
         ],
         "referenced_characters": [
           "aoki_tanzaemon",
+          "jotaro",
           "matahachi",
           "oko",
           "yoshioka_seijuro"
@@ -10134,7 +10283,8 @@
           "b3c13_e03",
           "b3c13_e04",
           "b3c13_e05",
-          "b3c13-audit-references"
+          "b3c13-audit-references",
+          "b3c13-fc-01"
         ],
         "states": [
           {
@@ -10222,14 +10372,13 @@
             "chapter": "b3c13",
             "character": "kojiro",
             "location": null,
-            "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L238-L270",
+            "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L238-L264",
             "certainty": "explicit",
             "section": 32,
             "status": "travelling",
-            "activity": "escorting Akemi toward the inn; arrival not shown",
+            "activity": "walked off the bridge alone, laughing; destination not stated",
             "last_known_location": "kamo_river_gojo",
             "departure_from": "kamo_river_gojo",
-            "intended_destination": "zuzuya_inn",
             "location_status": "unknown",
             "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
             "scope": "chapter_end",
@@ -10654,7 +10803,7 @@
           "myoshu"
         ],
         "referenced_characters": [
-          "nikkan",
+          "matsuo_kaname",
           "sekishusai",
           "takuan",
           "yoshioka_kempo",
@@ -10882,7 +11031,8 @@
           "b4c3-e04",
           "b4c3-e05",
           "b4c3-e06",
-          "b4c3-e07"
+          "b4c3-e07",
+          "b4c3-fc-01"
         ],
         "states": [
           {
@@ -11095,12 +11245,9 @@
         "referenced_characters": [
           "gion_toji",
           "koetsu",
-          "miike_jurozaemon",
           "musashi",
           "oko",
           "osugi",
-          "otaguro_hyosuke",
-          "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
         "event_ids": [
@@ -11359,13 +11506,13 @@
         ],
         "referenced_characters": [
           "akemi",
+          "gonroku",
           "jotaro",
           "karasumaru_mitsuhiro",
           "matahachi",
           "musashi",
           "oko",
-          "otsu",
-          "takuan"
+          "otsu"
         ],
         "event_ids": [
           "b4c5-e01",
@@ -11375,7 +11522,8 @@
           "b4c5-e05",
           "b4c5-e06",
           "b4c5-e07",
-          "b4c5-audit-references"
+          "b4c5-audit-references",
+          "b4c5-fc-01"
         ],
         "states": [
           {
@@ -11644,7 +11792,7 @@
             "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
             "section": 38,
             "status": "travelling",
-            "activity": "Walking alone toward the Rengeōin duel.",
+            "activity": "Has slipped out of the Ōgiya alone to keep the evening's appointment with Denshichirō.",
             "certainty": "explicit",
             "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
             "scope": "chapter_end",
@@ -11654,7 +11802,6 @@
             },
             "last_known_location": "ogiya_yanagimachi",
             "departure_from": "ogiya_yanagimachi",
-            "intended_destination": "rengeoin_sanjusangendo",
             "location_status": "unknown"
           },
           {
@@ -11674,15 +11821,7 @@
             }
           }
         ],
-        "relationships_introduced": [
-          {
-            "from": "musashi",
-            "to": "yoshioka_denshichiro",
-            "type": "enemy",
-            "subtype": "formal_challenge_and_duel_at_rengeoin",
-            "first_section": 38
-          }
-        ]
+        "relationships_introduced": []
       },
       "normalized_physical_difference": {
         "oracle_only": [],
@@ -11862,7 +12001,6 @@
           "yoshioka_genzaemon"
         ],
         "referenced_characters": [
-          "yoshioka_genzaemon",
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
@@ -11944,7 +12082,15 @@
             }
           }
         ],
-        "relationships_introduced": []
+        "relationships_introduced": [
+          {
+            "from": "musashi",
+            "to": "yoshioka_denshichiro",
+            "type": "enemy",
+            "subtype": "formal_challenge_and_duel_at_rengeoin",
+            "first_section": 39
+          }
+        ]
       },
       "normalized_physical_difference": {
         "oracle_only": [],
@@ -12173,6 +12319,34 @@
             "extensions": {
               "legacy_certainty": "unspecified"
             }
+          },
+          {
+            "chapter": "b4c8",
+            "character": "otsu",
+            "section": 40,
+            "location": null,
+            "status": "away",
+            "location_status": "reported_position",
+            "last_known_location": "karasumaru_house",
+            "activity": "Reported at Lord Karasumaru's house, where Takuan brought her after Kiyomizudera; feverish in bed, nursed by Jōtarō.",
+            "certainty": "explicit",
+            "source_ref": "data/source/book4/chapter8-the-elegant-people.txt:L200-L221",
+            "source_file": "data/source/book4/chapter8-the-elegant-people.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b4c8",
+            "character": "jotaro",
+            "section": 40,
+            "location": null,
+            "status": "away",
+            "location_status": "reported_position",
+            "last_known_location": "karasumaru_house",
+            "activity": "Reported at Lord Karasumaru's house, nursing the feverish Otsū.",
+            "certainty": "explicit",
+            "source_ref": "data/source/book4/chapter8-the-elegant-people.txt:L200-L221",
+            "source_file": "data/source/book4/chapter8-the-elegant-people.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
@@ -12519,8 +12693,6 @@
           "takuan"
         ],
         "referenced_characters": [
-          "jotaro",
-          "karasumaru_mitsuhiro",
           "koetsu",
           "musashi",
           "myoshu",
@@ -12790,7 +12962,7 @@
             "extensions": {
               "legacy_certainty": "unspecified"
             },
-            "last_known_location": "yoshino_cottage",
+            "last_known_location": "ogiya_yanagimachi",
             "location_status": "reported_position"
           }
         ],
@@ -12969,7 +13141,6 @@
         ],
         "referenced_characters": [
           "itakura_katsushige",
-          "jotaro",
           "karasumaru_mitsuhiro",
           "musashi",
           "otsu",
@@ -13666,6 +13837,7 @@
           "jotaro",
           "karasumaru_mitsuhiro",
           "matsuo_kaname",
+          "musashi",
           "musashi_aunt",
           "ogin",
           "otsu",
@@ -13678,7 +13850,8 @@
           "b4c15-e04",
           "b4c15-e05",
           "b4c15-e06",
-          "b4c15-audit-references"
+          "b4c15-audit-references",
+          "b4c15-fc-01"
         ],
         "states": [
           {
@@ -13724,7 +13897,7 @@
             "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
             "section": 47,
             "status": "present",
-            "activity": "With Otsū; his Nara mask triggers the scream explained next chapter.",
+            "activity": "With Otsū on the mountain path after Musashi's departure.",
             "certainty": "explicit",
             "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
             "scope": "chapter_end",
@@ -14635,7 +14808,6 @@
         "referenced_characters": [
           "akemi",
           "karasumaru_mitsuhiro",
-          "matahachi",
           "musashi",
           "osugi",
           "otsu",
@@ -15396,11 +15568,11 @@
           {
             "chapter": "b5c1",
             "character": "musashi",
-            "location": "kiso_highroad",
+            "location": "kozenji_turn",
             "source_ref": "book5/chapter1",
             "section": 54,
             "status": "searching",
-            "activity": "Running back along the Kiso highroad after noticing Otsū and Jōtarō are missing.",
+            "activity": "Running back down the hill road beyond the Kōzenji barrier after noticing Otsū and Jōtarō are missing.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter1-the-abduction.txt",
             "scope": "chapter_end",
@@ -15614,7 +15786,7 @@
             "source_ref": "book5/chapter2",
             "section": 55,
             "status": "searching",
-            "activity": "Searching around Nobu Pond after finding the abandoned cow.",
+            "activity": "Crossing Nobu Pond by boat with Gonnosuke, returning to his farmhouse for the night before heading to Narai.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
             "scope": "chapter_end",
@@ -16019,7 +16191,6 @@
             "staging_id": "b5c4-state-musashi",
             "last_known_location": "inojigahara",
             "departure_from": "inojigahara",
-            "intended_destination": "shimosuwa",
             "location_status": "unknown"
           },
           {
@@ -16900,6 +17071,30 @@
             "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
             "scope": "chapter_end",
             "staging_id": "b5c8-state-onao"
+          },
+          {
+            "chapter": "b5c8",
+            "character": "daizo",
+            "location": "hachioji",
+            "source_ref": "data/source/book5/chapter8-playing-with-fire.txt:L178-L242",
+            "section": 61,
+            "status": "present",
+            "activity": "Lodging at a large Hachiōji inn with Jōtarō and Sukeichi; about to go out alone for a night walk.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b5c8",
+            "character": "sukeichi",
+            "location": "hachioji",
+            "source_ref": "data/source/book5/chapter8-playing-with-fire.txt:L184-L254",
+            "section": 61,
+            "status": "present",
+            "activity": "At the Hachiōji inn as Daizō's servant, minding his master's traveling case.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
@@ -17060,7 +17255,7 @@
           {
             "chapter": "b5c9",
             "character": "jotaro",
-            "location": "takanawa_highroad",
+            "location": "hachioji_edo_road",
             "source_ref": "book5/chapter9",
             "section": 62,
             "status": "travelling",
@@ -17073,7 +17268,7 @@
           {
             "chapter": "b5c9",
             "character": "daizo",
-            "location": "takanawa_highroad",
+            "location": "hachioji_edo_road",
             "source_ref": "book5/chapter9",
             "section": 62,
             "status": "travelling",
@@ -17086,7 +17281,7 @@
           {
             "chapter": "b5c9",
             "character": "sukeichi",
-            "location": "takanawa_highroad",
+            "location": "hachioji_edo_road",
             "source_ref": "book5/chapter9",
             "section": 62,
             "status": "travelling",
@@ -17683,6 +17878,66 @@
             "last_known_location": "sumiya_yoshiwara",
             "departure_from": "sumiya_yoshiwara",
             "location_status": "unknown"
+          },
+          {
+            "chapter": "b5c12",
+            "character": "kojiro",
+            "location": "sumiya_yoshiwara",
+            "source_ref": "data/source/book5/chapter12-shavings.txt:L223-L252",
+            "section": 65,
+            "status": "present",
+            "activity": "Leaving the Sumiya for the street with Jūrō and Koroku after making Jinnai apologize for the missing Hanagiri.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter12-shavings.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b5c12",
+            "character": "juro",
+            "location": "sumiya_yoshiwara",
+            "source_ref": "data/source/book5/chapter12-shavings.txt:L223-L252",
+            "section": 65,
+            "status": "present",
+            "activity": "Leaving the Sumiya with Kojirō and Koroku after the fruitless search for Hanagiri.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter12-shavings.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b5c12",
+            "character": "koroku",
+            "location": "sumiya_yoshiwara",
+            "source_ref": "data/source/book5/chapter12-shavings.txt:L223-L252",
+            "section": 65,
+            "status": "present",
+            "activity": "Leaving the Sumiya with Kojirō and Jūrō after the fruitless search for Hanagiri.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter12-shavings.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b5c12",
+            "character": "yajibei",
+            "location": "bakurocho_yajibei",
+            "source_ref": "data/source/book5/chapter12-shavings.txt:L144-L160",
+            "section": 65,
+            "status": "present",
+            "activity": "Staying home in Bakurōchō for the wake of the trainee Kojirō killed.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter12-shavings.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b5c12",
+            "character": "osugi",
+            "location": "bakurocho_yajibei",
+            "source_ref": "data/source/book5/chapter12-shavings.txt:L4-L70",
+            "section": 65,
+            "status": "present",
+            "activity": "Back at Yajibei's house in Bakurōchō after the boat trip home with Kojirō.",
+            "certainty": "strong_inference",
+            "source_file": "data/source/book5/chapter12-shavings.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": []
@@ -17860,15 +18115,48 @@
           {
             "chapter": "b5c13",
             "character": "kojiro",
-            "location": "obata_school",
-            "source_ref": "book5/chapter13",
+            "location": null,
+            "source_ref": "data/source/book5/chapter13-the-owl.txt:L227-L288",
             "section": 66,
-            "status": "present",
-            "activity": "At the school grove after humiliating the surviving students.",
+            "status": "departed",
+            "activity": "Swaggered out through the Hirakawa Tenjin shrine gate with Jūrō and Koroku after humiliating the Obata students; his later whereabouts are not shown.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter13-the-owl.txt",
             "scope": "chapter_end",
-            "staging_id": "b5c13-state-kojiro"
+            "staging_id": "b5c13-state-kojiro",
+            "last_known_location": "obata_school",
+            "departure_from": "obata_school",
+            "location_status": "unknown"
+          },
+          {
+            "chapter": "b5c13",
+            "character": "juro",
+            "location": null,
+            "source_ref": "data/source/book5/chapter13-the-owl.txt:L277-L288",
+            "section": 66,
+            "status": "departed",
+            "activity": "Left the Hirakawa Tenjin shrine grove with Kojirō and Koroku after the students' humiliation.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter13-the-owl.txt",
+            "scope": "chapter_end",
+            "last_known_location": "obata_school",
+            "departure_from": "obata_school",
+            "location_status": "unknown"
+          },
+          {
+            "chapter": "b5c13",
+            "character": "koroku",
+            "location": null,
+            "source_ref": "data/source/book5/chapter13-the-owl.txt:L277-L288",
+            "section": 66,
+            "status": "departed",
+            "activity": "Left the Hirakawa Tenjin shrine grove with Kojirō and Jūrō after the students' humiliation.",
+            "certainty": "explicit",
+            "source_file": "data/source/book5/chapter13-the-owl.txt",
+            "scope": "chapter_end",
+            "last_known_location": "obata_school",
+            "departure_from": "obata_school",
+            "location_status": "unknown"
           }
         ],
         "relationships_introduced": [
@@ -17884,6 +18172,13 @@
             "to": "hojo_shinzo",
             "type": "master",
             "subtype": "teacher_and_senior_pupil",
+            "first_section": 66
+          },
+          {
+            "from": "obata_kagenori",
+            "to": "obata_yogoro",
+            "type": "family",
+            "subtype": "father_and_son",
             "first_section": 66
           }
         ]
@@ -18444,11 +18739,11 @@
           {
             "chapter": "b5c16",
             "character": "iori",
-            "location": "raid_village",
-            "source_ref": "book5/chapter16",
+            "location": "hotengahara_shack",
+            "source_ref": "data/source/book5/chapter16-mountain-devils.txt:L197-L220",
             "section": 69,
             "status": "present",
-            "activity": "With Musashi after escaping the brigands and reporting the raid.",
+            "activity": "Left at the cabin on Musashi's orders after escaping the brigands and raising the alarm.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter16-mountain-devils.txt",
             "scope": "chapter_end",
@@ -18630,15 +18925,19 @@
           {
             "chapter": "b5c17",
             "character": "nagaoka_sado",
-            "location": "hosokawa_edo",
-            "source_ref": "book5/chapter17",
+            "location": null,
+            "source_ref": "data/source/book5/chapter17-first-planting.txt:L177-L181",
             "section": 70,
-            "status": "present",
-            "activity": "Back at the Hosokawa residence after failing to find Musashi.",
+            "status": "travelling",
+            "activity": "Riding back from Hōtengahara through the evening mist after failing to find Musashi.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter17-first-planting.txt",
             "scope": "chapter_end",
-            "staging_id": "b5c17-state-nagaoka_sado"
+            "staging_id": "b5c17-state-nagaoka_sado",
+            "location_status": "unknown",
+            "last_known_location": "hotengahara",
+            "departure_from": "hotengahara",
+            "intended_destination": "hosokawa_edo"
           },
           {
             "chapter": "b5c17",
@@ -18675,7 +18974,7 @@
           {
             "from": "iwama_kakubei",
             "to": "kojiro",
-            "type": "servant_employer",
+            "type": "friend_ally",
             "subtype": "recruitment_sponsor",
             "first_section": 70
           }
@@ -18877,21 +19176,24 @@
             "staging_id": "b5c18-state-iori",
             "last_known_location": "bakurocho_inn",
             "departure_from": "bakurocho_inn",
-            "intended_destination": "higakubo_yagyu",
+            "intended_destination": "kobikicho",
             "location_status": "unknown"
           },
           {
             "chapter": "b5c18",
             "character": "kimura_sukekuro",
-            "location": "bakurocho_inn",
-            "source_ref": "book5/chapter18",
+            "location": null,
+            "source_ref": "data/source/book5/chapter18-the-flies.txt:L199-L215",
             "section": 71,
-            "status": "present",
-            "activity": "Reunited with Musashi at the horse market inn.",
+            "status": "departed",
+            "activity": "Left the horse market after inviting Musashi to the Yagyū household; later sends him a letter by messenger.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter18-the-flies.txt",
             "scope": "chapter_end",
-            "staging_id": "b5c18-state-kimura_sukekuro"
+            "staging_id": "b5c18-state-kimura_sukekuro",
+            "location_status": "unknown",
+            "last_known_location": "bakurocho_horse_market",
+            "departure_from": "bakurocho_horse_market"
           }
         ],
         "relationships_introduced": []
@@ -19313,11 +19615,11 @@
           {
             "chapter": "b5c20",
             "character": "otsu",
-            "location": "azabu_hill",
+            "location": "higakubo_yagyu",
             "source_ref": "book5/chapter20",
             "section": 73,
             "status": "present",
-            "activity": "Near the Yagyū residence with Hyōgo; Iori does not recognize her.",
+            "activity": "Walking down into the Higakubo valley with Hyōgo toward the Yagyū residence; Iori does not recognize her.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter20-the-fox.txt",
             "scope": "chapter_end",
@@ -19326,11 +19628,11 @@
           {
             "chapter": "b5c20",
             "character": "yagyu_hyogo",
-            "location": "azabu_hill",
+            "location": "higakubo_yagyu",
             "source_ref": "book5/chapter20",
             "section": 73,
             "status": "present",
-            "activity": "Near the Yagyū residence with Otsū.",
+            "activity": "Leading Otsū's horse down into the Higakubo valley toward the Yagyū residence.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter20-the-fox.txt",
             "scope": "chapter_end",
@@ -19343,6 +19645,13 @@
             "to": "otsu",
             "type": "friend_ally",
             "subtype": "rescuer_and_protector_reported_retrospectively",
+            "first_section": 73
+          },
+          {
+            "from": "munenori",
+            "to": "yagyu_hyogo",
+            "type": "family",
+            "subtype": "uncle_and_nephew",
             "first_section": 73
           },
           {
@@ -19565,15 +19874,7 @@
             "staging_id": "b5c21-state-munenori"
           }
         ],
-        "relationships_introduced": [
-          {
-            "from": "munenori",
-            "to": "yagyu_hyogo",
-            "type": "family",
-            "subtype": "uncle_and_nephew",
-            "first_section": 74
-          }
-        ]
+        "relationships_introduced": []
       },
       "normalized_physical_difference": {
         "oracle_only": [],
@@ -19719,7 +20020,7 @@
             "source_ref": "book5/chapter22",
             "section": 75,
             "status": "present",
-            "activity": "At Yajibei's house after joining the discussion of Osugi's revenge.",
+            "activity": "Arrives at Yajibei's house as the men weep over the sutra Osugi had them read.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter22-filial-piety.txt",
             "scope": "chapter_end",
@@ -19937,11 +20238,11 @@
           {
             "chapter": "b5c23",
             "character": "juro",
-            "location": "yanagihara",
+            "location": "kosuke_shop",
             "source_ref": "data/source/book5/chapter23-spring-shower-in-red.txt:L175-L193",
             "section": 76,
             "status": "dead",
-            "activity": "Killed by Shinzō during the ambush.",
+            "activity": "Killed in the side street near Kōsuke's shop; Kojirō sends palanquin bearers to carry his body to Yajibei's house.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
             "scope": "chapter_end",
@@ -19950,11 +20251,11 @@
           {
             "chapter": "b5c23",
             "character": "koroku",
-            "location": "yanagihara",
+            "location": "kosuke_shop",
             "source_ref": "data/source/book5/chapter23-spring-shower-in-red.txt:L175-L193",
             "section": 76,
             "status": "dead",
-            "activity": "Killed by Shinzō during the ambush.",
+            "activity": "Killed in the side street near Kōsuke's shop; Kojirō sends palanquin bearers to carry his body to Yajibei's house.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
             "scope": "chapter_end",
@@ -19989,11 +20290,11 @@
           {
             "chapter": "b5c23",
             "character": "osugi",
-            "location": "yanagihara",
-            "source_ref": "book5/chapter23",
+            "location": "kosuke_shop",
+            "source_ref": "data/source/book5/chapter23-spring-shower-in-red.txt:L196-L220",
             "section": 76,
             "status": "present",
-            "activity": "Alive after Shinzō pushes her into a ditch.",
+            "activity": "Pulled from the ditch near Kōsuke's shop; Kojirō sends palanquin bearers to take her to Yajibei's house.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
             "scope": "chapter_end",
@@ -20436,7 +20737,7 @@
             "source_ref": "book5/chapter25",
             "section": 78,
             "status": "present",
-            "activity": "Gravely ill; no death occurs in Book V.",
+            "activity": "Gravely ill and bedridden; orders Yogorō to bring Musashi back.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
             "scope": "chapter_end",
@@ -20458,11 +20759,11 @@
           {
             "chapter": "b5c25",
             "character": "nakatogawa_handayu",
-            "location": "obata_school",
-            "source_ref": "book5/chapter25",
+            "location": "kojimachi_road",
+            "source_ref": "data/source/book5/chapter25-the-deserted-prophet.txt:L158-L174",
             "section": 78,
             "status": "present",
-            "activity": "At the school after bringing news from the Hosokawa house.",
+            "activity": "Left on the Kōjimachi street after telling Yogorō that the Hosokawa house already knows of Shinzō's defeat.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter25-the-deserted-prophet.txt",
             "scope": "chapter_end",
@@ -20485,15 +20786,7 @@
             "location_status": "unknown"
           }
         ],
-        "relationships_introduced": [
-          {
-            "from": "obata_kagenori",
-            "to": "obata_yogoro",
-            "type": "family",
-            "subtype": "father_and_son",
-            "first_section": 78
-          }
-        ]
+        "relationships_introduced": []
       },
       "normalized_physical_difference": {
         "oracle_only": [],
@@ -20931,7 +21224,8 @@
         "referenced_characters": [
           "hosokawa_tadaoki",
           "kojiro",
-          "musashi"
+          "musashi",
+          "nagaoka_sado"
         ],
         "event_ids": [
           "b6c1-e01",
@@ -20942,7 +21236,7 @@
           {
             "chapter": "b6c1",
             "character": "hosokawa_tadatoshi",
-            "location": "hosokawa_edo_residence",
+            "location": "hosokawa_edo",
             "source_ref": "data/source/book6/chapter1-a-chat-with-the-men.txt:L145-L162",
             "section": 80,
             "status": "present",
@@ -21110,7 +21404,8 @@
         "event_ids": [
           "b6c2-e01",
           "b6c2-e02",
-          "b6c2-audit-references"
+          "b6c2-audit-references",
+          "b6c2-fc-01"
         ],
         "states": [
           {
@@ -21303,8 +21598,7 @@
         ],
         "referenced_characters": [
           "hosokawa_tadaoki",
-          "iwama_kakubei",
-          "kanemaki_jisai"
+          "iwama_kakubei"
         ],
         "event_ids": [
           "b6c3-e01",
@@ -21329,11 +21623,11 @@
           {
             "chapter": "b6c3",
             "character": "kojiro",
-            "location": "goroji_house",
-            "source_ref": "data/source/book6/chapter3-the-eagle.txt:L246-L265",
+            "location": "isarago_hill",
+            "source_ref": "data/source/book6/chapter3-the-eagle.txt:L227-L265",
             "section": 82,
             "status": "present",
-            "activity": "Making repeated visits to Gorōji.",
+            "activity": "Living at Kakubei's house on Isarago Hill and calling on the injured Gorōji every two or three days.",
             "certainty": "explicit",
             "source_file": "data/source/book6/chapter3-the-eagle.txt",
             "scope": "chapter_end",
@@ -21768,6 +22062,7 @@
           "zushino_kosuke"
         ],
         "event_ids": [
+          "b6c5-fc-01",
           "b6c5-e01",
           "b6c5-e02",
           "b6c5-audit-s05",
@@ -22049,7 +22344,6 @@
         "referenced_characters": [
           "karasumaru_mitsuhiro",
           "kimura_sukekuro",
-          "mikogami_tenzen",
           "otsu",
           "sekishusai",
           "tokugawa_hidetada",
@@ -22075,6 +22369,32 @@
             "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
             "scope": "chapter_end",
             "staging_id": "b6c6-state-musashi"
+          },
+          {
+            "chapter": "b6c6",
+            "character": "takuan",
+            "location": "hojo_ushigome",
+            "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt:L82-L311",
+            "section": 85,
+            "status": "present",
+            "activity": "Newly arrived in Edo with Lord Koide, a guest at Ujikatsu's house where he backs the plan to recommend Musashi.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b6c6",
+            "character": "otsu",
+            "location": null,
+            "source_ref": "data/source/book6/chapter6-four-sages-with-a-single-light.txt:L219-L223",
+            "section": 85,
+            "status": "reported",
+            "activity": "Munenori reports that she went to Koyagyū with Hyōgo to help nurse Sekishūsai.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter6-four-sages-with-a-single-light.txt",
+            "scope": "chapter_end",
+            "last_known_location": "koyagyu_castle",
+            "location_status": "reported_position"
           }
         ],
         "relationships_introduced": []
@@ -22523,9 +22843,11 @@
           "kojiro",
           "matahachi",
           "munenori",
-          "musashi"
+          "musashi",
+          "yajibei"
         ],
         "event_ids": [
+          "b6c8-fc-01",
           "b6c8-e01",
           "b6c8-audit-route",
           "b6c8-e02",
@@ -22559,6 +22881,36 @@
             "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
             "scope": "chapter_end",
             "staging_id": "b6c8-state-hamada_toranosuke"
+          },
+          {
+            "chapter": "b6c8",
+            "character": "osugi",
+            "location": null,
+            "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L463-L488",
+            "section": 87,
+            "status": "departed",
+            "activity": "Released by Tadaaki into Kojirō's charge, she leaves the Ono residence with him at sunset.",
+            "certainty": "strong_inference",
+            "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
+            "scope": "chapter_end",
+            "last_known_location": "ono_dojo",
+            "departure_from": "ono_dojo",
+            "location_status": "unknown"
+          },
+          {
+            "chapter": "b6c8",
+            "character": "kojiro",
+            "location": null,
+            "source_ref": "data/source/book6/chapter8-tadaakis-madness.txt:L463-L488",
+            "section": 87,
+            "status": "departed",
+            "activity": "Leaves the Ono residence at sunset, Osugi having been released into his charge, displeased to hear Musashi may become a shōgunal tutor.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter8-tadaakis-madness.txt",
+            "scope": "chapter_end",
+            "last_known_location": "ono_dojo",
+            "departure_from": "ono_dojo",
+            "location_status": "unknown"
           }
         ],
         "relationships_introduced": []
@@ -22769,6 +23121,18 @@
             "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt",
             "scope": "chapter_end",
             "staging_id": "b6c9-state-musashi"
+          },
+          {
+            "chapter": "b6c9",
+            "character": "iori",
+            "location": "kotesashigahara",
+            "source_ref": "data/source/book6/chapter9-the-poignancy-of-things.txt:L76-L198",
+            "section": 88,
+            "status": "present",
+            "activity": "Travelling with Musashi toward Mitsumine after burying old battle bones by the Iruma River.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter9-the-poignancy-of-things.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": []
@@ -23214,6 +23578,30 @@
             "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
             "scope": "chapter_end",
             "staging_id": "b6c11-state-gion_toji"
+          },
+          {
+            "chapter": "b6c11",
+            "character": "gonnosuke",
+            "location": "kosaruzawa_bridge",
+            "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L394-L437",
+            "section": 90,
+            "status": "present",
+            "activity": "Having fought off the ambush with his staff, he sees Musashi bound by the officials at Kosaruzawa bridge.",
+            "certainty": "strong_inference",
+            "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b6c11",
+            "character": "iori",
+            "location": "kosaruzawa_bridge",
+            "source_ref": "data/source/book6/chapter11-the-demons-attendant.txt:L398-L437",
+            "section": 90,
+            "status": "present",
+            "activity": "Comes down the mountain with Musashi and Gonnosuke and sees his teacher bound by the officials.",
+            "certainty": "strong_inference",
+            "source_file": "data/source/book6/chapter11-the-demons-attendant.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
@@ -23506,6 +23894,7 @@
         "event_ids": [
           "b6c12-e01",
           "b6c12-e02",
+          "b6c12-fc-01",
           "b6c12-e03",
           "b6c12-audit-s08",
           "b6c12-audit-s09",
@@ -23568,6 +23957,33 @@
             "source_file": "data/source/book6/chapter12-brother-disciples.txt",
             "scope": "chapter_end",
             "staging_id": "b6c12-state-gonnosuke"
+          },
+          {
+            "chapter": "b6c12",
+            "character": "daizo",
+            "location": null,
+            "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L199-L211",
+            "section": 91,
+            "status": "departed",
+            "activity": "Heading for Kiso down the Kōshū highroad with three confederates and the treasure.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+            "scope": "chapter_end",
+            "last_known_location": "head_burying_mound",
+            "departure_from": "head_burying_mound",
+            "location_status": "unknown"
+          },
+          {
+            "chapter": "b6c12",
+            "character": "takuan",
+            "location": "musashino_cabin",
+            "source_ref": "data/source/book6/chapter12-brother-disciples.txt:L343-L582",
+            "section": 91,
+            "status": "present",
+            "activity": "Waiting for Musashi at his new house on Musashino; he takes in the boys and hears Jōtarō's confession.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter12-brother-disciples.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": []
@@ -23741,6 +24157,8 @@
           "musashi"
         ],
         "event_ids": [
+          "b6c13-fc-01",
+          "b6c13-fc-02",
           "b6c13-e01",
           "b6c13-audit-s02",
           "b6c13-audit-references"
@@ -23763,14 +24181,17 @@
             "chapter": "b6c13",
             "character": "takuan",
             "location": null,
-            "source_ref": "data/source/book6/chapter13-the-pomegranate.txt:L1-L20",
+            "source_ref": "data/source/book6/chapter13-the-pomegranate.txt:L4-L13",
             "section": 92,
-            "status": "unknown",
-            "activity": "Has left for Edo Castle.",
+            "status": "in_transit",
+            "activity": "Left Ushigome by palanquin for Edo Castle, where Ujikatsu is.",
             "certainty": "explicit",
             "source_file": "data/source/book6/chapter13-the-pomegranate.txt",
             "scope": "chapter_end",
-            "staging_id": "b6c13-state-takuan"
+            "staging_id": "b6c13-state-takuan",
+            "last_known_location": "hojo_ushigome",
+            "departure_from": "hojo_ushigome",
+            "intended_destination": "edo_castle"
           }
         ],
         "relationships_introduced": []
@@ -23995,12 +24416,14 @@
           "akemi",
           "daizo",
           "gonnosuke",
+          "hojo_ujikatsu",
           "jotaro",
           "matahachi",
           "munenori",
           "musashi",
           "oko",
           "otsu",
+          "sakai_tadakatsu",
           "sekishusai",
           "tokugawa_hidetada",
           "tokugawa_ieyasu"
@@ -24052,6 +24475,21 @@
             "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
             "scope": "chapter_end",
             "staging_id": "b6c14-state-musashi"
+          },
+          {
+            "chapter": "b6c14",
+            "character": "takuan",
+            "location": null,
+            "source_ref": "data/source/book6/chapter14-land-of-dreams.txt:L361-L404",
+            "section": 93,
+            "status": "departed",
+            "activity": "Walks away from the punishment ground after watching the lashing; he has told the shōgun he will go to Koyagyū and then back to the Daitokuji.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter14-land-of-dreams.txt",
+            "scope": "chapter_end",
+            "last_known_location": "otemachi_prison",
+            "departure_from": "otemachi_prison",
+            "location_status": "unknown"
           }
         ],
         "relationships_introduced": []
@@ -24309,6 +24747,30 @@
             "source_file": "data/source/book6/chapter15-the-challenge.txt",
             "scope": "chapter_end",
             "staging_id": "b6c15-state-musashi"
+          },
+          {
+            "chapter": "b6c15",
+            "character": "kojiro",
+            "location": "nobidome",
+            "source_ref": "data/source/book6/chapter15-the-challenge.txt:L65-L175",
+            "section": 94,
+            "status": "travelling",
+            "activity": "Travelling west with Kakubei's Hosokawa advance party bound for Buzen, after handing Iori a challenge for Musashi.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter15-the-challenge.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b6c15",
+            "character": "osugi",
+            "location": "nobidome",
+            "source_ref": "data/source/book6/chapter15-the-challenge.txt:L60-L125",
+            "section": 94,
+            "status": "travelling",
+            "activity": "Travelling with the Hosokawa advance party, meaning to go home to Mimasaka by way of Osaka.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter15-the-challenge.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
@@ -24505,6 +24967,7 @@
         ],
         "event_ids": [
           "b6c16-e01",
+          "b6c16-fc-01",
           "b6c16-e04",
           "b6c16-e02",
           "b6c16-e03",
@@ -24745,6 +25208,7 @@
         ],
         "event_ids": [
           "b6c17-e01",
+          "b6c17-fc-01",
           "b6c17-e02",
           "b6c17-e03",
           "b6c17-e04",
@@ -24777,9 +25241,29 @@
             "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
             "scope": "chapter_end",
             "staging_id": "b6c17-state-iori"
+          },
+          {
+            "chapter": "b6c17",
+            "character": "gonnosuke",
+            "location": "musashino_cabin",
+            "source_ref": "data/source/book6/chapter17-the-sound-of-heaven.txt:L118-L174",
+            "section": 96,
+            "status": "present",
+            "activity": "Back at the empty cabin at sunrise with Iori, Takuan and the Hōjō party; Musashi has left Iori in his care.",
+            "certainty": "explicit",
+            "source_file": "data/source/book6/chapter17-the-sound-of-heaven.txt",
+            "scope": "chapter_end"
           }
         ],
-        "relationships_introduced": []
+        "relationships_introduced": [
+          {
+            "from": "gonnosuke",
+            "to": "iori",
+            "type": "master",
+            "subtype": "guardian_teacher_and_child_companion",
+            "first_section": 96
+          }
+        ]
       },
       "normalized_physical_difference": {
         "oracle_only": [],
@@ -24961,11 +25445,13 @@
         ],
         "referenced_characters": [
           "in_ei",
+          "inshun",
           "jotaro",
           "kojiro",
           "mikogami_tenzen",
           "munenori",
-          "sekishusai"
+          "sekishusai",
+          "yagyu_hyogo"
         ],
         "event_ids": [
           "b7c1-e01",
@@ -24983,10 +25469,11 @@
             "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
             "section": 97,
             "status": "in_transit",
-            "activity": "Alive, traveling under the Torazō concealment after rescuing Otsū; exact subsequent location unknown.",
+            "activity": "Alive, under the Torazō concealment; after rescuing Otsū near Hannya Plain he leaves to carry Sukekurō's reply back to the Hōzōin.",
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
-            "scope": "chapter_end"
+            "scope": "chapter_end",
+            "last_known_location": "hannya_plain"
           },
           {
             "chapter": "b7c1",
@@ -25007,7 +25494,7 @@
             "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
             "section": 97,
             "status": "present",
-            "activity": "At Koyagyū after the Tsukigase dispute is clarified.",
+            "activity": "At Koyagyū, having laughed off Inshun's rumor about Tsukigase.",
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
             "scope": "chapter_end"
@@ -25201,6 +25688,7 @@
           "mikogami_tenzen",
           "munenori",
           "musashi",
+          "otsu",
           "sekishusai",
           "takuan"
         ],
@@ -25210,17 +25698,18 @@
           "b7c2-e03",
           "b7c2-e04",
           "b7c2-e05",
-          "b7c2-audit-references"
+          "b7c2-audit-references",
+          "b7c2-fc-01"
         ],
         "states": [
           {
             "chapter": "b7c2",
             "character": "yagyu_hyogo",
-            "location": "koyagyu_castle",
+            "location": "kofukuji",
             "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
             "section": 98,
             "status": "present",
-            "activity": "Alive and based at Koyagyū, having accepted Ushinosuke as a pupil and stated an intention to serve the Owari Tokugawa in Nagoya.",
+            "activity": "In Nara at the Kōfukuji tournament field with Sukekurō and Ushinosuke, after meeting Gonnosuke and Iori; based at Koyagyū and soon to serve the Owari Tokugawa in Nagoya.",
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter2-hemp-seed.txt",
             "scope": "chapter_end"
@@ -25228,11 +25717,11 @@
           {
             "chapter": "b7c2",
             "character": "ushinosuke",
-            "location": "koyagyu_dojo",
+            "location": "kofukuji",
             "source_ref": "data/source/book7/chapter2-hemp-seed.txt",
             "section": 98,
             "status": "present",
-            "activity": "Alive at the Yagyū orbit as Hyōgo's accepted pupil.",
+            "activity": "In Nara at the Kōfukuji field with Hyōgo and Sukekurō; now a frequent visitor at the castle on his way to becoming a regular attendant.",
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter2-hemp-seed.txt",
             "scope": "chapter_end"
@@ -25260,16 +25749,24 @@
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter2-hemp-seed.txt",
             "scope": "chapter_end"
+          },
+          {
+            "chapter": "b7c2",
+            "character": "otsu",
+            "section": 98,
+            "location": null,
+            "status": "in_transit",
+            "location_status": "unknown",
+            "last_known_location": "koyagyu_castle",
+            "departure_from": "koyagyu_castle",
+            "activity": "Left Koyagyū on horseback for Edo to join Musashi, declining Hyōgo's company.",
+            "certainty": "explicit",
+            "source_ref": "data/source/book7/chapter2-hemp-seed.txt:L42-L66",
+            "source_file": "data/source/book7/chapter2-hemp-seed.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
-          {
-            "from": "gonnosuke",
-            "to": "iori",
-            "type": "master",
-            "subtype": "guardian_teacher_and_child_companion",
-            "first_section": 98
-          },
           {
             "from": "yagyu_hyogo",
             "to": "ushinosuke",
@@ -25443,7 +25940,6 @@
           "iori",
           "koetsu",
           "myoshu",
-          "oan",
           "sugizo",
           "toriumi_benzo",
           "toroku"
@@ -25452,6 +25948,7 @@
           "hojo_ujikatsu",
           "kimura_sukekuro",
           "musashi",
+          "oan",
           "otsu",
           "toyotomi_hideyoshi",
           "yagyu_hyogo"
@@ -25474,7 +25971,8 @@
             "activity": "Separated after falling into the gully during the ambush.",
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter3-sweepers-and-salesmen.txt",
-            "scope": "chapter_end"
+            "scope": "chapter_end",
+            "last_known_location": "amami_plateau"
           },
           {
             "chapter": "b7c3",
@@ -25503,7 +26001,6 @@
         "oracle_only": [],
         "production_only": [
           "gensuke",
-          "oan",
           "sugizo",
           "toroku"
         ]
@@ -25908,6 +26405,20 @@
             "status": "in_transit",
             "activity": "Sailing with the Hosokawa party toward Kokura.",
             "certainty": "explicit",
+            "source_file": "data/source/book7/chapter5-the-port.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b7c5",
+            "character": "nagaoka_sado",
+            "section": 101,
+            "location": null,
+            "status": "in_transit",
+            "last_known_location": "sakai_port",
+            "departure_from": "sakai_port",
+            "activity": "Sailing from Sakai aboard the Tatsumimaru toward Kokura, taking Iori into his household.",
+            "certainty": "strong_inference",
+            "source_ref": "data/source/book7/chapter5-the-port.txt:L382-L436",
             "source_file": "data/source/book7/chapter5-the-port.txt",
             "scope": "chapter_end"
           }
@@ -26520,6 +27031,18 @@
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter8-shikama-blue.txt",
             "scope": "chapter_end"
+          },
+          {
+            "chapter": "b7c8",
+            "character": "asaya_mambei",
+            "section": 104,
+            "location": "mikazuki_shrine",
+            "status": "dead",
+            "activity": "Killed by Jōtarō on the shrine steps after delivering Otsū to Osugi.",
+            "certainty": "explicit",
+            "source_ref": "data/source/book7/chapter8-shikama-blue.txt:L209-L231",
+            "source_file": "data/source/book7/chapter8-shikama-blue.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": []
@@ -26917,6 +27440,18 @@
             "status": "in_transit",
             "activity": "Following Akemi and choosing work and social fatherhood.",
             "certainty": "explicit",
+            "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b7c10",
+            "character": "gonnosuke",
+            "section": 106,
+            "location": "osaka",
+            "status": "present",
+            "activity": "Free after Yukimura released him; in Osaka with Kōetsu after missing Musashi's ship, intending to travel overland.",
+            "certainty": "explicit",
+            "source_ref": "data/source/book7/chapter10-the-tides-of-life.txt:L91-L201",
             "source_file": "data/source/book7/chapter10-the-tides-of-life.txt",
             "scope": "chapter_end"
           }
@@ -27662,6 +28197,20 @@
             "certainty": "explicit",
             "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
             "scope": "chapter_end"
+          },
+          {
+            "chapter": "b7c13",
+            "character": "musashi",
+            "section": 109,
+            "location": null,
+            "status": "reported",
+            "location_status": "reported_position",
+            "last_known_location": "kokura",
+            "activity": "Reported at Kojirō's house to have landed at Moji and been seen walking down a street in Kokura.",
+            "certainty": "explicit",
+            "source_ref": "data/source/book7/chapter13-before-the-thirteenth-day.txt:L240-L243",
+            "source_file": "data/source/book7/chapter13-before-the-thirteenth-day.txt",
+            "scope": "chapter_end"
           }
         ],
         "relationships_introduced": [
@@ -27879,7 +28428,8 @@
         "referenced_characters": [
           "hosokawa_tadatoshi",
           "iwama_kakubei",
-          "kojiro"
+          "kojiro",
+          "nagaoka_sado"
         ],
         "event_ids": [
           "b7c14-e01",
@@ -27924,6 +28474,18 @@
             "status": "present",
             "activity": "Alive in Akemi's care on the Kokura hill.",
             "certainty": "explicit",
+            "source_file": "data/source/book7/chapter14-at-daybreak.txt",
+            "scope": "chapter_end"
+          },
+          {
+            "chapter": "b7c14",
+            "character": "musashi",
+            "section": 110,
+            "location": "tarozaemon_house",
+            "status": "present",
+            "activity": "At Tarōzaemon's house in Shimonoseki, having declined Sado's boat; he will cross to Funashima in one of Tarōzaemon's boats at the hour he chooses.",
+            "certainty": "explicit",
+            "source_ref": "data/source/book7/chapter14-at-daybreak.txt:L361-L414",
             "source_file": "data/source/book7/chapter14-at-daybreak.txt",
             "scope": "chapter_end"
           }
