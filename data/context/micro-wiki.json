@@ -192,7 +192,7 @@
       "type": "historical_faction",
       "display_name": "Akamatsu clan",
       "novel_trigger": {
-        "first_section": 3,
+        "first_section": 4,
         "name_in_text": "Akamatsu",
         "context": "The novel states that the Hon'iden and Shimmen families trace their lineage to the Akamatsu house."
       },
@@ -312,10 +312,22 @@
       "source":{"title":"Yagyū historical figures guide","publisher":"Nara City","url":"https://www.city.nara.lg.jp/uploaded/attachment/150695.pdf"}
     },
     {
-      "id":"hozoin_ryu","type":"historical_school","display_name":"Hōzōin-ryū sōjutsu",
-      "novel_trigger":{"first_section":14,"name_in_text":"Hōzōin","context":"Musashi visits the Hōzōin establishment and confronts its spear tradition."},
-      "wiki":{"summary":"A Japanese spear tradition whose official lineage identifies the monk Hōzōin Kakuzenbō Hōin In'ei as founder. The historical school does not authenticate the novel's individual bouts."},
-      "source":{"title":"History of Hōzōin-ryū Takada-ha Sōjutsu","publisher":"Hōzōin-ryū Takada-ha Sōjutsu Hozonkai","url":"https://hozoin.jp/E-rekishi.htm"}
+      "id": "hozoin_ryu",
+      "type": "historical_school",
+      "display_name": "Hōzōin-ryū sōjutsu",
+      "novel_trigger": {
+        "first_section": 12,
+        "name_in_text": "Hōzōin",
+        "context": "Musashi decides to leave for Nara to see the famous lance fighters of the Hozoin."
+      },
+      "wiki": {
+        "summary": "A Japanese spear tradition whose official lineage identifies the monk Hōzōin Kakuzenbō Hōin In'ei as founder. The historical school does not authenticate the novel's individual bouts."
+      },
+      "source": {
+        "title": "History of Hōzōin-ryū Takada-ha Sōjutsu",
+        "publisher": "Hōzōin-ryū Takada-ha Sōjutsu Hozonkai",
+        "url": "https://hozoin.jp/E-rekishi.htm"
+      }
     },
     {
       "id":"kamiizumi_nobutsuna","type":"historical_person","display_name":"Kamiizumi Nobutsuna (Lord Ise-no-kami)",
@@ -342,10 +354,22 @@
       "source":{"title":"History of Sumiyoshi Taisha","publisher":"Sumiyoshi Taisha","url":"https://www.sumiyoshitaisha.net/about/history.html"}
     },
     {
-      "id":"tsukahara_bokuden_historical","type":"historical_person","display_name":"Tsukahara Bokuden",
-      "novel_trigger":{"first_section":26,"name_in_text":"Tsukahara Bokuden","context":"The chapter invokes Bokuden while framing sword traditions known to Musashi."},
-      "wiki":{"summary":"Kashima City's cultural-property material identifies Bokuden as a historical swordsman born in 1489 and describes traditions associated with his training. The novel's anecdotes remain narrative context."},
-      "source":{"title":"Tsukahara Bokuden","publisher":"Kashima City","url":"https://www.city.kashima.ibaraki.jp/site/bunkazai/50134.html"}
+      "id": "tsukahara_bokuden_historical",
+      "type": "historical_person",
+      "display_name": "Tsukahara Bokuden",
+      "novel_trigger": {
+        "first_section": 12,
+        "name_in_text": "Tsukahara Bokuden",
+        "context": "Jōtarō tells Musashi he has heard that Bokuden always travelled with seventy or eighty retainers, a change of horses and a falcon."
+      },
+      "wiki": {
+        "summary": "Kashima City's cultural-property material identifies Bokuden as a historical swordsman born in 1489 and describes traditions associated with his training. The novel's anecdotes remain narrative context."
+      },
+      "source": {
+        "title": "Tsukahara Bokuden",
+        "publisher": "Kashima City",
+        "url": "https://www.city.kashima.ibaraki.jp/site/bunkazai/50134.html"
+      }
     },
     {
       "id":"ise_jingu_historical","type":"historical_institution","display_name":"Ise Jingū (Naikū)",
@@ -354,17 +378,45 @@
       "source":{"title":"About Ise Jingū","publisher":"Ise Jingū","url":"https://www.isejingu.or.jp/en/about/index.html"}
     },
     {
-      "id":"karasumaru_mitsuhiro_historical","type":"historical_person","display_name":"Karasumaru Mitsuhiro",
-      "novel_trigger":{"first_section":27,"name_in_text":"Karasumaru Mitsuhiro","context":"Ujitomi entrusts Otsū with painted scrolls for delivery to Mitsuhiro in Kyoto."},
-      "wiki":{"summary":"Institutional catalogues identify Karasumaru Mitsuhiro (1579–1638) as a court noble and writer. His role and residence in the novel are not treated as documentary biography."},
-      "source":{"title":"Karasumaru Mitsuhiro catalogue record","publisher":"National Diet Library","url":"https://ndlsearch.ndl.go.jp/books/R100000002-I000001574702"},
-      "context_source":{"title":"Tōkōki cultural-property record","publisher":"Agency for Cultural Affairs / Cultural Heritage Online","url":"https://bunka.nii.ac.jp/heritages/detail/543315"}
+      "id": "karasumaru_mitsuhiro_historical",
+      "type": "historical_person",
+      "display_name": "Karasumaru Mitsuhiro",
+      "novel_trigger": {
+        "first_section": 3,
+        "name_in_text": "Karasumaru",
+        "context": "Otsū tells Ogin that noblemen like Karasumaru have repeatedly tried to persuade Takuan to settle down."
+      },
+      "wiki": {
+        "summary": "Institutional catalogues identify Karasumaru Mitsuhiro (1579–1638) as a court noble and writer. His role and residence in the novel are not treated as documentary biography."
+      },
+      "source": {
+        "title": "Karasumaru Mitsuhiro catalogue record",
+        "publisher": "National Diet Library",
+        "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001574702"
+      },
+      "context_source": {
+        "title": "Tōkōki cultural-property record",
+        "publisher": "Agency for Cultural Affairs / Cultural Heritage Online",
+        "url": "https://bunka.nii.ac.jp/heritages/detail/543315"
+      }
     },
     {
-      "id":"gojo_bridge_historical","type":"historical_place_context","display_name":"Great Gojō Bridge",
-      "novel_trigger":{"first_section":31,"name_in_text":"Great Bridge at Gojō Avenue","context":"The Yoshioka school posts the Rendaiji duel announcement at the bridge."},
-      "wiki":{"summary":"Kyoto City's official chronology records construction of the Great Gojō Bridge in 1589. This supports the bridge's period existence, not the exact narrative scene point."},
-      "source":{"title":"Kyoto urban chronology","publisher":"Kyoto City Historical Materials Office","url":"https://www2.city.kyoto.lg.jp/somu/rekishi/fm/nenpyou/toshi_nenpyo.html"}
+      "id": "gojo_bridge_historical",
+      "type": "historical_place_context",
+      "display_name": "Great Gojō Bridge",
+      "novel_trigger": {
+        "first_section": 12,
+        "name_in_text": "great bridge at Gojō Avenue",
+        "context": "Musashi asks Jōtarō to tell Matahachi that he will wait every morning from the first to the seventh day of the New Year on the great bridge at Gojō Avenue."
+      },
+      "wiki": {
+        "summary": "Kyoto City's official chronology records construction of the Great Gojō Bridge in 1589. This supports the bridge's period existence, not the exact narrative scene point."
+      },
+      "source": {
+        "title": "Kyoto urban chronology",
+        "publisher": "Kyoto City Historical Materials Office",
+        "url": "https://www2.city.kyoto.lg.jp/somu/rekishi/fm/nenpyou/toshi_nenpyo.html"
+      }
     },
     {
       "id":"honami_koetsu_historical","type":"historical_person","display_name":"Hon'ami Kōetsu",
@@ -373,16 +425,40 @@
       "source":{"title":"Rinpa: The Aesthetics of the Capital","publisher":"Kyoto National Museum","url":"https://www.kyohaku.go.jp/old/eng/special/koremade/20151010_rinpa.html"}
     },
     {
-      "id":"rengeoin_historical","type":"historical_institution","display_name":"Rengeōin / Sanjūsangendō",
-      "novel_trigger":{"first_section":38,"name_in_text":"Rengeōin / Sanjūsangendō","context":"Musashi and Denshichirō formally establish their duel at Rengeōin."},
-      "wiki":{"summary":"The temple's official history identifies Rengeōin with Sanjūsangendō and records its twelfth-century foundation and later rebuilding. It does not authenticate the novel's duel."},
-      "source":{"title":"History of Sanjūsangendō","publisher":"Rengeōin Sanjūsangendō","url":"https://www.sanjusangendo.jp/history/"}
+      "id": "rengeoin_historical",
+      "type": "historical_institution",
+      "display_name": "Rengeōin / Sanjūsangendō",
+      "novel_trigger": {
+        "first_section": 39,
+        "name_in_text": "Rengeōin / Sanjūsangendō",
+        "context": "Denshichirō has chosen the Rengeōin, with its long Sanjūsangendō hall, as the site of his nine o'clock duel with Musashi."
+      },
+      "wiki": {
+        "summary": "The temple's official history identifies Rengeōin with Sanjūsangendō and records its twelfth-century foundation and later rebuilding. It does not authenticate the novel's duel."
+      },
+      "source": {
+        "title": "History of Sanjūsangendō",
+        "publisher": "Rengeōin Sanjūsangendō",
+        "url": "https://www.sanjusangendo.jp/history/"
+      }
     },
     {
-      "id":"yoshino_tayu_historical","type":"historical_person_context","display_name":"Yoshino Tayū",
-      "novel_trigger":{"first_section":38,"name_in_text":"Yoshino Tayū","context":"Kōetsu names Yoshino while proposing an evening visit to the Ōgiya; Musashi has not yet met her."},
-      "wiki":{"summary":"Kyoto's official travel material preserves the cultural memory of the celebrated early-seventeenth-century Yoshino Tayū and associates her with Jōshōji. The novel's setting and encounters may involve literary compression."},
-      "source":{"title":"Japanese Musical Instruments Show: Tales from the 1000-year Capital","publisher":"Kyoto City Official Travel Guide","url":"https://kyoto.travel/en/travel-inspiration/japanese-musical-instruments-show-tales-from-the-1000-year-capital/"}
+      "id": "yoshino_tayu_historical",
+      "type": "historical_person_context",
+      "display_name": "Yoshino Tayū",
+      "novel_trigger": {
+        "first_section": 38,
+        "name_in_text": "Yoshino Tayū",
+        "context": "At the Ōgiya the narrator names Yoshino Dayū as the house's reigning beauty and Kōetsu asks whether she will appear; Musashi has not yet met her."
+      },
+      "wiki": {
+        "summary": "Kyoto's official travel material preserves the cultural memory of the celebrated early-seventeenth-century Yoshino Tayū and associates her with Jōshōji. The novel's setting and encounters may involve literary compression."
+      },
+      "source": {
+        "title": "Japanese Musical Instruments Show: Tales from the 1000-year Capital",
+        "publisher": "Kyoto City Official Travel Guide",
+        "url": "https://kyoto.travel/en/travel-inspiration/japanese-musical-instruments-show-tales-from-the-1000-year-capital/"
+      }
     },
     {
       "id":"ichijoji_sagarimatsu_historical","type":"historical_place_context","display_name":"Ichijōji Sagarimatsu",
@@ -391,16 +467,40 @@
       "source":{"title":"Ichijōji Sagarimatsu","publisher":"Kyoto City Official Travel Guide","url":"https://ja.kyoto.travel/tourism/single02.php?category_id=9&tourism_id=103"}
     },
     {
-      "id":"enryakuji_historical","type":"historical_institution","display_name":"Enryakuji",
-      "novel_trigger":{"first_section":50,"name_in_text":"Enryakuji","context":"Musashi is taken to the Mount Hiei temple complex after the Ichijōji battle."},
-      "wiki":{"summary":"Enryakuji's official history records Nobunaga's destruction of the complex in 1571 and its gradual reconstruction. That supplies broad period context only; Musashi's stay remains narrative."},
-      "source":{"title":"History of Enryakuji","publisher":"Enryakuji","url":"https://hieizan.or.jp/about/history.html"}
+      "id": "enryakuji_historical",
+      "type": "historical_institution",
+      "display_name": "Enryakuji",
+      "novel_trigger": {
+        "first_section": 50,
+        "name_in_text": "Enryakuji",
+        "context": "While Musashi recovers at the Mudōji on Mount Hiei after the Ichijōji battle, the Enryakuji tribunal orders him off the mountain."
+      },
+      "wiki": {
+        "summary": "Enryakuji's official history records Nobunaga's destruction of the complex in 1571 and its gradual reconstruction. That supplies broad period context only; Musashi's stay remains narrative."
+      },
+      "source": {
+        "title": "History of Enryakuji",
+        "publisher": "Enryakuji",
+        "url": "https://hieizan.or.jp/about/history.html"
+      }
     },
     {
-      "id":"seta_karahashi_historical","type":"historical_place_context","display_name":"Seta no Karahashi",
-      "novel_trigger":{"first_section":51,"name_in_text":"Seta no Karahashi","context":"The bridge is the intended rendezvous for the eastbound journey; the party has not yet reached Edo."},
-      "wiki":{"summary":"The Ōtsu tourism authority identifies Seta no Karahashi as a real and historically prominent bridge. It validates the locality label, not the novel's rendezvous."},
-      "source":{"title":"Seta no Karahashi Bridge","publisher":"Biwako Otsu Travel Guide / Otsu Tourism Association","url":"https://otsu.or.jp/en/thingstodo/spot62"}
+      "id": "seta_karahashi_historical",
+      "type": "historical_place_context",
+      "display_name": "Seta no Karahashi",
+      "novel_trigger": {
+        "first_section": 29,
+        "name_in_text": "Kara Bridge in Seta",
+        "context": "On their way to Kyoto, Otsū and Jōtarō hope in vain to find Musashi at the Kara Bridge in Seta."
+      },
+      "wiki": {
+        "summary": "The Ōtsu tourism authority identifies Seta no Karahashi as a real and historically prominent bridge. It validates the locality label, not the novel's rendezvous."
+      },
+      "source": {
+        "title": "Seta no Karahashi Bridge",
+        "publisher": "Biwako Otsu Travel Guide / Otsu Tourism Association",
+        "url": "https://otsu.or.jp/en/thingstodo/spot62"
+      }
     },
     {
       "id":"male_female_waterfalls_literary","type":"literary_place_context","display_name":"Otaki and Metaki waterfalls",
@@ -408,14 +508,14 @@
       "wiki":{"summary":"Nagiso Tourism Association identifies the two waterfalls near the Tsumago–Magome route with the Musashi–Otsū episode in Yoshikawa's novel. This validates the intended literary location, not historical biography or exact routing."},
       "source":{"title":"O-taki and Me-taki Waterfalls","publisher":"Nagiso Tourism Association","url":"https://nagiso.jp/topics/o-taki-and-me-taki-waterfalls/"}
     },
-    {"id":"fukushima_checkpoint_historical","type":"historical_place_context","display_name":"Fukushima checkpoint","novel_trigger":{"first_section":54,"name_in_text":"Fukushima barrier","context":"Karasumaru's letter lets Musashi, Otsū and Jōtarō pass the checkpoint before their separation."},"wiki":{"summary":"Kiso Town identifies Fukushima as one of the major Edo-period checkpoints and a transport junction. This supports the broad locality, not the novel's precise passage geometry."},"source":{"title":"National Historic Site: Fukushima Barrier Ruins","publisher":"Kiso Town","url":"https://www.town-kiso.com/manabu/rekishi/bunkazai/m100079/"}},
+    {"id":"fukushima_checkpoint_historical","type":"historical_place_context","display_name":"Fukushima checkpoint","novel_trigger":{"first_section":54,"name_in_text":"Fukushima barrier","context":"Karasumaru's letter lets Otsū and Jōtarō pass the checkpoint before their separation."},"wiki":{"summary":"Kiso Town identifies Fukushima as one of the major Edo-period checkpoints and a transport junction. This supports the broad locality, not the novel's precise passage geometry."},"source":{"title":"National Historic Site: Fukushima Barrier Ruins","publisher":"Kiso Town","url":"https://www.town-kiso.com/manabu/rekishi/bunkazai/m100079/"}},
     {"id":"narai_juku_historical","type":"historical_place_context","display_name":"Narai-juku","novel_trigger":{"first_section":55,"name_in_text":"Narai","context":"Reports direct the search for Jōtarō toward Daizō's business in Narai."},"wiki":{"summary":"Shiojiri City documents Narai as a Nakasendō post-town settlement along the Narai River. Daizō's premises and the novel's exact movements remain unmapped."},"source":{"title":"Shiojiri City Narai","publisher":"Shiojiri City","url":"https://www.city.shiojiri.lg.jp/site/bunkazaihouhou/29585.html"}},
     {"id":"shimosuwa_historical","type":"historical_place_context","display_name":"Shimosuwa post town","novel_trigger":{"first_section":58,"name_in_text":"Shimosuwa","context":"Musashi stops at the hot springs and meets Ishimoda Geki."},"wiki":{"summary":"Shimosuwa Town describes the locality as the junction of the Nakasendō and Kōshū routes, a hot-spring post town and a Suwa shrine gateway. The novel's inn and route are not pinpointed."},"source":{"title":"Shimosuwa Historical Landscape Plan","publisher":"Shimosuwa Town","url":"https://www.town.shimosuwa.lg.jp/www/contents/1001000000491/index.html"}},
     {"id":"yakuoin_hachioji_historical","type":"historical_place_context","display_name":"Mount Takao Yakuōin and Hachiōji","novel_trigger":{"first_section":61,"name_in_text":"Yakuōin / Hachiōji","context":"The separated travelers pass through the temple and Hachiōji streams."},"wiki":{"summary":"Hachiōji City's cultural material supports Mount Takao and Yakuōin as a longstanding religious setting. It does not locate the novel's inn, moat or burial mound."},"source":{"title":"Hachiōji Story: Principal Cultural Properties","publisher":"Hachiōji City","url":"https://www.city.hachioji.tokyo.jp/kankobunka/003/monogatari/p026961.html"}},
     {"id":"early_edo_urban_context","type":"historical_place_context","display_name":"Early Edo, Nihombashi and the Sumida","novel_trigger":{"first_section":63,"name_in_text":"Edo / Nihombashi","context":"Osugi enters the rapidly developing city and reaches Nihombashi."},"wiki":{"summary":"Tokyo public authorities document the broad early-Edo development chronology and historical Sumida context. Private homes, ferry points and individual narrative routes remain unresolved."},"source":{"title":"Tokyo chronology","publisher":"Tokyo Metropolitan Government","url":"https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/nenpyo"}},
     {"id":"sensoji_historical","type":"historical_institution","display_name":"Sensōji / Asakusa Kannon","novel_trigger":{"first_section":64,"name_in_text":"Sensōji","context":"Yajibei's party travels to Sensōji while a donation plaque supplies only a report about Daizō."},"wiki":{"summary":"Sensōji's official history supports the institution's continuity and Sumida origin tradition. The donation plaque and the novel's boat journey remain narrative claims."},"source":{"title":"Asakusa Kannon Sensōji","publisher":"Sensōji","url":"https://www.senso-ji.jp/english/"}},
     {"id":"kanda_myojin_historical","type":"historical_institution","display_name":"Kanda Myōjin","novel_trigger":{"first_section":64,"name_in_text":"Kanda Myōjin","context":"A donation record is mentioned while Yajibei's party traces Daizō's reported activity."},"wiki":{"summary":"The shrine's official history documents its early-Edo relocations and enshrinement tradition. Daizō's reported donation is not independently authenticated."},"source":{"title":"What's Kanda Myōjin?","publisher":"Kanda Myōjin","url":"https://www.kandamyoujin.or.jp/what/"}},
-    {"id":"tone_river_works_historical","type":"historical_event_context","display_name":"Tone River early-modern works","novel_trigger":{"first_section":67,"name_in_text":"Tone River floodplain","context":"Musashi meets Sannosuke in the flood-prone Hōtengahara setting."},"wiki":{"summary":"MLIT describes the early-modern eastward diversion of the Tone as a long sequence of works tied to flood control, new fields and transport. This does not identify fictional Hōtengahara."},"source":{"title":"Eastward diversion of the Tone River","publisher":"MLIT Kanto Regional Development Bureau","url":"https://www.ktr.mlit.go.jp/tonejo/tonejo00185.html"}},
+    {"id":"tone_river_works_historical","type":"historical_event_context","display_name":"Tone River early-modern works","novel_trigger":{"first_section":68,"name_in_text":"the Tone River had repeatedly flooded the flatlands","context":"Surveying Hōtengahara for farming, Musashi faces land the Tone River has repeatedly flooded."},"wiki":{"summary":"MLIT describes the early-modern eastward diversion of the Tone as a long sequence of works tied to flood control, new fields and transport. This does not identify fictional Hōtengahara."},"source":{"title":"Eastward diversion of the Tone River","publisher":"MLIT Kanto Regional Development Bureau","url":"https://www.ktr.mlit.go.jp/tonejo/tonejo00185.html"}},
     {"id":"azabu_iigura_historical","type":"historical_place_context","display_name":"Azabu and Iigura","novel_trigger":{"first_section":73,"name_in_text":"Azabu / Iigura","context":"Iori loses his way while attempting to deliver Musashi's letter to the Yagyū residence."},"wiki":{"summary":"Minato City documents Azabu and Iigura as historical place names. The novel's Yagyū residence and Iori's precise route are not geolocated from this correspondence."},"source":{"title":"History of place names: Azabu area","publisher":"Minato City","url":"https://www.city.minato.tokyo.jp/kouhou/kuse/gaiyo/chimerekishi/index-azabu.html"}},
     {"id":"akagi_ushigome_historical","type":"historical_place_context","display_name":"Akagi shrine and Ushigome","novel_trigger":{"first_section":79,"name_in_text":"Akagi Myōjin / Ushigome","context":"Musashi brings the recovering Shinzō within sight of his father's house."},"wiki":{"summary":"Shinjuku City's cultural register supports the Akagi shrine tradition in Ushigome while cautioning that parts of the received chronology are estimated. The Hōjō house remains unmapped."},"source":{"title":"Shinjuku cultural-property register","publisher":"Shinjuku City","url":"https://www.city.shinjuku.lg.jp/content/000360259.pdf"}},
     {
@@ -423,12 +523,12 @@
       "type": "historical_place_context",
       "display_name": "Takanawa and Isarago",
       "novel_trigger": {
-        "first_section": 81,
+        "first_section": 63,
         "name_in_text": "Isarago / Takanawa",
-        "context": "Kojirō's conflict with Yogorō reaches the Isarago cemetery area."
+        "context": "Osugi enters Edo along the dusty Takanawa highroad; Isarago Hill, where Kakubei lives, is named later."
       },
       "wiki": {
-        "summary": "Minato City's history supports the old Takanawa and Isarago names but does not identify the novel's cemetery or lodging."
+        "summary": "Minato City's history supports the old Takanawa and Isarago place names but does not pinpoint the places in the novel."
       },
       "source": {
         "title": "Minato City district place-name history",
@@ -477,9 +577,9 @@
       "type": "historical_place_context",
       "display_name": "Mitsumine Shrine",
       "novel_trigger": {
-        "first_section": 89,
+        "first_section": 88,
         "name_in_text": "Mitsumine Shrine",
-        "context": "Musashi searches donor records and observes the shrine festival musicians."
+        "context": "Iori hears the drummers rehearsing for the Mitsumine festival and begs Musashi to take him to the shrine."
       },
       "wiki": {
         "summary": "Chichibu City's guide describes a mountain-worship shrine at about 1,100 metres; it does not authenticate the novel's theft or ambush."
@@ -495,9 +595,9 @@
       "type": "historical_place_context",
       "display_name": "Former Edo Castle complex",
       "novel_trigger": {
-        "first_section": 86,
+        "first_section": 44,
         "name_in_text": "Edo Castle",
-        "context": "Daizō's proposed assassination assigns Matahachi an intended destination inside the castle complex."
+        "context": "An anecdote about the Kyoto magistrate Itakura has him setting out for Edo Castle the morning after accepting his post."
       },
       "wiki": {
         "summary": "The palace grounds include the former Edo Castle complex. Narrative interiors and routes remain unmapped."
@@ -549,12 +649,12 @@
       "type": "historical_institution",
       "display_name": "Kōfukuji",
       "novel_trigger": {
-        "first_section": 98,
+        "first_section": 13,
         "name_in_text": "Kōfukuji",
-        "context": "Hyōgo, Ushinosuke, Iori and Gonnosuke meet during the public martial gathering in Nara."
+        "context": "Jotaro rides an oxcart carrying an offering to the great Kofukuji in Nara; the ronin Ban Dan'emon is said to be hiding there."
       },
       "wiki": {
-        "summary": "The temple's official history supports its long continuity in Nara; the chapter's contest and encounters remain literary."
+        "summary": "The temple's official history supports its long continuity in Nara; the novel's scenes involving it remain literary."
       },
       "source": {
         "title": "Kōfukuji official site",
@@ -585,12 +685,12 @@
       "type": "historical_place_context",
       "display_name": "Mount Kōya sacred landscape",
       "novel_trigger": {
-        "first_section": 100,
+        "first_section": 13,
         "name_in_text": "Mount Kōya",
-        "context": "Sado's party enters the sacred-mountain setting before the private Mount Kudo meeting."
+        "context": "A teahouse keeper at Uji says the temple-filled area around Nara and Mount Koya has become a hiding place for defeated ronin."
       },
       "wiki": {
-        "summary": "UNESCO documents Kōyasan as part of the Kii sacred-sites and pilgrimage landscape; no private meeting or route is independently validated."
+        "summary": "UNESCO documents Kōyasan as part of the Kii sacred-sites and pilgrimage landscape; the novel's references to it are not independently validated."
       },
       "source": {
         "title": "Sacred Sites and Pilgrimage Routes in the Kii Mountain Range",

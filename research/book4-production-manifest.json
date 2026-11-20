@@ -300,7 +300,8 @@
         "b4c3-e04",
         "b4c3-e05",
         "b4c3-e06",
-        "b4c3-e07"
+        "b4c3-e07",
+        "b4c3-fc-01"
       ],
       "character_state_ids": [
         "b4c3-state-matahachi",
@@ -395,7 +396,8 @@
         "b4c5-e05",
         "b4c5-e06",
         "b4c5-e07",
-        "b4c5-audit-references"
+        "b4c5-audit-references",
+        "b4c5-fc-01"
       ],
       "character_state_ids": [
         "b4c5-state-otsu",
@@ -811,7 +813,8 @@
         "b4c15-e04",
         "b4c15-e05",
         "b4c15-e06",
-        "b4c15-audit-references"
+        "b4c15-audit-references",
+        "b4c15-fc-01"
       ],
       "character_state_ids": [
         "b4c15-state-musashi",
@@ -1759,6 +1762,18 @@
         "b4c15",
         "b4c17"
       ]
+    },
+    {
+      "id": "gonroku",
+      "name": "Fuchikawa Gonroku",
+      "aliases": [
+        "Uncle Gon",
+        "Gon"
+      ],
+      "physical_presence": [],
+      "mentioned_in": [
+        "b4c5"
+      ]
     }
   ],
   "groups": [
@@ -2195,6 +2210,36 @@
       "source_chapters": [
         "b4c20"
       ]
+    },
+    {
+      "id": "osaka",
+      "name": "Osaka",
+      "type": "city",
+      "coordinates": null,
+      "mapping_status": "region_only",
+      "chapters": [
+        "b4c3"
+      ]
+    },
+    {
+      "id": "haiya_shoyu_house",
+      "name": "Haiya Shōyū's house at Ichijō and Horikawa",
+      "type": "private_residence",
+      "coordinates": null,
+      "mapping_status": "historical_exact_site_unresolved",
+      "chapters": [
+        "b4c6"
+      ]
+    },
+    {
+      "id": "kyoto_cheap_inn",
+      "name": "Cheap inn northwest of Kyoto",
+      "type": "narrative_site",
+      "coordinates": null,
+      "mapping_status": "unknown",
+      "chapters": [
+        "b4c15"
+      ]
     }
   ],
   "events": [
@@ -2214,8 +2259,8 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "rendaiji_field",
-      "source_ref": "data/source/book4/chapter1-the-withered-field.txt",
+      "location": "nagasaka_tamba_road",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L69-L88",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2228,7 +2273,7 @@
       "id": "b4c1-e02",
       "chapter": "b4c1",
       "type": "arrival",
-      "description": "Kojirō and Akemi reach the withered field after Akemi's attempted escape.",
+      "description": "Kojirō is in the crowd at the Yoshioka waiting field; Akemi, freed by a neighbour after Kojirō tied her up at the inn, runs in looking for Musashi.",
       "characters": [
         "kojiro",
         "akemi"
@@ -2236,8 +2281,8 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "rendaiji_field",
-      "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L315-L317",
+      "location": "nagasaka_tamba_road",
+      "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L89-L202",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
@@ -2271,7 +2316,7 @@
       "id": "b4c1-e04",
       "chapter": "b4c1",
       "type": "medical_emergency",
-      "description": "At Seijūrō's request Kojirō amputates the irreparably injured right arm.",
+      "description": "On the road back from the field, at Seijūrō's request Kojirō amputates the irreparably injured right arm.",
       "characters": [
         "kojiro",
         "yoshioka_seijuro",
@@ -2280,7 +2325,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "rendaiji_field",
+      "location": "nagasaka_tamba_road",
       "source_ref": "data/source/book4/chapter1-the-withered-field.txt:L324-L356",
       "source_file": "data/source/book4/chapter1-the-withered-field.txt",
       "certainty": "explicit",
@@ -2455,7 +2500,7 @@
       "type": "chapter_references",
       "characters": [],
       "referenced_characters": [
-        "nikkan"
+        "matsuo_kaname"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -2472,7 +2517,8 @@
       "type": "impersonation",
       "description": "Matahachi drinks without money, wounds two men and claims the name Sasaki Kojirō.",
       "characters": [
-        "matahachi"
+        "matahachi",
+        "ichinomiya_gempachi"
       ],
       "referenced_characters": [
         "kojiro",
@@ -2564,10 +2610,11 @@
       "id": "b4c3-e05",
       "chapter": "b4c3",
       "type": "recovery",
-      "description": "Gempachi recovers Tenki's pillbox and certificate from Matahachi.",
+      "description": "Having already picked up Tenki's pillbox outside the sake shop, Gempachi takes the certificate from Matahachi's kimono at Matsubara.",
       "characters": [
         "matahachi",
-        "ichinomiya_gempachi"
+        "ichinomiya_gempachi",
+        "kojiro"
       ],
       "referenced_characters": [
         "kusanagi_tenki",
@@ -2576,7 +2623,7 @@
       "groups": [],
       "referenced_groups": [],
       "location": "matsubara_pine_wood",
-      "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt",
+      "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt:L590-L596",
       "source_file": "data/source/book4/chapter3-too-many-kojiros.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2636,6 +2683,29 @@
       "section": 35
     },
     {
+      "id": "b4c3-fc-01",
+      "chapter": "b4c3",
+      "type": "movement",
+      "description": "Hearing of the duel at the Rendaiji, Matahachi comes from Osaka to Kyoto at once to see the situation for himself.",
+      "characters": [
+        "matahachi"
+      ],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": null,
+      "origin": "osaka",
+      "destination": null,
+      "destination_label": "Kyoto",
+      "source_ref": "data/source/book4/chapter3-too-many-kojiros.txt:L73-L76",
+      "source_file": "data/source/book4/chapter3-too-many-kojiros.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "section": 35
+    },
+    {
       "id": "b4c4-e01",
       "chapter": "b4c4",
       "type": "arrival",
@@ -2682,8 +2752,7 @@
       "description": "Seijūrō cedes the Yoshioka house and school to Denshichirō and warns him not to fight Musashi.",
       "characters": [
         "yoshioka_seijuro",
-        "yoshioka_denshichiro",
-        "ueda_ryohei"
+        "yoshioka_denshichiro"
       ],
       "referenced_characters": [
         "musashi"
@@ -2691,7 +2760,7 @@
       "groups": [],
       "referenced_groups": [],
       "location": "yoshioka_school",
-      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
+      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt:L240-L287",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2706,17 +2775,17 @@
       "type": "rupture",
       "description": "Denshichirō rejects restraint; Nampo Yoichibei leaves the school rather than support revenge.",
       "characters": [
-        "nampo_yoichibei"
-      ],
-      "referenced_characters": [
+        "nampo_yoichibei",
         "yoshioka_denshichiro",
+        "ueda_ryohei",
         "miike_jurozaemon",
         "otaguro_hyosuke"
       ],
+      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "yoshioka_school",
-      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
+      "source_ref": "data/source/book4/chapter4-the-younger-brother.txt:L295-L363",
       "source_file": "data/source/book4/chapter4-the-younger-brother.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2782,7 +2851,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": null,
+      "location": "matsubara_pine_wood",
       "description": "Matahachi gives Denshichirō a distorted story portraying Musashi as the abductor of his fiancée and himself as a revenge-seeker.",
       "certainty": "explicit",
       "source_ref": "data/source/book4/chapter4-the-younger-brother.txt",
@@ -2883,11 +2952,10 @@
       "id": "b4c5-e04",
       "chapter": "b4c5",
       "type": "rejection",
-      "description": "Otsū rejects Matahachi and explicitly affirms her love for Musashi.",
+      "description": "Otsū rejects Matahachi and explicitly affirms her love for Musashi; he draws his sword and slashes at her as she flees.",
       "characters": [
         "otsu",
-        "matahachi",
-        "osugi"
+        "matahachi"
       ],
       "referenced_characters": [
         "musashi"
@@ -2895,7 +2963,7 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mountain_god_hall",
-      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt:L433-L573",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2955,15 +3023,14 @@
       "description": "Takuan confronts Osugi; Osugi and Matahachi flee the scene.",
       "characters": [
         "osugi",
-        "matahachi"
-      ],
-      "referenced_characters": [
+        "matahachi",
         "takuan"
       ],
+      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "mountain_god_hall",
-      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt:L727-L806",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -2981,7 +3048,8 @@
       "referenced_characters": [
         "jotaro",
         "karasumaru_mitsuhiro",
-        "oko"
+        "oko",
+        "gonroku"
       ],
       "groups": [],
       "referenced_groups": [],
@@ -2991,6 +3059,28 @@
       "source_ref": "data/source/book4/chapter5-a-mothers-love.txt",
       "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
       "movement_status": null
+    },
+    {
+      "id": "b4c5-fc-01",
+      "chapter": "b4c5",
+      "type": "coerced_promise",
+      "description": "Meeting Matahachi on the hillside, Osugi points her short sword at her own throat until he gives up Otsū and promises to kill her; she sends him to Chirimazuka.",
+      "characters": [
+        "osugi",
+        "matahachi"
+      ],
+      "referenced_characters": [
+        "otsu",
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "mountain_god_hall",
+      "source_ref": "data/source/book4/chapter5-a-mothers-love.txt:L265-L433",
+      "source_file": "data/source/book4/chapter5-a-mothers-love.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 37
     },
     {
       "id": "b4c6-e01",
@@ -3019,7 +3109,7 @@
       "id": "b4c6-e02",
       "chapter": "b4c6",
       "type": "challenge_delivery",
-      "description": "Ōtaguro and Yoshioka messengers deliver Denshichirō's challenge for nine at night at Rengeōin.",
+      "description": "Ōtaguro and two Yoshioka men follow Musashi and, at the gate of Haiya Shōyū's house, hand him Denshichirō's letter; Musashi accepts for later that evening.",
       "characters": [
         "musashi",
         "koetsu",
@@ -3030,12 +3120,12 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "honami_lane_house",
+      "location": "haiya_shoyu_house",
       "destination": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
+      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt:L250-L290",
       "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination",
+      "movement_status": null,
       "section": 38
     },
     {
@@ -3066,8 +3156,10 @@
       "type": "poetry_exchange",
       "description": "Shōyū drafts an invitation poem, Kōetsu completes it and Sumigiku carries it to Yoshino’s party. Karasumaru returns blank paper; Kōetsu interprets its whiteness as snow and a refusal to leave the other guests. Musashi does not author the reply.",
       "characters": [
-        "musashi",
-        "sumigiku"
+        "haiya_shoyu",
+        "koetsu",
+        "sumigiku",
+        "musashi"
       ],
       "referenced_characters": [
         "yoshino_tayu",
@@ -3089,7 +3181,7 @@
       "id": "b4c6-e05",
       "chapter": "b4c6",
       "type": "departure",
-      "description": "Musashi quietly leaves the Ōgiya intending to keep the duel appointment at Rengeōin.",
+      "description": "Unnoticed, Musashi quietly slips out of the Ōgiya to keep the evening's appointment with Denshichirō.",
       "characters": [
         "musashi"
       ],
@@ -3100,14 +3192,15 @@
       "referenced_groups": [],
       "location": "ogiya_yanagimachi",
       "destination": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt",
+      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt:L544-L545",
       "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
       "certainty": "explicit",
       "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
       },
-      "section": 38
+      "section": 38,
+      "destination_label": "the evening's appointment with Denshichirō"
     },
     {
       "id": "b4c7-e01",
@@ -3115,8 +3208,7 @@
       "type": "route",
       "description": "Musashi walks through snowy Shijō, the Kamo crossing and Gion woods to Rengeōin.",
       "characters": [
-        "musashi",
-        "rinya"
+        "musashi"
       ],
       "referenced_characters": [],
       "groups": [],
@@ -3130,24 +3222,25 @@
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
-      "section": 39
+      "section": 39,
+      "origin": "ogiya_yanagimachi"
     },
     {
       "id": "b4c7-e02",
       "chapter": "b4c7",
       "type": "duel_setup",
-      "description": "Denshichirō waits at Rengeōin with Ōtaguro and senior Yoshioka retainers; Musashi has not entered this scene.",
+      "description": "Denshichirō waits at the bonfire behind the Rengeōin with Ryōhei and Jūrōzaemon; his uncle Genzaemon arrives and leads the retainers away, leaving him alone. Musashi has not entered this scene.",
       "characters": [
         "yoshioka_denshichiro",
-        "otaguro_hyosuke",
         "ueda_ryohei",
-        "miike_jurozaemon"
+        "miike_jurozaemon",
+        "yoshioka_genzaemon"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt:L65-L171",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
@@ -3223,15 +3316,14 @@
       "type": "escape",
       "description": "Genzaemon and the disciples search while Musashi hides under the eaves and escapes from the north side.",
       "characters": [
-        "musashi"
-      ],
-      "referenced_characters": [
+        "musashi",
         "yoshioka_genzaemon"
       ],
+      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "rengeoin_sanjusangendo",
-      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
+      "source_ref": "data/source/book4/chapter7-reverberations-in-the-snow.txt:L414-L449",
       "source_file": "data/source/book4/chapter7-reverberations-in-the-snow.txt",
       "certainty": "explicit",
       "movement_status": "direction_only",
@@ -3320,15 +3412,13 @@
         "takuan",
         "haiya_shoyu",
         "karasumaru_mitsuhiro",
-        "konoe_nobutada",
-        "sumigiku",
         "rinya"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "yoshino_cottage",
-      "source_ref": "data/source/book4/chapter8-the-elegant-people.txt",
+      "source_ref": "data/source/book4/chapter8-the-elegant-people.txt:L285-L360",
       "source_file": "data/source/book4/chapter8-the-elegant-people.txt",
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
@@ -3410,13 +3500,17 @@
       "description": "Word arrives that Yoshioka men have surrounded the quarter, preventing Musashi's safe departure.",
       "characters": [
         "musashi",
-        "yoshino_tayu"
+        "yoshino_tayu",
+        "koetsu",
+        "takuan",
+        "haiya_shoyu",
+        "karasumaru_mitsuhiro"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "ogiya_yanagimachi",
-      "source_ref": "data/source/book4/chapter9-the-broken-lute.txt",
+      "location": "yoshino_cottage",
+      "source_ref": "data/source/book4/chapter9-the-broken-lute.txt:L113-L140",
       "source_file": "data/source/book4/chapter9-the-broken-lute.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -3451,7 +3545,7 @@
       "id": "b4c9-e04",
       "chapter": "b4c9",
       "type": "emotional_intimacy",
-      "description": "Musashi and Yoshino acknowledge mutual attraction, but the text does not establish a sexual union.",
+      "description": "Yoshino is drawn to Musashi, who remains rigid and silent through the night; the text does not establish a sexual union.",
       "characters": [
         "musashi",
         "yoshino_tayu"
@@ -3515,18 +3609,20 @@
       "id": "b4c10-e02",
       "chapter": "b4c10",
       "type": "return",
-      "description": "Takuan returns from Daitokuji after receiving news that his mother is seriously ill.",
+      "description": "Takuan returns from the Daitokuji by way of Kōetsu's house and learns from a letter brought by a Nansōji monk that his mother is seriously ill.",
       "characters": [
         "takuan",
-        "otsu",
         "jotaro",
         "karasumaru_mitsuhiro"
       ],
-      "referenced_characters": [],
+      "referenced_characters": [
+        "otsu",
+        "koetsu"
+      ],
       "groups": [],
       "referenced_groups": [],
       "location": "karasumaru_house",
-      "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
+      "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt:L99-L144",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
@@ -3538,18 +3634,18 @@
       "type": "departure",
       "description": "Takuan entrusts Otsū and Jōtarō to Karasumaru, then departs intending to reach his seriously ill mother in Tajima.",
       "characters": [
-        "takuan"
+        "takuan",
+        "jotaro",
+        "karasumaru_mitsuhiro"
       ],
       "referenced_characters": [
-        "karasumaru_mitsuhiro",
-        "otsu",
-        "jotaro"
+        "otsu"
       ],
       "groups": [],
       "referenced_groups": [],
       "location": "karasumaru_house",
       "destination": "tajima",
-      "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
+      "source_ref": "data/source/book4/chapter10-a-sickness-of-the-heart.txt:L159-L225",
       "source_file": "data/source/book4/chapter10-a-sickness-of-the-heart.txt",
       "certainty": "explicit",
       "movement_status": "intended_destination",
@@ -3668,7 +3764,7 @@
       "id": "b4c11-e03",
       "chapter": "b4c11",
       "type": "escape_preparation",
-      "description": "Musashi learns the Yoshioka blockade; Kōetsu sends old clothes and a note for disguise.",
+      "description": "Musashi learns of the Yoshioka blockade; a servant brings back his own old kimono from Kōetsu's house with Kōetsu's farewell note.",
       "characters": [
         "musashi",
         "jotaro"
@@ -3679,7 +3775,7 @@
       "groups": [],
       "referenced_groups": [],
       "location": "yoshino_cottage",
-      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
+      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt:L160-L218",
       "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -3716,7 +3812,7 @@
       "id": "b4c11-e05",
       "chapter": "b4c11",
       "type": "departure",
-      "description": "Musashi and Jōtarō approach the main gate in disguise.",
+      "description": "Back in his own old clothes, Musashi leaves Yoshino's cottage with Jōtarō to get out of the quarter.",
       "characters": [
         "musashi",
         "jotaro"
@@ -3725,7 +3821,7 @@
       "groups": [],
       "referenced_groups": [],
       "location": "ogiya_yanagimachi",
-      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
+      "source_ref": "data/source/book4/chapter11-the-scent-of-aloeswood.txt:L214-L267",
       "source_file": "data/source/book4/chapter11-the-scent-of-aloeswood.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -3762,15 +3858,14 @@
       "description": "Musashi sends Jōtarō over the wall before the Yoshioka confrontation at the Yanagimachi gate.",
       "characters": [
         "musashi",
-        "miike_jurozaemon"
-      ],
-      "referenced_characters": [
+        "miike_jurozaemon",
         "jotaro"
       ],
+      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "ogiya_yanagimachi",
-      "source_ref": "data/source/book4/chapter12-the-gate.txt:L291-L328",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt:L37-L171",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -3856,16 +3951,16 @@
       "type": "refusal",
       "description": "At Karasumaru's rear gate Musashi refuses to visit sick Otsū before the likely fatal duel and leaves Jōtarō a message.",
       "characters": [
-        "musashi"
+        "musashi",
+        "jotaro"
       ],
       "referenced_characters": [
-        "jotaro",
         "otsu"
       ],
       "groups": [],
       "referenced_groups": [],
       "location": "karasumaru_house",
-      "source_ref": "data/source/book4/chapter12-the-gate.txt",
+      "source_ref": "data/source/book4/chapter12-the-gate.txt:L328-L380",
       "source_file": "data/source/book4/chapter12-the-gate.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -3997,7 +4092,7 @@
       "id": "b4c13-e04",
       "chapter": "b4c13",
       "type": "departure",
-      "description": "Around two in the morning Osugi and Matahachi leave with a drawn map, intending to reach Ichijōji.",
+      "description": "Around two in the morning, after asking the innkeeper to draw them a map of Ichijōji, Osugi and Matahachi get ready to set out; Osugi finds that Akemi has taken their travel money.",
       "characters": [
         "osugi",
         "matahachi"
@@ -4009,7 +4104,7 @@
       "referenced_groups": [],
       "location": "sannen_hill_inn",
       "destination": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt:L145-L232",
       "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
       "certainty": "explicit",
       "movement_status": "intended_destination",
@@ -4113,7 +4208,8 @@
       "description": "Kojirō whispers an additional trick intended to ensure Musashi arrives; the text withholds its content.",
       "characters": [
         "kojiro",
-        "yoshioka_genzaemon"
+        "yoshioka_genzaemon",
+        "miike_jurozaemon"
       ],
       "referenced_characters": [
         "musashi"
@@ -4161,7 +4257,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "kitano_inn",
+      "location": "kyoto_cheap_inn",
       "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "certainty": "explicit",
@@ -4184,8 +4280,8 @@
       ],
       "groups": [],
       "referenced_groups": [],
-      "location": "kitano_inn",
-      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "location": null,
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L54-L90",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -4208,10 +4304,10 @@
       "referenced_groups": [],
       "location": "upper_kamo_bridge",
       "destination": "ichijoji_sagarimatsu",
-      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L180-L213",
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L103-L213",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
@@ -4307,6 +4403,30 @@
       "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
       "movement_status": null
+    },
+    {
+      "id": "b4c15-fc-01",
+      "chapter": "b4c15",
+      "type": "journey",
+      "description": "Learning of Musashi's duel, the sick Otsū leaves Lord Karasumaru's house with Jōtarō and limps toward the Ginkakuji, while Karasumaru's men search the approaches to Ichijōji.",
+      "characters": [
+        "otsu",
+        "jotaro"
+      ],
+      "referenced_characters": [
+        "karasumaru_mitsuhiro",
+        "musashi"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "karasumaru_house",
+      "origin": "karasumaru_house",
+      "destination": "ichijoji_mountain_approach",
+      "source_ref": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt:L301-L330",
+      "source_file": "data/source/book4/chapter15-a-meeting-in-the-moonlight.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed",
+      "section": 47
     },
     {
       "id": "b4c16-e01",
@@ -4502,7 +4622,7 @@
       "id": "b4c17-e04",
       "chapter": "b4c17",
       "type": "killing",
-      "description": "Musashi deliberately attacks the symbolic head and kills child Genjirō by decapitation.",
+      "description": "Musashi deliberately attacks the symbolic head and kills the child Genjirō with a single stroke at the pine.",
       "characters": [
         "musashi",
         "yoshioka_genjiro"
@@ -4680,21 +4800,23 @@
       "id": "b4c18-e03",
       "chapter": "b4c18",
       "type": "expulsion",
-      "description": "Sannōin and Enryakuji authorities condemn the killing of a child and order Musashi off the mountain.",
+      "description": "At the Mudōji, Sannōin priests read out the Enryakuji tribunal's decision condemning Musashi and ordering him off the mountain.",
       "characters": [
         "musashi"
       ],
       "referenced_characters": [
         "yoshioka_genjiro"
       ],
-      "groups": [],
+      "groups": [
+        "sannoin_priests"
+      ],
       "referenced_groups": [],
-      "location": "enryakuji",
+      "location": "mudoji_mount_hiei",
       "destination": "mount_hiei_otsu_road",
-      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L131-L165",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "certainty": "explicit",
-      "movement_status": "intended_destination",
+      "movement_status": null,
       "section": 50
     },
     {
@@ -4726,14 +4848,13 @@
       "description": "Musashi nurses the injured and feverish Osugi despite her hostility.",
       "characters": [
         "musashi",
-        "osugi",
-        "seinen"
+        "osugi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "mudoji_mount_hiei",
-      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
+      "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L313-L332",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "certainty": "explicit",
       "movement_status": null,
@@ -4816,11 +4937,10 @@
       "type": "escape",
       "description": "After secretly drinking fresh milk, Osugi abandons Musashi and escapes toward Sakamoto or Ōtsu.",
       "characters": [
-        "osugi"
-      ],
-      "referenced_characters": [
+        "osugi",
         "musashi"
       ],
+      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "mount_hiei_otsu_road",
@@ -4877,10 +4997,12 @@
       "chapter": "b4c19",
       "type": "departure_report",
       "description": "Akemi, who had traveled with Matahachi, has already left the inn with their belongings and money.",
-      "characters": [],
-      "referenced_characters": [
-        "akemi",
+      "characters": [
+        "musashi",
         "matahachi"
+      ],
+      "referenced_characters": [
+        "akemi"
       ],
       "groups": [],
       "referenced_groups": [],

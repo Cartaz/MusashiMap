@@ -32,6 +32,18 @@
     "Yoshino Dayū": "yoshino_tayu",
     "itto_ittosai": "ito_ittosai"
   },
+  "rejected_oracle_references": {
+    "note": "Frozen oracle references that a later full-text fact-check (2026-11-20) found unsupported by the chapter text.",
+    "b4c2": {
+      "nikkan": "Neither Nikkan nor the Hōzōin is named anywhere in 'A Man of Parts'."
+    },
+    "b6c3": {
+      "kanemaki_jisai": "Kanemaki Jisai is not named anywhere in 'The Locust Tree' chapter text; Kojirō cites only the Tomita style and Katayama Hisayasu."
+    },
+    "b6c6": {
+      "mikogami_tenzen": "The chapter names only 'Ono Tadaaki'. Referencing mikogami_tenzen would display 'Mikogami Tenzen' at section 85 and reveal the identity link the novel discloses only at section 87."
+    }
+  },
   "chapters": {
     "b4c3": "Akemi is physically on-page; frozen roster omission.",
     "b4c5": "Akakabe Yasoma is physically on-page; frozen roster omission.",
@@ -62,6 +74,7 @@
     "b7c11": "Aoki is directly staged in the narrated Himeji planning flashback (L88–L96). Musashi's contact and onward journey are reported by Jōtarō, not directly staged.",
     "b7c13": "Akemi's baby is physically staged; frozen roster omission.",
     "b7c14": "Akemi's baby and Kobayashi Tarōzaemon are physically staged; frozen roster omissions.",
-    "b7c15": "Nuinosuke is physically staged; frozen roster omission."
+    "b7c15": "Nuinosuke is physically staged; frozen roster omission.",
+    "b2c4": "Matahachi is present only through the letter Jōtarō delivers and Musashi's memories; he is not on-page (full-text fact-check, 2026-11-20)."
   }
 }

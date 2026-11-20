@@ -89,7 +89,9 @@ test("the review conserves 112 inventories and states its actual limits",()=>{
 });
 
 test("canonical normalization preserves every registered oracle reference without retaining unsupported carry-over",()=>{
-  const aliases = read("research/source-audit/review-adjudications-2026-09-30.json").canonical_id_normalization;
+  const adjudications = read("research/source-audit/review-adjudications-2026-09-30.json");
+  const aliases = adjudications.canonical_id_normalization;
+  const rejected = adjudications.rejected_oracle_references ?? {};
   const known = new Set(chars.map(character=>character.id));
   for (const book of [1,2,3,4,5,6,7]) for (const chapter of read(`research/source-audit/book${book}-source-oracle.json`).chapters) {
     const physical = new Set(chars.filter(character=>character.present_in.includes(chapter.section)).map(character=>character.id));
@@ -99,7 +101,7 @@ test("canonical normalization preserves every registered oracle reference withou
       if (!raw) continue;
       const name = raw.split(":")[0].split("/")[0].trim();
       const id = aliases[name]??name;
-      if (known.has(id)) assert.ok(physical.has(id) || references.has(id),`${chapter.id}: ${id}`);
+      if (known.has(id) && !rejected[chapter.id]?.[id]) assert.ok(physical.has(id) || references.has(id),`${chapter.id}: ${id}`);
     }
   }
   for (const [chapter,id] of [["b3c13","monkey"],["b4c9","konoe_nobutada"],["b4c14","kobashi_kurando"]]) assert.ok(!events.filter(event=>event.chapter===chapter).some(event=>event.referenced_characters?.includes(id)),`${chapter}: ${id}`);

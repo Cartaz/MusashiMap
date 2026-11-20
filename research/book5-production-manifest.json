@@ -2443,6 +2443,16 @@
         "b7c1",
         "b7c2"
       ]
+    },
+    {
+      "id": "hachioji_edo_road",
+      "name": "Road from Hachiōji toward Edo (Musashi plain)",
+      "type": "route",
+      "coordinates": null,
+      "mapping_status": "historical_corridor_not_reconstructed",
+      "chapters": [
+        "b5c9"
+      ]
     }
   ],
   "events": [
@@ -2528,13 +2538,13 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "kiso_highroad",
+      "location": "kozenji_turn",
       "source_ref": "book5/chapter1",
       "source_file": "data/source/book5/chapter1-the-abduction.txt",
       "certainty": "explicit",
       "movement_status": "direction_only",
       "section": 54,
-      "destination_label": "back along the Kiso highroad"
+      "destination_label": "back down the hill road toward the Kōzenji barrier"
     },
     {
       "id": "b5c2-e01",
@@ -2547,7 +2557,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "nobu_pond",
+      "location": "gonnosuke_farmhouse",
       "source_ref": "book5/chapter2",
       "source_file": "data/source/book5/chapter2-the-warrior-of-kiso.txt",
       "certainty": "explicit",
@@ -2730,7 +2740,7 @@
       "source_ref": "book5/chapter3",
       "source_file": "data/source/book5/chapter3-poisonous-fangs.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
@@ -2842,7 +2852,7 @@
       "source_ref": "book5/chapter4",
       "source_file": "data/source/book5/chapter4-a-maternal-warning.txt",
       "certainty": "explicit",
-      "movement_status": "direction_only",
+      "movement_status": "confirmed_route",
       "section": 57,
       "destination_label": "Kamisuwa"
     },
@@ -3025,7 +3035,8 @@
       "type": "gift_discovered",
       "description": "At a roadside teahouse Musashi discovers Geki's money and letter hidden in his bag.",
       "characters": [
-        "musashi"
+        "musashi",
+        "gion_toji"
       ],
       "referenced_characters": [
         "geki"
@@ -3086,7 +3097,7 @@
       "id": "b5c7-e01",
       "chapter": "b5c7",
       "type": "fight",
-      "description": "Musashi defeats the gunmen, wounds their leader and recognizes Gion Tōji.",
+      "description": "Musashi defeats the gunmen, pursues the wounded survivor to the cabin and overpowers the bandit chief.",
       "characters": [
         "musashi",
         "gion_toji"
@@ -3110,7 +3121,7 @@
       "id": "b5c7-e02",
       "chapter": "b5c7",
       "type": "reunion",
-      "description": "Musashi recognizes Okō; the three exchange information about Akemi's reported movements.",
+      "description": "Musashi recognizes Okō, who tells him the stunned bandit chief is Gion Tōji; Musashi tells her what he heard of Akemi, and the revived Tōji joins them afterwards.",
       "characters": [
         "musashi",
         "oko",
@@ -3246,7 +3257,7 @@
       "source_ref": "book5/chapter8",
       "source_file": "data/source/book5/chapter8-playing-with-fire.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "arrival_confirmed",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
@@ -3258,7 +3269,7 @@
       "id": "b5c8-e03",
       "chapter": "b5c8",
       "type": "reunion",
-      "description": "Jōtarō recognizes Akemi; they exchange news and Akemi reacts with jealousy and distress.",
+      "description": "Akemi recognizes and hails Jōtarō; they exchange news and Akemi reacts with jealousy and distress.",
       "characters": [
         "jotaro",
         "akemi"
@@ -3351,7 +3362,7 @@
       "id": "b5c9-e02",
       "chapter": "b5c9",
       "type": "secret_observation",
-      "description": "Jōtarō follows Daizō and witnesses him bury a large quantity of gold beneath a pine by the mound.",
+      "description": "Lost on his way back to the inn, Jōtarō trails a disguised man who climbs down the old fortress cliff and half-recognizes him as Daizō; he watches him bury a large quantity of gold beneath the pine on the head-burying mound.",
       "characters": [
         "jotaro",
         "daizo"
@@ -3373,7 +3384,7 @@
       "id": "b5c9-e03",
       "chapter": "b5c9",
       "type": "coercive_guardianship",
-      "description": "Daizō discovers the spying, binds Jōtarō to secrecy and declares that he is taking the boy under his protection.",
+      "description": "On the road toward Edo the next morning, Daizō reveals he knows of the spying, binds Jōtarō to secrecy under threat of death and declares that he is adopting the boy.",
       "characters": [
         "jotaro",
         "daizo"
@@ -3381,7 +3392,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "hachioji_mound",
+      "location": "hachioji_edo_road",
       "source_ref": "book5/chapter9",
       "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
       "certainty": "explicit",
@@ -3404,7 +3415,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "takanawa_highroad",
+      "location": "hachioji_edo_road",
       "source_ref": "book5/chapter9",
       "source_file": "data/source/book5/chapter9-a-cricket-in-the-grass.txt",
       "certainty": "explicit",
@@ -3438,14 +3449,14 @@
       "id": "b5c10-e02",
       "chapter": "b5c10",
       "type": "urban_travel",
-      "description": "Osugi walks through the construction zones and reaches Nihombashi.",
+      "description": "Osugi walks through the construction zones along the road into Edo and stops at a reed-mat bathhouse by an unfinished moat to wash her soiled kimono.",
       "characters": [
         "osugi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "nihombashi",
+      "location": "takanawa_highroad",
       "source_ref": "book5/chapter10",
       "source_file": "data/source/book5/chapter10-the-pioneers.txt",
       "certainty": "explicit",
@@ -3455,7 +3466,8 @@
       },
       "section": 63,
       "origin": "takanawa_highroad",
-      "destination": "nihombashi"
+      "destination": "nihombashi",
+      "destination_label": "reed-mat bathhouse by the unfinished moat"
     },
     {
       "id": "b5c10-e03",
@@ -3470,7 +3482,7 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "nihombashi",
+      "location": "takanawa_highroad",
       "source_ref": "book5/chapter10",
       "source_file": "data/source/book5/chapter10-the-pioneers.txt",
       "certainty": "explicit",
@@ -3484,7 +3496,7 @@
       "id": "b5c10-e04",
       "chapter": "b5c10",
       "type": "shelter",
-      "description": "The injured Osugi is carried to Yajibei's Bakurōchō house.",
+      "description": "Ushi carries the injured Osugi on his back past Nihombashi to Yajibei's Bakurōchō house.",
       "characters": [
         "osugi",
         "yajibei",
@@ -3498,7 +3510,12 @@
       "source_file": "data/source/book5/chapter10-the-pioneers.txt",
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
-      "section": 63
+      "section": 63,
+      "origin": "takanawa_highroad",
+      "via": [
+        "nihombashi"
+      ],
+      "destination": "bakurocho_yajibei"
     },
     {
       "id": "b5c11-e01",
@@ -3547,14 +3564,12 @@
       "id": "b5c11-e03",
       "chapter": "b5c11",
       "type": "fight",
-      "description": "Kojirō kills or disables the Obata swordsmen who confront him beside the river.",
+      "description": "By the river near Sensōji, Kojirō cuts down four unidentified swordsmen who fought him, finishing off the last as he rises.",
       "characters": [
         "kojiro"
       ],
       "referenced_characters": [],
-      "groups": [
-        "obata_students"
-      ],
+      "groups": [],
       "referenced_groups": [],
       "location": "sensoji_riverside",
       "source_ref": "book5/chapter11",
@@ -3617,7 +3632,7 @@
       "id": "b5c12-e01",
       "chapter": "b5c12",
       "type": "employment",
-      "description": "Yajibei hires Kojirō to train his men three times a month.",
+      "description": "After proposing it on the boat home, Yajibei hires Kojirō at Bakurōchō to train his men three times a month.",
       "characters": [
         "kojiro",
         "yajibei"
@@ -3641,7 +3656,7 @@
       "id": "b5c12-e02",
       "chapter": "b5c12",
       "type": "fatal_training",
-      "description": "Kojirō's first training session maims men and kills one trainee.",
+      "description": "By the third training session Kojirō has maimed several men, and during it he kills one trainee.",
       "characters": [
         "kojiro"
       ],
@@ -3732,7 +3747,9 @@
       "type": "ambush",
       "description": "Ten Obata students ambush Kojirō on the road beside the new Edo moat; five are killed before the later school confrontation.",
       "characters": [
-        "kojiro"
+        "kojiro",
+        "juro",
+        "koroku"
       ],
       "referenced_characters": [],
       "groups": [
@@ -3781,7 +3798,8 @@
       "characters": [
         "kojiro",
         "juro",
-        "koroku"
+        "koroku",
+        "hojo_shinzo"
       ],
       "referenced_characters": [],
       "groups": [
@@ -3860,7 +3878,7 @@
       "groups": [],
       "referenced_groups": [],
       "location": "hotengahara",
-      "source_ref": "data/source/book5/chapter14-a-plate-of-loaches.txt:L201-L213",
+      "source_ref": "data/source/book5/chapter14-a-plate-of-loaches.txt:L37-L73",
       "source_file": "data/source/book5/chapter14-a-plate-of-loaches.txt",
       "certainty": "explicit",
       "movement_status": "arrival_confirmed",
@@ -4357,7 +4375,7 @@
       },
       "section": 71,
       "origin": "bakurocho_inn",
-      "destination": "higakubo_yagyu"
+      "destination": "kobikicho"
     },
     {
       "id": "b5c18-audit-references",
@@ -4731,7 +4749,7 @@
       "source_ref": "data/source/book5/chapter21-an-urgent-letter.txt:L223-L246",
       "source_file": "data/source/book5/chapter21-an-urgent-letter.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "route_confirmed"
       },
@@ -4951,10 +4969,10 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "yanagihara",
+      "location": "kosuke_shop",
       "source_ref": "data/source/book5/chapter23-spring-shower-in-red.txt:L155-L213",
       "source_file": "data/source/book5/chapter23-spring-shower-in-red.txt",
-      "certainty": "explicit",
+      "certainty": "strong_inference",
       "movement_status": null,
       "extensions": {
         "legacy_movement_status": "none"
@@ -5378,7 +5396,7 @@
         "hangawara_group"
       ],
       "referenced_groups": [],
-      "location": "nihombashi",
+      "location": "edo",
       "source_ref": "data/source/book5/chapter26-the-talk-of-the-town.txt:L196-L208",
       "source_file": "data/source/book5/chapter26-the-talk-of-the-town.txt",
       "certainty": "explicit",

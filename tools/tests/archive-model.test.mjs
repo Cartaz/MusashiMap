@@ -32,7 +32,9 @@ test("all 112 archive snapshots exclude future facts, states, places and relatio
 test("search never matches future names or aliases, including after a rewind", () => {
   assert.equal(searchArchive(buildArchive(data, 1), "characters", "Ogin").length, 0);
   assert.equal(searchArchive(buildArchive(data, 7), "characters", "Musashi").length, 0);
-  assert.equal(searchArchive(buildArchive(data, 7), "characters", "Aoki").length, 0);
+  // Aoki signs his letter to Otsu in chapter 6, which reveals the captain's name.
+  assert.equal(searchArchive(buildArchive(data, 5), "characters", "Aoki").length, 0);
+  assert.ok(searchArchive(buildArchive(data, 6), "characters", "Aoki").some(item => item.id === "aoki_tanzaemon"));
   assert.ok(searchArchive(buildArchive(data, 8), "characters", "Musashi").some(item => item.id === "musashi"));
   assert.ok(searchArchive(buildArchive(data, 8), "characters", "Takezo").some(item => item.id === "musashi"));
   buildArchive(data, 112);
