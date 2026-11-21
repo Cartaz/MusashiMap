@@ -700,6 +700,7 @@
         "b5c12-e02",
         "b5c12-e03",
         "b5c12-e04",
+        "b5c12-e05",
         "b5c12-audit-references"
       ],
       "character_state_ids": [
@@ -1007,6 +1008,7 @@
         "b5c20-e02",
         "b5c20-e03",
         "b5c20-e04",
+        "b5c20-e05",
         "b5c20-audit-references"
       ],
       "character_state_ids": [
@@ -3723,6 +3725,29 @@
       "destination_label": "unestablished route along the moat"
     },
     {
+      "id": "b5c12-e05",
+      "chapter": "b5c12",
+      "type": "return_route",
+      "description": "Osugi and Yajibei's party continue home by boat after Kojirō disembarks at the Kyōbashi moat; the exact landing and final leg are not located.",
+      "characters": [
+        "osugi",
+        "yajibei",
+        "juro",
+        "koroku"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "sumida_river",
+      "source_ref": "data/source/book5/chapter12-shavings.txt:L64-L70",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "section": 65,
+      "origin": "sumida_river",
+      "destination": "bakurocho_yajibei"
+    },
+    {
       "id": "b5c12-audit-references",
       "chapter": "b5c12",
       "section": 65,
@@ -4634,6 +4659,27 @@
       "certainty": "explicit",
       "movement_status": null,
       "section": 73
+    },
+    {
+      "id": "b5c20-e05",
+      "chapter": "b5c20",
+      "type": "descent",
+      "description": "Otsū and Hyōgo descend from Azabu Hill into the Higakubo valley toward the Yagyū establishment; Iori remains behind.",
+      "characters": [
+        "otsu",
+        "yagyu_hyogo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "higakubo_yagyu",
+      "source_ref": "data/source/book5/chapter20-the-fox.txt:L268-L285",
+      "source_file": "data/source/book5/chapter20-the-fox.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "section": 73,
+      "origin": "azabu_hill",
+      "destination": "higakubo_yagyu"
     },
     {
       "id": "b5c20-audit-references",

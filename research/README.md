@@ -16,6 +16,7 @@ A book is not independently certified merely because the generated audits and va
 |---|---|---|
 | [Character chapter audit](character-chapter-audit.md) | Position, action and relationship evidence for every character in all 112 chapters | `node tools/generate-character-chapter-audit.mjs` |
 | [Geography book audit](geography-book-audit.md) | Every location by book, mapping status, present-day identification and online evidence | `node tools/generate-geography-audit.mjs` |
+| [Modern geolocation audit](modern-geolocation-audit-2026-11-21.md) | Coordinate precision, Japanese geodetic reference updates and current corrections to mapped anchors | Manual research supplement; see the generated geography audit for every location and its point-level evidence |
 
 The reports are generated from production data and the canonical book manifests. Edit their inputs or generators rather than hand-editing the reports.
 

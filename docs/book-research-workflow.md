@@ -198,6 +198,12 @@ Per le identificazioni moderne usare, in ordine di preferenza quando disponibili
 
 Una singola fonte non basta automaticamente a trasformare un sito narrativo in una corrispondenza storica esatta.
 
+#### Riferimento geodetico moderno
+
+Le coppie `coordinates` sono memorizzate come `[latitudine, longitudine]` in gradi decimali. Se una fonte pubblica un CRS, datum o epoca di rilevamento, conservarlo nella provenienza della ricerca. Il dataset corrente non registra un CRS per singolo punto: le coordinate sono ancore cartografiche, non misure topografiche.
+
+Per il Giappone, il Geospatial Information Authority of Japan (GSI) ha introdotto JGD2024 il 1 aprile 2025 aggiornando il riferimento verticale; il nome del datum orizzontale è cambiato da JGD2011 a JGD2024, ma latitudine e longitudine orizzontali sono state mantenute. Non applicare una trasformazione orizzontale ai punti esistenti solo per l'aggiornamento del nome. Il Gazetteer of Japan è utile per normalizzare toponimi e controllare aree ampie, ma le sue coordinate derivano in prevalenza dalla posizione delle etichette sulle carte 1:1.000.000; per i fiumi usa la foce o il tratto terminale. Non dimostra la posizione di una casa, scena o percorso.
+
 ### 4.8 Regola di conservazione dell'incertezza
 
 `null` non significa "dato dimenticato". Significa che, dopo l'audit, non esiste ancora un'ancora geografica sufficientemente difendibile.
