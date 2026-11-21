@@ -6,7 +6,7 @@
 
 - Capitoli confrontati con i dossier di produzione: **112/112**.
 - Personaggi censiti: **155**.
-- Eventi/azioni verificati: **781**.
+- Eventi/azioni verificati: **784**.
 - Stati/posizioni finali verificati: **457**.
 - Relazioni canoniche verificate alla soglia d'introduzione: **83**.
 - Errori bloccanti: **0**.
@@ -1771,13 +1771,13 @@ Fonte: `data/source/book5/chapter12-shavings.txt`
 | Personaggio presente | Scene e percorsi (destinazione non equivale ad arrivo) | Stato a fine capitolo | Relazioni/interazioni pertinenti |
 |---|---|---|---|
 | Sasaki Kojirō (`kojiro`) | scena: `bakurocho_yajibei`; scena: `sumiya_yoshiwara` | `sumiya_yoshiwara`; present; Leaving the Sumiya for the street with Jūrō and Koroku after making Jinnai apologize for the missing Hanagiri. (explicit; data/source/book5/chapter12-shavings.txt:L223-L252) | Canoniche: Hanagiri: friend_ally/rescuer_and_protected_traveler<br>Co-azioni: Shōji Jinnai, Onao, Hangawara Yajibei, Jūrō, Koroku |
-| Obaba Osugi (`osugi`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `bakurocho_yajibei`; present; Back at Yajibei's house in Bakurōchō after the boat trip home with Kojirō. (strong_inference; data/source/book5/chapter12-shavings.txt:L4-L70) | Canoniche: Hangawara Yajibei: friend_ally/host_and_protector |
+| Obaba Osugi (`osugi`) | scena: `sumida_river`; percorso (confirmed_route): `sumida_river` → `bakurocho_yajibei` | `bakurocho_yajibei`; present; Back at Yajibei's house in Bakurōchō after the boat trip home with Kojirō. (strong_inference; data/source/book5/chapter12-shavings.txt:L4-L70) | Canoniche: Hangawara Yajibei: friend_ally/host_and_protector<br>Co-azioni: Hangawara Yajibei, Jūrō, Koroku |
 | Hanagiri (`akemi`) | scena: `sumiya_yoshiwara`; percorso (uncertain_route): `sumiya_yoshiwara` | luogo non risolto; fled; Fled Sumiya into the darkness along the moat; subsequent position unknown. (explicit; book5/chapter12) | Canoniche: Sasaki Kojirō: friend_ally/rescuer_and_protected_traveler; Shōji Jinnai: servant_employer/troupe_leader_and_charge |
 | Shōji Jinnai (`shoji_jinnai`) | scena: `sumiya_yoshiwara` | Nessuno stato finale strutturato | Canoniche: Hanagiri: servant_employer/troupe_leader_and_charge<br>Co-azioni: Sasaki Kojirō, Onao, Jūrō, Koroku |
 | Onao (`onao`) | scena: `sumiya_yoshiwara` | Nessuno stato finale strutturato | Co-azioni: Sasaki Kojirō, Shōji Jinnai, Jūrō, Koroku |
-| Hangawara Yajibei (`yajibei`) | scena: `bakurocho_yajibei` | `bakurocho_yajibei`; present; Staying home in Bakurōchō for the wake of the trainee Kojirō killed. (explicit; data/source/book5/chapter12-shavings.txt:L144-L160) | Canoniche: Obaba Osugi: friend_ally/host_and_protector<br>Co-azioni: Sasaki Kojirō |
-| Jūrō (`juro`) | scena: `sumiya_yoshiwara` | `sumiya_yoshiwara`; present; Leaving the Sumiya with Kojirō and Koroku after the fruitless search for Hanagiri. (explicit; data/source/book5/chapter12-shavings.txt:L223-L252) | Co-azioni: Sasaki Kojirō, Shōji Jinnai, Onao, Koroku |
-| Koroku (`koroku`) | scena: `sumiya_yoshiwara` | `sumiya_yoshiwara`; present; Leaving the Sumiya with Kojirō and Jūrō after the fruitless search for Hanagiri. (explicit; data/source/book5/chapter12-shavings.txt:L223-L252) | Co-azioni: Sasaki Kojirō, Shōji Jinnai, Onao, Jūrō |
+| Hangawara Yajibei (`yajibei`) | scena: `bakurocho_yajibei`; scena: `sumida_river`; percorso (confirmed_route): `sumida_river` → `bakurocho_yajibei` | `bakurocho_yajibei`; present; Staying home in Bakurōchō for the wake of the trainee Kojirō killed. (explicit; data/source/book5/chapter12-shavings.txt:L144-L160) | Canoniche: Obaba Osugi: friend_ally/host_and_protector<br>Co-azioni: Sasaki Kojirō, Obaba Osugi, Jūrō, Koroku |
+| Jūrō (`juro`) | scena: `sumiya_yoshiwara`; scena: `sumida_river`; percorso (confirmed_route): `sumida_river` → `bakurocho_yajibei` | `sumiya_yoshiwara`; present; Leaving the Sumiya with Kojirō and Koroku after the fruitless search for Hanagiri. (explicit; data/source/book5/chapter12-shavings.txt:L223-L252) | Co-azioni: Sasaki Kojirō, Obaba Osugi, Shōji Jinnai, Onao, Hangawara Yajibei, Koroku |
+| Koroku (`koroku`) | scena: `sumiya_yoshiwara`; scena: `sumida_river`; percorso (confirmed_route): `sumida_river` → `bakurocho_yajibei` | `sumiya_yoshiwara`; present; Leaving the Sumiya with Kojirō and Jūrō after the fruitless search for Hanagiri. (explicit; data/source/book5/chapter12-shavings.txt:L223-L252) | Co-azioni: Sasaki Kojirō, Obaba Osugi, Shōji Jinnai, Onao, Hangawara Yajibei, Jūrō |
 
 Azioni ed evidenza:
 
@@ -1785,6 +1785,7 @@ Azioni ed evidenza:
 - `b5c12-e02` — **fatal_training** @ `bakurocho_yajibei`: By the third training session Kojirō has maimed several men, and during it he kills one trainee. — fisici: Sasaki Kojiro. Evidenza: explicit; book5/chapter12.
 - `b5c12-e03` — **visit** @ `sumiya_yoshiwara`: Kojirō, Jūrō and Koroku visit Sumiya and ask for Hanagiri. — fisici: Sasaki Kojiro, Jūrō, Koroku, Onao, Shōji Jinnai. Evidenza: explicit; book5/chapter12.
 - `b5c12-e04` — **avoidance_escape** @ `sumiya_yoshiwara`: Akemi, now called Hanagiri, avoids Kojirō and escapes into the darkness along the moat. — fisici: Akemi; menzionati: Sasaki Kojiro. Evidenza: explicit; data/source/book5/chapter12-shavings.txt:L250-L283.
+- `b5c12-e05` — **return_route** @ `sumida_river`: Osugi and Yajibei's party continue home by boat after Kojirō disembarks at the Kyōbashi moat; the exact landing and final leg are not located. — fisici: Obaba Osugi, Hangawara Yajibei, Jūrō, Koroku. Evidenza: explicit; data/source/book5/chapter12-shavings.txt:L64-L70.
 - `b5c12-audit-references` — **chapter_references**: Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted. — fisici: nessun partecipante fisico (resoconto/contesto); menzionati: Miyamoto Musashi, Obata Kagenori. Evidenza: explicit; data/source/book5/chapter12-shavings.txt.
 
 Riferimenti negli eventi, esclusi i personaggi fisicamente presenti (elenco non esaustivo delle menzioni nel testo): Miyamoto Musashi (`musashi`), Obata Kagenori (`obata_kagenori`).
@@ -1960,9 +1961,9 @@ Fonte: `data/source/book5/chapter20-the-fox.txt`
 
 | Personaggio presente | Scene e percorsi (destinazione non equivale ad arrivo) | Stato a fine capitolo | Relazioni/interazioni pertinenti |
 |---|---|---|---|
-| Otsu (`otsu`) | scena: `azabu_hill` | `higakubo_yagyu`; present; Walking down into the Higakubo valley with Hyōgo toward the Yagyū residence; Iori does not recognize her. (explicit; book5/chapter20) | Canoniche: Yagyū Hyōgo: friend_ally/protective_friendship_unreciprocated_affection_not_inferred (introdotta qui)<br>Co-azioni: Misawa Iori, Yagyū Hyōgo |
+| Otsu (`otsu`) | scena: `azabu_hill`; scena: `higakubo_yagyu`; percorso (confirmed_route): `azabu_hill` → `higakubo_yagyu` | `higakubo_yagyu`; present; Walking down into the Higakubo valley with Hyōgo toward the Yagyū residence; Iori does not recognize her. (explicit; book5/chapter20) | Canoniche: Yagyū Hyōgo: friend_ally/protective_friendship_unreciprocated_affection_not_inferred (introdotta qui)<br>Co-azioni: Misawa Iori, Yagyū Hyōgo |
 | Misawa Iori (`iori`) | scena: `kobikicho`; scena: `edo_castle_hibiya`; percorso (confirmed_route): `kobikicho` → `edo_castle_hibiya` → `azabu_hill`; scena: `azabu_hill` | `azabu_hill`; hiding; Disoriented near Azabu after mistaking Otsū and Hyōgo for fox transformations. (explicit; book5/chapter20) | Co-azioni: Otsu, Yagyū Hyōgo |
-| Yagyū Hyōgo (`yagyu_hyogo`) | scena: `azabu_hill` | `higakubo_yagyu`; present; Leading Otsū's horse down into the Higakubo valley toward the Yagyū residence. (explicit; book5/chapter20) | Canoniche: Otsu: friend_ally/protective_friendship_unreciprocated_affection_not_inferred (introdotta qui)<br>Co-azioni: Otsu, Misawa Iori |
+| Yagyū Hyōgo (`yagyu_hyogo`) | scena: `azabu_hill`; scena: `higakubo_yagyu`; percorso (confirmed_route): `azabu_hill` → `higakubo_yagyu` | `higakubo_yagyu`; present; Leading Otsū's horse down into the Higakubo valley toward the Yagyū residence. (explicit; book5/chapter20) | Canoniche: Otsu: friend_ally/protective_friendship_unreciprocated_affection_not_inferred (introdotta qui)<br>Co-azioni: Otsu, Misawa Iori |
 
 Azioni ed evidenza:
 
@@ -1970,6 +1971,7 @@ Azioni ed evidenza:
 - `b5c20-e02` — **urban_route** @ `edo_castle_hibiya`: Iori loses time watching the castle and Hibiya construction before climbing toward Azabu. — fisici: Misawa Iori. Evidenza: explicit; book5/chapter20.
 - `b5c20-e03` — **mistaken_identity** @ `azabu_hill`: After wounding a fox, Iori sees Otsū and Hyōgo but mistakes both for fox transformations and hides. — fisici: Misawa Iori, Otsu, Yagyū Hyōgo. Evidenza: explicit; book5/chapter20.
 - `b5c20-e04` — **reported_rescue** @ `higakubo_yagyu`: The narrative reports that Sukekurō rescued Otsū from Matahachi the previous year and brought her into Yagyū protection. — fisici: nessun partecipante fisico (resoconto/contesto); menzionati: Otsu, Hon'den Matahachi, Kimura Sukekurō. Evidenza: explicit; data/source/book5/chapter20-the-fox.txt:L297-L327.
+- `b5c20-e05` — **descent** @ `higakubo_yagyu`: Otsū and Hyōgo descend from Azabu Hill into the Higakubo valley toward the Yagyū establishment; Iori remains behind. — fisici: Otsu, Yagyū Hyōgo. Evidenza: explicit; data/source/book5/chapter20-the-fox.txt:L268-L285.
 - `b5c20-audit-references` — **chapter_references**: Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted. — fisici: nessun partecipante fisico (resoconto/contesto); menzionati: Yagyū Munenori, Shinmen Takezō, Yagyū Sekishūsai. Evidenza: explicit; data/source/book5/chapter20-the-fox.txt.
 
 Relazioni introdotte o rivelate qui:
@@ -2535,10 +2537,10 @@ Fonte: `data/source/book7/chapter1-the-runaway-ox.txt`
 
 | Personaggio presente | Scene e percorsi (destinazione non equivale ad arrivo) | Stato a fine capitolo | Relazioni/interazioni pertinenti |
 |---|---|---|---|
-| Otsu (`otsu`) | scena: `koyagyu_castle`; scena: `tsukigase_route`; percorso (confirmed_route): `koyagyu_castle` → `tsukigase_route`; percorso (confirmed_route): `tsukigase_route`; scena: `hannya_plain` | `hannya_plain`; present; Safe near Hannya Plain after Toranosuke stops the runaway ox. (explicit; data/source/book7/chapter1-the-runaway-ox.txt) | Canoniche: Kimura Sukekurō: friend_ally/rescuer_and_protector_reported_retrospectively; Yagyū Hyōgo: friend_ally/protective_friendship_unreciprocated_affection_not_inferred<br>Co-azioni: Hōzōin Inshun, Kimura Sukekurō, Hamada Toranosuke, Ushinosuke |
+| Otsu (`otsu`) | scena: `koyagyu_castle`; scena: `tsukigase_route`; percorso (confirmed_route): `koyagyu_castle` → `tsukigase_route`; percorso (confirmed_route): `tsukigase_route`; scena: `hannya_plain` | `hannya_plain`; present; Safe near Hannya Plain after Toranosuke stops the runaway ox. (explicit; data/source/book7/chapter1-the-runaway-ox.txt) | Canoniche: Kimura Sukekurō: friend_ally/rescuer_and_protector_reported_retrospectively; Yagyū Hyōgo: friend_ally/protective_friendship_unreciprocated_affection_not_inferred<br>Co-azioni: Hōzōin Inshun, Kimura Sukekurō, Yagyū Hyōgo, Hamada Toranosuke, Ushinosuke |
 | Hōzōin Inshun (`inshun`) | scena: `koyagyu_castle` | Nessuno stato finale strutturato | Co-azioni: Otsu, Kimura Sukekurō |
 | Kimura Sukekurō (`kimura_sukekuro`) | scena: `koyagyu_castle`; scena: `hannya_plain` | Nessuno stato finale strutturato | Canoniche: Otsu: friend_ally/rescuer_and_protector_reported_retrospectively<br>Co-azioni: Otsu, Hōzōin Inshun, Hamada Toranosuke |
-| Yagyū Hyōgo (`yagyu_hyogo`) | Presenza attestata dal dossier; nessuna tappa evento dedicata | `koyagyu_castle`; present; At Koyagyū, having laughed off Inshun's rumor about Tsukigase. (explicit; data/source/book7/chapter1-the-runaway-ox.txt) | Canoniche: Otsu: friend_ally/protective_friendship_unreciprocated_affection_not_inferred |
+| Yagyū Hyōgo (`yagyu_hyogo`) | scena: `koyagyu_castle` | `koyagyu_castle`; present; At Koyagyū, having laughed off Inshun's rumor about Tsukigase. (explicit; data/source/book7/chapter1-the-runaway-ox.txt) | Canoniche: Otsu: friend_ally/protective_friendship_unreciprocated_affection_not_inferred<br>Co-azioni: Otsu |
 | Hamada Toranosuke (`hamada_toranosuke`) | scena: `hannya_plain` | luogo non risolto; in_transit; Alive, under the Torazō concealment; after rescuing Otsū near Hannya Plain he leaves to carry Sukekurō's reply back to the Hōzōin. (explicit; data/source/book7/chapter1-the-runaway-ox.txt) | Co-azioni: Otsu, Kimura Sukekurō |
 | Ushinosuke (`ushinosuke`) | scena: `tsukigase_route`; percorso (confirmed_route): `koyagyu_castle` → `tsukigase_route`; percorso (confirmed_route): `tsukigase_route` | Nessuno stato finale strutturato | Co-azioni: Otsu |
 
@@ -2549,6 +2551,7 @@ Azioni ed evidenza:
 - `b7c1-e03` — **assault_and_escape** @ `tsukigase_route`: Three rōnin threaten Otsū; Ushinosuke fights them, accidentally cuts the ox, and the animal bolts carrying Otsū. — fisici: Otsu, Ushinosuke. Evidenza: explicit; data/source/book7/chapter1-the-runaway-ox.txt.
 - `b7c1-e04` — **rescue** @ `hannya_plain`: Toranosuke stops the runaway ox and Sukekurō reaches Otsū near the Kasagi road. — fisici: Otsu, Hamada Toranosuke, Kimura Sukekurō. Evidenza: explicit; data/source/book7/chapter1-the-runaway-ox.txt.
 - `b7c1-e05` — **identity_disclosure** @ `hannya_plain`: Sukekurō recognizes Torazō as Hamada Toranosuke; Toranosuke delivers Inshun's letter stating the rōnin are expelled men, not Tōdō troops, and conceals himself because of Ono Tadaaki's disgrace. — fisici: Hamada Toranosuke, Kimura Sukekurō; menzionati: Hōzōin Inshun. Evidenza: explicit; data/source/book7/chapter1-the-runaway-ox.txt.
+- `b7c1-e06` — **delegated_reception** @ `koyagyu_castle`: At Koyagyū, Hyōgo, still recovering from a cold, asks Otsū to greet Inshun; she apologizes for Hyōgo's absence, explaining that he is preparing a report for Edo. — fisici: Yagyū Hyōgo, Otsu. Evidenza: explicit; data/source/book7/chapter1-the-runaway-ox.txt:L37-L78.
 - `b7c1-audit-references` — **chapter_references**: Additional chapter-scoped memories, reports or biographical references; no physical presence is asserted. — fisici: nessun partecipante fisico (resoconto/contesto); menzionati: Kakuzenbō Hōzōin In'ei, Jōtarō, Sasaki Kojiro, Ono Tadaaki, Yagyū Munenori, Yagyū Sekishūsai. Evidenza: explicit; data/source/book7/chapter1-the-runaway-ox.txt.
 
 Riferimenti negli eventi, esclusi i personaggi fisicamente presenti (elenco non esaustivo delle menzioni nel testo): Kakuzenbō Hōzōin In'ei (`in_ei`), Jōtarō (`jotaro`), Sasaki Kojirō (`kojiro`), Ono Tadaaki (`mikogami_tenzen`), Yagyū Munenori (`munenori`), Yagyū Sekishūsai (`sekishusai`).

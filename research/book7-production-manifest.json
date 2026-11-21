@@ -205,6 +205,7 @@
         "b7c1-e03",
         "b7c1-e04",
         "b7c1-e05",
+        "b7c1-e06",
         "b7c1-audit-references"
       ],
       "character_state_ids": [
@@ -2349,6 +2350,25 @@
       "extensions": {
         "legacy_movement_status": "none"
       },
+      "section": 97
+    },
+    {
+      "id": "b7c1-e06",
+      "chapter": "b7c1",
+      "type": "delegated_reception",
+      "description": "At Koyagyū, Hyōgo, still recovering from a cold, asks Otsū to greet Inshun; she apologizes for Hyōgo's absence, explaining that he is preparing a report for Edo.",
+      "characters": [
+        "yagyu_hyogo",
+        "otsu"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L37-L78",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
       "section": 97
     },
     {

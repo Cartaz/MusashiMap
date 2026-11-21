@@ -31,11 +31,11 @@ All seven books are published and validated.
 | Chapters | 112 / 112 |
 | Characters | 155 |
 | Locations | 254 |
-| Event records (including chapter references) | 781 |
+| Event records (including chapter references) | 784 |
 | Chapter-level character states | 457 |
 | Relationships | 83 |
 
-This table describes repository dataset coverage, not what is simultaneously visible. Pages currently publishes 150 evidenced characters, 254 locations and 781 events. Relationship records are published only when their introduction and both endpoints are available; the interface filters them again to the reader's chapter and combines duplicate reciprocal facts. Unknown coordinates remain accessible as archive entries. The interface does not publish or link to chapter text; records show only their dataset reference.
+This table describes repository dataset coverage, not what is simultaneously visible. Pages currently publishes 150 evidenced characters, 254 locations and 784 events. Relationship records are published only when their introduction and both endpoints are available; the interface filters them again to the reader's chapter and combines duplicate reciprocal facts. Unknown coordinates remain accessible as archive entries. The interface does not publish or link to chapter text; records show only their dataset reference.
 
 The [interface guide](docs/interface-explorer.md) describes archive, timeline and relationship navigation, mobile layouts and spoiler boundaries.
 

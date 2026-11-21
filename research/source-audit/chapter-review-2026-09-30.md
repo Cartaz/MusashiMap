@@ -17,7 +17,7 @@ Le correzioni sono state ricostruite il 1 ottobre dopo un ripristino del workspa
 | Categoria | Record |
 |---|---:|
 | characters | 155 |
-| events | 781 |
+| events | 784 |
 | states | 457 |
 | groups | 39 |
 | locations | 254 |
@@ -101,7 +101,7 @@ Eseguire `node tools/generate-source-review.mjs`; verificare senza scritture con
 | 62 | b5c9 | A Cricket in the Grass | 8 | 4 | 0 | nessun artefatto noto rilevato |
 | 63 | b5c10 | The Pioneers | 7 | 4 | 0 | nessun artefatto noto rilevato |
 | 64 | b5c11 | Slaughter by the Riverside | 7 | 5 | 1 | nessun artefatto noto rilevato |
-| 65 | b5c12 | Shavings | 7 | 5 | 1 | nessun artefatto noto rilevato |
+| 65 | b5c12 | Shavings | 7 | 6 | 1 | nessun artefatto noto rilevato |
 | 66 | b5c13 | The Owl | 7 | 4 | 1 | nessun artefatto noto rilevato |
 | 67 | b5c14 | A Plate of Loaches | 8 | 5 | 1 | nessun artefatto noto rilevato |
 | 68 | b5c15 | Like Teacher, Like Pupil | 8 | 5 | 1 | nessun artefatto noto rilevato |
@@ -109,7 +109,7 @@ Eseguire `node tools/generate-source-review.mjs`; verificare senza scritture con
 | 70 | b5c17 | First Planting | 8 | 4 | 0 | nessun artefatto noto rilevato |
 | 71 | b5c18 | The Flies | 9 | 7 | 4 | nessun artefatto noto rilevato |
 | 72 | b5c19 | The Soul Polisher | 7 | 7 | 3 | nessun artefatto noto rilevato |
-| 73 | b5c20 | The Fox | 7 | 5 | 1 | nessun artefatto noto rilevato |
+| 73 | b5c20 | The Fox | 7 | 6 | 1 | nessun artefatto noto rilevato |
 | 74 | b5c21 | An Urgent Letter | 7 | 5 | 1 | nessun artefatto noto rilevato |
 | 75 | b5c22 | Filial Piety | 6 | 6 | 2 | nessun artefatto noto rilevato |
 | 76 | b5c23 | Spring Shower in Red | 8 | 5 | 1 | nessun artefatto noto rilevato |
@@ -133,7 +133,7 @@ Eseguire `node tools/generate-source-review.mjs`; verificare senza scritture con
 | 94 | b6c15 | The Challenge | 12 | 4 | 1 | nessun artefatto noto rilevato |
 | 95 | b6c16 | The Gateway to Glory | 10 | 7 | 3 | nessun artefatto noto rilevato |
 | 96 | b6c17 | The Sound of Heaven | 10 | 7 | 2 | nessun artefatto noto rilevato |
-| 97 | b7c1 | The Runaway Ox | 9 | 6 | 2 | nessun artefatto noto rilevato |
+| 97 | b7c1 | The Runaway Ox | 9 | 7 | 2 | nessun artefatto noto rilevato |
 | 98 | b7c2 | Hemp Seed | 9 | 7 | 1 | nessun artefatto noto rilevato |
 | 99 | b7c3 | Sweepers and Salesmen | 8 | 5 | 1 | nessun artefatto noto rilevato |
 | 100 | b7c4 | A Pear Blossom | 7 | 5 | 1 | nessun artefatto noto rilevato |
@@ -4139,6 +4139,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b5c12-e02 | fatal_training | bakurocho_yajibei | book5/chapter12 |
 | b5c12-e03 | visit | sumiya_yoshiwara | book5/chapter12 |
 | b5c12-e04 | avoidance_escape | sumiya_yoshiwara | data/source/book5/chapter12-shavings.txt:L250-L283 |
+| b5c12-e05 | return_route | sumida_river | data/source/book5/chapter12-shavings.txt:L64-L70 |
 | b5c12-audit-references | chapter_references | — | data/source/book5/chapter12-shavings.txt |
 
 ### Stati e relazioni
@@ -4586,6 +4587,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b5c20-e02 | urban_route | edo_castle_hibiya | book5/chapter20 |
 | b5c20-e03 | mistaken_identity | azabu_hill | book5/chapter20 |
 | b5c20-e04 | reported_rescue | higakubo_yagyu | data/source/book5/chapter20-the-fox.txt:L297-L327 |
+| b5c20-e05 | descent | higakubo_yagyu | data/source/book5/chapter20-the-fox.txt:L268-L285 |
 | b5c20-audit-references | chapter_references | — | data/source/book5/chapter20-the-fox.txt |
 
 ### Stati e relazioni
@@ -5966,6 +5968,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b7c1-e03 | assault_and_escape | tsukigase_route | data/source/book7/chapter1-the-runaway-ox.txt |
 | b7c1-e04 | rescue | hannya_plain | data/source/book7/chapter1-the-runaway-ox.txt |
 | b7c1-e05 | identity_disclosure | hannya_plain | data/source/book7/chapter1-the-runaway-ox.txt |
+| b7c1-e06 | delegated_reception | koyagyu_castle | data/source/book7/chapter1-the-runaway-ox.txt:L37-L78 |
 | b7c1-audit-references | chapter_references | — | data/source/book7/chapter1-the-runaway-ox.txt |
 
 ### Stati e relazioni

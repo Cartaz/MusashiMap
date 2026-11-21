@@ -3141,6 +3141,7 @@
     {"id":"b5c12-e02","chapter":"b5c12","type":"fatal_training","description":"By the third training session Kojirō has maimed several men, and during it he kills one trainee.","characters":["kojiro"],"referenced_characters":[],"groups":["hangawara_group"],"referenced_groups":[],"location":"bakurocho_yajibei","source_ref":"book5/chapter12","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":65},
     {"id":"b5c12-e03","chapter":"b5c12","type":"visit","description":"Kojirō, Jūrō and Koroku visit Sumiya and ask for Hanagiri.","characters":["kojiro","juro","koroku","onao","shoji_jinnai"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sumiya_yoshiwara","source_ref":"book5/chapter12","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":65},
     {"id":"b5c12-e04","chapter":"b5c12","type":"avoidance_escape","description":"Akemi, now called Hanagiri, avoids Kojirō and escapes into the darkness along the moat.","characters":["akemi"],"referenced_characters":["kojiro"],"groups":[],"referenced_groups":[],"location":"sumiya_yoshiwara","source_ref":"data/source/book5/chapter12-shavings.txt:L250-L283","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":"uncertain_route","extensions":{"legacy_movement_status":"departure_confirmed"},"section":65,"origin":"sumiya_yoshiwara","destination_label":"unestablished route along the moat"},
+    {"id":"b5c12-e05","chapter":"b5c12","type":"return_route","description":"Osugi and Yajibei's party continue home by boat after Kojirō disembarks at the Kyōbashi moat; the exact landing and final leg are not located.","characters":["osugi","yajibei","juro","koroku"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sumida_river","source_ref":"data/source/book5/chapter12-shavings.txt:L64-L70","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":"confirmed_route","section":65,"origin":"sumida_river","destination":"bakurocho_yajibei"},
     {
       "id": "b5c12-audit-references",
       "chapter": "b5c12",
@@ -3344,6 +3345,7 @@
     {"id":"b5c20-e02","chapter":"b5c20","type":"urban_route","description":"Iori loses time watching the castle and Hibiya construction before climbing toward Azabu.","characters":["iori"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"edo_castle_hibiya","source_ref":"book5/chapter20","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":"confirmed_route","extensions":{"legacy_movement_status":"route_confirmed"},"section":73,"origin":"kobikicho","via":["edo_castle_hibiya"],"destination":"azabu_hill"},
     {"id":"b5c20-e03","chapter":"b5c20","type":"mistaken_identity","description":"After wounding a fox, Iori sees Otsū and Hyōgo but mistakes both for fox transformations and hides.","characters":["iori","otsu","yagyu_hyogo"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"azabu_hill","source_ref":"book5/chapter20","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":73},
     {"id":"b5c20-e04","chapter":"b5c20","type":"reported_rescue","description":"The narrative reports that Sukekurō rescued Otsū from Matahachi the previous year and brought her into Yagyū protection.","characters":[],"referenced_characters":["otsu","matahachi","kimura_sukekuro"],"groups":[],"referenced_groups":[],"location":"higakubo_yagyu","source_ref":"data/source/book5/chapter20-the-fox.txt:L297-L327","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":null,"section":73},
+    {"id":"b5c20-e05","chapter":"b5c20","type":"descent","description":"Otsū and Hyōgo descend from Azabu Hill into the Higakubo valley toward the Yagyū establishment; Iori remains behind.","characters":["otsu","yagyu_hyogo"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"higakubo_yagyu","source_ref":"data/source/book5/chapter20-the-fox.txt:L268-L285","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":"confirmed_route","section":73,"origin":"azabu_hill","destination":"higakubo_yagyu"},
     {
       "id": "b5c20-audit-references",
       "chapter": "b5c20",
@@ -5624,6 +5626,22 @@
       "extensions": {
         "legacy_movement_status": "none"
       },
+      "section": 97
+    },
+    {
+      "id": "b7c1-e06",
+      "chapter": "b7c1",
+      "type": "delegated_reception",
+      "description": "At Koyagyū, Hyōgo, still recovering from a cold, asks Otsū to greet Inshun; she apologizes for Hyōgo's absence, explaining that he is preparing a report for Edo.",
+      "characters": ["yagyu_hyogo", "otsu"],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L37-L78",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
       "section": 97
     },
     {
