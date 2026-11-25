@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "source_rule": "Narrative facts are extracted only from the chapter source files in data/source. External sources are not used to invent narrative facts.",
   "movement_status": ["confirmed_route","arrival_confirmed","intended_destination","direction_only","uncertain_route"],
   "events": [
@@ -131,7 +131,7 @@
       "movement_status": null
     },
     {"id":"b1c2-04","chapter":"b1c2","section":2,"type":"fight","characters":["musashi","matahachi","temma","oko","akemi"],"location":"oko_akemi_house","description":"Temma and his men raid the house; Takezo and Matahachi resist them.","certainty":"explicit","source_ref":"book1/chapter2"},
-    {"id":"b1c2-05","chapter":"b1c2","section":2,"type":"fight","characters":["musashi","temma"],"location":"oko_akemi_house","description":"Takezo pursues Temma and kills him with the wooden sword.","certainty":"explicit","source_ref":"book1/chapter2"},
+    {"id":"b1c2-05","chapter":"b1c2","section":2,"type":"fight","characters":["musashi","temma"],"location":"oko_akemi_field","description":"Takezo pursues Temma from the house into a nearby field and kills him with the wooden sword.","certainty":"explicit","source_ref":"book1/chapter2"},
     {
       "id": "b1c2-audit-s08",
       "chapter": "b1c2",
@@ -711,7 +711,7 @@
     },
     {"id":"b1c7-01","chapter":"b1c7","section":7,"type":"escape","characters":["musashi","otsu"],"origin":"old_cryptomeria_shippoji","destination":"nakayama_pass","movement_status":"confirmed_route","description":"Otsu climbs the tree, cuts Takezo free and escapes with him through the mountains.","certainty":"explicit","source_ref":"book1/chapter7"},
     {"id":"b1c7-02","chapter":"b1c7","section":7,"type":"separation","characters":["musashi","otsu"],"location":"nakayama_pass","description":"At Nakayama Pass, Takezo decides to rescue Ogin while Otsu agrees to continue toward Himeji and wait at Hanada Bridge.","certainty":"explicit","source_ref":"book1/chapter7"},
-    {"id":"b1c7-03","chapter":"b1c7","section":7,"type":"journey","characters":["otsu"],"origin":"nakayama_pass","destination":"mikazuki_teahouse","movement_status":"arrival_confirmed","description":"Otsu travels alone toward Himeji, becomes ill and collapses at the Mikazuki Teahouse.","certainty":"explicit","source_ref":"book1/chapter7"},
+    {"id":"b1c7-03","chapter":"b1c7","section":7,"type":"journey","characters":["otsu"],"origin":"nakayama_pass","destination":"mikazuki_teahouse","movement_status":"arrival_confirmed","description":"Otsu travels alone toward Himeji while still feverish; at the Mikazuki Teahouse she feels miserable and lies in the back room.","certainty":"explicit","source_ref":"book1/chapter7"},
     {
       "id": "b1c7-audit-s05",
       "chapter": "b1c7",
@@ -798,7 +798,7 @@
       "movement_status": null
     },
     {"id":"b1c8-04","chapter":"b1c8","section":8,"type":"imprisonment","characters":["musashi"],"location":"himeji_castle","description":"Takezo remains confined in the castle's dark chamber for approximately three years, studying and reflecting.","certainty":"explicit","source_ref":"book1/chapter8"},
-    {"id":"b1c8-05","chapter":"b1c8","section":8,"type":"release","characters":["musashi","takuan","lord_ikeda"],"location":"himeji_castle","description":"After three years, Takuan returns and Takezo is released from confinement.","certainty":"explicit","source_ref":"book1/chapter8"},
+    {"id":"b1c8-05","chapter":"b1c8","section":8,"type":"release","characters":["musashi","takuan"],"location":"himeji_castle","description":"After three years, Takuan returns and releases Takezo from confinement.","certainty":"explicit","source_ref":"book1/chapter8"},
     {"id":"b1c8-06","chapter":"b1c8","section":8,"type":"relationship_change","characters":["musashi","takuan","lord_ikeda"],"location":"himeji_castle","description":"Takezo is renamed Miyamoto Musashi and rejects immediate service as a vassal, choosing to travel independently.","certainty":"explicit","source_ref":"book1/chapter8"},
     {"id":"b1c8-07","chapter":"b1c8","section":8,"type":"information","characters":["musashi","takuan"],"referenced_characters":["ogin","osugi","gonroku","aoki_tanzaemon"],"location":"himeji_area","description":"Takuan reports the later whereabouts of Ogin, the continued search by Osugi and Gonroku, and Aoki Tanzaemon's dismissal from Ikeda's service.","certainty":"explicit","source_ref":"book1/chapter8"},
     {"id":"b1c8-08","chapter":"b1c8","section":8,"type":"meeting","characters":["musashi","otsu"],"location":"hanada_bridge","description":"Musashi meets Otsu, who has waited for him for three years at Hanada Bridge.","certainty":"explicit","source_ref":"book1/chapter8"},
@@ -1207,12 +1207,12 @@
       "source_file": "data/source/book2/chapter5-a-spring-breeze.txt"
     },
     {"id":"b2c6-e01","chapter":"b2c6","section":14,"type":"search","characters":["musashi"],"location":"abura_hill","description":"Musashi searches the Abura Hill and Ozoin vicinity for Hozoin.","certainty":"explicit","source_ref":"book2/chapter6"},
-    {"id":"b2c6-e02","chapter":"b2c6","section":14,"type":"direction","characters":["musashi"],"origin":"abura_hill","destination":"hozoin","movement_status":"intended_destination","description":"A young monk directs Musashi through Ozoin toward Hozoin.","certainty":"explicit","source_ref":"book2/chapter6"},
-    {"id":"b2c6-e03","chapter":"b2c6","section":14,"type":"meeting","characters":["musashi","nikkan"],"location":"abura_hill","description":"Musashi meets Nikkan in the Ozoin garden and is affected by the abbot's spiritual pressure.","certainty":"explicit","source_ref":"book2/chapter6"},
+    {"id":"b2c6-e02","chapter":"b2c6","section":14,"type":"direction","characters":["musashi"],"origin":"abura_hill","destination":"hozoin","via":["ozoin"],"movement_status":"intended_destination","description":"A young monk directs Musashi through Ōzōin toward Hōzōin.","certainty":"explicit","source_ref":"data/source/book2/chapter6-the-hozoin.txt:L81-L89","source_file":"data/source/book2/chapter6-the-hozoin.txt"},
+    {"id":"b2c6-e03","chapter":"b2c6","section":14,"type":"meeting","characters":["musashi","nikkan"],"location":"ozoin","description":"As Musashi passes through Ōzōin's vegetable garden, an unnamed old man silently tests him with a gaze.","certainty":"explicit","source_ref":"data/source/book2/chapter6-the-hozoin.txt:L89-L105","source_file":"data/source/book2/chapter6-the-hozoin.txt"},
     {"id":"b2c6-e04","chapter":"b2c6","section":14,"type":"arrival","characters":["musashi"],"destination":"hozoin","movement_status":"arrival_confirmed","description":"Musashi registers at Hozoin as a visiting student.","certainty":"explicit","source_ref":"book2/chapter6"},
     {"id":"b2c6-e05","chapter":"b2c6","section":14,"type":"observation","characters":["musashi","agon"],"location":"hozoin","description":"Musashi watches Agon and the other Hozoin students train in the dojo.","certainty":"explicit","source_ref":"book2/chapter6"},
-    {"id":"b2c6-e06","chapter":"b2c6","section":14,"type":"fight","characters":["musashi","agon","nikkan"],"location":"hozoin","description":"Musashi fights Agon on the dojo floor and kills him.","certainty":"explicit","source_ref":"book2/chapter6"},
-    {"id":"b2c6-e07","chapter":"b2c6","section":14,"type":"conversation","characters":["musashi","nikkan"],"location":"hozoin","description":"Nikkan speaks privately with Musashi and explains the lesson about his excessive fighting spirit.","certainty":"explicit","source_ref":"book2/chapter6"},
+    {"id":"b2c6-e06","chapter":"b2c6","section":14,"type":"fight","characters":["musashi","agon"],"witnesses":["nikkan"],"location":"hozoin","description":"Musashi fights Agon on the dojo floor and kills him; an unnamed old man watches from the window.","certainty":"explicit","source_ref":"data/source/book2/chapter6-the-hozoin.txt:L231-L276","source_file":"data/source/book2/chapter6-the-hozoin.txt"},
+    {"id":"b2c6-e07","chapter":"b2c6","section":14,"type":"conversation","characters":["musashi","nikkan"],"reveals_identity":["nikkan"],"location":"hozoin","description":"Nikkan speaks privately with Musashi and explains the lesson about his excessive fighting spirit.","certainty":"explicit","source_ref":"data/source/book2/chapter6-the-hozoin.txt:L336-L350","source_file":"data/source/book2/chapter6-the-hozoin.txt"},
     {
       "id": "b2c6-audit-s07",
       "chapter": "b2c6",
@@ -1325,10 +1325,10 @@
     {"id":"b2c7-e03","chapter":"b2c7","section":15,"type":"fight","characters":["musashi","yamazoe_dampachi"],"location":"hannya_plain","description":"Musashi recognizes Dampachi's trap and kills him on Hannya Plain.","certainty":"explicit","source_ref":"book2/chapter7"},
     {"id":"b2c7-e04","chapter":"b2c7","section":15,"type":"encampment","characters":["otomo_banryu","yasukawa_yasubei"],"location":"hannya_plain","description":"Hozoin priests and ronin, including Banryu and Yasubei, are encamped around a bonfire.","certainty":"explicit","source_ref":"book2/chapter7"},
     {"id":"b2c7-e05","chapter":"b2c7","section":15,"type":"fight","characters":["musashi","otomo_banryu","yasukawa_yasubei"],"location":"hannya_plain","description":"Musashi fights the ronin group and kills several of its members.","certainty":"explicit","source_ref":"book2/chapter7"},
+    {"id":"b2c7-e09","chapter":"b2c7","section":15,"type":"reunion","characters":["musashi","jotaro"],"origin":"hannya_observation_knoll","destination":"hannya_plain","movement_status":"arrival_confirmed","description":"When the Hōzōin priests begin moving in, Jōtarō runs from the observation knoll toward Musashi before Inshun gives the charge command.","certainty":"explicit","source_ref":"data/source/book2/chapter7-hannya-plain.txt:L261-L295","source_file":"data/source/book2/chapter7-hannya-plain.txt"},
     {"id":"b2c7-e06","chapter":"b2c7","section":15,"type":"fight","characters":["inshun","otomo_banryu","yasukawa_yasubei"],"location":"hannya_plain","description":"Inshun leads the Hozoin priests in the deliberate purge of the remaining ronin, including Banryu and Yasubei.","certainty":"strong_inference","source_ref":"book2/chapter7"},
     {"id":"b2c7-e07","chapter":"b2c7","section":15,"type":"arrival","characters":["nikkan"],"destination":"hannya_plain","movement_status":"arrival_confirmed","description":"Nikkan arrives with five government officials, who inspect the bodies after the battle.","certainty":"explicit","source_ref":"book2/chapter7"},
     {"id":"b2c7-e08","chapter":"b2c7","section":15,"type":"conversation","characters":["nikkan","musashi","jotaro"],"location":"hannya_plain","description":"Nikkan explains the purge, advises Musashi and involves Jotaro in rites for the dead.","certainty":"explicit","source_ref":"book2/chapter7"},
-    {"id":"b2c7-e09","chapter":"b2c7","section":15,"type":"reunion","characters":["musashi","jotaro"],"origin":"hannya_observation_knoll","destination":"hannya_plain","movement_status":"arrival_confirmed","description":"Jotaro runs from the observation knoll toward Musashi when the Hozoin charge begins.","certainty":"explicit","source_ref":"book2/chapter7"},
     {
       "id": "b2c7-audit-references",
       "chapter": "b2c7",
@@ -1348,7 +1348,9 @@
       "source_file": "data/source/book2/chapter7-hannya-plain.txt",
       "movement_status": null
     },
-    {"id":"b2c8-e01","chapter":"b2c8","section":16,"type":"arrival","characters":["musashi","jotaro"],"origin":"hannya_plain","destination":"yagyu_valley","movement_status":"arrival_confirmed","description":"About ten days after Hannya Plain, Musashi and Jotaro arrive in Yagyu Valley.","certainty":"explicit","source_ref":"book2/chapter8"},
+    {"id":"b2c8-e01a","chapter":"b2c8","section":16,"type":"visit","characters":["musashi"],"location":"kasagidera","description":"On the way to Yagyū, Musashi visits Kasagidera and sees relics of the Kemmu era.","certainty":"explicit","source_ref":"data/source/book2/chapter8-the-koyagyu-fief.txt:L45-L48","source_file":"data/source/book2/chapter8-the-koyagyu-fief.txt"},
+    {"id":"b2c8-e01b","chapter":"b2c8","section":16,"type":"visit","characters":["musashi"],"location":"joruriji","description":"On the way to Yagyū, Musashi visits Jōruriji and sees relics of the Kemmu era.","certainty":"explicit","source_ref":"data/source/book2/chapter8-the-koyagyu-fief.txt:L45-L48","source_file":"data/source/book2/chapter8-the-koyagyu-fief.txt"},
+    {"id":"b2c8-e01","chapter":"b2c8","section":16,"type":"arrival","characters":["musashi"],"location":"yagyu_valley","movement_status":"arrival_confirmed","description":"Musashi arrives in the Yagyū district about ten days after the battle on Hannya Plain.","certainty":"explicit","source_ref":"data/source/book2/chapter8-the-koyagyu-fief.txt:L45-L48","source_file":"data/source/book2/chapter8-the-koyagyu-fief.txt"},
     {"id":"b2c8-e02","chapter":"b2c8","section":16,"type":"observation","characters":["musashi","jotaro"],"origin":"yagyu_valley","destination":"koyagyu_castle","movement_status":"confirmed_route","description":"Musashi and Jotaro tour the valley and inspect the exterior of Koyagyu Castle.","certainty":"explicit","source_ref":"book2/chapter8"},
     {
       "id": "b2c8-audit-s02",
@@ -2234,6 +2236,7 @@
     },
     {"id":"b3c13_e04","chapter":"b3c13","type":"escape","description":"Musashi frees Osugi and crosses the Kamo; Otsū and Jōtarō chase while Osugi pursues them.","characters":["musashi","osugi","otsu","jotaro"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"kamo_river_gojo","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L271-L438","source_file":"data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"departure_confirmed"},"section":32},
     {"id":"b3c13_e05","chapter":"b3c13","type":"manipulation","description":"Osugi persuades Otsū to seek Matahachi with her; Jōtarō plans to return to the Karasumaru house, and they see the duel notice again.","characters":["osugi","otsu","jotaro"],"referenced_characters":["matahachi"],"groups":[],"referenced_groups":[],"location":"kamo_river_gojo","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L439-L557","source_file":"data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt","certainty":"explicit","movement_status":null,"section":32},
+    {"id":"b3c13_e06","chapter":"b3c13","type":"reputation_transmission","description":"As the New Year's crowd reads the Yoshioka duel notice, people who have never heard of Musashi begin spreading his name.","characters":[],"referenced_characters":["musashi"],"groups":["gojo_bridge_crowd"],"referenced_groups":[],"location":"kamo_river_gojo","source_ref":"chapter13-the-great-bridge-at-gojo-avenue.txt:L547-L557","source_file":"data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt","certainty":"explicit","movement_status":null,"section":32},
     {
       "id": "b3c13-audit-references",
       "chapter": "b3c13",
@@ -2447,6 +2450,7 @@
       "movement_status": null,
       "section": 37
     },
+    {"id":"b4c6-e00","chapter":"b4c6","type":"search","description":"Musashi reaches Rakan Bridge while searching for the lost Rakanji; his inquiries do not establish where the temple stood, and at the bridge he reflects on Munisai's death.","characters":["musashi"],"referenced_characters":["munisai"],"groups":[],"referenced_groups":[],"location":"rakan_bridge","source_ref":"data/source/book4/chapter6-the-urbane-craftsman.txt:L8-L19","source_file":"data/source/book4/chapter6-the-urbane-craftsman.txt","certainty":"explicit","movement_status":null,"section":38},
     {"id":"b4c6-e01","chapter":"b4c6","type":"residence","description":"Musashi spends about four days as Kōetsu and Myōshū's guest, observing art and craft.","characters":["musashi","koetsu","myoshu"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"honami_lane_house","source_ref":"data/source/book4/chapter6-the-urbane-craftsman.txt","source_file":"data/source/book4/chapter6-the-urbane-craftsman.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":38},
     {"id":"b4c6-e02","chapter":"b4c6","type":"challenge_delivery","description":"Ōtaguro and two Yoshioka men follow Musashi and, at the gate of Haiya Shōyū's house, hand him Denshichirō's letter; Musashi accepts for later that evening.","characters":["musashi","koetsu","otaguro_hyosuke"],"referenced_characters":["yoshioka_denshichiro"],"groups":[],"referenced_groups":[],"location":"haiya_shoyu_house","source_ref":"data/source/book4/chapter6-the-urbane-craftsman.txt:L250-L290","source_file":"data/source/book4/chapter6-the-urbane-craftsman.txt","certainty":"explicit","movement_status":null,"section":38},
     {"id":"b4c6-e03","chapter":"b4c6","type":"social_visit","description":"Kōetsu and Shōyū take Musashi to the Ōgiya in Yanagimachi.","characters":["musashi","koetsu","haiya_shoyu","sumigiku","rinya"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"ogiya_yanagimachi","source_ref":"data/source/book4/chapter6-the-urbane-craftsman.txt","source_file":"data/source/book4/chapter6-the-urbane-craftsman.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":38},
@@ -2670,16 +2674,19 @@
       "id": "b4c14-e01",
       "chapter": "b4c14",
       "type": "ambush_deployment",
-      "description": "Before dawn roughly seventy Yoshioka men deploy on three roads with bows and a musket around the spreading pine.",
+      "description": "Before dawn Genzaemon, Genjirō, Miike, Ueda and roughly seventy Yoshioka men deploy on three roads with bows and a musket around the spreading pine.",
       "characters": [
         "yoshioka_genzaemon",
         "yoshioka_genjiro",
-        "miike_jurozaemon"
+        "miike_jurozaemon",
+        "ueda_ryohei"
       ],
       "referenced_characters": [
         "musashi"
       ],
-      "groups": [],
+      "groups": [
+        "yoshioka_disciples"
+      ],
       "referenced_groups": [],
       "location": "ichijoji_sagarimatsu",
       "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
@@ -2788,7 +2795,7 @@
       "movement_status": null
     },
     {"id":"b4c17-e01","chapter":"b4c17","type":"arrival","description":"Kojirō reaches the spreading pine and takes an elevated observer's position.","characters":["kojiro","yoshioka_genzaemon","yoshioka_genjiro"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"ichijoji_sagarimatsu","source_ref":"data/source/book4/chapter17-the-spreading-pine.txt","source_file":"data/source/book4/chapter17-the-spreading-pine.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":49},
-    {"id":"b4c17-e02","chapter":"b4c17","type":"approach","description":"Musashi approaches by a difficult detour and purifies himself at a shrine basin without entrusting the outcome to a deity.","characters":["musashi"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"ichijoji_sagarimatsu","source_ref":"data/source/book4/chapter17-the-spreading-pine.txt","source_file":"data/source/book4/chapter17-the-spreading-pine.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":49},
+    {"id":"b4c17-e02","chapter":"b4c17","type":"approach","description":"At Hachidai Shrine, Musashi purifies himself at the basin just inside the gate, then leaves the shrine and sees the spreading pine again.","characters":["musashi"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"hachidai_shrine","source_ref":"data/source/book4/chapter17-the-spreading-pine.txt","source_file":"data/source/book4/chapter17-the-spreading-pine.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":49},
     {
       "id": "b4c17-audit-s03",
       "chapter": "b4c17",
@@ -2838,7 +2845,7 @@
     {"id":"b4c18-e03","chapter":"b4c18","type":"expulsion","description":"At the Mudōji, Sannōin priests read out the Enryakuji tribunal's decision condemning Musashi and ordering him off the mountain.","characters":["musashi"],"referenced_characters":["yoshioka_genjiro"],"groups":["sannoin_priests"],"referenced_groups":[],"location":"mudoji_mount_hiei","source_ref":"data/source/book4/chapter18-an-offering-for-the-dead.txt:L131-L165","source_file":"data/source/book4/chapter18-an-offering-for-the-dead.txt","certainty":"explicit","movement_status":null,"section":50},
     {"id":"b4c18-e04","chapter":"b4c18","type":"attack","description":"Osugi infiltrates Mudōji at night and attacks Musashi; he throws and disarms her.","characters":["musashi","osugi"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"mudoji_mount_hiei","source_ref":"data/source/book4/chapter18-an-offering-for-the-dead.txt","source_file":"data/source/book4/chapter18-an-offering-for-the-dead.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":50},
     {"id":"b4c18-e05","chapter":"b4c18","type":"care","description":"Musashi nurses the injured and feverish Osugi despite her hostility.","characters":["musashi","osugi"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"mudoji_mount_hiei","source_ref":"data/source/book4/chapter18-an-offering-for-the-dead.txt:L313-L332","source_file":"data/source/book4/chapter18-an-offering-for-the-dead.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":50},
-    {"id":"b4c18-e06","chapter":"b4c18","type":"departure_preparation","description":"The temple supplies a cow for the planned descent toward Ōtsu; Musashi and the ill Osugi remain at Mudōji at chapter end.","characters":["musashi","osugi","seinen"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"mudoji_mount_hiei","source_ref":"data/source/book4/chapter18-an-offering-for-the-dead.txt:L333-L344","source_file":"data/source/book4/chapter18-an-offering-for-the-dead.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"departure_confirmed"},"section":50},
+    {"id":"b4c18-e06","chapter":"b4c18","type":"departure_preparation","description":"The temple supplies a cow for the intended descent toward Ōtsu; Musashi and the ill Osugi remain at Mudōji at chapter end.","characters":["musashi","osugi","seinen"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"mudoji_mount_hiei","origin":"mudoji_mount_hiei","destination_label":"Ōtsu","source_ref":"data/source/book4/chapter18-an-offering-for-the-dead.txt:L333-L344","source_file":"data/source/book4/chapter18-an-offering-for-the-dead.txt","certainty":"explicit","movement_status":"intended_destination","extensions":{"legacy_movement_status":"departure_confirmed"},"section":50},
     {
       "id": "b4c18-audit-references",
       "chapter": "b4c18",
@@ -3116,7 +3123,7 @@
     {"id":"b5c11-e01","chapter":"b5c11","type":"time_jump","description":"The narrative establishes that Osugi has remained with Yajibei for roughly a year and a half.","characters":["osugi","yajibei"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"bakurocho_yajibei","source_ref":"data/source/book5/chapter11-slaughter-by-the-riverside.txt:L4-L14","source_file":"data/source/book5/chapter11-slaughter-by-the-riverside.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":64},
     {"id":"b5c11-e02","chapter":"b5c11","type":"pilgrimage","description":"Yajibei's party travels by boat to Sensōji; a donation plaque mentions Daizō but does not place him there.","characters":["osugi","yajibei","juro","koroku"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sensoji","source_ref":"book5/chapter11","source_file":"data/source/book5/chapter11-slaughter-by-the-riverside.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":64},
     {"id":"b5c11-e03","chapter":"b5c11","type":"fight","description":"By the river near Sensōji, Kojirō cuts down four unidentified swordsmen who fought him, finishing off the last as he rises.","characters":["kojiro"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sensoji_riverside","source_ref":"book5/chapter11","source_file":"data/source/book5/chapter11-slaughter-by-the-riverside.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":64},
-    {"id":"b5c11-e04","chapter":"b5c11","type":"meeting_and_return","description":"Kojirō meets Osugi and Yajibei and accepts an invitation onto their return boat.","characters":["kojiro","osugi","yajibei","juro","koroku"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sumida_river","source_ref":"book5/chapter11","source_file":"data/source/book5/chapter11-slaughter-by-the-riverside.txt","certainty":"explicit","movement_status":"confirmed_route","extensions":{"legacy_movement_status":"route_confirmed"},"section":64,"origin":"sensoji_riverside","destination":"bakurocho_yajibei"},
+    {"id":"b5c11-e04","chapter":"b5c11","type":"meeting_and_invitation","description":"At the Sensōji riverside, Kojirō meets Osugi and Yajibei. Yajibei invites him to join the party's return boat; this chapter ends before the boat's departure is shown.","characters":["kojiro","osugi","yajibei","juro","koroku"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sensoji_riverside","source_ref":"data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313","source_file":"data/source/book5/chapter11-slaughter-by-the-riverside.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":64},
     {
       "id": "b5c11-audit-references",
       "chapter": "b5c11",
@@ -3137,11 +3144,11 @@
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "movement_status": null
     },
+    {"id":"b5c12-e05","chapter":"b5c12","type":"disembarkation","description":"The boat rounds into the Kyōbashi moat and Kojirō disembarks; the text does not establish where the other passengers later land.","characters":["kojiro"],"referenced_characters":[],"witnesses":["osugi","yajibei","juro","koroku"],"groups":[],"referenced_groups":[],"location":"kyobashi_moat","source_ref":"data/source/book5/chapter12-shavings.txt:L61-L70","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":65},
     {"id":"b5c12-e01","chapter":"b5c12","type":"employment","description":"After proposing it on the boat home, Yajibei hires Kojirō at Bakurōchō to train his men three times a month.","characters":["kojiro","yajibei"],"referenced_characters":[],"groups":["hangawara_group"],"referenced_groups":[],"location":"bakurocho_yajibei","source_ref":"book5/chapter12","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":65},
     {"id":"b5c12-e02","chapter":"b5c12","type":"fatal_training","description":"By the third training session Kojirō has maimed several men, and during it he kills one trainee.","characters":["kojiro"],"referenced_characters":[],"groups":["hangawara_group"],"referenced_groups":[],"location":"bakurocho_yajibei","source_ref":"book5/chapter12","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":65},
     {"id":"b5c12-e03","chapter":"b5c12","type":"visit","description":"Kojirō, Jūrō and Koroku visit Sumiya and ask for Hanagiri.","characters":["kojiro","juro","koroku","onao","shoji_jinnai"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sumiya_yoshiwara","source_ref":"book5/chapter12","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":65},
     {"id":"b5c12-e04","chapter":"b5c12","type":"avoidance_escape","description":"Akemi, now called Hanagiri, avoids Kojirō and escapes into the darkness along the moat.","characters":["akemi"],"referenced_characters":["kojiro"],"groups":[],"referenced_groups":[],"location":"sumiya_yoshiwara","source_ref":"data/source/book5/chapter12-shavings.txt:L250-L283","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":"uncertain_route","extensions":{"legacy_movement_status":"departure_confirmed"},"section":65,"origin":"sumiya_yoshiwara","destination_label":"unestablished route along the moat"},
-    {"id":"b5c12-e05","chapter":"b5c12","type":"return_route","description":"Osugi and Yajibei's party continue home by boat after Kojirō disembarks at the Kyōbashi moat; the exact landing and final leg are not located.","characters":["osugi","yajibei","juro","koroku"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"sumida_river","source_ref":"data/source/book5/chapter12-shavings.txt:L64-L70","source_file":"data/source/book5/chapter12-shavings.txt","certainty":"explicit","movement_status":"confirmed_route","section":65,"origin":"sumida_river","destination":"bakurocho_yajibei"},
     {
       "id": "b5c12-audit-references",
       "chapter": "b5c12",
@@ -3344,8 +3351,8 @@
     {"id":"b5c20-e01","chapter":"b5c20","type":"misdirected_delivery","description":"Iori reaches the Yagyū storehouses, sleeps there and receives a rough map to the residence at Higakubo.","characters":["iori"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"kobikicho","source_ref":"book5/chapter20","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":"arrival_confirmed","section":73},
     {"id":"b5c20-e02","chapter":"b5c20","type":"urban_route","description":"Iori loses time watching the castle and Hibiya construction before climbing toward Azabu.","characters":["iori"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"edo_castle_hibiya","source_ref":"book5/chapter20","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":"confirmed_route","extensions":{"legacy_movement_status":"route_confirmed"},"section":73,"origin":"kobikicho","via":["edo_castle_hibiya"],"destination":"azabu_hill"},
     {"id":"b5c20-e03","chapter":"b5c20","type":"mistaken_identity","description":"After wounding a fox, Iori sees Otsū and Hyōgo but mistakes both for fox transformations and hides.","characters":["iori","otsu","yagyu_hyogo"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"azabu_hill","source_ref":"book5/chapter20","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":null,"extensions":{"legacy_movement_status":"none"},"section":73},
+    {"id":"b5c20-e05","chapter":"b5c20","type":"descent","description":"Otsū and Hyōgo descend from Azabu Hill into the Higakubo valley; Iori remains behind. The text does not establish that they reach the Yagyū residence.","characters":["otsu","yagyu_hyogo"],"referenced_characters":[],"witnesses":["iori"],"groups":[],"referenced_groups":[],"location":"azabu_hill","source_ref":"data/source/book5/chapter20-the-fox.txt:L263-L285","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":"confirmed_route","section":73,"origin":"azabu_hill","destination":"higakubo_valley","destination_label":"Higakubo valley; arrival at the Yagyū residence is unconfirmed"},
     {"id":"b5c20-e04","chapter":"b5c20","type":"reported_rescue","description":"The narrative reports that Sukekurō rescued Otsū from Matahachi the previous year and brought her into Yagyū protection.","characters":[],"referenced_characters":["otsu","matahachi","kimura_sukekuro"],"groups":[],"referenced_groups":[],"location":"higakubo_yagyu","source_ref":"data/source/book5/chapter20-the-fox.txt:L297-L327","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":null,"section":73},
-    {"id":"b5c20-e05","chapter":"b5c20","type":"descent","description":"Otsū and Hyōgo descend from Azabu Hill into the Higakubo valley toward the Yagyū establishment; Iori remains behind.","characters":["otsu","yagyu_hyogo"],"referenced_characters":[],"groups":[],"referenced_groups":[],"location":"higakubo_yagyu","source_ref":"data/source/book5/chapter20-the-fox.txt:L268-L285","source_file":"data/source/book5/chapter20-the-fox.txt","certainty":"explicit","movement_status":"confirmed_route","section":73,"origin":"azabu_hill","destination":"higakubo_yagyu"},
     {
       "id": "b5c20-audit-references",
       "chapter": "b5c20",
@@ -5513,25 +5520,70 @@
     {
       "id": "b7c1-e01",
       "chapter": "b7c1",
-      "type": "visit_and_warning",
-      "description": "Inshun visits Koyagyū and raises an alleged encroachment near Tsukigase while seeking Hyōgo's measure as a fighter.",
+      "type": "visit",
+      "description": "Inshun visits Koyagyū to see Hyōgo and discuss martial arts; Sukekurō receives him.",
       "characters": [
         "inshun",
-        "kimura_sukekuro",
-        "otsu"
+        "kimura_sukekuro"
       ],
       "referenced_characters": [
         "yagyu_hyogo"
       ],
-      "groups": [
-        "hozo_in_party"
-      ],
+      "groups": [],
       "referenced_groups": [],
       "location": "koyagyu_castle",
-      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L25-L35",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed",
+      "movement_status": null,
+      "section": 97
+    },
+    {
+      "id": "b7c1-e06",
+      "chapter": "b7c1",
+      "type": "delegated_reception",
+      "description": "At Koyagyū, Sukekurō says Hyōgo still has a cold; Hyōgo asks Otsū to greet Inshun, but Otsū replies that Hyōgo is preparing a report for Edo. The narrator notes the discrepancy between these explanations.",
+      "characters": ["inshun", "kimura_sukekuro", "otsu", "yagyu_hyogo"],
+      "referenced_characters": [],
+      "groups": ["hozo_in_party"],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L37-L81",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 97
+    },
+    {
+      "id": "b7c1-e07",
+      "chapter": "b7c1",
+      "type": "warning",
+      "description": "Inshun warns Sukekurō that reports place Tōdō men trespassing around Tsukigase and suggests the Yagyū boundary may be pushed farther inward.",
+      "characters": ["inshun", "kimura_sukekuro"],
+      "referenced_characters": ["yagyu_hyogo"],
+      "groups": ["hozo_in_party"],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L87-L108",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 97
+    },
+    {
+      "id": "b7c1-e08",
+      "chapter": "b7c1",
+      "type": "information_transfer",
+      "description": "Sukekurō reports Inshun's warning to Hyōgo, who decides to leave the matter for his uncle to investigate.",
+      "characters": ["kimura_sukekuro", "yagyu_hyogo"],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L109-L110",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
       "section": 97
     },
     {
@@ -5626,22 +5678,6 @@
       "extensions": {
         "legacy_movement_status": "none"
       },
-      "section": 97
-    },
-    {
-      "id": "b7c1-e06",
-      "chapter": "b7c1",
-      "type": "delegated_reception",
-      "description": "At Koyagyū, Hyōgo, still recovering from a cold, asks Otsū to greet Inshun; she apologizes for Hyōgo's absence, explaining that he is preparing a report for Edo.",
-      "characters": ["yagyu_hyogo", "otsu"],
-      "referenced_characters": [],
-      "groups": [],
-      "referenced_groups": [],
-      "location": "koyagyu_castle",
-      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L37-L78",
-      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
-      "certainty": "explicit",
-      "movement_status": null,
       "section": 97
     },
     {

@@ -16,11 +16,11 @@ Le correzioni sono state ricostruite il 1 ottobre dopo un ripristino del workspa
 
 | Categoria | Record |
 |---|---:|
-| characters | 155 |
-| events | 784 |
+| characters | 156 |
+| events | 790 |
 | states | 457 |
-| groups | 39 |
-| locations | 254 |
+| groups | 40 |
+| locations | 262 |
 | relationships | 83 |
 
 Il totale degli eventi include record di riferimenti a livello di capitolo. Non confrontarlo con il totale dei fatti per calcolare una percentuale di completezza.
@@ -52,7 +52,7 @@ Eseguire `node tools/generate-source-review.mjs`; verificare senza scritture con
 | 13 | b2c5 | A Spring Breeze | 10 | 13 | 3 | da collazionare |
 | 14 | b2c6 | The Hōzōin | 13 | 17 | 9 | nessun artefatto noto rilevato |
 | 15 | b2c7 | Hannya Plain | 11 | 10 | 2 | nessun artefatto noto rilevato |
-| 16 | b2c8 | The Koyagyū Fief | 6 | 9 | 2 | nessun artefatto noto rilevato |
+| 16 | b2c8 | The Koyagyū Fief | 6 | 11 | 2 | nessun artefatto noto rilevato |
 | 17 | b2c9 | The Peony | 14 | 17 | 9 | nessun artefatto noto rilevato |
 | 18 | b2c10 | Jōtarō’s Revenge | 12 | 27 | 2 | nessun artefatto noto rilevato |
 | 19 | b2c11 | The Nightingales | 10 | 11 | 6 | nessun artefatto noto rilevato |
@@ -68,13 +68,13 @@ Eseguire `node tools/generate-source-review.mjs`; verificare senza scritture con
 | 29 | b3c10 | The Flying Horse | 10 | 8 | 7 | nessun artefatto noto rilevato |
 | 30 | b3c11 | The Butterfly in Winter | 9 | 5 | 1 | nessun artefatto noto rilevato |
 | 31 | b3c12 | The Announcement | 10 | 6 | 2 | nessun artefatto noto rilevato |
-| 32 | b3c13 | The Great Bridge at Gojō Avenue | 13 | 7 | 3 | nessun artefatto noto rilevato |
+| 32 | b3c13 | The Great Bridge at Gojō Avenue | 13 | 8 | 3 | nessun artefatto noto rilevato |
 | 33 | b4c1 | The Withered Field | 9 | 7 | 3 | nessun artefatto noto rilevato |
 | 34 | b4c2 | A Man of Parts | 6 | 5 | 1 | nessun artefatto noto rilevato |
 | 35 | b4c3 | Too Many Kojirōs | 9 | 8 | 0 | nessun artefatto noto rilevato |
 | 36 | b4c4 | The Younger Brother | 7 | 8 | 2 | nessun artefatto noto rilevato |
 | 37 | b4c5 | A Mother’s Love | 9 | 9 | 1 | nessun artefatto noto rilevato |
-| 38 | b4c6 | The Urbane Craftsman | 8 | 5 | 2 | nessun artefatto noto rilevato |
+| 38 | b4c6 | The Urbane Craftsman | 8 | 6 | 2 | nessun artefatto noto rilevato |
 | 39 | b4c7 | Reverberations in the Snow | 10 | 7 | 6 | nessun artefatto noto rilevato |
 | 40 | b4c8 | The Elegant People | 6 | 5 | 1 | nessun artefatto noto rilevato |
 | 41 | b4c9 | The Broken Lute | 8 | 5 | 3 | nessun artefatto noto rilevato |
@@ -133,7 +133,7 @@ Eseguire `node tools/generate-source-review.mjs`; verificare senza scritture con
 | 94 | b6c15 | The Challenge | 12 | 4 | 1 | nessun artefatto noto rilevato |
 | 95 | b6c16 | The Gateway to Glory | 10 | 7 | 3 | nessun artefatto noto rilevato |
 | 96 | b6c17 | The Sound of Heaven | 10 | 7 | 2 | nessun artefatto noto rilevato |
-| 97 | b7c1 | The Runaway Ox | 9 | 7 | 2 | nessun artefatto noto rilevato |
+| 97 | b7c1 | The Runaway Ox | 9 | 9 | 2 | nessun artefatto noto rilevato |
 | 98 | b7c2 | Hemp Seed | 9 | 7 | 1 | nessun artefatto noto rilevato |
 | 99 | b7c3 | Sweepers and Salesmen | 8 | 5 | 1 | nessun artefatto noto rilevato |
 | 100 | b7c4 | A Pear Blossom | 7 | 5 | 1 | nessun artefatto noto rilevato |
@@ -278,7 +278,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b1c2-audit-s04 | object_transfer | oko_akemi_house | data/source/book1/chapter2-the-comb.txt |
 | b1c2-audit-s05 | sexual_advance | oko_akemi_house | data/source/book1/chapter2-the-comb.txt |
 | b1c2-04 | fight | oko_akemi_house | book1/chapter2 |
-| b1c2-05 | fight | oko_akemi_house | book1/chapter2 |
+| b1c2-05 | fight | oko_akemi_field | book1/chapter2 |
 | b1c2-audit-s08 | violent_death | oko_akemi_house | data/source/book1/chapter2-the-comb.txt |
 | b1c2-audit-s09 | warning | oko_akemi_house | data/source/book1/chapter2-the-comb.txt |
 | b1c2-audit-s10 | relationship_shift | oko_akemi_house | data/source/book1/chapter2-the-comb.txt |
@@ -292,7 +292,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `matahachi`; away; posizione non risolta; leaves the refuge with Oko and Akemi during the night (departed_with_group).
 - Stato: `akemi`; away; posizione non risolta; leaves the refuge with Oko and Matahachi during the night (departed_with_group).
 - Stato: `oko`; away; posizione non risolta; leaves the refuge with Matahachi and Akemi during the night (departed_with_group).
-- Stato: `temma`; dead; posizione oko_akemi_house; is killed by Takezo in a field near the house after fleeing the failed raid (posizione esplicita/invariata).
+- Stato: `temma`; dead; posizione oko_akemi_field; is killed by Takezo in a field near the house after fleeing the failed raid (posizione esplicita/invariata).
 - Relazione introdotta: `musashi` / `temma`; enemy/direct_combat.
 - Relazione introdotta: `akemi` / `temma`; enemy/territorial_extortion_and_father_death_claim.
 - Relazione introdotta: `oko` / `temma`; enemy/territorial_conflict.
@@ -637,7 +637,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 ### Stati e relazioni
 
 - Stato: `musashi`; fled; posizione non risolta; Escapes the Hinagura stockade into the gorge; arrival at Himeji is not established in this chapter. (unknown).
-- Stato: `otsu`; away; posizione non risolta; falls ill at Mikazuki, escapes Osugi and Gonroku, and disappears into a ravine; later recovery is established only in chapter 8 (unknown).
+- Stato: `otsu`; away; posizione non risolta; still feverish, feels miserable at Mikazuki, escapes Osugi and Gonroku, and disappears into the ravine; later recovery is established only in chapter 8 (unknown).
 - Stato: `takuan`; away; posizione non risolta; is reported missing along with Otsu after Takezo's escape; his whereabouts are not given (unknown).
 - Stato: `osugi`; away; posizione non risolta; pursues Otsu with Gonroku after reaching the Mikazuki Teahouse (unknown).
 - Stato: `gonroku`; away; posizione non risolta; pursues Otsu with Osugi after reaching the teahouse (unknown).
@@ -714,7 +714,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `osugi`; searching; posizione non risolta; has spent the previous three years searching for Musashi and Otsu with Gonroku (unknown).
 - Stato: `gonroku`; searching; posizione non risolta; has spent the previous three years searching with Osugi (unknown).
 - Stato: `ogin`; away; posizione non risolta; is reported by Takuan to be living with a relative in the Sayo district (reported_position).
-- Stato: `lord_ikeda`; present; posizione himeji_castle; receives Takezo and participates in his release and renaming (posizione esplicita/invariata).
+- Stato: `lord_ikeda`; present; posizione himeji_castle; receives Takezo and participates in his renaming (posizione esplicita/invariata).
 - Stato: `aoki_tanzaemon`; away; posizione non risolta; is reported by Takuan to have been dismissed from Ikeda's service and to be wandering (unknown).
 - Relazione introdotta: `musashi` / `lord_ikeda`; authority/daimyo_and_subject_under_confinement.
 - Relazione introdotta: `aoki_tanzaemon` / `lord_ikeda`; servant_employer/vassal.
@@ -1133,12 +1133,12 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | ID | Tipo | Scena | Prova |
 |---|---|---|
 | b2c6-e01 | search | abura_hill | book2/chapter6 |
-| b2c6-e02 | direction | — | book2/chapter6 |
-| b2c6-e03 | meeting | abura_hill | book2/chapter6 |
+| b2c6-e02 | direction | — | data/source/book2/chapter6-the-hozoin.txt:L81-L89 |
+| b2c6-e03 | meeting | ozoin | data/source/book2/chapter6-the-hozoin.txt:L89-L105 |
 | b2c6-e04 | arrival | — | book2/chapter6 |
 | b2c6-e05 | observation | hozoin | book2/chapter6 |
-| b2c6-e06 | fight | hozoin | book2/chapter6 |
-| b2c6-e07 | conversation | hozoin | book2/chapter6 |
+| b2c6-e06 | fight | hozoin | data/source/book2/chapter6-the-hozoin.txt:L231-L276 |
+| b2c6-e07 | conversation | hozoin | data/source/book2/chapter6-the-hozoin.txt:L336-L350 |
 | b2c6-audit-s07 | inner_defeat | hozoin | data/source/book2/chapter6-the-hozoin.txt |
 | b2c6-e08 | departure | — | book2/chapter6 |
 | b2c6-e09 | arrival | sarusawa_boardinghouse | book2/chapter6 |
@@ -1213,10 +1213,10 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b2c7-e03 | fight | hannya_plain | book2/chapter7 |
 | b2c7-e04 | encampment | hannya_plain | book2/chapter7 |
 | b2c7-e05 | fight | hannya_plain | book2/chapter7 |
+| b2c7-e09 | reunion | — | data/source/book2/chapter7-hannya-plain.txt:L261-L295 |
 | b2c7-e06 | fight | hannya_plain | book2/chapter7 |
 | b2c7-e07 | arrival | — | book2/chapter7 |
 | b2c7-e08 | conversation | hannya_plain | book2/chapter7 |
-| b2c7-e09 | reunion | — | book2/chapter7 |
 | b2c7-audit-references | chapter_references | — | data/source/book2/chapter7-hannya-plain.txt |
 
 ### Stati e relazioni
@@ -1271,7 +1271,9 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 
 | ID | Tipo | Scena | Prova |
 |---|---|---|
-| b2c8-e01 | arrival | — | book2/chapter8 |
+| b2c8-e01a | visit | kasagidera | data/source/book2/chapter8-the-koyagyu-fief.txt:L45-L48 |
+| b2c8-e01b | visit | joruriji | data/source/book2/chapter8-the-koyagyu-fief.txt:L45-L48 |
+| b2c8-e01 | arrival | yagyu_valley | data/source/book2/chapter8-the-koyagyu-fief.txt:L45-L48 |
 | b2c8-e02 | observation | — | book2/chapter8 |
 | b2c8-audit-s02 | teaching | — | data/source/book2/chapter8-the-koyagyu-fief.txt |
 | b2c8-e03 | relationship | wataya | book2/chapter8 |
@@ -2218,7 +2220,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 
 - Stato: `musashi`; present; posizione kamo_river_gojo; at the Gojō riverbank after restraining Osugi (posizione esplicita/invariata).
 - Stato: `osugi`; present; posizione kamo_river_gojo; tied in a boat to await Matahachi (posizione esplicita/invariata).
-- Stato: `yoshioka_seijuro`; present; posizione yoshioka_school; at the school, hiding from creditors in the back room; approves the announcement of the Rendaiji duel (posizione esplicita/invariata).
+- Stato: `yoshioka_seijuro`; unknown; posizione non risolta; the duel is announced; the chapter does not establish his location after the school scene (unknown).
 
 ## 32. The Great Bridge at Gojō Avenue (b3c13)
 
@@ -2226,7 +2228,7 @@ Fonte: `data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt` — 557
 
 **Roster fisico corrente:** akemi; jotaro; kojiro; musashi; osugi; otsu.
 
-**Riferimenti negli eventi:** aoki_tanzaemon; jotaro; matahachi; oko; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Riferimenti negli eventi:** aoki_tanzaemon; jotaro; matahachi; musashi; oko; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
 
 **Attori funzionali della fonte:** New Year's bridge crowd; passersby and oxcart.
 
@@ -2273,15 +2275,16 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b3c13_e03 | first_encounter | kamo_river_gojo | chapter13-the-great-bridge-at-gojo-avenue.txt:L182-L270 |
 | b3c13_e04 | escape | kamo_river_gojo | chapter13-the-great-bridge-at-gojo-avenue.txt:L271-L438 |
 | b3c13_e05 | manipulation | kamo_river_gojo | chapter13-the-great-bridge-at-gojo-avenue.txt:L439-L557 |
+| b3c13_e06 | reputation_transmission | kamo_river_gojo | chapter13-the-great-bridge-at-gojo-avenue.txt:L547-L557 |
 | b3c13-audit-references | chapter_references | — | data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt |
 | b3c13-fc-01 | movement | karasumaru_house | data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt:L109-L119 |
 
 ### Stati e relazioni
 
 - Stato: `musashi`; departed; posizione non risolta; departed across the river; onward destination not stated (unknown).
-- Stato: `otsu`; travelling; posizione non risolta; with Osugi, intending to go to her Sannen Hill inn and seek Matahachi (unknown).
-- Stato: `osugi`; travelling; posizione non risolta; with Otsū, directing her toward the Sannen Hill inn (unknown).
-- Stato: `jotaro`; departed; posizione non risolta; intending to return to the Karasumaru house (unknown).
+- Stato: `otsu`; present; posizione kamo_river_gojo; with Osugi and Jōtarō at the Gojō bridge, stopping to read the duel notice; intends to seek Matahachi at the Sannen Hill inn (posizione esplicita/invariata).
+- Stato: `osugi`; present; posizione kamo_river_gojo; with Otsū and Jōtarō at the Gojō bridge, stopping to read the duel notice and directing Otsū toward the Sannen Hill inn (posizione esplicita/invariata).
+- Stato: `jotaro`; present; posizione kamo_river_gojo; at the Gojō bridge with Otsū and Osugi, stopping to read the duel notice; intends to return to the Karasumaru house (posizione esplicita/invariata).
 - Stato: `akemi`; travelling; posizione non risolta; sent back with Kojirō; arrival at the inn is not shown (unknown).
 - Stato: `kojiro`; travelling; posizione non risolta; walked off the bridge alone, laughing; destination not stated (unknown).
 - Relazione introdotta: `musashi` / `kojiro`; rival/first_encounter_and_mutual_martial_interest.
@@ -2582,7 +2585,7 @@ Fonte: `data/source/book4/chapter6-the-urbane-craftsman.txt` — 545 righe, 5880
 
 **Roster fisico corrente:** haiya_shoyu; koetsu; musashi; myoshu; otaguro_hyosuke; rinya; sumigiku.
 
-**Riferimenti negli eventi:** karasumaru_mitsuhiro; yoshino_tayu; yoshioka_denshichiro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Riferimenti negli eventi:** karasumaru_mitsuhiro; munisai; yoshino_tayu; yoshioka_denshichiro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
 
 **Attori funzionali della fonte:** Hon'ami servants and craftsmen; Yoshioka spies/messengers; Ōgiya attendants and courtesans.
 
@@ -2620,6 +2623,7 @@ Differenza normalizzata dall'oracolo congelato: solo oracolo []; solo produzione
 
 | ID | Tipo | Scena | Prova |
 |---|---|---|
+| b4c6-e00 | search | rakan_bridge | data/source/book4/chapter6-the-urbane-craftsman.txt:L8-L19 |
 | b4c6-e01 | residence | honami_lane_house | data/source/book4/chapter6-the-urbane-craftsman.txt |
 | b4c6-e02 | challenge_delivery | haiya_shoyu_house | data/source/book4/chapter6-the-urbane-craftsman.txt:L250-L290 |
 | b4c6-e03 | social_visit | ogiya_yanagimachi | data/source/book4/chapter6-the-urbane-craftsman.txt |
@@ -3020,15 +3024,15 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 
 ### Stati e relazioni
 
-- Stato: `osugi`; travelling; posizione non risolta; En route toward Ichijōji with Matahachi. (unknown).
-- Stato: `matahachi`; travelling; posizione non risolta; En route toward Ichijōji with Osugi. (unknown).
+- Stato: `osugi`; present; posizione sannen_hill_inn; At Sannen Hill inn, preparing to set out for Ichijōji with Matahachi. (posizione esplicita/invariata).
+- Stato: `matahachi`; present; posizione sannen_hill_inn; At Sannen Hill inn, preparing to set out for Ichijōji with Osugi. (posizione esplicita/invariata).
 - Stato: `akemi`; fled; posizione non risolta; Fled alone with Osugi's money; destination unknown. (unknown).
 
 ## 46. The Death Trap (b4c14)
 
 Fonte: `data/source/book4/chapter14-the-death-trap.txt` — 233 righe, 2551 parole. SHA-256: `20a4ad17960e475eee945bd42e1f1160c3db339cda9ca6b67cf916609ab6a0ba`.
 
-**Roster fisico corrente:** kojiro; miike_jurozaemon; yoshioka_genjiro; yoshioka_genzaemon.
+**Roster fisico corrente:** kojiro; miike_jurozaemon; ueda_ryohei; yoshioka_genjiro; yoshioka_genzaemon.
 
 **Riferimenti negli eventi:** akemi; musashi; yoshioka_denshichiro; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
 
@@ -3044,7 +3048,7 @@ Fonte: `data/source/book4/chapter14-the-death-trap.txt` — 233 righe, 2551 paro
 
 Decisione sui roster: Genjirō uses the canonical Yoshioka ID. Ueda is not named in this chapter; a generic retainer cannot establish his physical identity.
 
-Differenza normalizzata dall'oracolo congelato: solo oracolo [ueda_ryohei]; solo produzione [].
+Differenza normalizzata dall'oracolo congelato: solo oracolo []; solo produzione [].
 
 ### Interventi
 
@@ -3244,7 +3248,7 @@ Differenza normalizzata dall'oracolo congelato: solo oracolo [ueda_ryohei]; solo
 | ID | Tipo | Scena | Prova |
 |---|---|---|
 | b4c17-e01 | arrival | ichijoji_sagarimatsu | data/source/book4/chapter17-the-spreading-pine.txt |
-| b4c17-e02 | approach | ichijoji_sagarimatsu | data/source/book4/chapter17-the-spreading-pine.txt |
+| b4c17-e02 | approach | hachidai_shrine | data/source/book4/chapter17-the-spreading-pine.txt |
 | b4c17-audit-s03 | spiritual_crisis | hachidai_shrine | data/source/book4/chapter17-the-spreading-pine.txt |
 | b4c17-e03 | counter_ambush | ichijoji_sagarimatsu | data/source/book4/chapter17-the-spreading-pine.txt |
 | b4c17-e04 | killing | ichijoji_sagarimatsu | data/source/book4/chapter17-the-spreading-pine.txt:L205-L233 |
@@ -4084,16 +4088,16 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b5c11-e01 | time_jump | bakurocho_yajibei | data/source/book5/chapter11-slaughter-by-the-riverside.txt:L4-L14 |
 | b5c11-e02 | pilgrimage | sensoji | book5/chapter11 |
 | b5c11-e03 | fight | sensoji_riverside | book5/chapter11 |
-| b5c11-e04 | meeting_and_return | sumida_river | book5/chapter11 |
+| b5c11-e04 | meeting_and_invitation | sensoji_riverside | data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313 |
 | b5c11-audit-references | chapter_references | — | data/source/book5/chapter11-slaughter-by-the-riverside.txt |
 
 ### Stati e relazioni
 
-- Stato: `kojiro`; travelling; posizione sumida_river; Returning downstream by boat with Yajibei's party. (posizione esplicita/invariata).
-- Stato: `osugi`; travelling; posizione sumida_river; Returning from Sensōji by boat with Yajibei's party. (posizione esplicita/invariata).
-- Stato: `yajibei`; travelling; posizione sumida_river; Returning by boat after the Sensōji pilgrimage. (posizione esplicita/invariata).
-- Stato: `juro`; travelling; posizione sumida_river; On Yajibei's return boat. (posizione esplicita/invariata).
-- Stato: `koroku`; travelling; posizione sumida_river; On Yajibei's return boat. (posizione esplicita/invariata).
+- Stato: `kojiro`; present; posizione sensoji_riverside; At the Sensōji riverside after Yajibei invites him to join their return boat; the chapter ends before his departure is shown. (posizione esplicita/invariata).
+- Stato: `osugi`; present; posizione sensoji_riverside; At the Sensōji riverside after meeting Kojirō; Yajibei invites him to join their return boat. (posizione esplicita/invariata).
+- Stato: `yajibei`; present; posizione sensoji_riverside; At the Sensōji riverside after inviting Kojirō to join the return boat; the chapter ends before the boat's departure is shown. (posizione esplicita/invariata).
+- Stato: `juro`; present; posizione sensoji_riverside; At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat. (posizione esplicita/invariata).
+- Stato: `koroku`; present; posizione sensoji_riverside; At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat. (posizione esplicita/invariata).
 
 ## 65. Shavings (b5c12)
 
@@ -4135,11 +4139,11 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 
 | ID | Tipo | Scena | Prova |
 |---|---|---|
+| b5c12-e05 | disembarkation | kyobashi_moat | data/source/book5/chapter12-shavings.txt:L61-L70 |
 | b5c12-e01 | employment | bakurocho_yajibei | book5/chapter12 |
 | b5c12-e02 | fatal_training | bakurocho_yajibei | book5/chapter12 |
 | b5c12-e03 | visit | sumiya_yoshiwara | book5/chapter12 |
 | b5c12-e04 | avoidance_escape | sumiya_yoshiwara | data/source/book5/chapter12-shavings.txt:L250-L283 |
-| b5c12-e05 | return_route | sumida_river | data/source/book5/chapter12-shavings.txt:L64-L70 |
 | b5c12-audit-references | chapter_references | — | data/source/book5/chapter12-shavings.txt |
 
 ### Stati e relazioni
@@ -4149,7 +4153,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `juro`; present; posizione sumiya_yoshiwara; Leaving the Sumiya with Kojirō and Koroku after the fruitless search for Hanagiri. (posizione esplicita/invariata).
 - Stato: `koroku`; present; posizione sumiya_yoshiwara; Leaving the Sumiya with Kojirō and Jūrō after the fruitless search for Hanagiri. (posizione esplicita/invariata).
 - Stato: `yajibei`; present; posizione bakurocho_yajibei; Staying home in Bakurōchō for the wake of the trainee Kojirō killed. (posizione esplicita/invariata).
-- Stato: `osugi`; present; posizione bakurocho_yajibei; Back at Yajibei's house in Bakurōchō after the boat trip home with Kojirō. (posizione esplicita/invariata).
+- Stato: `osugi`; away; posizione non risolta; Remains on the boat in the Kyōbashi moat after Kojirō disembarks; her later landing and location are not shown. (unknown).
 
 ## 66. The Owl (b5c13)
 
@@ -4586,15 +4590,15 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b5c20-e01 | misdirected_delivery | kobikicho | book5/chapter20 |
 | b5c20-e02 | urban_route | edo_castle_hibiya | book5/chapter20 |
 | b5c20-e03 | mistaken_identity | azabu_hill | book5/chapter20 |
+| b5c20-e05 | descent | azabu_hill | data/source/book5/chapter20-the-fox.txt:L263-L285 |
 | b5c20-e04 | reported_rescue | higakubo_yagyu | data/source/book5/chapter20-the-fox.txt:L297-L327 |
-| b5c20-e05 | descent | higakubo_yagyu | data/source/book5/chapter20-the-fox.txt:L268-L285 |
 | b5c20-audit-references | chapter_references | — | data/source/book5/chapter20-the-fox.txt |
 
 ### Stati e relazioni
 
 - Stato: `iori`; hiding; posizione azabu_hill; Disoriented near Azabu after mistaking Otsū and Hyōgo for fox transformations. (posizione esplicita/invariata).
-- Stato: `otsu`; present; posizione higakubo_yagyu; Walking down into the Higakubo valley with Hyōgo toward the Yagyū residence; Iori does not recognize her. (posizione esplicita/invariata).
-- Stato: `yagyu_hyogo`; present; posizione higakubo_yagyu; Leading Otsū's horse down into the Higakubo valley toward the Yagyū residence. (posizione esplicita/invariata).
+- Stato: `otsu`; present; posizione higakubo_valley; Walking down into the Higakubo valley with Hyōgo; the chapter does not establish that they reach the Yagyū residence. Iori does not recognize her. (posizione esplicita/invariata).
+- Stato: `yagyu_hyogo`; present; posizione higakubo_valley; Leading Otsū's horse down into the Higakubo valley; the chapter does not establish that they reach the Yagyū residence. (posizione esplicita/invariata).
 - Relazione introdotta: `kimura_sukekuro` / `otsu`; friend_ally/rescuer_and_protector_reported_retrospectively.
 - Relazione introdotta: `munenori` / `yagyu_hyogo`; family/uncle_and_nephew.
 - Relazione introdotta: `yagyu_hyogo` / `otsu`; friend_ally/protective_friendship_unreciprocated_affection_not_inferred.
@@ -5963,12 +5967,14 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 
 | ID | Tipo | Scena | Prova |
 |---|---|---|
-| b7c1-e01 | visit_and_warning | koyagyu_castle | data/source/book7/chapter1-the-runaway-ox.txt |
+| b7c1-e01 | visit | koyagyu_castle | data/source/book7/chapter1-the-runaway-ox.txt:L25-L35 |
+| b7c1-e06 | delegated_reception | koyagyu_castle | data/source/book7/chapter1-the-runaway-ox.txt:L37-L81 |
+| b7c1-e07 | warning | koyagyu_castle | data/source/book7/chapter1-the-runaway-ox.txt:L87-L108 |
+| b7c1-e08 | information_transfer | koyagyu_castle | data/source/book7/chapter1-the-runaway-ox.txt:L109-L110 |
 | b7c1-e02 | unauthorized_excursion | tsukigase_route | data/source/book7/chapter1-the-runaway-ox.txt |
 | b7c1-e03 | assault_and_escape | tsukigase_route | data/source/book7/chapter1-the-runaway-ox.txt |
 | b7c1-e04 | rescue | hannya_plain | data/source/book7/chapter1-the-runaway-ox.txt |
 | b7c1-e05 | identity_disclosure | hannya_plain | data/source/book7/chapter1-the-runaway-ox.txt |
-| b7c1-e06 | delegated_reception | koyagyu_castle | data/source/book7/chapter1-the-runaway-ox.txt:L37-L78 |
 | b7c1-audit-references | chapter_references | — | data/source/book7/chapter1-the-runaway-ox.txt |
 
 ### Stati e relazioni

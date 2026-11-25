@@ -60,7 +60,7 @@ test("the repository overlays localize every reader-facing collection", () => {
   const en = localizeData(canonical, read("data/i18n/en.json"), "en");
   assert.equal(it.chapters.sections[0].book_title, "Terra");
   assert.equal(en.chapters.sections[0].book_title, "Earth");
-  assert.equal(it.events.events.find(event => event.id === "b1c2-05").description, "Takezo insegue Temma e lo uccide con la spada di legno.");
+  assert.equal(it.events.events.find(event => event.id === "b1c2-05").description, "Takezo insegue Temma dalla casa fino a un campo vicino e lo uccide con la spada di legno.");
   assert.equal(en.characterWiki.characters.osugi.role, "Matahachi's mother");
   assert.equal(it.characterWiki.characters.osugi.role, "Madre di Matahachi");
   assert.equal(it.identities.identities.find(identity => identity.character_id === "kojiro" && identity.valid_from_section === 22).display_name, "Bel giovane");

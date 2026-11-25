@@ -134,6 +134,48 @@ test("semantic CLI rejects cross-ID aliases and overlapping reveal windows", t =
   assert.match(result.output, /Identity ranges overlap for hero/);
 });
 
+test("semantic CLI validates event-level identity reveals", t => {
+  const root = makeDataFixture();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const eventsPath = path.join(root, "data/events.json");
+  const events = JSON.parse(fs.readFileSync(eventsPath));
+  events.events[0].reveals_identity = "hero";
+  writeJson(root, "data/events.json", events);
+  const scalar = run(root);
+  assert.equal(scalar.status, 1);
+  assert.match(scalar.output, /reveals_identity must be an array/);
+
+  events.events[0].reveals_identity = ["missing"];
+  writeJson(root, "data/events.json", events);
+  const unresolved = run(root);
+  assert.equal(unresolved.status, 1);
+  assert.match(unresolved.output, /identity reveal references unknown character missing/);
+  assert.match(unresolved.output, /reveals identity missing without an event character reference/);
+
+  events.events[0].reveals_identity = ["hero"];
+  writeJson(root, "data/events.json", events);
+  writeJson(root, "data/identities.json", { identities: [{
+    character_id: "hero", display_name: "Unknown person", valid_from_chapter: "b1c1",
+    valid_until_chapter: "b1c1", valid_from_section: 1, valid_until_section: 1,
+    reader_knows_canonical_identity: false, status: "unidentified_person", revealed_by_event_id: events.events[0].id
+  }] });
+  const validReveal = run(root);
+  assert.equal(validReveal.status, 0, validReveal.output);
+
+  events.events[0].reveals_identity = [];
+  writeJson(root, "data/events.json", events);
+  const mismatch = run(root);
+  assert.equal(mismatch.status, 1);
+  assert.match(mismatch.output, /reveal event b1c1-01 does not reveal this character/);
+
+  events.events[0].reveals_identity = ["hero"];
+  events.events[0].section = 2;
+  writeJson(root, "data/events.json", events);
+  const wrongSection = run(root);
+  assert.equal(wrongSection.status, 1);
+  assert.match(wrongSection.output, /reveal event must be in its valid_from_section/);
+});
+
 test("semantic CLI rejects unknown groups and false physical end positions", t => {
   const root = makeDataFixture();
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
@@ -162,6 +204,30 @@ test("semantic CLI rejects unknown groups and false physical end positions", t =
   assert.match(result.output, /claims confirmed_route without any route evidence/);
   assert.match(result.output, /Non-present state hero@1 cannot retain a physical location/);
   assert.match(result.output, /non-physical location_status departed_with_group cannot retain a physical location/);
+});
+
+test("semantic CLI rejects overlapping event character roles and group roles", t => {
+  const root = makeDataFixture();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const eventsPath = path.join(root, "data/events.json");
+  const events = JSON.parse(fs.readFileSync(eventsPath));
+  events.events[0].witnesses = ["hero"];
+  events.events[0].referenced_characters = ["hero"];
+  writeJson(root, "data/events.json", events);
+
+  const groupsPath = path.join(root, "data/groups.json");
+  writeJson(root, "data/groups.json", { groups: [{ id: "group", name: "Group" }] });
+  events.events[0].groups = ["group"];
+  events.events[0].referenced_groups = ["group"];
+  writeJson(root, "data/events.json", events);
+
+  const result = run(root);
+  assert.equal(result.status, 1);
+  assert.match(result.output, /Event b1c1-01 character hero is both participant and witness/);
+  assert.match(result.output, /Event b1c1-01 character hero is both participant and referenced-only/);
+  assert.match(result.output, /Event b1c1-01 character hero is both witness and referenced-only/);
+  assert.match(result.output, /Event b1c1-01 group group is both participant and referenced-only/);
 });
 
 test("semantic CLI rejects retired micro-wiki thresholds and incomplete relationship labels", t => {

@@ -21,11 +21,11 @@
     "Duplicate and OCR-like source artifacts are preserved pending original collation."
   ],
   "production_counts": {
-    "characters": 155,
-    "events": 784,
+    "characters": 156,
+    "events": 790,
     "states": 457,
-    "groups": 39,
-    "locations": 254,
+    "groups": 40,
+    "locations": 262,
     "relationships": 83
   },
   "correction_actions": 264,
@@ -703,7 +703,7 @@
             "chapter": "b1c2",
             "section": 2,
             "character": "temma",
-            "location": "oko_akemi_house",
+            "location": "oko_akemi_field",
             "status": "dead",
             "activity": "is killed by Takezo in a field near the house after fleeing the failed raid",
             "certainty": "explicit"
@@ -2438,9 +2438,9 @@
             "section": 7,
             "character": "otsu",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "away",
-            "activity": "falls ill at Mikazuki, escapes Osugi and Gonroku, and disappears into a ravine; later recovery is established only in chapter 8",
+            "activity": "still feverish, feels miserable at Mikazuki, escapes Osugi and Gonroku, and disappears into the ravine; later recovery is established only in chapter 8",
             "certainty": "explicit",
             "location_status": "unknown"
           },
@@ -2460,7 +2460,7 @@
             "section": 7,
             "character": "osugi",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "away",
             "activity": "pursues Otsu with Gonroku after reaching the Mikazuki Teahouse",
             "certainty": "explicit",
@@ -2471,7 +2471,7 @@
             "section": 7,
             "character": "gonroku",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "away",
             "activity": "pursues Otsu with Osugi after reaching the teahouse",
             "certainty": "explicit",
@@ -2855,7 +2855,7 @@
             "section": 8,
             "character": "takuan",
             "location": null,
-            "last_known_location": "himeji_castle",
+            "last_known_location": "himeji_area",
             "status": "departed",
             "activity": "releases Musashi, helps establish his new identity and then departs",
             "certainty": "explicit",
@@ -2866,7 +2866,7 @@
             "section": 8,
             "character": "osugi",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "searching",
             "activity": "has spent the previous three years searching for Musashi and Otsu with Gonroku",
             "certainty": "explicit",
@@ -2877,7 +2877,7 @@
             "section": 8,
             "character": "gonroku",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "searching",
             "activity": "has spent the previous three years searching with Osugi",
             "certainty": "explicit",
@@ -2900,7 +2900,7 @@
             "character": "lord_ikeda",
             "location": "himeji_castle",
             "status": "present",
-            "activity": "receives Takezo and participates in his release and renaming",
+            "activity": "receives Takezo and participates in his renaming",
             "certainty": "explicit"
           },
           {
@@ -5477,10 +5477,10 @@
           "b2c7-e03",
           "b2c7-e04",
           "b2c7-e05",
+          "b2c7-e09",
           "b2c7-e06",
           "b2c7-e07",
           "b2c7-e08",
-          "b2c7-e09",
           "b2c7-audit-references"
         ],
         "states": [
@@ -5779,6 +5779,8 @@
           "yoshioka_kempo"
         ],
         "event_ids": [
+          "b2c8-e01a",
+          "b2c8-e01b",
           "b2c8-e01",
           "b2c8-e02",
           "b2c8-audit-s02",
@@ -10050,12 +10052,14 @@
           {
             "chapter": "b3c12",
             "character": "yoshioka_seijuro",
-            "location": "yoshioka_school",
-            "source_ref": "chapter12-the-announcement.txt:L4-L157",
-            "certainty": "explicit",
+            "location": null,
+            "last_known_location": "yoshioka_school",
+            "location_status": "unknown",
+            "source_ref": "chapter12-the-announcement.txt:L145-L165",
+            "certainty": "strong_inference",
             "section": 31,
-            "status": "present",
-            "activity": "at the school, hiding from creditors in the back room; approves the announcement of the Rendaiji duel",
+            "status": "unknown",
+            "activity": "the duel is announced; the chapter does not establish his location after the school scene",
             "source_file": "data/source/book3/chapter12-the-announcement.txt",
             "scope": "chapter_end",
             "staging_id": "b3c12-state-yoshioka_seijuro"
@@ -10274,6 +10278,7 @@
           "aoki_tanzaemon",
           "jotaro",
           "matahachi",
+          "musashi",
           "oko",
           "yoshioka_seijuro"
         ],
@@ -10283,6 +10288,7 @@
           "b3c13_e03",
           "b3c13_e04",
           "b3c13_e05",
+          "b3c13_e06",
           "b3c13-audit-references",
           "b3c13-fc-01"
         ],
@@ -10306,15 +10312,13 @@
           {
             "chapter": "b3c13",
             "character": "otsu",
-            "location": null,
+            "location": "kamo_river_gojo",
             "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
             "certainty": "explicit",
             "section": 32,
-            "status": "travelling",
-            "activity": "with Osugi, intending to go to her Sannen Hill inn and seek Matahachi",
-            "last_known_location": "kamo_river_gojo",
+            "status": "present",
+            "activity": "with Osugi and Jōtarō at the Gojō bridge, stopping to read the duel notice; intends to seek Matahachi at the Sannen Hill inn",
             "intended_destination": "sannen_hill_inn",
-            "location_status": "unknown",
             "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
             "scope": "chapter_end",
             "staging_id": "b3c13-state-otsu"
@@ -10322,15 +10326,13 @@
           {
             "chapter": "b3c13",
             "character": "osugi",
-            "location": null,
+            "location": "kamo_river_gojo",
             "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
             "certainty": "explicit",
             "section": 32,
-            "status": "travelling",
-            "activity": "with Otsū, directing her toward the Sannen Hill inn",
-            "last_known_location": "kamo_river_gojo",
+            "status": "present",
+            "activity": "with Otsū and Jōtarō at the Gojō bridge, stopping to read the duel notice and directing Otsū toward the Sannen Hill inn",
             "intended_destination": "sannen_hill_inn",
-            "location_status": "unknown",
             "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
             "scope": "chapter_end",
             "staging_id": "b3c13-state-osugi"
@@ -10338,15 +10340,13 @@
           {
             "chapter": "b3c13",
             "character": "jotaro",
-            "location": null,
+            "location": "kamo_river_gojo",
             "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L520-L557",
             "certainty": "explicit",
             "section": 32,
-            "status": "departed",
-            "activity": "intending to return to the Karasumaru house",
-            "last_known_location": "kamo_river_gojo",
+            "status": "present",
+            "activity": "at the Gojō bridge with Otsū and Osugi, stopping to read the duel notice; intends to return to the Karasumaru house",
             "intended_destination": "karasumaru_house",
-            "location_status": "unknown",
             "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
             "scope": "chapter_end",
             "staging_id": "b3c13-state-jotaro"
@@ -11774,10 +11774,12 @@
         ],
         "referenced_characters": [
           "karasumaru_mitsuhiro",
+          "munisai",
           "yoshino_tayu",
           "yoshioka_denshichiro"
         ],
         "event_ids": [
+          "b4c6-e00",
           "b4c6-e01",
           "b4c6-e02",
           "b4c6-e03",
@@ -13377,11 +13379,11 @@
           {
             "chapter": "b4c13",
             "character": "osugi",
-            "location": null,
-            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+            "location": "sannen_hill_inn",
+            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt:L211-L232",
             "section": 45,
-            "status": "travelling",
-            "activity": "En route toward Ichijōji with Matahachi.",
+            "status": "present",
+            "activity": "At Sannen Hill inn, preparing to set out for Ichijōji with Matahachi.",
             "certainty": "explicit",
             "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
             "scope": "chapter_end",
@@ -13389,19 +13391,16 @@
             "extensions": {
               "legacy_certainty": "unspecified"
             },
-            "last_known_location": "sannen_hill_inn",
-            "departure_from": "sannen_hill_inn",
-            "intended_destination": "ichijoji_sagarimatsu",
-            "location_status": "unknown"
+            "intended_destination": "ichijoji_sagarimatsu"
           },
           {
             "chapter": "b4c13",
             "character": "matahachi",
-            "location": null,
-            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+            "location": "sannen_hill_inn",
+            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt:L211-L232",
             "section": 45,
-            "status": "travelling",
-            "activity": "En route toward Ichijōji with Osugi.",
+            "status": "present",
+            "activity": "At Sannen Hill inn, preparing to set out for Ichijōji with Osugi.",
             "certainty": "explicit",
             "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
             "scope": "chapter_end",
@@ -13409,10 +13408,7 @@
             "extensions": {
               "legacy_certainty": "unspecified"
             },
-            "last_known_location": "sannen_hill_inn",
-            "departure_from": "sannen_hill_inn",
-            "intended_destination": "ichijoji_sagarimatsu",
-            "location_status": "unknown"
+            "intended_destination": "ichijoji_sagarimatsu"
           },
           {
             "chapter": "b4c13",
@@ -13576,6 +13572,7 @@
         "physical_characters": [
           "kojiro",
           "miike_jurozaemon",
+          "ueda_ryohei",
           "yoshioka_genjiro",
           "yoshioka_genzaemon"
         ],
@@ -13629,9 +13626,7 @@
         "relationships_introduced": []
       },
       "normalized_physical_difference": {
-        "oracle_only": [
-          "ueda_ryohei"
-        ],
+        "oracle_only": [],
         "production_only": []
       },
       "adjudication": "Genjirō uses the canonical Yoshioka ID. Ueda is not named in this chapter; a generic retainer cannot establish his physical identity.",
@@ -17645,11 +17640,11 @@
           {
             "chapter": "b5c11",
             "character": "kojiro",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "Returning downstream by boat with Yajibei's party.",
+            "status": "present",
+            "activity": "At the Sensōji riverside after Yajibei invites him to join their return boat; the chapter ends before his departure is shown.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17658,11 +17653,11 @@
           {
             "chapter": "b5c11",
             "character": "osugi",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "Returning from Sensōji by boat with Yajibei's party.",
+            "status": "present",
+            "activity": "At the Sensōji riverside after meeting Kojirō; Yajibei invites him to join their return boat.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17671,11 +17666,11 @@
           {
             "chapter": "b5c11",
             "character": "yajibei",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "Returning by boat after the Sensōji pilgrimage.",
+            "status": "present",
+            "activity": "At the Sensōji riverside after inviting Kojirō to join the return boat; the chapter ends before the boat's departure is shown.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17684,11 +17679,11 @@
           {
             "chapter": "b5c11",
             "character": "juro",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "On Yajibei's return boat.",
+            "status": "present",
+            "activity": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17697,11 +17692,11 @@
           {
             "chapter": "b5c11",
             "character": "koroku",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "On Yajibei's return boat.",
+            "status": "present",
+            "activity": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17856,11 +17851,11 @@
           "obata_kagenori"
         ],
         "event_ids": [
+          "b5c12-e05",
           "b5c12-e01",
           "b5c12-e02",
           "b5c12-e03",
           "b5c12-e04",
-          "b5c12-e05",
           "b5c12-audit-references"
         ],
         "states": [
@@ -17931,14 +17926,17 @@
           {
             "chapter": "b5c12",
             "character": "osugi",
-            "location": "bakurocho_yajibei",
-            "source_ref": "data/source/book5/chapter12-shavings.txt:L4-L70",
+            "location": null,
+            "last_known_location": "kyobashi_moat",
+            "source_ref": "data/source/book5/chapter12-shavings.txt:L61-L70",
             "section": 65,
-            "status": "present",
-            "activity": "Back at Yajibei's house in Bakurōchō after the boat trip home with Kojirō.",
-            "certainty": "strong_inference",
+            "status": "away",
+            "activity": "Remains on the boat in the Kyōbashi moat after Kojirō disembarks; her later landing and location are not shown.",
+            "certainty": "explicit",
             "source_file": "data/source/book5/chapter12-shavings.txt",
-            "scope": "chapter_end"
+            "scope": "chapter_end",
+            "location_status": "unknown",
+            "staging_id": "b5c12-state-osugi"
           }
         ],
         "relationships_introduced": []
@@ -19596,8 +19594,8 @@
           "b5c20-e01",
           "b5c20-e02",
           "b5c20-e03",
-          "b5c20-e04",
           "b5c20-e05",
+          "b5c20-e04",
           "b5c20-audit-references"
         ],
         "states": [
@@ -19617,11 +19615,11 @@
           {
             "chapter": "b5c20",
             "character": "otsu",
-            "location": "higakubo_yagyu",
+            "location": "higakubo_valley",
             "source_ref": "book5/chapter20",
             "section": 73,
             "status": "present",
-            "activity": "Walking down into the Higakubo valley with Hyōgo toward the Yagyū residence; Iori does not recognize her.",
+            "activity": "Walking down into the Higakubo valley with Hyōgo; the chapter does not establish that they reach the Yagyū residence. Iori does not recognize her.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter20-the-fox.txt",
             "scope": "chapter_end",
@@ -19630,11 +19628,11 @@
           {
             "chapter": "b5c20",
             "character": "yagyu_hyogo",
-            "location": "higakubo_yagyu",
+            "location": "higakubo_valley",
             "source_ref": "book5/chapter20",
             "section": 73,
             "status": "present",
-            "activity": "Leading Otsū's horse down into the Higakubo valley toward the Yagyū residence.",
+            "activity": "Leading Otsū's horse down into the Higakubo valley; the chapter does not establish that they reach the Yagyū residence.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter20-the-fox.txt",
             "scope": "chapter_end",
@@ -25457,11 +25455,13 @@
         ],
         "event_ids": [
           "b7c1-e01",
+          "b7c1-e06",
+          "b7c1-e07",
+          "b7c1-e08",
           "b7c1-e02",
           "b7c1-e03",
           "b7c1-e04",
           "b7c1-e05",
-          "b7c1-e06",
           "b7c1-audit-references"
         ],
         "states": [

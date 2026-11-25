@@ -32,12 +32,20 @@ function projectArchive(data, section) {
   const rawCharacters = getVisibleCharacters(data.characters.characters, section, evidence);
   const latest = new Map(getReaderSnapshot({ states: data.states.character_states }, section).latestStates.map(state => [state.character, state]));
   const splitIdentities = new Map();
-  const projectCharacter = (character, ceiling, floor = 1, id = character.id) => {
+  const eventIndexById = new Map(data.events.events.map((event, index) => [event.id, index]));
+  const revealByCharacter = new Map();
+  for (const event of data.events.events) {
+    for (const characterId of event.reveals_identity ?? []) {
+      if (!revealByCharacter.has(characterId)) revealByCharacter.set(characterId, event);
+    }
+  }
+  const eventIdentitySplits = new Map();
+  const projectCharacter = (character, ceiling, floor = 1, id = character.id, overrides = {}) => {
     const entry = wiki[character.id];
     const activeIdentity = identities.some(identity => identity.character_id === character.id && identity.valid_from_section <= ceiling && (identity.valid_until_section === null || identity.valid_until_section >= ceiling));
-    const name = activeIdentity ? getDisplayCharacterName(character, ceiling, identities)
-      : entry ? getProgressiveDisplayName(entry, ceiling) : getDisplayCharacterName(character, ceiling, identities);
-    const names = [...new Set([name,
+    const name = overrides.name ?? (activeIdentity ? getDisplayCharacterName(character, ceiling, identities)
+      : entry ? getProgressiveDisplayName(entry, ceiling) : getDisplayCharacterName(character, ceiling, identities));
+    const names = overrides.names ?? [...new Set([name,
       ...identities.filter(identity => identity.character_id === character.id && identity.valid_from_section >= floor && identity.valid_from_section <= ceiling).map(identity => identity.display_name),
       ...Object.entries(entry?.display_name_by_section ?? {}).filter(([at]) => Number(at) >= floor && Number(at) <= ceiling).map(([, value]) => value)
     ])];
@@ -46,10 +54,10 @@ function projectArchive(data, section) {
     const updates = Object.fromEntries(Object.entries(entry?.current_by_section ?? {}).filter(([at]) => Number(at) >= floor && Number(at) <= ceiling));
     return {
       id, sourceId: character.id, name, names, main: character.importance === "main", historicalIdentity: id !== character.id,
-      summary: getProgressiveValue(updates, ceiling) ?? t("archive.characterSummary", {}, language),
+      summary: overrides.summary ?? getProgressiveValue(updates, ceiling) ?? t("archive.characterSummary", {}, language),
       first: Math.max(floor, getCharacterIntroductionSection(character, evidence)),
       appearances: (character.present_in ?? []).filter(at => at >= floor && at <= ceiling),
-      state: state && state.section >= floor ? state : null
+      state: overrides.hideState ? null : state && state.section >= floor ? state : null
     };
   };
   const characters = rawCharacters.flatMap(character => {
@@ -63,11 +71,36 @@ function projectArchive(data, section) {
       splitIdentities.set(character.id, { before, boundary: identity.valid_from_section });
       return [projectCharacter(character, identity.valid_from_section - 1, 1, before), projectCharacter(character, section, identity.valid_from_section)];
     }
+    const revealEvent = revealByCharacter.get(character.id);
+    if (identity?.reader_knows_canonical_identity === false && revealEvent
+      && revealEvent.section === identity.valid_from_section && revealEvent.section <= section) {
+      const before = `${character.id}-before-${revealEvent.id}`;
+      const revealIndex = eventIndexById.get(revealEvent.id);
+      eventIdentitySplits.set(character.id, { before, revealIndex });
+      const concealedIdentity = identities.filter(item => item.character_id === character.id
+        && item.reader_knows_canonical_identity === false
+        && item.valid_from_section <= revealEvent.section
+        && (item.valid_until_section === null || item.valid_until_section >= revealEvent.section))
+        .sort((a, b) => b.valid_from_section - a.valid_from_section)[0];
+      const unnamed = concealedIdentity?.display_name ?? getDisplayCharacterName(character, revealEvent.section, identities);
+      return [
+        projectCharacter(character, revealEvent.section, 1, before, {
+          name: unnamed,
+          names: [unnamed],
+          summary: t("archive.characterSummary", {}, language),
+          hideState: true
+        }),
+        projectCharacter(character, section, revealEvent.section, character.id, { name: character.name })
+      ];
+    }
     return [projectCharacter(character, section)];
   });
-  const identityForFact = (id, at) => {
+  const identityForFact = (id, at, eventId = null) => {
     const split = splitIdentities.get(id);
-    return split && at < split.boundary ? split.before : id;
+    if (split && at < split.boundary) return split.before;
+    const eventSplit = eventIdentitySplits.get(id);
+    const eventIndex = eventIndexById.get(eventId);
+    return eventSplit && Number.isInteger(eventIndex) && eventIndex < eventSplit.revealIndex ? eventSplit.before : id;
   };
   const characterIds = new Set(characters.map(character => character.id));
   const places = data.locations.locations.filter(place => Number.isInteger(place.introduced_section) && place.introduced_section <= section)
@@ -76,7 +109,7 @@ function projectArchive(data, section) {
   const placeIds = new Set(places.map(place => place.id));
   const projectedEvents = events.map(event => ({
     id: event.id, section: event.section, description: event.description ?? t("archive.event", {}, language),
-    characters: eventCharacterIds(event).map(id => identityForFact(id, event.section)).filter(id => characterIds.has(id)),
+    characters: eventCharacterIds(event).map(id => identityForFact(id, event.section, event.id)).filter(id => characterIds.has(id)),
     places: eventPlaceIds(event).filter(id => placeIds.has(id)),
     source: event.source_file ?? event.source_ref ?? null, certainty: event.certainty,
     // The corpus references are deliberately metadata, not exported chapter text.

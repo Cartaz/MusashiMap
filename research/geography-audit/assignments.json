@@ -351,6 +351,24 @@
         "tatsuno-city"
       ],
       "scope": "modern_city_area"
+    },
+    {
+      "location_ids": [
+        "kasagidera"
+      ],
+      "source_ids": [
+        "kasagidera-official"
+      ],
+      "scope": "modern_temple_site_representative_map_anchor"
+    },
+    {
+      "location_ids": [
+        "joruriji"
+      ],
+      "source_ids": [
+        "joruriji-japan-heritage"
+      ],
+      "scope": "modern_temple_site_not_narrative_route"
     }
   ]
 }

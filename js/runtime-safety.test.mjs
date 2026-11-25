@@ -341,13 +341,14 @@ test("reader snapshot computes latest selected states and current events once", 
     events: [
       { id: "visible", section: 3, characters: ["a"] },
       { id: "other", section: 3, characters: ["b"] },
+      { id: "witnessed", section: 3, characters: ["b"], witnesses: ["a"] },
       { id: "past", section: 2, characters: ["a"] }
     ]
   }, 3, ["a"]);
 
   assert.equal(snapshot.latestStates.length, 2);
   assert.equal(snapshot.selectedStates[0].activity, "new");
-  assert.deepEqual(snapshot.sectionEvents.map(event => event.id), ["visible"]);
+  assert.deepEqual(snapshot.sectionEvents.map(event => event.id), ["visible", "witnessed"]);
 });
 
 test("character position semantics are shared by diary and map", () => {

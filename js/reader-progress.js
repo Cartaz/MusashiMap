@@ -100,6 +100,7 @@ export function getDisplayCharacterName(character, section, identities = []) {
       && entry.valid_from_section <= currentSection
       && (entry.valid_until_section === null || asInteger(entry.valid_until_section) >= currentSection))
     .sort((a, b) => b.valid_from_section - a.valid_from_section)[0];
+  if (identity?.revealed_by_event_id && currentSection >= identity.valid_from_section) return character?.name ?? t("character.unknown");
   if (identity?.status === "impersonated_name" && identity.reader_knows_canonical_identity && identity.display_name !== character?.name) {
     return t("character.as", { name: character?.name ?? t("character.unknown"), alias: identity.display_name });
   }
@@ -150,7 +151,7 @@ function getEvidenceIndex(states, events) {
     const index = new Map();
     for (const state of stateKey) recordEarliest(index, state.character, state.section);
     for (const event of eventKey) {
-      for (const id of [...(event.characters ?? []), ...(event.referenced_characters ?? [])]) {
+      for (const id of [...(event.characters ?? []), ...(event.referenced_characters ?? []), ...(event.witnesses ?? [])]) {
         recordEarliest(index, id, event.section);
       }
     }
@@ -193,7 +194,7 @@ export function getReaderSnapshot({ states = [], events = [] }, currentSection, 
     latestStates,
     selectedStates: latestStates.filter(state => selected.has(state.character)),
     sectionEvents: (events ?? []).filter(event =>
-      event.section === section && (event.characters ?? []).some(id => selected.has(id))
+      event.section === section && [...(event.characters ?? []), ...(event.witnesses ?? [])].some(id => selected.has(id))
     )
   };
 }

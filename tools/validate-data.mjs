@@ -282,8 +282,27 @@ export function validateRepository(root = process.cwd()) {
     if (!section) errors.push(`Event ${event.id} uses unknown section ${event.section}.`);
     else if (section.chapter_id !== event.chapter) errors.push(`Event ${event.id} chapter ${event.chapter} disagrees with section ${event.section}.`);
     if (!Array.isArray(event.characters)) errors.push(`Event ${event.id} characters must be an array.`);
-    for (const field of ["referenced_characters", "witnesses", "groups", "referenced_groups", "via"]) {
+    for (const field of ["referenced_characters", "witnesses", "reveals_identity", "groups", "referenced_groups", "via"]) {
       if (event[field] !== undefined && !Array.isArray(event[field])) errors.push(`Event ${event.id} ${field} must be an array when present.`);
+    }
+    const participants = new Set(Array.isArray(event.characters) ? event.characters : []);
+    const referencedCharacters = new Set(Array.isArray(event.referenced_characters) ? event.referenced_characters : []);
+    const witnesses = new Set(Array.isArray(event.witnesses) ? event.witnesses : []);
+    const revealedIdentities = new Set(Array.isArray(event.reveals_identity) ? event.reveals_identity : []);
+    for (const id of participants) {
+      if (referencedCharacters.has(id)) errors.push(`Event ${event.id} character ${id} is both participant and referenced-only.`);
+      if (witnesses.has(id)) errors.push(`Event ${event.id} character ${id} is both participant and witness.`);
+    }
+    for (const id of witnesses) {
+      if (referencedCharacters.has(id)) errors.push(`Event ${event.id} character ${id} is both witness and referenced-only.`);
+    }
+    for (const id of revealedIdentities) {
+      if (![...participants, ...referencedCharacters, ...witnesses].includes(id)) errors.push(`Event ${event.id} reveals identity ${id} without an event character reference.`);
+      assertCharacter(id, `Event ${event.id} identity reveal`);
+    }
+    const groups = new Set(Array.isArray(event.groups) ? event.groups : []);
+    for (const id of Array.isArray(event.referenced_groups) ? event.referenced_groups : []) {
+      if (groups.has(id)) errors.push(`Event ${event.id} group ${id} is both participant and referenced-only.`);
     }
     if (!(event.characters?.length) && !(event.referenced_characters?.length)) {
       errors.push(`Event ${event.id} must identify a physical or referenced character.`);
@@ -378,6 +397,14 @@ export function validateRepository(root = process.cwd()) {
       errors.push(`Identity ${identity.character_id}/${identity.display_name} has a terminal chapter without a terminal section.`);
     }
     if (typeof identity.reader_knows_canonical_identity !== "boolean") errors.push(`Identity ${identity.character_id}/${identity.display_name} reader knowledge must be boolean.`);
+    if (identity.revealed_by_event_id) {
+      const revealEvent = events.find(event => event.id === identity.revealed_by_event_id);
+      if (!revealEvent) errors.push(`Identity ${identity.character_id}/${identity.display_name} references unknown reveal event ${identity.revealed_by_event_id}.`);
+      else {
+        if (!(revealEvent.reveals_identity ?? []).includes(identity.character_id)) errors.push(`Identity ${identity.character_id}/${identity.display_name} reveal event ${identity.revealed_by_event_id} does not reveal this character.`);
+        if (revealEvent.section !== identity.valid_from_section) errors.push(`Identity ${identity.character_id}/${identity.display_name} reveal event must be in its valid_from_section.`);
+      }
+    }
     const until = identity.valid_until_section ?? Number.POSITIVE_INFINITY;
     const ranges = identityRanges.get(identity.character_id) ?? [];
     if (ranges.some(range => identity.valid_from_section <= range.until && until >= range.from)) errors.push(`Identity ranges overlap for ${identity.character_id}.`);

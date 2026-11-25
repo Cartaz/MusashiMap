@@ -227,8 +227,11 @@ for (const book of bookNumbers) {
       const mentioned = (event.referenced_characters ?? []).length
         ? `; menzionati: ${(event.referenced_characters ?? []).map(name).join(", ")}`
         : "";
+      const witnesses = (event.witnesses ?? []).length
+        ? `; testimoni: ${(event.witnesses ?? []).map(name).join(", ")}`
+        : "";
       lines.push(
-        `- \`${event.id}\` — **${event.type}**${event.location ? ` @ \`${event.location}\`` : ""}: ${event.description} — fisici: ${actors}${mentioned}. Evidenza: ${event.certainty}; ${event.source_ref ?? event.source_file ?? chapter.source_file}.`
+        `- \`${event.id}\` — **${event.type}**${event.location ? ` @ \`${event.location}\`` : ""}: ${event.description} — fisici: ${actors}${mentioned}${witnesses}. Evidenza: ${event.certainty}; ${event.source_ref ?? event.source_file ?? chapter.source_file}.`
       );
     }
     if (!chapterEvents.length) lines.push("- Nessun evento strutturato.");

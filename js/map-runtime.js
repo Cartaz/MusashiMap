@@ -180,7 +180,12 @@ import { installMarkerCollision } from "./marker-collision.js";
         .addTo(markers);
     });
 
+    const selectedParticipants = new Set(spoilerSafeSelection);
+    const selectedMovementEvents = new Set(sectionEvents.filter(event =>
+      (event.characters ?? []).some(id => selectedParticipants.has(id))
+    ));
     sectionEvents
+      .filter(event => selectedMovementEvents.has(event))
       .filter(event => event.origin && event.destination && event.destination !== "unknown")
       .forEach(event => {
         const origin = byId.get(event.origin);
@@ -204,7 +209,13 @@ import { installMarkerCollision } from "./marker-collision.js";
 
     const focusCoordinates = [];
     sectionEvents.forEach(event => {
-      [event.location, event.origin, event.destination, ...(event.via ?? [])].filter(Boolean).forEach(id => {
+      const selectedAsWitness = (event.witnesses ?? []).some(id => selectedParticipants.has(id));
+      // A witness sees the scene, not the route. Use its origin only if no
+      // explicit scene location is recorded.
+      const locationIds = selectedMovementEvents.has(event)
+        ? [event.location, event.origin, event.destination, ...(event.via ?? [])]
+        : [event.location ?? (selectedAsWitness ? event.origin : null)];
+      locationIds.filter(Boolean).forEach(id => {
         const location = byId.get(id);
         if (hasCoords(location)) focusCoordinates.push(location.coordinates);
       });

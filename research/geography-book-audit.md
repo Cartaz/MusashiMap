@@ -6,17 +6,17 @@
 
 La presenza di un luogo nel romanzo deriva soltanto dal corpus locale. Le fonti online servono esclusivamente a verificare il toponimo, l'area, il complesso o l'indirizzo moderno. Un indirizzo moderno non dimostra il punto esatto della scena né la continuità con un edificio del primo Seicento.
 
-- Schede geografiche uniche di produzione controllate: **254/254**.
-- Occorrenze luogo-per-libro controllate: **271**.
+- Schede geografiche uniche di produzione controllate: **262/262**.
+- Occorrenze luogo-per-libro controllate: **279**.
 - Errori strutturali: **0**.
 
-- AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata: **29**.
-- POSIZIONE MODERNA CONFERMATA: **7**.
-- NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile: **48**.
+- AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata: **30**.
+- NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile: **49**.
+- POSIZIONE MODERNA CONFERMATA: **8**.
 - OMONIMO/RIFERIMENTO MODERNO; continuità storica negata: **2**.
 - CORRIDOIO MODERNO/STORICO CONFERMATO; tracciato narrativo non ricostruito: **24**.
 - AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato: **126**.
-- NON RISOLTO; nessuna posizione odierna confermata: **26**.
+- NON RISOLTO; nessuna posizione odierna confermata: **31**.
 - PERCORSO NON RICOSTRUITO; nessun punto singolo ammesso: **9**.
 
 ## Correzione critica emersa
@@ -25,13 +25,14 @@ La presenza di un luogo nel romanzo deriva soltanto dal corpus locale. Le fonti 
 
 ## Libro I — Earth
 
-Luoghi verificati in questo libro: **24**.
+Luoghi verificati in questo libro: **25**.
 
 | Luogo | Capitoli | Posizione moderna / verdetto | Coordinate di produzione | Fonti online |
 |---|---|---|---|---|
 | Sekigahara (`sekigahara`) | `b1c1` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Representative anchor in the Sekigahara battlefield area; the exact opening scene is not located to a single point. | 35.3705, 136.46164 (representative_point) | [Sekigahara Town: Sekigahara battlefield official guide](https://www.town.sekigahara.gifu.jp/secure/7099/%E9%96%A2%E3%82%B1%E5%8E%9F%E7%94%BA%E5%BD%B9%E5%A0%B4%E6%A7%98_%E3%83%97%E3%83%AD%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%86%8A%E5%AD%90.pdf) |
 | Oko and Akemi's House (`oko_akemi_house`) | `b1c1`, `b1c2` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>House in the Ibuki foothills; exact modern site unresolved. Deterministic approximate placement within the approved 1 km radius. | 35.39, 136.375 (approximate_area) | [Maibara City: Mount Ibuki official site](https://www.city.maibara.lg.jp/mtibuki/index.html) |
 | Mount Ibuki (`mount_ibuki_area`) | `b1c1`, `b1c2` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>The novel uses the surrounding mountain area, not a precise summit position. | 35.41784, 136.40628 (area) | [Maibara City: Mount Ibuki official site](https://www.city.maibara.lg.jp/mtibuki/index.html) |
+| Field near Oko and Akemi's House (`oko_akemi_field`) | `b1c2` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>The chapter places Temma's death in a field near the house; the field and its modern location are not identified more precisely. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Shippoji (`shippoji`) | `b1c3`, `b1c4`, `b1c5`, `b1c6` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Miyamoto-area temple and recurring narrative hub; exact historical site not independently established. | 35.0955, 134.3262 (approximate_area) | [Mimasaka City: Miyamoto Musashi birthplace-site area](https://www.city.mimasaka.lg.jp/kanko/spot/history_culture/musashi/1460348700995.html) |
 | Ogin's House (`ogin_house`) | `b1c3`, `b1c4` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>House built by Munisai overlooking the river. Exact site unresolved; deterministic approximate point within about 1 km of the Miyamoto anchor. | 35.0918, 134.332 (approximate_area) | [Mimasaka City: Miyamoto Musashi birthplace-site area](https://www.city.mimasaka.lg.jp/kanko/spot/history_culture/musashi/1460348700995.html) |
 | Hon'den House (`honiden_house`) | `b1c4`, `b1c5`, `b1c7` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Osugi's family residence across the river from the Shimmen residence. Exact site unresolved; deterministic approximate point within about 1 km of the Miyamoto anchor. | 35.0975, 134.3228 (approximate_area) | [Mimasaka City: Miyamoto Musashi birthplace-site area](https://www.city.mimasaka.lg.jp/kanko/spot/history_culture/musashi/1460348700995.html) |
@@ -56,7 +57,7 @@ Luoghi verificati in questo libro: **24**.
 
 ## Libro II — Water
 
-Luoghi verificati in questo libro: **31**.
+Luoghi verificati in questo libro: **34**.
 
 | Luogo | Capitoli | Posizione moderna / verdetto | Coordinate di produzione | Fonti online |
 |---|---|---|---|---|
@@ -76,10 +77,14 @@ Luoghi verificati in questo libro: **31**.
 | Uji Bridge (`uji_bridge`) | `b2c5` | **POSIZIONE MODERNA CONFERMATA**<br>Modern Uji Bridge over the Uji River; used as the geographic anchor for the narrative crossing. | 34.89295, 135.80625 (modern_match) | [Uji City: Uji historical geography and bridge context](https://www.city.uji.kyoto.jp/site/ijuteiju/63390.html) |
 | Kizu River ferry (`kizugawa_ferry`) | `b2c5` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Representative point within the Kizu River / Minamiyamashiro corridor. The exact historical ferry crossing is not asserted. | 34.83427, 135.7715 (representative_point) | [Uji City: Uji historical geography and bridge context](https://www.city.uji.kyoto.jp/site/ijuteiju/63390.html) |
 | Abura Hill (`abura_hill`) | `b2c6` | **NON RISOLTO; nessuna posizione odierna confermata**<br>Narrative name retained, but no unique modern Kyoto/Nara identification is strong enough for coordinates. | — (area) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
+| Ōzōin vegetable garden (`ozoin`) | `b2c6` | **NON RISOLTO; nessuna posizione odierna confermata**<br>The chapter names the Ōzōin garden, but its exact modern site is not established; no coordinates inferred. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Hōzōin (`hozoin`) | `b2c6` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Historical Hōzōin context in Nara; exact surviving site representation requires separate architectural/geographic treatment. | — (narrative_site) | [Hōzōin-ryū: Official school history and Hōzōin-site context](https://hozoin.org/rekisi/) |
 | Boardinghouse near Sarusawa Pond (`sarusawa_boardinghouse`) | `b2c6` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Narrative scene or waypoint attested in local text; no modern coordinates inferred. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Hannya Plain observation knoll (`hannya_observation_knoll`) | `b2c7` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Narrative sub-location; no independent coordinate. | — (narrative_site) | [Nara City: Hannyaji and Hannyaji-village history](https://www.city.nara.lg.jp/site/bunkazai/105906.html) |
 | Hannya Plain (`hannya_plain`) | `b2c7` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Area-level historical/geographic anchor in the Nara/Tōdaiji-Hannyaji vicinity. Not equivalent to Hannya-ji itself and not an exact scene point. | 34.7, 135.83611 (approximate_area) | [Nara City: Hannyaji and Hannyaji-village history](https://www.city.nara.lg.jp/site/bunkazai/105906.html) |
+| Kasagidera (`kasagidera`) | `b2c8` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Representative point from the temple's official map embed for the modern Kasagidera site. The novel records a visit but does not establish the precise historical route or temple sub-site. | 34.753512, 135.941478 (representative_point) | [Kasagidera: Official site access information and map](https://kasagidera.net/information/) |
+| Jōruriji (`joruriji`) | `b2c8` | **POSIZIONE MODERNA CONFERMATA**<br>Modern temple-site point from Japan Heritage; the novel records a visit but does not establish a precise route or temple sub-site. | 34.71563, 135.87315 (modern_match) | [Japan Heritage: Jōruriji Temple profile and location](https://japanheritage.jp/ja/kyoto/heritage/joruriji-temple) |
+| Yagyū Valley (`yagyu_valley`) | `b2c8` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>General Yagyū village/valley anchor. The exact trail point in the novel is not asserted. | 34.72271, 135.9565 (representative_point) | [Nara City: Yagyū Kaidō and modern Yagyū area](https://www.city.nara.lg.jp/sightseeing/naraharu/111707.html) |
 | Wataya (`wataya`) | `b2c8`, `b2c9`, `b2c10` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Narrative location; no defensible independent modern identification. | — (narrative_site) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Sekishūsai's mountain house (`sekishusai_mountain_house`) | `b2c9`, `b2c11` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Child narrative location under the Yagyū context; no independent coordinate. | — (narrative_site) | [Nara City: Yagyū Kaidō and modern Yagyū area](https://www.city.nara.lg.jp/sightseeing/naraharu/111707.html) |
 | Koyagyū Castle / Main House (`koyagyu_castle`) | `b2c8`, `b2c9`, `b2c10`, `b2c11` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Historical Yagyū castle context used as a regional anchor. Modern ruins are not asserted to be the exact footprint of every narrative building in the 1600 setting. | 34.73102, 135.95544 (representative_point) | [Nara City: Yagyū Kaidō and modern Yagyū area](https://www.city.nara.lg.jp/sightseeing/naraharu/111707.html) |
@@ -89,7 +94,6 @@ Luoghi verificati in questo libro: **31**.
 | Yamato highroad (`yamato_highroad`) | `b2c5` | **PERCORSO NON RICOSTRUITO; nessun punto singolo ammesso**<br>Linear route; no point coordinate. | — (route) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Nara (`nara`) | `b2c7` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Representative city anchor; not a claim about an exact historical street position. | 34.6851, 135.8048 (representative_point) | [Nara City: Ancient Nara world-heritage geography](https://www.city.nara.lg.jp/site/world-heritage/index-2.html) |
 | Tōdaiji area (`todaiji_area`) | `b2c7` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>Modern Tōdaiji area anchor; narrative scenes are not assumed to occupy present-day building footprints. | 34.68899, 135.83982 (area) | [Nara City Tourism Association: Tōdaiji present address and access](https://narashikanko.or.jp/spot/detail_10001.html) |
-| Yagyū Valley (`yagyu_valley`) | `b2c8` | **AREA/PUNTO RAPPRESENTATIVO MODERNO; scena esatta non confermata**<br>General Yagyū village/valley anchor. The exact trail point in the novel is not asserted. | 34.72271, 135.9565 (representative_point) | [Nara City: Yagyū Kaidō and modern Yagyū area](https://www.city.nara.lg.jp/sightseeing/naraharu/111707.html) |
 | Yagyū dōjō at Koyagyū (`koyagyu_dojo`) | `b2c9` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book VII staging status: exact site unresolved. | — (unmapped) | [Nara City: Yagyū Kaidō and modern Yagyū area](https://www.city.nara.lg.jp/sightseeing/naraharu/111707.html) |
 
 ## Libro III — Fire
@@ -144,7 +148,7 @@ Luoghi verificati in questo libro: **43**.
 
 ## Libro IV — Wind
 
-Luoghi verificati in questo libro: **45**.
+Luoghi verificati in questo libro: **47**.
 
 | Luogo | Capitoli | Posizione moderna / verdetto | Coordinate di produzione | Fonti online |
 |---|---|---|---|---|
@@ -157,6 +161,7 @@ Luoghi verificati in questo libro: **45**.
 | Yoshioka School / dōjō (`yoshioka_school`) | `b4c4` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Kyoto narrative location. Exact historical dojo footprint is not asserted. | — (narrative_site) | [National Diet Library Search: Yoshioka dojo locality record](https://ndlsearch.ndl.go.jp/books/R100000094-I1459090) |
 | Osugi's inn near Sannen Hill (`sannen_hill_inn`) | `b4c5`, `b4c13` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Book III staging status: unmappable. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Mountain-god hall and marsh near Kiyomizudera (`mountain_god_hall`) | `b4c5` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: unmappable. | — (unmapped) | [Kiyomizudera: Official grounds and access](https://www.kiyomizudera.or.jp/en/visit/) |
+| Rakan Bridge over the Lower Kogawa (`rakan_bridge`) | `b4c6` | **NON RISOLTO; nessuna posizione odierna confermata**<br>The chapter names Rakan Bridge over the Lower Kogawa, but the modern bridge and river correspondence are not established; no coordinates inferred. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Kōetsu household on Hon’ami Lane (`honami_lane_house`) | `b4c2`, `b4c4`, `b4c6` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: historical exact site unresolved. | — (unmapped) | [Kyoto National Museum: Hon’ami Kōetsu](https://www.kyohaku.go.jp/old/eng/special/koremade/20151010_rinpa.html)<br>[Kyoto National Museum collection database: Kōetsu ceramic work](https://knmdb.kyohaku.go.jp/eng/4559.html)<br>[Kyoto National Museum: Kōetsu calligraphy](https://www.kyohaku.go.jp/eng/collection/meihin/kinsei/item02/) |
 | Haiya Shōyū's house at Ichijō and Horikawa (`haiya_shoyu_house`) | `b4c6`, `b4c7` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Book IV staging status: historical exact site unresolved. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Ōgiya in Yanagimachi (`ogiya_yanagimachi`) | `b4c6`, `b4c7`, `b4c8`, `b4c9`, `b4c10`, `b4c11`, `b4c12` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: historical correspondence unresolved. | — (unmapped) | [Kyoto City Official Travel Guide: Yoshino Tayū and Kōetsu cultural memory](https://kyoto.travel/en/travel-inspiration/japanese-musical-instruments-show-tales-from-the-1000-year-capital/) |
@@ -182,6 +187,7 @@ Luoghi verificati in questo libro: **45**.
 | Nakasendō from Kusatsu through Ōmi and Mino (`nakasendo_omi_mino`) | `b4c20`, `b4c21` | **CORRIDOIO MODERNO/STORICO CONFERMATO; tracciato narrativo non ricostruito**<br>Book IV staging status: corridor only route not reconstructed. | — (unmapped) | [Nagiso Tourism Association cultural guidance: Nakasendō route near the waterfalls](https://nagiso.jp/wordpress/wp-content/uploads/2021/10/taki.pdf) |
 | Nakatsugawa (`nakatsugawa`) | `b4c20` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: locality only. | — (unmapped) | [Nagiso Tourism Association cultural guidance: Nakasendō route near the waterfalls](https://nagiso.jp/wordpress/wp-content/uploads/2021/10/taki.pdf) |
 | Male and Female Waterfalls (O-taki / Me-taki) (`otaki_metaki`) | `b4c21` | **CORRIDOIO MODERNO/STORICO CONFERMATO; tracciato narrativo non ricostruito**<br>Book IV staging status: officially validated literary location route chronology uncertain. | — (unmapped) | [Nagiso Tourism Association: Male and Female Waterfalls literary association](https://nagiso.jp/topics/o-taki-and-me-taki-waterfalls/)<br>[Nagiso Tourism Association cultural guidance: Nakasendō route near the waterfalls](https://nagiso.jp/wordpress/wp-content/uploads/2021/10/taki.pdf) |
+| Rakanji (`rakanji`) | `b4c6` | **NON RISOLTO; nessuna posizione odierna confermata**<br>The novel describes a lost temple east of the Upper/Lower Kogawa transition; its modern site is not established. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Daitokuji (`daitokuji`) | `b4c10` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: validated name only. | — (unmapped) | [Kyoto City Official Travel Guide: Daitokuji history and current address](https://ja.kyoto.travel/tourism/single02.php?category_id=9&tourism_id=2250) |
 | Kurama inner temple area (`kurama`) | `b4c15` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: area only. | — (unmapped) | [Kyoto City: Kurama historic-landscape protection area](https://www.city.kyoto.lg.jp/tokei/page/0000281785.html) |
 | Enryakuji (`enryakuji`) | `b4c18` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: validated historical context. | — (unmapped) | [Enryakuji official site: Enryakuji destruction and rebuilding](https://hieizan.or.jp/about/history.html)<br>[Enryakuji official site: Enryakuji reconstruction chronology](https://www.hieizan.or.jp/renovation/overview.html) |
@@ -196,7 +202,7 @@ Luoghi verificati in questo libro: **45**.
 
 ## Libro V — Sky
 
-Luoghi verificati in questo libro: **53**.
+Luoghi verificati in questo libro: **55**.
 
 | Luogo | Capitoli | Posizione moderna / verdetto | Coordinate di produzione | Fonti online |
 |---|---|---|---|---|
@@ -222,7 +228,7 @@ Luoghi verificati in questo libro: **53**.
 | Yajibei house in Bakurōchō (`bakurocho_yajibei`) | `b5c10`, `b5c11`, `b5c12`, `b5c22`, `b5c23` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Book V staging status: unmappable. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Sensōji, Asakusa (`sensoji`) | `b5c11` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: official name and locality. | — (unmapped) | [Sensōji official site: ext-sensoji](https://www.senso-ji.jp/english/) |
 | Riverside by Sensōji (`sensoji_riverside`) | `b5c11` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: exact site unresolved. | — (unmapped) | [Sensōji official site: ext-sensoji](https://www.senso-ji.jp/english/) |
-| Sumida River and ferry (`sumida_river`) | `b5c11`, `b5c12`, `b5c18` | **CORRIDOIO MODERNO/STORICO CONFERMATO; tracciato narrativo non ricostruito**<br>Book V staging status: official historical corridor not point. | — (unmapped) | [Tokyo Metropolitan Government Bureau of Construction: ext-sumida](https://www.kensetsu.metro.tokyo.lg.jp/jimusho/chisui/tokusyu/hanashi) |
+| Kyōbashi moat (`kyobashi_moat`) | `b5c12` | **NON RISOLTO; nessuna posizione odierna confermata**<br>The novel places the boat in the Kyōbashi moat when Kojirō disembarks; the exact modern segment is not identified. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Sumiya in early Yoshiwara (`sumiya_yoshiwara`) | `b5c12` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Book V staging status: exact site unresolved. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Road by the new Edo moat (`edo_new_moat_road`) | `b5c13` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Narrative scene or waypoint attested in local text; no modern coordinates inferred. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Obata School by Hirakawa Tenjin Shrine (`obata_school`) | `b5c13`, `b5c24`, `b5c25` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: exact site unresolved. | — (unmapped) | [Kanda Myōjin official site: ext-kanda](https://www.kandamyoujin.or.jp/what/) |
@@ -234,6 +240,7 @@ Luoghi verificati in questo libro: **53**.
 | Village and bridge near Hōtengahara (`raid_village`) | `b5c16` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: unmappable. | — (unmapped) | [MLIT Kanto Regional Development Bureau: ext-tone-history](https://www.ktr.mlit.go.jp/tonejo/tonejo00185.html) |
 | Hosokawa residence in Edo (`hosokawa_edo`) | `b5c17` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Book V staging status: exact site unresolved. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | East-bank Sumida barrier (`edo_east_barrier`) | `b5c18` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: exact site unresolved. | — (unmapped) | [Tokyo Metropolitan Government Bureau of Construction: ext-sumida](https://www.kensetsu.metro.tokyo.lg.jp/jimusho/chisui/tokusyu/hanashi) |
+| Sumida River and ferry (`sumida_river`) | `b5c11`, `b5c12`, `b5c18` | **CORRIDOIO MODERNO/STORICO CONFERMATO; tracciato narrativo non ricostruito**<br>Book V staging status: official historical corridor not point. | — (unmapped) | [Tokyo Metropolitan Government Bureau of Construction: ext-sumida](https://www.kensetsu.metro.tokyo.lg.jp/jimusho/chisui/tokusyu/hanashi) |
 | Bakurōchō horse market (`bakurocho_horse_market`) | `b5c18` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Narrative scene or waypoint attested in local text; no modern coordinates inferred. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Horse-traders' inn in Bakurōchō (`bakurocho_inn`) | `b5c18`, `b5c19`, `b5c24` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Book V staging status: unmappable. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Zushino Kōsuke's shop and house (`kosuke_shop`) | `b5c19`, `b5c23`, `b5c24`, `b5c26` | **NON IDENTIFICABILE O PRIVATO/LETTERARIO; nessuna posizione odierna confermabile**<br>Book V staging status: unmappable. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
@@ -249,6 +256,7 @@ Luoghi verificati in questo libro: **53**.
 | Ushigafuchi and wooded Kudan Hill (`ushigafuchi_kudan`) | `b5c26` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: historical landscape not point. | — (unmapped) | [Tokyo Metropolitan Government: ext-edo-chronology](https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/nenpyo) |
 | Hōjō family house in Ushigome (`hojo_ushigome`) | `b5c26` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: unmappable. | — (unmapped) | [Shinjuku City cultural-property register: ext-akagi](https://www.city.shinjuku.lg.jp/content/000360259.pdf)<br>[Shinjuku City: hojo_ushigome](https://bunkakanko-annai.city.shinjuku.lg.jp/shosai3/?id=B002) |
 | Edo (`edo`) | `b5c26` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book IV staging status: intended destination only. | — (unmapped) | [Tokyo Metropolitan Government: ext-edo-chronology](https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/nenpyo) |
+| Higakubo valley (`higakubo_valley`) | `b5c20` | **NON RISOLTO; nessuna posizione odierna confermata**<br>The novel identifies the Higakubo valley and distinguishes its north and south sides, but does not locate the exact descent point or establish arrival at the Yagyū residence. | — (unmapped) | Nessuna fonte identifica responsabilmente un punto moderno per questa entità |
 | Kiso/Nakasendō highroad (`kiso_highroad`) | `b5c1`, `b5c2` | **CORRIDOIO MODERNO/STORICO CONFERMATO; tracciato narrativo non ricostruito**<br>Book V staging status: route not reconstructed. | — (unmapped) | [Kiso Town official site: ext-kiso-fukushima](https://www.town-kiso.com/manabu/rekishi/bunkazai/m100079/)<br>[Shiojiri City official site: ext-shiojiri-narai](https://www.city.shiojiri.lg.jp/site/bunkazaihouhou/29585.html) |
 | Shiojiri Pass (`shiojiri_pass`) | `b5c4` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: named area not point. | — (unmapped) | [Shiojiri City official site: ext-shiojiri-narai](https://www.city.shiojiri.lg.jp/site/bunkazaihouhou/29585.html) |
 | Nihombashi (`nihombashi`) | `b5c10`, `b5c26` | **AREA, TOPONIMO O COMPLESSO CONFERMATO; punto della scena non confermato**<br>Book V staging status: official historical correspondence. | — (unmapped) | [Tokyo Metropolitan Government: ext-edo-chronology](https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/nenpyo) |

@@ -424,6 +424,7 @@
       ],
       "referenced_characters": [
         "karasumaru_mitsuhiro",
+        "munisai",
         "yoshino_tayu",
         "yoshioka_denshichiro"
       ],
@@ -433,11 +434,14 @@
       ],
       "referenced_groups": [],
       "locations": [
+        "rakan_bridge",
+        "rakanji",
         "honami_lane_house",
         "ogiya_yanagimachi",
         "rengeoin_sanjusangendo"
       ],
       "event_ids": [
+        "b4c6-e00",
         "b4c6-e01",
         "b4c6-e02",
         "b4c6-e03",
@@ -594,7 +598,6 @@
       "groups": [],
       "referenced_groups": [],
       "locations": [
-        "karasumaru_residence",
         "daitokuji",
         "tajima",
         "ogiya_yanagimachi",
@@ -686,7 +689,6 @@
       "locations": [
         "ogiya_yanagimachi",
         "yanagi_riding_ground",
-        "karasumaru_residence",
         "ichijoji_sagarimatsu",
         "karasumaru_house"
       ],
@@ -750,6 +752,7 @@
       "characters": [
         "kojiro",
         "miike_jurozaemon",
+        "ueda_ryohei",
         "yoshioka_genzaemon",
         "yoshioka_genjiro"
       ],
@@ -800,9 +803,10 @@
       "groups": [],
       "referenced_groups": [],
       "locations": [
-        "kitano_inn",
+        "kyoto_cheap_inn",
         "kurama",
         "upper_kamo_bridge",
+        "karasumaru_house",
         "ichijoji_mountain_approach",
         "ichijoji_sagarimatsu"
       ],
@@ -1774,6 +1778,16 @@
       "mentioned_in": [
         "b4c5"
       ]
+    },
+    {
+      "id": "munisai",
+      "name": "Munisai",
+      "aliases": ["Musashi's father"],
+      "kind": "narrative_unverified",
+      "physical_presence": [],
+      "mentioned_in": [
+        "b4c6"
+      ]
     }
   ],
   "groups": [
@@ -1888,6 +1902,26 @@
       "coordinates": null
     },
     {
+      "id": "rakan_bridge",
+      "name": "Rakan Bridge over the Lower Kogawa",
+      "type": "crossing",
+      "mapping_status": "modern_correspondence_unresolved",
+      "coordinates": null,
+      "chapters": [
+        "b4c6"
+      ]
+    },
+    {
+      "id": "rakanji",
+      "name": "Rakanji",
+      "type": "lost_temple_site",
+      "mapping_status": "modern_correspondence_unresolved",
+      "coordinates": null,
+      "chapters": [
+        "b4c6"
+      ]
+    },
+    {
       "id": "toji_outskirts",
       "name": "Tōji outskirts drinking shop",
       "type": "narrative_site",
@@ -1951,13 +1985,6 @@
       "coordinates": null
     },
     {
-      "id": "karasumaru_residence",
-      "name": "Karasumaru residence at Horikawa",
-      "type": "private_residence",
-      "mapping_status": "historical_exact_site_unresolved",
-      "coordinates": null
-    },
-    {
       "id": "yanagi_riding_ground",
       "name": "Yanagi Riding Grounds",
       "type": "narrative_site",
@@ -1976,13 +2003,6 @@
       "name": "Spreading Pine at Ichijōji",
       "type": "traditional_duel_site",
       "mapping_status": "officially_documented_literary_tradition_not_proof",
-      "coordinates": null
-    },
-    {
-      "id": "kitano_inn",
-      "name": "Small inn north of Kitano",
-      "type": "narrative_site",
-      "mapping_status": "unmappable",
       "coordinates": null
     },
     {
@@ -2166,7 +2186,10 @@
       "source_chapters": [
         "b3c8",
         "b3c10",
-        "b3c13"
+        "b3c13",
+        "b4c10",
+        "b4c12",
+        "b4c15"
       ]
     },
     {
@@ -3081,6 +3104,26 @@
       "certainty": "explicit",
       "movement_status": null,
       "section": 37
+    },
+    {
+      "id": "b4c6-e00",
+      "chapter": "b4c6",
+      "type": "search",
+      "description": "Musashi reaches Rakan Bridge while searching for the lost Rakanji; his inquiries do not establish where the temple stood, and at the bridge he reflects on Munisai's death.",
+      "characters": [
+        "musashi"
+      ],
+      "referenced_characters": [
+        "munisai"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "rakan_bridge",
+      "source_ref": "data/source/book4/chapter6-the-urbane-craftsman.txt:L8-L19",
+      "source_file": "data/source/book4/chapter6-the-urbane-craftsman.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 38
     },
     {
       "id": "b4c6-e01",
@@ -4135,16 +4178,19 @@
       "id": "b4c14-e01",
       "chapter": "b4c14",
       "type": "ambush_deployment",
-      "description": "Before dawn roughly seventy Yoshioka men deploy on three roads with bows and a musket around the spreading pine.",
+      "description": "Before dawn Genzaemon, Genjirō, Miike, Ueda and roughly seventy Yoshioka men deploy on three roads with bows and a musket around the spreading pine.",
       "characters": [
         "yoshioka_genzaemon",
         "yoshioka_genjiro",
-        "miike_jurozaemon"
+        "miike_jurozaemon",
+        "ueda_ryohei"
       ],
       "referenced_characters": [
         "musashi"
       ],
-      "groups": [],
+      "groups": [
+        "yoshioka_disciples"
+      ],
       "referenced_groups": [],
       "location": "ichijoji_sagarimatsu",
       "source_ref": "data/source/book4/chapter14-the-death-trap.txt",
@@ -4565,14 +4611,14 @@
       "id": "b4c17-e02",
       "chapter": "b4c17",
       "type": "approach",
-      "description": "Musashi approaches by a difficult detour and purifies himself at a shrine basin without entrusting the outcome to a deity.",
+      "description": "At Hachidai Shrine, Musashi purifies himself at the basin just inside the gate, then leaves the shrine and sees the spreading pine again.",
       "characters": [
         "musashi"
       ],
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "ichijoji_sagarimatsu",
+      "location": "hachidai_shrine",
       "source_ref": "data/source/book4/chapter17-the-spreading-pine.txt",
       "source_file": "data/source/book4/chapter17-the-spreading-pine.txt",
       "certainty": "explicit",
@@ -4867,7 +4913,7 @@
       "id": "b4c18-e06",
       "chapter": "b4c18",
       "type": "departure_preparation",
-      "description": "The temple supplies a cow for the planned descent toward Ōtsu; Musashi and the ill Osugi remain at Mudōji at chapter end.",
+      "description": "The temple supplies a cow for the intended descent toward Ōtsu; Musashi and the ill Osugi remain at Mudōji at chapter end.",
       "characters": [
         "musashi",
         "osugi",
@@ -4877,10 +4923,12 @@
       "groups": [],
       "referenced_groups": [],
       "location": "mudoji_mount_hiei",
+      "origin": "mudoji_mount_hiei",
+      "destination_label": "Ōtsu",
       "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L333-L344",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "certainty": "explicit",
-      "movement_status": null,
+      "movement_status": "intended_destination",
       "extensions": {
         "legacy_movement_status": "departure_confirmed"
       },
@@ -5859,22 +5907,22 @@
       "id": "b4c13-state-osugi",
       "chapter": "b4c13",
       "character": "osugi",
-      "state": "En route toward Ichijōji with Matahachi.",
-      "location": null,
-      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+      "state": "At Sannen Hill inn, preparing to set out for Ichijōji with Matahachi.",
+      "location": "sannen_hill_inn",
+      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt:L211-L232",
       "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
-      "certainty": "unspecified",
+      "certainty": "explicit",
       "scope": "chapter_end"
     },
     {
       "id": "b4c13-state-matahachi",
       "chapter": "b4c13",
       "character": "matahachi",
-      "state": "En route toward Ichijōji with Osugi.",
-      "location": null,
-      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+      "state": "At Sannen Hill inn, preparing to set out for Ichijōji with Osugi.",
+      "location": "sannen_hill_inn",
+      "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt:L211-L232",
       "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
-      "certainty": "unspecified",
+      "certainty": "explicit",
       "scope": "chapter_end"
     },
     {
@@ -6050,7 +6098,7 @@
       "location": "mudoji_mount_hiei",
       "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L325-L344",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
-      "certainty": "unspecified",
+      "certainty": "explicit",
       "scope": "chapter_end"
     },
     {
@@ -6061,7 +6109,7 @@
       "location": "mudoji_mount_hiei",
       "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt:L325-L344",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
-      "certainty": "unspecified",
+      "certainty": "explicit",
       "scope": "chapter_end"
     },
     {
@@ -6072,7 +6120,7 @@
       "location": "mudoji_mount_hiei",
       "source_ref": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
       "source_file": "data/source/book4/chapter18-an-offering-for-the-dead.txt",
-      "certainty": "unspecified",
+      "certainty": "explicit",
       "scope": "chapter_end"
     },
     {

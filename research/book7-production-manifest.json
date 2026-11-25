@@ -201,11 +201,13 @@
       ],
       "event_ids": [
         "b7c1-e01",
+        "b7c1-e06",
+        "b7c1-e07",
+        "b7c1-e08",
         "b7c1-e02",
         "b7c1-e03",
         "b7c1-e04",
         "b7c1-e05",
-        "b7c1-e06",
         "b7c1-audit-references"
       ],
       "character_state_ids": [
@@ -2237,12 +2239,55 @@
     {
       "id": "b7c1-e01",
       "chapter": "b7c1",
-      "type": "visit_and_warning",
-      "description": "Inshun visits Koyagyū and raises an alleged encroachment near Tsukigase while seeking Hyōgo's measure as a fighter.",
+      "type": "visit",
+      "description": "Inshun visits Koyagyū to see Hyōgo and discuss martial arts; Sukekurō receives him.",
+      "characters": [
+        "inshun",
+        "kimura_sukekuro"
+      ],
+      "referenced_characters": [
+        "yagyu_hyogo"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L25-L35",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 97
+    },
+    {
+      "id": "b7c1-e06",
+      "chapter": "b7c1",
+      "type": "delegated_reception",
+      "description": "At Koyagyū, Sukekurō says Hyōgo still has a cold; Hyōgo asks Otsū to greet Inshun, but Otsū replies that Hyōgo is preparing a report for Edo. The narrator notes the discrepancy between these explanations.",
       "characters": [
         "inshun",
         "kimura_sukekuro",
-        "otsu"
+        "otsu",
+        "yagyu_hyogo"
+      ],
+      "referenced_characters": [],
+      "groups": [
+        "hozo_in_party"
+      ],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L37-L81",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 97
+    },
+    {
+      "id": "b7c1-e07",
+      "chapter": "b7c1",
+      "type": "warning",
+      "description": "Inshun warns Sukekurō that reports place Tōdō men trespassing around Tsukigase and suggests the Yagyū boundary may be pushed farther inward.",
+      "characters": [
+        "inshun",
+        "kimura_sukekuro"
       ],
       "referenced_characters": [
         "yagyu_hyogo"
@@ -2252,10 +2297,29 @@
       ],
       "referenced_groups": [],
       "location": "koyagyu_castle",
-      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L87-L108",
       "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
       "certainty": "explicit",
-      "movement_status": "arrival_confirmed",
+      "movement_status": null,
+      "section": 97
+    },
+    {
+      "id": "b7c1-e08",
+      "chapter": "b7c1",
+      "type": "information_transfer",
+      "description": "Sukekurō reports Inshun's warning to Hyōgo, who decides to leave the matter for his uncle to investigate.",
+      "characters": [
+        "kimura_sukekuro",
+        "yagyu_hyogo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "koyagyu_castle",
+      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L109-L110",
+      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
+      "certainty": "explicit",
+      "movement_status": null,
       "section": 97
     },
     {
@@ -2350,25 +2414,6 @@
       "extensions": {
         "legacy_movement_status": "none"
       },
-      "section": 97
-    },
-    {
-      "id": "b7c1-e06",
-      "chapter": "b7c1",
-      "type": "delegated_reception",
-      "description": "At Koyagyū, Hyōgo, still recovering from a cold, asks Otsū to greet Inshun; she apologizes for Hyōgo's absence, explaining that he is preparing a report for Edo.",
-      "characters": [
-        "yagyu_hyogo",
-        "otsu"
-      ],
-      "referenced_characters": [],
-      "groups": [],
-      "referenced_groups": [],
-      "location": "koyagyu_castle",
-      "source_ref": "data/source/book7/chapter1-the-runaway-ox.txt:L37-L78",
-      "source_file": "data/source/book7/chapter1-the-runaway-ox.txt",
-      "certainty": "explicit",
-      "movement_status": null,
       "section": 97
     },
     {

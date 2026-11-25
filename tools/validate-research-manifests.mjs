@@ -139,6 +139,10 @@ for (const { name, match } of entries) {
   }
 
   const checkRefs = (owner, values, set, label) => {
+    if (!Array.isArray(values)) {
+      fail(book, `${owner} ${label} references must be an array`);
+      return;
+    }
     for (const id of values) if (!set.has(id)) fail(book, `${owner} unknown ${label} ${id}`);
   };
   for (const chapter of manifest.chapters) {
@@ -153,11 +157,15 @@ for (const { name, match } of entries) {
     checkRefs(chapter.id, chapter.locations, sets.location, "location");
     checkRefs(chapter.id, chapter.event_ids, sets.event, "event");
     checkRefs(chapter.id, chapter.character_state_ids, sets["character state"], "character state");
-    for (const id of chapter.referenced_characters)
-      if (chapter.characters.includes(id))
+    const chapterCharacters = Array.isArray(chapter.characters) ? chapter.characters : [];
+    const chapterReferencedCharacters = Array.isArray(chapter.referenced_characters) ? chapter.referenced_characters : [];
+    const chapterGroups = Array.isArray(chapter.groups) ? chapter.groups : [];
+    const chapterReferencedGroups = Array.isArray(chapter.referenced_groups) ? chapter.referenced_groups : [];
+    for (const id of chapterReferencedCharacters)
+      if (chapterCharacters.includes(id))
         fail(book, `${chapter.id} character ${id} is both present and referenced-only`);
-    for (const id of chapter.referenced_groups)
-      if (chapter.groups.includes(id)) fail(book, `${chapter.id} group ${id} is both present and referenced-only`);
+    for (const id of chapterReferencedGroups)
+      if (chapterGroups.includes(id)) fail(book, `${chapter.id} group ${id} is both present and referenced-only`);
   }
 
   for (const event of manifest.events) {
@@ -172,17 +180,29 @@ for (const { name, match } of entries) {
       ["referenced_groups", sets.group, "referenced group"]
     ])
       checkRefs(event.id, event[field], set, label);
-    for (const id of event.referenced_characters)
-      if (event.characters.includes(id))
+    if (event.witnesses !== undefined)
+      checkRefs(event.id, event.witnesses, sets.character, "witness");
+    const participants = Array.isArray(event.characters) ? event.characters : [];
+    const referencedCharacters = Array.isArray(event.referenced_characters) ? event.referenced_characters : [];
+    const witnesses = Array.isArray(event.witnesses) ? event.witnesses : [];
+    for (const id of referencedCharacters)
+      if (participants.includes(id))
         fail(book, `${event.id} character ${id} is both participant and referenced-only`);
-    for (const id of event.referenced_groups)
-      if (event.groups.includes(id)) fail(book, `${event.id} group ${id} is both participant and referenced-only`);
+    for (const id of witnesses) {
+      if (participants.includes(id))
+        fail(book, `${event.id} character ${id} is both participant and witness`);
+      if (referencedCharacters.includes(id))
+        fail(book, `${event.id} character ${id} is both witness and referenced-only`);
+    }
+    const groups = Array.isArray(event.groups) ? event.groups : [];
+    for (const id of Array.isArray(event.referenced_groups) ? event.referenced_groups : [])
+      if (groups.includes(id)) fail(book, `${event.id} group ${id} is both participant and referenced-only`);
     for (const field of ["location", "origin", "destination"])
       if (event[field] != null && event[field] !== "unknown" && !sets.location.has(event[field]))
         fail(book, `${event.id} unknown ${field} ${event[field]}`);
     if (event.movement_status !== null && !MOVEMENT.has(event.movement_status))
       fail(book, `${event.id} invalid movement_status ${event.movement_status}`);
-    const owners = manifest.chapters.filter(chapter => chapter.event_ids.includes(event.id));
+    const owners = manifest.chapters.filter(chapter => Array.isArray(chapter.event_ids) && chapter.event_ids.includes(event.id));
     if (owners.length !== 1 || owners[0]?.id !== event.chapter)
       fail(book, `${event.id} must be indexed exactly once by chapter ${event.chapter}`);
   }
@@ -195,7 +215,7 @@ for (const { name, match } of entries) {
       fail(book, `${state.id} unknown location ${state.location}`);
     if (!sourceRefExists(state.source_ref, state.chapter))
       fail(book, `${state.id} unresolved source_ref ${state.source_ref}`);
-    const owners = manifest.chapters.filter(chapter => chapter.character_state_ids.includes(state.id));
+    const owners = manifest.chapters.filter(chapter => Array.isArray(chapter.character_state_ids) && chapter.character_state_ids.includes(state.id));
     if (owners.length !== 1 || owners[0]?.id !== state.chapter)
       fail(book, `${state.id} must be indexed exactly once by chapter ${state.chapter}`);
   }
