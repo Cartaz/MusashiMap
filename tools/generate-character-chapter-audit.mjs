@@ -75,12 +75,16 @@ for (const chapter of chapters) {
   const chapterEvents = events.filter(event => event.chapter === chapter.chapter_id);
   const chapterStates = states.filter(state => state.chapter === chapter.chapter_id);
   for (const event of chapterEvents) {
-    for (const id of [...(event.characters ?? []), ...(event.referenced_characters ?? [])]) {
+    for (const id of [...(event.characters ?? []), ...(event.referenced_characters ?? []), ...(event.witnesses ?? [])]) {
       if (!characterById.has(id)) errors.push(`${event.id}: personaggio sconosciuto ${id}`);
     }
     for (const id of event.characters ?? []) {
       if (!actual.includes(id))
         errors.push(`${event.id}: partecipante fisico ${id} assente da present_in ${chapter.number}`);
+    }
+    for (const id of event.witnesses ?? []) {
+      if (!actual.includes(id))
+        errors.push(`${event.id}: testimone fisico ${id} assente da present_in ${chapter.number}`);
     }
   }
   for (const state of chapterStates) {
@@ -88,7 +92,7 @@ for (const chapter of chapters) {
       errors.push(`${chapter.chapter_id}: stato di personaggio sconosciuto ${state.character}`);
   }
   for (const id of actual) {
-    const hasAction = chapterEvents.some(event => event.characters?.includes(id));
+    const hasAction = chapterEvents.some(event => event.characters?.includes(id) || event.witnesses?.includes(id));
     const hasState = chapterStates.some(state => state.character === id);
     if (!hasAction && !hasState)
       notices.push(
@@ -110,7 +114,7 @@ for (const relation of relationships) {
   const chapterEvents = events.filter(event => event.chapter === chapter.chapter_id);
   const evidenced =
     chapterEvents.some(event => {
-      const involved = [...(event.characters ?? []), ...(event.referenced_characters ?? [])];
+      const involved = [...(event.characters ?? []), ...(event.referenced_characters ?? []), ...(event.witnesses ?? [])];
       return involved.includes(relation.from) || involved.includes(relation.to);
     }) ||
     characters.find(item => item.id === relation.from)?.present_in?.includes(relation.first_section) ||
@@ -185,6 +189,11 @@ for (const book of bookNumbers) {
           ];
         })
       );
+      // A witness observes the scene, not a route: list only where it watched.
+      for (const event of chapterEvents.filter(item => item.witnesses?.includes(character.id) && item.location)) {
+        const observed = `osservata: \`${event.location}\``;
+        if (!positions.includes(observed)) positions.push(observed);
+      }
       const endStates = chapterStates.filter(state => state.character === character.id);
       const stateText = endStates.length
         ? endStates
@@ -227,8 +236,11 @@ for (const book of bookNumbers) {
       const mentioned = (event.referenced_characters ?? []).length
         ? `; menzionati: ${(event.referenced_characters ?? []).map(name).join(", ")}`
         : "";
+      const witnesses = (event.witnesses ?? []).length
+        ? `; testimoni: ${(event.witnesses ?? []).map(name).join(", ")}`
+        : "";
       lines.push(
-        `- \`${event.id}\` — **${event.type}**${event.location ? ` @ \`${event.location}\`` : ""}: ${event.description} — fisici: ${actors}${mentioned}. Evidenza: ${event.certainty}; ${event.source_ref ?? event.source_file ?? chapter.source_file}.`
+        `- \`${event.id}\` — **${event.type}**${event.location ? ` @ \`${event.location}\`` : ""}: ${event.description} — fisici: ${actors}${mentioned}${witnesses}. Evidenza: ${event.certainty}; ${event.source_ref ?? event.source_file ?? chapter.source_file}.`
       );
     }
     if (!chapterEvents.length) lines.push("- Nessun evento strutturato.");

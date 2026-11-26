@@ -665,7 +665,7 @@
         "b5c11-state-juro",
         "b5c11-state-koroku"
       ],
-      "end_summary": "Kojirō returns downstream with Yajibei's party; surviving Obata students carry the conflict back to their school."
+      "end_summary": "At the Sensōji riverside, Yajibei invites Kojirō to join the return boat; the chapter ends before departure is shown."
     },
     {
       "id": "b5c12",
@@ -693,9 +693,12 @@
       "referenced_groups": [],
       "locations": [
         "bakurocho_yajibei",
-        "sumiya_yoshiwara"
+        "sumiya_yoshiwara",
+        "sumida_river",
+        "kyobashi_moat"
       ],
       "event_ids": [
+        "b5c12-e05",
         "b5c12-e01",
         "b5c12-e02",
         "b5c12-e03",
@@ -703,7 +706,8 @@
         "b5c12-audit-references"
       ],
       "character_state_ids": [
-        "b5-final-state-akemi"
+        "b5-final-state-akemi",
+        "b5c12-state-osugi"
       ],
       "end_summary": "Akemi has fled Sumiya into the night; Kojirō is associated with Yajibei's group as its sword instructor."
     },
@@ -1000,12 +1004,14 @@
         "kobikicho",
         "edo_castle_hibiya",
         "azabu_hill",
-        "higakubo_yagyu"
+        "higakubo_yagyu",
+        "higakubo_valley"
       ],
       "event_ids": [
         "b5c20-e01",
         "b5c20-e02",
         "b5c20-e03",
+        "b5c20-e05",
         "b5c20-e04",
         "b5c20-audit-references"
       ],
@@ -1014,7 +1020,7 @@
         "b5c20-state-otsu",
         "b5c20-state-yagyu_hyogo"
       ],
-      "end_summary": "Otsū and Hyōgo are near the Yagyū residence; Iori remains disoriented nearby and has not recognized Otsū."
+      "end_summary": "Otsū and Hyōgo descend into Higakubo valley; the chapter does not establish their arrival at the Yagyū residence."
     },
     {
       "id": "b5c21",
@@ -2191,6 +2197,13 @@
       "coordinates": null
     },
     {
+      "id": "kyobashi_moat",
+      "name": "Kyōbashi moat",
+      "type": "moat",
+      "mapping_status": "narrative_toponym_unresolved",
+      "coordinates": null
+    },
+    {
       "id": "sensoji",
       "name": "Sensōji, Asakusa",
       "type": "temple",
@@ -2315,6 +2328,20 @@
       "type": "private_residence",
       "mapping_status": "exact_site_unresolved",
       "coordinates": null
+    },
+    {
+      "id": "higakubo_valley",
+      "name": "Higakubo valley",
+      "type": "valley",
+      "introduced_section": 73,
+      "coordinates": null,
+      "coordinate_precision": "unmapped",
+      "geographic_confidence": "exact_site_unresolved",
+      "historical_match": "unresolved",
+      "map_note": "The novel identifies the Higakubo valley and distinguishes its north and south sides, but does not locate the exact descent point or establish arrival at the Yagyū residence.",
+      "source_chapters": [
+        "b5c20"
+      ]
     },
     {
       "id": "dogen_slope",
@@ -3466,8 +3493,8 @@
       },
       "section": 63,
       "origin": "takanawa_highroad",
-      "destination": "nihombashi",
-      "destination_label": "reed-mat bathhouse by the unfinished moat"
+      "destination_label": "reed-mat bathhouse by the unfinished moat",
+      "destination": "nihombashi"
     },
     {
       "id": "b5c10-e03",
@@ -3584,8 +3611,8 @@
     {
       "id": "b5c11-e04",
       "chapter": "b5c11",
-      "type": "meeting_and_return",
-      "description": "Kojirō meets Osugi and Yajibei and accepts an invitation onto their return boat.",
+      "type": "meeting_and_invitation",
+      "description": "At the Sensōji riverside, Kojirō meets Osugi and Yajibei. Yajibei invites him to join the party's return boat; this chapter ends before the boat's departure is shown.",
       "characters": [
         "kojiro",
         "osugi",
@@ -3596,17 +3623,15 @@
       "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
-      "location": "sumida_river",
-      "source_ref": "book5/chapter11",
+      "location": "sensoji_riverside",
+      "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "certainty": "explicit",
-      "movement_status": "confirmed_route",
+      "movement_status": null,
       "extensions": {
-        "legacy_movement_status": "route_confirmed"
+        "legacy_movement_status": "none"
       },
-      "section": 64,
-      "origin": "sensoji_riverside",
-      "destination": "bakurocho_yajibei"
+      "section": 64
     },
     {
       "id": "b5c11-audit-references",
@@ -3627,6 +3652,30 @@
       "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "movement_status": null
+    },
+    {
+      "id": "b5c12-e05",
+      "chapter": "b5c12",
+      "type": "disembarkation",
+      "description": "The boat rounds into the Kyōbashi moat and Kojirō disembarks; the text does not establish where the other passengers later land.",
+      "characters": [
+        "kojiro"
+      ],
+      "referenced_characters": [],
+      "witnesses": [
+        "osugi",
+        "yajibei",
+        "juro",
+        "koroku"
+      ],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "kyobashi_moat",
+      "source_ref": "data/source/book5/chapter12-shavings.txt:L61-L70",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "movement_status": "arrival_confirmed",
+      "section": 65
     },
     {
       "id": "b5c12-e01",
@@ -4614,6 +4663,31 @@
         "legacy_movement_status": "none"
       },
       "section": 73
+    },
+    {
+      "id": "b5c20-e05",
+      "chapter": "b5c20",
+      "type": "descent",
+      "description": "Otsū and Hyōgo descend from Azabu Hill into the Higakubo valley; Iori remains behind. The text does not establish that they reach the Yagyū residence.",
+      "characters": [
+        "otsu",
+        "yagyu_hyogo"
+      ],
+      "referenced_characters": [],
+      "groups": [],
+      "referenced_groups": [],
+      "location": "azabu_hill",
+      "source_ref": "data/source/book5/chapter20-the-fox.txt:L263-L285",
+      "source_file": "data/source/book5/chapter20-the-fox.txt",
+      "certainty": "explicit",
+      "movement_status": "confirmed_route",
+      "section": 73,
+      "origin": "azabu_hill",
+      "destination_label": "Higakubo valley; arrival at the Yagyū residence is unconfirmed",
+      "witnesses": [
+        "iori"
+      ],
+      "destination": "higakubo_valley"
     },
     {
       "id": "b5c20-e04",
@@ -5955,56 +6029,93 @@
       "id": "b5c11-state-kojiro",
       "chapter": "b5c11",
       "character": "kojiro",
-      "state": "Returning downstream by boat with Yajibei's party.",
-      "location": "sumida_river",
-      "source_ref": "book5/chapter11",
+      "state": "At the Sensōji riverside after Yajibei invites him to join their return boat; the chapter ends before his departure is shown.",
+      "location": "sensoji_riverside",
+      "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "certainty": "explicit",
-      "scope": "chapter_end"
+      "scope": "chapter_end",
+      "section": 64,
+      "status": "present",
+      "activity": "At the Sensōji riverside after Yajibei invites him to join their return boat; the chapter ends before his departure is shown.",
+      "staging_id": "b5c11-state-kojiro"
     },
     {
       "id": "b5c11-state-osugi",
       "chapter": "b5c11",
       "character": "osugi",
-      "state": "Returning from Sensōji by boat with Yajibei's party.",
-      "location": "sumida_river",
-      "source_ref": "book5/chapter11",
+      "state": "At the Sensōji riverside after meeting Kojirō; Yajibei invites him to join their return boat.",
+      "location": "sensoji_riverside",
+      "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "certainty": "explicit",
-      "scope": "chapter_end"
+      "scope": "chapter_end",
+      "section": 64,
+      "status": "present",
+      "activity": "At the Sensōji riverside after meeting Kojirō; Yajibei invites him to join their return boat.",
+      "staging_id": "b5c11-state-osugi"
     },
     {
       "id": "b5c11-state-yajibei",
       "chapter": "b5c11",
       "character": "yajibei",
-      "state": "Returning by boat after the Sensōji pilgrimage.",
-      "location": "sumida_river",
-      "source_ref": "book5/chapter11",
+      "state": "At the Sensōji riverside after inviting Kojirō to join the return boat; the chapter ends before the boat's departure is shown.",
+      "location": "sensoji_riverside",
+      "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "certainty": "explicit",
-      "scope": "chapter_end"
+      "scope": "chapter_end",
+      "section": 64,
+      "status": "present",
+      "activity": "At the Sensōji riverside after inviting Kojirō to join the return boat; the chapter ends before the boat's departure is shown.",
+      "staging_id": "b5c11-state-yajibei"
     },
     {
       "id": "b5c11-state-juro",
       "chapter": "b5c11",
       "character": "juro",
-      "state": "On Yajibei's return boat.",
-      "location": "sumida_river",
-      "source_ref": "book5/chapter11",
+      "state": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
+      "location": "sensoji_riverside",
+      "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "certainty": "explicit",
-      "scope": "chapter_end"
+      "scope": "chapter_end",
+      "section": 64,
+      "status": "present",
+      "activity": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
+      "staging_id": "b5c11-state-juro"
     },
     {
       "id": "b5c11-state-koroku",
       "chapter": "b5c11",
       "character": "koroku",
-      "state": "On Yajibei's return boat.",
-      "location": "sumida_river",
-      "source_ref": "book5/chapter11",
+      "state": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
+      "location": "sensoji_riverside",
+      "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
       "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
       "certainty": "explicit",
-      "scope": "chapter_end"
+      "scope": "chapter_end",
+      "section": 64,
+      "status": "present",
+      "activity": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
+      "staging_id": "b5c11-state-koroku"
+    },
+    {
+      "id": "b5c12-state-osugi",
+      "chapter": "b5c12",
+      "character": "osugi",
+      "state": "Remains aboard the boat in the Kyōbashi moat after Kojirō disembarks; her later landing and position are unknown.",
+      "location": null,
+      "source_ref": "data/source/book5/chapter12-shavings.txt:L61-L70",
+      "source_file": "data/source/book5/chapter12-shavings.txt",
+      "certainty": "explicit",
+      "scope": "chapter_end",
+      "section": 65,
+      "status": "away",
+      "activity": "Remains aboard the boat in the Kyōbashi moat after Kojirō disembarks; her later landing and location are not shown.",
+      "staging_id": "b5c12-state-osugi",
+      "last_known_location": "kyobashi_moat",
+      "location_status": "unknown"
     },
     {
       "id": "b5c13-state-obata_kagenori",
@@ -6219,23 +6330,31 @@
       "id": "b5c20-state-otsu",
       "chapter": "b5c20",
       "character": "otsu",
-      "state": "Near the Yagyū residence with Hyōgo; Iori does not recognize her.",
-      "location": "azabu_hill",
+      "state": "Walking down into the Higakubo valley with Hyōgo; the chapter does not establish that they reach the Yagyū residence. Iori does not recognize her.",
+      "location": "higakubo_valley",
       "source_ref": "book5/chapter20",
       "source_file": "data/source/book5/chapter20-the-fox.txt",
       "certainty": "explicit",
-      "scope": "chapter_end"
+      "scope": "chapter_end",
+      "section": 73,
+      "status": "present",
+      "activity": "Walking down into the Higakubo valley with Hyōgo; the chapter does not establish that they reach the Yagyū residence. Iori does not recognize her.",
+      "staging_id": "b5c20-state-otsu"
     },
     {
       "id": "b5c20-state-yagyu_hyogo",
       "chapter": "b5c20",
       "character": "yagyu_hyogo",
-      "state": "Near the Yagyū residence with Otsū.",
-      "location": "azabu_hill",
+      "state": "Leading Otsū's horse down into the Higakubo valley; the chapter does not establish that they reach the Yagyū residence.",
+      "location": "higakubo_valley",
       "source_ref": "book5/chapter20",
       "source_file": "data/source/book5/chapter20-the-fox.txt",
       "certainty": "explicit",
-      "scope": "chapter_end"
+      "scope": "chapter_end",
+      "section": 73,
+      "status": "present",
+      "activity": "Leading Otsū's horse down into the Higakubo valley; the chapter does not establish that they reach the Yagyū residence.",
+      "staging_id": "b5c20-state-yagyu_hyogo"
     },
     {
       "id": "b5c21-state-iori",

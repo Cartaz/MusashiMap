@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "description": "Temporal character identities and aliases. character_id identifies the person; display_name identifies the name the reader should see at a given narrative chapter.",
   "identities": [
     {
@@ -25,6 +25,19 @@
       "reader_knows_canonical_identity": true,
       "status": "canonical_name",
       "change_reason": "explicit_identification_of_himeji_officer"
+    },
+    {
+      "character_id": "nikkan",
+      "display_name": "Unnamed old man",
+      "alias": null,
+      "valid_from_chapter": "b2c6",
+      "valid_until_chapter": "b2c6",
+      "valid_from_section": 14,
+      "valid_until_section": 14,
+      "revealed_by_event_id": "b2c6-e07",
+      "reader_knows_canonical_identity": false,
+      "status": "unidentified_person",
+      "change_reason": "name_revealed_later_in_chapter"
     },
     {
       "character_id": "musashi",

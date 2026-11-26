@@ -67,7 +67,7 @@
     {
       "chapter_id": "b3c5",
       "global_section": 24,
-      "title": "A Hero's Passing",
+      "title": "A Hero’s Passing",
       "file": "data/source/book3/chapter5-a-heros-passing.txt",
       "line_count": 344
     },
@@ -311,7 +311,7 @@
     {
       "id": "b3c5",
       "global_section": 24,
-      "title": "A Hero's Passing",
+      "title": "A Hero’s Passing",
       "source_ref": "data/source/book3/chapter5-a-heros-passing.txt",
       "source_file": "data/source/book3/chapter5-a-heros-passing.txt",
       "characters": [
@@ -680,7 +680,9 @@
         "oko",
         "yoshioka_seijuro"
       ],
-      "groups": [],
+      "groups": [
+        "gojo_bridge_crowd"
+      ],
       "referenced_groups": [],
       "locations": [
         "rendaiji_field",
@@ -695,6 +697,7 @@
         "b3c13_e03",
         "b3c13_e04",
         "b3c13_e05",
+        "b3c13_e06",
         "b3c13-audit-references",
         "b3c13-fc-01"
       ],
@@ -1352,6 +1355,15 @@
       ],
       "mentioned_in": [],
       "aliases": []
+    },
+    {
+      "id": "gojo_bridge_crowd",
+      "name": "New Year's crowd at Gojō Bridge",
+      "physical_presence": [
+        "b3c13"
+      ],
+      "mentioned_in": [],
+      "aliases": []
     }
   ],
   "locations": [
@@ -1789,13 +1801,14 @@
       "id": "seta_karahashi",
       "name": "Seta no Karahashi",
       "type": "bridge",
-      "introduced_section": 51,
+      "introduced_section": 29,
       "coordinates": null,
       "coordinate_precision": "unmapped",
       "geographic_confidence": "officially_validated_name_and_locality",
       "historical_match": "unresolved",
       "map_note": "Book IV staging status: officially validated name and locality.",
       "source_chapters": [
+        "b3c10",
         "b4c19",
         "b4c20"
       ]
@@ -3567,6 +3580,26 @@
       "section": 32
     },
     {
+      "id": "b3c13_e06",
+      "chapter": "b3c13",
+      "type": "reputation_transmission",
+      "description": "As the New Year's crowd reads the Yoshioka duel notice, people who have never heard of Musashi begin spreading his name.",
+      "characters": [],
+      "referenced_characters": [
+        "musashi"
+      ],
+      "groups": [
+        "gojo_bridge_crowd"
+      ],
+      "referenced_groups": [],
+      "location": "kamo_river_gojo",
+      "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L547-L557",
+      "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
+      "certainty": "explicit",
+      "movement_status": null,
+      "section": 32
+    },
+    {
       "id": "b3c13-audit-references",
       "chapter": "b3c13",
       "section": 32,
@@ -4012,8 +4045,8 @@
       "id": "b3c13-state-otsu",
       "chapter": "b3c13",
       "character": "otsu",
-      "state": "with Osugi, intending to go to her Sannen Hill inn and seek Matahachi",
-      "location": null,
+      "state": "with Osugi and Jōtarō at the Gojō bridge, stopping to read the duel notice as Musashi's name spreads through the crowd; intends to go to her Sannen Hill inn and seek Matahachi",
+      "location": "kamo_river_gojo",
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
@@ -4023,8 +4056,8 @@
       "id": "b3c13-state-osugi",
       "chapter": "b3c13",
       "character": "osugi",
-      "state": "with Otsū, directing her toward the Sannen Hill inn",
-      "location": null,
+      "state": "with Otsū and Jōtarō at the Gojō bridge, stopping to read the duel notice and directing Otsū toward the Sannen Hill inn",
+      "location": "kamo_river_gojo",
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",
@@ -4034,8 +4067,8 @@
       "id": "b3c13-state-jotaro",
       "chapter": "b3c13",
       "character": "jotaro",
-      "state": "intending to return to the Karasumaru house",
-      "location": null,
+      "state": "at the Gojō bridge with Otsū and Osugi, stopping to read the duel notice; intends to return to the Karasumaru house",
+      "location": "kamo_river_gojo",
       "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L520-L557",
       "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
       "certainty": "explicit",

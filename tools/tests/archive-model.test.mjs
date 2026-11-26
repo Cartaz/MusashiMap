@@ -80,6 +80,33 @@ test("unrevealed identity links cannot connect Baiken to Kohei or the young man 
   assert.ok(unnamed.events.filter(event => event.section < 22).every(event => !event.characters.includes("kojiro")));
 });
 
+test("an identity revealed within a section is hidden before its reveal event", async () => {
+  const archive = buildArchive(data, 14);
+  const unnamed = archive.characters.find(character => character.id === "nikkan-before-b2c6-e07");
+  const nikkan = archive.characters.find(character => character.id === "nikkan");
+  assert.equal(unnamed.name, "Unnamed old man");
+  assert.equal(nikkan.name, "Nikkan");
+  assert.equal((await import("../../js/reader-progress.js")).getDisplayCharacterName(
+    data.characters.characters.find(character => character.id === "nikkan"), 14, data.identities.identities
+  ), "Nikkan");
+  assert.deepEqual(unnamed.names, ["Unnamed old man"]);
+  assert.equal(unnamed.state, null);
+  assert.ok(archive.events.find(event => event.id === "b2c6-e03").characters.includes(unnamed.id));
+  assert.ok(archive.events.find(event => event.id === "b2c6-e06").characters.includes(unnamed.id));
+  assert.ok(archive.events.find(event => event.id === "b2c6-e07").characters.includes("nikkan"));
+  assert.ok(searchArchive(archive, "characters", "Nikkan").some(character => character.id === "nikkan"));
+  assert.ok(searchArchive(archive, "characters", "Nikkan").every(character => character.id !== unnamed.id));
+  assert.deepEqual(nikkan.names, ["Nikkan"]);
+  assert.deepEqual(searchArchive(archive, "characters", "Unnamed old man").map(character => character.id), [unnamed.id]);
+  assert.ok(searchArchive(archive, "events", "Unnamed old man").every(event => !event.characters.includes("nikkan")));
+  assert.equal(unnamed.concealedBeforeReveal, true);
+  assert.equal(nikkan.concealedBeforeReveal, false);
+
+  const later = buildArchive(data, 15);
+  assert.equal(later.characters.some(character => character.id === "nikkan-before-b2c6-e07"), false);
+  assert.ok(later.events.find(event => event.id === "b2c6-e03").characters.includes("nikkan"));
+});
+
 test("unknown coordinates remain searchable without a fabricated map target", () => {
   const archive = buildArchive(data, 112);
   const unmapped = archive.places.find(item => item.id === "saikachi_slope");

@@ -21,11 +21,11 @@
     "Duplicate and OCR-like source artifacts are preserved pending original collation."
   ],
   "production_counts": {
-    "characters": 155,
-    "events": 781,
+    "characters": 156,
+    "events": 790,
     "states": 457,
-    "groups": 39,
-    "locations": 254,
+    "groups": 40,
+    "locations": 262,
     "relationships": 83
   },
   "correction_actions": 264,
@@ -243,6 +243,7 @@
           "osugi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c1-01",
           "b1c1-02",
@@ -629,6 +630,7 @@
           "oko",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c2-01",
           "b1c2-02",
@@ -703,7 +705,7 @@
             "chapter": "b1c2",
             "section": 2,
             "character": "temma",
-            "location": "oko_akemi_house",
+            "location": "oko_akemi_field",
             "status": "dead",
             "activity": "is killed by Takezo in a field near the house after fleeing the failed raid",
             "certainty": "explicit"
@@ -976,6 +978,7 @@
         "referenced_characters": [
           "matahachi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c3-01",
           "b1c3-02",
@@ -1312,6 +1315,9 @@
         "referenced_characters": [
           "matahachi",
           "musashi"
+        ],
+        "witnesses": [
+          "otsu"
         ],
         "event_ids": [
           "b1c4-audit-s01",
@@ -1667,6 +1673,7 @@
           "ogin",
           "oko"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c5-01",
           "b1c5-audit-s02",
@@ -2002,6 +2009,7 @@
           "musashi",
           "ogin"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c6-01",
           "b1c6-audit-s02",
@@ -2408,6 +2416,7 @@
           "matahachi",
           "ogin"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c7-audit-s01",
           "b1c7-01",
@@ -2438,9 +2447,9 @@
             "section": 7,
             "character": "otsu",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "away",
-            "activity": "falls ill at Mikazuki, escapes Osugi and Gonroku, and disappears into a ravine; later recovery is established only in chapter 8",
+            "activity": "still feverish, feels miserable at Mikazuki, escapes Osugi and Gonroku, and disappears into the ravine; later recovery is established only in chapter 8",
             "certainty": "explicit",
             "location_status": "unknown"
           },
@@ -2460,9 +2469,9 @@
             "section": 7,
             "character": "osugi",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "away",
-            "activity": "pursues Otsu with Gonroku after reaching the Mikazuki Teahouse",
+            "activity": "after pursuing Otsu with Gonroku from the Mikazuki Teahouse, stands at the edge of the ravine and shoves him down into it",
             "certainty": "explicit",
             "location_status": "unknown"
           },
@@ -2471,9 +2480,9 @@
             "section": 7,
             "character": "gonroku",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "away",
-            "activity": "pursues Otsu with Osugi after reaching the teahouse",
+            "activity": "after pursuing Otsu with Osugi from the Mikazuki Teahouse, is shoved by her to the bottom of the ravine",
             "certainty": "explicit",
             "location_status": "unknown"
           },
@@ -2815,6 +2824,7 @@
           "osugi",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c8-01",
           "b1c8-02",
@@ -2855,7 +2865,7 @@
             "section": 8,
             "character": "takuan",
             "location": null,
-            "last_known_location": "himeji_castle",
+            "last_known_location": "himeji_area",
             "status": "departed",
             "activity": "releases Musashi, helps establish his new identity and then departs",
             "certainty": "explicit",
@@ -2866,7 +2876,7 @@
             "section": 8,
             "character": "osugi",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "searching",
             "activity": "has spent the previous three years searching for Musashi and Otsu with Gonroku",
             "certainty": "explicit",
@@ -2877,7 +2887,7 @@
             "section": 8,
             "character": "gonroku",
             "location": null,
-            "last_known_location": "mikazuki_teahouse",
+            "last_known_location": "mikazuki_ravine",
             "status": "searching",
             "activity": "has spent the previous three years searching with Osugi",
             "certainty": "explicit",
@@ -2900,7 +2910,7 @@
             "character": "lord_ikeda",
             "location": "himeji_castle",
             "status": "present",
-            "activity": "receives Takezo and participates in his release and renaming",
+            "activity": "receives Takezo and participates in his renaming",
             "certainty": "explicit"
           },
           {
@@ -3185,6 +3195,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c1-e01",
           "b2c1-e02",
@@ -3576,6 +3587,7 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c2-e01",
           "b2c2-e02",
@@ -3872,6 +3884,7 @@
           "ogin",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c3-e01",
           "b2c3-e02",
@@ -4201,6 +4214,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c4-e01",
           "b2c4-e02",
@@ -4584,6 +4598,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c5-e01",
           "b2c5-e02",
@@ -5030,10 +5045,14 @@
           "inshun",
           "jotaro",
           "musashi",
+          "nikkan",
           "otsu",
           "sekishusai",
           "takuan",
           "yoshioka_seijuro"
+        ],
+        "witnesses": [
+          "nikkan"
         ],
         "event_ids": [
           "b2c6-e01",
@@ -5471,16 +5490,17 @@
           "munenori",
           "sekishusai"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c7-e01",
           "b2c7-e02",
           "b2c7-e03",
           "b2c7-e04",
           "b2c7-e05",
+          "b2c7-e09",
           "b2c7-e06",
           "b2c7-e07",
           "b2c7-e08",
-          "b2c7-e09",
           "b2c7-audit-references"
         ],
         "states": [
@@ -5778,7 +5798,10 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
+          "b2c8-e01a",
+          "b2c8-e01b",
           "b2c8-e01",
           "b2c8-e02",
           "b2c8-audit-s02",
@@ -6167,6 +6190,7 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c9-e01",
           "b2c9-e02",
@@ -6658,6 +6682,7 @@
           "sekishusai",
           "shoda_kizaemon"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c10-e01",
           "b2c10-e02",
@@ -7043,6 +7068,7 @@
           "sekishusai",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c11-e01",
           "b2c11-e02",
@@ -7386,6 +7412,7 @@
           "otsu",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c1_e01",
           "b3c1_e02",
@@ -7645,6 +7672,7 @@
           "otsu",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c2_e01",
           "b3c2_e02",
@@ -7863,6 +7891,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c3_e01",
           "b3c3_e02",
@@ -8033,6 +8062,7 @@
           "musashi",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c4_e01",
           "b3c4_e02",
@@ -8292,6 +8322,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c5_e01",
           "b3c5_e02",
@@ -8550,6 +8581,7 @@
           "musashi",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c6_e01",
           "b3c6_e02",
@@ -8793,6 +8825,7 @@
           "takuan",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c7_e01",
           "b3c7_e02",
@@ -9007,6 +9040,7 @@
           "karasumaru_mitsuhiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c8_e01",
           "b3c8_e02",
@@ -9222,6 +9256,7 @@
           "takuan",
           "temma"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c9_e01",
           "b3c9_e02",
@@ -9474,6 +9509,7 @@
           "musashi",
           "watanabe_hanzo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c10_e01",
           "b3c10_e02",
@@ -9757,6 +9793,7 @@
           "yoshioka_denshichiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c11_e01",
           "b3c11_e02",
@@ -10012,6 +10049,7 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c12_e01",
           "b3c12-audit-s01",
@@ -10050,12 +10088,14 @@
           {
             "chapter": "b3c12",
             "character": "yoshioka_seijuro",
-            "location": "yoshioka_school",
-            "source_ref": "chapter12-the-announcement.txt:L4-L157",
-            "certainty": "explicit",
+            "location": null,
+            "last_known_location": "yoshioka_school",
+            "location_status": "unknown",
+            "source_ref": "chapter12-the-announcement.txt:L145-L165",
+            "certainty": "strong_inference",
             "section": 31,
-            "status": "present",
-            "activity": "at the school, hiding from creditors in the back room; approves the announcement of the Rendaiji duel",
+            "status": "unknown",
+            "activity": "the duel is announced; the chapter does not establish his location after the school scene",
             "source_file": "data/source/book3/chapter12-the-announcement.txt",
             "scope": "chapter_end",
             "staging_id": "b3c12-state-yoshioka_seijuro"
@@ -10274,15 +10314,18 @@
           "aoki_tanzaemon",
           "jotaro",
           "matahachi",
+          "musashi",
           "oko",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c13_e01",
           "b3c13_e02",
           "b3c13_e03",
           "b3c13_e04",
           "b3c13_e05",
+          "b3c13_e06",
           "b3c13-audit-references",
           "b3c13-fc-01"
         ],
@@ -10306,15 +10349,13 @@
           {
             "chapter": "b3c13",
             "character": "otsu",
-            "location": null,
+            "location": "kamo_river_gojo",
             "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
             "certainty": "explicit",
             "section": 32,
-            "status": "travelling",
-            "activity": "with Osugi, intending to go to her Sannen Hill inn and seek Matahachi",
-            "last_known_location": "kamo_river_gojo",
+            "status": "present",
+            "activity": "with Osugi and Jōtarō at the Gojō bridge, stopping to read the duel notice; intends to seek Matahachi at the Sannen Hill inn",
             "intended_destination": "sannen_hill_inn",
-            "location_status": "unknown",
             "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
             "scope": "chapter_end",
             "staging_id": "b3c13-state-otsu"
@@ -10322,15 +10363,13 @@
           {
             "chapter": "b3c13",
             "character": "osugi",
-            "location": null,
+            "location": "kamo_river_gojo",
             "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L500-L557",
             "certainty": "explicit",
             "section": 32,
-            "status": "travelling",
-            "activity": "with Otsū, directing her toward the Sannen Hill inn",
-            "last_known_location": "kamo_river_gojo",
+            "status": "present",
+            "activity": "with Otsū and Jōtarō at the Gojō bridge, stopping to read the duel notice and directing Otsū toward the Sannen Hill inn",
             "intended_destination": "sannen_hill_inn",
-            "location_status": "unknown",
             "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
             "scope": "chapter_end",
             "staging_id": "b3c13-state-osugi"
@@ -10338,15 +10377,13 @@
           {
             "chapter": "b3c13",
             "character": "jotaro",
-            "location": null,
+            "location": "kamo_river_gojo",
             "source_ref": "chapter13-the-great-bridge-at-gojo-avenue.txt:L520-L557",
             "certainty": "explicit",
             "section": 32,
-            "status": "departed",
-            "activity": "intending to return to the Karasumaru house",
-            "last_known_location": "kamo_river_gojo",
+            "status": "present",
+            "activity": "at the Gojō bridge with Otsū and Osugi, stopping to read the duel notice; intends to return to the Karasumaru house",
             "intended_destination": "karasumaru_house",
-            "location_status": "unknown",
             "source_file": "data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt",
             "scope": "chapter_end",
             "staging_id": "b3c13-state-jotaro"
@@ -10576,6 +10613,7 @@
           "otsu",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c1-e01",
           "b4c1-e02",
@@ -10809,6 +10847,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c2-e01",
           "b4c2-e02",
@@ -11024,6 +11063,7 @@
           "matahachi",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c3-e01",
           "b4c3-e02",
@@ -11250,6 +11290,7 @@
           "osugi",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c4-e01",
           "b4c4-e02",
@@ -11514,6 +11555,7 @@
           "oko",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c5-e01",
           "b4c5-e02",
@@ -11774,10 +11816,13 @@
         ],
         "referenced_characters": [
           "karasumaru_mitsuhiro",
+          "munisai",
           "yoshino_tayu",
           "yoshioka_denshichiro"
         ],
+        "witnesses": [],
         "event_ids": [
+          "b4c6-e00",
           "b4c6-e01",
           "b4c6-e02",
           "b4c6-e03",
@@ -12004,6 +12049,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c7-e01",
           "b4c7-e02",
@@ -12280,6 +12326,7 @@
           "otsu",
           "yoshioka_denshichiro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c8-e01",
           "b4c8-e02",
@@ -12506,6 +12553,7 @@
           "yoshioka_denshichiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c9-e01",
           "b4c9-e02",
@@ -12699,6 +12747,7 @@
           "otsu",
           "yoshino_tayu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c10-e01",
           "b4c10-e02",
@@ -12906,6 +12955,7 @@
           "takuan",
           "yoshino_tayu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c11-e01",
           "b4c11-e02",
@@ -13151,6 +13201,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c12-e01",
           "b4c12-e02",
@@ -13366,6 +13417,7 @@
           "oko",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c13-e01",
           "b4c13-e02",
@@ -13377,11 +13429,11 @@
           {
             "chapter": "b4c13",
             "character": "osugi",
-            "location": null,
-            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+            "location": "sannen_hill_inn",
+            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt:L211-L232",
             "section": 45,
-            "status": "travelling",
-            "activity": "En route toward Ichijōji with Matahachi.",
+            "status": "present",
+            "activity": "At Sannen Hill inn, preparing to set out for Ichijōji with Matahachi.",
             "certainty": "explicit",
             "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
             "scope": "chapter_end",
@@ -13389,19 +13441,16 @@
             "extensions": {
               "legacy_certainty": "unspecified"
             },
-            "last_known_location": "sannen_hill_inn",
-            "departure_from": "sannen_hill_inn",
-            "intended_destination": "ichijoji_sagarimatsu",
-            "location_status": "unknown"
+            "intended_destination": "ichijoji_sagarimatsu"
           },
           {
             "chapter": "b4c13",
             "character": "matahachi",
-            "location": null,
-            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
+            "location": "sannen_hill_inn",
+            "source_ref": "data/source/book4/chapter13-a-toast-to-the-morrow.txt:L211-L232",
             "section": 45,
-            "status": "travelling",
-            "activity": "En route toward Ichijōji with Osugi.",
+            "status": "present",
+            "activity": "At Sannen Hill inn, preparing to set out for Ichijōji with Osugi.",
             "certainty": "explicit",
             "source_file": "data/source/book4/chapter13-a-toast-to-the-morrow.txt",
             "scope": "chapter_end",
@@ -13409,10 +13458,7 @@
             "extensions": {
               "legacy_certainty": "unspecified"
             },
-            "last_known_location": "sannen_hill_inn",
-            "departure_from": "sannen_hill_inn",
-            "intended_destination": "ichijoji_sagarimatsu",
-            "location_status": "unknown"
+            "intended_destination": "ichijoji_sagarimatsu"
           },
           {
             "chapter": "b4c13",
@@ -13576,6 +13622,7 @@
         "physical_characters": [
           "kojiro",
           "miike_jurozaemon",
+          "ueda_ryohei",
           "yoshioka_genjiro",
           "yoshioka_genzaemon"
         ],
@@ -13585,6 +13632,7 @@
           "yoshioka_denshichiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c14-e01",
           "b4c14-e02",
@@ -13629,9 +13677,7 @@
         "relationships_introduced": []
       },
       "normalized_physical_difference": {
-        "oracle_only": [
-          "ueda_ryohei"
-        ],
+        "oracle_only": [],
         "production_only": []
       },
       "adjudication": "Genjirō uses the canonical Yoshioka ID. Ueda is not named in this chapter; a generic retainer cannot establish his physical identity.",
@@ -13843,6 +13889,7 @@
           "otsu",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c15-e01",
           "b4c15-e02",
@@ -14070,6 +14117,7 @@
           "osugi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c16-e01",
           "b4c16-e02",
@@ -14331,6 +14379,7 @@
           "ogin",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c17-e01",
           "b4c17-e02",
@@ -14592,6 +14641,7 @@
           "yoshioka_genjiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c18-e01",
           "b4c18-e02",
@@ -14816,6 +14866,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c19-e01",
           "b4c19-e02",
@@ -15103,6 +15154,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c20-e01",
           "b4c20-e02",
@@ -15355,6 +15407,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c21-e01",
           "b4c21-e02",
@@ -15558,6 +15611,7 @@
           "karasumaru_mitsuhiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c1-e01",
           "b5c1-e02",
@@ -15771,6 +15825,7 @@
           "jotaro",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c2-e01",
           "b5c2-e02",
@@ -15964,6 +16019,7 @@
           "musashi",
           "oko"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c3-e01",
           "b5c3-e02",
@@ -16169,6 +16225,7 @@
           "jotaro",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c4-e01",
           "b5c4-e02",
@@ -16364,6 +16421,7 @@
           "sekishusai",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c5-e01",
           "b5c5-e02",
@@ -16564,6 +16622,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c6-e01",
           "b5c6-e02",
@@ -16761,6 +16820,7 @@
           "matahachi",
           "oko"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c7-e01",
           "b5c7-e02",
@@ -16995,6 +17055,7 @@
           "otsu",
           "sekishusai"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c8-e01",
           "b5c8-e02",
@@ -17245,6 +17306,7 @@
           "sukeichi"
         ],
         "referenced_characters": [],
+        "witnesses": [],
         "event_ids": [
           "b5c9-e01",
           "b5c9-e02",
@@ -17438,6 +17500,7 @@
           "yajibei"
         ],
         "referenced_characters": [],
+        "witnesses": [],
         "event_ids": [
           "b5c10-e01",
           "b5c10-e02",
@@ -17634,6 +17697,7 @@
           "matahachi",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c11-e01",
           "b5c11-e02",
@@ -17645,11 +17709,11 @@
           {
             "chapter": "b5c11",
             "character": "kojiro",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "Returning downstream by boat with Yajibei's party.",
+            "status": "present",
+            "activity": "At the Sensōji riverside after Yajibei invites him to join their return boat; the chapter ends before his departure is shown.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17658,11 +17722,11 @@
           {
             "chapter": "b5c11",
             "character": "osugi",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "Returning from Sensōji by boat with Yajibei's party.",
+            "status": "present",
+            "activity": "At the Sensōji riverside after meeting Kojirō; Yajibei invites him to join their return boat.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17671,11 +17735,11 @@
           {
             "chapter": "b5c11",
             "character": "yajibei",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "Returning by boat after the Sensōji pilgrimage.",
+            "status": "present",
+            "activity": "At the Sensōji riverside after inviting Kojirō to join the return boat; the chapter ends before the boat's departure is shown.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17684,11 +17748,11 @@
           {
             "chapter": "b5c11",
             "character": "juro",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "On Yajibei's return boat.",
+            "status": "present",
+            "activity": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17697,11 +17761,11 @@
           {
             "chapter": "b5c11",
             "character": "koroku",
-            "location": "sumida_river",
-            "source_ref": "book5/chapter11",
+            "location": "sensoji_riverside",
+            "source_ref": "data/source/book5/chapter11-slaughter-by-the-riverside.txt:L297-L313",
             "section": 64,
-            "status": "travelling",
-            "activity": "On Yajibei's return boat.",
+            "status": "present",
+            "activity": "At the Sensōji riverside with Yajibei's party when they invite Kojirō to join their return boat.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter11-slaughter-by-the-riverside.txt",
             "scope": "chapter_end",
@@ -17855,7 +17919,14 @@
           "musashi",
           "obata_kagenori"
         ],
+        "witnesses": [
+          "juro",
+          "koroku",
+          "osugi",
+          "yajibei"
+        ],
         "event_ids": [
+          "b5c12-e05",
           "b5c12-e01",
           "b5c12-e02",
           "b5c12-e03",
@@ -17930,14 +18001,17 @@
           {
             "chapter": "b5c12",
             "character": "osugi",
-            "location": "bakurocho_yajibei",
-            "source_ref": "data/source/book5/chapter12-shavings.txt:L4-L70",
+            "location": null,
+            "last_known_location": "kyobashi_moat",
+            "source_ref": "data/source/book5/chapter12-shavings.txt:L61-L70",
             "section": 65,
-            "status": "present",
-            "activity": "Back at Yajibei's house in Bakurōchō after the boat trip home with Kojirō.",
-            "certainty": "strong_inference",
+            "status": "away",
+            "activity": "Remains on the boat in the Kyōbashi moat after Kojirō disembarks; her later landing and location are not shown.",
+            "certainty": "explicit",
             "source_file": "data/source/book5/chapter12-shavings.txt",
-            "scope": "chapter_end"
+            "scope": "chapter_end",
+            "location_status": "unknown",
+            "staging_id": "b5c12-state-osugi"
           }
         ],
         "relationships_introduced": []
@@ -18076,6 +18150,7 @@
           "obata_kagenori",
           "obata_yogoro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c13-e01",
           "b5c13-e02",
@@ -18327,6 +18402,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c14-e01",
           "b5c14-e02",
@@ -18525,6 +18601,7 @@
         "referenced_characters": [
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c15-e01",
           "b5c15-e02",
@@ -18716,6 +18793,7 @@
           "iori",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c16-e01",
           "b5c16-e02",
@@ -18915,6 +18993,7 @@
           "kojiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c17-e01",
           "b5c17-e02",
@@ -19139,6 +19218,7 @@
           "sekishusai",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c18-e01",
           "b5c18-e02",
@@ -19365,6 +19445,7 @@
           "kojiro",
           "myoshu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c19-e01",
           "b5c19-audit-s02",
@@ -19591,10 +19672,14 @@
           "otsu",
           "sekishusai"
         ],
+        "witnesses": [
+          "iori"
+        ],
         "event_ids": [
           "b5c20-e01",
           "b5c20-e02",
           "b5c20-e03",
+          "b5c20-e05",
           "b5c20-e04",
           "b5c20-audit-references"
         ],
@@ -19615,11 +19700,11 @@
           {
             "chapter": "b5c20",
             "character": "otsu",
-            "location": "higakubo_yagyu",
+            "location": "higakubo_valley",
             "source_ref": "book5/chapter20",
             "section": 73,
             "status": "present",
-            "activity": "Walking down into the Higakubo valley with Hyōgo toward the Yagyū residence; Iori does not recognize her.",
+            "activity": "Walking down into the Higakubo valley with Hyōgo; the chapter does not establish that they reach the Yagyū residence. Iori does not recognize her.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter20-the-fox.txt",
             "scope": "chapter_end",
@@ -19628,11 +19713,11 @@
           {
             "chapter": "b5c20",
             "character": "yagyu_hyogo",
-            "location": "higakubo_yagyu",
+            "location": "higakubo_valley",
             "source_ref": "book5/chapter20",
             "section": 73,
             "status": "present",
-            "activity": "Leading Otsū's horse down into the Higakubo valley toward the Yagyū residence.",
+            "activity": "Leading Otsū's horse down into the Higakubo valley; the chapter does not establish that they reach the Yagyū residence.",
             "certainty": "explicit",
             "source_file": "data/source/book5/chapter20-the-fox.txt",
             "scope": "chapter_end",
@@ -19809,6 +19894,7 @@
           "sekishusai",
           "shoda_kizaemon"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c21-e01",
           "b5c21-e02",
@@ -20004,6 +20090,7 @@
           "osugi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c22-e01",
           "b5c22-e02",
@@ -20227,6 +20314,7 @@
           "musashi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c23-e01",
           "b5c23-e02",
@@ -20491,6 +20579,7 @@
           "sekishusai",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c24-e01",
           "b5c24-e02",
@@ -20721,6 +20810,7 @@
           "kojiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c25-e01",
           "b5c25-e02",
@@ -20982,6 +21072,7 @@
           "yajibei",
           "zushino_kosuke"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c26-e01",
           "b5c26-e02",
@@ -21227,6 +21318,7 @@
           "musashi",
           "nagaoka_sado"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c1-e01",
           "b6c1-e02",
@@ -21401,6 +21493,7 @@
           "musashi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c2-e01",
           "b6c2-e02",
@@ -21600,6 +21693,7 @@
           "hosokawa_tadaoki",
           "iwama_kakubei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c3-e01",
           "b6c3-e02",
@@ -21847,6 +21941,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c4-e01",
           "b6c4-e02",
@@ -22061,6 +22156,7 @@
           "otsu",
           "zushino_kosuke"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c5-fc-01",
           "b6c5-e01",
@@ -22350,6 +22446,7 @@
           "tokugawa_ieyasu",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c6-e01",
           "b6c6-e02",
@@ -22568,6 +22665,7 @@
           "tokugawa_hidetada",
           "umpei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c7-e01",
           "b6c7-e02",
@@ -22846,6 +22944,7 @@
           "musashi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c8-fc-01",
           "b6c8-e01",
@@ -23102,6 +23201,7 @@
         "referenced_characters": [
           "jotaro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c9-e01",
           "b6c9-e02",
@@ -23286,6 +23386,7 @@
           "matahachi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c10-e01",
           "b6c10-e02",
@@ -23521,6 +23622,7 @@
         "referenced_characters": [
           "temma"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c11-e01",
           "b6c11-e02",
@@ -23891,6 +23993,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c12-e01",
           "b6c12-e02",
@@ -24156,6 +24259,7 @@
           "matahachi",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c13-fc-01",
           "b6c13-fc-02",
@@ -24428,6 +24532,7 @@
           "tokugawa_hidetada",
           "tokugawa_ieyasu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c14-e01",
           "b6c14-e02",
@@ -24715,6 +24820,7 @@
           "matahachi",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c15-e01",
           "b6c15-e02",
@@ -24965,6 +25071,7 @@
           "osugi",
           "sakai_tadakatsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c16-e01",
           "b6c16-fc-01",
@@ -25206,6 +25313,7 @@
           "otsu",
           "sanemon"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c17-e01",
           "b6c17-fc-01",
@@ -25453,8 +25561,12 @@
           "sekishusai",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c1-e01",
+          "b7c1-e06",
+          "b7c1-e07",
+          "b7c1-e08",
           "b7c1-e02",
           "b7c1-e03",
           "b7c1-e04",
@@ -25692,6 +25804,7 @@
           "sekishusai",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c2-e01",
           "b7c2-e02",
@@ -25953,6 +26066,7 @@
           "toyotomi_hideyoshi",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c3-e01",
           "b7c3-e02",
@@ -26162,6 +26276,7 @@
           "musashi",
           "toyotomi_hideyoshi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c4-e01",
           "b7c4-e02",
@@ -26374,6 +26489,7 @@
           "kobayashi_tarozaemon",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c5-e01",
           "b7c5-e02",
@@ -26606,6 +26722,7 @@
           "takuan",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c6-e01",
           "b7c6-e02",
@@ -26777,6 +26894,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c7-e01",
           "b7c7-e02",
@@ -26987,6 +27105,7 @@
           "ogin",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c8-e01",
           "b7c8-e02",
@@ -27191,6 +27310,7 @@
         "referenced_characters": [
           "matahachi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c9-e01",
           "b7c9-e02",
@@ -27397,6 +27517,7 @@
           "sanada_yukimura",
           "yoshino_tayu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c10-e01",
           "b7c10-e02",
@@ -27635,6 +27756,7 @@
           "musashi",
           "ogin"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c11-e01",
           "b7c11-audit-aoki",
@@ -27921,6 +28043,7 @@
           "sekishusai",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c12-e01",
           "b7c12-audit-s02",
@@ -28151,6 +28274,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c13-e01",
           "b7c13-e02",
@@ -28431,6 +28555,7 @@
           "kojiro",
           "nagaoka_sado"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c14-e01",
           "b7c14-e02",
@@ -28661,6 +28786,7 @@
           "hosokawa_tadatoshi",
           "nagaoka_sado"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c15-e01",
           "b7c15-e02",
@@ -28948,6 +29074,7 @@
           "osugi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c16-e01",
           "b7c16-e02",

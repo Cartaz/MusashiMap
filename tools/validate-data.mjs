@@ -6,6 +6,7 @@ import { validateMovementEvent } from "../js/movement-contract.js";
 import { validatePositionState } from "../js/position-contract.js";
 import { auditOverlay, LANGUAGES } from "../js/i18n-overlay.js";
 import { openCorpus } from "./lib/source-corpus.mjs";
+import { getCharacterIntroductionSection } from "../js/reader-progress.js";
 
 const REQUIRED_FILES = [
   "data/chapters.json",
@@ -282,11 +283,30 @@ export function validateRepository(root = process.cwd()) {
     if (!section) errors.push(`Event ${event.id} uses unknown section ${event.section}.`);
     else if (section.chapter_id !== event.chapter) errors.push(`Event ${event.id} chapter ${event.chapter} disagrees with section ${event.section}.`);
     if (!Array.isArray(event.characters)) errors.push(`Event ${event.id} characters must be an array.`);
-    for (const field of ["referenced_characters", "witnesses", "groups", "referenced_groups", "via"]) {
+    for (const field of ["referenced_characters", "witnesses", "reveals_identity", "groups", "referenced_groups", "via"]) {
       if (event[field] !== undefined && !Array.isArray(event[field])) errors.push(`Event ${event.id} ${field} must be an array when present.`);
     }
-    if (!(event.characters?.length) && !(event.referenced_characters?.length)) {
-      errors.push(`Event ${event.id} must identify a physical or referenced character.`);
+    const participants = new Set(Array.isArray(event.characters) ? event.characters : []);
+    const referencedCharacters = new Set(Array.isArray(event.referenced_characters) ? event.referenced_characters : []);
+    const witnesses = new Set(Array.isArray(event.witnesses) ? event.witnesses : []);
+    const revealedIdentities = new Set(Array.isArray(event.reveals_identity) ? event.reveals_identity : []);
+    for (const id of participants) {
+      if (referencedCharacters.has(id)) errors.push(`Event ${event.id} character ${id} is both participant and referenced-only.`);
+      if (witnesses.has(id)) errors.push(`Event ${event.id} character ${id} is both participant and witness.`);
+    }
+    for (const id of witnesses) {
+      if (referencedCharacters.has(id)) errors.push(`Event ${event.id} character ${id} is both witness and referenced-only.`);
+    }
+    for (const id of revealedIdentities) {
+      if (![...participants, ...referencedCharacters, ...witnesses].includes(id)) errors.push(`Event ${event.id} reveals identity ${id} without an event character reference.`);
+      assertCharacter(id, `Event ${event.id} identity reveal`);
+    }
+    const groups = new Set(Array.isArray(event.groups) ? event.groups : []);
+    for (const id of Array.isArray(event.referenced_groups) ? event.referenced_groups : []) {
+      if (groups.has(id)) errors.push(`Event ${event.id} group ${id} is both participant and referenced-only.`);
+    }
+    if (!(event.characters?.length) && !(event.referenced_characters?.length) && !(event.witnesses?.length)) {
+      errors.push(`Event ${event.id} must identify a physical, witnessing or referenced character.`);
     }
     for (const id of [event.characters, event.referenced_characters, event.witnesses].flatMap(value => value ?? [])) assertCharacter(id, `Event ${event.id}`);
     for (const id of [event.groups, event.referenced_groups].flatMap(value => value ?? [])) assertGroup(id, `Event ${event.id}`);
@@ -363,6 +383,39 @@ export function validateRepository(root = process.cwd()) {
     }
   }
 
+  // An event-level reveal only splits a person inside one section, and the
+  // archive decides "before the reveal" by array order. Pin both assumptions.
+  const sourceLineStart = ref => {
+    const match = /:L(\d+)(?:-L\d+)?$/.exec(String(ref ?? ""));
+    return match ? Number(match[1]) : null;
+  };
+  const involvesCharacter = (event, id) => [event.characters, event.referenced_characters, event.witnesses]
+    .some(list => Array.isArray(list) && list.includes(id));
+  const validateEventReveal = (identity, revealEvent) => {
+    const label = `Identity ${identity.character_id}/${identity.display_name}`;
+    if (identity.valid_until_section !== identity.valid_from_section) errors.push(`${label} with a reveal event must end in its valid_from_section.`);
+    const character = characters.find(item => item.id === identity.character_id);
+    // Use the archive's own introduction rule: if any evidence surfaces the
+    // character earlier, the archive takes the section-level split instead.
+    const introduced = character ? getCharacterIntroductionSection(character, { states, events, characterWiki: characterWikiData?.characters ?? {} }) : null;
+    const earlier = introduced !== null && introduced < identity.valid_from_section;
+    if (earlier) errors.push(`${label} has a reveal event but the character already appears before section ${identity.valid_from_section}.`);
+    if (!revealEvent) return;
+    const revealLine = sourceLineStart(revealEvent.source_ref);
+    if (revealLine === null) errors.push(`${label} reveal event ${revealEvent.id} needs a line-anchored source_ref.`);
+    const revealIndex = events.indexOf(revealEvent);
+    events.forEach((event, index) => {
+      if (event === revealEvent || event.section !== revealEvent.section || !involvesCharacter(event, identity.character_id)) return;
+      const line = sourceLineStart(event.source_ref);
+      if (line === null) {
+        errors.push(`Event ${event.id} involves ${identity.character_id} in a reveal section and needs a line-anchored source_ref.`);
+        return;
+      }
+      if (revealLine === null) return;
+      if (line === revealLine) errors.push(`Event ${event.id} starts on the same source line as reveal event ${revealEvent.id}; anchor it unambiguously before or after the reveal.`);
+      else if ((index < revealIndex) !== (line < revealLine)) errors.push(`Event ${event.id} is ordered on the wrong side of reveal event ${revealEvent.id}.`);
+    });
+  };
   const identityRanges = new Map();
   for (const identity of identities) {
     required(identity, ["character_id", "display_name", "valid_from_chapter", "valid_until_chapter", "valid_from_section", "valid_until_section", "reader_knows_canonical_identity", "status"], "Identity", errors);
@@ -378,11 +431,29 @@ export function validateRepository(root = process.cwd()) {
       errors.push(`Identity ${identity.character_id}/${identity.display_name} has a terminal chapter without a terminal section.`);
     }
     if (typeof identity.reader_knows_canonical_identity !== "boolean") errors.push(`Identity ${identity.character_id}/${identity.display_name} reader knowledge must be boolean.`);
+    if (identity.revealed_by_event_id) {
+      const revealEvent = events.find(event => event.id === identity.revealed_by_event_id);
+      if (!revealEvent) errors.push(`Identity ${identity.character_id}/${identity.display_name} references unknown reveal event ${identity.revealed_by_event_id}.`);
+      else {
+        if (!(revealEvent.reveals_identity ?? []).includes(identity.character_id)) errors.push(`Identity ${identity.character_id}/${identity.display_name} reveal event ${identity.revealed_by_event_id} does not reveal this character.`);
+        if (revealEvent.section !== identity.valid_from_section) errors.push(`Identity ${identity.character_id}/${identity.display_name} reveal event must be in its valid_from_section.`);
+      }
+      if (identity.reader_knows_canonical_identity !== false) errors.push(`Identity ${identity.character_id}/${identity.display_name} has a reveal event but the reader already knows the canonical identity.`);
+      validateEventReveal(identity, revealEvent);
+    }
     const until = identity.valid_until_section ?? Number.POSITIVE_INFINITY;
     const ranges = identityRanges.get(identity.character_id) ?? [];
     if (ranges.some(range => identity.valid_from_section <= range.until && until >= range.from)) errors.push(`Identity ranges overlap for ${identity.character_id}.`);
     ranges.push({ from: identity.valid_from_section, until });
     identityRanges.set(identity.character_id, ranges);
+  }
+  // The archive and the display name both follow identity.revealed_by_event_id,
+  // so every event-level reveal must be claimed by exactly one identity record.
+  for (const event of events) {
+    for (const characterId of Array.isArray(event.reveals_identity) ? event.reveals_identity : []) {
+      const claims = identities.filter(identity => identity.character_id === characterId && identity.revealed_by_event_id === event.id).length;
+      if (claims !== 1) errors.push(`Event ${event.id} reveals identity ${characterId} but ${claims} identity records point back to it.`);
+    }
   }
 
   for (const [characterId, entry] of Object.entries(characterWikiData.characters ?? {})) {

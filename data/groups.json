@@ -240,6 +240,16 @@
         112
       ],
       "mentioned_in": []
+    },
+    {
+      "id": "gojo_bridge_crowd",
+      "name": "New Year's crowd at Gojō Bridge",
+      "aliases": [],
+      "introduced_section": 32,
+      "present_in": [
+        32
+      ],
+      "mentioned_in": []
     }
   ]
 }

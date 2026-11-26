@@ -2,10 +2,17 @@ import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { buildArchive } from "../js/archive-model.js";
 
 // The timeline must list every published event; the count follows the data.
 const publishedEventCount = JSON.parse(readFileSync(new URL("../_site/data/events.json", import.meta.url), "utf8")).events.length;
 const publishedPlaceCount = JSON.parse(readFileSync(new URL("../_site/data/locations.json", import.meta.url), "utf8")).locations.length;
+const publishedCharacterCount = JSON.parse(readFileSync(new URL("../_site/data/characters.json", import.meta.url), "utf8")).characters.length;
+const readSite = name => JSON.parse(readFileSync(new URL(`../_site/data/${name}.json`, import.meta.url), "utf8"));
+const finalSplitRecords = buildArchive({ characters: readSite("characters"), locations: readSite("locations"), events: readSite("events"),
+  states: readSite("character-states"), chapters: readSite("chapters"), identities: readSite("identities"),
+  characterWiki: readSite("context/character-wiki"), relationships: readSite("relationships") }, 112)
+  .characters.filter(character => character.historicalIdentity).length;
 
 export async function verifyExplorer(page) {
   const folder = path.resolve("test-output/screenshots");
@@ -67,7 +74,9 @@ export async function verifyExplorer(page) {
   await page.locator("#open-archive").click();
   await page.locator("[data-category='characters']").click();
   await page.locator("#archive-search").fill("");
-  assert.equal(await count(), 150);
+  // Split identities add "*-before-*" records, so the archive may list more
+  // records than people; every record must still map to a published person.
+  assert.equal(await count(), publishedCharacterCount + finalSplitRecords);
   await page.locator("#archive-search").fill("Yoshino");
   assert.equal(await page.locator(".archive-result[data-record-id='yoshino_tayu']").count(), 1);
   assert.equal(await page.locator(".archive-result[data-record-id='yoshino_second']").count(), 1);
@@ -129,6 +138,25 @@ export async function verifyExplorer(page) {
   await page.locator("#archive-search").fill("Baiken");
   assert.equal(await page.locator(".archive-result[data-record-id='kohei']").count(), 1);
   assert.equal(await page.locator(".archive-result[data-record-id='kohei-before-26']").count(), 0);
+
+  await chooseChapter(14);
+  await page.locator("#open-archive").click();
+  await page.locator("[data-category='characters']").click();
+  await page.locator("#archive-search").fill("Anziano senza nome");
+  assert.equal(await page.locator(".archive-result[data-record-id='nikkan-before-b2c6-e07']").count(), 1);
+  assert.equal(await page.locator(".archive-result[data-record-id='nikkan']").count(), 0);
+  await page.locator("#archive-search").fill("Nikkan");
+  assert.equal(await page.locator(".archive-result[data-record-id='nikkan']").count(), 1);
+  assert.equal(await page.locator(".archive-result[data-record-id='nikkan-before-b2c6-e07']").count(), 0);
+  await page.locator("[data-category='events']").click();
+  await page.locator("#archive-search").fill("Anziano senza nome");
+  await page.locator(".archive-result[data-record-id='b2c6-e03']").click();
+  assert.match(await page.locator("#archive-detail").textContent(), /Anziano senza nome/);
+  assert.doesNotMatch(await page.locator("#archive-detail").textContent(), /Nikkan/);
+  await page.locator("#archive-search").fill("Nikkan");
+  await page.locator(".archive-result[data-record-id='b2c6-e07']").click();
+  assert.match(await page.locator("#archive-detail").textContent(), /Nikkan/);
+  await page.locator("[data-category='characters']").click();
   await chooseChapter(112);
 
   for (const viewport of [{ width: 375, height: 812 }, { width: 812, height: 375 }, { width: 768, height: 1024 }, { width: 1440, height: 900 }]) {

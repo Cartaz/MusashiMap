@@ -227,6 +227,20 @@
       "title": "Official present-day city position",
       "url": "https://www.city.tatsuno.lg.jp/gyosei/gaiyo/5333.html",
       "checked": "2026-08-29"
+    },
+    {
+      "id": "kasagidera-official",
+      "authority": "Kasagidera",
+      "title": "Official site access information and map",
+      "url": "https://kasagidera.net/information/",
+      "checked": "2026-11-25"
+    },
+    {
+      "id": "joruriji-japan-heritage",
+      "authority": "Japan Heritage",
+      "title": "Jōruriji Temple profile and location",
+      "url": "https://japanheritage.jp/ja/kyoto/heritage/joruriji-temple",
+      "checked": "2026-11-25"
     }
   ]
 }

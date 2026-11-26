@@ -57,6 +57,17 @@ Source references may use the repository path, a registered source basename or a
 
 Chapter `characters` and `groups` mean physical on-page presence. `referenced_characters` and `referenced_groups` mean mention, report, memory, correspondence or another non-physical reference. The present and referenced-only sets are disjoint.
 
+For events, `characters` are physical participants and `witnesses` are physical observers. Both fields reference registered character IDs; `referenced_characters` remains non-physical. Participant, witness and referenced-only character sets are disjoint.
+
+An event may include `reveals_identity`, an array of character IDs whose identity the source explicitly reveals in that event. Each ID must resolve and appear in the event's participant, witness or referenced-character fields. Use this when a reveal occurs within a chapter section, where a section-only identity boundary would expose the name too early in the same section.
+
+An identity record may set `revealed_by_event_id` for that case. The event must list the character in `reveals_identity` and belong to the identity's `valid_from_section`, and each `reveals_identity` entry must be claimed by exactly one such identity record. On promotion, `validate-data.mjs` also requires that:
+
+- the identity has `reader_knows_canonical_identity: false` and `valid_until_section` equal to `valid_from_section`;
+- the character has no earlier evidence (`introduced_section`, `present_in`, events, states or character-wiki entries) before that section;
+- the reveal event and every other event involving the character in that section have a line-anchored `source_ref` (`...:L<start>-L<end>`);
+- those events sit on the same side of the reveal event in `events.json` as their start line sits relative to the reveal's start line, and none starts on the reveal's start line.
+
 Character, group and location IDs are unique and every foreign key used by chapters, events, states, relationships or occurrence indexes must resolve inside the same manifest.
 
 Historical provenance may preserve older evidence inside `extensions`; it does not create an alternative entity registry.

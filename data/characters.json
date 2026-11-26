@@ -458,7 +458,7 @@
         90
       ]
     },
-    {"id":"ueda_ryohei","name":"Ueda Ryōhei","aliases":["Ryohei","Ueda Ryōhei"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#f97316","present_in":[9,10,24,25,31,33,36,39]},
+    {"id":"ueda_ryohei","name":"Ueda Ryōhei","aliases":["Ryohei","Ueda Ryōhei"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"unknown","map_relevance":"mapped","color":"#f97316","present_in":[9,10,24,25,31,33,36,39,46]},
     {"id":"yoshioka_denshichiro","name":"Yoshioka Denshichirō","aliases":["Denshichiro","Yoshioka Denshichirō"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"fictionalized","map_relevance":"mapped","color":"#dc2626","present_in":[16,17,36,39]},
     {"id":"in_ei","name":"Kakuzenbō Hōzōin In'ei","aliases":["Kakuzenbō In'ei","Hōzōin In'ei","In'ei","Kakuzenbo"],"importance":"secondary","entity_type":"character","narrative_role":"secondary","historical_status":"historical","map_relevance":"contextual","color":"#0f766e","present_in":[]},
     {
@@ -1562,6 +1562,18 @@
       "present_in": [
         110
       ]
+    },
+    {
+      "id": "munisai",
+      "name": "Munisai",
+      "aliases": ["Musashi's father"],
+      "importance": "secondary",
+      "entity_type": "character",
+      "narrative_role": "tertiary",
+      "historical_status": "unknown",
+      "map_relevance": "none",
+      "color": "#64748b",
+      "present_in": []
     }
   ]
 }

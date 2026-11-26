@@ -27,6 +27,18 @@ test("role-only references retain labels until explicit names",()=>{
   if (reveal !== null) assert.match(reveal,/heir, Munenori/);
 });
 
+test("Nikkan's event identity changes at the explicit reveal",()=>{
+  assert.equal(getDisplayCharacterName(character("nikkan"),14,identities),character("nikkan").name);
+  assert.equal(getDisplayCharacterName(character("nikkan"),15,identities),character("nikkan").name);
+  assert.ok(event("b2c6-e03").characters.includes("nikkan"));
+  assert.ok(event("b2c6-e06").witnesses.includes("nikkan"));
+  assert.equal(event("b2c6-e07").characters.includes("nikkan"),true);
+  assert.deepEqual(event("b2c6-e07").reveals_identity,["nikkan"]);
+  assert.doesNotMatch(event("b2c6-e03").description,/Nikkan/);
+  assert.doesNotMatch(event("b2c6-e06").description,/Nikkan/);
+  assert.match(event("b2c6-e07").description,/Nikkan/);
+});
+
 test("residence and reported positions do not create physical presence",()=>{
   for (const [id,section] of [["sekishusai",19],["ship_captain",23],["monkey",32],["konoe_nobutada",41],["kobashi_kurando",46],["musashi",107]]) assert.ok(!character(id).present_in.includes(section),`${id} at ${section}`);
   for (const [id,section] of [["monkey",23],["monkey",33],["rinya",38],["rinya",39],["obata_yogoro",82],["aoki_tanzaemon",107]]) assert.ok(character(id).present_in.includes(section),`${id} at ${section}`);
@@ -50,10 +62,21 @@ test("scenes and movement actors do not inherit unrelated destinations",()=>{
   assert.equal(event("b7c16-e01").location,"kanmon_crossing_boat");
   assert.equal(event("b2c6-e11").origin,null);
   assert.equal(event("b2c6-e11").destination,null);
+  assert.equal(event("b2c8-e01").origin,undefined);
+  assert.equal(event("b2c8-e01").location,"yagyu_valley");
+  assert.deepEqual(event("b2c8-e01").characters,["musashi"]);
+  assert.deepEqual(event("b2c8-e01a").characters,["musashi"]);
+  assert.deepEqual(event("b2c8-e01b").characters,["musashi"]);
+  assert.match(event("b2c7-e09").source_ref,/L261-L295$/);
   assert.deepEqual(event("b2c6-audit-jotaro-arrival").characters,["jotaro"]);
   assert.ok(!event("b4c7-e02").characters.includes("musashi"));
   assert.equal(event("b3c10_e02").destination,null);
   assert.deepEqual(event("b3c10-audit-captive-route").characters,["otsu"]);
+});
+
+test("only Kojirō is a disembarking participant; the other passengers witness it",()=>{
+  assert.deepEqual(event("b5c12-e05").characters,["kojiro"]);
+  assert.deepEqual(event("b5c12-e05").witnesses,["osugi","yajibei","juro","koroku"]);
 });
 
 test("peony and castle-employment causal chains survive extraction",()=>{
@@ -69,7 +92,7 @@ test("all five manifests reuse runtime event IDs and corrected fields",()=>{
     const manifest = read(`research/book${book}-production-manifest.json`);
     const runtime = events.filter(item=>item.chapter.startsWith(`b${book}c`));
     assert.deepEqual(manifest.events.map(item=>item.id),runtime.map(item=>item.id));
-    for (const record of manifest.events) for (const key of ["chapter","characters","referenced_characters","location","description","source_ref"]) assert.deepEqual(record[key],event(record.id)[key],`${record.id}.${key}`);
+    for (const record of manifest.events) for (const key of ["chapter","characters","referenced_characters","witnesses","location","description","source_ref"]) assert.deepEqual(record[key],event(record.id)[key],`${record.id}.${key}`);
   }
 });
 

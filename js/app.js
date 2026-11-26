@@ -218,7 +218,10 @@ function createWikiCard(entry, { character = false, section = 1 } = {}) {
 function renderWiki(section) {
   const historicalEntries = getRelevantHistoricalWiki(data.microWiki.entities, section);
   const characters = buildArchive(data, section).characters
-    .filter(character => data.characterWiki?.characters?.[character.sourceId]?.category === "secondary")
+    // A same-chapter pre-reveal stranger has no wiki entry of its own; the
+    // revealed character's card already covers that person.
+    .filter(character => !character.concealedBeforeReveal
+      && data.characterWiki?.characters?.[character.sourceId]?.category === "secondary")
     .map(character => ({ display_name: character.name, role: t("wiki.characterRole"),
       current_by_section: { [section]: character.summary } }));
   const nodes = [];
