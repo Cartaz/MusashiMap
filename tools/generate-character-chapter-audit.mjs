@@ -82,6 +82,10 @@ for (const chapter of chapters) {
       if (!actual.includes(id))
         errors.push(`${event.id}: partecipante fisico ${id} assente da present_in ${chapter.number}`);
     }
+    for (const id of event.witnesses ?? []) {
+      if (!actual.includes(id))
+        errors.push(`${event.id}: testimone fisico ${id} assente da present_in ${chapter.number}`);
+    }
   }
   for (const state of chapterStates) {
     if (!characterById.has(state.character))

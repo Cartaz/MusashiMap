@@ -304,8 +304,8 @@ export function validateRepository(root = process.cwd()) {
     for (const id of Array.isArray(event.referenced_groups) ? event.referenced_groups : []) {
       if (groups.has(id)) errors.push(`Event ${event.id} group ${id} is both participant and referenced-only.`);
     }
-    if (!(event.characters?.length) && !(event.referenced_characters?.length)) {
-      errors.push(`Event ${event.id} must identify a physical or referenced character.`);
+    if (!(event.characters?.length) && !(event.referenced_characters?.length) && !(event.witnesses?.length)) {
+      errors.push(`Event ${event.id} must identify a physical, witnessing or referenced character.`);
     }
     for (const id of [event.characters, event.referenced_characters, event.witnesses].flatMap(value => value ?? [])) assertCharacter(id, `Event ${event.id}`);
     for (const id of [event.groups, event.referenced_groups].flatMap(value => value ?? [])) assertGroup(id, `Event ${event.id}`);
@@ -382,6 +382,35 @@ export function validateRepository(root = process.cwd()) {
     }
   }
 
+  // An event-level reveal only splits a person inside one section, and the
+  // archive decides "before the reveal" by array order. Pin both assumptions.
+  const sourceLineStart = ref => {
+    const match = /:L(\d+)(?:-L\d+)?$/.exec(String(ref ?? ""));
+    return match ? Number(match[1]) : null;
+  };
+  const involvesCharacter = (event, id) => [event.characters, event.referenced_characters, event.witnesses]
+    .some(list => Array.isArray(list) && list.includes(id));
+  const validateEventReveal = (identity, revealEvent) => {
+    const label = `Identity ${identity.character_id}/${identity.display_name}`;
+    if (identity.valid_until_section !== identity.valid_from_section) errors.push(`${label} with a reveal event must end in its valid_from_section.`);
+    const character = characters.find(item => item.id === identity.character_id);
+    const earlier = (character?.present_in ?? []).some(at => at < identity.valid_from_section)
+      || events.some(event => event.section < identity.valid_from_section && involvesCharacter(event, identity.character_id));
+    if (earlier) errors.push(`${label} has a reveal event but the character already appears before section ${identity.valid_from_section}.`);
+    if (!revealEvent) return;
+    const revealLine = sourceLineStart(revealEvent.source_ref);
+    if (revealLine === null) errors.push(`${label} reveal event ${revealEvent.id} needs a line-anchored source_ref.`);
+    const revealIndex = events.indexOf(revealEvent);
+    events.forEach((event, index) => {
+      if (event === revealEvent || event.section !== revealEvent.section || !involvesCharacter(event, identity.character_id)) return;
+      const line = sourceLineStart(event.source_ref);
+      if (line === null) {
+        errors.push(`Event ${event.id} involves ${identity.character_id} in a reveal section and needs a line-anchored source_ref.`);
+        return;
+      }
+      if (revealLine !== null && (index < revealIndex) !== (line < revealLine)) errors.push(`Event ${event.id} is ordered on the wrong side of reveal event ${revealEvent.id}.`);
+    });
+  };
   const identityRanges = new Map();
   for (const identity of identities) {
     required(identity, ["character_id", "display_name", "valid_from_chapter", "valid_until_chapter", "valid_from_section", "valid_until_section", "reader_knows_canonical_identity", "status"], "Identity", errors);
@@ -405,6 +434,7 @@ export function validateRepository(root = process.cwd()) {
         if (revealEvent.section !== identity.valid_from_section) errors.push(`Identity ${identity.character_id}/${identity.display_name} reveal event must be in its valid_from_section.`);
       }
       if (identity.reader_knows_canonical_identity !== false) errors.push(`Identity ${identity.character_id}/${identity.display_name} has a reveal event but the reader already knows the canonical identity.`);
+      validateEventReveal(identity, revealEvent);
     }
     const until = identity.valid_until_section ?? Number.POSITIVE_INFINITY;
     const ranges = identityRanges.get(identity.character_id) ?? [];

@@ -209,12 +209,11 @@ import { installMarkerCollision } from "./marker-collision.js";
 
     const focusCoordinates = [];
     sectionEvents.forEach(event => {
-      const selectedAsWitness = (event.witnesses ?? []).some(id => selectedParticipants.has(id));
-      // A witness sees the scene, not the route. Use its origin only if no
-      // explicit scene location is recorded.
+      // A witness sees the scene, not the route, and the data does not say
+      // which end of a route it watched: frame only an explicit scene location.
       const locationIds = selectedMovementEvents.has(event)
         ? [event.location, event.origin, event.destination, ...(event.via ?? [])]
-        : [event.location ?? (selectedAsWitness ? event.origin : null)];
+        : [event.location];
       locationIds.filter(Boolean).forEach(id => {
         const location = byId.get(id);
         if (hasCoords(location)) focusCoordinates.push(location.coordinates);

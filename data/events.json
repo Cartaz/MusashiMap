@@ -1219,16 +1219,17 @@
       "section": 14,
       "type": "inner_defeat",
       "characters": [
-        "musashi",
+        "musashi"
+      ],
+      "referenced_characters": [
         "nikkan"
       ],
-      "referenced_characters": [],
       "groups": [],
       "referenced_groups": [],
       "location": "hozoin",
       "description": "Although Musashi won physically against Agon, he leaves feeling spiritually outclassed by Nikkan.",
       "certainty": "explicit",
-      "source_ref": "data/source/book2/chapter6-the-hozoin.txt",
+      "source_ref": "data/source/book2/chapter6-the-hozoin.txt:L407-L413",
       "source_file": "data/source/book2/chapter6-the-hozoin.txt",
       "movement_status": null
     },

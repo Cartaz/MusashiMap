@@ -100,7 +100,11 @@ export function getDisplayCharacterName(character, section, identities = []) {
       && entry.valid_from_section <= currentSection
       && (entry.valid_until_section === null || asInteger(entry.valid_until_section) >= currentSection))
     .sort((a, b) => b.valid_from_section - a.valid_from_section)[0];
-  if (identity?.revealed_by_event_id && currentSection >= identity.valid_from_section) return character?.name ?? t("character.unknown");
+  // The reading position is a whole section, and the reveal happens inside it:
+  // the reader has met the canonical name by the end of the section. Only the
+  // archive's per-event projection keeps the earlier events under the
+  // concealed display_name.
+  if (identity?.revealed_by_event_id) return character?.name ?? t("character.unknown");
   if (identity?.status === "impersonated_name" && identity.reader_knows_canonical_identity && identity.display_name !== character?.name) {
     return t("character.as", { name: character?.name ?? t("character.unknown"), alias: identity.display_name });
   }

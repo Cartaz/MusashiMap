@@ -153,6 +153,7 @@ test("semantic CLI validates event-level identity reveals", t => {
   assert.match(unresolved.output, /reveals identity missing without an event character reference/);
 
   events.events[0].reveals_identity = ["hero"];
+  events.events[0].source_ref = "data/source/book1/chapter1-test.txt:L1-L1";
   writeJson(root, "data/events.json", events);
   writeJson(root, "data/identities.json", { identities: [{
     character_id: "hero", display_name: "Unknown person", valid_from_chapter: "b1c1",
@@ -190,6 +191,69 @@ test("semantic CLI validates event-level identity reveals", t => {
   const alreadyKnown = run(root);
   assert.equal(alreadyKnown.status, 1);
   assert.match(alreadyKnown.output, /has a reveal event but the reader already knows/);
+});
+
+test("semantic CLI pins event-level reveals to one ordered section", t => {
+  const root = makeDataFixture();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const events = JSON.parse(fs.readFileSync(path.join(root, "data/events.json")));
+  const sources = path.join(root, "data/source/book2/chapter1-test.txt");
+  fs.writeFileSync(sources, "Two\nGarden\nName\nAfter\n");
+  const reveal = { ...events.events[1], id: "b2c1-02", reveals_identity: ["hero"], source_ref: "data/source/book2/chapter1-test.txt:L3-L3" };
+  const later = { ...events.events[1], id: "b2c1-03", source_ref: "data/source/book2/chapter1-test.txt:L4-L4" };
+  events.events[1].source_ref = "data/source/book2/chapter1-test.txt:L2-L2";
+  // Section 1 belongs to someone else, so the hero first appears in the reveal section.
+  const opening = { ...events.events[0], characters: ["other"] };
+  const identity = {
+    character_id: "hero", display_name: "Unknown person", valid_from_chapter: "b2c1",
+    valid_until_chapter: "b2c1", valid_from_section: 2, valid_until_section: 2,
+    reader_knows_canonical_identity: false, status: "unidentified_person", revealed_by_event_id: "b2c1-02"
+  };
+  const characters = JSON.parse(fs.readFileSync(path.join(root, "data/characters.json")));
+  characters.characters[0].present_in = [2];
+  characters.characters.push({ ...characters.characters[0], id: "other", name: "Other", importance: "minor", present_in: [1] });
+  events.events = [opening, events.events[1], reveal, later];
+  const it = JSON.parse(fs.readFileSync(path.join(root, "data/i18n/it.json")));
+  it.events = { "b1c1-01": { description: "Scena" }, "b2c1-01": { description: "Scena" }, "b2c1-02": { description: "Scena" }, "b2c1-03": { description: "Scena" } };
+  it.states = { "other@1": { activity: "Presente" }, "hero@2": { activity: "Presente" } };
+  const states = JSON.parse(fs.readFileSync(path.join(root, "data/character-states.json")));
+  states.character_states[0].character = "other";
+  const write = () => {
+    writeJson(root, "data/events.json", events);
+    writeJson(root, "data/characters.json", characters);
+    writeJson(root, "data/identities.json", { identities: [identity] });
+    writeJson(root, "data/i18n/it.json", it);
+    writeJson(root, "data/character-states.json", states);
+    return run(root);
+  };
+  const valid = write();
+  assert.equal(valid.status, 0, valid.output);
+
+  const garden = events.events[1];
+  events.events = [opening, reveal, garden, later];
+  const misordered = write();
+  assert.equal(misordered.status, 1);
+  assert.match(misordered.output, /Event b2c1-01 is ordered on the wrong side of reveal event b2c1-02/);
+
+  events.events = [opening, garden, reveal, { ...later, source_ref: "book2/chapter1" }];
+  const unanchored = write();
+  assert.equal(unanchored.status, 1);
+  assert.match(unanchored.output, /Event b2c1-03 involves hero in a reveal section and needs a line-anchored source_ref/);
+
+  events.events[3] = later;
+  identity.valid_until_section = null;
+  identity.valid_until_chapter = null;
+  const openEnded = write();
+  assert.equal(openEnded.status, 1);
+  assert.match(openEnded.output, /with a reveal event must end in its valid_from_section/);
+
+  identity.valid_until_section = 2;
+  identity.valid_until_chapter = "b2c1";
+  events.events[0] = { ...opening, characters: ["other", "hero"] };
+  characters.characters[0].present_in = [1, 2];
+  const earlier = write();
+  assert.equal(earlier.status, 1);
+  assert.match(earlier.output, /already appears before section 2/);
 });
 
 test("semantic CLI rejects unknown groups and false physical end positions", t => {

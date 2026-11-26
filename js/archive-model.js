@@ -67,8 +67,9 @@ function projectArchive(data, section) {
       splitIdentities.set(character.id, { before, boundary: identity.valid_from_section });
       return [projectCharacter(character, identity.valid_from_section - 1, 1, before), projectCharacter(character, section, identity.valid_from_section)];
     }
-    // The identity record owns the reveal; the same field drives
-    // getDisplayCharacterName, so the archive and the diary cannot disagree.
+    // The identity record owns the reveal. getDisplayCharacterName reads the
+    // same field and names the character for the whole section; only events
+    // before the reveal keep the concealed name here.
     const revealEvent = identity?.revealed_by_event_id ? eventById.get(identity.revealed_by_event_id) : null;
     if (identity?.reader_knows_canonical_identity === false && revealEvent
       && (revealEvent.reveals_identity ?? []).includes(character.id)

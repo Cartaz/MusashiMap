@@ -1084,7 +1084,7 @@ Fonte: `data/source/book2/chapter6-the-hozoin.txt` — 775 righe, 8691 parole. S
 
 **Roster fisico corrente:** agon; jotaro; musashi; nikkan; otomo_banryu; yamazoe_dampachi; yasukawa_yasubei.
 
-**Riferimenti negli eventi:** in_ei; inshun; jotaro; musashi; otsu; sekishusai; takuan; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Riferimenti negli eventi:** in_ei; inshun; jotaro; musashi; nikkan; otsu; sekishusai; takuan; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
 
 **Attori funzionali della fonte:** young Ozoin monk who directs Musashi; Hozoin steward; Hozoin priests, visiting warriors and observers; young widow who boards Musashi; dumpling-shop household.
 
@@ -1139,7 +1139,7 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 | b2c6-e05 | observation | hozoin | book2/chapter6 |
 | b2c6-e06 | fight | hozoin | data/source/book2/chapter6-the-hozoin.txt:L231-L276 |
 | b2c6-e07 | conversation | hozoin | data/source/book2/chapter6-the-hozoin.txt:L336-L350 |
-| b2c6-audit-s07 | inner_defeat | hozoin | data/source/book2/chapter6-the-hozoin.txt |
+| b2c6-audit-s07 | inner_defeat | hozoin | data/source/book2/chapter6-the-hozoin.txt:L407-L413 |
 | b2c6-e08 | departure | — | book2/chapter6 |
 | b2c6-e09 | arrival | sarusawa_boardinghouse | book2/chapter6 |
 | b2c6-e10 | recruitment | sarusawa_boardinghouse | book2/chapter6 |
