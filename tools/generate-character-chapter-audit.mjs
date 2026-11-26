@@ -75,7 +75,7 @@ for (const chapter of chapters) {
   const chapterEvents = events.filter(event => event.chapter === chapter.chapter_id);
   const chapterStates = states.filter(state => state.chapter === chapter.chapter_id);
   for (const event of chapterEvents) {
-    for (const id of [...(event.characters ?? []), ...(event.referenced_characters ?? [])]) {
+    for (const id of [...(event.characters ?? []), ...(event.referenced_characters ?? []), ...(event.witnesses ?? [])]) {
       if (!characterById.has(id)) errors.push(`${event.id}: personaggio sconosciuto ${id}`);
     }
     for (const id of event.characters ?? []) {
@@ -110,7 +110,7 @@ for (const relation of relationships) {
   const chapterEvents = events.filter(event => event.chapter === chapter.chapter_id);
   const evidenced =
     chapterEvents.some(event => {
-      const involved = [...(event.characters ?? []), ...(event.referenced_characters ?? [])];
+      const involved = [...(event.characters ?? []), ...(event.referenced_characters ?? []), ...(event.witnesses ?? [])];
       return involved.includes(relation.from) || involved.includes(relation.to);
     }) ||
     characters.find(item => item.id === relation.from)?.present_in?.includes(relation.first_section) ||

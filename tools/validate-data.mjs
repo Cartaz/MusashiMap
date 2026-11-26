@@ -404,12 +404,21 @@ export function validateRepository(root = process.cwd()) {
         if (!(revealEvent.reveals_identity ?? []).includes(identity.character_id)) errors.push(`Identity ${identity.character_id}/${identity.display_name} reveal event ${identity.revealed_by_event_id} does not reveal this character.`);
         if (revealEvent.section !== identity.valid_from_section) errors.push(`Identity ${identity.character_id}/${identity.display_name} reveal event must be in its valid_from_section.`);
       }
+      if (identity.reader_knows_canonical_identity !== false) errors.push(`Identity ${identity.character_id}/${identity.display_name} has a reveal event but the reader already knows the canonical identity.`);
     }
     const until = identity.valid_until_section ?? Number.POSITIVE_INFINITY;
     const ranges = identityRanges.get(identity.character_id) ?? [];
     if (ranges.some(range => identity.valid_from_section <= range.until && until >= range.from)) errors.push(`Identity ranges overlap for ${identity.character_id}.`);
     ranges.push({ from: identity.valid_from_section, until });
     identityRanges.set(identity.character_id, ranges);
+  }
+  // The archive and the display name both follow identity.revealed_by_event_id,
+  // so every event-level reveal must be claimed by exactly one identity record.
+  for (const event of events) {
+    for (const characterId of Array.isArray(event.reveals_identity) ? event.reveals_identity : []) {
+      const claims = identities.filter(identity => identity.character_id === characterId && identity.revealed_by_event_id === event.id).length;
+      if (claims !== 1) errors.push(`Event ${event.id} reveals identity ${characterId} but ${claims} identity records point back to it.`);
+    }
   }
 
   for (const [characterId, entry] of Object.entries(characterWikiData.characters ?? {})) {

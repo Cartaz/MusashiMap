@@ -136,6 +136,7 @@ export async function verifyExplorer(page) {
   await page.locator("[data-category='characters']").click();
   await page.locator("#archive-search").fill("Anziano senza nome");
   assert.equal(await page.locator(".archive-result[data-record-id='nikkan-before-b2c6-e07']").count(), 1);
+  assert.equal(await page.locator(".archive-result[data-record-id='nikkan']").count(), 0);
   await page.locator("#archive-search").fill("Nikkan");
   assert.equal(await page.locator(".archive-result[data-record-id='nikkan']").count(), 1);
   assert.equal(await page.locator(".archive-result[data-record-id='nikkan-before-b2c6-e07']").count(), 0);

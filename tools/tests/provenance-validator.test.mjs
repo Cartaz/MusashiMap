@@ -90,6 +90,20 @@ test("validator rejects invalid event witnesses", t => {
   const scalarGroup = run(["--root", fixture]);
   assert.equal(scalarGroup.status, 1, scalarGroup.stderr || scalarGroup.stdout);
   assert.match(scalarGroup.stderr, /b5c20-e05 group references must be an array/);
+
+  delete event.groups;
+  event.reveals_identity = "otsu";
+  writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  const scalarReveal = run(["--root", fixture]);
+  assert.equal(scalarReveal.status, 1, scalarReveal.stderr || scalarReveal.stdout);
+  assert.match(scalarReveal.stderr, /b5c20-e05 revealed identity references must be an array/);
+
+  event.reveals_identity = ["typo_id"];
+  writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  const unknownReveal = run(["--root", fixture]);
+  assert.equal(unknownReveal.status, 1, unknownReveal.stderr || unknownReveal.stdout);
+  assert.match(unknownReveal.stderr, /b5c20-e05 unknown revealed identity typo_id/);
+  assert.match(unknownReveal.stderr, /b5c20-e05 reveals identity typo_id without an event character reference/);
 });
 
 test("validator reports malformed chapter indexes without throwing", t => {

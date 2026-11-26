@@ -33,12 +33,7 @@ function projectArchive(data, section) {
   const latest = new Map(getReaderSnapshot({ states: data.states.character_states }, section).latestStates.map(state => [state.character, state]));
   const splitIdentities = new Map();
   const eventIndexById = new Map(data.events.events.map((event, index) => [event.id, index]));
-  const revealByCharacter = new Map();
-  for (const event of data.events.events) {
-    for (const characterId of event.reveals_identity ?? []) {
-      if (!revealByCharacter.has(characterId)) revealByCharacter.set(characterId, event);
-    }
-  }
+  const eventById = new Map(data.events.events.map(event => [event.id, event]));
   const eventIdentitySplits = new Map();
   const projectCharacter = (character, ceiling, floor = 1, id = character.id, overrides = {}) => {
     const entry = wiki[character.id];
@@ -54,6 +49,7 @@ function projectArchive(data, section) {
     const updates = Object.fromEntries(Object.entries(entry?.current_by_section ?? {}).filter(([at]) => Number(at) >= floor && Number(at) <= ceiling));
     return {
       id, sourceId: character.id, name, names, main: character.importance === "main", historicalIdentity: id !== character.id,
+      concealedBeforeReveal: overrides.concealedBeforeReveal === true,
       summary: overrides.summary ?? getProgressiveValue(updates, ceiling) ?? t("archive.characterSummary", {}, language),
       first: Math.max(floor, getCharacterIntroductionSection(character, evidence)),
       appearances: (character.present_in ?? []).filter(at => at >= floor && at <= ceiling),
@@ -71,26 +67,29 @@ function projectArchive(data, section) {
       splitIdentities.set(character.id, { before, boundary: identity.valid_from_section });
       return [projectCharacter(character, identity.valid_from_section - 1, 1, before), projectCharacter(character, section, identity.valid_from_section)];
     }
-    const revealEvent = revealByCharacter.get(character.id);
+    // The identity record owns the reveal; the same field drives
+    // getDisplayCharacterName, so the archive and the diary cannot disagree.
+    const revealEvent = identity?.revealed_by_event_id ? eventById.get(identity.revealed_by_event_id) : null;
     if (identity?.reader_knows_canonical_identity === false && revealEvent
+      && (revealEvent.reveals_identity ?? []).includes(character.id)
       && revealEvent.section === identity.valid_from_section && revealEvent.section <= section) {
       const before = `${character.id}-before-${revealEvent.id}`;
       const revealIndex = eventIndexById.get(revealEvent.id);
       eventIdentitySplits.set(character.id, { before, revealIndex });
-      const concealedIdentity = identities.filter(item => item.character_id === character.id
-        && item.reader_knows_canonical_identity === false
-        && item.valid_from_section <= revealEvent.section
-        && (item.valid_until_section === null || item.valid_until_section >= revealEvent.section))
-        .sort((a, b) => b.valid_from_section - a.valid_from_section)[0];
-      const unnamed = concealedIdentity?.display_name ?? getDisplayCharacterName(character, revealEvent.section, identities);
+      const unnamed = identity.display_name;
+      const after = projectCharacter(character, section, revealEvent.section, character.id, { name: character.name });
+      // The concealed name belongs to the pre-reveal record only; keeping it as
+      // an alias here would let search tie the stranger to the revealed person.
+      after.names = after.names.filter(value => value !== unnamed || value === character.name);
       return [
         projectCharacter(character, revealEvent.section, 1, before, {
           name: unnamed,
           names: [unnamed],
           summary: t("archive.characterSummary", {}, language),
-          hideState: true
+          hideState: true,
+          concealedBeforeReveal: true
         }),
-        projectCharacter(character, section, revealEvent.section, character.id, { name: character.name })
+        after
       ];
     }
     return [projectCharacter(character, section)];

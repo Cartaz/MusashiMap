@@ -194,6 +194,15 @@ for (const { name, match } of entries) {
       if (referencedCharacters.includes(id))
         fail(book, `${event.id} character ${id} is both witness and referenced-only`);
     }
+    // Staging contract: a reveal must name a known character already attached
+    // to the event. Identity records (revealed_by_event_id) live only in data/
+    // and are checked by validate-data.mjs once the book is promoted.
+    if (event.reveals_identity !== undefined) {
+      checkRefs(event.id, event.reveals_identity, sets.character, "revealed identity");
+      for (const id of Array.isArray(event.reveals_identity) ? event.reveals_identity : [])
+        if (![...participants, ...referencedCharacters, ...witnesses].includes(id))
+          fail(book, `${event.id} reveals identity ${id} without an event character reference`);
+    }
     const groups = Array.isArray(event.groups) ? event.groups : [];
     for (const id of Array.isArray(event.referenced_groups) ? event.referenced_groups : [])
       if (groups.includes(id)) fail(book, `${event.id} group ${id} is both participant and referenced-only`);

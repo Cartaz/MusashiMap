@@ -174,6 +174,22 @@ test("semantic CLI validates event-level identity reveals", t => {
   const wrongSection = run(root);
   assert.equal(wrongSection.status, 1);
   assert.match(wrongSection.output, /reveal event must be in its valid_from_section/);
+
+  events.events[0].section = 1;
+  writeJson(root, "data/events.json", events);
+  writeJson(root, "data/identities.json", { identities: [] });
+  const unclaimed = run(root);
+  assert.equal(unclaimed.status, 1);
+  assert.match(unclaimed.output, /reveals identity hero but 0 identity records point back to it/);
+
+  writeJson(root, "data/identities.json", { identities: [{
+    character_id: "hero", display_name: "Unknown person", valid_from_chapter: "b1c1",
+    valid_until_chapter: "b1c1", valid_from_section: 1, valid_until_section: 1,
+    reader_knows_canonical_identity: true, status: "unidentified_person", revealed_by_event_id: events.events[0].id
+  }] });
+  const alreadyKnown = run(root);
+  assert.equal(alreadyKnown.status, 1);
+  assert.match(alreadyKnown.output, /has a reveal event but the reader already knows/);
 });
 
 test("semantic CLI rejects unknown groups and false physical end positions", t => {

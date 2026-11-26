@@ -96,6 +96,11 @@ test("an identity revealed within a section is hidden before its reveal event", 
   assert.ok(archive.events.find(event => event.id === "b2c6-e07").characters.includes("nikkan"));
   assert.ok(searchArchive(archive, "characters", "Nikkan").some(character => character.id === "nikkan"));
   assert.ok(searchArchive(archive, "characters", "Nikkan").every(character => character.id !== unnamed.id));
+  assert.deepEqual(nikkan.names, ["Nikkan"]);
+  assert.deepEqual(searchArchive(archive, "characters", "Unnamed old man").map(character => character.id), [unnamed.id]);
+  assert.ok(searchArchive(archive, "events", "Unnamed old man").every(event => !event.characters.includes("nikkan")));
+  assert.equal(unnamed.concealedBeforeReveal, true);
+  assert.equal(nikkan.concealedBeforeReveal, false);
 
   const later = buildArchive(data, 15);
   assert.equal(later.characters.some(character => character.id === "nikkan-before-b2c6-e07"), false);
