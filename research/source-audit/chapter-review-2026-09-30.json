@@ -243,6 +243,7 @@
           "osugi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c1-01",
           "b1c1-02",
@@ -629,6 +630,7 @@
           "oko",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c2-01",
           "b1c2-02",
@@ -976,6 +978,7 @@
         "referenced_characters": [
           "matahachi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c3-01",
           "b1c3-02",
@@ -1312,6 +1315,9 @@
         "referenced_characters": [
           "matahachi",
           "musashi"
+        ],
+        "witnesses": [
+          "otsu"
         ],
         "event_ids": [
           "b1c4-audit-s01",
@@ -1667,6 +1673,7 @@
           "ogin",
           "oko"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c5-01",
           "b1c5-audit-s02",
@@ -2002,6 +2009,7 @@
           "musashi",
           "ogin"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c6-01",
           "b1c6-audit-s02",
@@ -2408,6 +2416,7 @@
           "matahachi",
           "ogin"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c7-audit-s01",
           "b1c7-01",
@@ -2462,7 +2471,7 @@
             "location": null,
             "last_known_location": "mikazuki_ravine",
             "status": "away",
-            "activity": "pursues Otsu with Gonroku after reaching the Mikazuki Teahouse",
+            "activity": "after pursuing Otsu with Gonroku from the Mikazuki Teahouse, stands at the edge of the ravine and shoves him down into it",
             "certainty": "explicit",
             "location_status": "unknown"
           },
@@ -2473,7 +2482,7 @@
             "location": null,
             "last_known_location": "mikazuki_ravine",
             "status": "away",
-            "activity": "pursues Otsu with Osugi after reaching the teahouse",
+            "activity": "after pursuing Otsu with Osugi from the Mikazuki Teahouse, is shoved by her to the bottom of the ravine",
             "certainty": "explicit",
             "location_status": "unknown"
           },
@@ -2815,6 +2824,7 @@
           "osugi",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b1c8-01",
           "b1c8-02",
@@ -3185,6 +3195,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c1-e01",
           "b2c1-e02",
@@ -3576,6 +3587,7 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c2-e01",
           "b2c2-e02",
@@ -3872,6 +3884,7 @@
           "ogin",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c3-e01",
           "b2c3-e02",
@@ -4201,6 +4214,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c4-e01",
           "b2c4-e02",
@@ -4584,6 +4598,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c5-e01",
           "b2c5-e02",
@@ -5036,6 +5051,9 @@
           "takuan",
           "yoshioka_seijuro"
         ],
+        "witnesses": [
+          "nikkan"
+        ],
         "event_ids": [
           "b2c6-e01",
           "b2c6-e02",
@@ -5472,6 +5490,7 @@
           "munenori",
           "sekishusai"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c7-e01",
           "b2c7-e02",
@@ -5779,6 +5798,7 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c8-e01a",
           "b2c8-e01b",
@@ -6170,6 +6190,7 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c9-e01",
           "b2c9-e02",
@@ -6661,6 +6682,7 @@
           "sekishusai",
           "shoda_kizaemon"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c10-e01",
           "b2c10-e02",
@@ -7046,6 +7068,7 @@
           "sekishusai",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b2c11-e01",
           "b2c11-e02",
@@ -7389,6 +7412,7 @@
           "otsu",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c1_e01",
           "b3c1_e02",
@@ -7648,6 +7672,7 @@
           "otsu",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c2_e01",
           "b3c2_e02",
@@ -7866,6 +7891,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c3_e01",
           "b3c3_e02",
@@ -8036,6 +8062,7 @@
           "musashi",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c4_e01",
           "b3c4_e02",
@@ -8295,6 +8322,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c5_e01",
           "b3c5_e02",
@@ -8553,6 +8581,7 @@
           "musashi",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c6_e01",
           "b3c6_e02",
@@ -8796,6 +8825,7 @@
           "takuan",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c7_e01",
           "b3c7_e02",
@@ -9010,6 +9040,7 @@
           "karasumaru_mitsuhiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c8_e01",
           "b3c8_e02",
@@ -9225,6 +9256,7 @@
           "takuan",
           "temma"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c9_e01",
           "b3c9_e02",
@@ -9477,6 +9509,7 @@
           "musashi",
           "watanabe_hanzo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c10_e01",
           "b3c10_e02",
@@ -9760,6 +9793,7 @@
           "yoshioka_denshichiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c11_e01",
           "b3c11_e02",
@@ -10015,6 +10049,7 @@
           "yoshioka_denshichiro",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c12_e01",
           "b3c12-audit-s01",
@@ -10283,6 +10318,7 @@
           "oko",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b3c13_e01",
           "b3c13_e02",
@@ -10577,6 +10613,7 @@
           "otsu",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c1-e01",
           "b4c1-e02",
@@ -10810,6 +10847,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c2-e01",
           "b4c2-e02",
@@ -11025,6 +11063,7 @@
           "matahachi",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c3-e01",
           "b4c3-e02",
@@ -11251,6 +11290,7 @@
           "osugi",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c4-e01",
           "b4c4-e02",
@@ -11515,6 +11555,7 @@
           "oko",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c5-e01",
           "b4c5-e02",
@@ -11779,6 +11820,7 @@
           "yoshino_tayu",
           "yoshioka_denshichiro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c6-e00",
           "b4c6-e01",
@@ -12007,6 +12049,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c7-e01",
           "b4c7-e02",
@@ -12283,6 +12326,7 @@
           "otsu",
           "yoshioka_denshichiro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c8-e01",
           "b4c8-e02",
@@ -12509,6 +12553,7 @@
           "yoshioka_denshichiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c9-e01",
           "b4c9-e02",
@@ -12702,6 +12747,7 @@
           "otsu",
           "yoshino_tayu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c10-e01",
           "b4c10-e02",
@@ -12909,6 +12955,7 @@
           "takuan",
           "yoshino_tayu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c11-e01",
           "b4c11-e02",
@@ -13154,6 +13201,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c12-e01",
           "b4c12-e02",
@@ -13369,6 +13417,7 @@
           "oko",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c13-e01",
           "b4c13-e02",
@@ -13583,6 +13632,7 @@
           "yoshioka_denshichiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c14-e01",
           "b4c14-e02",
@@ -13839,6 +13889,7 @@
           "otsu",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c15-e01",
           "b4c15-e02",
@@ -14066,6 +14117,7 @@
           "osugi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c16-e01",
           "b4c16-e02",
@@ -14327,6 +14379,7 @@
           "ogin",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c17-e01",
           "b4c17-e02",
@@ -14588,6 +14641,7 @@
           "yoshioka_genjiro",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c18-e01",
           "b4c18-e02",
@@ -14812,6 +14866,7 @@
           "yoshioka_kempo",
           "yoshioka_seijuro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c19-e01",
           "b4c19-e02",
@@ -15099,6 +15154,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c20-e01",
           "b4c20-e02",
@@ -15351,6 +15407,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b4c21-e01",
           "b4c21-e02",
@@ -15554,6 +15611,7 @@
           "karasumaru_mitsuhiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c1-e01",
           "b5c1-e02",
@@ -15767,6 +15825,7 @@
           "jotaro",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c2-e01",
           "b5c2-e02",
@@ -15960,6 +16019,7 @@
           "musashi",
           "oko"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c3-e01",
           "b5c3-e02",
@@ -16165,6 +16225,7 @@
           "jotaro",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c4-e01",
           "b5c4-e02",
@@ -16360,6 +16421,7 @@
           "sekishusai",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c5-e01",
           "b5c5-e02",
@@ -16560,6 +16622,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c6-e01",
           "b5c6-e02",
@@ -16757,6 +16820,7 @@
           "matahachi",
           "oko"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c7-e01",
           "b5c7-e02",
@@ -16991,6 +17055,7 @@
           "otsu",
           "sekishusai"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c8-e01",
           "b5c8-e02",
@@ -17241,6 +17306,7 @@
           "sukeichi"
         ],
         "referenced_characters": [],
+        "witnesses": [],
         "event_ids": [
           "b5c9-e01",
           "b5c9-e02",
@@ -17434,6 +17500,7 @@
           "yajibei"
         ],
         "referenced_characters": [],
+        "witnesses": [],
         "event_ids": [
           "b5c10-e01",
           "b5c10-e02",
@@ -17630,6 +17697,7 @@
           "matahachi",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c11-e01",
           "b5c11-e02",
@@ -17850,6 +17918,12 @@
           "kojiro",
           "musashi",
           "obata_kagenori"
+        ],
+        "witnesses": [
+          "juro",
+          "koroku",
+          "osugi",
+          "yajibei"
         ],
         "event_ids": [
           "b5c12-e05",
@@ -18076,6 +18150,7 @@
           "obata_kagenori",
           "obata_yogoro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c13-e01",
           "b5c13-e02",
@@ -18327,6 +18402,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c14-e01",
           "b5c14-e02",
@@ -18525,6 +18601,7 @@
         "referenced_characters": [
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c15-e01",
           "b5c15-e02",
@@ -18716,6 +18793,7 @@
           "iori",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c16-e01",
           "b5c16-e02",
@@ -18915,6 +18993,7 @@
           "kojiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c17-e01",
           "b5c17-e02",
@@ -19139,6 +19218,7 @@
           "sekishusai",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c18-e01",
           "b5c18-e02",
@@ -19365,6 +19445,7 @@
           "kojiro",
           "myoshu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c19-e01",
           "b5c19-audit-s02",
@@ -19591,6 +19672,9 @@
           "otsu",
           "sekishusai"
         ],
+        "witnesses": [
+          "iori"
+        ],
         "event_ids": [
           "b5c20-e01",
           "b5c20-e02",
@@ -19810,6 +19894,7 @@
           "sekishusai",
           "shoda_kizaemon"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c21-e01",
           "b5c21-e02",
@@ -20005,6 +20090,7 @@
           "osugi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c22-e01",
           "b5c22-e02",
@@ -20228,6 +20314,7 @@
           "musashi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c23-e01",
           "b5c23-e02",
@@ -20492,6 +20579,7 @@
           "sekishusai",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c24-e01",
           "b5c24-e02",
@@ -20722,6 +20810,7 @@
           "kojiro",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c25-e01",
           "b5c25-e02",
@@ -20983,6 +21072,7 @@
           "yajibei",
           "zushino_kosuke"
         ],
+        "witnesses": [],
         "event_ids": [
           "b5c26-e01",
           "b5c26-e02",
@@ -21228,6 +21318,7 @@
           "musashi",
           "nagaoka_sado"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c1-e01",
           "b6c1-e02",
@@ -21402,6 +21493,7 @@
           "musashi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c2-e01",
           "b6c2-e02",
@@ -21601,6 +21693,7 @@
           "hosokawa_tadaoki",
           "iwama_kakubei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c3-e01",
           "b6c3-e02",
@@ -21848,6 +21941,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c4-e01",
           "b6c4-e02",
@@ -22062,6 +22156,7 @@
           "otsu",
           "zushino_kosuke"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c5-fc-01",
           "b6c5-e01",
@@ -22351,6 +22446,7 @@
           "tokugawa_ieyasu",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c6-e01",
           "b6c6-e02",
@@ -22569,6 +22665,7 @@
           "tokugawa_hidetada",
           "umpei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c7-e01",
           "b6c7-e02",
@@ -22847,6 +22944,7 @@
           "musashi",
           "yajibei"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c8-fc-01",
           "b6c8-e01",
@@ -23103,6 +23201,7 @@
         "referenced_characters": [
           "jotaro"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c9-e01",
           "b6c9-e02",
@@ -23287,6 +23386,7 @@
           "matahachi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c10-e01",
           "b6c10-e02",
@@ -23522,6 +23622,7 @@
         "referenced_characters": [
           "temma"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c11-e01",
           "b6c11-e02",
@@ -23892,6 +23993,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c12-e01",
           "b6c12-e02",
@@ -24157,6 +24259,7 @@
           "matahachi",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c13-fc-01",
           "b6c13-fc-02",
@@ -24429,6 +24532,7 @@
           "tokugawa_hidetada",
           "tokugawa_ieyasu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c14-e01",
           "b6c14-e02",
@@ -24716,6 +24820,7 @@
           "matahachi",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c15-e01",
           "b6c15-e02",
@@ -24966,6 +25071,7 @@
           "osugi",
           "sakai_tadakatsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c16-e01",
           "b6c16-fc-01",
@@ -25207,6 +25313,7 @@
           "otsu",
           "sanemon"
         ],
+        "witnesses": [],
         "event_ids": [
           "b6c17-e01",
           "b6c17-fc-01",
@@ -25454,6 +25561,7 @@
           "sekishusai",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c1-e01",
           "b7c1-e06",
@@ -25696,6 +25804,7 @@
           "sekishusai",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c2-e01",
           "b7c2-e02",
@@ -25957,6 +26066,7 @@
           "toyotomi_hideyoshi",
           "yagyu_hyogo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c3-e01",
           "b7c3-e02",
@@ -26166,6 +26276,7 @@
           "musashi",
           "toyotomi_hideyoshi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c4-e01",
           "b7c4-e02",
@@ -26378,6 +26489,7 @@
           "kobayashi_tarozaemon",
           "musashi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c5-e01",
           "b7c5-e02",
@@ -26610,6 +26722,7 @@
           "takuan",
           "yoshioka_kempo"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c6-e01",
           "b7c6-e02",
@@ -26781,6 +26894,7 @@
           "musashi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c7-e01",
           "b7c7-e02",
@@ -26991,6 +27105,7 @@
           "ogin",
           "takuan"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c8-e01",
           "b7c8-e02",
@@ -27195,6 +27310,7 @@
         "referenced_characters": [
           "matahachi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c9-e01",
           "b7c9-e02",
@@ -27401,6 +27517,7 @@
           "sanada_yukimura",
           "yoshino_tayu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c10-e01",
           "b7c10-e02",
@@ -27639,6 +27756,7 @@
           "musashi",
           "ogin"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c11-e01",
           "b7c11-audit-aoki",
@@ -27925,6 +28043,7 @@
           "sekishusai",
           "toda_seigen"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c12-e01",
           "b7c12-audit-s02",
@@ -28155,6 +28274,7 @@
           "musashi",
           "osugi"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c13-e01",
           "b7c13-e02",
@@ -28435,6 +28555,7 @@
           "kojiro",
           "nagaoka_sado"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c14-e01",
           "b7c14-e02",
@@ -28665,6 +28786,7 @@
           "hosokawa_tadatoshi",
           "nagaoka_sado"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c15-e01",
           "b7c15-e02",
@@ -28952,6 +29074,7 @@
           "osugi",
           "otsu"
         ],
+        "witnesses": [],
         "event_ids": [
           "b7c16-e01",
           "b7c16-e02",

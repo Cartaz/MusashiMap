@@ -92,7 +92,7 @@ for (const chapter of chapters) {
       errors.push(`${chapter.chapter_id}: stato di personaggio sconosciuto ${state.character}`);
   }
   for (const id of actual) {
-    const hasAction = chapterEvents.some(event => event.characters?.includes(id));
+    const hasAction = chapterEvents.some(event => event.characters?.includes(id) || event.witnesses?.includes(id));
     const hasState = chapterStates.some(state => state.character === id);
     if (!hasAction && !hasState)
       notices.push(
@@ -189,6 +189,11 @@ for (const book of bookNumbers) {
           ];
         })
       );
+      // A witness observes the scene, not a route: list only where it watched.
+      for (const event of chapterEvents.filter(item => item.witnesses?.includes(character.id) && item.location)) {
+        const observed = `osservata: \`${event.location}\``;
+        if (!positions.includes(observed)) positions.push(observed);
+      }
       const endStates = chapterStates.filter(state => state.character === character.id);
       const stateText = endStates.length
         ? endStates

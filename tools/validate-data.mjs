@@ -6,6 +6,7 @@ import { validateMovementEvent } from "../js/movement-contract.js";
 import { validatePositionState } from "../js/position-contract.js";
 import { auditOverlay, LANGUAGES } from "../js/i18n-overlay.js";
 import { openCorpus } from "./lib/source-corpus.mjs";
+import { getCharacterIntroductionSection } from "../js/reader-progress.js";
 
 const REQUIRED_FILES = [
   "data/chapters.json",
@@ -394,8 +395,10 @@ export function validateRepository(root = process.cwd()) {
     const label = `Identity ${identity.character_id}/${identity.display_name}`;
     if (identity.valid_until_section !== identity.valid_from_section) errors.push(`${label} with a reveal event must end in its valid_from_section.`);
     const character = characters.find(item => item.id === identity.character_id);
-    const earlier = (character?.present_in ?? []).some(at => at < identity.valid_from_section)
-      || events.some(event => event.section < identity.valid_from_section && involvesCharacter(event, identity.character_id));
+    // Use the archive's own introduction rule: if any evidence surfaces the
+    // character earlier, the archive takes the section-level split instead.
+    const introduced = character ? getCharacterIntroductionSection(character, { states, events, characterWiki: characterWikiData?.characters ?? {} }) : null;
+    const earlier = introduced !== null && introduced < identity.valid_from_section;
     if (earlier) errors.push(`${label} has a reveal event but the character already appears before section ${identity.valid_from_section}.`);
     if (!revealEvent) return;
     const revealLine = sourceLineStart(revealEvent.source_ref);
@@ -408,7 +411,9 @@ export function validateRepository(root = process.cwd()) {
         errors.push(`Event ${event.id} involves ${identity.character_id} in a reveal section and needs a line-anchored source_ref.`);
         return;
       }
-      if (revealLine !== null && (index < revealIndex) !== (line < revealLine)) errors.push(`Event ${event.id} is ordered on the wrong side of reveal event ${revealEvent.id}.`);
+      if (revealLine === null) return;
+      if (line === revealLine) errors.push(`Event ${event.id} starts on the same source line as reveal event ${revealEvent.id}; anchor it unambiguously before or after the reveal.`);
+      else if ((index < revealIndex) !== (line < revealLine)) errors.push(`Event ${event.id} is ordered on the wrong side of reveal event ${revealEvent.id}.`);
     });
   };
   const identityRanges = new Map();

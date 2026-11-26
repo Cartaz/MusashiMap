@@ -157,6 +157,7 @@ Fonte: `data/source/book1/chapter1-the-little-bell.txt` — 293 righe, 3186 paro
 **Roster fisico corrente:** akemi; matahachi; musashi; oko.
 
 **Riferimenti negli eventi:** ogin; osugi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Eastern cavalry passing over the battlefield.
 
@@ -228,6 +229,7 @@ Fonte: `data/source/book1/chapter2-the-comb.txt` — 736 righe, 8141 parole. SHA
 **Roster fisico corrente:** akemi; matahachi; musashi; oko; temma.
 
 **Riferimenti negli eventi:** akemi; kohei; matahachi; ogin; oko; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Temma's armed followers; one follower killed by Matahachi.
 
@@ -305,6 +307,7 @@ Fonte: `data/source/book1/chapter3-the-flower-festival.txt` — 406 righe, 4241 
 **Roster fisico corrente:** musashi; ogin; otsu; takuan.
 
 **Riferimenti negli eventi:** matahachi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Shippoji clergy and festival visitors.
 
@@ -366,6 +369,7 @@ Fonte: `data/source/book1/chapter4-the-dowagers-wrath.txt` — 553 righe, 6134 p
 **Roster fisico corrente:** aoki_tanzaemon; heita; musashi; ogin; osugi; otsu; takuan.
 
 **Riferimenti negli eventi:** matahachi; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** otsu.
 
 **Attori funzionali della fonte:** Osugi's daughter; Osugi's daughter-in-law; unnamed charcoal maker; Himeji soldiers and village search parties; unnamed soldier killed outside Ogin's house.
 
@@ -441,6 +445,7 @@ Fonte: `data/source/book1/chapter5-the-art-of-war.txt` — 915 righe, 9828 parol
 **Roster fisico corrente:** aoki_tanzaemon; musashi; osugi; otsu; takuan.
 
 **Riferimenti negli eventi:** lord_ikeda; matahachi; musashi; ogin; oko. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Shippoji priest and temple attendants; Himeji search force.
 
@@ -511,6 +516,7 @@ Fonte: `data/source/book1/chapter6-the-old-cryptomeria-tree.txt` — 508 righe, 
 **Roster fisico corrente:** aoki_tanzaemon; musashi; osugi; otsu; takuan.
 
 **Riferimenti negli eventi:** matahachi; musashi; ogin. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Miyamoto villagers; Shippoji acolyte / temple staff.
 
@@ -578,6 +584,7 @@ Fonte: `data/source/book1/chapter7-the-rock-and-the-tree.txt` — 658 righe, 720
 **Roster fisico corrente:** gonroku; heita; musashi; osugi; otsu; takuan.
 
 **Riferimenti negli eventi:** matahachi; ogin. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Osugi's son-in-law / Heita's father; Hon'iden relatives and tenants; border official; Mikazuki teahouse owner; Hinagura soldiers; unnamed Hinagura prisoner/guard questioned by Takezo.
 
@@ -639,8 +646,8 @@ Roster coincidenti dopo normalizzazione degli ID; non è una certificazione di e
 - Stato: `musashi`; fled; posizione non risolta; Escapes the Hinagura stockade into the gorge; arrival at Himeji is not established in this chapter. (unknown).
 - Stato: `otsu`; away; posizione non risolta; still feverish, feels miserable at Mikazuki, escapes Osugi and Gonroku, and disappears into the ravine; later recovery is established only in chapter 8 (unknown).
 - Stato: `takuan`; away; posizione non risolta; is reported missing along with Otsu after Takezo's escape; his whereabouts are not given (unknown).
-- Stato: `osugi`; away; posizione non risolta; pursues Otsu with Gonroku after reaching the Mikazuki Teahouse (unknown).
-- Stato: `gonroku`; away; posizione non risolta; pursues Otsu with Osugi after reaching the teahouse (unknown).
+- Stato: `osugi`; away; posizione non risolta; after pursuing Otsu with Gonroku from the Mikazuki Teahouse, stands at the edge of the ravine and shoves him down into it (unknown).
+- Stato: `gonroku`; away; posizione non risolta; after pursuing Otsu with Osugi from the Mikazuki Teahouse, is shoved by her to the bottom of the ravine (unknown).
 - Stato: `ogin`; away; posizione non risolta; is reported to have been moved from Hinagura toward Himeji before Takezo's attack (reported_position).
 - Stato: `heita`; present; posizione honiden_house; remains in Miyamoto and provides news that triggers Osugi's pursuit (posizione esplicita/invariata).
 - Relazione introdotta: `musashi` / `otsu`; friend_ally/deep_personal_bond.
@@ -653,6 +660,7 @@ Fonte: `data/source/book1/chapter8-the-birth-of-musashi.txt` — 486 righe, 5427
 **Roster fisico corrente:** lord_ikeda; musashi; otsu; takuan.
 
 **Riferimenti negli eventi:** aoki_tanzaemon; gonroku; matahachi; ogin; osugi; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Himeji castle guard captain; Himeji castle servants; Hanada Bridge basket/souvenir shop household.
 
@@ -726,6 +734,7 @@ Fonte: `data/source/book2/chapter1-the-yoshioka-school.txt` — 687 righe, 6963 
 **Roster fisico corrente:** akemi; gion_toji; matahachi; oko; ueda_ryohei; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** musashi; otsu; yoshioka_denshichiro; yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka students; pleasure-district women and attendants; Yoshioka messenger who reports Musashi's arrival.
 
@@ -805,6 +814,7 @@ Fonte: `data/source/book2/chapter2-the-wheel-of-fortune.txt` — 336 righe, 3749
 **Roster fisico corrente:** gion_toji; matahachi; musashi; ueda_ryohei; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** musashi; yoshioka_denshichiro; yoshioka_kempo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka disciples and retainers; Yoshioka servant who repeatedly questions Musashi at the gate; doctor treating the wounded.
 
@@ -878,6 +888,7 @@ Fonte: `data/source/book2/chapter3-encounter-and-retreat.txt` — 283 righe, 321
 **Roster fisico corrente:** gonroku; musashi; osugi.
 
 **Riferimenti negli eventi:** matahachi; ogin; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kiyomizudera potters; palanquin bearer who identifies Musashi; palanquin bearers and porters supporting Osugi; temple spectators, pilgrims and vendors.
 
@@ -937,6 +948,7 @@ Fonte: `data/source/book2/chapter4-the-water-sprite.txt` — 451 righe, 4644 par
 **Roster fisico corrente:** jotaro; musashi.
 
 **Riferimenti negli eventi:** aoki_tanzaemon; matahachi; munenori; takuan; tsukahara_bokuden; yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** old innkeeper; sake-shop master; Sanjo checkpoint officials.
 
@@ -1010,6 +1022,7 @@ Fonte: `data/source/book2/chapter5-a-spring-breeze.txt` — 522 righe, 5302 paro
 **Roster fisico corrente:** akemi; jotaro; otsu; shoda_kizaemon.
 
 **Riferimenti negli eventi:** matahachi; munenori; musashi; sanada_yukimura; sekishusai; yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** oxcart driver; roadside teahouse proprietor; Shoda's groom; ronin gamblers.
 
@@ -1085,6 +1098,7 @@ Fonte: `data/source/book2/chapter6-the-hozoin.txt` — 775 righe, 8691 parole. S
 **Roster fisico corrente:** agon; jotaro; musashi; nikkan; otomo_banryu; yamazoe_dampachi; yasukawa_yasubei.
 
 **Riferimenti negli eventi:** in_ei; inshun; jotaro; musashi; nikkan; otsu; sekishusai; takuan; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** nikkan.
 
 **Attori funzionali della fonte:** young Ozoin monk who directs Musashi; Hozoin steward; Hozoin priests, visiting warriors and observers; young widow who boards Musashi; dumpling-shop household.
 
@@ -1170,6 +1184,7 @@ Fonte: `data/source/book2/chapter7-hannya-plain.txt` — 462 righe, 4792 parole.
 **Roster fisico corrente:** inshun; jotaro; musashi; nikkan; otomo_banryu; yamazoe_dampachi; yasukawa_yasubei.
 
 **Riferimenti negli eventi:** munenori; sekishusai. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hozoin lancers; Nara ronin group; five Nara officials serving Okubo Nagayasu.
 
@@ -1238,6 +1253,7 @@ Fonte: `data/source/book2/chapter8-the-koyagyu-fief.txt` — 229 righe, 2546 par
 **Roster fisico corrente:** jotaro; kocha; musashi; yoshioka_denshichiro.
 
 **Riferimenti negli eventi:** munenori; sekishusai; shoda_kizaemon; yagyu_hyogo; yoshioka_denshichiro; yoshioka_kempo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Denshichiro's two traveling companions; Wataya inn staff and guests.
 
@@ -1300,6 +1316,7 @@ Fonte: `data/source/book2/chapter9-the-peony.txt` — 641 righe, 6751 parole. SH
 **Roster fisico corrente:** debuchi_magobei; jotaro; kimura_sukekuro; kocha; murata_yozo; musashi; otsu; sekishusai; shoda_kizaemon; yoshioka_denshichiro.
 
 **Riferimenti negli eventi:** in_ei; jotaro; munenori; sekishusai; yagyu_hyogo; yoshioka_denshichiro; yoshioka_kempo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Denshichiro's companions; Yagyu stable keeper and guards; Yagyu training students; Taro, the large black dog.
 
@@ -1389,6 +1406,7 @@ Fonte: `data/source/book2/chapter10-jotaros-revenge.txt` — 580 righe, 6106 par
 **Roster fisico corrente:** debuchi_magobei; jotaro; kimura_sukekuro; kocha; murata_yozo; musashi; shoda_kizaemon.
 
 **Riferimenti negli eventi:** kocha; munenori; otsu; sekishusai; shoda_kizaemon. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kocha's father; Taro, Munenori's black dog; Taro's two keepers; Yagyu foot soldiers and guards; castle servants.
 
@@ -1476,6 +1494,7 @@ Fonte: `data/source/book2/chapter11-the-nightingales.txt` — 488 righe, 5311 pa
 **Roster fisico corrente:** jotaro; musashi; otsu; takuan.
 
 **Riferimenti negli eventi:** jotaro; matahachi; munenori; musashi; otsu; sekishusai; yagyu_hyogo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** castle searchers with torches.
 
@@ -1549,6 +1568,7 @@ Fonte: `data/source/book3/chapter1-sasaki-kojiro.txt` — 648 righe, 6955 parole
 **Roster fisico corrente:** aoki_tanzaemon; fushimi_inspector; matahachi; unknown_certificate_bearer.
 
 **Riferimenti negli eventi:** ito_ittosai; jotaro; kanemaki_jisai; kojiro; lord_ikeda; musashi; oko; otsu; toda_seigen. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Fushimi Castle laborers and guards; general works overseer; Fushimi sweetshop household.
 
@@ -1608,6 +1628,7 @@ Fonte: `data/source/book3/chapter2-reunion-in-osaka.txt` — 837 righe, 9133 par
 **Roster fisico corrente:** akakabe_yasoma; aoki_tanzaemon; gonroku; matahachi; osugi.
 
 **Riferimenti negli eventi:** ito_ittosai; kanemaki_jisai; kojiro; musashi; oko; otsu; toda_seigen. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Osaka sake vendor; gamblers; tiger-show crowd; Osaka informants.
 
@@ -1664,6 +1685,7 @@ Fonte: `data/source/book3/chapter3-the-handsome-young-man.txt` — 471 righe, 51
 **Roster fisico corrente:** gion_toji; kojiro; monkey; ship_captain.
 
 **Riferimenti negli eventi:** ito_ittosai; kanemaki_jisai; kusanagi_tenki; oko; toda_seigen; yoshioka_denshichiro; yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** wealthy card-playing merchants; ship passengers; boat crew.
 
@@ -1716,6 +1738,7 @@ Fonte: `data/source/book3/chapter4-the-seashell-of-forgetfulness.txt` — 356 ri
 **Roster fisico corrente:** akemi; gion_toji; kojiro; monkey; oko; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** matahachi; musashi; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka disciples; inn servants and singing girls; Kizugawa dock touts.
 
@@ -1773,6 +1796,7 @@ Fonte: `data/source/book3/chapter5-a-heros-passing.txt` — 344 righe, 3662 paro
 **Roster fisico corrente:** akemi; gonroku; matahachi; osugi; ueda_ryohei; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** musashi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Sumiyoshi fishermen; Sumiyoshi innkeeper and staff.
 
@@ -1831,6 +1855,7 @@ Fonte: `data/source/book3/chapter6-the-drying-pole.txt` — 310 righe, 3366 paro
 **Roster fisico corrente:** kojiro; monkey; ueda_ryohei; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** gion_toji; ito_ittosai; kanemaki_jisai; musashi; toda_seigen. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** seven pursuing Yoshioka disciples; ferry passengers and crew; Osaka swordsmith's apprentice.
 
@@ -1886,6 +1911,7 @@ Fonte: `data/source/book3/chapter7-eagle-mountain.txt` — 550 righe, 6464 parol
 **Roster fisico corrente:** baiken_infant; baiken_wife; iwa; musashi; unnamed_groom.
 
 **Riferimenti negli eventi:** kohei; matahachi; mikogami_tenzen; nikkan; otsu; sekishusai; takuan; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yamada inn servants; Arakida household respondent.
 
@@ -1942,6 +1968,7 @@ Fonte: `data/source/book3/chapter8-the-mayfly-in-winter.txt` — 410 righe, 4564
 **Roster fisico corrente:** arakida_ujitomi; jotaro; otsu.
 
 **Riferimenti negli eventi:** karasumaru_mitsuhiro; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** shrine maidens; Arakida servant; unidentified claimant for Musashi's equipment.
 
@@ -1995,6 +2022,7 @@ Fonte: `data/source/book3/chapter9-the-pinwheel.txt` — 464 righe, 4955 parole.
 **Roster fisico corrente:** baiken_infant; baiken_wife; iwa; kohei; musashi.
 
 **Riferimenti negli eventi:** kohei; matahachi; mikogami_tenzen; oko; takuan; temma. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Baiken's armed associates; ferry and seafood-shop workers.
 
@@ -2052,6 +2080,7 @@ Fonte: `data/source/book3/chapter10-the-flying-horse.txt` — 623 righe, 6536 pa
 **Roster fisico corrente:** jotaro; kohei; otsu; tsuge_sannojo.
 
 **Riferimenti negli eventi:** karasumaru_mitsuhiro; kohei; matahachi; musashi; watanabe_hanzo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yonkenjaya teahouse proprietor; Baiken's henchmen; hired horse.
 
@@ -2116,6 +2145,7 @@ Fonte: `data/source/book3/chapter11-the-butterfly-in-winter.txt` — 512 righe, 
 **Roster fisico corrente:** akakabe_yasoma; akemi; aoki_tanzaemon; kojiro; monkey; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** jotaro; musashi; otsu; yoshioka_denshichiro; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** hunting dog; beggar beneath the temple; funeral party.
 
@@ -2172,6 +2202,7 @@ Fonte: `data/source/book3/chapter12-the-announcement.txt` — 645 righe, 7393 pa
 **Roster fisico corrente:** matsuo_kaname; musashi; musashi_aunt; osugi; ueda_ryohei; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** gion_toji; gonroku; kojiro; matahachi; musashi; ogin; oko; otsu; yoshioka_denshichiro; yoshioka_kempo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka disciples; Yoshioka creditors.
 
@@ -2229,6 +2260,7 @@ Fonte: `data/source/book3/chapter13-the-great-bridge-at-gojo-avenue.txt` — 557
 **Roster fisico corrente:** akemi; jotaro; kojiro; musashi; osugi; otsu.
 
 **Riferimenti negli eventi:** aoki_tanzaemon; jotaro; matahachi; musashi; oko; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** New Year's bridge crowd; passersby and oxcart.
 
@@ -2296,6 +2328,7 @@ Fonte: `data/source/book4/chapter1-the-withered-field.txt` — 398 righe, 4080 p
 **Roster fisico corrente:** akemi; jotaro; kojiro; miike_jurozaemon; monkey; tamihachi; ueda_ryohei; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** musashi; osugi; otsu; yoshioka_kempo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka Ten Swordsmen and disciples; Rendaiji spectators and villagers.
 
@@ -2355,6 +2388,7 @@ Fonte: `data/source/book4/chapter2-a-man-of-parts.txt` — 406 righe, 4622 parol
 **Roster fisico corrente:** koetsu; musashi; myoshu.
 
 **Riferimenti negli eventi:** matsuo_kaname; sekishusai; takuan; yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** field workers and passersby.
 
@@ -2407,6 +2441,7 @@ Fonte: `data/source/book4/chapter3-too-many-kojiros.txt` — 672 righe, 7140 par
 **Roster fisico corrente:** akemi; ichinomiya_gempachi; kojiro; matahachi.
 
 **Riferimenti negli eventi:** akemi; kanemaki_jisai; kojiro; kusanagi_tenki; matahachi; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** sake-shop customers and creditor; passersby.
 
@@ -2467,6 +2502,7 @@ Fonte: `data/source/book4/chapter4-the-younger-brother.txt` — 419 righe, 4308 
 **Roster fisico corrente:** matahachi; miike_jurozaemon; nampo_yoichibei; otaguro_hyosuke; ueda_ryohei; yoshioka_denshichiro; yoshioka_seijuro.
 
 **Riferimenti negli eventi:** gion_toji; koetsu; musashi; oko; osugi; yoshioka_kempo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka household attendants and disciples.
 
@@ -2524,6 +2560,7 @@ Fonte: `data/source/book4/chapter5-a-mothers-love.txt` — 821 righe, 8332 parol
 **Roster fisico corrente:** akakabe_yasoma; akemi; kojiro; matahachi; osugi; otsu; takuan.
 
 **Riferimenti negli eventi:** akemi; gonroku; jotaro; karasumaru_mitsuhiro; matahachi; musashi; oko; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kiyomizudera priest/message carrier; Sannen Hill inn staff; unnamed sick rōnin; searchers.
 
@@ -2586,6 +2623,7 @@ Fonte: `data/source/book4/chapter6-the-urbane-craftsman.txt` — 545 righe, 5880
 **Roster fisico corrente:** haiya_shoyu; koetsu; musashi; myoshu; otaguro_hyosuke; rinya; sumigiku.
 
 **Riferimenti negli eventi:** karasumaru_mitsuhiro; munisai; yoshino_tayu; yoshioka_denshichiro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hon'ami servants and craftsmen; Yoshioka spies/messengers; Ōgiya attendants and courtesans.
 
@@ -2642,6 +2680,7 @@ Fonte: `data/source/book4/chapter7-reverberations-in-the-snow.txt` — 449 righe
 **Roster fisico corrente:** miike_jurozaemon; musashi; otaguro_hyosuke; rinya; ueda_ryohei; yoshioka_denshichiro; yoshioka_genzaemon.
 
 **Riferimenti negli eventi:** yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka supporters; Rengeōin priest; teahouse sake carrier.
 
@@ -2708,6 +2747,7 @@ Fonte: `data/source/book4/chapter8-the-elegant-people.txt` — 385 righe, 4111 p
 **Roster fisico corrente:** haiya_shoyu; karasumaru_mitsuhiro; koetsu; konoe_nobutada; musashi; rinya; sumigiku; takuan; yoshino_tayu.
 
 **Riferimenti negli eventi:** jotaro; otsu; yoshioka_denshichiro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Ōgiya courtesans and attendants; Rin'ya and younger attendants.
 
@@ -2763,6 +2803,7 @@ Fonte: `data/source/book4/chapter9-the-broken-lute.txt` — 308 righe, 3158 paro
 **Roster fisico corrente:** haiya_shoyu; karasumaru_mitsuhiro; koetsu; musashi; takuan; yoshino_tayu.
 
 **Riferimenti negli eventi:** yoshioka_denshichiro; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Ōgiya scout/messenger; Yoshioka encirclement outside the quarter.
 
@@ -2817,6 +2858,7 @@ Fonte: `data/source/book4/chapter10-a-sickness-of-the-heart.txt` — 237 righe, 
 **Roster fisico corrente:** jotaro; karasumaru_mitsuhiro; otsu; takuan.
 
 **Riferimenti negli eventi:** koetsu; musashi; myoshu; otsu; yoshino_tayu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Nansōji monk/message carrier; Karasumaru household doctor and retainers.
 
@@ -2869,6 +2911,7 @@ Fonte: `data/source/book4/chapter11-the-scent-of-aloeswood.txt` — 267 righe, 2
 **Roster fisico corrente:** jotaro; musashi; rinya.
 
 **Riferimenti negli eventi:** koetsu; myoshu; ogin; otsu; takuan; yoshino_tayu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Ōgiya servant injured by Jōtarō; Yoshino's attendant; Yoshioka guards surrounding Yanagimachi; Hon'ami messenger.
 
@@ -2924,6 +2967,7 @@ Fonte: `data/source/book4/chapter12-the-gate.txt` — 442 righe, 4394 parole. SH
 **Roster fisico corrente:** jotaro; kojiro; miike_jurozaemon; musashi; otsu.
 
 **Riferimenti negli eventi:** itakura_katsushige; karasumaru_mitsuhiro; musashi; otsu; takuan; yoshioka_denshichiro; yoshioka_genjiro; yoshioka_genzaemon; yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** roughly thirty Yoshioka men at the gate; Itakura patrol presence reported.
 
@@ -2983,6 +3027,7 @@ Fonte: `data/source/book4/chapter13-a-toast-to-the-morrow.txt` — 232 righe, 22
 **Roster fisico corrente:** akemi; matahachi; osugi.
 
 **Riferimenti negli eventi:** gion_toji; musashi; oko; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Sannen Hill innkeeper and staff.
 
@@ -3035,6 +3080,7 @@ Fonte: `data/source/book4/chapter14-the-death-trap.txt` — 233 righe, 2551 paro
 **Roster fisico corrente:** kojiro; miike_jurozaemon; ueda_ryohei; yoshioka_genjiro; yoshioka_genzaemon.
 
 **Riferimenti negli eventi:** akemi; musashi; yoshioka_denshichiro; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** roughly seventy Yoshioka fighters; three archers; musketeer.
 
@@ -3091,6 +3137,7 @@ Fonte: `data/source/book4/chapter15-a-meeting-in-the-moonlight.txt` — 584 righ
 **Roster fisico corrente:** jotaro; kojiro; musashi; otsu.
 
 **Riferimenti negli eventi:** jotaro; karasumaru_mitsuhiro; matsuo_kaname; musashi; musashi_aunt; ogin; otsu; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** cheap-inn keeper; coffin-maker; Karasumaru retainers searching the approaches.
 
@@ -3152,6 +3199,7 @@ Fonte: `data/source/book4/chapter16-stray-geese.txt` — 180 righe, 1960 parole.
 **Roster fisico corrente:** akemi; matahachi; osugi.
 
 **Riferimenti negli eventi:** jotaro; musashi; osugi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** —.
 
@@ -3206,6 +3254,7 @@ Fonte: `data/source/book4/chapter17-the-spreading-pine.txt` — 465 righe, 5326 
 **Roster fisico corrente:** kobashi_kurando; kojiro; miike_jurozaemon; musashi; yoshioka_genjiro; yoshioka_genzaemon.
 
 **Riferimenti negli eventi:** jotaro; ogin; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yoshioka ambush force; archers; musketeer; Ichijōji farmers, woodcutters and priest spectators.
 
@@ -3273,6 +3322,7 @@ Fonte: `data/source/book4/chapter18-an-offering-for-the-dead.txt` — 344 righe,
 **Roster fisico corrente:** musashi; osugi; seinen.
 
 **Riferimenti negli eventi:** otsu; yoshioka_denshichiro; yoshioka_genjiro; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Mudōji priests; Sannōin/Enryakuji monks.
 
@@ -3329,6 +3379,7 @@ Fonte: `data/source/book4/chapter19-a-drink-of-milk.txt` — 500 righe, 5556 par
 **Roster fisico corrente:** kojiro; matahachi; musashi; osugi.
 
 **Riferimenti negli eventi:** akemi; karasumaru_mitsuhiro; musashi; osugi; otsu; yoshioka_denshichiro; yoshioka_genjiro; yoshioka_kempo; yoshioka_seijuro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Ohara/pass inn woman; roadside innkeeper; stonecutters; three Mount Hiei samurai.
 
@@ -3389,6 +3440,7 @@ Fonte: `data/source/book4/chapter20-entwining-branches.txt` — 365 righe, 4058 
 **Roster fisico corrente:** jotaro; kojiro; matahachi; musashi; otsu.
 
 **Riferimenti negli eventi:** akemi; karasumaru_mitsuhiro; musashi; osugi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Karasumaru messenger; cow-rental worker; Seta teashop proprietor; brothel women.
 
@@ -3452,6 +3504,7 @@ Fonte: `data/source/book4/chapter21-the-male-and-female-waterfalls.txt` — 174 
 **Roster fisico corrente:** jotaro; musashi; otsu.
 
 **Riferimenti negli eventi:** matahachi; musashi; osugi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** —.
 
@@ -3507,6 +3560,7 @@ Fonte: `data/source/book5/chapter1-the-abduction.txt` — 182 righe, 1846 parole
 **Roster fisico corrente:** jotaro; matahachi; musashi; otsu.
 
 **Riferimenti negli eventi:** karasumaru_mitsuhiro; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Fukushima checkpoint officials and travelers.
 
@@ -3560,6 +3614,7 @@ Fonte: `data/source/book5/chapter2-the-warrior-of-kiso.txt` — 300 righe, 3432 
 **Roster fisico corrente:** gonnosuke; gonnosuke_mother; musashi.
 
 **Riferimenti negli eventi:** daizo; jotaro; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** checkpoint/tea-shop witnesses; local farmers and hunters.
 
@@ -3614,6 +3669,7 @@ Fonte: `data/source/book5/chapter3-poisonous-fangs.txt` — 147 righe, 1640 paro
 **Roster fisico corrente:** matahachi; otsu.
 
 **Riferimenti negli eventi:** gonnosuke; jotaro; kojiro; musashi; oko. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** farmer/grain carrier whose horse is taken.
 
@@ -3665,6 +3721,7 @@ Fonte: `data/source/book5/chapter4-a-maternal-warning.txt` — 473 righe, 5390 p
 **Roster fisico corrente:** gonnosuke; gonnosuke_mother; musashi.
 
 **Riferimenti negli eventi:** daizo; jotaro; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Daizō's Narai shop clerk.
 
@@ -3720,6 +3777,7 @@ Fonte: `data/source/book5/chapter5-a-one-night-love-affair.txt` — 268 righe, 3
 **Roster fisico corrente:** geki; musashi.
 
 **Riferimenti negli eventi:** date_masamune; jotaro; karasumaru_mitsuhiro; koetsu; otsu; sekishusai; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Shimosuwa inn/house attendants.
 
@@ -3771,6 +3829,7 @@ Fonte: `data/source/book5/chapter6-a-gift-of-money.txt` — 335 righe, 3853 paro
 **Roster fisico corrente:** geki; gion_toji; musashi.
 
 **Riferimenti negli eventi:** daizo; geki; jotaro; musashi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Suwa laborers; honest search laborer; shrine horsekeeper; roadside teahouse keeper; three suspicious travelers/ambushers.
 
@@ -3826,6 +3885,7 @@ Fonte: `data/source/book5/chapter7-a-cleansing-fire.txt` — 238 righe, 2591 par
 **Roster fisico corrente:** gion_toji; musashi; oko.
 
 **Riferimenti negli eventi:** akemi; gion_toji; matahachi; oko. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** musketeer; Buna Valley bandits.
 
@@ -3881,6 +3941,7 @@ Fonte: `data/source/book5/chapter8-playing-with-fire.txt` — 467 righe, 4691 pa
 **Roster fisico corrente:** akemi; daizo; jotaro; kojiro; onao; scarred_ronin; shoji_jinnai; sukeichi.
 
 **Riferimenti negli eventi:** matahachi; musashi; otsu; sekishusai. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Sumiya prostitute caravan; Hachiōji inn staff and guests; unnamed rōnin who attacks Jōtarō and carries Akemi away.
 
@@ -3942,6 +4003,7 @@ Fonte: `data/source/book5/chapter9-a-cricket-in-the-grass.txt` — 218 righe, 23
 **Roster fisico corrente:** akemi; daizo; jotaro; shoji_jinnai; sukeichi.
 
 **Riferimenti negli eventi:** —. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** —.
 
@@ -3998,6 +4060,7 @@ Fonte: `data/source/book5/chapter10-the-pioneers.txt` — 237 righe, 2581 parole
 **Roster fisico corrente:** osugi; ushi; yajibei.
 
 **Riferimenti negli eventi:** —. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Ushi, Yajibei's henchman; Edo plasterers and laborers; pickpocket; land dealers and construction workers.
 
@@ -4052,6 +4115,7 @@ Fonte: `data/source/book5/chapter11-slaughter-by-the-riverside.txt` — 313 righ
 **Roster fisico corrente:** juro; kojiro; koroku; osugi; yajibei.
 
 **Riferimenti negli eventi:** daizo; matahachi; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Sensōji priest; children selling arrowheads; four/five Obata-school challengers.
 
@@ -4106,6 +4170,7 @@ Fonte: `data/source/book5/chapter12-shavings.txt` — 283 righe, 3064 parole. SH
 **Roster fisico corrente:** akemi; juro; kojiro; koroku; onao; osugi; shoji_jinnai; yajibei.
 
 **Riferimenti negli eventi:** kojiro; musashi; obata_kagenori. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** juro; koroku; osugi; yajibei.
 
 **Attori funzionali della fonte:** Hangawara trainees; Sumiya attendants.
 
@@ -4162,6 +4227,7 @@ Fonte: `data/source/book5/chapter13-the-owl.txt` — 319 righe, 3510 parole. SHA
 **Roster fisico corrente:** hojo_shinzo; juro; kojiro; koroku; obata_kagenori.
 
 **Riferimenti negli eventi:** kojiro; obata_kagenori; obata_yogoro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Obata Academy students and wounded survivors.
 
@@ -4218,6 +4284,7 @@ Fonte: `data/source/book5/chapter14-a-plate-of-loaches.txt` — 289 righe, 3051 
 **Roster fisico corrente:** iori; musashi; sanemon.
 
 **Riferimenti negli eventi:** geki; jotaro; musashi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Iori/Sannosuke's deceased father San'emon.
 
@@ -4274,6 +4341,7 @@ Fonte: `data/source/book5/chapter15-like-teacher-like-pupil.txt` — 421 righe, 
 **Roster fisico corrente:** iori; musashi.
 
 **Riferimenti negli eventi:** takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** local villagers and hecklers; Tokuganji priests.
 
@@ -4326,6 +4394,7 @@ Fonte: `data/source/book5/chapter16-mountain-devils.txt` — 500 righe, 5163 par
 **Roster fisico corrente:** iori; musashi; nagaoka_sado.
 
 **Riferimenti negli eventi:** iori; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Tokuganji priests; Hosokawa attendants; mountain bandits; Hōtengahara villagers and captives.
 
@@ -4381,6 +4450,7 @@ Fonte: `data/source/book5/chapter17-first-planting.txt` — 181 righe, 1907 paro
 **Roster fisico corrente:** hosokawa_tadatoshi; iwama_kakubei; nagaoka_sado; sato_genzo.
 
 **Riferimenti negli eventi:** iori; kojiro; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Satō Genzō, Sado's attendant; Tokuganji priest; Hōtengahara farmers.
 
@@ -4436,6 +4506,7 @@ Fonte: `data/source/book5/chapter18-the-flies.txt` — 389 righe, 3912 parole. S
 **Roster fisico corrente:** iori; juro; kimura_sukekuro; kumagoro; musashi.
 
 **Riferimenti negli eventi:** kimura_sukekuro; munenori; musashi; sekishusai; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Edo barrier officials; ferry passengers; Bakurōchō innkeeper and horse traders.
 
@@ -4495,6 +4566,7 @@ Fonte: `data/source/book5/chapter19-the-soul-polisher.txt` — 282 righe, 3070 p
 **Roster fisico corrente:** kosuke_wife; musashi; zushino_kosuke.
 
 **Riferimenti negli eventi:** iori; iwama_kakubei; koetsu; kojiro; myoshu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kōsuke's wife; neighbor asking for fishing gear.
 
@@ -4554,6 +4626,7 @@ Fonte: `data/source/book5/chapter20-the-fox.txt` — 327 righe, 3476 parole. SHA
 **Roster fisico corrente:** iori; otsu; yagyu_hyogo.
 
 **Riferimenti negli eventi:** kimura_sukekuro; matahachi; munenori; musashi; otsu; sekishusai. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** iori.
 
 **Attori funzionali della fonte:** Kobikichō storehouse guard; woman/prostitute who briefly guides Iori; wounded fox.
 
@@ -4610,6 +4683,7 @@ Fonte: `data/source/book5/chapter21-an-urgent-letter.txt` — 246 righe, 2648 pa
 **Roster fisico corrente:** iori; kimura_sukekuro; munenori; otsu; yagyu_hyogo.
 
 **Riferimenti negli eventi:** iori; munenori; musashi; sekishusai; shoda_kizaemon. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Yagyū household retainers and courier.
 
@@ -4663,6 +4737,7 @@ Fonte: `data/source/book5/chapter22-filial-piety.txt` — 355 righe, 2831 parole
 **Roster fisico corrente:** juro; kojiro; koroku; osugi.
 
 **Riferimenti negli eventi:** iwama_kakubei; kojiro; matahachi; musashi; osugi; yajibei. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hangawara henchmen.
 
@@ -4718,6 +4793,7 @@ Fonte: `data/source/book5/chapter23-spring-shower-in-red.txt` — 277 righe, 279
 **Roster fisico corrente:** hojo_shinzo; juro; kojiro; koroku; osugi; zushino_kosuke.
 
 **Riferimenti negli eventi:** matahachi; musashi; yajibei. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** palanquin bearers.
 
@@ -4776,6 +4852,7 @@ Fonte: `data/source/book5/chapter24-a-block-of-wood.txt` — 233 righe, 2345 par
 **Roster fisico corrente:** hojo_shinzo; iori; kosuke_wife; musashi; zushino_kosuke.
 
 **Riferimenti negli eventi:** iori; kimura_sukekuro; kojiro; munenori; obata_kagenori; sekishusai; yagyu_hyogo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kōsuke's wife; doctor and neighbors who help Shinzō.
 
@@ -4835,6 +4912,7 @@ Fonte: `data/source/book5/chapter25-the-deserted-prophet.txt` — 175 righe, 191
 **Roster fisico corrente:** musashi; nakatogawa_handayu; obata_kagenori; obata_yogoro.
 
 **Riferimenti negli eventi:** hojo_shinzo; hosokawa_tadatoshi; iwama_kakubei; kojiro; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** —.
 
@@ -4892,6 +4970,7 @@ Fonte: `data/source/book5/chapter26-the-talk-of-the-town.txt` — 208 righe, 204
 **Roster fisico corrente:** hojo_shinzo; iori; kosuke_wife; musashi; nembutsu_tazaemon; zushino_kosuke.
 
 **Riferimenti negli eventi:** juro; kojiro; koroku; kosuke_wife; musashi; osugi; yajibei; zushino_kosuke. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kōsuke's wife; Hangawara surveillance men and attackers; palanquin bearers.
 
@@ -4951,6 +5030,7 @@ Fonte: `data/source/book6/chapter1-a-chat-with-the-men.txt` — 162 righe, 1693 
 **Roster fisico corrente:** hosokawa_tadatoshi; iwama_kakubei; matsushita_mainosuke; mori_retainer; nagaoka_sado; okatani_goroji.
 
 **Riferimenti negli eventi:** hosokawa_tadaoki; kojiro; musashi; nagaoka_sado. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** young Hosokawa retainers in Tadatoshi's evening circle; Chinese-classics lecturer.
 
@@ -5000,6 +5080,7 @@ Fonte: `data/source/book6/chapter2-buzzing-insects.txt` — 263 righe, 2932 paro
 **Roster fisico corrente:** iwama_kakubei; kojiro; obata_yogoro; osugi.
 
 **Riferimenti negli eventi:** hojo_shinzo; hosokawa_tadaoki; hosokawa_tadatoshi; matahachi; musashi; yajibei. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hangawara guide accompanying Osugi; Kakubei household servants; florist near Isarago Hill.
 
@@ -5052,6 +5133,7 @@ Fonte: `data/source/book6/chapter3-the-eagle.txt` — 265 righe, 2776 parole. SH
 **Roster fisico corrente:** hosokawa_tadatoshi; iwama_kakubei; kojiro; obata_yogoro; okatani_goroji.
 
 **Riferimenti negli eventi:** hosokawa_tadaoki; iwama_kakubei. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Isarago florist; Hosokawa archery attendants and retainers; Gorōji household visitor.
 
@@ -5112,6 +5194,7 @@ Fonte: `data/source/book6/chapter4-green-persimmons.txt` — 251 righe, 2629 par
 **Roster fisico corrente:** akemi; hamada_elder_brother; kojiro; matahachi; umpei.
 
 **Riferimenti negli eventi:** daizo; iwama_kakubei; musashi; osugi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** second Ono-school attacker; Donjiki proprietor; tenement neighbors.
 
@@ -5166,6 +5249,7 @@ Fonte: `data/source/book6/chapter5-eyes.txt` — 266 righe, 2739 parole. SHA-256
 **Roster fisico corrente:** hojo_shinzo; iori; musashi.
 
 **Riferimenti negli eventi:** hojo_ujikatsu; jotaro; munenori; obata_kagenori; obata_yogoro; otsu; zushino_kosuke. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** laborer hired to help build the cabin.
 
@@ -5225,6 +5309,7 @@ Fonte: `data/source/book6/chapter6-four-sages-with-a-single-light.txt` — 311 r
 **Roster fisico corrente:** hojo_shinzo; hojo_ujikatsu; munenori; musashi; takuan.
 
 **Riferimenti negli eventi:** karasumaru_mitsuhiro; kimura_sukekuro; otsu; sekishusai; tokugawa_hidetada; tokugawa_ieyasu; yagyu_hyogo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hōjō chief steward; serving girl and household servants.
 
@@ -5280,6 +5365,7 @@ Fonte: `data/source/book6/chapter7-the-locust-tree.txt` — 236 righe, 2271 paro
 **Roster fisico corrente:** akemi; daizo; matahachi.
 
 **Riferimenti negli eventi:** matahachi; tokugawa_hidetada; umpei. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Shibaura pawnbroker customers and neighbors; district headman and neighborhood association as administrative gatekeepers.
 
@@ -5333,6 +5419,7 @@ Fonte: `data/source/book6/chapter8-tadaakis-madness.txt` — 496 righe, 5187 par
 **Roster fisico corrente:** hamada_toranosuke; ito_magobei; kamei_hyosuke; kojiro; mikogami_tenzen; negoro_hachikuro; numata_kajuro; omitsu; osugi; yajibei.
 
 **Riferimenti negli eventi:** ito_ittosai; kojiro; matahachi; munenori; musashi; yajibei. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hangawara messenger and guide; Ono-school students; Ono household servants.
 
@@ -5400,6 +5487,7 @@ Fonte: `data/source/book6/chapter9-the-poignancy-of-things.txt` — 198 righe, 1
 **Roster fisico corrente:** iori; musashi.
 
 **Riferimenti negli eventi:** jotaro. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Musashino farmers and host family; bridge-repair workers.
 
@@ -5452,6 +5540,7 @@ Fonte: `data/source/book6/chapter10-two-drumsticks.txt` — 193 righe, 1892 paro
 **Roster fisico corrente:** iori; musashi.
 
 **Riferimenti negli eventi:** daizo; gonroku; matahachi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Mitsumine priests and provisional bishop; sacred dancers and drummers; festival pilgrims.
 
@@ -5500,6 +5589,7 @@ Fonte: `data/source/book6/chapter11-the-demons-attendant.txt` — 437 righe, 449
 **Roster fisico corrente:** gion_toji; gonnosuke; iori; kohei; kuro; musashi; oko.
 
 **Riferimenti negli eventi:** temma. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Oinu Teahouse servant and workers; two treasure-house lancer priests; Yoshioka-connected local fighter; former freebooters; Chichibu officials.
 
@@ -5563,6 +5653,7 @@ Fonte: `data/source/book6/chapter12-brother-disciples.txt` — 582 righe, 6096 p
 **Roster fisico corrente:** aoki_tanzaemon; daizo; gonnosuke; iori; jotaro; kuro; oko; takuan.
 
 **Riferimenti negli eventi:** aoki_tanzaemon; daizo; jotaro; musashi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Mitsumine villagers and search parties; three Kiso confederates; farmers summoned by Takuan.
 
@@ -5640,6 +5731,7 @@ Fonte: `data/source/book6/chapter13-the-pomegranate.txt` — 100 righe, 1092 par
 **Roster fisico corrente:** hojo_shinzo; iori; osugi; takuan.
 
 **Riferimenti negli eventi:** hojo_ujikatsu; matahachi; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hōjō gate retainer; stable staff.
 
@@ -5690,6 +5782,7 @@ Fonte: `data/source/book6/chapter14-land-of-dreams.txt` — 435 righe, 4506 paro
 **Roster fisico corrente:** akemi; hojo_ujikatsu; matahachi; sakai_tadakatsu; takuan; tokugawa_hidetada.
 
 **Riferimenti negli eventi:** akemi; daizo; gonnosuke; hojo_ujikatsu; jotaro; matahachi; munenori; musashi; oko; otsu; sakai_tadakatsu; sekishusai; tokugawa_hidetada; tokugawa_ieyasu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** castle carpenters and inspectors; Council of Elders and messengers; Edo commissioner officers and guards.
 
@@ -5754,6 +5847,7 @@ Fonte: `data/source/book6/chapter15-the-challenge.txt` — 305 righe, 3158 parol
 **Roster fisico corrente:** gonnosuke; hojo_shinzo; iori; kojiro; musashi; osugi.
 
 **Riferimenti negli eventi:** gonroku; hojo_ujikatsu; matahachi; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Hosokawa advance-party samurai and attendants; Hōjō stable/gate staff; Nobidome villagers.
 
@@ -5814,6 +5908,7 @@ Fonte: `data/source/book6/chapter16-the-gateway-to-glory.txt` — 283 righe, 299
 **Roster fisico corrente:** gonnosuke; hojo_shinzo; hojo_ujikatsu; iori; musashi; sakai_tadakatsu; takuan.
 
 **Riferimenti negli eventi:** iori; kojiro; obata_kagenori; obata_yogoro; osugi; sakai_tadakatsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** five former Obata students; Council of Elders messenger; Reception Pavilion officials and guards.
 
@@ -5872,6 +5967,7 @@ Fonte: `data/source/book6/chapter17-the-sound-of-heaven.txt` — 174 righe, 1661
 **Roster fisico corrente:** gonnosuke; hojo_shinzo; hojo_ujikatsu; iori; musashi; takuan.
 
 **Riferimenti negli eventi:** gonnosuke; iori; musashi; osugi; otsu; sanemon. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** official who reports the adverse appointment file.
 
@@ -5931,6 +6027,7 @@ Fonte: `data/source/book7/chapter1-the-runaway-ox.txt` — 377 righe, 3741 parol
 **Roster fisico corrente:** hamada_toranosuke; inshun; kimura_sukekuro; otsu; ushinosuke; yagyu_hyogo.
 
 **Riferimenti negli eventi:** in_ei; inshun; jotaro; kojiro; mikogami_tenzen; munenori; sekishusai; yagyu_hyogo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** young Hozoin priests; Koyagyu castle servant boy; Koyagyu gate guard; three Tsukigase ronin; Inshun attendant.
 
@@ -5990,6 +6087,7 @@ Fonte: `data/source/book7/chapter2-hemp-seed.txt` — 482 righe, 4993 parole. SH
 **Roster fisico corrente:** daun; gonnosuke; iori; kimura_sukekuro; nankobo; otsu; toriumi_benzo; ushinosuke; yagyu_hyogo.
 
 **Riferimenti negli eventi:** mikogami_tenzen; munenori; musashi; otsu; sekishusai; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Koyagyu attendants; Hozoin tournament competitors and spectators.
 
@@ -6051,6 +6149,7 @@ Fonte: `data/source/book7/chapter3-sweepers-and-salesmen.txt` — 401 righe, 412
 **Roster fisico corrente:** gensuke; gonnosuke; iori; koetsu; myoshu; sugizo; toriumi_benzo; toroku.
 
 **Riferimenti negli eventi:** hojo_ujikatsu; kimura_sukekuro; musashi; oan; otsu; toyotomi_hideyoshi; yagyu_hyogo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Tōroku; Oan; Kongoji abbot and young priest; Sugizo; Gensuke; cord-salesman conspirators.
 
@@ -6106,6 +6205,7 @@ Fonte: `data/source/book7/chapter4-a-pear-blossom.txt` — 337 righe, 3752 parol
 **Roster fisico corrente:** daisuke_wife; gonnosuke; nagaoka_sado; nuinosuke; sanada_daisuke; sanada_yukimura; toriumi_benzo.
 
 **Riferimenti negli eventi:** gudo; hosokawa_tadatoshi; musashi; toyotomi_hideyoshi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Seiganji priests.
 
@@ -6158,6 +6258,7 @@ Fonte: `data/source/book7/chapter5-the-port.txt` — 436 righe, 4541 parole. SHA
 **Roster fisico corrente:** iori; kojiro; nagaoka_sado; nambanya; nuinosuke; osei; otsu; otsuru; sahei.
 
 **Riferimenti negli eventi:** gonnosuke; kobayashi_tarozaemon; musashi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kobayashi ship captain and agents; Kobayashi dock workers and assistants; Hosokawa samurai traveling from Kyoto.
 
@@ -6216,6 +6317,7 @@ Fonte: `data/source/book7/chapter6-the-writing-teacher.txt` — 536 righe, 5885 
 **Roster fisico corrente:** gudo; matahachi; miyake_gumbei; musashi; watari_shima.
 
 **Riferimenti negli eventi:** kojiro; otsu; takuan; yoshioka_kempo. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** brush-seller and wife; Musashi's pupils; Honda samurai assassins; Honda messengers/attendants.
 
@@ -6271,6 +6373,7 @@ Fonte: `data/source/book7/chapter7-the-circle.txt` — 166 righe, 1767 parole. S
 **Roster fisico corrente:** gudo; matahachi; musashi.
 
 **Riferimenti negli eventi:** musashi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** temple monks and innkeepers.
 
@@ -6322,6 +6425,7 @@ Fonte: `data/source/book7/chapter8-shikama-blue.txt` — 496 righe, 5065 parole.
 **Roster fisico corrente:** asaya_mambei; jotaro; osugi; otsu.
 
 **Riferimenti negli eventi:** aoki_tanzaemon; kojiro; musashi; nagaoka_sado; ogin; takuan. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Shikama dyer's household; Honiden clan toughs.
 
@@ -6378,6 +6482,7 @@ Fonte: `data/source/book7/chapter9-the-mercy-of-kannon.txt` — 259 righe, 2851 
 **Roster fisico corrente:** jotaro; osugi; otsu.
 
 **Riferimenti negli eventi:** matahachi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Honiden search party.
 
@@ -6433,6 +6538,7 @@ Fonte: `data/source/book7/chapter10-the-tides-of-life.txt` — 242 righe, 2540 p
 **Roster fisico corrente:** akemi; akemi_baby; gonnosuke; haiya_shoeki; koetsu; matahachi; musashi; yoshino_second.
 
 **Riferimenti negli eventi:** gudo; haiya_shoyu; iori; kojiro; nagaoka_sado; sanada_yukimura; yoshino_tayu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Shoeki; second Yoshino Dayu; Musashi admirers and Hosokawa/Kyoto well-wishers.
 
@@ -6497,6 +6603,7 @@ Fonte: `data/source/book7/chapter11-the-evening-boat.txt` — 231 righe, 2522 pa
 **Roster fisico corrente:** aoki_tanzaemon; jotaro; osugi; otsu.
 
 **Riferimenti negli eventi:** matahachi; musashi; ogin. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Himeji welcoming samurai; Aoki household participants.
 
@@ -6558,6 +6665,7 @@ Fonte: `data/source/book7/chapter12-a-falcon-and-a-woman.txt` — 220 righe, 251
 **Roster fisico corrente:** hosokawa_tadatoshi; iwama_kakubei; kojiro; omitsu; tatsunosuke; ujiie_magoshiro.
 
 **Riferimenti negli eventi:** kanemaki_jisai; mikogami_tenzen; musashi; sekishusai; toda_seigen. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Kojirō household attendants and visitors.
 
@@ -6616,6 +6724,7 @@ Fonte: `data/source/book7/chapter13-before-the-thirteenth-day.txt` — 246 righe
 **Roster fisico corrente:** akemi; akemi_baby; ichinomiya_gempachi; kojiro; kojiro_aunt; matahachi; omitsu; tatsunosuke.
 
 **Riferimenti negli eventi:** hosokawa_tadatoshi; ito_ittosai; kanemaki_jisai; kojiro; kusanagi_tenki; musashi; osugi. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** baby carried by Akemi; Kojirō supporters and disciples; Kokura travelers.
 
@@ -6679,6 +6788,7 @@ Fonte: `data/source/book7/chapter14-at-daybreak.txt` — 480 righe, 4900 parole.
 **Roster fisico corrente:** akemi; akemi_baby; iori; kinami_kagashiro; kobayashi_tarozaemon; koyama_handayu; matahachi; musashi; nagaoka_sado; nuinosuke; utsumi_magobeinojo.
 
 **Riferimenti negli eventi:** hosokawa_tadatoshi; iwama_kakubei; kojiro; nagaoka_sado. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** other former Shimmen retainers; Kojirō supporter spying on the gathering.
 
@@ -6738,6 +6848,7 @@ Fonte: `data/source/book7/chapter15-the-marriage.txt` — 394 righe, 4037 parole
 **Roster fisico corrente:** gonnosuke; jotaro; kobayashi_tarozaemon; kojiro; musashi; nuinosuke; omitsu; osugi; otsu; otsuru; sasuke; tatsunosuke.
 
 **Riferimenti negli eventi:** hosokawa_tadatoshi; nagaoka_sado. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** shore officials and Kojirō well-wishers; Kobayashi household/shop workers.
 
@@ -6800,6 +6911,7 @@ Fonte: `data/source/book7/chapter16-the-soul-of-the-deep.txt` — 361 righe, 380
 **Roster fisico corrente:** iori; iwama_kakubei; kojiro; musashi; nagaoka_sado; sasuke; tatsunosuke.
 
 **Riferimenti negli eventi:** akemi; gonnosuke; matahachi; osugi; otsu. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.
+**Testimoni negli eventi:** —.
 
 **Attori funzionali della fonte:** Funashima witnesses, guards and attendants; Kojirō supporters waiting around Hikojima.
 

@@ -126,6 +126,7 @@ const reviews = chapters.map(chapter => {
     production: {
       physical_characters: physical,
       referenced_characters: unique(chapterEvents.flatMap(event => event.referenced_characters ?? [])),
+      witnesses: unique(chapterEvents.flatMap(event => event.witnesses ?? [])),
       event_ids: chapterEvents.map(event => event.id),
       states: states.filter(state => state.chapter === chapter.chapter_id),
       relationships_introduced: relationships.filter(relation => relation.first_section === chapter.number)
@@ -223,6 +224,7 @@ for (const row of reviews) {
     `**Roster fisico corrente:** ${show(row.production.physical_characters)}.`,
     "",
     `**Riferimenti negli eventi:** ${show(row.production.referenced_characters)}. Presenza e riferimento possono coesistere in scene diverse dello stesso capitolo.`,
+    `**Testimoni negli eventi:** ${show(row.production.witnesses)}.`,
     "",
     `**Attori funzionali della fonte:** ${show(source.functional_actors)}.`,
     "",

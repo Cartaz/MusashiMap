@@ -240,7 +240,19 @@ test("semantic CLI pins event-level reveals to one ordered section", t => {
   assert.equal(unanchored.status, 1);
   assert.match(unanchored.output, /Event b2c1-03 involves hero in a reveal section and needs a line-anchored source_ref/);
 
+  events.events[3] = { ...later, source_ref: reveal.source_ref };
+  const tied = write();
+  assert.equal(tied.status, 1);
+  assert.match(tied.output, /Event b2c1-03 starts on the same source line as reveal event b2c1-02/);
+
   events.events[3] = later;
+  const wiki = { characters: { hero: { category: "secondary", current_by_section: { 1: "Seen early" } } } };
+  writeJson(root, "data/context/character-wiki.json", wiki);
+  const wikiEarlier = write();
+  assert.equal(wikiEarlier.status, 1);
+  assert.match(wikiEarlier.output, /already appears before section 2/);
+  writeJson(root, "data/context/character-wiki.json", { characters: {} });
+
   identity.valid_until_section = null;
   identity.valid_until_chapter = null;
   const openEnded = write();
